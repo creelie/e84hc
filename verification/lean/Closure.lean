@@ -269,6 +269,24 @@ theorem complement_count (m k : Nat) (hm : 4 ≤ m) :
   have h4 : k * m = m * k := Nat.mul_comm k m
   omega
 
+/-- Proposition 5.15: a cyclic triple cover of a curve of genus q, branched at
+r points, whose Prym variety has dimension 2n satisfies 2q + r = 2n + 2; its
+family has dimension q + 2n - 1, which is at most 3n, with equality exactly
+for the etale covers (r = 0). -/
+theorem branched_count (n q r : Nat) (h : 2 * q + r = 2 * n + 2) :
+    q + 2 * n ≤ 3 * n + 1 ∧ (q + 2 * n = 3 * n + 1 ↔ r = 0) := by
+  constructor
+  · omega
+  · constructor <;> intro _ <;> omega
+
+/-- With Prym varieties of dimension 2n and n >= 4, the families of
+Proposition 5.15 have dimension below n^2. -/
+theorem branched_proper (n q r : Nat) (h : 2 * q + r = 2 * n + 2) (hn : 4 ≤ n) :
+    q + 2 * n < n * n + 1 := by
+  have h1 := (branched_count n q r h).1
+  have h2 := (prym_proper n).2 hn
+  omega
+
 /-! ## Part 4: Picard numbers of Fermat surfaces
 
 A character of the Fermat surface of degree m is a = (a0, a1, a2, a3) with
@@ -303,6 +321,8 @@ theorem picard_sextic : picard 6 = 86 := by decide
 #print axioms route_CM_IP
 #print axioms switch_pairs
 #print axioms complement_count
+#print axioms branched_count
+#print axioms branched_proper
 #print axioms picard_sextic
 
 end Closure

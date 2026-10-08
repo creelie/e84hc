@@ -17,6 +17,13 @@ TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
 latex() { pdflatex -interaction=nonstopmode -halt-on-error main.tex > /dev/null; }
+settle() {  # run pdflatex until the cross-references stop changing
+    for _ in 1 2 3 4; do
+        latex
+        grep -qE "Rerun to get|Label\(s\) may have changed" main.log || return 0
+    done
+    echo "FAIL  cross-references did not settle in $(pwd)"; exit 1
+}
 check_log() {  # check_log <dir>
     if grep -nE "^!|undefined|multiply defined" "$1/main.log"; then
         echo "FAIL  LaTeX reported errors or undefined references in $1"; exit 1
@@ -26,7 +33,7 @@ check_log() {  # check_log <dir>
 echo "== compile"
 cd "$P"
 rm -f main.aux main.bbl main.blg main.out
-latex; bibtex main > /dev/null; latex; latex
+latex; bibtex main > /dev/null; settle
 check_log "$P"
 echo "ok    main.pdf, $(pdfinfo main.pdf 2>/dev/null | awk '/^Pages/{print $2}') pages"
 
@@ -42,7 +49,7 @@ cp figures/*.png "$A/figures/"
 (cd "$A" && tar czf "$DIST/$NAME-arxiv.tar.gz" main.tex main.bbl sections figures)
 T="$TMP/arxiv-test"
 mkdir -p "$T" && tar xzf "$DIST/$NAME-arxiv.tar.gz" -C "$T"
-(cd "$T" && latex && latex)
+(cd "$T" && settle)
 check_log "$T"
 echo "ok    arXiv tarball compiles with pdflatex alone"
 

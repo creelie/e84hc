@@ -384,6 +384,26 @@ static void check_weil(void)
     for (int m = 4; m < 60; m++)
         for (int k = 0; k < 200; k++)
             CHECK(3 * (m + k) + 3 * k < (m + k) * (m + k));
+    /* Proposition 5.15: cyclic triple covers of a genus-q curve branched at
+       r points with Prym of dimension 2n; their families have dimension
+       q+2n-1. */
+    for (int n = 2; n <= 12; n++) {
+        int bd = -1, bq = -1, br = -1;
+        for (int q = 0; q <= n + 1; q++) {
+            int r = 2 * n + 2 - 2 * q;
+            CHECK(r >= 0 && r != 1);
+            CHECK(2 * (3 * q - 2 + r) - 2 == 3 * (2 * q - 2) + 2 * r);
+            CHECK((3 * q - 2 + r) - q == 2 * n);
+            int d = q == 0 ? r - 3 : (q == 1 ? r : 3 * q - 3 + r);
+            CHECK(d == q + 2 * n - 1);
+            if (d > bd) { bd = d; bq = q; br = r; }
+            else if (d == bd) { bq = -1; br = -1; }
+        }
+        CHECK(bd == 3 * n && bq == n + 1 && br == 0);
+        snprintf(key, sizeof key, "n=%d,cyclic_max", n);
+        snprintf(val, sizeof val, "%d,%d,%d", bd, bq, br);
+        emit_s("W", key, val);
+    }
 }
 
 /* --------------------------------------------- L: the logical skeleton */

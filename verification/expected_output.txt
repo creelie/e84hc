@@ -176,6 +176,17 @@ W m=9,k_passing none
 W m=10,k_passing none
 W m=11,k_passing none
 W m=12,k_passing none
+W n=2,cyclic_max 6,3,0
+W n=3,cyclic_max 9,4,0
+W n=4,cyclic_max 12,5,0
+W n=5,cyclic_max 15,6,0
+W n=6,cyclic_max 18,7,0
+W n=7,cyclic_max 21,8,0
+W n=8,cyclic_max 24,9,0
+W n=9,cyclic_max 27,10,0
+W n=10,cyclic_max 30,11,0
+W n=11,cyclic_max 33,12,0
+W n=12,cyclic_max 36,13,0
 L closure_of_CM FER
 L countermodel_HC false
 L closed_without M+F3P

@@ -11,7 +11,7 @@ all and compares their outputs.
 \subsection*{Exact computations in three languages}
 The program \texttt{closure\_checks} exists in Python, Julia and C, all in
 exact integer or rational arithmetic, and the three versions print the same
-$196$ lines; the shell script compares them line by line and against a
+$207$ lines; the shell script compares them line by line and against a
 stored copy. The lines fall into six groups.
 \begin{itemize}[leftmargin=2.3em]
 \item[F] Fermat varieties $X^{n}_{m}$ for $n=2$, $m\le12$ and for $n=4$,
@@ -34,7 +34,10 @@ order, for $p\le10$.
 \item[W] The dimensions $3n$ and $n^{2}$ of the Prym locus and the Weil
 family, and the count of \Cref{rem:count}: the pairs $(m,k)$ with
 $3(m+k)+3k\ge(m+k)^{2}$, which are $k\le2$ for $m=2$, $k=0$ for $m=3$, and
-none for $4\le m<60$, $k<200$.
+none for $4\le m<60$, $k<200$; and the count of \Cref{prop:branched}: for
+$2\le n\le12$ and every genus $q$, the Riemann--Hurwitz relation, the
+dimension $q+2n-1$ of the family, and its unique maximum $3n$ at $q=n+1$,
+$r=0$.
 \item[L] The rules of \Cref{tab:rules}: the closed sets of
 \Cref{lem:closedsets}; the valuation in which \st{CM} holds and \HC{}
 fails; the five minimal sets of \Cref{thm:B}, found by enumerating all sets
@@ -51,8 +54,9 @@ relation and proves: that the four sets of \Cref{lem:closedsets} and the set
 $\{\st{CM},\st{Fer}\}$ are closed; \Cref{thm:B} itself, for an arbitrary set
 of statements; \Cref{cor:bypass}(i); and the derivations of \HC{} from each of
 the five minimal sets. It also proves, for all sizes at once, the counting
-identity behind the switch lemma, the equivalence $3n<n^{2}\iff n\ge4$, and
-the inequality of \Cref{rem:count} for every $m\ge4$ and $k\ge0$; and it
+identity behind the switch lemma, the equivalence $3n<n^{2}\iff n\ge4$,
+the inequality of \Cref{rem:count} for every $m\ge4$ and $k\ge0$, and the
+count of \Cref{prop:branched} for all $n$, $q$ and $r$; and it
 computes the Picard numbers $20$, $37$ and $86$ of the Fermat quartic,
 quintic and sextic surfaces from the characters, by evaluation in the
 kernel.

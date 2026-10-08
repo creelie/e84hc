@@ -10,7 +10,7 @@ Granting the recently claimed Hodge conjecture for CM abelian varieties, it prov
 
 ### Files
 
-- `when-is-every-rational-hodge-class-algebraic.pdf`: the paper, 29 pages, `amsart`.
+- `when-is-every-rational-hodge-class-algebraic.pdf`: the paper, 30 pages, `amsart`.
 - `when-is-every-rational-hodge-class-algebraic-tex.zip`: the full LaTeX source, with the figures as PNG and their TikZ sources.
 - `when-is-every-rational-hodge-class-algebraic-arxiv.tar.gz`: the arXiv submission, containing `main.tex`, `sections/`, `main.bbl` and the PNG figures. It compiles with pdflatex alone.
 
@@ -20,7 +20,7 @@ The workflow attaches these files to the release once the paper has been built o
 
 `verification/shell/run_all.sh` re-runs the finite steps:
 
-- `closure_checks` in Python, Julia and C, in exact arithmetic, with identical 196-line outputs;
+- `closure_checks` in Python, Julia and C, in exact arithmetic, with identical 207-line outputs;
 - a Lean 4 file that uses the core library only, with no `sorry` and no `native_decide`;
 - Macaulay2 scripts for the Jacobian-ring Hodge numbers and Max Noether's theorem.
 
@@ -28,6 +28,8 @@ All 61 references were checked online. No proof in the paper depends on a comput
 
 ### Citation and DOI
 
-Concept DOI, covering all versions: [10.5281/zenodo.23234362](https://doi.org/10.5281/zenodo.23234362). Zenodo gives each release its own version DOI under it; v1.0.0 is [10.5281/zenodo.23234363](https://doi.org/10.5281/zenodo.23234363).
+Concept DOI, covering all versions: [10.5281/zenodo.23234362](https://doi.org/10.5281/zenodo.23234362). Zenodo gives each release its own version DOI under it: v1.0.0 is [10.5281/zenodo.23234363](https://doi.org/10.5281/zenodo.23234363) and v1.0.1 is [10.5281/zenodo.23234501](https://doi.org/10.5281/zenodo.23234501).
 
-In this version the paper cites its archive by the concept DOI, on the first page and in Appendix A. The paper itself is otherwise unchanged from v1.0.0.
+### What is new in this version
+
+Proposition 5.15: Prym varieties of cyclic triple covers, étale or branched, form families of dimension at most 3n, so for n ≥ 4 they miss the very general member of the split Weil family. Its finite steps are checked in Python, Julia, C and Lean. The rest of the paper is unchanged from v1.0.1.

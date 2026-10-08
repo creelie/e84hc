@@ -663,6 +663,45 @@ corresponding codimension, that of the Prym locus in the Weil family, is
 $n^{2}-3n$. Nothing in the construction of $Y$ moves it off the Prym locus.
 This is an analogy and not a proof.
 
+Nor can a branched cover take the place of the \'etale one, because
+branching does not enlarge the Prym locus enough.
+
+\begin{proposition}\label{prop:branched}
+Let $\pi\colon C\to X$ be a cyclic triple cover of a curve of genus $q$,
+branched at $r$ points, with covering automorphism $\sigma$, and let its
+Prym variety, the image of $3-N$ on $J(C)$ with $N=1+\sigma+\sigma^{2}$,
+have dimension $2n$. Then $2q+r=2n+2$, and the covers with these
+invariants form finitely many families, each of dimension $q+2n-1\le3n$,
+with equality only for \'etale covers of curves of genus $n+1$. In
+particular, for $n\ge4$ a very general member of the split Weil family of
+$K$ in dimension $2n$ is not $K$-isogenous to the Prym variety of any cyclic
+triple cover, \'etale or branched.
+\end{proposition}
+
+\begin{proof}
+Since $3$ is prime, every branch point is totally ramified, and the
+Riemann--Hurwitz formula $2g(C)-2=3(2q-2)+2r$ gives $g(C)=3q-2+r$. The
+invariant part of $H^{0}(C,K_{C})$ under $\sigma^{*}$ is
+$\pi^{*}H^{0}(X,K_{X})$, of dimension $q$, and as in the proof of
+\Cref{lem:prym}(a) the space $H^{1,0}$ of the Prym variety is the sum of the
+two other eigenspaces. So the Prym variety has dimension $g(C)-q=2q-2+r$,
+and $2q+r=2n+2$. Given $X$ and the $r$ branch points, the cover corresponds
+to a surjection from the fundamental group of the punctured curve onto
+$\ZZ/3$, and there are finitely many of these. So the covers form finitely
+many families, of dimension $3q-3+r$ when $q\ge2$, $r$ when $q=1$, and
+$r-3$ when $q=0$; by $r=2n+2-2q$ each of these equals $q+2n-1$. As $r\ge0$,
+$q\le n+1$, so the dimension is at most $3n$, and it equals $3n$ exactly
+when $q=n+1$ and $r=0$.
+
+The Prym varieties of each family form the image of a variety of
+dimension at most $3n$ in the moduli space, and the $K$-isogenies of a given
+degree carry it to finitely many subvarieties of at most the same
+dimension. The members of the split
+Weil family that are $K$-isogenous to such a Prym variety therefore lie in a
+countable union of subvarieties of dimension at most $3n$, which for
+$n\ge4$ is less than $n^{2}$.
+\end{proof}
+
 A weaker hypothesis would do if the semiregularity theorem were sharper.
 Markman asks whether \Cref{thm:bf} holds when $\sigma_{\mathcal{E}}$ is
 injective only on the image of the evaluation map from the second Hochschild
