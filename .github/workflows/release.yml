@@ -1,8 +1,10 @@
 name: release
 
-# Pushing a tag v* creates the release, titled after the paper (the title in
-# .zenodo.json), and attaches the PDF, the tex.zip and the arXiv tarball.
-# A release published by hand gets the same files.
+# Pushing a tag v*, or running this workflow by hand with a tag name (the
+# tag is then created on the commit the run is for), creates the release,
+# titled after the paper (the title in .zenodo.json), and attaches the PDF,
+# the tex.zip and the arXiv tarball. A release published by hand gets the
+# same files.
 
 on:
   push:
@@ -30,7 +32,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.release.tag_name || inputs.tag || github.ref_name }}
+          ref: ${{ github.event_name == 'workflow_dispatch' && github.sha || github.event.release.tag_name || github.ref_name }}
       - name: Install TeX Live
         run: |
           sudo apt-get update
@@ -43,7 +45,8 @@ jobs:
         run: |
           if ! gh release view "$TAG" --repo "$GITHUB_REPOSITORY" > /dev/null 2>&1; then
             title="$(python3 -c 'import json; print(json.load(open(".zenodo.json"))["title"])')"
-            gh release create "$TAG" --repo "$GITHUB_REPOSITORY" --verify-tag \
+            gh release create "$TAG" --repo "$GITHUB_REPOSITORY" \
+              --target "$(git rev-parse HEAD)" \
               --title "$title" --notes-file .github/RELEASE_NOTES.md
           fi
       - name: Attach the files
