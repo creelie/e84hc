@@ -236,6 +236,18 @@ function check_weil()
         @assert best == (3n, n + 1, 0)
         emit("W", "n=$n,cyclic_max", "$(best[1]),$(best[2]),$(best[3])")
     end
+    # Proposition 5.16: sigma acts on V_j = H^0(K_X + jL) by kappa^j, so the
+    # invariant part E of H^0(K_C) (x) (V_1 + V_2) is V_1(x)V_2 + V_2(x)V_1.
+    pairs = [(a, b) for a in 0:2 for b in 1:2 if (a + b) % 3 == 0]
+    @assert pairs == [(1, 2), (2, 1)]
+    for n in 2:12
+        g = n + 1
+        h = [g, g - 1, g - 1]            # h^0(K_X + jL) by Riemann-Roch
+        @assert sum(h) == 3g - 2         # the genus of C
+        e = sum(h[a + 1] * h[b + 1] for (a, b) in pairs)
+        @assert e == 2 * n * n && 3g - 3 == 3n
+        emit("W", "n=$n,abelprym", "$e,$(3n),$(n * n - 3n)")
+    end
 end
 
 # ------------------------------------------------- L: the logical skeleton

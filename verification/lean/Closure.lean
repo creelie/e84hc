@@ -287,6 +287,23 @@ theorem branched_proper (n q r : Nat) (h : 2 * q + r = 2 * n + 2) (hn : 4 ≤ n)
   have h2 := (prym_proper n).2 hn
   omega
 
+/-- Proposition 5.16: sigma acts on V_j = H^0(K_X + jL) by kappa^j, so the
+invariant summands V_a (x) V_b of H^0(K_C) (x) (V_1 + V_2), those with
+a + b = 0 mod 3, are V_1 (x) V_2 and V_2 (x) V_1. -/
+theorem abelprym_pairs :
+    ((List.range 3).flatMap fun a =>
+      ([1, 2].filter fun b => (a + b) % 3 == 0).map fun b => (a, b)) =
+      [(1, 2), (2, 1)] := by
+  decide
+
+/-- Proposition 5.16: for g = n + 1 the spaces H^0(K_X + jL) of dimensions g,
+g - 1, g - 1 add up to the genus 3g - 2 of C, the invariant part E has
+dimension 2n^2, and h^0(2K_X) = 3g - 3 = 3n. -/
+theorem abelprym_dims (n : Nat) :
+    (n + 1) + n + n = 3 * (n + 1) - 2 ∧ n * n + n * n = 2 * (n * n) ∧
+      3 * (n + 1) - 3 = 3 * n :=
+  ⟨by omega, (Nat.two_mul _).symm, by omega⟩
+
 /-! ## Part 4: Picard numbers of Fermat surfaces
 
 A character of the Fermat surface of degree m is a = (a0, a1, a2, a3) with
@@ -323,6 +340,8 @@ theorem picard_sextic : picard 6 = 86 := by decide
 #print axioms complement_count
 #print axioms branched_count
 #print axioms branched_proper
+#print axioms abelprym_pairs
+#print axioms abelprym_dims
 #print axioms picard_sextic
 
 end Closure

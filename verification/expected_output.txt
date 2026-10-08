@@ -187,6 +187,17 @@ W n=9,cyclic_max 27,10,0
 W n=10,cyclic_max 30,11,0
 W n=11,cyclic_max 33,12,0
 W n=12,cyclic_max 36,13,0
+W n=2,abelprym 8,6,-2
+W n=3,abelprym 18,9,0
+W n=4,abelprym 32,12,4
+W n=5,abelprym 50,15,10
+W n=6,abelprym 72,18,18
+W n=7,abelprym 98,21,28
+W n=8,abelprym 128,24,40
+W n=9,abelprym 162,27,54
+W n=10,abelprym 200,30,70
+W n=11,abelprym 242,33,88
+W n=12,abelprym 288,36,108
 L closure_of_CM FER
 L countermodel_HC false
 L closed_without M+F3P

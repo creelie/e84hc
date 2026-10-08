@@ -16,8 +16,9 @@ Items
   S  The switch lemma (Lemma 4.1): exhaustive for small sizes.
   G  The signs (-1)^(p(p-1)/2) of the permutations that regroup a product of
      2p classes of degree one between interleaved and blocked order.
-  W  Weil families: Prym locus 3n against n^2, the count of Remark 5.13 and
-     the branched covers of Proposition 5.15.
+  W  Weil families: Prym locus 3n against n^2, the count of Remark 5.13,
+     the branched covers of Proposition 5.15 and the eigenspaces of
+     Proposition 5.16.
   L  The logical skeleton of Theorem B: a valuation in which every rule
      and (CM) hold and the Hodge conjecture fails, the four closed sets of
      the proof, the minimal sets of statements that give the conjecture,
@@ -271,6 +272,17 @@ def check_weil():
                 best = (d, -1, -1)
         assert best == (3 * n, n + 1, 0)
         emit("W", f"n={n},cyclic_max", f"{best[0]},{best[1]},{best[2]}")
+    # Proposition 5.16: sigma acts on V_j = H^0(K_X + jL) by kappa^j, so the
+    # invariant part E of H^0(K_C) (x) (V_1 + V_2) is V_1(x)V_2 + V_2(x)V_1.
+    pairs = [(a, b) for a in range(3) for b in (1, 2) if (a + b) % 3 == 0]
+    assert pairs == [(1, 2), (2, 1)]
+    for n in range(2, 13):
+        g = n + 1
+        h = [g, g - 1, g - 1]            # h^0(K_X + jL) by Riemann-Roch
+        assert sum(h) == 3 * g - 2       # the genus of C
+        e = sum(h[a] * h[b] for a, b in pairs)
+        assert e == 2 * n * n and 3 * g - 3 == 3 * n
+        emit("W", f"n={n},abelprym", f"{e},{3 * n},{n * n - 3 * n}")
 
 
 # ---------------------------------------------------------------------------

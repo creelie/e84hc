@@ -6,7 +6,7 @@
 Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India
 d.bhattacharjee@erl-forschung.de · itsdeep@live.com · ORCID [0000-0003-0466-750X](https://orcid.org/0000-0003-0466-750X)
 
-This repository holds a 30-page paper in `amsart`, its LaTeX source with the figures as PNG, and the code that re-checks its finite steps in Python, Julia, C, Lean 4 and Macaulay2.
+This repository holds a 32-page paper in `amsart`, its LaTeX source with the figures as PNG, and the code that re-checks its finite steps in Python, Julia, C, Lean 4 and Macaulay2.
 
 ## The question
 
@@ -30,6 +30,7 @@ A rational Hodge class on a smooth complex projective variety is *algebraic* if 
 - *Theorem E.* A new proof, by twisted cohomology on the symmetric product, of Schoen's theorem that the Prym variety B of an étale cyclic triple cover carries algebraic Weil classes. Schoen's subvariety Y has class c·η^n + w, with c > 0 and w ≠ 0, at members with maximal Hodge group.
 - A transfer theorem for Weil classes along Prym varieties, and Lemma 5.10, which shows that E^k × Ē^k is of split Weil type.
 - *Proposition 5.15.* Prym varieties of cyclic triple covers, étale or branched, form families of dimension at most 3n. For n ≥ 4 they therefore miss the very general member of the split Weil family, which has dimension n².
+- *Proposition 5.16.* The Abel–Prym curve of an étale cyclic triple cover deforms with its Prym variety B only along the Prym locus, although its class stays algebraic on the whole split Weil family. When the curve is embedded and B has maximal Hodge group, it is therefore not semiregular for n ≥ 4.
 
 **Proved under a stated hypothesis**
 
@@ -53,7 +54,7 @@ For the split Weil eightfolds over Q(√−3), three constructions were tested:
 
 - *Prym varieties.* Proposition 5.15 shows they reach a family of dimension 12 inside one of dimension 16.
 - *Products of Weil fourfolds.* Spreading them with Theorem D needs a uniform degree bound, and the natural cycles have unbounded degree (H8, Section 16, in `sources/H8`).
-- *Schoen's subvariety Y.* It would have to deform in 4 directions beyond the Prym locus, which is Question 5.14.
+- *Schoen's subvariety Y.* It would have to deform in 4 directions beyond the Prym locus, which is Question 5.14. Proposition 5.16 tests this on the Abel–Prym curve, which is built from the same map as Y: the curve does not deform in those directions. That does not decide the question for Y, since the theta divisor of a Jacobian, built from the same Abel–Jacobi map as the rigid Abel–Jacobi curve, deforms with every principally polarized abelian variety.
 
 Closing any of these cases needs new algebraic cycles, and Section 7 of the paper says exactly what each would have to do.
 
@@ -92,8 +93,8 @@ STRICT=1 verification/shell/run_all.sh
 
 This needs python3, julia, a C99 compiler, lake (Lean 4) and Macaulay2. It runs the following:
 
-- `closure_checks` in Python, Julia and C. All three use exact arithmetic, and they must print the same 207 lines.
-- `lean/Closure.lean`, which uses Lean 4 core only, with no `sorry` and no `native_decide`. It prints the axioms of 12 main theorems, and each uses only the standard axioms.
+- `closure_checks` in Python, Julia and C. All three use exact arithmetic, and they must print the same 218 lines.
+- `lean/Closure.lean`, which uses Lean 4 core only, with no `sorry` and no `native_decide`. It prints the axioms of 14 main theorems, and each uses only the standard axioms.
 - The Macaulay2 scripts: Hodge numbers from the Jacobian ring, and Max Noether's theorem.
 
 `python3 verification/references/check_references.py` re-checks the bibliography online. No proof in the paper depends on a computer.

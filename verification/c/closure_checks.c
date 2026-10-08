@@ -404,6 +404,24 @@ static void check_weil(void)
         snprintf(val, sizeof val, "%d,%d,%d", bd, bq, br);
         emit_s("W", key, val);
     }
+    /* Proposition 5.16: sigma acts on V_j = H^0(K_X + jL) by kappa^j, so the
+       invariant part E of H^0(K_C) (x) (V_1 + V_2) is V_1(x)V_2 + V_2(x)V_1. */
+    int pa[6], pb[6], np = 0;
+    for (int a = 0; a <= 2; a++)
+        for (int b = 1; b <= 2; b++)
+            if ((a + b) % 3 == 0) { pa[np] = a; pb[np] = b; np++; }
+    CHECK(np == 2 && pa[0] == 1 && pb[0] == 2 && pa[1] == 2 && pb[1] == 1);
+    for (int n = 2; n <= 12; n++) {
+        int g = n + 1;
+        int h[3] = {g, g - 1, g - 1};    /* h^0(K_X + jL) by Riemann-Roch */
+        CHECK(h[0] + h[1] + h[2] == 3 * g - 2);  /* the genus of C */
+        int e = 0;
+        for (int i = 0; i < np; i++) e += h[pa[i]] * h[pb[i]];
+        CHECK(e == 2 * n * n && 3 * g - 3 == 3 * n);
+        snprintf(key, sizeof key, "n=%d,abelprym", n);
+        snprintf(val, sizeof val, "%d,%d,%d", e, 3 * n, n * n - 3 * n);
+        emit_s("W", key, val);
+    }
 }
 
 /* --------------------------------------------- L: the logical skeleton */
