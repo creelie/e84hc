@@ -1,0 +1,5 @@
+orlov_fast == orlov at n=2 d=3: True
+orlov_fast == orlov at n=3 d=2: True
+n=4 d=1: four basis pairs: ch(E) not flat, ch(E)e^{ell/2} flat, mu_{m+2}=-mu_m/(4d): True  (0.8s)
+n=4 d=7: four basis pairs: ch(E) not flat, ch(E)e^{ell/2} flat, mu_{m+2}=-mu_m/(4d): True  (1.4s)
+n=4 d=21: four basis pairs: ch(E) not flat, ch(E)e^{ell/2} flat, mu_{m+2}=-mu_m/(4d): True  (2.1s)

@@ -1,0 +1,50 @@
+Least -chi of an integral class of S(0,q) whose Orlov product kappa(v,v) has a nonzero F-Weil part (Omega(v) != 0), for the sixteen cubic fields of item (LVII) and q in {1, k+alpha, k+1+alpha}; lattice minimum; imaginary quadratic subfield of F.
+  Q(zeta_7)^+  q = 1           Nm(q) = 1    min -chi = 32     least -chi with Omega != 0: 296   (8 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '1', '-3', '-1', '0', '0', '0', '2']  K = Q(sqrt(-1))
+  Q(zeta_7)^+  q = 2+1 a       Nm(q) = 1    min -chi = 32     least -chi with Omega != 0: 296   (8 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '2', '-2', '-2', '0', '0', '0', '5']  K = Q(sqrt(-1))
+  Q(zeta_7)^+  q = 3+1 a       Nm(q) = 13   min -chi = 192    least -chi with Omega != 0: 192   (1 classes up to sign)  e.g. (c0,f,g,c3) = ['-1', '0', '0', '0', '2', '0', '-1', '0']  K = none
+  Q(zeta_9)^+  q = 1           Nm(q) = 1    min -chi = 32     least -chi with Omega != 0: 488   (8 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '-1', '-3', '0', '0', '0', '0', '-2']  K = Q(sqrt(-1))
+  Q(zeta_9)^+  q = 2+1 a       Nm(q) = 1    min -chi = 32     least -chi with Omega != 0: 488   (8 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '4', '-2', '-2', '0', '0', '0', '-7']  K = Q(sqrt(-1))
+  Q(zeta_9)^+  q = 3+1 a       Nm(q) = 17   min -chi = 256    least -chi with Omega != 0: 256   (1 classes up to sign)  e.g. (c0,f,g,c3) = ['1', '0', '0', '0', '0', '-1', '0', '0']  K = none
+  disc 469     q = 1           Nm(q) = 1    min -chi = 32     least -chi with Omega != 0: 1880  (2 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '0', '0', '0', '17', '10', '-4', '0']  K = Q(sqrt(-1))
+  disc 469     q = 2+1 a       Nm(q) = 2    min -chi = 616    least -chi with Omega != 0: 616   (1 classes up to sign)  e.g. (c0,f,g,c3) = ['-2', '0', '0', '0', '5', '-1', '0', '0']  K = none
+  disc 469     q = 3+1 a       Nm(q) = 19   min -chi = 3144   least -chi with Omega != 0: 3144  (1 classes up to sign)  e.g. (c0,f,g,c3) = ['-2', '0', '0', '0', '7', '-1', '0', '0']  K = none
+  disc 1509    q = 1           Nm(q) = 1    min -chi = 32     least -chi with Omega != 0: 3872  (2 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '18', '2', '-3', '0', '0', '0', '11']  K = Q(sqrt(-1))
+  disc 1509    q = 3+1 a       Nm(q) = 11   min -chi = 2064   least -chi with Omega != 0: 2064  (1 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '-4', '1', '1', '0', '0', '0', '-11']  K = none
+  disc 1509    q = 4+1 a       Nm(q) = 48   min -chi = 4608   least -chi with Omega != 0: 6504  (1 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '2', '2', '0', '0', '0', '0', '3']  K = Q(sqrt(-3))
+  disc 1229    q = 1           Nm(q) = 1    min -chi = 32     least -chi with Omega != 0: 3872  (2 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '18', '2', '-3', '0', '0', '0', '11']  K = Q(sqrt(-1))
+  disc 1229    q = 3+1 a       Nm(q) = 9    min -chi = 1264   least -chi with Omega != 0: 1264  (1 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '4', '-1', '-1', '0', '0', '0', '9']  K = none
+  disc 1229    q = 4+1 a       Nm(q) = 46   min -chi = 6768   least -chi with Omega != 0: 6768  (1 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '-9', '0', '1', '0', '0', '0', '3']  K = none
+  disc 321     q = 1           Nm(q) = 1    min -chi = 32     least -chi with Omega != 0: 1336  (2 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '15', '9', '-4', '0', '0', '0', '1']  K = Q(sqrt(-1))
+  disc 321     q = 2+1 a       Nm(q) = 3    min -chi = 288    least -chi with Omega != 0: 728   (1 classes up to sign)  e.g. (c0,f,g,c3) = ['-2', '0', '0', '0', '5', '-1', '0', '0']  K = Q(sqrt(-3))
+  disc 321     q = 3+1 a       Nm(q) = 21   min -chi = 1968   least -chi with Omega != 0: 1968  (1 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '3', '1', '0', '0', '0', '0', '6']  K = none
+  disc 761     q = 1           Nm(q) = 1    min -chi = 32     least -chi with Omega != 0: 2896  (4 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '15', '2', '-3', '0', '0', '0', '10']  K = Q(sqrt(-1))
+  disc 761     q = 2+1 a       Nm(q) = 1    min -chi = 616    least -chi with Omega != 0: 616   (2 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '-10', '-3', '1', '0', '0', '0', '2']  K = none
+  disc 761     q = 3+1 a       Nm(q) = 19   min -chi = 2984   least -chi with Omega != 0: 2984  (1 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '0', '2', '0', '0', '0', '0', '-3']  K = none
+  disc 985     q = 1           Nm(q) = 1    min -chi = 32     least -chi with Omega != 0: 2896  (4 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '-15', '-2', '3', '0', '0', '0', '-10']  K = Q(sqrt(-1))
+  disc 985     q = 3+1 a       Nm(q) = 17   min -chi = 3048   least -chi with Omega != 0: 3048  (1 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '3', '1', '-1', '0', '0', '0', '-9']  K = none
+  disc 985     q = 4+1 a       Nm(q) = 55   min -chi = 7080   least -chi with Omega != 0: 7080  (1 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '-7', '0', '1', '0', '0', '0', '-5']  K = none
+  disc 993     q = 1           Nm(q) = 1    min -chi = 32     least -chi with Omega != 0: 2896  (4 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '15', '2', '-3', '0', '0', '0', '10']  K = Q(sqrt(-1))
+  disc 993     q = 3+1 a       Nm(q) = 15   min -chi = 3000   least -chi with Omega != 0: 3000  (1 classes up to sign)  e.g. (c0,f,g,c3) = ['-2', '0', '0', '0', '7', '-1', '0', '0']  K = none
+  disc 993     q = 4+1 a       Nm(q) = 53   min -chi = 5336   least -chi with Omega != 0: 5336  (1 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '7', '0', '-1', '0', '0', '0', '3']  K = none
+  disc 785     q = 1           Nm(q) = 1    min -chi = 32     least -chi with Omega != 0: 2896  (4 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '15', '2', '-3', '0', '0', '0', '10']  K = Q(sqrt(-1))
+  disc 785     q = 3+1 a       Nm(q) = 13   min -chi = 2624   least -chi with Omega != 0: 2624  (1 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '-2', '1', '1', '0', '0', '0', '-13']  K = none
+  disc 785     q = 4+1 a       Nm(q) = 51   min -chi = 3848   least -chi with Omega != 0: 3848  (1 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '-7', '0', '1', '0', '0', '0', '-1']  K = none
+  disc 229     q = 1           Nm(q) = 1    min -chi = 32     least -chi with Omega != 0: 1080  (2 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '13', '8', '-4', '0', '0', '0', '2']  K = Q(sqrt(-1))
+  disc 229     q = 2+1 a       Nm(q) = 4    min -chi = 840    least -chi with Omega != 0: 840   (2 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '0', '0', '-1', '0', '0', '0', '3']  K = none
+  disc 229     q = 3+1 a       Nm(q) = 23   min -chi = 1672   least -chi with Omega != 0: 1672  (1 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '2', '1', '-1', '0', '0', '0', '10']  K = none
+  disc 257     q = 1           Nm(q) = 1    min -chi = 32     least -chi with Omega != 0: 1048  (2 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '7', '-3', '-2', '0', '0', '0', '1']  K = Q(sqrt(-1))
+  disc 257     q = 2+1 a       Nm(q) = 1    min -chi = 352    least -chi with Omega != 0: 352   (2 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '6', '-1', '-2', '0', '0', '0', '-5']  K = none
+  disc 257     q = 3+1 a       Nm(q) = 21   min -chi = 520    least -chi with Omega != 0: 520   (1 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '-1', '0', '0', '0', '0', '0', '-6']  K = none
+  disc 697     q = 1           Nm(q) = 1    min -chi = 32     least -chi with Omega != 0: 2808  (2 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '14', '7', '-3', '0', '0', '0', '-1']  K = Q(sqrt(-1))
+  disc 697     q = 3+1 a       Nm(q) = 11   min -chi = 1688   least -chi with Omega != 0: 1688  (1 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '-5', '-1', '1', '0', '0', '0', '10']  K = none
+  disc 697     q = 4+1 a       Nm(q) = 41   min -chi = 4264   least -chi with Omega != 0: 4264  (1 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '-3', '-2', '0', '0', '0', '0', '0']  K = none
+  disc 1129    q = 1           Nm(q) = 1    min -chi = 32     least -chi with Omega != 0: 3536  (4 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '-17', '0', '3', '0', '0', '0', '-11']  K = Q(sqrt(-1))
+  disc 1129    q = 3+1 a       Nm(q) = 9    min -chi = 1944   least -chi with Omega != 0: 1944  (1 classes up to sign)  e.g. (c0,f,g,c3) = ['-2', '0', '0', '0', '6', '-1', '0', '0']  K = none
+  disc 1129    q = 4+1 a       Nm(q) = 39   min -chi = 5240   least -chi with Omega != 0: 5240  (1 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '8', '1', '-1', '0', '0', '0', '4']  K = none
+  disc 1345    q = 1           Nm(q) = 1    min -chi = 32     least -chi with Omega != 0: 3536  (4 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '-17', '0', '3', '0', '0', '0', '-11']  K = Q(sqrt(-1))
+  disc 1345    q = 3+1 a       Nm(q) = 7    min -chi = 1832   least -chi with Omega != 0: 1832  (1 classes up to sign)  e.g. (c0,f,g,c3) = ['-2', '0', '0', '0', '6', '-1', '0', '0']  K = none
+  disc 1345    q = 4+1 a       Nm(q) = 37   min -chi = 4152   least -chi with Omega != 0: 4152  (1 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '3', '-1', '-1', '0', '0', '0', '-11']  K = none
+  disc 473     q = 1           Nm(q) = 1    min -chi = 32     least -chi with Omega != 0: 1808  (4 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '12', '0', '-3', '0', '0', '0', '8']  K = Q(sqrt(-1))
+  disc 473     q = 3+1 a       Nm(q) = 13   min -chi = 1208   least -chi with Omega != 0: 1208  (1 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '1', '-1', '-1', '0', '0', '0', '-2']  K = none
+  disc 473     q = 4+1 a       Nm(q) = 45   min -chi = 2288   least -chi with Omega != 0: 2288  (1 classes up to sign)  e.g. (c0,f,g,c3) = ['0', '-1', '-1', '0', '0', '0', '0', '-13']  K = none
+  [53.2s]

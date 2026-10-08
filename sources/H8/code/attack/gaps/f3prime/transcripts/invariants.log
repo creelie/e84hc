@@ -1,0 +1,60 @@
+(1) SO(t) versus O(t) invariants in V^{(x)j}
+  t=3  (j, SO, O, SO-O): [(0, 1, 1, 0), (1, 0, 0, 0), (2, 1, 1, 0), (3, 1, 0, 1), (4, 3, 3, 0), (5, 6, 0, 6)]
+[PASS] t=3: no non-O(t) invariant below j=t, exactly one at j=t
+  t=4  (j, SO, O, SO-O): [(0, 1, 1, 0), (1, 0, 0, 0), (2, 1, 1, 0), (3, 0, 0, 0), (4, 4, 3, 1), (5, 0, 0, 0), (6, 25, 15, 10)]
+[PASS] t=4: no non-O(t) invariant below j=t, exactly one at j=t
+  t=5  (j, SO, O, SO-O): [(0, 1, 1, 0), (1, 0, 0, 0), (2, 1, 1, 0), (3, 0, 0, 0), (4, 3, 3, 0), (5, 1, 0, 1), (6, 15, 15, 0), (7, 15, 0, 15)]
+[PASS] t=5: no non-O(t) invariant below j=t, exactly one at j=t
+  t=6  (j, SO, O, SO-O): [(0, 1, 1, 0), (1, 0, 0, 0), (2, 1, 1, 0), (3, 0, 0, 0), (4, 3, 3, 0), (5, 0, 0, 0), (6, 16, 15, 1), (7, 0, 0, 0), (8, 126, 105, 21)]
+[PASS] t=6: no non-O(t) invariant below j=t, exactly one at j=t
+  t=7  (j, SO, O, SO-O): [(0, 1, 1, 0), (1, 0, 0, 0), (2, 1, 1, 0), (3, 0, 0, 0), (4, 3, 3, 0), (5, 0, 0, 0), (6, 15, 15, 0), (7, 1, 0, 1), (8, 105, 105, 0), (9, 28, 0, 28)]
+[PASS] t=7: no non-O(t) invariant below j=t, exactly one at j=t
+  t=8  (j, SO, O, SO-O): [(0, 1, 1, 0), (1, 0, 0, 0), (2, 1, 1, 0), (3, 0, 0, 0), (4, 3, 3, 0), (5, 0, 0, 0), (6, 15, 15, 0), (7, 0, 0, 0), (8, 106, 105, 1), (9, 0, 0, 0), (10, 981, 945, 36)]
+[PASS] t=8: no non-O(t) invariant below j=t, exactly one at j=t
+
+(2) explicit invariants, SO(t) for t = 3,4,5
+[PASS] t=3: the simple root vectors lie in so(q)
+[PASS] t=3: det tensor is so(q)-invariant and odd under the reflection e0<->f0
+[PASS] t=3 j=0: explicit dim 1 = Weyl count 1; reflection-odd part 0
+[PASS] t=3 j=1: explicit dim 0 = Weyl count 0; reflection-odd part 0
+[PASS] t=3 j=2: explicit dim 1 = Weyl count 1; reflection-odd part 0
+[PASS] t=3 j=3: explicit dim 1 = Weyl count 1; reflection-odd part 1
+[PASS] t=3 j=4: explicit dim 3 = Weyl count 3; reflection-odd part 0
+[PASS] t=3 j=5: explicit dim 6 = Weyl count 6; reflection-odd part 6
+[PASS] t=4: the simple root vectors lie in so(q)
+[PASS] t=4: det tensor is so(q)-invariant and odd under the reflection e0<->f0
+[PASS] t=4 j=0: explicit dim 1 = Weyl count 1; reflection-odd part 0
+[PASS] t=4 j=1: explicit dim 0 = Weyl count 0; reflection-odd part 0
+[PASS] t=4 j=2: explicit dim 1 = Weyl count 1; reflection-odd part 0
+[PASS] t=4 j=3: explicit dim 0 = Weyl count 0; reflection-odd part 0
+[PASS] t=4 j=4: explicit dim 4 = Weyl count 4; reflection-odd part 1
+[PASS] t=4 j=5: explicit dim 0 = Weyl count 0; reflection-odd part 0
+[PASS] t=4 j=6: explicit dim 25 = Weyl count 25; reflection-odd part 10
+[PASS] t=5: the simple root vectors lie in so(q)
+[PASS] t=5: det tensor is so(q)-invariant and odd under the reflection e0<->f0
+[PASS] t=5 j=0: explicit dim 1 = Weyl count 1; reflection-odd part 0
+[PASS] t=5 j=1: explicit dim 0 = Weyl count 0; reflection-odd part 0
+[PASS] t=5 j=2: explicit dim 1 = Weyl count 1; reflection-odd part 0
+[PASS] t=5 j=3: explicit dim 0 = Weyl count 0; reflection-odd part 0
+[PASS] t=5 j=4: explicit dim 3 = Weyl count 3; reflection-odd part 0
+[PASS] t=5 j=5: explicit dim 1 = Weyl count 1; reflection-odd part 1
+[PASS] t=5 j=6: explicit dim 15 = Weyl count 15; reflection-odd part 0
+
+(3) Sp(2h): the pairing tensors span the invariants (no det-type class)
+[PASS] h=2: the simple root vectors lie in sp(omega)
+[PASS] h=2 j=0: 1 invariants, pairing tensors invariant and of rank 1
+[PASS] h=2 j=1: no invariants in odd degree
+[PASS] h=2 j=2: 1 invariants, pairing tensors invariant and of rank 1
+[PASS] h=2 j=3: no invariants in odd degree
+[PASS] h=2 j=4: 3 invariants, pairing tensors invariant and of rank 3
+[PASS] h=2 j=5: no invariants in odd degree
+[PASS] h=2 j=6: 14 invariants, pairing tensors invariant and of rank 14
+[PASS] h=3: the simple root vectors lie in sp(omega)
+[PASS] h=3 j=0: 1 invariants, pairing tensors invariant and of rank 1
+[PASS] h=3 j=1: no invariants in odd degree
+[PASS] h=3 j=2: 1 invariants, pairing tensors invariant and of rank 1
+[PASS] h=3 j=3: no invariants in odd degree
+[PASS] h=3 j=4: 3 invariants, pairing tensors invariant and of rank 3
+[PASS] h=3 j=5: no invariants in odd degree
+[PASS] h=3 j=6: 15 invariants, pairing tensors invariant and of rank 15
+48 checks passed, 0 failed

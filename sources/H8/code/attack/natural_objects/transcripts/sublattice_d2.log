@@ -1,0 +1,4 @@
+d=2 H=8: 88 subtori; Lambda_sub has rank 9 and index 2612736000 in Z^9 (C_k-coordinates)
+w1 = [16, 0, -8, 0, 4, 0, -2, 0, 1]  w2 = [0, 8, 0, -4, 0, 2, 0, -1, 0]
+Lambda_sub cap W = Z-span of x w1 + y w2 for (x,y) in [['20', '0'], ['0', '140']]
+   i.e. in terms of W1 = 24 w1, W2 = 24 w2: [['5/6', '0'], ['0', '35/6']]

@@ -1,0 +1,16 @@
+SO(3) on V^2, multidegree (1, 1): invariants 1, pairing monomials span 1  -> r<t: pairings suffice  OK
+SO(3) on V^2, multidegree (2, 2): invariants 2, pairing monomials span 2  -> r<t: pairings suffice  OK
+SO(3) on V^2, multidegree (3, 1): invariants 1, pairing monomials span 1  -> r<t: pairings suffice  OK
+SO(3) on V^2, multidegree (4, 2): invariants 2, pairing monomials span 2  -> r<t: pairings suffice  OK
+SO(3) on V^3, multidegree (1, 1, 1): invariants 1, pairing monomials span 0, pairings+dets span 1  -> r>=t  OK
+SO(3) on V^3, multidegree (2, 1, 1): invariants 2, pairing monomials span 2, pairings+dets span 2  -> r>=t  OK
+SO(3) on V^3, multidegree (2, 2, 2): invariants 5, pairing monomials span 5, pairings+dets span 5  -> r>=t  OK
+SO(4) on V^3, multidegree (1, 1, 2): invariants 2, pairing monomials span 2  -> r<t: pairings suffice  OK
+SO(4) on V^3, multidegree (2, 2, 2): invariants 5, pairing monomials span 5  -> r<t: pairings suffice  OK
+SO(4) on V^4, multidegree (1, 1, 1, 1): invariants 4, pairing monomials span 3, pairings+dets span 4  -> r>=t  OK
+SO(5) on V^4, multidegree (1, 1, 1, 1): invariants 3, pairing monomials span 3  -> r<t: pairings suffice  OK
+GL(2) on (W+W*)^2, degrees (1, 1, 1, 1): invariants 2, pairing monomials span 2  OK
+GL(2) on (W+W*)^2, degrees (2, 1, 1, 2): invariants 2, pairing monomials span 2  OK
+GL(3) on (W+W*)^2, degrees (1, 1, 1, 1): invariants 2, pairing monomials span 2  OK
+GL(2) on (W+W*)^3, degrees (1, 1, 1, 1, 1, 1): invariants 5, pairing monomials span 5  OK
+ALL OK

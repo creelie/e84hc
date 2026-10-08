@@ -1,0 +1,5 @@
+rank of the p-independent part of the contraction: 68
+by summand: {'z': 28, 'v': 40, 'pi': 0}
+  [PASS] r(gamma) >= 68 for every p (p-independent lower bound)
+
+1 checks passed, 0 failed

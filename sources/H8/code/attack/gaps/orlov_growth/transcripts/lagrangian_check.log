@@ -1,0 +1,9 @@
+  n=1: e^{+st} [x] e^{+st}  ->  proportional to ['exp(+s/(2d) eta)']
+  n=1: e^{+st} [x] e^{-st}  ->  proportional to ['alpha(+s)']
+  n=1: e^{-st} [x] e^{+st}  ->  proportional to ['alpha(-s)']
+  n=1: e^{-st} [x] e^{-st}  ->  proportional to ['exp(-s/(2d) eta)']
+  n=2: e^{+st} [x] e^{+st}  ->  proportional to ['exp(+s/(2d) eta)']
+  n=2: e^{+st} [x] e^{-st}  ->  proportional to ['alpha(+s)']
+  n=2: e^{-st} [x] e^{+st}  ->  proportional to ['alpha(-s)']
+  n=2: e^{-st} [x] e^{-st}  ->  proportional to ['exp(-s/(2d) eta)']
+ALL four images are pure spinors from {alpha(+-s), exp(+-s eta/2d)}: True

@@ -1,0 +1,750 @@
+\section{Consequences of recent preprints}\label{sec:preprints}
+
+Seven preprints released by OpenAI in September and October 2026
+\cite{OAI26a,OAI26b,OAI26c,OAI26d,OAI26e,OAI26f,OAI26g} announce cases of the
+Hodge conjecture that bear on (F2) and \textup{(F3$'$)}. They have not been
+refereed, and we do not check their proofs here. Every statement of this
+section that cites one of them is conditional on the theorem cited, and no
+result outside this section depends on it. What we add are the deductions,
+with complete proofs: a product argument that lowers the dimension of a Weil
+class (\Cref{prop:stabilise}); the Hodge conjecture on every product of
+powers of a K3 surface and of its Kuga--Satake variety, through a spanning
+lemma for Clifford algebras (\Cref{lem:cliffordspan}, \Cref{thm:kspowers});
+the transfer to fourfolds of K3$^{[2]}$ type whose transcendental part is
+that of a K3 surface, which happens exactly when the N\'eron--Severi space
+is isotropic or represents $-2$ (\Cref{prop:k3twosmall}); and the effect of the
+preprints on the statements of the earlier sections. The theorems we use are
+the following.
+\begin{enumerate}[label=\textup{(P\arabic*)},leftmargin=2.8em,itemsep=2pt]
+\item \cite[Theorem~1.1]{OAI26e}: the Hodge conjecture holds in every
+  codimension on every complex abelian variety of CM type.
+\item \cite[Theorem~1.1]{OAI26d}: for every imaginary quadratic field $K$ the
+  Weil classes are algebraic on every abelian eightfold of
+  $(K,-1,4)$-Weil type whose hermitian form has a totally isotropic
+  $K$-subspace of dimension four.
+\item \cite[Theorem~1.1]{OAI26c}: for every projective K3 surface $S$ the
+  Kuga--Satake class of $S$ is algebraic, in the sense of
+  \Cref{ssec:mumford}, for every choice of the data of
+  \Cref{def:ksvariety} and \Cref{prop:ksembed}.%
+\footnote{In \cite{OAI26c} the map $\Psi$ of \Cref{prop:ksembed} is stated
+with values in $H^{1}(A)\otimes H^{1}(A)\subset H^{2}(A\times A,\QQ)$,
+$A=\mathrm{KS}(T(S)_{\QQ})$, through the identification of
+$\End H^{1}(A,\QQ)$ with $H^{1}(A)\otimes H^{1}(A)(1)$ given by a
+polarisation. For the class $\theta$ of the polarisation and $g=\dim A$, the
+pairing $(x,y)\mapsto\int_{A}x\,y\,\theta^{g-1}$ on $H^{1}(A,\QQ)$ is a
+nonzero multiple of the form dual to $\theta$, and cup product with
+$\mathrm{pr}_{1}^{*}\theta^{g-1}$ carries $H^{1}\otimes H^{1}$ isomorphically
+onto the K\"unneth component $H^{2g-1}\otimes H^{1}$ that represents
+$\End H^{1}(A,\QQ)$; both maps and the inverse of the second are induced by
+algebraic cycles \cite[\S2]{Kle68}. So the two formulations differ by an
+algebraic correspondence and a nonzero factor.}
+\item \cite[Theorem~1.1]{OAI26f}: the Hodge conjecture holds in every
+  codimension on every product of projective K3 surfaces. For the powers of
+  one surface this also follows from (P3) and the criterion
+  \cite[Theorem~1.1]{OAI26b}.
+\item \cite[Theorems~1.1 and~1.2]{OAI26a}: for a connected abelian cover of a
+  curve, the Hodge conjecture holds on every power of the covering curve at
+  every parameter of its full marked family outside a countable union of
+  proper closed analytic tensor Hodge loci; and for complete intersections
+  of $c\le2$ diagonal hypersurfaces of a common degree $d\ge2$, it holds on
+  every power of the very general member of the smooth family, and for $c=1$
+  on every power of every smooth member $\sum_{i}a_{i}x_{i}^{d}=0$, in every
+  dimension.
+\end{enumerate}
+The preprint \cite{OAI26g} proves the Hodge conjecture on every power of an
+abelian sixfold of split Weil type and of an abelian variety of dimension at
+most five with an action of an imaginary quadratic field; we do not use it.
+
+\subsection{Weil classes in dimensions six and eight}\label{ssec:weilsix}
+
+The Weil class is multiplicative (\Cref{thm:weilmult}), and an abelian
+surface of Weil type has its Weil classes in degree two, where they are
+divisor classes. Multiplying by such a surface therefore moves a Weil class
+up by one dimension, and an algebraic representative upstairs can be cut
+back down. The argument is Schoen's \cite[Proposition~10]{Sch98}, by which
+Markman passes from the split sixfolds to the fourfolds; we give it in the
+coordinates of \Cref{ssec:products}.
+
+\begin{proposition}[Lowering the dimension]\label{prop:stabilise}
+Let $K=\QQ(\sqrt{-d})$, let $n\ge1$, let $A$ be an abelian $2n$-fold of
+$(K,-1,n)$-Weil type with discriminant $\delta$, and let $B$ be an abelian
+surface of $(K,-1,1)$-Weil type with discriminant $\delta$, for instance the
+quaternionic model of \Cref{thm:quatweil} with $n=1$ and $b$ representing
+$\delta$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item $A\times B$ is of $(K,-1,n+1)$-Weil type with trivial discriminant,
+  and its hermitian form is an orthogonal sum of $n+1$ hyperbolic planes, so
+  it has a totally isotropic $K$-subspace of dimension $n+1$.
+\item If the Weil classes of $A\times B$ are algebraic, so are those of $A$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) By \Cref{lem:products}, $A\times B$ is of $(K,-1,n+1)$-Weil type and its
+discriminant is $\delta\cdot\delta=\delta^{2}$, the class of a square, which
+is a norm, so it is trivial. The hyperbolic plane, with matrix
+$\left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)$, has signature
+$(1,1)$ and $(-1)^{1}\det=1$, so an orthogonal sum of $n+1$ of them has
+signature $(n+1,n+1)$ and trivial discriminant; by the classification
+recalled in \Cref{def:disc} the hermitian form of $A\times B$ is isometric
+to it, and the first basis vectors of the $n+1$ planes span a totally
+isotropic subspace of dimension $n+1$.
+
+(ii) By \Cref{thm:weilmult},
+$\omega(A\times B)=\mathrm{pr}_{A}^{*}\omega(A)\cup\mathrm{pr}_{B}^{*}\omega(B)$
+for the $K$-valued Weil classes. The class $\omega_{1}(B)$ is nonzero, being
+one of two generators of the Weil line of $B$, and it is a divisor class by
+\Cref{lem:basecase}. By the Hodge index theorem the intersection form on
+$\NS(B)_{\QQ}$ is nondegenerate, so there is a divisor class $\beta$ on $B$
+with $c_{1}=\int_{B}\omega_{1}(B)\,\beta\ne0$; put
+$c_{2}=\int_{B}\omega_{2}(B)\,\beta\in\QQ$. The map
+$p(\xi)=\mathrm{pr}_{A*}\bigl(\xi\cup\mathrm{pr}_{B}^{*}\beta\bigr)$ from
+$H^{*}(A\times B,\QQ)$ to $H^{*}(A,\QQ)$ is induced by an algebraic cycle,
+the graph of $\mathrm{pr}_{A}$ intersected with the pull-back of a divisor
+representing $\beta$, and by the projection formula
+$p(\mathrm{pr}_{A}^{*}\alpha\cup\mathrm{pr}_{B}^{*}\gamma)=\alpha\int_{B}
+\gamma\beta$. Applied to \eqref{eq:weilmult} with $A_{1}=A$ and $A_{2}=B$ it
+gives
+\[
+  p\bigl(\omega_{1}(A\times B)\bigr)=c_{1}\,\omega_{1}(A)-d\,c_{2}\,\omega_{2}(A),
+  \qquad
+  p\bigl(\omega_{2}(A\times B)\bigr)=c_{2}\,\omega_{1}(A)+c_{1}\,\omega_{2}(A).
+\]
+The determinant of this system is $c_{1}^{2}+d\,c_{2}^{2}>0$, so
+$\omega_{1}(A)$ and $\omega_{2}(A)$ are rational combinations of the two
+left-hand sides, which are algebraic when the Weil classes of $A\times B$
+are.
+\end{proof}
+
+\begin{theorem}[Weil classes in dimensions six and eight]\label{thm:weilsix}
+Assume \textup{(P2)}, and let $K$ be an imaginary quadratic field.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item The Weil classes are algebraic on every abelian sixfold of
+  $(K,-1,3)$-Weil type, for every discriminant, and on every abelian
+  eightfold of $(K,-1,4)$-Weil type with trivial discriminant.
+\item For $n=3$ and every $\delta$, and for $n=4$ and $\delta$ trivial, the
+  algebraic locus of \Cref{thm:main} is the whole domain,
+  $\Sigma_{K}=\cD_{K}$, and the Hodge conjecture holds for the very general
+  member of the family.
+\item In \Cref{thm:vgvandermonde}, the Hodge conjecture holds on
+  $X_{6,6}(\lambda)$, and on $X_{d,8}(\lambda)$ for $d\in\{3,4\}$, for every
+  $N$ and every $\lambda$ outside a countable union of proper Zariski closed
+  subsets of $U$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) An eightfold of trivial discriminant has a hermitian form that is a sum
+of four hyperbolic planes, as in the proof of \Cref{prop:stabilise}(i), so
+\textup{(P2)} applies to it. For a sixfold $A$ of discriminant $\delta$,
+\Cref{prop:stabilise} with $n=3$ gives an eightfold $A\times B$ to which
+\textup{(P2)} applies, and part (ii) of the proposition brings the Weil
+classes down to $A$.
+
+(ii) By (i) the Weil classes are algebraic at every member, and
+\Cref{thm:main}(iv) gives the Hodge conjecture for the very general member.
+
+(iii) In the proof of \Cref{thm:vgvandermonde}(iii) every Hodge class of
+degree $r$ is a sum of images of powers of polarisations and of Weil classes
+of abelian $r$-folds of Weil type for $\QQ(\zeta_{m})$, $m\in\{3,4,6\}$
+(\Cref{thm:vgvandermonde}(i), (ii)); for $r=6$ these are algebraic by (i)
+whatever the discriminant, and for $r=8$ and $d\in\{3,4\}$ the discriminant
+is trivial by \Cref{thm:vgvandermonde}(ii), so (i) applies again.
+\end{proof}
+
+For $n=4$ and nontrivial discriminant, \Cref{prop:stabilise} reduces the
+Weil classes to the split tenfolds, which no result available to us
+reaches.
+
+\subsection{Kuga--Satake varieties}\label{ssec:kspowers}
+
+The second deduction is a statement about Clifford algebras. Keep the
+notation of \Cref{def:clifford} for a nondegenerate quadratic space $(T,q)$
+over $\QQ$ of dimension $t\ge1$, so that $v^{2}=q(v)$ in $C=C(T,q)$.
+
+\begin{lemma}[Two-sided multiplications]\label{lem:cliffordspan}
+The $\QQ$-linear endomorphisms of $C^{+}$ are spanned by the maps
+$x\mapsto a\,x\,b$ with $a,b\in C$ homogeneous of the same parity.
+\end{lemma}
+
+\begin{proof}
+Each such map preserves $C^{+}$ by \Cref{lem:cliffdim}, and it suffices to
+prove the statement after extending scalars to $\bar{\QQ}$, since the maps
+are defined over $\QQ$. Over $\bar{\QQ}$ choose an orthogonal basis
+$f_{1},\dots,f_{t}$ of $T$ with $q(f_{i})=1$, and write $f_{R}$ for the
+increasing products of \Cref{lem:cliffdim}. The elements $\pm f_{R}$ form a
+group $\Gamma$ of order $2^{t+1}$, since $f_{i}^{2}=1$ and
+$f_{i}f_{j}=-f_{j}f_{i}$ for $i\ne j$, and the pairs $(g,h)\in\Gamma^{2}$ of
+the same parity form a group $\Gamma_{2}$ of order $2^{2t+1}$, acting on
+$C^{+}_{\bar{\QQ}}$ by $x\mapsto gxh^{-1}$. Its character $\chi$ is
+computed on the basis $f_{R}$, $|R|$ even. The element
+$(\pm f_{S},\pm f_{U})$ sends $f_{R}$ to a multiple of
+$f_{S\triangle R\triangle U}$, so it has trace zero unless $S=U$. For $S=U$,
+moving each factor of $f_{S}$ past $f_{R}$ gives
+$f_{S}f_{R}f_{S}^{-1}=(-1)^{|S||R|-|S\cap R|}f_{R}=(-1)^{|S\cap R|}f_{R}$ for
+$|R|$ even, and
+\[
+  \sum_{|R|\ \mathrm{even}}(-1)^{|S\cap R|}
+  =\tfrac12\sum_{R}\bigl(1+(-1)^{|R|}\bigr)(-1)^{|S\cap R|}
+  =\tfrac12\Bigl(\sum_{R}(-1)^{|S\cap R|}+\sum_{R}(-1)^{|R\setminus S|}\Bigr),
+\]
+which is $2^{t-1}$ for $S=\emptyset$ and for $S=\{1,\dots,t\}$ and zero
+otherwise. So $|\chi|^{2}=2^{2t-2}$ on the eight elements
+$(\pm f_{S},\pm f_{S})$ with $S\in\{\emptyset,\{1,\dots,t\}\}$ and zero
+elsewhere, and
+$\langle\chi,\chi\rangle=8\cdot2^{2t-2}/2^{2t+1}=1$. The representation is
+therefore irreducible, and by Burnside's theorem the operators of
+$\Gamma_{2}$ span $\End(C^{+}_{\bar{\QQ}})$.
+\end{proof}
+
+For the rest of this subsection let $S$ be a projective K3 surface,
+$T=T(S)_{\QQ}$ with the intersection form $q$, $t=\dim T$,
+$W=C^{+}(T)=H^{1}(A,\QQ)$ for $A=\mathrm{KS}(T)$ as in \Cref{def:ksvariety},
+$v_{0}\in T$ with $q(v_{0})\ne0$, and $\Psi$ the embedding of
+\Cref{prop:ksembed}. Let $\pi_{1}$ be the K\"unneth projector of $A$ onto
+$H^{1}$, which is algebraic \cite[\S2]{Kle68}. For a smooth projective variety
+$X$ and a subspace $H\subseteq H^{*}(X,\QQ)$ we say that a linear map
+$f\colon H\to\End_{\QQ}(W)$ is \emph{induced} by an algebraic cycle $Z$ on
+$X\times A\times A$ if for every $y\in H$ the correspondence
+$\pi_{1}\circ Z_{*}(y)\circ\pi_{1}$, where
+$Z_{*}(y)=\mathrm{pr}_{23*}(Z\cdot\mathrm{pr}_{1}^{*}y)$, acts on $H^{1}(A,\QQ)$
+as $f(y)$ and by zero on the other degrees. By (P3) and the footnote to it,
+$\Psi$ is induced on $T\subseteq H^{2}(S,\QQ)$ by an algebraic cycle.
+
+\begin{lemma}[The Kuga--Satake class generates]\label{lem:ksgenerates}
+Assume that $\Psi$ is induced on $T$ by an algebraic cycle. For $j\ge0$ and
+$b\in C^{+}$ let $\Phi_{j,b}\colon T^{\otimes j}\to\End_{\QQ}(W)$ be
+\[
+  \Phi_{j,b}(v_{1}\otimes\dots\otimes v_{j})
+  =\Psi(v_{1})\circ\dots\circ\Psi(v_{j})\circ R_{b},
+\]
+where $R_{b}$ is right multiplication by $b$ and $T^{\otimes j}$ is the
+K\"unneth component of $H^{2j}(S^{j},\QQ)$. Then $\Phi_{j,b}$ is induced by an
+algebraic cycle on $S^{j}\times A\times A$, and the images of the
+$\Phi_{j,b}$, $0\le j\le t$, $b\in C^{+}$, span $\End_{\QQ}(W)$.
+\end{lemma}
+
+\begin{proof}
+The complex structure of $W$ is left multiplication by an element of
+$C^{+}\otimes\RR$ (\Cref{lem:cliffJ}), which commutes with $R_{b}$; so $R_{b}$
+is an endomorphism of the Hodge structure $W$, hence an element of
+$\End^{0}(A)$, and a multiple of the graph of an endomorphism induces it.
+If $f_{1}$ on $H_{1}\subseteq H^{*}(X_{1},\QQ)$ and $f_{2}$ on
+$H_{2}\subseteq H^{*}(X_{2},\QQ)$ are induced by $Z_{1}$ and $Z_{2}$, then
+$y_{1}\otimes y_{2}\mapsto f_{1}(y_{1})\circ f_{2}(y_{2})$ on
+$H_{1}\otimes H_{2}\subseteq H^{*}(X_{1}\times X_{2},\QQ)$ is induced by the
+cycle on $X_{1}\times X_{2}\times A\times A$ obtained from
+$Z_{1}\times Z_{2}$ by intersecting with the pull-back of the diagonal of the
+two middle factors $A$ and pushing forward, composed on both sides with
+$\pi_{1}$: its value at $y_{1}\otimes y_{2}$ is the composite of the
+correspondences $\pi_{1}\circ Z_{1*}(y_{1})\circ\pi_{1}$ and
+$\pi_{1}\circ Z_{2*}(y_{2})\circ\pi_{1}$, which acts by the composite of their
+actions \cite[\S16.1]{Ful98}. By induction each $\Phi_{j,b}$ is induced by
+an algebraic cycle.
+
+For the span, $\Psi(v)(x)=vxv_{0}$ and $v_{0}^{2}=q(v_{0})$ give
+\[
+  \Phi_{j,b}(v_{1}\otimes\dots\otimes v_{j})(x)=v_{1}\cdots v_{j}\,x\,b\,v_{0}^{j},
+\]
+where $v_{0}^{j}$ is a nonzero rational number for $j$ even and a nonzero
+multiple of $v_{0}$ for $j$ odd. As $b$ runs over $C^{+}$, the element
+$c=b\,v_{0}^{j}$ runs over $C^{+}$ for $j$ even and over $C^{+}v_{0}=C^{-}$
+for $j$ odd, $v_{0}$ being invertible. For an orthogonal basis of $T$ the
+products $v_{1}\cdots v_{j}$ include the basis elements $f_{R}$ with $|R|=j$
+of \Cref{lem:cliffdim}, so as $j$ runs over the integers of one parity in
+$[0,t]$ they span the part of $C$ of that parity. Hence the images contain
+every map $x\mapsto axc$ with $a,c$ homogeneous of the same parity, and
+\Cref{lem:cliffordspan} completes the proof.
+\end{proof}
+
+\begin{theorem}[Kuga--Satake varieties]\label{thm:kspowers}
+Assume \textup{(P3)} and \textup{(P4)}, and let $S$ be a projective K3
+surface with Kuga--Satake variety $A=\mathrm{KS}(T(S)_{\QQ})$. Then every Hodge
+class on $A^{k}\times S^{l}$ is algebraic, for all $k,l\ge0$. The same holds
+for $B^{k}\times S^{l}$ whenever $B$ is isogenous to an abelian subvariety of
+a power of $A$.
+\end{theorem}
+
+\begin{proof}
+\emph{Step 1.} Through Poincar\'e duality an endomorphism $f$ of $W$ is a
+class $[f]$ in the K\"unneth component $H^{2g-1}(A)\otimes H^{1}(A)$ of
+$H^{2g}(A\times A,\QQ)$, $g=\dim A$, and $[f]$ is the class of any
+correspondence acting by $f$ on $H^{1}$ and by zero elsewhere. The inverse of
+the Lefschetz isomorphism $\theta^{g-1}\colon H^{1}(A)\to H^{2g-1}(A)$ is
+induced by an algebraic cycle \cite[\S2]{Kle68}, and applied to the first
+factor it carries $H^{2g-1}(A)\otimes H^{1}(A)$ onto
+$H^{1}(A)\otimes H^{1}(A)$. By \Cref{lem:ksgenerates}, $W\otimes W\subset
+H^{2}(A\times A,\QQ)$ is therefore spanned by classes $Z_{*}(y)$ with
+$y\in T^{\otimes j}$, $0\le j\le t$, and $Z$ an algebraic cycle on
+$S^{j}\times A^{2}$.
+
+\emph{Step 2.} Taking external products, $(W\otimes W)^{\otimes p}\subset
+H^{2p}(A^{2p},\QQ)$ is spanned by classes $Z_{*}(y)$ with $y\in T^{\otimes J}$
+and $Z$ algebraic on $S^{J}\times A^{2p}$. For $k\ge1$,
+$H^{1}(A^{k},\QQ)=\bigoplus_{i}\mathrm{pr}_{i}^{*}W$ and
+$H^{2p}(A^{k},\QQ)$ is spanned by products of $2p$ classes of degree one.
+Grouping them in pairs, each product is $\mu^{*}$ of a class in
+$(W\otimes W)^{\otimes p}$ for a morphism $\mu\colon A^{k}\to(A\times A)^{p}$
+whose components are pairs of projections. So $H^{2p}(A^{k},\QQ)$ is spanned
+by classes $Z_{*}(y)$ with $y\in T^{\otimes J}$ and $Z$ algebraic on
+$S^{J}\times A^{k}$.
+
+\emph{Step 3.} The cohomology of $S$ vanishes in odd degrees, so
+$H^{2p}(A^{k}\times S^{l},\QQ)$ is the sum of the
+$H^{2a}(A^{k})\otimes H^{2p-2a}(S^{l})$, and by Step 2 it is spanned by
+finitely many subspaces $Z_{i*}(H_{i})$ with $H_{i}=T^{\otimes J_{i}}\otimes
+H^{2p-2a_{i}}(S^{l})\subseteq H^{*}(S^{J_{i}+l},\QQ)$ and $Z_{i}$ algebraic.
+Each $Z_{i*}$ is a morphism of Hodge structures up to a Tate twist, so their
+sum is a surjective morphism of polarisable Hodge structures onto
+$H^{2p}(A^{k}\times S^{l},\QQ)$, and since polarisable Hodge structures form
+a semisimple category every Hodge class of degree $2p$ is
+$\sum_{i}Z_{i*}(\eta_{i})$ with $\eta_{i}$ a Hodge class in $H_{i}$. Each
+$\eta_{i}$ is a Hodge class on $S^{J_{i}+l}$, hence algebraic by
+\textup{(P4)}, and so is its image. In odd degrees there are no Hodge
+classes.
+
+\emph{Step 4.} If $B$ is isogenous to an abelian subvariety of $A^{m}$, then
+by Poincar\'e reducibility $A^{m}$ is isogenous to $B\times B'$ for some
+$B'$. A Hodge class on $B^{k}\times S^{l}$ pulled back along the projection
+from $(B\times B')^{k}\times S^{l}$ is a Hodge class, algebraic by Step 3
+transported along the isogeny, and its restriction along
+$b\mapsto(b,0)$ is the class itself.
+\end{proof}
+
+The hypothesis (P4) enters only through the powers of $S$; for a product of
+several K3 surfaces with their Kuga--Satake varieties the argument would need
+Hodge classes in $H^{1}(A_{1})\otimes H^{1}(A_{2})$ for two of the
+varieties, which \Cref{lem:ksgenerates} does not reach.
+
+\begin{corollary}[Abelian varieties of orthogonal type]\label{cor:kstype}
+Assume \textup{(P3)} and \textup{(P4)}, and let $T$ be a polarised rational
+Hodge structure of K3 type, as in \Cref{setup:k3type}, with $\dim T\le19$.
+Then the Hodge conjecture holds on every power of $\mathrm{KS}(T)$ and of
+every abelian variety isogenous to an abelian subvariety of a power of it.
+\end{corollary}
+
+\begin{proof}
+Let $P\subseteq T$ be the smallest rational sub-Hodge structure whose
+complexification contains $T^{2,0}$. It contains no nonzero rational class
+of type $(1,1)$, since the orthogonal complement in $P$ of such a class
+would be a smaller one, and $N=P^{\perp}\cap T$ consists of classes of type
+$(1,1)$. As in \Cref{rem:mumfordpowersopen},
+$C^{+}(T)=C^{+}(P)\otimes C^{+}(N)\oplus C^{-}(P)\otimes C^{-}(N)$ is, as a
+Hodge structure, a sum of copies of $C^{+}(P)$, so $\mathrm{KS}(T)$ is
+isogenous to a power of $\mathrm{KS}(P)$. The space $(P,q)$ has dimension at
+most $19$ and signature $(2,\dim P-2)$, so by the argument of
+\Cref{thm:mumfordks}(i) it embeds isometrically in $\Lambda_{\QQ}$, and the
+surjectivity of the period map gives a projective K3 surface $S$ with
+$T(S)_{\QQ}\cong P$ as Hodge structures with their forms. Then
+$\mathrm{KS}(P)$ is the Kuga--Satake variety of $S$, and
+\Cref{thm:kspowers} applies.
+\end{proof}
+
+\begin{corollary}[Mumford fourfolds]\label{cor:mumfordall}
+Assume \textup{(P3)}, and let $X$ be an abelian fourfold of Mumford type, as
+in \Cref{setup:mumford}. Then the Hodge conjecture holds on $X^{n}$ for every
+$n\ge1$ and on $S_{\lambda}^{a}\times X^{b}$ for all $a,b\ge0$, with
+$S_{\lambda}$ as in \Cref{thm:mumfordks}. In particular the two exceptional
+classes of \Cref{prop:mumfordproduct}(ii) are algebraic, and for every family
+$W\to C$ of \Cref{cor:mumfordlefschetz} the equivalent conditions of
+\Cref{cor:mumfordequiv} and \Cref{cor:mumfordpowersequiv} hold.
+\end{corollary}
+
+\begin{proof}
+By \textup{(P3)} the Kuga--Satake class of $S_{\lambda}$ is algebraic, and
+\Cref{cor:mumfordksproducts} gives the first two statements. In a family
+$W\to C$, a fibre $X_{t}$ that is not a CM point has Hodge group $G$, as
+shown in the proof of \Cref{cor:mumfordequiv}, so it is as in
+\Cref{setup:mumford} and the first statement applies to it; the CM fibres
+are covered by \Cref{prop:mumfordcmpowers}. So condition (e) of
+\Cref{cor:mumfordpowersequiv} holds.
+\end{proof}
+
+The Kuga--Satake variety of $S_{\lambda}$ is isogenous to $X^{32}$
+(\Cref{thm:mumfordks}(i)), so \Cref{thm:kspowers} gives the same conclusion
+from (P3) and (P4); \Cref{cor:mumfordksproducts} needs only (P3).
+
+\subsection{K3 surfaces and \textup{(F3$'$)}}\label{ssec:k3all}
+
+\begin{corollary}[K3 surfaces]\label{cor:k3all}
+\leavevmode
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item Assume \textup{(P3)}. Every projective K3 surface lies in the class
+  $\mathcal{A}$ of \Cref{prop:f3prime}(iii), and so do its Hilbert schemes of
+  points, the varieties of \Cref{prop:aclosure}(v) built from K3 surfaces, and
+  the blow-ups, projective bundles and products formed from these and the
+  other members of $\mathcal{A}$; \textup{(F3$'$)} holds on all of them.
+\item Assume \textup{(P4)}. The Hodge conjecture holds on every product of
+  projective K3 surfaces and, for every projective K3 surface $S$, on every
+  Hilbert scheme $S^{[n]}$ and every moduli space listed in
+  \Cref{prop:k3powers}(i), whatever the field $\End_{\mathrm{Hdg}}(T(S))$.
+\item Assume \textup{(P4)}. In every family of \Cref{setup:rm} the algebraic
+  locus of the real multiplication is the whole domain,
+  $\Sigma_{E}=\cD_{E}$, and the real multiplication of every projective K3
+  surface is induced by algebraic cycles on $S\times S$. Of the frontier cases
+  of \Cref{rem:f3primefrontier}, the varieties $S\times S$ and $S^{[2]}$ for a
+  K3 surface with real multiplication, $S_{\lambda}$ among them, and the class
+  $\det T(S)$ on $S^{21}$ for a very general K3 surface, with $S^{[231]}$, are
+  settled.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+(i) The cycle of (P3) induces a nonzero map from $T(S)_{\QQ}$ to
+$H^{2}(A\times A,\QQ)$, $A=\mathrm{KS}(T(S)_{\QQ})$, so \Cref{prop:aclosure}(iv)
+puts $S$ in $\mathcal{A}$, and the rest of the statement is
+\Cref{prop:aclosure} and \Cref{prop:f3prime}(iii).
+
+(ii) The first statement is (P4). The proof of \Cref{prop:k3powers}(i) uses
+the field $\End_{\mathrm{Hdg}}(T(S))$ only to obtain the Hodge conjecture on
+the powers of $S$; from there the motivic decompositions
+\cite{dCM02,Bue20,FFZ21} give the Hilbert schemes and the moduli spaces.
+
+(iii) The class $\tilde e_{\omega}$ of \Cref{setup:rm} is a Hodge class on
+$S_{\omega}\times S_{\omega}$, algebraic by (ii) at every $\omega$; and the
+endomorphisms of $T(S)_{\QQ}$ given by the field act through Hodge classes on
+$S\times S$. The class $\det T(S)$ is a Hodge class on $S^{21}$, and
+$S^{[231]}$ is covered by (ii).
+\end{proof}
+
+The same hypothesis reaches the fourfolds of K3$^{[2]}$ type whose
+transcendental part is that of a K3 surface, through Markman's theorem on
+rational Hodge isometries.
+
+\begin{proposition}[Fourfolds of K3$^{[2]}$ type]\label{prop:k3twosmall}
+Assume \textup{(P4)}. Let $X$ be a smooth projective variety of K3$^{[2]}$
+type, with $T=T(X)_{\QQ}$ and the form $q$ as in \Cref{prop:k3ntype}, and
+suppose that $\NS(X)_{\QQ}$ contains a nonzero class of square $0$ or a
+class of square $-2$ for $q$. This holds whenever $\rho(X)\ge4$, that is
+$\dim T\le19$, and whenever $X$ admits a Lagrangian fibration. Then the
+Hodge conjecture holds for $X$. In particular it holds for $F(Y)$ and for
+$Y\times Y$ for every smooth cubic fourfold $Y$ for which $F(Y)$ satisfies
+the hypothesis, for instance when $\dim T(Y)\le19$.
+\end{proposition}
+
+\begin{proof}
+Let $\tilde\Lambda=H^{2}(X,\QQ)\oplus\QQ e$ with $q(e)=2$. By \cite{Bea83},
+$H^{2}(X,\ZZ)$ is isometric to $\Lambda\oplus\langle-2\rangle$, where
+$\Lambda$ is the K3 lattice, and $\langle-2\rangle\oplus\langle2\rangle$
+is a hyperbolic plane over $\QQ$, so $\tilde\Lambda$ is isometric to
+$\Lambda_{\QQ}\oplus U_{\QQ}$ with $U_{\QQ}$ a hyperbolic plane. The
+orthogonal complement of $T$ in $\tilde\Lambda$ is
+$N'=\NS(X)_{\QQ}\oplus\QQ e$. A nonzero vector $\alpha+ae$ of $N'$ with
+$q(\alpha)+2a^{2}=0$ is a nonzero isotropic $\alpha$ when $a=0$ and gives
+$q(\alpha/a)=-2$ otherwise, so the hypothesis says exactly that $N'$ is
+isotropic. An isotropic vector of $N'$ lies in a hyperbolic plane
+$H\subseteq N'$ \cite{OMe00}, and by Witt's cancellation theorem the
+orthogonal complement of $H$ in $\tilde\Lambda$, which contains $T$, is
+isometric to $\Lambda_{\QQ}$. This gives an isometric embedding
+$\iota\colon T\to\Lambda_{\QQ}$. When $\rho(X)\ge4$, the space $N'$ has
+dimension at least five and signature $(2,\rho(X)-1)$, since $q$ has
+signature $(1,\rho(X)-1)$ on $\NS(X)_{\RR}$, which contains an ample class,
+so $N'$ is isotropic by the Hasse--Minkowski theorem \cite[\S66]{OMe00}. If
+$f\colon X\to B$ is a Lagrangian fibration and $h$ is ample on the surface
+$B$, then $f^{*}h\ne0$ and $\int_{X}(f^{*}h)^{4}=0$, so the relation
+$\int_{X}\alpha^{4}=3q(\alpha)^{2}$ of Fujiki and Beauville (proof of
+\Cref{prop:k3ntype}(iii)) gives $q(f^{*}h)=0$.
+
+The line $\ell=\iota(H^{2,0}(X))$ satisfies
+$(\ell,\ell)=0$ and $(\sigma,\bar\sigma)>0$ for $0\ne\sigma\in\ell$, so there
+is a K3 surface $S$ with a marking that carries $H^{2,0}(S)$ to $\ell$
+\cite[Chs.~6--7]{Huy16}. A rational class orthogonal to $\ell$ has its
+component in $\iota(T)$ of type $(1,1)$, and $T$ contains no nonzero rational
+class of type $(1,1)$, since such a class would lie in $\NS(X)_{\QQ}$, on
+which $q$ is nondegenerate. So $\NS(S)_{\QQ}=\iota(T)^{\perp}$, of signature
+$(1,21-\dim T)$, which contains a class of positive square, so $S$ is
+projective \cite[Ch.~8]{Huy16}, and $\iota$ is a Hodge isometry from $T$ onto
+$T(S)_{\QQ}$.
+
+Let $M=S^{[2]}$. By \cite{Bea83}, $H^{2}(M,\QQ)$ is the orthogonal sum of
+$H^{2}(S,\QQ)$, embedded as a sub-Hodge structure on which the
+Beauville--Bogomolov form of $M$ is the intersection form, and the line of
+half the class of the exceptional divisor; so $T(M)_{\QQ}=T(S)_{\QQ}$ and
+$\iota$ is a Hodge isometry from $T(X)_{\QQ}$ onto $T(M)_{\QQ}$. The
+varieties $X$ and $M$ are deformation equivalent, so $H^{2}(X,\QQ)$ and
+$H^{2}(M,\QQ)$ are isometric, and by Witt's cancellation theorem so are
+$\NS(X)_{\QQ}$ and $\NS(M)_{\QQ}$. The sum $f$ of such an isometry and
+$\iota$ is a rational Hodge isometry $H^{2}(X,\QQ)\to H^{2}(M,\QQ)$, the
+N\'eron--Severi parts being of type $(1,1)$ on both sides. By
+\cite[Theorem~1.1]{Mar24}, applied to $f$ and to $f^{-1}$, and the argument
+of the proof of \Cref{prop:k3ntype}(ii), with the K\"unneth projectors of
+$X$ and $M$ algebraic by \cite[Theorem~1.1]{CM13}, there are algebraic
+classes on $X\times M$ and on $M\times X$ that induce nonzero rational
+multiples of $f$ and of $f^{-1}$ on $H^{2}$ and zero in the other degrees.
+
+If $E=\End_{\mathrm{Hdg}}(T)$ is $\QQ$ or a CM field,
+\Cref{prop:k3ntype}(iii) gives the Hodge conjecture for $X$. Let $E$ be
+totally real and $\varphi\in E$. Conjugation by $f$ carries $E$ onto
+$\End_{\mathrm{Hdg}}(T(M)_{\QQ})$; let $\varphi_{M}=f\varphi f^{-1}$ on
+$T(M)_{\QQ}$. The Hodge conjecture holds for $M$ by \Cref{cor:k3all}(ii), so
+by \Cref{prop:k3ntype}(iii) for $M$ the endomorphism $\varphi_{M}\oplus0$ of
+$H^{2}(M,\QQ)$ is induced by an algebraic cycle on $M\times M$. Since $f$
+carries $\NS(X)_{\QQ}$ to $\NS(M)_{\QQ}$ and $T$ to $T(M)_{\QQ}$,
+$f^{-1}\circ(\varphi_{M}\oplus0)\circ f=\varphi\oplus0$, and the composite
+of the three correspondences \cite[\S16.1]{Ful98} induces a nonzero multiple
+of it. So every element of $E$ acts on $T$ through an algebraic cycle on
+$X\times X$, and \Cref{prop:k3ntype}(iii) gives the Hodge conjecture for
+$X$.
+
+For a cubic fourfold $Y$, the Fano variety $F(Y)$ is of K3$^{[2]}$ type and
+$T(F(Y))_{\QQ}=\alpha(T(Y))$ has the dimension of $T(Y)$, by the proof of
+\Cref{cor:fanolines}; so the Hodge conjecture holds for $F(Y)$, and by
+\Cref{cor:fanolines} for $Y\times Y$.
+\end{proof}
+
+The hypothesis is also necessary for this argument: if $T$ embeds
+isometrically in $\Lambda_{\QQ}$, then by Witt's extension theorem its
+orthogonal complement in $\tilde\Lambda$ is isometric to that of the image,
+which contains $U_{\QQ}$, so $N'$ is isotropic. The varieties that
+\Cref{prop:k3twosmall} leaves are therefore those with $\rho(X)\le3$ whose
+N\'eron--Severi space is anisotropic and does not represent $-2$; for
+$\rho(X)=1$ this is every $X$, since $\NS(X)_{\QQ}=\QQ h$ with $q(h)>0$.
+With real multiplication by a field of degree $r\ge2$,
+$23-\rho(X)=\dim T=r\dim_{E}T$ with $\dim_{E}T\ge3$, so the shapes left
+are $(r,\dim_{E}T)$ among $(2,10)$, $(4,5)$, $(5,4)$ for $\rho(X)=3$,
+$(3,7)$, $(7,3)$ for $\rho(X)=2$, and $(2,11)$ for $\rho(X)=1$.
+
+\subsection{Fermat and diagonal varieties}\label{ssec:fermatall}
+
+\begin{corollary}[Hypersurfaces of simplex type]\label{cor:simplexhc}
+Assume \textup{(P5)}. The Hodge conjecture holds on every smooth hypersurface
+of simplex type in a projective toric variety (\Cref{thm:simplextype}), so on
+every smooth Delsarte hypersurface of every dimension and on every cyclic
+cover of \Cref{cor:delsarteall}(ii).
+\end{corollary}
+
+\begin{proof}
+A smooth hypersurface $\sum_{i}a_{i}x_{i}^{e}=0$ has every $a_{i}\ne0$ and
+becomes the Fermat hypersurface after rescaling the coordinates, so (P5)
+gives the Hodge conjecture on every Fermat variety $X^{j}_{e}$ with $e\ge2$;
+for $e=1$ it is a projective space. \Cref{thm:simplextype}(ii) and
+\Cref{cor:delsarteall} conclude.
+\end{proof}
+
+\begin{corollary}[Very general diagonal complete intersections]
+\label{cor:vgalldegrees}
+Assume \textup{(P5)}, and keep the notation of \Cref{thm:vandermonde}, with
+$d\ge2$, $N\ge2$, $1\le c\le N-1$ and $r=N-c$. For $\lambda\in U$ outside a
+countable union of proper Zariski closed subsets, the Hodge conjecture holds
+on every power of $X_{d,r}(\lambda)$, so on every power of every complete
+intersection of Vandermonde type with these $\lambda_{i}$.
+\end{corollary}
+
+\begin{proof}
+The curve $C=X_{d,1}(\lambda)$ is the connected abelian cover of $\PP^{1}$
+with group $H$, branched over the $\lambda_{i}$, whose monodromy sends a loop
+around $\lambda_{i}$ to the image of the $i$-th basis vector, which is not
+the identity (\Cref{thm:vandermonde}). As $\lambda$ runs over $U$ these
+curves are the members of the full marked family of that cover: every
+configuration of $N+1$ points of $\PP^{1}$ is M\"obius equivalent to one in
+$\CC$, and the map from $U$ to the configurations up to M\"obius
+transformations is a surjective submersion with connected fibres. By
+\Cref{thm:cdk} and \Cref{lem:hodgeanalytic}, applied to the variations
+$H^{1}(C)^{\otimes2a}$ over $U$, the points $\lambda$ at which some rational
+tensor of type $(a,a)$ is not of that type along all of $U$ lie in a
+countable union of proper Zariski closed subsets; off it, such a tensor is
+of type $(a,a)$ on the whole marked family, so the parameter of $C$ is
+Hodge generic and (P5) gives the Hodge conjecture on every power $C^{m}$. By
+\Cref{thm:vandermonde}(ii), $X_{d,r}(\lambda)^{u}\cong(C^{r})^{u}/G^{u}$
+through $\Phi^{u}$. For a Hodge class $x$ on $X_{d,r}(\lambda)^{u}$, the class
+$(\Phi^{u})^{*}x$ is a Hodge class on $C^{ru}$, hence algebraic, and
+$x=(\Phi^{u})_{*}(\Phi^{u})^{*}x/|G|^{u}$.
+\end{proof}
+
+For $c\le2$, which includes every smooth complete intersection of two
+diagonal hypersurfaces of the same degree, \Cref{cor:vgalldegrees} is the
+second statement of (P5), proved in \cite{OAI26a} by a Gale duality that
+makes the curve appear for two equations; \Cref{thm:vandermonde} supplies
+the curve for every $c$. For $d=2$ and $r$ even the Hodge conjecture
+on $X_{d,r}(\lambda)$ itself is \Cref{thm:vgvandermonde}(iii), proved in
+this paper without the preprints, and so are its cases $d\in\{3,4\}$ with
+$r\le6$ and $d=6$ with $r\le4$.
+
+\subsection{CM points and what remains}\label{ssec:remains}
+
+\begin{corollary}[(F2) with every CM point algebraic]\label{cor:f2cm}
+Assume \textup{(P1)}.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item For every polarised abelian scheme $\pi\colon\cA\to S$ over a smooth
+  connected complex quasi-projective variety and every global section $\xi$
+  of $R^{2p}\pi_{*}\QQ$ that is a Hodge class at one point, the algebraic
+  locus $\Sigma(\xi)$ contains every point $s$ at which $\cA_{s}$ is of CM
+  type.
+\item \textup{(F2)} holds if and only if, for every such $\pi$ with a member
+  of CM type and every such $\xi$, the locus $\Sigma(\xi)$ has an interior
+  point.
+\item For every CM field $F$, $n\ge2$ and $\delta$, the algebraic locus
+  $\Sigma_{F}$ of \Cref{thm:main} contains the CM points of $\cD_{F}$, a dense
+  set contained in the special locus $\Sigma^{\mathrm{sp}}_{F}$, which is
+  meagre.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+(i) By the theorem of the fixed part, as in the proof of
+\Cref{thm:f2propagation}, $\xi_{s}$ is a Hodge class at every $s$, and it is
+algebraic at the points of CM type by (P1). (ii) By (i) the hypothesis of
+\Cref{thm:f2propagation}(v) holds for every such $\xi$, so (ii) is the
+equivalence of (i) and (v) there. (iii) The CM points are dense by
+\Cref{lem:cmdense}, lie in $\Sigma_{F}$ by (i) and in
+$\Sigma^{\mathrm{sp}}_{F}$ by \Cref{prop:speciallocus}(iii), which is meagre
+by \Cref{prop:speciallocus}(ii).
+\end{proof}
+
+So (P1) does not decide the dichotomy of \Cref{thm:main}(iii): the CM points
+share every property that \Cref{thm:escape} shows to be insufficient, and an
+interior point of $\Sigma_{F}$ still requires the Weil classes at a member
+with full Hodge group, which is what (P2) provides for the split eightfolds.
+
+The abelian covers of (P5) reach the Weil classes in a second way: a
+character of the covering group cuts out of the Jacobian a piece on which a
+cyclotomic field acts, and when that piece is of Weil type and its periods
+fill an open subset of $\cD_{F}$, (P5) and \Cref{thm:main}(iii) close the
+algebraic locus. A count of moduli shows that this happens only in low
+dimension. Write $\varphi$ for Euler's function.
+
+\begin{proposition}[Weil pieces of abelian covers]\label{prop:coversreach}
+In the setting of \textup{(P5)}, let $C_{s}\to B_{s}$, $s\in T$, be the full
+marked family of a connected abelian cover with group $P$ of a curve of
+genus $g$, branched over a set $D$ whose meridians have nontrivial image in
+$P$. Let $\chi$ be a character of $P$ of order $\ell\ge3$, put
+$F=\QQ(\zeta_{\ell})$, of degree $2m=\varphi(\ell)$, let $D_{\chi}\subseteq D$
+be the set of branch points whose meridian does not lie in $\ker\chi$,
+$k_{\chi}=|D_{\chi}|$, suppose $2g-2+k_{\chi}>0$, and let
+$H_{\chi}\subseteq H^{1}(C_{s},\QQ)$ be the rational subspace whose
+complexification is the sum of the eigenspaces of $P$ for the characters
+$\chi^{j}$, $j$ prime to $\ell$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item $H_{\chi}$ is a sub-Hodge structure, $P$ acts on it through an action
+  of $F$, and each of the $2m$ eigenspaces has dimension $2g-2+k_{\chi}$.
+\item The polarised variation $H_{\chi}$ over $T$ is pulled back from the
+  marked family of curves of genus $g$ with $k_{\chi}$ marked points, a
+  complex manifold of dimension $3g-3+k_{\chi}$.
+\item If $H_{\chi}$ is of $(F,n)$-Weil type, then $2n=2g-2+k_{\chi}$, and the
+  image of $T$ in $\cD_{F}$, which has dimension $mn^{2}$, is the image of a
+  complex manifold of dimension $3n-k_{\chi}/2$. It is meagre when $m\ge2$
+  and $n\ge2$, when $m=1$ and $n\ge4$, and when $m=1$, $n=3$ and
+  $k_{\chi}>0$.
+\item If $m=1$, $n=3$ and $k_{\chi}=0$, so that $C_{s}/\ker\chi\to B_{s}$ is
+  an \'etale cyclic cover of degree $\ell\in\{3,4,6\}$ of a curve of genus
+  four given by a line bundle $\eta$ of order $\ell$, and if for one $s$ the
+  multiplication map
+  $H^{0}(K_{B_{s}}\otimes\eta)\otimes H^{0}(K_{B_{s}}\otimes\eta^{-1})\to
+  H^{0}(K_{B_{s}}^{\otimes2})$ is surjective, then \textup{(P5)} gives
+  $\Sigma_{F}=\cD_{F}$ for the family of $(F,3)$-Weil type that contains
+  $H_{\chi}$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) The characters $\chi^{j}$ with $j$ prime to $\ell$ form one orbit of
+$\Gal(\bar\QQ/\QQ)$, so the sum of their eigenspaces is defined over $\QQ$,
+and it is a sub-Hodge structure because $P$ acts by automorphisms of the
+curve. A generator $\gamma$ of $P/\ker\chi\cong\mu_{\ell}$ acts on each
+eigenspace by a primitive $\ell$-th root of unity, so the cyclotomic
+polynomial $\Phi_{\ell}$ kills $\gamma$ on $H_{\chi}$, and $\QQ[\gamma]\cong
+F$ acts, compatibly with the polarisation since $P$ preserves the
+intersection form. Put $C_{\chi}=C_{s}/\ker\chi$; pull-back identifies the
+$\chi^{j}$-eigenspaces of $H^{1}(C_{\chi},\CC)$ and of $H^{1}(C_{s},\CC)$,
+since $\chi^{j}$ is trivial on $\ker\chi$. The cyclic cover $C_{\chi}\to
+B_{s}$ is branched exactly over $D_{\chi}$. Let $U=B_{s}\setminus D_{\chi}$
+and $\tilde U\subseteq C_{\chi}$ its preimage. The direct image of
+$\CC_{\tilde U}$ is the sum of rank one local systems $L_{\psi}$ over the
+characters $\psi$ of $\mu_{\ell}$, each with Euler characteristic
+$2-2g-k_{\chi}$; for $\psi=\chi^{j}$ the local system is nontrivial, so
+$H^{0}(U,L_{\psi})=0$, and $H^{2}(U,L_{\psi})$ vanishes, because $U$ is not
+compact when $k_{\chi}>0$ and by Poincar\'e duality with the nontrivial dual
+system when $k_{\chi}=0$. So $\dim H^{1}(\tilde U,\CC)_{\chi^{j}}=
+2g-2+k_{\chi}$. In the exact sequence
+$0\to H^{1}(C_{\chi})\to H^{1}(\tilde U)\to\bigoplus_{x}\CC\to H^{2}(C_{\chi})$,
+the sum over the points over $D_{\chi}$, the group $\mu_{\ell}$ permutes the
+points over a branch point $p$ with stabiliser generated by the image of the
+meridian at $p$, on which $\chi^{j}$ is nontrivial, so the
+$\chi^{j}$-component of the third term is zero, and
+$H^{1}(C_{\chi})_{\chi^{j}}=H^{1}(\tilde U)_{\chi^{j}}$.
+
+(ii) The meridians at the points of $D\setminus D_{\chi}$ lie in $\ker\chi$,
+so the homomorphism $\pi_{1}(B_{s}\setminus D)\to\mu_{\ell}$ factors through
+$\pi_{1}(U)$ and $C_{\chi}$ is the cover of $B_{s}$ determined by the marked
+curve $(B_{s},D_{\chi})$ and that topological datum. Hence the Hodge
+structure on $H^{1}(C_{\chi})$, its polarisation and the action of $\mu_{\ell}$
+depend only on the image of $s$ in the marked family of curves of genus $g$
+with $k_{\chi}$ points, which has dimension $3g-3+k_{\chi}$ when
+$2g-2+k_{\chi}>0$; and the polarisation of $H_{\chi}\subseteq H^{1}(C_{s})$
+is $|\ker\chi|$ times the one pulled back from $C_{\chi}$.
+
+(iii) The space $H_{\chi}$ has dimension $2m(2g-2+k_{\chi})$ over $\QQ$, so
+$2n=2g-2+k_{\chi}$ over $F$, and
+$3g-3+k_{\chi}=3(n-k_{\chi}/2)+k_{\chi}=3n-k_{\chi}/2$. The marking makes the
+period map of $H_{\chi}$ a holomorphic map to $\cD_{F}$, which is a product
+of $m$ hermitian symmetric domains of $\mathrm{U}(n,n)$, each of dimension
+$n^{2}$. The image of a holomorphic map from a manifold of smaller dimension
+is a countable union of compact sets of measure zero, so it is meagre. Now
+$mn^{2}\ge2n^{2}>3n$ for $m\ge2$ and $n\ge2$, $n^{2}>3n$ for $n\ge4$, and
+$9>9-k_{\chi}/2$ for $n=3$ and $k_{\chi}>0$.
+
+(iv) Here $H^{1,0}$ of the $\chi$-eigenspace is $H^{0}(B_{s},K_{B_{s}}\otimes
+\eta)$ for a suitable choice of $\eta$ among $\eta^{\pm1}$, of dimension
+three, and the tangent space of $\cD_{F}$ is
+$\Hom\bigl(H^{0}(K\otimes\eta),H^{1}(\eta)\bigr)$, of dimension nine. By
+Griffiths' theorem on the derivative of the period map \cite[Chapter~10]{Voi02},
+applied to the $\chi$-eigenspace of $C_{\chi}$, whose Kodaira--Spencer class
+is pulled back from $B_{s}$, the differential at $s$ sends a class in
+$H^{1}(B_{s},T_{B_{s}})$ to cup product with it, and its
+transpose, after Serre duality $H^{1}(\eta)\cong H^{0}(K\otimes\eta^{-1})^{\vee}$,
+is the multiplication map of the statement. Both sides have dimension nine,
+so when that map is surjective the period map is a local isomorphism at $s$
+and its image contains an open set $\Omega\subseteq\cD_{F}$. By (P5) the
+Weil classes are algebraic at the image of every parameter outside a
+countable union of proper closed analytic subsets of $T$, and the image of
+that complement is not meagre in $\Omega$. So $\Sigma_{F}$ is not meagre, and
+$\Sigma_{F}=\cD_{F}$ by \Cref{thm:main}(iii).
+\end{proof}
+
+Within the reach of (P5), \Cref{prop:coversreach} leaves only the Weil
+fourfolds, where Markman's theorem already applies, and the sixfolds of
+part (iv), which (P2) covers by \Cref{thm:weilsix}. The eightfolds of
+nontrivial discriminant, which \Cref{prop:stabilise} reduces to the split
+tenfolds, and the Weil classes of the fields of degree at least four, are not
+reached by any piece $H_{\chi}$ except on a meagre set.
+
+\begin{remark}[What remains of (F2) and (F3$'$)]\label{rem:remains}
+With (P1) to (P5) and the results above, the open cases named in
+\Cref{thm:twostand} change as follows. In part (ii) the non-split Weil
+sixfolds and the squares of Mumford fourfolds are settled
+(\Cref{thm:weilsix}, \Cref{cor:mumfordall}); in part (iii) the locus of the
+real multiplication is the whole domain in every family of \Cref{setup:rm}
+(\Cref{cor:k3all}). Of the three frontier cases of \textup{(F3$'$)} in
+\Cref{rem:f3primefrontier}, the first and the third are settled
+(\Cref{cor:k3all}); the second, the fourfolds of K3$^{[2]}$ type with real
+multiplication, among them $F(Y)$ and $Y\times Y$ for a cubic fourfold $Y$
+with real multiplication (\Cref{cor:fanolines}), is settled when the
+N\'eron--Severi space is isotropic or represents $-2$, in particular when
+$\rho\ge4$ or there is a Lagrangian fibration (\Cref{prop:k3twosmall}),
+and is open for $\rho\le3$ otherwise, in the six shapes listed after that
+proposition.
+
+By \Cref{prop:f2isab}, (F2) is the Hodge conjecture for all abelian
+varieties. It is now known, or conditional only on (P1) to (P5), for the
+abelian varieties of CM type and their powers (P1), for those of dimension at
+most five \cite{Mar25a,Mar25b,MZ99}, for the Weil classes of every abelian
+sixfold of Weil type and of every split eightfold of an imaginary quadratic
+field (\Cref{thm:weilsix}), for the powers of the abelian varieties of
+orthogonal type of \Cref{cor:kstype}, among them the Mumford fourfolds
+(\Cref{cor:mumfordall}), and for the powers of the Jacobians of Hodge
+generic abelian covers (P5). The first cases outside all of these are the
+Weil classes of an imaginary quadratic field on abelian eightfolds of
+nontrivial discriminant, which \Cref{prop:stabilise} reduces to the split
+tenfolds, and on abelian $2n$-folds with $n\ge5$; the Weil classes of a CM
+field of degree at least four at the members that are not of CM type, the
+first being the eightfolds of a quartic field (\Cref{thm:quarticrank}); and
+the exceptional Hodge classes of abelian varieties whose Hodge group is not
+of any of these types. \textup{(F3$'$)} is open beyond $\mathcal{A}$ and the
+cases of \Cref{rem:f3primefrontier}, \Cref{cor:k3all} and
+\Cref{prop:k3twosmall}, and the step of
+\Cref{rem:f3primeopen}, a new correspondence for a variety that no known
+correspondence links to an abelian variety, is not touched by any of these
+results. By \Cref{thm:final}(vi) the Hodge conjecture is equivalent to (F2)
+and \textup{(F3$'$)} together, and neither is proved, with or without the
+preprints.
+\end{remark}

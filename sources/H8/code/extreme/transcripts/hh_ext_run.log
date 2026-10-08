@@ -1,0 +1,208 @@
+========================================================================
+n = 1: HH^* of dimension 2^4 = 16
+  [PASS] n=1: fast bitwise action agrees with HA.wedge_gen/HA.contract_gen on all 16 monomials, on alpha_+ and alpha_-
+         mismatches: 0
+  images computed in 0.0s: 4 monomials act nonzero on alpha_+, 4 on alpha_-
+  [PASS] n=1: P = Ann_{HH^1}(alpha_+), Q = Ann_{HH^1}(alpha_-) (on the basis operators)
+  [PASS] n=1: every monomial meeting both P and Q kills alpha_+ and alpha_-; the ideal they span has codimension 7 = 2^{2n+1}-1
+  [PASS] n=1: the monomials acting nonzero on alpha_+ are exactly those of wedge^*Q, on alpha_- exactly those of wedge^*P
+  [PASS] n=1: contraction with alpha_- injective on wedge^*P and with alpha_+ on wedge^*Q (monomials go to distinct monomials)
+  [PASS] n=1: the two images share exactly one monomial, the generator of H^{0,2n}, reached from top(P) and top(Q) in HH-degree 2n = 2
+         common image masks ['0b1100'] (cohomology degree [2]), from HH monomials ['0b11'] and ['0b1100']
+  [PASS] n=1, omega = 1 alpha_+ + 1 alpha_-: dim Ann_{HH^k}(omega) = binom(4n,k) - 2 binom(2n,k) + delta_{k,2n} for k = 1..4, and 0 for k = 0
+         ranks  [1, 4, 1, 0, 0]
+dims   [0, 0, 5, 4, 1]
+expect [0, 0, 5, 4, 1]
+(max nonzeros in a pivot row: 2; exact elimination over Q)
+  note: at k = 0 the literal formula binom(4n,0) - 2 binom(2n,0) gives -1, the true annihilator is 0
+  [PASS] n=1, omega = 3 alpha_+ + -5 alpha_-: dim Ann_{HH^k}(omega) = binom(4n,k) - 2 binom(2n,k) + delta_{k,2n} for k = 1..4, and 0 for k = 0
+         ranks  [1, 4, 1, 0, 0]
+dims   [0, 0, 5, 4, 1]
+expect [0, 0, 5, 4, 1]
+(max nonzeros in a pivot row: 2; exact elimination over Q)
+  [PASS] n=1, omega = 1 alpha_+ + 2 alpha_-: dim Ann_{HH^k}(omega) = binom(4n,k) - 2 binom(2n,k) + delta_{k,2n} for k = 1..4, and 0 for k = 0
+         ranks  [1, 4, 1, 0, 0]
+dims   [0, 0, 5, 4, 1]
+expect [0, 0, 5, 4, 1]
+(max nonzeros in a pivot row: 2; exact elimination over Q)
+  [PASS] n=1, omega = (2+3i) alpha_+ + (2-3i) alpha_-: dim Ann_{HH^k}(omega) = binom(4n,k) - 2 binom(2n,k) + delta_{k,2n} for k = 1..4, and 0 for k = 0
+         ranks  [1, 4, 1, 0, 0]
+dims   [0, 0, 5, 4, 1]
+expect [0, 0, 5, 4, 1]
+(max nonzeros in a pivot row: 2; exact elimination over Q(i))
+  n = 1 done in 0.0s
+========================================================================
+n = 2: HH^* of dimension 2^8 = 256
+  [PASS] n=2: fast bitwise action agrees with HA.wedge_gen/HA.contract_gen on all 256 monomials, on alpha_+ and alpha_-
+         mismatches: 0
+  images computed in 0.0s: 16 monomials act nonzero on alpha_+, 16 on alpha_-
+  [PASS] n=2: P = Ann_{HH^1}(alpha_+), Q = Ann_{HH^1}(alpha_-) (on the basis operators)
+  [PASS] n=2: every monomial meeting both P and Q kills alpha_+ and alpha_-; the ideal they span has codimension 31 = 2^{2n+1}-1
+  [PASS] n=2: the monomials acting nonzero on alpha_+ are exactly those of wedge^*Q, on alpha_- exactly those of wedge^*P
+  [PASS] n=2: contraction with alpha_- injective on wedge^*P and with alpha_+ on wedge^*Q (monomials go to distinct monomials)
+  [PASS] n=2: the two images share exactly one monomial, the generator of H^{0,2n}, reached from top(P) and top(Q) in HH-degree 2n = 4
+         common image masks ['0b11110000'] (cohomology degree [4]), from HH monomials ['0b1111'] and ['0b11110000']
+  [PASS] n=2, omega = 1 alpha_+ + 1 alpha_-: dim Ann_{HH^k}(omega) = binom(4n,k) - 2 binom(2n,k) + delta_{k,2n} for k = 1..8, and 0 for k = 0
+         ranks  [1, 8, 12, 8, 1, 0, 0, 0, 0]
+dims   [0, 0, 16, 48, 69, 56, 28, 8, 1]
+expect [0, 0, 16, 48, 69, 56, 28, 8, 1]
+(max nonzeros in a pivot row: 2; exact elimination over Q)
+  note: at k = 0 the literal formula binom(4n,0) - 2 binom(2n,0) gives -1, the true annihilator is 0
+  [PASS] n=2: dim Ann_{HH^2} = 4n^2 = 16, rank 2n(2n-1) = 12
+  [PASS] n=2, omega = 3 alpha_+ + -5 alpha_-: dim Ann_{HH^k}(omega) = binom(4n,k) - 2 binom(2n,k) + delta_{k,2n} for k = 1..8, and 0 for k = 0
+         ranks  [1, 8, 12, 8, 1, 0, 0, 0, 0]
+dims   [0, 0, 16, 48, 69, 56, 28, 8, 1]
+expect [0, 0, 16, 48, 69, 56, 28, 8, 1]
+(max nonzeros in a pivot row: 2; exact elimination over Q)
+  [PASS] n=2: dim Ann_{HH^2} = 4n^2 = 16, rank 2n(2n-1) = 12
+  [PASS] n=2, omega = 1 alpha_+ + 2 alpha_-: dim Ann_{HH^k}(omega) = binom(4n,k) - 2 binom(2n,k) + delta_{k,2n} for k = 1..8, and 0 for k = 0
+         ranks  [1, 8, 12, 8, 1, 0, 0, 0, 0]
+dims   [0, 0, 16, 48, 69, 56, 28, 8, 1]
+expect [0, 0, 16, 48, 69, 56, 28, 8, 1]
+(max nonzeros in a pivot row: 2; exact elimination over Q)
+  [PASS] n=2: dim Ann_{HH^2} = 4n^2 = 16, rank 2n(2n-1) = 12
+  [PASS] n=2, omega = (2+3i) alpha_+ + (2-3i) alpha_-: dim Ann_{HH^k}(omega) = binom(4n,k) - 2 binom(2n,k) + delta_{k,2n} for k = 1..8, and 0 for k = 0
+         ranks  [1, 8, 12, 8, 1, 0, 0, 0, 0]
+dims   [0, 0, 16, 48, 69, 56, 28, 8, 1]
+expect [0, 0, 16, 48, 69, 56, 28, 8, 1]
+(max nonzeros in a pivot row: 2; exact elimination over Q(i))
+  [PASS] n=2: dim Ann_{HH^2} = 4n^2 = 16, rank 2n(2n-1) = 12
+  n = 2 done in 0.0s
+========================================================================
+n = 3: HH^* of dimension 2^12 = 4096
+  [PASS] n=3: fast bitwise action agrees with HA.wedge_gen/HA.contract_gen on all 4096 monomials, on alpha_+ and alpha_-
+         mismatches: 0
+  images computed in 0.2s: 64 monomials act nonzero on alpha_+, 64 on alpha_-
+  [PASS] n=3: P = Ann_{HH^1}(alpha_+), Q = Ann_{HH^1}(alpha_-) (on the basis operators)
+  [PASS] n=3: every monomial meeting both P and Q kills alpha_+ and alpha_-; the ideal they span has codimension 127 = 2^{2n+1}-1
+  [PASS] n=3: the monomials acting nonzero on alpha_+ are exactly those of wedge^*Q, on alpha_- exactly those of wedge^*P
+  [PASS] n=3: contraction with alpha_- injective on wedge^*P and with alpha_+ on wedge^*Q (monomials go to distinct monomials)
+  [PASS] n=3: the two images share exactly one monomial, the generator of H^{0,2n}, reached from top(P) and top(Q) in HH-degree 2n = 6
+         common image masks ['0b111111000000'] (cohomology degree [6]), from HH monomials ['0b111111'] and ['0b111111000000']
+  [PASS] n=3, omega = 1 alpha_+ + 1 alpha_-: dim Ann_{HH^k}(omega) = binom(4n,k) - 2 binom(2n,k) + delta_{k,2n} for k = 1..12, and 0 for k = 0
+         ranks  [1, 12, 30, 40, 30, 12, 1, 0, 0, 0, 0, 0, 0]
+dims   [0, 0, 36, 180, 465, 780, 923, 792, 495, 220, 66, 12, 1]
+expect [0, 0, 36, 180, 465, 780, 923, 792, 495, 220, 66, 12, 1]
+(max nonzeros in a pivot row: 2; exact elimination over Q)
+  note: at k = 0 the literal formula binom(4n,0) - 2 binom(2n,0) gives -1, the true annihilator is 0
+  [PASS] n=3: dim Ann_{HH^2} = 4n^2 = 36, rank 2n(2n-1) = 30
+  [PASS] n=3, omega = 3 alpha_+ + -5 alpha_-: dim Ann_{HH^k}(omega) = binom(4n,k) - 2 binom(2n,k) + delta_{k,2n} for k = 1..12, and 0 for k = 0
+         ranks  [1, 12, 30, 40, 30, 12, 1, 0, 0, 0, 0, 0, 0]
+dims   [0, 0, 36, 180, 465, 780, 923, 792, 495, 220, 66, 12, 1]
+expect [0, 0, 36, 180, 465, 780, 923, 792, 495, 220, 66, 12, 1]
+(max nonzeros in a pivot row: 2; exact elimination over Q)
+  [PASS] n=3: dim Ann_{HH^2} = 4n^2 = 36, rank 2n(2n-1) = 30
+  [PASS] n=3, omega = 1 alpha_+ + 2 alpha_-: dim Ann_{HH^k}(omega) = binom(4n,k) - 2 binom(2n,k) + delta_{k,2n} for k = 1..12, and 0 for k = 0
+         ranks  [1, 12, 30, 40, 30, 12, 1, 0, 0, 0, 0, 0, 0]
+dims   [0, 0, 36, 180, 465, 780, 923, 792, 495, 220, 66, 12, 1]
+expect [0, 0, 36, 180, 465, 780, 923, 792, 495, 220, 66, 12, 1]
+(max nonzeros in a pivot row: 2; exact elimination over Q)
+  [PASS] n=3: dim Ann_{HH^2} = 4n^2 = 36, rank 2n(2n-1) = 30
+  [PASS] n=3, omega = (2+3i) alpha_+ + (2-3i) alpha_-: dim Ann_{HH^k}(omega) = binom(4n,k) - 2 binom(2n,k) + delta_{k,2n} for k = 1..12, and 0 for k = 0
+         ranks  [1, 12, 30, 40, 30, 12, 1, 0, 0, 0, 0, 0, 0]
+dims   [0, 0, 36, 180, 465, 780, 923, 792, 495, 220, 66, 12, 1]
+expect [0, 0, 36, 180, 465, 780, 923, 792, 495, 220, 66, 12, 1]
+(max nonzeros in a pivot row: 2; exact elimination over Q(i))
+  [PASS] n=3: dim Ann_{HH^2} = 4n^2 = 36, rank 2n(2n-1) = 30
+  n = 3 done in 0.2s
+========================================================================
+n = 4: HH^* of dimension 2^16 = 65536
+  [PASS] n=4: fast bitwise action agrees with HA.wedge_gen/HA.contract_gen on all 65536 monomials, on alpha_+ and alpha_-
+         mismatches: 0
+  images computed in 3.8s: 256 monomials act nonzero on alpha_+, 256 on alpha_-
+  [PASS] n=4: P = Ann_{HH^1}(alpha_+), Q = Ann_{HH^1}(alpha_-) (on the basis operators)
+  [PASS] n=4: every monomial meeting both P and Q kills alpha_+ and alpha_-; the ideal they span has codimension 511 = 2^{2n+1}-1
+  [PASS] n=4: the monomials acting nonzero on alpha_+ are exactly those of wedge^*Q, on alpha_- exactly those of wedge^*P
+  [PASS] n=4: contraction with alpha_- injective on wedge^*P and with alpha_+ on wedge^*Q (monomials go to distinct monomials)
+  [PASS] n=4: the two images share exactly one monomial, the generator of H^{0,2n}, reached from top(P) and top(Q) in HH-degree 2n = 8
+         common image masks ['0b1111111100000000'] (cohomology degree [8]), from HH monomials ['0b11111111'] and ['0b1111111100000000']
+  [PASS] n=4, omega = 1 alpha_+ + 1 alpha_-: dim Ann_{HH^k}(omega) = binom(4n,k) - 2 binom(2n,k) + delta_{k,2n} for k = 1..16, and 0 for k = 0
+         ranks  [1, 16, 56, 112, 140, 112, 56, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+dims   [0, 0, 64, 448, 1680, 4256, 7952, 11424, 12869, 11440, 8008, 4368, 1820, 560, 120, 16, 1]
+expect [0, 0, 64, 448, 1680, 4256, 7952, 11424, 12869, 11440, 8008, 4368, 1820, 560, 120, 16, 1]
+(max nonzeros in a pivot row: 2; exact elimination over Q)
+  note: at k = 0 the literal formula binom(4n,0) - 2 binom(2n,0) gives -1, the true annihilator is 0
+  [PASS] n=4: dim Ann_{HH^2} = 4n^2 = 64, rank 2n(2n-1) = 56
+  [PASS] n=4, omega = 3 alpha_+ + -5 alpha_-: dim Ann_{HH^k}(omega) = binom(4n,k) - 2 binom(2n,k) + delta_{k,2n} for k = 1..16, and 0 for k = 0
+         ranks  [1, 16, 56, 112, 140, 112, 56, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+dims   [0, 0, 64, 448, 1680, 4256, 7952, 11424, 12869, 11440, 8008, 4368, 1820, 560, 120, 16, 1]
+expect [0, 0, 64, 448, 1680, 4256, 7952, 11424, 12869, 11440, 8008, 4368, 1820, 560, 120, 16, 1]
+(max nonzeros in a pivot row: 2; exact elimination over Q)
+  [PASS] n=4: dim Ann_{HH^2} = 4n^2 = 64, rank 2n(2n-1) = 56
+  [PASS] n=4, omega = 1 alpha_+ + 2 alpha_-: dim Ann_{HH^k}(omega) = binom(4n,k) - 2 binom(2n,k) + delta_{k,2n} for k = 1..16, and 0 for k = 0
+         ranks  [1, 16, 56, 112, 140, 112, 56, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+dims   [0, 0, 64, 448, 1680, 4256, 7952, 11424, 12869, 11440, 8008, 4368, 1820, 560, 120, 16, 1]
+expect [0, 0, 64, 448, 1680, 4256, 7952, 11424, 12869, 11440, 8008, 4368, 1820, 560, 120, 16, 1]
+(max nonzeros in a pivot row: 2; exact elimination over Q)
+  [PASS] n=4: dim Ann_{HH^2} = 4n^2 = 64, rank 2n(2n-1) = 56
+  [PASS] n=4, omega = (2+3i) alpha_+ + (2-3i) alpha_-: dim Ann_{HH^k}(omega) = binom(4n,k) - 2 binom(2n,k) + delta_{k,2n} for k = 1..16, and 0 for k = 0
+         ranks  [1, 16, 56, 112, 140, 112, 56, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+dims   [0, 0, 64, 448, 1680, 4256, 7952, 11424, 12869, 11440, 8008, 4368, 1820, 560, 120, 16, 1]
+expect [0, 0, 64, 448, 1680, 4256, 7952, 11424, 12869, 11440, 8008, 4368, 1820, 560, 120, 16, 1]
+(max nonzeros in a pivot row: 2; exact elimination over Q(i))
+  [PASS] n=4: dim Ann_{HH^2} = 4n^2 = 64, rank 2n(2n-1) = 56
+  n = 4 done in 3.8s
+========================================================================
+n = 5: HH^* of dimension 2^20 = 1048576
+  images computed in 4.1s: 1024 monomials act nonzero on alpha_+, 1024 on alpha_-
+  [PASS] n=5: P = Ann_{HH^1}(alpha_+), Q = Ann_{HH^1}(alpha_-) (on the basis operators)
+  [PASS] n=5: every monomial meeting both P and Q kills alpha_+ and alpha_-; the ideal they span has codimension 2047 = 2^{2n+1}-1
+  [PASS] n=5: the monomials acting nonzero on alpha_+ are exactly those of wedge^*Q, on alpha_- exactly those of wedge^*P
+  [PASS] n=5: contraction with alpha_- injective on wedge^*P and with alpha_+ on wedge^*Q (monomials go to distinct monomials)
+  [PASS] n=5: the two images share exactly one monomial, the generator of H^{0,2n}, reached from top(P) and top(Q) in HH-degree 2n = 10
+         common image masks ['0b11111111110000000000'] (cohomology degree [10]), from HH monomials ['0b1111111111'] and ['0b11111111110000000000']
+  [PASS] n=5, omega = 1 alpha_+ + 1 alpha_-: dim Ann_{HH^k}(omega) = binom(4n,k) - 2 binom(2n,k) + delta_{k,2n} for k = 1..20, and 0 for k = 0
+         ranks  [1, 20, 90, 240, 420, 504, 420, 240, 90, 20, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+dims   [0, 0, 100, 900, 4425, 15000, 38340, 77280, 125880, 167940, 184755, 167960, 125970, 77520, 38760, 15504, 4845, 1140, 190, 20, 1]
+expect [0, 0, 100, 900, 4425, 15000, 38340, 77280, 125880, 167940, 184755, 167960, 125970, 77520, 38760, 15504, 4845, 1140, 190, 20, 1]
+(max nonzeros in a pivot row: 2; exact elimination over Q)
+  note: at k = 0 the literal formula binom(4n,0) - 2 binom(2n,0) gives -1, the true annihilator is 0
+  [PASS] n=5: dim Ann_{HH^2} = 4n^2 = 100, rank 2n(2n-1) = 90
+  [PASS] n=5, omega = 3 alpha_+ + -5 alpha_-: dim Ann_{HH^k}(omega) = binom(4n,k) - 2 binom(2n,k) + delta_{k,2n} for k = 1..20, and 0 for k = 0
+         ranks  [1, 20, 90, 240, 420, 504, 420, 240, 90, 20, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+dims   [0, 0, 100, 900, 4425, 15000, 38340, 77280, 125880, 167940, 184755, 167960, 125970, 77520, 38760, 15504, 4845, 1140, 190, 20, 1]
+expect [0, 0, 100, 900, 4425, 15000, 38340, 77280, 125880, 167940, 184755, 167960, 125970, 77520, 38760, 15504, 4845, 1140, 190, 20, 1]
+(max nonzeros in a pivot row: 2; exact elimination over Q)
+  [PASS] n=5: dim Ann_{HH^2} = 4n^2 = 100, rank 2n(2n-1) = 90
+  [PASS] n=5, omega = 1 alpha_+ + 2 alpha_-: dim Ann_{HH^k}(omega) = binom(4n,k) - 2 binom(2n,k) + delta_{k,2n} for k = 1..20, and 0 for k = 0
+         ranks  [1, 20, 90, 240, 420, 504, 420, 240, 90, 20, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+dims   [0, 0, 100, 900, 4425, 15000, 38340, 77280, 125880, 167940, 184755, 167960, 125970, 77520, 38760, 15504, 4845, 1140, 190, 20, 1]
+expect [0, 0, 100, 900, 4425, 15000, 38340, 77280, 125880, 167940, 184755, 167960, 125970, 77520, 38760, 15504, 4845, 1140, 190, 20, 1]
+(max nonzeros in a pivot row: 2; exact elimination over Q)
+  [PASS] n=5: dim Ann_{HH^2} = 4n^2 = 100, rank 2n(2n-1) = 90
+  [PASS] n=5, omega = (2+3i) alpha_+ + (2-3i) alpha_-: dim Ann_{HH^k}(omega) = binom(4n,k) - 2 binom(2n,k) + delta_{k,2n} for k = 1..20, and 0 for k = 0
+         ranks  [1, 20, 90, 240, 420, 504, 420, 240, 90, 20, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+dims   [0, 0, 100, 900, 4425, 15000, 38340, 77280, 125880, 167940, 184755, 167960, 125970, 77520, 38760, 15504, 4845, 1140, 190, 20, 1]
+expect [0, 0, 100, 900, 4425, 15000, 38340, 77280, 125880, 167940, 184755, 167960, 125970, 77520, 38760, 15504, 4845, 1140, 190, 20, 1]
+(max nonzeros in a pivot row: 2; exact elimination over Q(i))
+  [PASS] n=5: dim Ann_{HH^2} = 4n^2 = 100, rank 2n(2n-1) = 90
+  n = 5 done in 4.6s
+========================================================================
+n = 6: HH^* of dimension 2^24 = 16777216
+  images computed in 91.2s: 4096 monomials act nonzero on alpha_+, 4096 on alpha_-
+  [PASS] n=6: P = Ann_{HH^1}(alpha_+), Q = Ann_{HH^1}(alpha_-) (on the basis operators)
+  [PASS] n=6: every monomial meeting both P and Q kills alpha_+ and alpha_-; the ideal they span has codimension 8191 = 2^{2n+1}-1
+  [PASS] n=6: the monomials acting nonzero on alpha_+ are exactly those of wedge^*Q, on alpha_- exactly those of wedge^*P
+  [PASS] n=6: contraction with alpha_- injective on wedge^*P and with alpha_+ on wedge^*Q (monomials go to distinct monomials)
+  [PASS] n=6: the two images share exactly one monomial, the generator of H^{0,2n}, reached from top(P) and top(Q) in HH-degree 2n = 12
+         common image masks ['0b111111111111000000000000'] (cohomology degree [12]), from HH monomials ['0b111111111111'] and ['0b111111111111000000000000']
+  [PASS] n=6, omega = 1 alpha_+ + 1 alpha_-: dim Ann_{HH^k}(omega) = binom(4n,k) - 2 binom(2n,k) + delta_{k,2n} for k = 1..24, and 0 for k = 0
+         ranks  [1, 24, 132, 440, 990, 1584, 1848, 1584, 990, 440, 132, 24, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+dims   [0, 0, 144, 1584, 9636, 40920, 132748, 344520, 734481, 1307064, 1961124, 2496120, 2704155, 2496144, 1961256, 1307504, 735471, 346104, 134596, 42504, 10626, 2024, 276, 24, 1]
+expect [0, 0, 144, 1584, 9636, 40920, 132748, 344520, 734481, 1307064, 1961124, 2496120, 2704155, 2496144, 1961256, 1307504, 735471, 346104, 134596, 42504, 10626, 2024, 276, 24, 1]
+(max nonzeros in a pivot row: 2; exact elimination over Q)
+  note: at k = 0 the literal formula binom(4n,0) - 2 binom(2n,0) gives -1, the true annihilator is 0
+  [PASS] n=6: dim Ann_{HH^2} = 4n^2 = 144, rank 2n(2n-1) = 132
+  [PASS] n=6, omega = 3 alpha_+ + -5 alpha_-: dim Ann_{HH^k}(omega) = binom(4n,k) - 2 binom(2n,k) + delta_{k,2n} for k = 1..24, and 0 for k = 0
+         ranks  [1, 24, 132, 440, 990, 1584, 1848, 1584, 990, 440, 132, 24, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+dims   [0, 0, 144, 1584, 9636, 40920, 132748, 344520, 734481, 1307064, 1961124, 2496120, 2704155, 2496144, 1961256, 1307504, 735471, 346104, 134596, 42504, 10626, 2024, 276, 24, 1]
+expect [0, 0, 144, 1584, 9636, 40920, 132748, 344520, 734481, 1307064, 1961124, 2496120, 2704155, 2496144, 1961256, 1307504, 735471, 346104, 134596, 42504, 10626, 2024, 276, 24, 1]
+(max nonzeros in a pivot row: 2; exact elimination over Q)
+  [PASS] n=6: dim Ann_{HH^2} = 4n^2 = 144, rank 2n(2n-1) = 132
+  n = 6 done in 97.9s
+
+  74 checks passed, 0 failed
+
+real	1m46.635s
+user	0m44.823s
+sys	0m0.028s

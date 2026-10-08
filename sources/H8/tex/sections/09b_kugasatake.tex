@@ -1,0 +1,384 @@
+\section{The Kuga--Satake construction}\label{sec:ks}
+
+\Cref{thm:hyperplane} blocks induction on dimension through hyperplane
+sections in the primitive middle degree. One classical construction does reach
+a middle degree Hodge class without any such induction, and we set it out in
+full, both because it shows what a successful route looks like and because
+its boundary is numerical and can be located. It is the construction of Kuga
+and Satake \cite{KS67}, which builds on Satake's Clifford algebra families and
+their Riemann forms \cite{Sat66}. We follow the form given by Deligne
+\cite{Del72}, to whom the Hodge-theoretic properties that make it useful are
+due, in particular the embedding of \Cref{prop:ksembed}. After building it we
+show that \Cref{thm:hyperplane} has no bearing on it. For abelian varieties of
+Weil type with Hodge group $\SU(V,H)$ we then determine when it applies to a
+piece of $H^{2}$: exactly when $n=1$, where the Weil line consists of divisor
+classes and there is nothing to prove, or $n=2$ with trivial discriminant,
+where the Weil line lies in $H^{4}$.
+
+\subsection{The construction}
+
+\begin{setupenv}[K3 type]\label{setup:k3type}
+Let $T$ be a $\QQ$-vector space of dimension $b$ with a nondegenerate
+symmetric form $q$, and let $T$ carry a Hodge structure of weight two,
+$T_{\CC}=T^{2,0}\oplus T^{1,1}\oplus T^{0,2}$, polarised by $q$, with
+\[
+  \dim_{\CC}T^{2,0}=1 .
+\]
+Such a structure is said to be \emph{of K3 type}. Write $T^{2,0}=\CC\sigma$.
+The Hodge--Riemann relations give $q(\sigma,\sigma)=0$ and
+$q(\sigma,\bbar{\sigma})>0$, and make $q$ negative definite on the real points
+of $T^{1,1}$; so the real plane
+$P=\langle\Re\sigma,\Im\sigma\rangle\subset T_{\RR}$ is positive definite and
+$q$ has signature $(2,b-2)$ on $T_{\RR}$. Since $q(\Re\sigma,\Im\sigma)=0$
+and $q(\Re\sigma)=q(\Im\sigma)$, we may normalise $\sigma$ so that
+$e_{1}=\Re\sigma$ and $e_{2}=\Im\sigma$ are orthonormal.
+\end{setupenv}
+
+\begin{definition}[Clifford algebra]\label{def:clifford}
+$C(T,q)$ is the quotient of the tensor algebra on $T$ by the ideal generated
+by $v\otimes v-q(v)$ for $v\in T$. It is $\ZZ/2$-graded, $C=C^{+}\oplus C^{-}$,
+by the parity of the word length.
+\end{definition}
+
+\begin{lemma}\label{lem:cliffdim}
+For an orthogonal basis $f_{1},\dots,f_{b}$ of $T$ the products $f_{S}$ over
+subsets $S\subseteq\{1,\dots,b\}$, taken in increasing order, form a basis of
+$C(T,q)$. Hence $\dim_{\QQ}C=2^{b}$ and $\dim_{\QQ}C^{\pm}=2^{b-1}$, and
+$C^{-}\cdot C^{+}\cdot C^{-}\subseteq C^{+}$.
+\end{lemma}
+
+\begin{proof}
+The relations $f_{i}^{2}=q(f_{i})$ and $f_{i}f_{j}=-f_{j}f_{i}$ for $i\ne j$,
+the latter obtained by expanding $(f_{i}+f_{j})^{2}=q(f_{i})+q(f_{j})$, let one
+rewrite any word in the $f_{i}$ as a scalar times an increasing product, so the
+$f_{S}$ span; they are independent by the standard filtration argument
+comparing $C$ with $\bigwedge^{*}T$. The dimension counts are
+$\sum_{k}\binom{b}{k}=2^{b}$ and
+$\sum_{k\ \mathrm{even}}\binom{b}{k}=2^{b-1}$. The last inclusion holds
+because the grading is multiplicative and odd plus even plus odd is even.
+\end{proof}
+
+\begin{lemma}[The complex structure]\label{lem:cliffJ}
+With $e_{1},e_{2}$ as in \Cref{setup:k3type}, put $J=e_{1}e_{2}\in C^{+}\otimes_{\QQ}\RR$.
+Then $J^{2}=-1$, and left multiplication by $J$ is an $\RR$-linear operator on
+$C^{+}\otimes_{\QQ}\RR$ whose square is $-\id$.
+\end{lemma}
+
+\begin{proof}
+$J^{2}=e_{1}e_{2}e_{1}e_{2}=-e_{1}e_{1}e_{2}e_{2}=-q(e_{1})q(e_{2})=-1$,
+since the orthogonal vectors $e_{1}$ and $e_{2}$ anticommute and
+$e_{i}^{2}=q(e_{i})=1$.
+Left multiplication by an element of $C^{+}$ preserves $C^{+}$, and the square
+of left multiplication by $J$ is left multiplication by $J^{2}=-1$.
+\end{proof}
+
+\Cref{fig:ks} draws the positive plane $P$, the null cone of $q$ and the
+period domain in the smallest case $b=3$.
+
+\begin{definition}[Kuga--Satake variety]\label{def:ksvariety}
+Fix a lattice $C^{+}_{\ZZ}\subset C^{+}$ stable under multiplication. The
+complex torus
+\[
+  \mathrm{KS}(T)=\bigl(C^{+}\otimes_{\QQ}\RR,\,J\bigr)\big/\,C^{+}_{\ZZ}
+\]
+has dimension $\tfrac12\dim_{\QQ}C^{+}=2^{b-2}$. Satake's construction of a
+Riemann form on $C^{+}$ compatible with $J$ \cite{Sat66} makes it an abelian
+variety, and by construction
+\[
+  H^{1}\bigl(\mathrm{KS}(T),\QQ\bigr)=C^{+}(T)
+\]
+as a Hodge structure of weight one, the Hodge decomposition being the
+eigenspace decomposition of left multiplication by $J$.
+\end{definition}
+
+\begin{example}\label{ex:ksdims}
+For a projective K3 surface, $T$ is the transcendental lattice inside
+$H^{2}(X,\QQ)$; taking all of $H^{2}$ with $b=22$ gives
+$\dim\mathrm{KS}=2^{20}=1{,}048{,}576$. At the other end, $b=3$ gives
+$\dim\mathrm{KS}=2$, an abelian surface, and $b=6$ gives
+$\dim\mathrm{KS}=16$; these are the two cases that occur below, for $n=1$ and
+for $n=2$.
+\end{example}
+
+\subsection{The transport of Hodge classes}
+
+\begin{proposition}[The embedding]\label{prop:ksembed}
+Fix $v_{0}\in T$ with $q(v_{0})\ne0$. The map
+\[
+  \Psi\colon T\longrightarrow\End_{\QQ}\bigl(C^{+}\bigr),
+  \qquad
+  \Psi(v)(x)=v\,x\,v_{0},
+\]
+is injective and is a morphism of Hodge structures
+$T(1)\to\End\bigl(H^{1}(\mathrm{KS}(T),\QQ)\bigr)$, both sides having weight
+zero. Consequently a Hodge class in $T$, that is a rational class of type
+$(1,1)$, is carried to a Hodge class of type $(0,0)$ in
+$\End(H^{1}(\mathrm{KS}(T),\QQ))$, that is to an element of
+$\End^{0}(\mathrm{KS}(T))$.
+\end{proposition}
+
+\begin{proof}
+The map lands in $\End(C^{+})$ by the last part of \Cref{lem:cliffdim}, since
+$v,v_{0}\in T\subset C^{-}$. It is injective because $\Psi(v)(1)=v\,v_{0}$
+and $v_{0}$ is invertible in $C(T,q)$, with $v_{0}^{-1}=v_{0}/q(v_{0})$, so
+$\Psi(v)=0$ forces $v=0$. That it respects the Hodge structures is
+Deligne's computation \cite[\S4]{Del72}: the Hodge structure on
+$\End(C^{+})$ is induced by $J$ acting on both sides, and $\Psi$ intertwines
+the weight-two structure on $T$, twisted once, with it. The last sentence
+follows from the definition of a morphism of Hodge structures and the
+Lefschetz theorem on $(1,1)$ classes, in the form which says that for an
+abelian variety $B$ a Hodge class of type $(0,0)$ in $\End(H^{1}(B,\QQ))$ is
+an element of $\End^{0}(B)$.
+\end{proof}
+
+\begin{remark}[Algebraicity of the transport]%
+\label{rem:kstransport}
+An element of $\End^{0}(\mathrm{KS}(T))$ is a rational multiple of an
+endomorphism, whose graph is an algebraic cycle on
+$\mathrm{KS}(T)\times\mathrm{KS}(T)$, so the image of a Hodge class under
+$\Psi$ is algebraic. Carrying that conclusion back to the variety $X$ from
+which $T$ came requires the correspondence $\Psi$ itself to be induced by an
+algebraic cycle on $X\times\mathrm{KS}(T)\times\mathrm{KS}(T)$. What is
+proved in general is that $\Psi$ is absolute Hodge, by
+Deligne's theorem for abelian varieties together with the analysis of the
+Kuga--Satake correspondence, and that it is motivated in Andr\'e's sense
+\cite{And96}; van Geemen \cite{vG00} surveys the cases in which algebraicity
+has been established. The Kuga--Satake construction therefore converts the
+Hodge conjecture for $T$ into the algebraicity of one specific
+correspondence.
+\end{remark}
+
+\subsection{Independence from the hyperplane obstruction}
+
+\begin{proposition}\label{prop:ksnotrestriction}
+\Cref{thm:hyperplane,thm:returntrip} do not constrain the Kuga--Satake route.
+\end{proposition}
+
+\begin{proof}
+Both theorems are statements about the pair of maps $j^{*}$ and $j_{*}$
+attached to the inclusion $j\colon Y\hookrightarrow X$ of a smooth member of an
+ample linear system, and both proofs use two properties of that pair which a
+general correspondence does not have: the Lefschetz hyperplane theorem, which
+makes $j^{*}$ an isomorphism in degrees at most $d-2$ and, through
+\Cref{lem:gysinrestrict}, forces the vanishing of \Cref{thm:hyperplane} in
+the primitive middle degree; and the identity $j_{*}j^{*}=\,\cdot\cup L$ of
+\Cref{lem:gysinrestrict}, which makes the return trip multiply by the
+polarisation instead of recovering the class. The Kuga--Satake
+correspondence is a cohomology class on a triple product of varieties of
+unrelated dimensions, $\dim\mathrm{KS}(T)=2^{b-2}$ against $\dim X$, and it has
+neither property; in particular the composite of $\Psi$ with its transpose is
+a nonzero multiple of the identity of $T$, not a power of a polarisation of
+$X$. So
+neither of the two properties on which \Cref{thm:hyperplane} rests holds for
+$\Psi$.
+\end{proof}
+
+\Cref{prop:ksnotrestriction} shows what an escape from \Cref{thm:hyperplane}
+must look like: a correspondence whose composite with its transpose is not the
+Lefschetz operator. \Cref{sec:escape} makes the analogous identification for
+\Cref{thm:divisor,thm:character}.
+
+\subsection{Abelian varieties of Weil type}
+
+The limitation of the Kuga--Satake construction is the hypothesis
+$\dim T^{2,0}=1$. For abelian varieties of Weil type the rational sub-Hodge
+structures of $H^{2}$, and hence the possible values of $\dim T^{2,0}$, can be
+listed completely.
+
+\begin{proposition}[The pieces of \texorpdfstring{$H^{2}$}{H2}]\label{prop:h2pieces}
+Let $(A,\iota,\eta)$ be of $(K,-1,n)$-Weil type. In the character grading of
+\Cref{prop:grading},
+\begin{equation}\label{eq:h2split}
+  H^{2}(A,\CC)
+  =\textstyle\bigwedge^{2}V_{+}\;\oplus\;\bigl(V_{+}\otimes V_{-}\bigr)
+   \;\oplus\;\bigwedge^{2}V_{-},
+\end{equation}
+the middle summand is the isotypic component of the norm character and is
+defined over $\QQ$, and the outer two are interchanged by conjugation so their
+sum is defined over $\QQ$. The Hodge numbers are
+\[
+  \bigl(h^{2,0},h^{1,1},h^{0,2}\bigr)=
+  \begin{cases}
+    \bigl(\tbinom{n}{2},\,n^{2},\,\tbinom{n}{2}\bigr)
+      & \text{on }\bigwedge^{2}V_{\pm},\\[4pt]
+    \bigl(n^{2},\,2n^{2},\,n^{2}\bigr)
+      & \text{on }V_{+}\otimes V_{-},
+  \end{cases}
+\]
+and the total is $2\tbinom{2n}{2}+4n^{2}=\tbinom{4n}{2}=\dim H^{2}(A,\QQ)$.
+\end{proposition}
+
+\begin{proof}
+The splitting is \eqref{eq:grading} at $k=2$. The characters are
+$\tau^{2}$, $\tau\bbar{\tau}=\Nm(\tau)$ and $\bbar{\tau}^{2}$, so the middle
+summand is the norm-isotypic component, and it is self-conjugate, hence defined
+over $\QQ$; the outer two are exchanged. For the Hodge numbers use
+\eqref{eq:bisplit} and \Cref{lem:balanced}: $V_{\pm}^{1,0}$ and
+$V_{\pm}^{0,1}$ have dimension $n$ each, so
+$(\bigwedge^{2}V_{+})^{2,0}=\bigwedge^{2}V^{1,0}_{+}$ has dimension
+$\binom{n}{2}$ and $(\bigwedge^{2}V_{+})^{1,1}=V^{1,0}_{+}\otimes V^{0,1}_{+}$
+has dimension $n^{2}$, while
+$(V_{+}\otimes V_{-})^{2,0}=V^{1,0}_{+}\otimes V^{1,0}_{-}$ has dimension
+$n^{2}$ and the $(1,1)$ part has dimension $2n^{2}$. The total is
+$2(2\binom{n}{2}+n^{2})+4n^{2}=2(2n^{2}-n)+4n^{2}=8n^{2}-2n=\binom{4n}{2}$.
+\end{proof}
+
+\begin{proposition}[Sub-Hodge structures of K3 type]%
+\label{prop:normpart}
+Let $(A,\iota,\eta)$ be of $(K,-1,n)$-Weil type with $\Hg(A)=\SU(V,H)$. Then
+$H^{2}(A,\QQ)$ is the direct sum of the three rational sub-Hodge structures
+\[
+  \QQ\,\eta,
+  \qquad
+  \bigl(V_{+}\otimes V_{-}\bigr)_{\QQ}\ominus\QQ\eta,
+  \qquad
+  R=\Bigl(\textstyle\bigwedge^{2}V_{+}\oplus\bigwedge^{2}V_{-}\Bigr)_{\QQ},
+\]
+with $h^{2,0}$ equal to $0$, $n^{2}$ and $n(n-1)$ respectively. The first two
+are irreducible, and so is $R$ when $n\ge3$. When $n=2$, the structure $R$ is
+irreducible if the discriminant of $(A,\iota,\eta)$ in the sense of
+\Cref{def:disc} is nontrivial, and it is the direct sum of two isomorphic
+sub-Hodge structures of K3 type, each of dimension six, if the discriminant
+is trivial. Consequently $H^{2}(A,\QQ)$ contains a rational sub-Hodge
+structure of K3 type if and only if either $n=1$, or $n=2$ and the
+discriminant is trivial.
+\end{proposition}
+
+\begin{proof}
+A rational sub-Hodge structure $W\subseteq H^{2}(A,\QQ)$ is stable under
+$\Hg(A)$: the orthogonal projector onto $W$ for the polarisation is a Hodge
+class in $\End(H^{2})$, hence is fixed by $\Hg(A)$, hence $W$ is a
+$\Hg(A)$-submodule. Conversely a $\Hg(A)$-submodule is a sub-Hodge structure,
+because the Hodge decomposition is the eigenspace decomposition of an element
+of $\Hg(A)(\RR)$. So the rational sub-Hodge structures are the
+$\QQ$-subrepresentations of $\SU(V,H)$. For the same reason the Hodge numbers
+of a sub-Hodge structure depend only on its complexification as a
+representation of $\Hg(A)_{\CC}$.
+
+After complexification $\SU(V,H)$ becomes $\SL(V_{+})$, acting on $V_{+}$
+tautologically and on $V_{-}\cong V_{+}^{\vee}$ dually. In \eqref{eq:h2split}
+the outer summands $\bigwedge^{2}V_{+}$ and
+$\bigwedge^{2}V_{-}\cong\bigwedge^{2}V_{+}^{\vee}$ are irreducible, and the
+middle summand is $V_{+}\otimes V_{+}^{\vee}=\End(V_{+})
+=\mathfrak{sl}(V_{+})\oplus\CC$, the sum of the adjoint representation and the
+trivial one. Conjugation fixes the two pieces of the middle summand and
+exchanges the outer two, so the three listed subspaces are rational sub-Hodge
+structures, and the first two, having irreducible complexifications, are
+irreducible. The trivial summand is spanned by $\eta$ by \Cref{lem:NSchar},
+and has $h^{2,0}=0$ since $\eta$ is of type $(1,1)$. The adjoint summand has
+$h^{2,0}=n^{2}$, since removing the one-dimensional trivial piece from
+$V_{+}\otimes V_{-}$ removes a $(1,1)$ class only. The structure $R$ has
+$h^{2,0}=2\binom{n}{2}=n(n-1)$ by \Cref{prop:h2pieces}.
+
+The complexification of a rational subrepresentation of $R$ is a
+subrepresentation of $\bigwedge^{2}V_{+}\oplus\bigwedge^{2}V_{-}$ stable under
+conjugation. For $n\ge3$ the two summands are not isomorphic, because
+$\bigwedge^{2}V_{+}^{\vee}\cong\bigwedge^{2n-2}V_{+}$ and $2n-2\ne2$. The
+subrepresentations are then $0$, the two summands and the whole; conjugation
+exchanges the summands, so only $0$ and the whole are stable under it, and
+$R$ is irreducible.
+For $n=1$ both summands are the trivial representation, and $R$ is the plane
+of Hodge classes $\HW(A)\subset H^{2}(A,\QQ)$.
+
+Let $n=2$. Then $\bigwedge^{2}V_{+}^{\vee}\cong\bigwedge^{2}V_{+}\otimes
+(\bigwedge^{4}V_{+})^{\vee}\cong\bigwedge^{2}V_{+}$ as representations of
+$\SL(V_{+})$, so $\End_{\Hg(A)}(R)\otimes\CC\cong M_{2}(\CC)$ and
+$\End_{\Hg(A)}(R)$ is a quaternion algebra over $\QQ$. To identify it, put
+$V=H^{1}(A,\QQ)$, a $K$-vector space of dimension four by \Cref{lem:Kspace}.
+The natural map $\bigwedge^{2}_{\QQ}V\to\bigwedge^{2}_{K}V$ is
+$\SU(V,H)$-equivariant, and its kernel has complexification
+$V_{+}\otimes V_{-}$, so it restricts to an isomorphism of $R$ onto
+$\bigwedge^{2}_{K}V$; in particular $K\subseteq\End_{\Hg(A)}(R)$. The wedge
+product $B\colon\bigwedge^{2}_{K}V\times\bigwedge^{2}_{K}V\to
+\bigwedge^{4}_{K}V\cong K$ is a symmetric $K$-bilinear form, invariant under
+$\SU(V,H)$ because $\SU(V,H)$ acts trivially on $\bigwedge^{4}_{K}V$. Let
+$H_{2}$ be the hermitian form induced by $H$ on $\bigwedge^{2}_{K}V$, and let
+$\varphi$ be the $K$-antilinear map defined by
+$B(x,y)=H_{2}\bigl(y,\varphi(x)\bigr)$. Then $\varphi$ commutes with
+$\SU(V,H)$, so $\varphi^{2}$ is a $K$-linear endomorphism commuting with
+$\SU(V,H)$; it is a scalar by Schur's lemma, and a rational one because it
+commutes with $\varphi$. Choose a $K$-basis $e_{1},\dots,e_{4}$ of $V$
+orthogonal for $H$, with $H(e_{i},e_{i})=h_{i}\in\QQ^{\times}$, and identify
+$\bigwedge^{4}_{K}V$ with $K$ through $e_{1}\wedge e_{2}\wedge e_{3}\wedge
+e_{4}$. Then $\varphi(e_{1}\wedge e_{2})=(h_{3}h_{4})^{-1}e_{3}\wedge e_{4}$
+and $\varphi(e_{3}\wedge e_{4})=(h_{1}h_{2})^{-1}e_{1}\wedge e_{2}$, so
+$\varphi^{2}=(\det H)^{-1}$. Hence $\End_{\Hg(A)}(R)=K\oplus K\varphi$ is the
+quaternion algebra $(-d,\det H)_{\QQ}$. It is split if and only if
+$\det H\in\Nm_{K/\QQ}(\Kx)$, that is, since $(-1)^{2}\det H=\det H$, if and
+only if the discriminant is trivial. If it is not split it is a division
+algebra, and $R$ is irreducible. If it is split, $R=R_{1}\oplus R_{2}$ with
+$R_{1}\cong R_{2}$ of dimension six, and the complexification of each $R_{i}$
+is isomorphic to $\bigwedge^{2}V_{+}$ as a representation of $\SL(V_{+})$, so
+by \Cref{prop:h2pieces} each $R_{i}$ has Hodge numbers $(1,4,1)$. Each $R_{i}$
+lies in the primitive part of $H^{2}(A,\QQ)$, which is the $\Hg(A)$-stable
+complement of $\QQ\eta$, and is polarised by the restriction of the
+Hodge--Riemann form; so $R_{i}$ is of K3 type.
+
+Finally, a rational sub-Hodge structure of $H^{2}(A,\QQ)$ is a direct sum of
+irreducible ones, each isomorphic to $\QQ\eta$, to the adjoint structure, to
+$R$, or, for $n=2$ and trivial discriminant, to $R_{1}$; and $h^{2,0}$ is
+additive. A structure of K3 type has $h^{2,0}=1$. For $n=1$ the adjoint
+structure has $h^{2,0}=1$. For $n\ge3$ the nonzero values $n^{2}$ and
+$n(n-1)$ both exceed $1$. For $n=2$ the values are $0$, $4$, and $2$ for $R$
+or $1$ for $R_{1}$, so a structure of K3 type exists if and only if the
+discriminant is trivial.
+\end{proof}
+
+\begin{corollary}[Where the construction applies]\label{cor:ksboundary}
+Let $(A,\iota,\eta)$ be of $(K,-1,n)$-Weil type with $\Hg(A)=\SU(V,H)$. The
+Kuga--Satake construction applies to a rational sub-Hodge structure of
+$H^{2}(A,\QQ)$ if and only if either $n=1$, or $n=2$ and the discriminant is
+trivial. For $n=1$ the Weil line lies in $H^{2}(A,\QQ)$ and consists of
+divisor classes, hence of algebraic classes by the Lefschetz theorem on
+$(1,1)$ classes, so nothing needs transporting. For $n=2$ the Weil line lies
+in $H^{4}(A,\QQ)$, outside the structures to which the construction applies.
+\end{corollary}
+
+\begin{proof}
+The first clause is \Cref{prop:normpart} with \Cref{setup:k3type}. For $n=1$
+we have $2n=2$, so $\HW(A)\subseteq H^{2}(A,\QQ)\cap H^{1,1}(A)$, which is
+$\NS(A)\otimes\QQ$ by the Lefschetz theorem on $(1,1)$ classes. For $n=2$ the
+Weil line lies in degree $2n=4$.
+\end{proof}
+
+\begin{remark}[Higher weight]\label{rem:nohigherks}
+For $n\ge2$ the Weil line sits in $H^{2n}(A,\QQ)$ with $2n\ge4$, and the
+Clifford construction has no known counterpart in weight greater than two. It
+turns a quadratic form into an algebra; the polarisation of a Hodge structure
+of weight $w$ is symmetric only when $w$ is even, and even then there is no
+reason for its Clifford algebra to carry the right complex structure. One
+can instead apply the construction to a sub-Hodge structure of $H^{2}$ and
+try to recover the degree $2n$ class from the resulting abelian variety.
+\Cref{prop:normpart} rules this out for $n\ge3$, and for $n=2$ at nontrivial
+discriminant. At $n=2$ and trivial discriminant the two structures of K3 type
+exist, but the Hodge conjecture for abelian fourfolds of Weil type is in any
+case a theorem of Markman \cite{Mar25a,Mar25b}, proved at trivial
+discriminant also by Floccari and Fu \cite{FF26}. What remains conceivable for
+$n\ge3$ is a construction of Kuga--Satake shape for the weight $2n$ structure
+directly, producing an auxiliary variety on which the Weil line becomes a
+divisor class or an endomorphism. None is known, and \Cref{thm:character} does
+not obstruct one: such a construction is a correspondence and need not
+produce a $\Kx$-eigenclass. This is the gap of \Cref{rem:nonequivariant},
+seen from the other side.
+\end{remark}
+
+\begin{figure}[htbp]
+\centering
+  \includegraphics[width=0.88\textwidth]{fig_lightcone}
+\caption{The geometry from which the Kuga--Satake construction starts, in the
+smallest case $b=3$. The quadratic form is $q=x^{2}+y^{2}-z^{2}$, of
+signature $(2,1)$, with its null cone $q=0$; the horizontal plane
+$P=\{z=0\}$ is positive definite and meets the cone only at the origin. The
+construction needs such a plane, and \Cref{setup:k3type} supplies one:
+$P=\langle\Re\sigma,\Im\sigma\rangle$ for the period $\sigma$ spanning
+$T^{2,0}$. An orthonormal basis $e_{1},e_{2}$ of $P$ gives $J=e_{1}e_{2}$ with
+$J^{2}=-1$ by \Cref{lem:cliffJ}, and $J$ is the complex structure of
+$\mathrm{KS}(T)$. A positive definite plane $P$ is determined by the negative
+line $P^{\perp}$, which meets the upper sheet of the hyperboloid $q=-1$ in one
+point $w_{P}$; that sheet is the period domain, and a second plane $P'$ with
+its point $w_{P'}$ is drawn for comparison. The hypothesis behind all of this
+is $\dim T^{2,0}=1$, and by \Cref{prop:normpart} an abelian variety of Weil
+type with Hodge group $\SU(V,H)$ supplies it in $H^{2}$ only when $n=1$, or
+$n=2$ at trivial discriminant.}
+\label{fig:ks}
+\end{figure}

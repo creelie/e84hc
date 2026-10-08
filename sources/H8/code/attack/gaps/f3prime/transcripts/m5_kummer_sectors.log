@@ -1,0 +1,31 @@
+
+=== K_1(A), dim 2: Betti numbers [1, 0, 22, 0, 1]
+    Euler number 24 = m^3 sigma(m) = 24: True; invariant part = P(A^[2])/(1+z)^4: True; known Betti numbers: True
+    A[2]-invariant part : [1, 0, 7, 0, 1]
+    non-invariant part    : [0, 0, 15, 0, 0]
+      sector nu=(2,): l=1, d=2, 15 nontrivial characters, shift 2, H^*(B_nu)^C(nu) dims [1]  (dim B_nu = 0)
+    => every non-invariant sector is a set of points: the non-invariant part is spanned by algebraic classes (fibres of the Hilbert-Chow map)
+
+=== K_2(A), dim 4: Betti numbers [1, 0, 7, 8, 108, 8, 7, 0, 1]
+    Euler number 108 = m^3 sigma(m) = 108: True; invariant part = P(A^[3])/(1+z)^4: True; known Betti numbers: True
+    A[3]-invariant part : [1, 0, 7, 8, 28, 8, 7, 0, 1]
+    non-invariant part    : [0, 0, 0, 0, 80, 0, 0, 0, 0]
+      sector nu=(3,): l=1, d=3, 80 nontrivial characters, shift 4, H^*(B_nu)^C(nu) dims [1]  (dim B_nu = 0)
+    => every non-invariant sector is a set of points: the non-invariant part is spanned by algebraic classes (fibres of the Hilbert-Chow map)
+
+=== K_3(A), dim 6: Betti numbers [1, 0, 7, 8, 51, 56, 458, 56, 51, 8, 7, 0, 1]
+    Euler number 448 = m^3 sigma(m) = 448: True; invariant part = P(A^[4])/(1+z)^4: True; known Betti numbers: True
+    A[4]-invariant part : [1, 0, 7, 8, 36, 56, 113, 56, 36, 8, 7, 0, 1]
+    non-invariant part    : [0, 0, 0, 0, 15, 0, 345, 0, 15, 0, 0, 0, 0]
+      sector nu=(4,): l=1, d=4, 255 nontrivial characters, shift 6, H^*(B_nu)^C(nu) dims [1]  (dim B_nu = 0)
+      sector nu=(2, 2): l=2, d=2, 15 nontrivial characters, shift 4, H^*(B_nu)^C(nu) dims [1, 0, 6, 0, 1]  (dim B_nu = 2)
+    => non-invariant sectors with dim B_nu > 0: [((2, 2), 2, 2)]; their H^2(B_nu) contains H^2 of an abelian surface, hence T(A) != 0: transcendental classes
+
+=== K_4(A), dim 8: Betti numbers [1, 0, 7, 8, 36, 64, 168, 288, 1046, 288, 168, 64, 36, 8, 7, 0, 1]
+    Euler number 750 = m^3 sigma(m) = 750: True; invariant part = P(A^[5])/(1+z)^4: True; known Betti numbers: True
+    A[5]-invariant part : [1, 0, 7, 8, 36, 64, 168, 288, 422, 288, 168, 64, 36, 8, 7, 0, 1]
+    non-invariant part    : [0, 0, 0, 0, 0, 0, 0, 0, 624, 0, 0, 0, 0, 0, 0, 0, 0]
+      sector nu=(5,): l=1, d=5, 624 nontrivial characters, shift 8, H^*(B_nu)^C(nu) dims [1]  (dim B_nu = 0)
+    => every non-invariant sector is a set of points: the non-invariant part is spanned by algebraic classes (fibres of the Hilbert-Chow map)
+
+ALL CHECKS PASSED

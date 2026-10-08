@@ -1,0 +1,6 @@
+name = "hodgeobstruction"
+version = "1.0.0"
+defaultTargets = ["HodgeObstruction"]
+
+[[lean_lib]]
+name = "HodgeObstruction"

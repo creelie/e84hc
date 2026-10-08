@@ -1,0 +1,1147 @@
+\section{Base points in every Weil family}\label{sec:basepoints}
+
+The secant construction of \Cref{sec:construction} lives on the split variety
+$X\times\widehat{X}$ and stops short of the deformation step. In this section
+we study the split member and the other special members of a Weil family
+through the Weil classes themselves. On the split member the Weil classes are
+polynomials in three divisor classes (\Cref{thm:splitclosed}); on products of
+abelian surfaces of Weil type they are polynomials in divisor classes
+(\Cref{thm:everyn}); and on abelian varieties with quaternionic
+multiplication extending $K$, and on their products, they are polynomials in
+two divisor classes, which yields an algebraic base point in every Weil
+family, of every discriminant (\Cref{thm:everyfamily}). What remains is the
+propagation of one flat class over one connected period domain, formulated
+in \Cref{ssec:residual,ssec:exactform}.
+
+\subsection{The split member in closed form}\label{ssec:split}
+
+We begin with the split member, where a single formula, valid for every $n$
+and every $d$, writes the Weil classes as polynomials in three divisor
+classes. The split locus is thin. A general abelian $2n$-fold
+of Weil type is simple, hence not isogenous to a product, and for $n\ge2$ the
+members $X\times\widehat{X}$ form a subvariety of $\cD_{n,n}$ of positive
+codimension (\Cref{prop:splitgeom}(iii)). \Cref{cor:splitalgebraic} is
+therefore a base case, and \Cref{q:residual} is a question about propagation.
+
+\begin{notation}\label{not:threeclasses}
+On $A=X\times\widehat{X}$ write
+\[
+  \beta\in H^{2}(A,\QQ),
+  \qquad
+  \widehat{\beta}\in H^{2}(A,\QQ),
+  \qquad
+  \ell=c_{1}(\cP)\in H^{2}(A,\QQ)
+\]
+for the pullback of the polarisation of $X$, the pullback of the dual
+polarisation of $\widehat{X}$, and the class of the Poincar\'e bundle. All
+three are divisor classes, so every polynomial in them is algebraic. Put
+\begin{equation}\label{eq:gammadef}
+  \gamma=d\,\beta-\widehat{\beta}.
+\end{equation}
+\end{notation}
+
+\begin{theorem}[The Weil line of the split member]\label{thm:splitclosed}
+Let $A=X\times\widehat{X}$ carry the $K$-action \eqref{eq:Mdef} determined by a
+principal $\beta$, and let $V_{\pm}\subset H^{1}(A,\CC)$ be the eigenspaces of
+$\iota(\sqrt{-d})$. Then
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item $\gamma\mp\sqrt{-d}\,\ell$ lies in $\bigwedge^{2}V_{\pm}$, so it is an
+  eigenclass for the character $\tau\mapsto\tau^{2}$ on $H^{2}(A,\CC)$
+  respectively for its conjugate;
+\item the generators of $\bigwedge^{2n}V_{\pm}$ are
+  \begin{equation}\label{eq:splitclosed}
+    \omega_{\pm}
+    =\frac{(-1)^{n(n-1)/2}}{n!\,d^{\,n}}
+      \bigl(\gamma\mp\sqrt{-d}\,\ell\bigr)^{n};
+  \end{equation}
+\item consequently the Weil line of $A$ is
+  \[
+    \HW(A)=\Bigl\langle\;
+      \Re\bigl(\gamma-\sqrt{-d}\,\ell\bigr)^{n},\;\;
+      \Im\bigl(\gamma-\sqrt{-d}\,\ell\bigr)^{n}
+    \;\Bigr\rangle_{\QQ},
+  \]
+  and every Weil class on $A$ is a polynomial with rational coefficients in
+  the three divisor classes $\beta,\widehat{\beta},\ell$, hence is algebraic.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Write $U=H^{1}(X,\QQ)$ with basis $x_{1},\dots,x_{2n}$ chosen so that
+$\beta=\sum_{j\le n}x_{j}\wedge x_{n+j}$, let $\xi_{1},\dots,\xi_{2n}$ be the
+dual basis of $H^{1}(\widehat{X},\QQ)=U^{\vee}$, and let $B\colon U\to U^{\vee}$
+be the isomorphism induced by $\beta$, so that $Bx_{j}=\xi_{n+j}$ and
+$Bx_{n+j}=-\xi_{j}$. The endomorphism \eqref{eq:Mdef} acts on homology, and
+its transpose $M^{*}$ acts on $H^{1}(A,\QQ)=U\oplus U^{\vee}$ by
+$u\mapsto -Bu$ and $\phi\mapsto d\,B^{-1}\phi$. Indeed, in the basis
+$u_{1},\dots,u_{2n}$ of $H_{1}(X,\QQ)$ dual to the $x_{i}$, the map
+$\beta\colon H_{1}(X)\to H^{1}(X)$ sends $u_{j}\mapsto x_{n+j}$ and
+$u_{n+j}\mapsto-x_{j}$, so \eqref{eq:Mdef} sends $u_{j}\mapsto dx_{n+j}$,
+$u_{n+j}\mapsto-dx_{j}$, $x_{n+j}\mapsto-u_{j}$ and $x_{j}\mapsto u_{n+j}$,
+where $x_{i}$ is regarded as an element of
+$H_{1}(\widehat X,\QQ)=H^{1}(X,\QQ)$ and $\xi_{i}$ is its dual class; pairing
+with the dual basis gives the stated action. The square of $M^{*}$ is $-d$;
+so, writing $\delta=\sqrt{-d}$,
+\begin{equation}\label{eq:splitVpm}
+  V_{\pm}=\Bigl\{\,u\pm\tfrac{\delta}{d}\,Bu\;:\;u\in U_{\CC}\Bigr\},
+\end{equation}
+since $M^{*}\bigl(u\pm\tfrac{\delta}{d}Bu\bigr)
+=-Bu\pm\delta u=\pm\delta\bigl(u\pm\tfrac{\delta}{d}Bu\bigr)$.
+
+(i) Take the sum over $j\le n$ of the wedges of the two eigenvectors attached
+to $x_{j}$ and to $x_{n+j}$:
+\[
+  \sum_{j=1}^{n}
+  \Bigl(x_{j}\pm\tfrac{\delta}{d}Bx_{j}\Bigr)\wedge
+  \Bigl(x_{n+j}\pm\tfrac{\delta}{d}Bx_{n+j}\Bigr)
+  =\beta\pm\tfrac{\delta}{d}\Sigma-\tfrac{1}{d}\widehat{\beta},
+\]
+using $\delta^{2}=-d$, where
+$\Sigma=\sum_{j}\bigl(x_{j}\wedge Bx_{n+j}+Bx_{j}\wedge x_{n+j}\bigr)$ and
+$\sum_{j}Bx_{j}\wedge Bx_{n+j}=\sum_{j}\xi_{n+j}\wedge(-\xi_{j})
+=\widehat{\beta}$. Now
+\[
+  \Sigma=\sum_{j=1}^{n}\bigl(x_{j}\wedge(-\xi_{j})
+        +\xi_{n+j}\wedge x_{n+j}\bigr)
+   =-\sum_{i=1}^{2n}x_{i}\wedge\xi_{i}=-\ell .
+\]
+So the displayed sum is $\tfrac1d\bigl(d\beta-\widehat{\beta}\mp\delta\ell\bigr)
+=\tfrac1d(\gamma\mp\delta\ell)$. It is a sum of wedges of pairs of vectors of
+$V_{\pm}$, hence lies in $\bigwedge^{2}V_{\pm}$, which proves (i); the
+statement about characters is \Cref{prop:grading} at $(r,s)=(2,0)$ and
+$(0,2)$.
+
+(ii) By (i) the $n$-th power $(\gamma\mp\delta\ell)^{n}$ lies in
+$\bigwedge^{2n}V_{\pm}$, which is a line by \Cref{prop:weilline}. It is
+nonzero: expanding $\gamma\mp\delta\ell=d\beta-\widehat{\beta}\mp\delta\ell$,
+the only term of the $n$-th power lying in $\bigwedge^{2n}U$ is
+$d^{\,n}\beta^{n}$, and $\beta^{n}\ne0$ because $\beta$ is nondegenerate;
+the remaining terms all involve at least one $\xi$, so no cancellation can
+occur. Hence $(\gamma\mp\delta\ell)^{n}$ spans $\bigwedge^{2n}V_{\pm}$ and is a
+scalar multiple of $\omega_{\pm}=\bigwedge_{i=1}^{2n}\bigl(x_{i}\pm\tfrac{\delta}{d}Bx_{i}\bigr)$.
+To find the scalar, compare the components in $\bigwedge^{2n}U$: that of
+$\omega_{\pm}$ is $x_{1}\wedge\cdots\wedge x_{2n}$, while
+\[
+  d^{\,n}\beta^{n}=d^{\,n}\,n!\bigwedge_{j=1}^{n}(x_{j}\wedge x_{n+j})
+  =d^{\,n}\,n!\,(-1)^{n(n-1)/2}\,x_{1}\wedge\cdots\wedge x_{2n},
+\]
+the sign being that of the permutation carrying
+$(1,n+1,2,n+2,\dots,n,2n)$ to $(1,2,\dots,2n)$. Inverting gives
+\eqref{eq:splitclosed}.
+
+(iii) The two displayed classes are the real and imaginary parts of
+$(\gamma-\delta\ell)^{n}$, which up to the nonzero rational factor in
+\eqref{eq:splitclosed} are $\omega_{-}+\omega_{+}$ and
+$(\omega_{-}-\omega_{+})/\delta$; by \Cref{prop:weilline}(i) these span
+$\HW(A)$ over $\QQ$. Expanding $(\gamma-\delta\ell)^{n}$ by the binomial
+theorem and separating even from odd powers of $\delta$ writes each of them as
+a rational polynomial in $\beta,\widehat{\beta},\ell$, because
+$\delta^{2m}=(-d)^{m}$ and $\delta^{2m+1}=(-d)^{m}\delta$. Products of divisor
+classes are algebraic, so both are algebraic.
+\end{proof}
+
+\begin{example}\label{ex:splitsmall}
+The $2n$ classes $x_{1},\dots,x_{2n}$ form a $K$-basis of $H^{1}(A,\QQ)$, on
+which $\sqrt{-d}$ acts by $x\mapsto-Bx$, so \eqref{eq:omegaprod} applies to
+them; with \eqref{eq:splitclosed} it gives the integral generators of
+\Cref{thm:explicitgens} for this basis in closed form,
+\[
+  \omega_{1}+\sqrt{-d}\,\omega_{2}
+  =\frac{(-1)^{n(n-1)/2}}{n!}\,\bigl(\gamma+\sqrt{-d}\,\ell\bigr)^{n}.
+\]
+At $n=2$ this reads
+\[
+  \omega_{1}=\tfrac12\bigl(d\,\ell^{2}-\gamma^{2}\bigr),
+  \qquad
+  \omega_{2}=-\gamma\,\ell,
+\]
+and at $n=3$,
+\[
+  \omega_{1}=\tfrac12\,d\,\gamma\,\ell^{2}-\tfrac16\gamma^{3},
+  \qquad
+  \omega_{2}=\tfrac16\,d\,\ell^{3}-\tfrac12\gamma^{2}\ell,
+\]
+with $\gamma=d\beta-\widehat{\beta}$ throughout.
+\end{example}
+
+\begin{corollary}[Algebraicity on the split locus]\label{cor:splitalgebraic}
+For every $n\ge1$, every squarefree $d>0$ and every principally polarised
+abelian $n$-fold $X$, the Weil classes of $A=X\times\widehat{X}$ with the
+$K$-action \eqref{eq:Mdef} are algebraic, and an algebraic representative is
+given by \eqref{eq:splitclosed} as an explicit rational combination of
+intersections of three divisors.
+\end{corollary}
+
+\begin{proof}
+This is \Cref{thm:splitclosed}(iii), together with the Lefschetz theorem on
+$(1,1)$ classes, which makes $\beta,\widehat{\beta},\ell$ algebraic, and the
+fact that the algebraic classes form a subring of $H^{*}(A,\QQ)$.
+\end{proof}
+
+\begin{remark}[Consistency with the character obstruction]\label{rem:splitconsistent}
+\Cref{cor:splitalgebraic} does not contradict \Cref{thm:character}. At the
+split point $\NS(A)\otimes\QQ$ contains the three independent classes
+$\beta,\widehat{\beta},\ell$, so the hypothesis
+$\NS(A)\otimes\QQ=\QQ\eta$ of \Cref{prop:notpoly} fails, and this is the
+situation of \Cref{rem:special}. What \Cref{thm:character} forbids is a
+$\Kx$-eigenclass for the norm character meeting the Weil line, and
+$\gamma\mp\sqrt{-d}\,\ell$ is an eigenclass for $\tau^{2}$ and for
+$\bbar{\tau}^{2}$, not for the norm. The formula \eqref{eq:splitclosed} is
+the first place in the paper where a class in the relevant eigenspace is
+exhibited, and such a class exists because the split member has enough
+divisors to build one.
+\end{remark}
+
+\subsection{Products of abelian surfaces}\label{ssec:products}
+
+A second source of members with enough divisors is the product, an operation
+that the Weil line respects. Throughout this subsection $K$ is fixed and all
+Weil structures are taken with respect to it.
+
+\begin{lemma}[Products of Weil type]\label{lem:prodweil}
+Let $(A_{1},\iota_{1},\eta_{1})$ be of $(K,-1,n_{1})$-Weil type and
+$(A_{2},\iota_{2},\eta_{2})$ of $(K,-1,n_{2})$-Weil type. Then
+$A=A_{1}\times A_{2}$, with the diagonal action
+$\iota=\iota_{1}\times\iota_{2}$ and the product polarisation
+$\eta=p_{1}^{*}\eta_{1}+p_{2}^{*}\eta_{2}$, is of
+$(K,-1,n_{1}+n_{2})$-Weil type.
+\end{lemma}
+
+\begin{proof}
+Write $V_{i}=H^{1}(A_{i},\QQ)$, so $V=H^{1}(A,\QQ)=V_{1}\oplus V_{2}$ as
+$K$-vector spaces and $\dim_{K}V=2n_{1}+2n_{2}$. The Rosati involution of the
+product polarisation is the product of the two Rosati involutions, so it
+restricts on $K$ to conjugation, which is the sign $-1$ of
+\Cref{def:weiltype}. For the multiplicities, the Hodge decomposition of $V$ is
+the direct sum of those of $V_{1}$ and $V_{2}$, and the eigenspace
+decomposition is likewise $V_{\pm}=V_{1,\pm}\oplus V_{2,\pm}$. Hence
+\[
+  \dim_{\CC}V_{+}^{1,0}
+  =\dim_{\CC}V_{1,+}^{1,0}+\dim_{\CC}V_{2,+}^{1,0}
+  =n_{1}+n_{2},
+\]
+and the same for the other three, which is \Cref{lem:balanced} for
+$n=n_{1}+n_{2}$.
+\end{proof}
+
+For an abelian variety $A$ of $(K,-1,n)$-Weil type and a $K$-basis of
+$H^{1}(A,\QQ)$, let $\omega_{1}(A),\omega_{2}(A)$ be the generators of the
+Weil line given by \eqref{eq:omegagens} in that basis, and write
+\[
+  \omega(A)=\omega_{1}(A)+\sqrt{-d}\,\omega_{2}(A)\;\in\;
+  K\otimes_{\QQ}H^{2n}(A,\QQ)
+\]
+for the $K$-valued Weil class; by \eqref{eq:omegaprod} its image in
+$H^{2n}(A,\CC)$ is $d^{-n}\prod_{j}(d\,x_{j}+\delta\,y_{j})$. On a product we
+use the $K$-basis obtained by concatenating bases of the factors.
+
+The Weil line is the top exterior power over $K$, and a top exterior power of
+a direct sum is the tensor product of the top exterior powers. This is the
+content of the next theorem; what has to be checked is its effect on the
+rational generators, which are defined through the real structure rather
+than over $K$.
+
+\begin{theorem}[The Weil class is multiplicative]\label{thm:weilmult}
+With the notation of \Cref{lem:prodweil}, and cup product on
+$H^{*}(A,\QQ)$ taken after pullback along the two projections,
+\begin{equation}\label{eq:weilmult}
+\begin{aligned}
+  \omega_{1}(A)&=\omega_{1}(A_{1})\,\omega_{1}(A_{2})
+    -d\,\omega_{2}(A_{1})\,\omega_{2}(A_{2}),\\
+  \omega_{2}(A)&=\omega_{1}(A_{1})\,\omega_{2}(A_{2})
+    +\omega_{2}(A_{1})\,\omega_{1}(A_{2}),
+\end{aligned}
+\end{equation}
+that is $\omega(A_{1})\,\omega(A_{2})=\omega(A_{1}\times A_{2})$ for the
+$K$-valued Weil class. For $k$ factors,
+$\prod_{j}\omega(A_{j})=\omega(A_{1}\times\cdots\times A_{k})$.
+\end{theorem}
+
+\begin{proof}
+Let $u_{1},\dots,u_{2n_{1}}$ and $u_{2n_{1}+1},\dots,u_{2n}$ be the
+$K$-bases of $H^{1}(A_{1},\QQ)$ and $H^{1}(A_{2},\QQ)$, so that together they
+form the $K$-basis of $H^{1}(A,\QQ)$, and put $x_{j}=u_{j}$ and
+$y_{j}=\sqrt{-d}\,u_{j}$ as in \eqref{eq:omegaprod}. By \eqref{eq:omegaprod},
+\[
+\begin{aligned}
+  \omega(A)
+  &=d^{-n}\prod_{j=1}^{2n}\bigl(d\,x_{j}+\delta\,y_{j}\bigr)\\
+  &=\Bigl(d^{-n_{1}}\prod_{j\le2n_{1}}\bigl(d\,x_{j}+\delta\,y_{j}\bigr)\Bigr)
+   \Bigl(d^{-n_{2}}\prod_{j>2n_{1}}\bigl(d\,x_{j}+\delta\,y_{j}\bigr)\Bigr)
+  =\omega(A_{1})\,\omega(A_{2})
+\end{aligned}
+\]
+in $H^{2n}(A,\CC)$, the products being taken in the order of the basis, so
+that no sign arises. Expanding
+$\bigl(\omega_{1}(A_{1})+\delta\omega_{2}(A_{1})\bigr)
+\bigl(\omega_{1}(A_{2})+\delta\omega_{2}(A_{2})\bigr)$ with $\delta^{2}=-d$,
+and comparing rational parts and $\delta$-parts, which is legitimate because
+the classes $\omega_{j}(A_{i})$ are rational and $1,\delta$ are linearly
+independent over $\QQ$, gives \eqref{eq:weilmult}. The statement for $k$
+factors follows by induction.
+\end{proof}
+
+\Cref{fig:product} shows the multiplicativity and the loci it reaches.
+
+\begin{corollary}[Algebraicity propagates along products]\label{cor:prodalg}
+If the Weil classes of $A_{1}$ and of $A_{2}$ are algebraic, then so are those
+of $A_{1}\times A_{2}$, and an algebraic representative is the rational
+combination of external products given by \eqref{eq:weilmult}.
+\end{corollary}
+
+\begin{proof}
+Algebraic classes are closed under pullback along the projections and under
+cup product, and \eqref{eq:weilmult} expresses $\omega_{1}(A)$ and
+$\omega_{2}(A)$ in those operations applied to the $\omega_{j}(A_{i})$.
+\end{proof}
+
+In dimension two there is nothing to prove.
+
+\begin{lemma}[Dimension two]\label{lem:basecase}
+Let $A_{0}$ be of $(K,-1,1)$-Weil type, so $\dim A_{0}=2$. Then
+$\HW(A_{0})\subset H^{2}(A_{0},\QQ)$ and both generators are algebraic.
+\end{lemma}
+
+\begin{proof}
+The Weil classes lie in $H^{2n}=H^{2}$ and are of type $(1,1)$ by
+\Cref{prop:weilline}(ii), so they are algebraic by the Lefschetz theorem on
+$(1,1)$ classes. No hypothesis on $A_{0}$ beyond the Weil structure is used.
+\end{proof}
+
+\begin{theorem}[An algebraic Weil class in every dimension]\label{thm:everyn}
+Let $n\ge1$, let $d>0$ be squarefree, and let $A_{1},\dots,A_{n}$ be abelian
+surfaces of $(K,-1,1)$-Weil type. Then $A=A_{1}\times\cdots\times A_{n}$ is of
+$(K,-1,n)$-Weil type and its Weil classes are algebraic; explicitly, by
+\Cref{thm:weilmult} and \Cref{lem:basecase} they are the rational part and
+the coefficient of $\sqrt{-d}$ in
+$\prod_{j=1}^{n}\bigl(\omega_{1}(A_{j})+\sqrt{-d}\,\omega_{2}(A_{j})\bigr)$,
+a polynomial with integer coefficients in $2n$ divisor classes.
+\end{theorem}
+
+\begin{proof}
+\Cref{lem:prodweil} gives the Weil structure, \Cref{lem:basecase} gives
+algebraicity of each factor's classes, and \Cref{cor:prodalg} applied $n-1$
+times gives the conclusion; the displayed form is \Cref{thm:weilmult} for $k=n$
+factors. Each $\omega_{j}(A_{i})$ is a divisor class by
+\Cref{lem:basecase}, so the product is a polynomial in $2n$ of them.
+\end{proof}
+
+\begin{remark}[The product locus]\label{rem:prodscope}
+\Cref{thm:everyn} is unconditional and holds for every $n$; like
+\Cref{cor:splitalgebraic} and \Cref{thm:everyfamily}, it produces an algebraic
+Weil class in every dimension using nothing beyond the Lefschetz theorem on
+$(1,1)$ classes. The product construction supplies a second family of base
+points, defined for every $n$ and every $d$, at which the class is written
+down explicitly. It also shows that the algebraicity locus is closed under
+products, so that a settled case $n_{0}$ propagates to every multiple of
+$n_{0}$, and settled cases propagate to their sums. Combined with Markman's
+theorem at $n=2$ \cite{Mar25a,Mar25b}, this gives, for every $n$,
+algebraicity on the locus of products of abelian fourfolds and surfaces of
+Weil type, which has dimension $2n$ when $n$ is even.
+
+The reach of these results is limited. The family of polarised abelian
+$2n$-folds of $(K,-1,n)$-Weil type has dimension $n^{2}$, and the locus of
+products of $n$ surfaces has dimension $n$, so for $n\ge2$ it is a proper
+closed subvariety, smaller than the quaternionic locus of \Cref{thm:quatweil},
+whose dimension is $n(n+1)/2$. A general member of the family is simple,
+hence not isogenous to a product, and neither \Cref{thm:everyn} nor
+\Cref{cor:splitalgebraic} applies to it. The general member lies outside all
+of these loci, and by \Cref{thm:residual} what joins them to it is the
+propagation statement.
+\end{remark}
+
+\begin{figure}[htbp]
+\centering
+  \includegraphics[width=0.96\textwidth]{fig_product}
+\caption{\Cref{thm:weilmult} and its reach. Left: the Weil line of each factor
+is a $K$-line, the Weil line of the product is the tensor product of the two
+over $K$, and the $K$-valued Weil class is multiplicative. Algebraicity therefore passes from the factors to the product, and
+at $n=1$ the factors are divisor classes, so a product of $n$ abelian surfaces
+of Weil type carries an explicit algebraic Weil class in every dimension.
+Right: the dimensions of the loci on which the class is known to be algebraic,
+against the dimension $n^{2}$ of the family. Both the quaternionic locus and
+the product locus are proper subvarieties once $n\ge2$, and a general member
+lies on neither.}
+\label{fig:product}
+\end{figure}
+
+\subsection{The residual statement}\label{ssec:residual}
+
+The results above allow the remaining question to be stated in one sentence,
+without auxiliary hypotheses.
+
+\begin{setupenv}[The family]\label{setup:family}
+Fix $n\ge2$ and a squarefree $d>0$. Let $\cD_{n,n}$ be the period domain of
+\Cref{prop:weildomain} and let
+\[
+  \pi\colon\cA\longrightarrow\cD_{n,n}
+\]
+be the family of polarised abelian $2n$-folds of $(K,-1,n)$-Weil type it
+parametrises, with $\omega$ the flat section of $R^{2n}\pi_{*}\QQ$ given
+fibrewise by the class $\omega_{1}$ of \eqref{eq:omegagens}. Let
+$\cD^{\mathrm{spl}}\subset\cD_{n,n}$ be the locus of split members
+$X\times\widehat{X}$ carrying the action \eqref{eq:Mdef}.
+\end{setupenv}
+
+\begin{question}[The residual statement]\label{q:residual}
+Is $\omega_{s}$ algebraic for every $s\in\cD_{n,n}$?
+\end{question}
+
+\begin{theorem}[The reduction]\label{thm:residual}
+Fix $n\ge2$ and a squarefree $d>0$, and keep the notation of
+\Cref{setup:family}.
+\begin{enumerate}[label=\textup{(\alph*)},nosep]
+\item If \Cref{q:residual} has a positive answer, then the Hodge conjecture
+  holds, in every degree, for every abelian $2n$-fold of $(K,-1,n)$-Weil type
+  with $\Hg(A)=\SU(V,H)$.
+\item Conversely, if the Hodge conjecture holds for every abelian $2n$-fold of
+  $(K,-1,n)$-Weil type, then \Cref{q:residual} has a positive answer.
+\item $\cD^{\mathrm{spl}}$ is nonempty, $\omega_{s}$ is algebraic at every
+  $s\in\cD^{\mathrm{spl}}$ with the explicit representative
+  \eqref{eq:splitclosed}, and $\cD_{n,n}$ is connected.
+\end{enumerate}
+Thus \Cref{q:residual} is the variational Hodge conjecture for one flat class
+on one connected family; it is necessary as well as sufficient, and its base
+case is supplied. \Cref{thm:everyfamily} supplies a base case in every family,
+for every discriminant, so nonemptiness of the base locus is never the
+obstacle.
+\end{theorem}
+
+\begin{proof}
+(a) Let $A$ be of $(K,-1,n)$-Weil type with $\Hg(A)=\SU(V,H)$. By
+\Cref{prop:weildomain} its Hodge structure is a point $s$ of $\cD_{n,n}$, so
+$A$ is a fibre of $\pi$, and the Weil line of $A$ is generated over $K$ by
+$\omega_{s}$. A positive answer makes $\omega_{s}$ algebraic, hence makes the
+whole Weil line algebraic by the argument of \Cref{cor:whatisleft}. By
+\Cref{thm:hdgcount} the Weil line together with the powers of $\eta$ exhausts
+$\Hdg^{*}(A)$, and the powers of $\eta$ are algebraic, so every Hodge class on
+$A$ is algebraic.
+
+(b) For every $s$ the class $\omega_{s}$ is a Hodge class on the fibre $A_{s}$,
+by \Cref{prop:weilline}(ii), and $A_{s}$ is of $(K,-1,n)$-Weil type by
+construction. So the Hodge conjecture for $A_{s}$ gives its algebraicity.
+
+(c) $\cD^{\mathrm{spl}}$ is nonempty because the construction \eqref{eq:Mdef}
+applies to any principally polarised abelian $n$-fold and produces a point of
+$\cD_{n,n}$ by \Cref{thm:explicitweil}; algebraicity there is
+\Cref{cor:splitalgebraic}; and $\cD_{n,n}$ is connected because it is a
+bounded symmetric domain, by \Cref{prop:weildomain}.
+\end{proof}
+
+\begin{remark}[The target]\label{rem:target}
+The preceding sections remove three parts of the problem.
+\Cref{thm:hdgcount} settles how many classes are at issue: one, in one
+degree, on each fibre. \Cref{thm:divisor} and \Cref{thm:character} exclude
+two families of candidate constructions. \Cref{thm:splitclosed} supplies the
+base case: the class is algebraic somewhere in the family, with a
+representative that can be written on a single line.
+
+The next step is propagation, which is Grothendieck's variational Hodge
+conjecture for the pair $(\pi,\omega)$ of \Cref{setup:family}.
+\Cref{thm:residual} shows that for the Hodge conjecture on
+abelian varieties of Weil type it is necessary as well as sufficient, so every
+route to the conjecture meets an equivalent difficulty.
+\Cref{ssec:properness} analyses the propagation; there the passage from a
+formal deformation to an algebraic one, usually the harder half, is supplied
+by properness of the Hilbert scheme. What survives is either an infinitesimal
+statement at a single point or a bound on the complexity of representing
+cycles along one orbit, and the second is equivalent to its conclusion
+(\Cref{thm:p1equivalent}).
+\end{remark}
+
+\subsection{The divisorial criterion}
+\label{ssec:divcrit}
+
+\Cref{thm:splitclosed} is a computation on one member of the family, but the
+mechanism behind it is not special to that member. Isolating it gives a
+criterion that can be tested at any point; we then determine where it holds.
+
+\begin{theorem}[The divisorial criterion]\label{thm:divcriterion}
+Let $(A,\iota,\eta)$ be of $(K,-1,n)$-Weil type and suppose there exists
+$\Theta\in\bigwedge^{2}V_{-}$ with
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item $\Theta$ nondegenerate as an alternating form on $V_{-}^{\vee}$,
+  equivalently $\Theta^{n}\ne0$;
+\item $\Theta$ of Hodge type $(1,1)$;
+\item $\Theta+\bbar{\Theta}$ rational, that is in $H^{2}(A,\QQ)$.
+\end{enumerate}
+Then the Weil classes of $A$ are algebraic. Explicitly, writing
+$g=\Theta+\bbar{\Theta}$ and $\lambda=(\Theta-\bbar{\Theta})/\sqrt{-d}$, both
+$g$ and $\lambda$ are divisor classes and
+\begin{equation}\label{eq:divrep}
+  \HW(A)=\Bigl\langle\;
+    \Re\bigl(g+\sqrt{-d}\,\lambda\bigr)^{n},\;\;
+    \Im\bigl(g+\sqrt{-d}\,\lambda\bigr)^{n}\;\Bigr\rangle_{\QQ},
+\end{equation}
+so every Weil class is a rational polynomial in two divisor classes.
+\end{theorem}
+
+\begin{proof}
+Conjugation interchanges $\bigwedge^{2}V_{-}$ and $\bigwedge^{2}V_{+}$, so
+$\bbar{\Theta}\in\bigwedge^{2}V_{+}$, and both $g$ and $\lambda$ are fixed by
+conjugation, hence real. Rationality of $g$ is (iii); that of $\lambda$
+comes from the action of $\Kx$. Fix
+$\tau=a+b\sqrt{-d}\in\Kx$ with $ab\ne0$. By \Cref{prop:grading} the operator
+$\iota(\tau)^{*}$ acts on $\bigwedge^{2}V_{+}$ by $\tau^{2}=a^{2}-db^{2}+2ab\sqrt{-d}$
+and on $\bigwedge^{2}V_{-}$ by $\bbar{\tau}^{\,2}$, so
+\[
+  J:=\frac{\iota(\tau)^{*}-(a^{2}-db^{2})}{2ab}
+\]
+is a $\QQ$-rational endomorphism of $H^{2}(A,\QQ)$ preserving the space $R$
+of \Cref{prop:normpart} and acting
+on $\bigwedge^{2}V_{\pm}$ by $\pm\sqrt{-d}$. Applying it to
+$g=\Theta+\bbar{\Theta}$ gives $J(g)=-\sqrt{-d}\,\Theta+\sqrt{-d}\,\bbar{\Theta}
+=-\sqrt{-d}\cdot\sqrt{-d}\,\lambda=d\,\lambda$, so $\lambda=J(g)/d$ is
+rational. Both $g$ and $\lambda$ are of type $(1,1)$ by (ii) and conjugation
+symmetry, so both lie in $\NS(A)\otimes\QQ$ by the Lefschetz theorem on
+$(1,1)$ classes, and both are algebraic.
+
+By (i) the form $\Theta$ on the $2n$-dimensional space $V_{-}$ has nonzero
+Pfaffian, so $\Theta^{n}$ is a nonzero element of the line
+$\bigwedge^{2n}V_{-}$, and it therefore spans it; conjugating,
+$\bbar{\Theta}^{\,n}$ spans $\bigwedge^{2n}V_{+}$. Hence
+$\Theta^{n}+\bbar{\Theta}^{\,n}$ and
+$(\Theta^{n}-\bbar{\Theta}^{\,n})/\sqrt{-d}$ span $\HW(A)$ over $\QQ$, by
+\Cref{prop:weilline}(i). Finally
+$2^{n}\Theta^{n}=(g+\sqrt{-d}\lambda)^{n}$, and expanding by the binomial
+theorem with $(\sqrt{-d})^{2m}=(-d)^{m}$ writes the real and imaginary parts
+as rational polynomials in $g$ and $\lambda$. Products of divisor classes are
+algebraic.
+\end{proof}
+
+\begin{corollary}\label{cor:splitsatisfies}
+The split member of \Cref{thm:splitclosed} satisfies the criterion, with
+$\Theta=\gamma-\sqrt{-d}\,\ell$ and $\gamma=d\beta-\widehat{\beta}$; the two
+divisor classes of \eqref{eq:divrep} are $2\gamma$ and $-2\ell$.
+\end{corollary}
+
+\begin{proof}
+\Cref{thm:splitclosed}(i) places $\Theta=\gamma-\sqrt{-d}\,\ell$ in
+$\bigwedge^{2}V_{+}$ and its conjugate in $\bigwedge^{2}V_{-}$. The hypotheses
+and the conclusion of \Cref{thm:divcriterion} are symmetric under replacing
+$\Theta$ by $\bbar{\Theta}$, which interchanges $V_{+}$ and $V_{-}$, fixes $g$
+and changes the sign of $\lambda$, so the criterion may be applied to
+$\Theta$. The classes $\gamma$ and $\ell$ are divisor classes, hence of type
+$(1,1)$, so $\Theta$ is of type $(1,1)$ and $\Theta+\bbar{\Theta}=2\gamma$ is
+rational. Nondegeneracy is the nonvanishing of $\Theta^{n}$, proved in
+\Cref{thm:splitclosed}(ii).
+\end{proof}
+
+The base case is therefore one instance of a general criterion. The next two
+results determine how far the criterion reaches, and both limit it.
+
+\begin{proposition}[The criterion fails at a general point]\label{prop:divfails}
+Let $(A,\iota,\eta)$ be of $(K,-1,n)$-Weil type with $n\ge2$ and
+$\Hg(A)=\SU(V,H)$. Put
+\[
+  R=\Bigl(\textstyle\bigwedge^{2}V_{+}\oplus\bigwedge^{2}V_{-}\Bigr)
+      \cap H^{2}(A,\QQ).
+\]
+Then $R\cap\NS(A)_{\QQ}=0$, and no $\Theta$ as in \Cref{thm:divcriterion}
+exists.
+\end{proposition}
+
+\begin{proof}
+By \Cref{prop:normpart} the space $R$ is a rational sub-Hodge structure of
+$H^{2}(A,\QQ)$, and the intersection $R\cap\NS(A)_{\QQ}$ is a rational
+sub-Hodge structure of $R$ of pure type $(1,1)$. The complexification of a
+nonzero rational sub-Hodge structure of $R$ is a nonzero
+$\Hg(A)_{\CC}$-subrepresentation of $\bigwedge^{2}V_{+}\oplus\bigwedge^{2}V_{-}$,
+so it contains a constituent isomorphic to $\bigwedge^{2}V_{+}$ or to
+$\bigwedge^{2}V_{-}$; by the proof of \Cref{prop:normpart}, Hodge numbers
+depend only on the representation, and by \Cref{prop:h2pieces} each of
+$\bigwedge^{2}V_{\pm}$ has $h^{2,0}+h^{0,2}=2\binom{n}{2}=n(n-1)$, which is
+positive for $n\ge2$. So no nonzero rational sub-Hodge structure of $R$ is of
+pure type $(1,1)$, and $R\cap\NS(A)_{\QQ}=0$. The argument covers the case
+$n=2$ with trivial discriminant, where $R$ is reducible. A $\Theta$ as in
+\Cref{thm:divcriterion} would give the nonzero element $\Theta+\bbar{\Theta}$
+of $R\cap\NS(A)_{\QQ}$.
+\end{proof}
+
+\begin{proposition}[The split locus]\label{prop:splitgeom}
+Fix $n\ge1$ and a squarefree $d>0$, and let $A=X\times\widehat{X}$ carry the
+$K$-action \eqref{eq:Mdef} determined by a nondegenerate
+$\beta\in\NS(X)\otimes\QQ$ of elementary divisors $(d_{1},\dots,d_{n})$.
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item Let $B$ be the Gram matrix of $\beta$ in a basis of $U$, and let
+  $\widehat\beta$ be the form on $U^{\vee}$ with Gram matrix $-B^{-1}$ in the
+  dual basis, which for principal $\beta$ is the class of
+  \Cref{not:threeclasses}. The polarisation of $A$ is
+  $\eta=\beta+\widehat{\beta}/d$, a positive rational multiple of
+  $d\beta+\widehat\beta$; its Gram matrix on $H_{1}(A,\QQ)=U\oplus U^{\vee}$
+  is the block form $Q=B\oplus(-B^{-1}/d)$, and $M$ is anti-self-adjoint for
+  it.
+\item In the $K$-basis $u_{1},\dots,u_{2n}$ of $H_{1}(A,\QQ)$ the hermitian
+  form of \Cref{lem:hermform} has Gram matrix $\sqrt{-d}\,B$, so
+  \[
+    \det H=(-d)^{n}\det B=(-d)^{n}(d_{1}\cdots d_{n})^{2},
+  \]
+  and $(-1)^{n}\det H=d^{\,n}(d_{1}\cdots d_{n})^{2}$ is a norm from $K$.
+  Every split member therefore lies in the Weil family of trivial
+  discriminant, whatever $\beta$ is chosen.
+\item The split members form a locus of dimension $n(n+1)/2$ inside
+  $\cD_{n,n}$, of codimension $n(n-1)/2$, which is zero only for $n=1$ and is
+  a divisor for $n=2$.
+\item For $X$ with $\Hg(X)=\mathrm{Sp}(H^{1}(X,\QQ))$ one has
+  $\NS(A)_{\QQ}=\langle\beta,\widehat{\beta},\ell\rangle$, of rank three, and
+  in degree $2n$ the monomials in those three classes span the whole space of
+  Hodge classes of $A$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) In the chosen basis of $U$ and the dual basis of $U^{\vee}$ the map
+$\beta\colon U\to U^{\vee}$ has matrix $B^{\top}=-B$ and its inverse has
+matrix $-B^{-1}$, so \eqref{eq:Mdef} becomes
+$M=\begin{psmallmatrix}0&B^{-1}\\-dB&0\end{psmallmatrix}$, with
+$M^{2}=-d$ and
+$M^{\top}=\begin{psmallmatrix}0&dB\\-B^{-1}&0\end{psmallmatrix}$, using
+$B^{\top}=-B$ and $(B^{-1})^{\top}=-B^{-1}$. For a block form
+$Q=\begin{psmallmatrix}P&\Lambda\\-\Lambda^{\top}&S\end{psmallmatrix}$ the
+Rosati relation $M^{\top}Q+QM=0$ reads
+$B\Lambda^{\top}+\Lambda B=0$, $dBS+PB^{-1}=0$, $B^{-1}P+dSB=0$ and
+$B^{-1}\Lambda+\Lambda^{\top}B^{-1}=0$. Taking $\Lambda=0$ and $P=B$ forces
+$S=-B^{-1}/d$ from the second relation, and the third then reads $-I+I=0$.
+So $Q=B\oplus(-B^{-1}/d)$, which is the Gram matrix of
+$\beta+\widehat\beta/d$. For principal $\beta$ one may take
+$B=\begin{psmallmatrix}0&I\\-I&0\end{psmallmatrix}$, so that $-B^{-1}=B$
+and $\widehat\beta=\sum_{j}\xi_{j}\wedge\xi_{n+j}$ as in
+\Cref{not:threeclasses}.
+
+(ii) The set $u_{1},\dots,u_{2n}$ is a $K$-basis because
+$MU=d\beta(U)=U^{\vee}$, and $H(u_{i},u_{j})=Q(Mu_{i},u_{j})+\sqrt{-d}\,Q(u_{i},u_{j})$
+by \eqref{eq:QfromH}; the first term vanishes since $Mu_{i}\in U^{\vee}$,
+$u_{j}\in U$ and $Q$ has no cross block by (i), and the second is
+$\sqrt{-d}\,\beta_{ij}$. Hence the Gram matrix is $\sqrt{-d}\,B$ and
+$\det H=(\sqrt{-d})^{2n}\det B=(-d)^{n}\det B$. The determinant of an
+alternating matrix is the square of its Pfaffian, here $(d_{1}\cdots
+d_{n})^{2}$. Now $d=\Nm_{K/\QQ}(\sqrt{-d})$ is a norm and every square is a
+norm, and the norms form a subgroup of $\QQ^{\times}$, so
+$d^{\,n}(d_{1}\cdots d_{n})^{2}$ is a norm.
+
+(iii) A split member is determined by $X$ together with $\beta$; the moduli
+space of polarised abelian $n$-folds has dimension $\dim\cA_{n}=n(n+1)/2$,
+and the type of $\beta$ is discrete. By \Cref{prop:weildomain} the ambient domain has
+dimension $n^{2}$, and $n^{2}-n(n+1)/2=n(n-1)/2$.
+
+(iv) The Hodge classes of $A=X\times\widehat{X}$ are the invariants of
+$\Hg(A)=\Hg(X)=\mathrm{Sp}(U)$ acting on
+$\bigwedge^{*}(U\oplus U^{\vee})$. In degree two the invariants are the three
+lines spanned by $\beta$, $\widehat{\beta}$ and $\ell$, one from each
+K\"unneth summand $\bigwedge^{2}U$, $U\otimes U^{\vee}$ and
+$\bigwedge^{2}U^{\vee}$. In higher degree, identify $U^{\vee}$ with $U$
+through $\beta$, so that $\bigwedge^{*}(U\oplus U^{\vee})\cong
+\bigwedge^{*}(U\otimes\QQ^{2})$ as representations of $\mathrm{Sp}(U)$. By the
+first fundamental theorem of invariant theory for the symplectic group, the
+invariants of $\mathrm{Sp}(U)$ in $U^{\otimes2m}$ are spanned by the tensors
+attached to the pairings of the $2m$ factors, each a product of copies of the
+invariant element of $U\otimes U$ dual to $\beta$. The projection of
+$(U\otimes\QQ^{2})^{\otimes2m}$ onto $\bigwedge^{2m}(U\otimes\QQ^{2})$ is
+equivariant and surjective, hence surjective on invariants since
+$\mathrm{Sp}(U)$ is reductive, and it carries such a tensor, tensored with
+vectors of $\QQ^{2}$, to a product of invariants of degree two. So the
+invariants are generated by $\beta$, $\widehat{\beta}$ and $\ell$, and in
+degree $2n$ the monomials $\beta^{i}\widehat{\beta}^{j}\ell^{k}$ with
+$i+j+k=n$ span the Hodge classes.
+\end{proof}
+
+\begin{remark}[Two residual questions]\label{rem:residualmap}
+The Weil families for a fixed $K$ and a fixed $n$ are classified by the
+discriminant of the hermitian form, an element of the infinite group
+$\QQ^{\times}_{>0}/\Nm_{K/\QQ}(K^{\times})$. By \Cref{prop:splitgeom}(ii) the
+split construction of \Cref{ssec:split} produces a base point in only one of
+them, the family of trivial discriminant; products of abelian surfaces of
+Weil type (\Cref{thm:everyn}, \Cref{lem:products}) reach every discriminant,
+but only on a locus of dimension $n$. Read together with
+\Cref{thm:residual}, this divides \Cref{q:residual} into two questions of
+different kinds.
+\begin{enumerate}[label=\textup{(R\arabic*)},leftmargin=2.8em,itemsep=2pt]
+\item \emph{Trivial discriminant.} A base point exists, with the explicit
+  cycle \eqref{eq:splitclosed}, and what is missing is propagation off a locus
+  of codimension $n(n-1)/2$. At $n=2$ that locus is a divisor and the
+  propagation is known, by Markman \cite{Mar25a,Mar25b} and by Floccari and Fu
+  \cite{FF26}; combined with \Cref{thm:residual}(a) this recovers the Hodge
+  conjecture for abelian fourfolds of Weil type of trivial discriminant with
+  full Hodge group. At $n=3$ it is settled as well, by Markman's theorem on
+  the sixfolds of trivial discriminant \cite{Mar25a,Mar25b}, for every $K$.
+  For $n\ge4$ it is the propagation statement, and by \Cref{prop:descent}
+  it is then the only question in the imaginary quadratic case.
+\item \emph{Nontrivial discriminant.} The split construction never lands
+  there, by \Cref{prop:splitgeom}(ii), so it supplies no base
+  point; and by \Cref{prop:divfails} no divisorial argument can supply one at
+  a general member. A base point must come from a special member at which $R$
+  acquires Hodge classes.
+\end{enumerate}
+Question (R2) is settled in \Cref{ssec:everyfamily}: the special members
+required are built from abelian varieties with quaternionic multiplication
+extending $K$ and their products, they exist in every family, and on them
+\Cref{thm:divcriterion} applies. What then remains is the propagation
+question of (R1), posed in every family, each of which has a base point.
+\end{remark}
+
+\begin{remark}[Codimension of the split locus]
+\label{rem:nlcodim}
+A component of the Noether--Lefschetz locus of a weight two variation has
+codimension at most $h^{2,0}$, here $n(n-1)$. The split locus has codimension
+$n(n-1)/2$ by \Cref{prop:splitgeom}(iii), half of that, so it is a
+component of half the expected codimension. This reflects
+\Cref{prop:splitgeom}(iv): at a split point $R$ acquires two independent Hodge
+classes at once, namely $\gamma$ and $\ell$, and each of them costs
+$h^{2,0}/2$ conditions rather than $h^{2,0}$. Whether there are components
+of the expected codimension carrying only one class, and whether the
+criterion of \Cref{thm:divcriterion} can be met on them, is not needed
+below: question (R2) is answered in \Cref{ssec:everyfamily}
+through quaternionic multiplication.
+\end{remark}
+
+\subsection{A base point in every family}\label{ssec:everyfamily}
+
+By \Cref{prop:splitgeom}(ii) the split construction reaches a single
+discriminant class. \Cref{thm:divcriterion} does not depend on the origin of
+$\Theta$, and in this subsection $\Theta$ comes from an endomorphism rather
+than from a pair of divisors chosen by hand. This source reaches every class,
+and it settles question (R2) of \Cref{rem:residualmap}.
+
+\begin{definition}[Discriminant]\label{def:disc}
+For $(A,\iota,\eta)$ of $(K,-1,n)$-Weil type with hermitian form $H$ as in
+\Cref{lem:hermform}, the \emph{discriminant} is the class of
+$(-1)^{n}\det H$ in $\QQ^{\times}_{>0}/\Nm_{K/\QQ}(K^{\times})$. The sign
+makes the representative positive, because $H$ has signature $(n,n)$; and the
+class is well defined because changing the $K$-basis multiplies $\det H$ by a
+norm. Hermitian forms of rank $2n$ over $K$ with signature $(n,n)$ are
+classified by this class, so it labels the Weil families.
+\end{definition}
+
+The classes that enter \Cref{thm:divcriterion} have a description by
+endomorphisms: a class in $R\cap\NS(A)_{\QQ}$ is the same thing as a
+symmetric endomorphism that conjugates $K$.
+
+\begin{lemma}[Classes in $R$ and endomorphisms]\label{lem:Rendomorphism}
+Let $(A,\iota,\eta)$ be of $(K,-1,n)$-Weil type. The map $\mu\mapsto
+g_{\mu}$, $g_{\mu}(x,y)=\eta(\mu x,y)$, is a bijection between
+\begin{enumerate}[label=\textup{(\alph*)},nosep]
+\item the elements $\mu\in\End^{0}(A)$ with $\mu^{\dagger}=\mu$ and
+  $\mu\,\iota(\tau)=\iota(\bbar{\tau})\,\mu$ for all $\tau\in K$, and
+\item the elements of $R\cap\NS(A)_{\QQ}$.
+\end{enumerate}
+Under it, $\mu$ invertible corresponds to $g_{\mu}$ nondegenerate, hence to a
+nondegenerate $\Theta$. If such a $\mu\ne0$ exists and the centraliser of
+$\iota(K)$ in $\End^{0}(A)$ is $\iota(K)$, then $\mu^{2}\in\QQ^{\times}$ and
+$\iota(K)+\iota(K)\mu$ is a quaternion algebra $(-d,\mu^{2})_{\QQ}$ inside
+$\End^{0}(A)$.
+\end{lemma}
+
+\begin{proof}
+A class in $\NS(A)_{\QQ}$ is a symmetric homomorphism $A\to\Av$ up to isogeny,
+that is $\eta\mu$ with $\mu^{\dagger}=\mu$. The condition
+$g_{\mu}(\iota(\tau)x,y)=g_{\mu}(x,\iota(\tau)y)$, which says that $g_{\mu}$ is
+$K$-bilinear and hence lies in $R=\bigwedge^{2}_{K}V$, reads
+$\eta(\mu\iota(\tau)x,y)=\eta(\mu x,\iota(\tau)y)=\eta(\iota(\tau)^{\dagger}\mu
+x,y)=\eta(\iota(\bbar{\tau})\mu x,y)$, using \Cref{def:weiltype}(iii), so it
+is the condition $\mu\iota(\tau)=\iota(\bbar{\tau})\mu$. For the last sentence,
+$\mu^{2}$ commutes with $\iota(K)$, hence lies in $\iota(K)$ by hypothesis, and
+$\mu\mu^{2}\mu^{-1}=\mu^{2}$ forces it to be fixed by conjugation, so
+$\mu^{2}\in\QQ^{\times}$. Then $\iota(\sqrt{-d})$ and $\mu$ generate the
+quaternion algebra with the stated invariants.
+\end{proof}
+
+The criterion therefore asks for quaternionic multiplication extending $K$.
+Abelian varieties with this structure are easy to construct, and their
+invariants can be computed.
+
+\begin{setupenv}[The quaternionic model]\label{setup:quat}
+Let $b\in\QQ_{>0}$ and let $B=(-d,b)_{\QQ}$ be the quaternion algebra with
+basis $1,i,j,ij$ and $i^{2}=-d$, $j^{2}=b$, $ij=-ji$. Let
+$V=B^{n}$ as a left $B$-module, of dimension $4n$ over $\QQ$, let
+$K=\QQ(i)\subset B$ act through $i$, and fix $a_{1},\dots,a_{n}\in\QQ^{\times}$
+and
+\begin{equation}\label{eq:quatE}
+  E(x,y)=\sum_{k=1}^{n}a_{k}\,\mathrm{trd}\bigl(\bbar{x_{k}}\,i\,y_{k}\bigr),
+\end{equation}
+where $\mathrm{trd}$ is the reduced trace and $\bbar{\phantom{x}}$ the
+canonical involution of $B$.
+\end{setupenv}
+
+\begin{theorem}[Weil type from quaternionic multiplication]\label{thm:quatweil}
+With the data of \Cref{setup:quat}:
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item $E$ is alternating and nondegenerate, and its Rosati involution is
+  $\beta\mapsto i^{-1}\bbar{\beta}i$, which restricts to complex conjugation on
+  $K$ and fixes $j$; it is positive, the form $\mathrm{trd}(\beta\beta^{\dagger})$
+  being diagonal with entries $2,2d,2b,2db$ on the basis;
+\item in the $K$-basis $e_{1},e_{1}j,\dots,e_{n},e_{n}j$ of $V$ the hermitian
+  form of \Cref{lem:hermform} is
+  \[
+    H=\mathrm{diag}\bigl(2a_{1}d,\,-2a_{1}bd,\;\dots,\;2a_{n}d,\,-2a_{n}bd\bigr),
+  \]
+  of signature $(n,n)$;
+\item there is a complex structure on $V_{\RR}$ commuting with $B$ and
+  polarised by $E$, and for every such the resulting abelian variety $A$ is of
+  $(K,-1,n)$-Weil type, the balanced signature being forced rather than
+  imposed;
+\item the discriminant of $A$ is the class of $b^{n}$;
+\item $\mu=$ left multiplication by $j$ satisfies \Cref{lem:Rendomorphism}(a),
+  so $g=g_{\mu}$ lies in $R\cap\NS(A)_{\QQ}$ and is nondegenerate, the
+  divisorial criterion \Cref{thm:divcriterion} applies, and the Weil classes
+  of $A$ are algebraic.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) $\mathrm{trd}(z)=\mathrm{trd}(\bbar{z})$ and
+$\overline{\bbar{x}iy}=\bbar{y}\,\bbar{i}\,x=-\bbar{y}ix$ give
+$E(y,x)=-E(x,y)$. Nondegeneracy is the nondegeneracy of the reduced trace
+pairing. For the Rosati, $E(\beta x,y)=E(x,\beta^{\dagger}y)$ for all $x,y$
+reads $\bbar{\beta}i=i\beta^{\dagger}$, that is
+$\beta^{\dagger}=i^{-1}\bbar{\beta}i$. Then $i^{\dagger}=-i$ and, since
+$(-j)i=ij$, also $j^{\dagger}=i^{-1}(ij)=j$. Positivity is the displayed
+diagonal, which is positive because $d>0$ and $b>0$.
+
+(ii) $V=Ke_{k}\oplus Ke_{k}j$ over all $k$, since $B=K\oplus Kj$. By
+\eqref{eq:QfromH}, $H(x,y)=E(ix,y)+\sqrt{-d}\,E(x,y)$. On one factor,
+$E(ix,y)=a\,\mathrm{trd}(\overline{ix}\,i\,y)=-a\,\mathrm{trd}(\bbar{x}i^{2}y)
+=ad\,\mathrm{trd}(\bbar{x}y)$, so
+\[
+  H(x,y)=a\bigl[d\,\mathrm{trd}(\bbar{x}y)+\sqrt{-d}\,\mathrm{trd}(\bbar{x}iy)\bigr].
+\]
+Now $\mathrm{trd}(1)=2$, $\mathrm{trd}(i)=\mathrm{trd}(j)=\mathrm{trd}(ij)=0$,
+$\bbar{j}j=-b$ and $\bbar{j}ij=ib$, which give $H(1,1)=2ad$,
+$H(j,j)=-2abd$ and $H(1,j)=0$. Since $b>0$ the two entries of each block have
+opposite signs, so the signature is $(n,n)$.
+
+(iii) A complex structure commuting with $B$ and compatible with $E$ is the
+same as a subspace $V^{1,0}\subset V_{\CC}$, stable under $B$, with
+$V_{\CC}=V^{1,0}\oplus\overline{V^{1,0}}$ and the two Riemann relations. Being
+$K$-stable it splits as $P\oplus P'$ with $P\subset V_{+}$ and
+$P'\subset V_{-}$; left multiplication by $j$ is $\sigma$-semilinear, so it
+carries $V_{+}$ to $V_{-}$, and $B$-stability forces $P'=jP$. Conversely, for
+any $n$-dimensional $H$-negative definite $P\subset V_{+}$ the subspace
+$P\oplus jP$ is $B$-stable and satisfies the Riemann relations, by the
+computation in the proof of \Cref{thm:model} applied blockwise; such $P$
+exists because $H$ has signature $(n,n)$ by (ii). Since $j$ is invertible and
+carries $P$ isomorphically to $P'$, one gets $\dim P=\dim P'=n$, which is
+\Cref{def:weiltype}(ii). The general theory of abelian varieties with
+prescribed endomorphism structure is in \cite[Ch.~9]{BL04}.
+
+(iv) By (ii), $\det H=\prod_{k}(2a_{k}d)(-2a_{k}bd)=(-1)^{n}b^{n}\bigl(2^{n}d^{n}
+\prod_{k}a_{k}\bigr)^{2}$, so $(-1)^{n}\det H$ is $b^{n}$ times a square, and
+squares are norms.
+
+(v) Left multiplication by $j$ satisfies $\mu^{\dagger}=\mu$ by (i) and
+$\mu\,\iota(\tau)=\iota(\bbar{\tau})\,\mu$ because $ji=-ij$; it is invertible
+because $\mu^{2}=b\ne0$. \Cref{lem:Rendomorphism} puts $g_{\mu}$ in
+$R\cap\NS(A)_{\QQ}$ and makes it nondegenerate, and
+\Cref{thm:divcriterion} applies to the component $\Theta$ of $g_{\mu}$ in
+$\bigwedge^{2}V_{-}$.
+\end{proof}
+
+\begin{lemma}[Products and discriminants]\label{lem:products}
+Let $(A_{1},\iota_{1},\eta_{1})$ and $(A_{2},\iota_{2},\eta_{2})$ be of
+$(K,-1,n_{1})$- and $(K,-1,n_{2})$-Weil type. Then
+$A_{1}\times A_{2}$ with the diagonal $K$-action and the product polarisation
+is of $(K,-1,n_{1}+n_{2})$-Weil type, its hermitian form is the orthogonal
+sum, its discriminant is the product of the two discriminants, and if both
+factors satisfy the divisorial criterion then so does the product.
+\end{lemma}
+
+\begin{proof}
+The first assertion is \Cref{lem:prodweil}. Signatures and hermitian forms add
+over an orthogonal sum, so the signature is
+$(n_{1}+n_{2},n_{1}+n_{2})$ and $\det H=\det H_{1}\det H_{2}$, whence
+$(-1)^{n_{1}+n_{2}}\det H$ is the product of the two normalised determinants.
+For the criterion, $V_{-}=V_{1,-}\oplus V_{2,-}$, and
+$\Theta=\Theta_{1}+\Theta_{2}$ lies in $\bigwedge^{2}V_{-}$, is of type
+$(1,1)$, has $\Theta+\bbar{\Theta}$ rational, and is nondegenerate on the
+direct sum because each summand is nondegenerate on its factor.
+\end{proof}
+
+\begin{theorem}[A base point in every Weil family]\label{thm:everyfamily}
+Let $K=\QQ(\sqrt{-d})$, let $n\ge1$, and let $\delta$ be any class in
+$\QQ^{\times}_{>0}/\Nm_{K/\QQ}(K^{\times})$. Then there is an abelian
+$2n$-fold $A$ of $(K,-1,n)$-Weil type with discriminant $\delta$ whose Weil
+classes are algebraic, with an explicit representative as a rational
+polynomial in two divisor classes.
+\end{theorem}
+
+\begin{proof}
+Choose $b\in\QQ_{>0}$ representing $\delta$.
+
+If $n$ is odd, take the quaternionic model of \Cref{setup:quat} with this $b$.
+Its discriminant is $b^{n}=b\cdot(b^{(n-1)/2})^{2}$, which is $\delta$, and
+its Weil classes are algebraic by \Cref{thm:quatweil}(v).
+
+If $n$ is even, then $b^{n}$ is a square and the model alone reaches only the
+trivial class. Take instead $A=A_{1}\times A_{2}$ with $A_{1}$ the
+quaternionic model at $n_{1}=1$ and parameter $b$, and $A_{2}$ the
+quaternionic model at $n_{2}=n-1$ and parameter $d$. Both factors satisfy the
+criterion, so the product does by \Cref{lem:products}; and the discriminant is
+$b^{1}\cdot d^{\,n-1}$, which is $\delta$ because $d=\Nm_{K/\QQ}(\sqrt{-d})$ is
+a norm. The dimension is $2(1+(n-1))=2n$.
+
+In both cases the representative is \eqref{eq:divrep} for the class
+$g_{\mu}$ of \Cref{thm:quatweil}(v), or, in the second case, for the sum of
+the two such classes.
+\end{proof}
+
+\begin{corollary}[Reduction to propagation]\label{cor:R2}
+Every Weil family contains a member at which the Weil classes are algebraic.
+Consequently \Cref{q:residual} reduces to propagation alone: the Hodge
+conjecture for abelian $2n$-folds of Weil type, for every $n$ and every
+discriminant, holds if and only if the class $\omega$ of
+\Cref{setup:family} propagates from the nonempty locus where it is known to be
+algebraic to the rest of its connected family.
+\end{corollary}
+
+\begin{proof}
+The first sentence is \Cref{thm:everyfamily} applied to each class, together
+with the fact that the families are indexed by those classes
+(\Cref{def:disc}). The second is \Cref{thm:residual}, the base locus being
+nonempty in every family by the first.
+\end{proof}
+
+\begin{remark}[Two features of the residual statement]\label{rem:whatsleftnow}
+By \Cref{thm:residual} and \Cref{cor:R2}, the residual statement is the
+variational Hodge conjecture for one flat class on one connected family, with
+a base point in every family, and it is necessary as well as sufficient. Two
+of its features show which tools cannot settle it.
+
+The base locus is thin. By \Cref{prop:divfails} the divisorial criterion fails
+at every point with full Hodge group, so the locus where it holds is contained
+in the Noether--Lefschetz locus of $R$, a countable union of proper closed
+algebraic subvarieties of $\cD_{n,n}$ by \Cref{thm:cdk}. The divisorial
+method cannot enlarge the base locus beyond special points: every point it
+produces is again special.
+
+The propagation is not formal. By \Cref{rem:variational} its infinitesimal
+form would follow from semiregularity, in the sense of Bloch, of the cycle at
+a base point, and that cycle is explicit in every family, being a rational
+polynomial in two divisor classes. Its semiregularity is a computation in the
+normal bundle that we do not carry out; for the perfect complexes of
+\Cref{prop:ktheory}, whose Chern character is concentrated in the degree of
+the Weil class, semiregularity fails (\Cref{prop:concentrated},
+\Cref{thm:p2false}). The other half of the difficulty, that semiregularity
+gives deformations only in the formal category, is removed in
+\Cref{ssec:properness}: once the algebraic locus is known to be a countable
+union of closed subvarieties, a formal deformation at one point is enough.
+\end{remark}
+
+The secant route of \Cref{sec:construction} needs, at $n\ge4$, an object on
+$X$ whose Chern character lies on the secant plane and which also supplies the
+deformation step of \Cref{rem:deformation}. No such object is known, but its
+numerical invariants raise no obstruction.
+
+\begin{proposition}[Numerical admissibility of the secant plane]%
+\label{prop:notforbidden}
+Let $t$ be a principal polarisation on $X$ and let
+$\ch=au+bv$ be a rational point of the secant plane of \Cref{thm:plane},
+with $a,b\in\ZZ$. Then
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item every $\ch_{k}$ is an integral multiple of the integral class
+  $t^{k}/k!$, the multiple being $\pm a d^{j}$ in even degree $k=2j$ and
+  $\pm b d^{j}$ in odd degree $k=2j+1$;
+\item for all integers $a$, $b$ and every positive integer $d$, the Chern
+  classes obtained from $\ch$ by Newton's identities are integral in every
+  degree: $c_{k}=\gamma_{k}\,t^{k}/k!$ with $\gamma_{0}=1$, $\gamma_{1}=b$ and
+  \[
+    \gamma_{k+1}\;=\;b\,\gamma_{k}+d\,k\,(a-k+1)\,\gamma_{k-1}\qquad(k\ge1);
+  \]
+\item the discriminant is
+  $\Delta=2rc_{2}-(r-1)c_{1}^{2}=\bigl(a^{2}d+b^{2}\bigr)t^{2}
+  =\Nm_{K/\QQ}(b+a\sqrt{-d})\,t^{2}$, which is positive, so Bogomolov's
+  inequality never binds.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) is the definition of $u$ and $v$: the coefficient of $t^{k}$ is
+$a(-d)^{j}/(2j)!$ or $b(-d)^{j}/(2j+1)!$, and multiplying by $k!$ clears the
+factorial and leaves $\pm ad^{j}$ or $\pm bd^{j}$. For (ii), write the total
+Chern class as a power series $c(t)=\sum_{k}\gamma_{k}t^{k}/k!$ in the
+variable $t$. Newton's identities in generating-function form say
+$\log c=\sum_{k\ge1}(-1)^{k-1}(k-1)!\,\ch_{k}$, and with the coefficients of
+(i) the two halves of this sum are recognised series:
+\[
+  \log c(t)\;=\;-a\sum_{j\ge1}\frac{(-d)^{j}t^{2j}}{2j}
+     +b\sum_{j\ge0}\frac{(-d)^{j}t^{2j+1}}{2j+1}
+  \;=\;\frac{a}{2}\log\bigl(1+dt^{2}\bigr)
+     +\frac{b}{\sqrt{d}}\arctan\bigl(\sqrt{d}\,t\bigr).
+\]
+Differentiating, $(1+dt^{2})\,c'(t)=(b+adt)\,c(t)$. Comparing the
+coefficients of $t^{k}/k!$ on the two sides gives
+$\gamma_{k+1}+d\,k(k-1)\gamma_{k-1}=b\gamma_{k}+ad\,k\,\gamma_{k-1}$, which is
+the stated recursion. Its coefficients are integers and it starts from
+$\gamma_{0}=1$, $\gamma_{1}=b$, so every $\gamma_{k}$ is an integer, and
+$c_{k}=\gamma_{k}\,t^{k}/k!$ is an integral class because $t^{k}/k!$ is. (iii) is the computation recorded in
+\Cref{thm:secantinvariants}, and the norm form of an imaginary quadratic field
+is positive definite.
+\end{proof}
+
+\begin{remark}[Numerical consistency of the secant object]%
+\label{rem:notforbidden}
+\Cref{prop:notforbidden} excludes a purely arithmetic obstruction. If the
+object required by the construction at $n\ge4$ were forbidden by its
+numerical invariants, the secant route would fail on arithmetic grounds
+alone. It is not: the Chern character is integral, the Chern classes are
+integral in every degree by \Cref{prop:notforbidden}(ii), the
+discriminant is positive, and neither Riemann--Roch nor Bogomolov's
+inequality stands in the way.
+Together with \Cref{prop:objectsize}, which bounds the size of the object from
+below without excluding it, and the parameter count of \Cref{rem:markmancheck},
+which fixes the rank one shape at $n=3$, every count available to us is
+consistent with the existence of the object, and none of them produces it.
+What is missing at $n\ge4$ is the object itself.
+\end{remark}
+
+\subsection{The quaternionic locus as a Lagrangian Grassmannian}
+\label{ssec:lagrangian}
+
+\Cref{thm:quatweil} produces points of the family carrying an admissible
+endomorphism $\psi$. The locus of all such points has dimension $n(n+1)/2$,
+by a Morita argument recalled in \Cref{rem:ntwo}. Here we identify the locus
+itself, and the identification shows where the residual difficulty lies.
+
+\begin{proposition}[The quaternionic locus]\label{prop:lagrangian}
+Keep \Cref{setup:quat} and let $\psi$ be $K$-semilinear, invertible,
+Rosati-symmetric, with $\psi^{2}=b$. For $x,y\in V_{+}$ put
+\[
+  \omega_{\psi}(x,y)\;=\;E(x,\psi y).
+\]
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item $\omega_{\psi}$ is a nondegenerate alternating form on $V_{+}$, and it
+  is alternating precisely because $\psi$ is Rosati-symmetric.
+\item A point $P=V_{+}^{1,0}$ of $\cD_{n,n}$ lies on the locus where $\psi$
+  is a morphism of Hodge structures if and only if $P$ is isotropic for
+  $\omega_{\psi}$.
+\item Since $\dim_{\CC}V_{+}=2n$ and $\dim_{\CC}P=n$, such a $P$ is
+  Lagrangian, so the locus is the open subset of
+  $\mathrm{LG}(n,V_{+},\omega_{\psi})$ cut out by negative definiteness of
+  $H$. Its dimension is $n(n+1)/2$ and its codimension in $\cD_{n,n}$ is
+  $n(n-1)/2$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) $\psi$ carries $V_{+}$ to $V_{-}$, since it is semilinear, and $E$ pairs
+$V_{+}$ with $V_{-}$ perfectly, so $\omega_{\psi}$ is defined and
+nondegenerate. Rosati symmetry is the identity $E(\psi x,y)=E(x,\psi y)$;
+with $E$ alternating it gives
+$\omega_{\psi}(y,x)=E(y,\psi x)=-E(\psi x,y)=-E(x,\psi y)=-\omega_{\psi}(x,y)$.
+
+(ii) Suppose $\psi$ preserves the Hodge structure. Being semilinear it
+carries $V_{+}^{1,0}$ into $V_{-}^{1,0}$, so $\psi P\subseteq V^{1,0}$, and
+$E$ vanishes on $V^{1,0}$ by the first Riemann relation; hence
+$E(P,\psi P)=0$, which is the isotropy of $P$. Conversely, if $P$ is
+isotropic then $\psi P$ lies in the $E$-annihilator of $P$ inside $V_{-}$.
+That annihilator has dimension $n$, because $E$ pairs $V_{+}$ with $V_{-}$
+perfectly, and it contains $V_{-}^{1,0}$, which also has dimension $n$ and is
+$E$-orthogonal to $P$ since both lie in $V^{1,0}$. The two therefore agree,
+so $\psi P=V_{-}^{1,0}$ and $\psi$ preserves $V^{1,0}$.
+
+(iii) A Lagrangian Grassmannian $\mathrm{LG}(n,2n)$ has dimension $n(n+1)/2$,
+its tangent space at a Lagrangian $P$ being the symmetric forms on $P$;
+negative definiteness is an open condition and does not change the dimension.
+Subtracting from $\dim\cD_{n,n}=n^{2}$ gives $n(n-1)/2$.
+\end{proof}
+
+\Cref{fig:lagsweep} draws these loci as a pencil of leaves.
+
+\begin{figure}[htbp]
+\centering
+  \includegraphics[width=0.80\textwidth]{fig_lagsweep}
+\caption{The quaternionic loci of \Cref{prop:lagrangian}, drawn as a
+pencil. Each admissible $\psi$ gives one leaf, an open piece of
+$\mathrm{LG}(n,V_{+},\omega_{\psi})$ of dimension $n(n+1)/2$. As $\psi$
+varies over the reals the leaves through a common axis form a continuous
+family and sweep out $\cD_{n,n}$. The two heavy leaves are those with $\psi$
+rational, and only such leaves are quaternionic loci of abelian varieties.
+The drawing is faithful to the continuity of the family and to the
+discreteness of its rational members, but not to dimensions: in the family
+the leaves have dimension $n(n+1)/2$ inside $n^{2}$, hence codimension
+$n(n-1)/2$, which vanishes only at $n=1$ (at $n=2$ the leaves are divisors,
+\Cref{rem:ntwo}), and $\psi$ ranges over a real variety rather than an
+interval.}
+\label{fig:lagsweep}
+\end{figure}
+
+\begin{remark}[Real and rational quaternionic loci]%
+\label{rem:onlyrational}
+Fix a point $P$ of $\cD_{n,n}$, and let $\psi_{0}$ be left multiplication by
+$j$ at a point $P_{0}$ given by \Cref{thm:quatweil}(iii). The group
+$\SU(V,H)(\RR)$ acts transitively on the bounded symmetric domain $\cD_{n,n}$
+of \Cref{prop:weildomain}, so $P=gP_{0}$ for some real $g$; since $g$ is
+$K$-linear and preserves $H$, hence $E$, the map
+$\psi=g\psi_{0}g^{-1}$ is $K$-semilinear, invertible and Rosati-symmetric,
+satisfies $\psi^{2}=b$, and preserves the Hodge structure at $P$. It
+satisfies every condition of \Cref{prop:lagrangian} except rationality, and
+$P$ lies on its locus. So the quaternionic loci, taken over the \emph{real}
+$\psi$, cover $\cD_{n,n}$; they cover it with room to spare, since each has
+dimension $n(n+1)/2$ and they are parametrised by a positive-dimensional
+family. What prevents the quaternionic loci of abelian varieties from
+covering it is that $\psi$ must lie in $\End^{0}(A)$, hence be rational, and
+the rational $\psi$ form a countable set.
+
+This is the dichotomy of \Cref{cor:allornothing} in its simplest form. The
+obstruction is the countability of a set of parameters inside an uncountable
+one, and it involves neither deformation theory nor positivity. What is
+needed is a mechanism that produces, from one rational $\psi$, a family of
+cycles representing $\omega$ over an open subset of $\cD_{n,n}$ rather than
+over the locus of $\psi$ alone; by \Cref{cor:allornothing}, such a family
+would answer \Cref{q:residual} in the affirmative.
+\end{remark}
+
+\subsection{Absolutely Hodge classes and the exact form}\label{ssec:exactform}
+
+The algebraicity of a Hodge class is usually approached through an
+intermediate property. A rational class of type $(p,p)$ on a smooth
+projective variety $X$ over $\CC$ is \emph{absolutely Hodge} if, for every
+automorphism $\sigma$ of $\CC$, the conjugate under $\sigma$ of its de Rham
+component is the de Rham component of a rational class of type $(p,p)$ on the
+conjugate variety $X^{\sigma}$. The implications
+\begin{equation}\label{eq:threechain}
+  \text{algebraic}
+  \;\Longrightarrow\;
+  \text{absolutely Hodge}
+  \;\Longrightarrow\;
+  \text{Hodge}
+\end{equation}
+are both elementary. The Hodge conjecture asserts the converse of their
+composite. The converse of the second is the weaker statement, and Deligne
+proved it for abelian varieties, so on abelian varieties the Hodge conjecture
+is the converse of the first.
+
+\begin{theorem}[Deligne \cite{Del82}]\label{thm:deligneAH}
+Every Hodge class on a complex abelian variety is absolutely Hodge. Moreover,
+\emph{Principle B}: if $\pi\colon\cX\to S$ is smooth projective over a
+connected smooth base, and $\alpha$ is a flat section of $R^{2p}\pi_{*}\QQ(p)$
+that is Hodge at every point of $S$ and absolutely Hodge at one point, then it
+is absolutely Hodge at every point.
+\end{theorem}
+
+Together with \Cref{thm:residual} and \Cref{thm:everyfamily}, this locates
+the remaining problem.
+
+\begin{corollary}[Reduction to an absolutely Hodge class]\label{cor:exactform}
+Let $\pi\colon\cA\to\cD_{n,n}$ and $\omega$ be as in \Cref{setup:family}. Then
+$\omega_{s}$ is absolutely Hodge for every $s$, and the following are
+equivalent:
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item the Hodge conjecture holds, in every degree, for every abelian
+  $2n$-fold of $(K,-1,n)$-Weil type with $\Hg(A)=\SU(V,H)$;
+\item the absolutely Hodge class $\omega_{s}$ is algebraic for every $s$.
+\end{enumerate}
+This holds for every $K$, every $n$ and every discriminant.
+\end{corollary}
+
+\begin{proof}
+The first assertion is \Cref{thm:deligneAH}. It also follows from Principle B
+together with \Cref{thm:everyfamily}, which supplies a point of $\cD_{n,n}$ at
+which $\omega$ is algebraic and hence absolutely Hodge, and with the
+connectedness of $\cD_{n,n}$ from \Cref{prop:weildomain}.
+
+That (ii) implies (i) is \Cref{thm:residual}(a). Conversely, the Hodge group
+of $A_{s}$ is $\SU(V,H)$ for $s$ outside a countable union of proper closed
+analytic subsets of $\cD_{n,n}$, by Weil's theorem \cite{Weil77} recalled
+before \Cref{thm:hdgcount}. Under (i) the class $\omega_{s}$ is algebraic at
+all such $s$, so the set $\Sigma$ of points at which it is algebraic is not
+meagre, and \Cref{cor:allornothing} gives $\Sigma=\cD_{n,n}$, which is (ii).
+\end{proof}

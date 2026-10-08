@@ -1,0 +1,47 @@
+(LIV) descent and scalar extension for Weil classes
+  (A) descent: P maps W_F(B x Y) isomorphically onto W_F(B)
+    [PASS] Q(i): the field data are consistent (xi totally imaginary, t totally positive)
+    [PASS] Q(i), n=1 -> n+1=2: dim W_F(B) = 2, rank P(W_F(X)) = 2, joint rank 2, control killed: True
+    [PASS] Q(i), n=2 -> n+1=3: dim W_F(B) = 2, rank P(W_F(X)) = 2, joint rank 2, control killed: True
+    [PASS] Q(i), n=3 -> n+1=4: dim W_F(B) = 2, rank P(W_F(X)) = 2, joint rank 2, control killed: True
+    [PASS] Q(i), n=4 -> n+1=5: dim W_F(B) = 2, rank P(W_F(X)) = 2, joint rank 2, control killed: True
+    [PASS] Q(i), n=5 -> n+1=6: dim W_F(B) = 2, rank P(W_F(X)) = 2, joint rank 2, control killed: True
+    [PASS] Q(sqrt-2): the field data are consistent (xi totally imaginary, t totally positive)
+    [PASS] Q(sqrt-2), n=1 -> n+1=2: dim W_F(B) = 2, rank P(W_F(X)) = 2, joint rank 2, control killed: True
+    [PASS] Q(sqrt-2), n=2 -> n+1=3: dim W_F(B) = 2, rank P(W_F(X)) = 2, joint rank 2, control killed: True
+    [PASS] Q(sqrt-2), n=3 -> n+1=4: dim W_F(B) = 2, rank P(W_F(X)) = 2, joint rank 2, control killed: True
+    [PASS] Q(sqrt-2), n=4 -> n+1=5: dim W_F(B) = 2, rank P(W_F(X)) = 2, joint rank 2, control killed: True
+    [PASS] Q(sqrt-3): the field data are consistent (xi totally imaginary, t totally positive)
+    [PASS] Q(sqrt-3), n=1 -> n+1=2: dim W_F(B) = 2, rank P(W_F(X)) = 2, joint rank 2, control killed: True
+    [PASS] Q(sqrt-3), n=2 -> n+1=3: dim W_F(B) = 2, rank P(W_F(X)) = 2, joint rank 2, control killed: True
+    [PASS] Q(sqrt-3), n=3 -> n+1=4: dim W_F(B) = 2, rank P(W_F(X)) = 2, joint rank 2, control killed: True
+    [PASS] Q(sqrt-3), n=4 -> n+1=5: dim W_F(B) = 2, rank P(W_F(X)) = 2, joint rank 2, control killed: True
+    [PASS] Q(sqrt-5): the field data are consistent (xi totally imaginary, t totally positive)
+    [PASS] Q(sqrt-5), n=1 -> n+1=2: dim W_F(B) = 2, rank P(W_F(X)) = 2, joint rank 2, control killed: True
+    [PASS] Q(sqrt-5), n=2 -> n+1=3: dim W_F(B) = 2, rank P(W_F(X)) = 2, joint rank 2, control killed: True
+    [PASS] Q(sqrt-5), n=3 -> n+1=4: dim W_F(B) = 2, rank P(W_F(X)) = 2, joint rank 2, control killed: True
+    [PASS] Q(zeta5): the field data are consistent (xi totally imaginary, t totally positive)
+    [PASS] Q(zeta5), n=1 -> n+1=2: dim W_F(B) = 4, rank P(W_F(X)) = 4, joint rank 4, control killed: True
+    [PASS] Q(zeta5), n=2 -> n+1=3: dim W_F(B) = 4, rank P(W_F(X)) = 4, joint rank 4, control killed: True
+    [PASS] Q(zeta5), n=3 -> n+1=4: dim W_F(B) = 4, rank P(W_F(X)) = 4, joint rank 4, control killed: True
+    [PASS] Q(zeta8): the field data are consistent (xi totally imaginary, t totally positive)
+    [PASS] Q(zeta8), n=1 -> n+1=2: dim W_F(B) = 4, rank P(W_F(X)) = 4, joint rank 4, control killed: True
+    [PASS] Q(zeta8), n=2 -> n+1=3: dim W_F(B) = 4, rank P(W_F(X)) = 4, joint rank 4, control killed: True
+    [PASS] Q(zeta8), n=3 -> n+1=4: dim W_F(B) = 4, rank P(W_F(X)) = 4, joint rank 4, control killed: True
+    [PASS] Q(zeta7): the field data are consistent (xi totally imaginary, t totally positive)
+    [PASS] Q(zeta7), n=1 -> n+1=2: dim W_F(B) = 6, rank P(W_F(X)) = 6, joint rank 6, control killed: True
+    [PASS] Q(zeta7), n=2 -> n+1=3: dim W_F(B) = 6, rank P(W_F(X)) = 6, joint rank 6, control killed: True
+  (B) the discriminant
+    [PASS] H_X = H_B (+) diag(1,-t) has signature (n+1,n+1) and normalised discriminant (-1)^(n+1) det H_X = [(-1)^n det H_B] t, so every class of Q_{>0}/Nm(K^x) is reached by choosing Y
+  (C) scalar extension: j^* W_F(B_F) = W_K(B)
+    [PASS] Q(i) in Q(zeta8), i = z^2, n=1: dim W_K(B) = 2, rank j^*W_F(B_F) = 2, joint 2
+    [PASS] Q(sqrt-7) in Q(zeta7), sqrt-7 = the Gauss sum, n=1: dim W_K(B) = 2, rank j^*W_F(B_F) = 2, joint 2
+    [PASS] Q(sqrt-3) in Q(zeta9), sqrt-3 = 2z^3 + 1, n=1: dim W_K(B) = 2, rank j^*W_F(B_F) = 2, joint 2
+    [PASS] Q(i) in Q(zeta8), i = z^2, n=2: dim W_K(B) = 2, rank j^*W_F(B_F) = 2, joint 2
+    [PASS] Q(sqrt-7) in Q(zeta7), sqrt-7 = the Gauss sum, n=2: dim W_K(B) = 2, rank j^*W_F(B_F) = 2, joint 2
+    [PASS] Q(sqrt-3) in Q(zeta9), sqrt-3 = 2z^3 + 1, n=2: dim W_K(B) = 2, rank j^*W_F(B_F) = 2, joint 2
+    [PASS] Q(i) in Q(zeta8), i = z^2, n=3: dim W_K(B) = 2, rank j^*W_F(B_F) = 2, joint 2
+    [PASS] Q(sqrt-7) in Q(zeta7), sqrt-7 = the Gauss sum, n=3: dim W_K(B) = 2, rank j^*W_F(B_F) = 2, joint 2
+    [PASS] Q(sqrt-3) in Q(zeta9), sqrt-3 = 2z^3 + 1, n=3: dim W_K(B) = 2, rank j^*W_F(B_F) = 2, joint 2
+
+  41 checks passed, 0 failed

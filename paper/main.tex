@@ -1,0 +1,106 @@
+\documentclass[11pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath,amsthm,mathtools}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage[nameinlink]{cleveref}
+
+\setlength{\footnotesep}{9pt}
+\setlist[enumerate]{leftmargin=2.3em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{maintheorem}{Theorem}
+\renewcommand{\themaintheorem}{\Alph{maintheorem}}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{question}[theorem]{Question}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\crefname{maintheorem}{Theorem}{Theorems}
+\crefname{question}{Question}{Questions}
+
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\Hdg}{\operatorname{Hdg}}
+\newcommand{\Alg}{\operatorname{Alg}}
+\newcommand{\Ab}{\operatorname{Ab}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Hg}{\operatorname{Hg}}
+\newcommand{\MT}{\operatorname{MT}}
+\newcommand{\SU}{\operatorname{SU}}
+\newcommand{\U}{\operatorname{U}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\Pic}{\operatorname{Pic}}
+\newcommand{\CH}{\operatorname{CH}}
+\newcommand{\cl}{\operatorname{cl}}
+\newcommand{\ch}{\operatorname{ch}}
+\newcommand{\pr}{\mathrm{pr}}
+\newcommand{\st}[1]{\textup{(#1)}}
+\newcommand{\HC}{\textup{(HC)}}
+
+\begin{document}
+
+\title[When is every rational Hodge class algebraic?]{When is every rational
+Hodge class algebraic?}
+
+\author{Deep Bhattacharjee}
+\address{Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL),
+Bhubaneswar, Odisha 751030, India}
+\email{d.bhattacharjee@erl-forschung.de}
+\email{itsdeep@live.com}
+\urladdr{https://orcid.org/0000-0003-0466-750X}
+
+\subjclass[2020]{14C30, 14C25, 14K22, 14J70}
+\keywords{Hodge conjecture, motivated cycles, Lefschetz standard conjecture,
+Fermat varieties, CM abelian varieties, Weil classes, semiregularity}
+\date{October 8, 2026}
+
+\begin{abstract}
+We determine which combinations of the standard statements around the
+rational Hodge conjecture imply it. Every such combination contains the
+conjecture modulo abelian varieties, unless it contains both the Lefschetz
+standard conjecture and Andr\'e's conjecture that every Hodge class is
+motivated, a pair equivalent to the Hodge conjecture itself. Granting the
+recently claimed Hodge conjecture for CM abelian varieties, we prove it for
+every Fermat variety and reduce the abelian case to propagation from CM
+points. For Weil classes we prove a criterion by bounded degree at CM
+points, and we extract from Schoen's cycles one subvariety whose
+semiregularity would settle the split Weil families over
+$\QQ(\sqrt{-3})$ in every dimension. The Hodge conjecture itself is not
+proved.
+\end{abstract}
+
+\maketitle
+
+\input{sections/s1_intro}
+\input{sections/s2_reductions}
+\input{sections/s3_fermat}
+\input{sections/s4_abelian}
+\input{sections/s5_weil}
+\input{sections/s6_routes}
+\input{sections/s7_end}
+\appendix
+\input{sections/a_checks}
+
+\bibliographystyle{amsalpha}
+\bibliography{references}
+
+\end{document}

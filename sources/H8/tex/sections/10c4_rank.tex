@@ -1,0 +1,1031 @@
+\subsection{The second criterion: a rank at one point}
+
+The other way from a dense algebraic locus to an open one is to make the
+cycle move, and the classical tool for that is semiregularity. The theorem
+below adds nothing to the theory of semiregularity itself. Its content is
+that, after \Cref{thm:hdgcount}, \Cref{thm:everyfamily} and
+\Cref{thm:closedlocus}, the semiregularity of a single object at a single
+point implies the Hodge conjecture for the whole family, with no further
+propagation argument. We begin with the object: it exists, and its Chern
+character is concentrated in one degree and is a flat Hodge class on the
+whole family.
+
+\begin{proposition}[The $K$-theory class at a base point]\label{prop:ktheory}
+Let $s_{0}\in\Sigma$ be a base point of \Cref{thm:everyfamily} and write
+$A_{0}=A_{s_{0}}$. There are an integer $N\ge1$ and a perfect complex $E$ on
+$A_{0}$ with
+\[
+  \ch_{k}(E)=0\ \ (k\ne n),\qquad \ch_{n}(E)=N\,\omega_{1} .
+\]
+The tuple $v=\ch(E)$ extends to a flat section of
+$\bigoplus_{k}R^{2k}f_{*}\QQ$ over $\cS$ which is of type $(k,k)$ at every
+point.
+\end{proposition}
+
+\begin{proof}
+By \Cref{thm:everyfamily} there is $\xi\in\CH^{n}(A_{0})_{\QQ}$ with
+$\cl(\xi)=\omega_{1}$. For a smooth quasi-projective variety over a field the
+Chern character $\ch\colon K_{0}(A_{0})_{\QQ}\to\CH^{*}(A_{0})_{\QQ}$ is a
+ring isomorphism \cite[Ex.~15.2.16(b) and Cor.~18.3.2]{Ful98}, so there is a
+unique $u\in K_{0}(A_{0})_{\QQ}$ with $\ch(u)=\xi$, and its Chern character
+has no component outside degree $n$. Choose $N\ge1$ such that $Nu$ is the
+image of a class in $K_{0}(A_{0})$; that class is a difference of classes of
+vector bundles, hence the class of a perfect complex $E$, and
+$\ch(E)=N\xi$. Passing to cohomology gives the displayed identities.
+
+For the last sentence, $\ch(E)$ has a single nonzero component, equal to
+$N\omega_{1}$, and $\omega$ is a flat section of type $(n,n)$ everywhere by
+\Cref{lem:omegadescends}.
+\end{proof}
+
+\begin{theorem}[Buchweitz and Flenner \cite{BF03}; Pridham \cite{Pri24}]\label{thm:BF}
+Let $X$ be a smooth projective complex variety, $E$ a perfect complex on $X$,
+and $X\hookrightarrow\cX\to\Spec R$ a deformation of $X$ over an Artin local
+$\CC$-algebra along which $\ch(E)$ stays of Hodge type. If the semiregularity
+map
+\[
+  \sigma_{E}\colon\Ext^{2}_{X}(E,E)
+  \longrightarrow\bigoplus_{q\ge0}H^{q+2}(X,\Omega^{q}_{X}),
+  \qquad
+  \sigma_{E}(\zeta)=\sum_{q}\tfrac{1}{q!}\,
+    \mathrm{tr}\bigl(\zeta\circ\mathrm{At}(E)^{q}\bigr),
+\]
+is injective, then $E$ extends to a perfect complex on $\cX$.
+\end{theorem}
+
+In this generality, for perfect complexes and for every obstruction
+annihilated by $\sigma_{E}$ rather than only the curvilinear ones, the
+theorem is proved by Pridham \cite{Pri24}, who identifies $\sigma_{E}$ with the
+tangent map of a generalised Abel--Jacobi map on the derived moduli of perfect
+complexes; for coherent sheaves see also \cite{BLM23}. Perry \cite{Per26}
+extends it to noncommutative varieties with group actions, which covers
+twisted derived categories and answers a question of Markman.
+
+\begin{theorem}[Semiregularity at one point closes the family]
+\label{thm:semiregclosure}
+Let $n\ge2$, let $s_{0}$ and $E$ be as in \Cref{prop:ktheory}, and suppose the
+semiregularity map $\sigma_{E}$ of \Cref{thm:BF} is injective. Then
+$\Sigma=\cD_{n,n}$, and the Hodge conjecture holds in every degree for every
+abelian $2n$-fold of $(K,-1,n)$-Weil type with $\Hg(A)=\SU(V,H)$ in that
+family.
+\end{theorem}
+
+\begin{proof}
+Let $\mathfrak{M}$ be the stack of perfect complexes with vanishing negative
+self-extensions on the fibres of $f\colon\cA\to\cS$. It is algebraic and
+locally of finite presentation over $\cS$ \cite{Lie06}, and at a point $[E]$
+over $s_{0}$ its deformation theory relative to $\cS$ has tangent space
+$\Ext^{1}(E,E)$ and obstruction space $\Ext^{2}(E,E)$. If
+$\Ext^{<0}(E,E)\ne0$, which that stack excludes,\footnote{Lieblich's
+stack parametrises the complexes he calls universally gluable, those with
+$\Ext^{<0}(E,E)=0$; without that condition a complex can have automorphisms
+of negative degree, and the natural moduli object is the derived stack of
+To\"en and Vaqui\'e.} use instead the analytic Kuranishi germ of pairs from
+the proof of \Cref{thm:p2false}, which has the same tangent and obstruction
+spaces; the argument below then gives a nonempty analytic open set in place of
+a Zariski open one, which is all that \Cref{cor:allornothing} needs.
+
+By \Cref{prop:ktheory} the Chern character of $E$ stays of Hodge type along
+every direction in $\cS$, because it is a flat section of Hodge classes on the
+whole base. So \Cref{thm:BF} applies to every infinitesimal deformation of
+$A_{0}$ inside the family, and injectivity of $\sigma_{E}$ kills every
+obstruction. The morphism $\mathfrak{M}\to\cS$ is therefore formally smooth at
+$[E]$, and being locally of finite presentation it is smooth on an open
+neighbourhood of $[E]$, which we take connected. Smooth morphisms are open,
+so the image of that neighbourhood is a nonempty Zariski open subset
+$U\subseteq\cS$.
+
+For $s\in U$ pick a point of the neighbourhood over $s$, that is, a perfect
+complex $E_{s}$ on $A_{s}$. Chern characters are locally constant in
+families, so $\ch(E_{s})$ is the parallel transport of $\ch(E)$: it is
+$N\omega_{1}$ in degree $n$ and zero elsewhere. Chern characters of perfect
+complexes are algebraic, so $N\omega_{1}$, and hence $\omega_{1}$, is
+algebraic on $A_{s}$; the rest of the Weil line follows by
+\Cref{lem:onecomponent}. So $p^{-1}(U)\subseteq\Sigma$, which therefore
+contains a nonempty open set, and \Cref{cor:allornothing} gives
+$\Sigma=\cD_{n,n}$. Apply \Cref{thm:residual}(a).
+\end{proof}
+
+\begin{remark}[The hypothesis is not met by the object above]
+\label{rem:semiregunavailable}
+Injectivity of $\sigma_{E}$ is automatic for some objects and not for
+others, and its degree-zero component already shows both. For a line bundle
+$L$ one has $\Ext^{2}(L,L)=H^{2}(\cO_{X})$ and $\sigma_{0}=\mathrm{tr}$ is the
+identity on it, so $\sigma_{L}$ is injective for every line bundle on every
+variety, and \Cref{thm:BF} returns the classical fact that a divisor class
+deforms wherever it stays of type $(1,1)$. The object of \Cref{prop:ktheory}
+has rank zero, so its trace component is not an isomorphism, and in general
+not injective, the source having no reason to be as small as
+$h^{2}(\cO_{A_{0}})=\binom{2n}{2}$. The hypothesis of
+\Cref{thm:semiregclosure} therefore rests on the components with $q\ge1$,
+which is where semiregularity stops being formal and becomes a computation.
+
+For the object of \Cref{prop:ktheory} the hypothesis fails: by
+\Cref{prop:concentrated} it has $\dim\ker\sigma_{E}\ge n^{2}$ at every base
+point constructed in this paper (see also \Cref{rem:killsreduction}). The
+hypothesis concerns a choice of perfect complex representing a class in
+$K_{0}$, and \Cref{prop:concentrated} does not reach every representative.
+\Cref{thm:p2forces} and the results after it describe what a representative
+satisfying the hypothesis would have to look like, and \Cref{thm:p2false}
+shows that there is none. The proof of \Cref{thm:semiregclosure} applies word
+for word to the polarised criterion \textup{(P2$'$)} of \Cref{rem:p2prime},
+and \Cref{rem:p2primesurvive} records which of the results below carry over
+to it.
+\end{remark}
+
+\subsection{Consequences of the rank condition}
+
+The hypothesis of \Cref{thm:semiregclosure} is a condition on a rank, which
+cannot be inspected until the object is written down. It nevertheless has
+consequences that hold for every representative at once, because the
+semiregularity map composed with the evaluation map of Hochschild cohomology
+is contraction into the Chern character (\Cref{setup:criterion}), and the
+Chern character here is a Weil class. The annihilator of a Weil class in
+$HT^{2}$ is large, and injectivity forces the evaluation map to vanish on the
+whole of it. We compute the annihilator and draw the consequences. They are
+the exact analogue for (P2) of what \Cref{thm:candidatefails} and
+\Cref{thm:nosplit} do for the secant route in \Cref{sec:secantobjects}, and
+they rest on the same local products.
+
+\begin{theorem}[Consequences of injectivity]
+\label{thm:p2forces}
+Let $A$ be an abelian $2n$-fold of $(K,-1,n)$-Weil type, $n\ge2$, and write
+$H^{1}(A,\CC)=V_{+}\oplus V_{-}$ for the eigenspaces of $K$,
+$V_{\pm}^{1,0}$, $V_{\pm}^{0,1}$ for their Hodge components and
+$T_{\pm}\subset H^{0}(T_{A})=T_{0}A$ for the eigenspaces of $K$ on the tangent
+space, each of dimension $n$. Let $\omega=a\alpha_{+}+b\alpha_{-}$ be a
+class on the Weil line with $ab\ne0$, for instance any nonzero rational one,
+and let $E$ be a nonzero perfect complex on $A$ with $\ch(E)=N\omega$,
+$N\ne0$, and no other component.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item The annihilator of $\ch(E)$ in $HT^{2}(A)$ is
+  \[
+    \Ann_{HT^{2}}(\ch E)
+    =\bigl(V_{+}^{0,1}\otimes V_{-}^{0,1}\bigr)
+    \;\oplus\;\Hom_{K}\bigl(H^{1,0},H^{0,1}\bigr)
+    \;\oplus\;\bigl(T_{+}\otimes T_{-}\bigr),
+  \]
+  of dimension $n^{2}+2n^{2}+n^{2}=4n^{2}$: the mixed block of $H^{0,2}$,
+  which is the annihilator of \Cref{lem:annihilator}; the $K$-linear first
+  order deformations of $A$, which contain the tangent space of the polarised
+  Weil family; and the mixed bivectors.
+\item If $\sigma_{E}$ is injective, then $\operatorname{ev}_{E}$ vanishes on
+  this space. Explicitly: $z\cdot\id_{E}=0$ for every $z\in V_{+}^{0,1}\otimes
+  V_{-}^{0,1}$; $E$ extends to first order along every $K$-linear deformation
+  of $A$; and the translation classes satisfy $A_{\theta}A_{\theta'}=0$ in
+  $\Ext^{2}(E,E)$ for every $\theta\in T_{+}$ and $\theta'\in T_{-}$.
+\item Under the same hypothesis the algebra map $H^{*}(\cO_{A})\to\Ext^{*}(E,E)$,
+  $z\mapsto z\cdot\id_{E}$, kills the ideal generated by the mixed block,
+  which is $\bigoplus_{a,b\ge1}\bigwedge^{a}V_{+}^{0,1}\otimes\bigwedge^{b}V_{-}^{0,1}$;
+  so the image of $H^{0,k}(A)$ has dimension at most $2\binom{n}{k}$ for
+  $1\le k\le n$ and is zero for $k>n$, and every endomorphism $f$ of $E$ has
+  $\operatorname{tr}(f)=0$ in $H^{0}(\cO_{A})=\CC$.
+\item Under the same hypothesis, if at some point $p$ of its support $E$ is
+  locally isomorphic to $i_{*}F$ with $F$ locally free of positive rank on a
+  smooth closed subvariety $Z\ni p$ of codimension at least two, then
+  $T_{+}\subseteq T_{p}Z$ or $T_{-}\subseteq T_{p}Z$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) Write $H^{*}(A,\CC)=\bigwedge^{*}(H^{1,0}\oplus H^{0,1})$ and
+$\alpha_{\pm}$ for a generator of $\bigwedge^{2n}V_{\pm}
+=\bigwedge^{n}V_{\pm}^{1,0}\otimes\bigwedge^{n}V_{\pm}^{0,1}$. The three
+summands of $HT^{2}$ act as follows: $z\in H^{0,2}=\bigwedge^{2}H^{0,1}$ by
+wedge product; $v\in H^{1}(T_{A})=\Hom(H^{1,0},H^{0,1})$ as the derivation
+that replaces one $(1,0)$ factor by its image; $\pi\in H^{0}(\bigwedge^{2}T_{A})
+=\bigwedge^{2}(H^{1,0})^{\vee}$ by double contraction of $(1,0)$ factors. For
+$z$, the computation is \Cref{lem:annihilator}. For $v$, decompose
+$\Hom(H^{1,0},H^{0,1})$ into its four blocks by eigenspaces. An element of
+the block $\Hom(V_{+}^{1,0},V_{+}^{0,1})$ replaces a factor of
+$\bigwedge^{n}V_{+}^{1,0}$ in $\alpha_{+}$ by an element of $V_{+}^{0,1}$,
+which is already exhausted in $\alpha_{+}$, so it kills $\alpha_{+}$; it acts
+trivially on $\alpha_{-}$,
+which has no $V_{+}^{1,0}$ factor. Likewise $\Hom(V_{-}^{1,0},V_{-}^{0,1})$
+kills $\omega$. A nonzero element of the block $\Hom(V_{+}^{1,0},V_{-}^{0,1})$
+carries $\alpha_{+}$ to a nonzero element of
+$\bigwedge^{n-1}V_{+}^{1,0}\otimes V_{-}^{0,1}\otimes\bigwedge^{n}V_{+}^{0,1}$
+and kills $\alpha_{-}$, and a nonzero element of $\Hom(V_{-}^{1,0},V_{+}^{0,1})$
+carries $\alpha_{-}$ to a nonzero element of a different summand of
+$H^{n-1,n+1}$ and kills $\alpha_{+}$. Since $ab\ne0$ and the two summands are
+independent, $v$ kills $\omega$ if and only if its two mixed blocks vanish,
+that is, if and only if $v$ is $K$-linear. The space of $K$-linear maps has
+dimension $2n^{2}$, and it contains the $n^{2}$-dimensional tangent space of
+the polarised family, which is its symmetric part. For $\pi$, a mixed
+bivector $\theta\wedge\theta'$ with $\theta\in T_{+}=(V_{+}^{1,0})^{\vee}$ and
+$\theta'\in T_{-}=(V_{-}^{1,0})^{\vee}$ kills $\alpha_{+}$ because $\theta'$
+kills every factor of $\bigwedge^{n}V_{+}^{1,0}$, and kills $\alpha_{-}$
+symmetrically; a nonzero bivector in $\bigwedge^{2}T_{+}$ carries $\alpha_{+}$
+to a nonzero element of $\bigwedge^{n-2}V_{+}^{1,0}\otimes\bigwedge^{n}V_{+}^{0,1}$
+and kills $\alpha_{-}$, and symmetrically for $\bigwedge^{2}T_{-}$, the two
+images lying in different summands; so the annihilator in
+$H^{0}(\bigwedge^{2}T_{A})$ is $T_{+}\otimes T_{-}$. Since the images of the
+three summands of $HT^{2}$ lie in the three different Hodge components
+$H^{n,n+2}$, $H^{n-1,n+1}$ and $H^{n-2,n}$ of $H^{*}(A,\CC)$, the annihilator
+is the direct sum of the three annihilators computed, of dimensions $n^{2}$,
+$2n^{2}$ and $n^{2}$.
+
+(ii) By the commutative square $\sigma_{E}\circ\operatorname{ev}_{E}
+=(\,\cdot\,)\lrcorner\ch(E)$ of \Cref{setup:criterion}, $\sigma_{E}$
+vanishes on $\operatorname{ev}_{E}(\Ann_{HT^{2}}(\ch E))$; if $\sigma_{E}$
+is injective, $\operatorname{ev}_{E}$ vanishes there. The three explicit
+statements are \eqref{eq:evgeneral} on the three summands of (i): on
+$H^{0,2}$ the evaluation map is $z\mapsto z\cdot\id_{E}$; on $H^{1}(T_{A})$
+it is the obstruction map $v\mapsto v\lrcorner\mathrm{At}(E)$, whose
+vanishing on $v$ is the extension of $E$ to first order along $v$
+\cite{Tod09}; and on a bivector $\theta\wedge\theta'$ it is
+$\tfrac12(\theta\wedge\theta')\lrcorner\mathrm{At}(E)^{2}
+=A_{\theta}A_{\theta'}$, as in the proof of \Cref{thm:candidatefails}.
+
+(iii) The map $z\mapsto z\cdot\id_{E}$ is a homomorphism of graded algebras
+from $H^{*}(\cO_{A})=\bigwedge^{*}H^{0,1}$ to the graded centre of the Yoneda
+algebra, so its kernel is an ideal, and by (ii) it contains the mixed block
+$V_{+}^{0,1}\otimes V_{-}^{0,1}$. The ideal generated by the mixed block in
+$\bigwedge^{*}(V_{+}^{0,1}\oplus V_{-}^{0,1})
+=\bigwedge^{*}V_{+}^{0,1}\otimes\bigwedge^{*}V_{-}^{0,1}$ is the sum of the
+summands $\bigwedge^{a}V_{+}^{0,1}\otimes\bigwedge^{b}V_{-}^{0,1}$ with
+$a,b\ge1$, since each such summand consists of multiples of the mixed block,
+while the remaining summands, with $a=0$ or $b=0$, meet the ideal in zero; the
+quotient in degree $k\ge1$ is $\bigwedge^{k}V_{+}^{0,1}\oplus\bigwedge^{k}V_{-}^{0,1}$,
+of dimension $2\binom{n}{k}$, and zero for $k>n$. In particular the top class
+of $H^{2n}(\cO_{A})$, which is mixed for $n\ge1$, acts by zero. Serre duality
+on $A$, whose canonical bundle is trivial, is the perfect pairing
+$\Ext^{2n}(E,E)\times\Hom(E,E)\to H^{2n}(\cO_{A})\cong\CC$,
+$(\xi,f)\mapsto\operatorname{tr}(\xi\circ f)$; for $\xi=w\cdot\id_{E}$
+with $w$ the top class this is $w\cdot\operatorname{tr}(f)$, where
+$\operatorname{tr}(f)\in H^{0}(\cO_{A})=\CC$, so $w\cdot\id_{E}=0$ forces
+$\operatorname{tr}(f)=0$ for every $f$.
+
+(iv) Let $\cO$ be the local ring of $A$ at $p$ and choose coordinates with
+$Z=\{x_{1}=\dots=x_{c}=0\}$, $c\ge2$. Locally $E\cong(\cO/J)^{\oplus r}$
+with $J=(x_{1},\dots,x_{c})$, a regular sequence, so
+$\Ext^{*}_{\cO}(\cO/J,\cO/J)=\bigwedge^{*}_{\cO/J}N$ as a graded algebra,
+where $N=\Hom(J/J^{2},\cO/J)$ is the normal module with basis the classes
+$\partial_{1},\dots,\partial_{c}$ dual to $x_{1},\dots,x_{c}$; the
+$\Ext^{1}$ is computed on the Koszul resolution exactly as in the proof of
+\Cref{lem:localproducts}, and the product is the wedge because the Yoneda
+algebra of a Koszul complex is the exterior algebra on the dual of the
+generators. For $E$ of rank $r$ the local Yoneda algebra is
+$\bigwedge^{*}N\otimes M_{r}(\cO/J)$. By \Cref{lem:edge} the germ of
+$A_{\theta}$ at $p$ is the jet class along $\theta$; on the Koszul complex the
+jet class of a derivation $D$ is the chain map $-D(d)$, and for
+$D=\theta=\sum_{i}c^{i}\partial_{i}$ its component in $\Ext^{1}=N\otimes M_{r}(\cO/J)$
+is $\sum_{i\le c}(c^{i}\bmod J)\,\partial_{i}\otimes\id$, the class of
+$\theta$ modulo $T_{Z}$. Multiplicativity of the germ map then gives the germ
+of $A_{\theta}A_{\theta'}$ as
+$(\theta\bmod T_{Z})\wedge(\theta'\bmod T_{Z})\otimes\id$ in
+$\bigwedge^{2}N\otimes M_{r}(\cO/J)$, whose value at $p$ is
+$\bar\theta(p)\wedge\bar\theta'(p)\in\bigwedge^{2}(T_{p}A/T_{p}Z)$. If
+$A_{\theta}A_{\theta'}=0$ for all $\theta\in T_{+}$, $\theta'\in T_{-}$,
+then $\bar a\wedge\bar b=0$ for all $\bar a$ in the image $I_{+}$ of $T_{+}$
+and $\bar b$ in the image $I_{-}$ of $T_{-}$ in $N_{p}=T_{p}A/T_{p}Z$, and
+$I_{+}+I_{-}=N_{p}$ since $T_{+}\oplus T_{-}=T_{p}A$. If both $I_{\pm}$ were
+nonzero, every nonzero $\bar b\in I_{-}$ would be proportional to every
+nonzero $\bar a\in I_{+}$, so $I_{+}=I_{-}$ would be a line and
+$N_{p}=I_{+}+I_{-}$ of dimension one, against $c\ge2$. Hence $I_{+}=0$ or
+$I_{-}=0$, which is the claim.
+\end{proof}
+
+\begin{corollary}[Locally free components are excluded]\label{cor:p2shape}
+Let $A$ be as in \Cref{thm:p2forces} and suppose that no proper abelian
+subvariety $B\subset A$ has $T_{0}B\supseteq T_{+}$ or $T_{0}B\supseteq T_{-}$;
+equivalently, that $A$ has no nonzero $K$-stable abelian subvariety on which
+$K$ acts through a single embedding. This holds whenever $A$ is simple, at
+every split member $X\times\widehat X$ with $X$ simple of endomorphism
+algebra $\QQ$, and at a general point of the quaternionic locus of
+\Cref{setup:quat}.
+Let $E$ be a perfect complex on $A$ with $\ch(E)=N\omega$ as above and
+$\sigma_{E}$ injective. Then no irreducible component $Z_{0}$ of the support
+of $E$ of codimension at least two has a dense open subset along which $E$ is
+a locally free sheaf of positive rank on $Z_{0}$. In particular $E$ is not a
+sheaf, and along every component of its support of codimension at least two
+it has, generically, either at least two nonvanishing cohomology sheaves or a
+cohomology sheaf that is not locally free on the reduced support.
+\end{corollary}
+
+\begin{proof}
+Suppose that $Z_{0}$ is such a component, with $U\subseteq Z_{0}^{\mathrm{sm}}$
+dense open and $E|_{U}$ a locally free sheaf of positive rank on $U$. By
+\Cref{thm:p2forces}(iv), $U=U_{+}\cup U_{-}$ with
+$U_{\pm}=\{p\in U:T_{\pm}\subseteq T_{p}Z_{0}\}$, both closed in $U$; as $U$
+is irreducible, $U=U_{+}$ say. Then every constant vector field
+$\theta\in T_{+}$ is tangent to $Z_{0}$ along $U$, hence along
+$Z_{0}^{\mathrm{sm}}$. The set
+$S=\{(p,t)\in Z_{0}\times\CC:p+\exp(t\theta)\in Z_{0}\}$ is a closed
+analytic subset of the irreducible space $Z_{0}\times\CC$, and it contains
+an open neighbourhood of $Z_{0}^{\mathrm{sm}}\times\{0\}$, because the local
+flow of the restriction of $\theta$ to the submanifold $Z_{0}^{\mathrm{sm}}$
+exists on such a neighbourhood; so $S=Z_{0}\times\CC$, and
+$Z_{0}+\exp(t\theta)\subseteq Z_{0}$, hence $=Z_{0}$, for every $t$. Let
+$G=\{x\in A:Z_{0}+x=Z_{0}\}$, a closed algebraic subgroup of $A$, and $B$
+its identity component, an abelian subvariety. The connected set
+$\exp(T_{+})$ contains $0$ and lies in $G$, hence in $B$, so
+$T_{+}\subseteq T_{0}B$. By hypothesis $B=A$, so $Z_{0}=A$, against the
+codimension. The last sentence of the statement is the negation of the
+condition just excluded. If $E$ were a sheaf, its support would have
+codimension at least $n$, because the Chern character of a nonzero sheaf
+begins in the codimension of its support, with the support cycle, whose
+multiplicities are positive; this is excluded by \Cref{thm:p2support}(iii)
+below, whose proof uses nothing from the present one beyond the translation
+argument above.
+
+For the equivalence in the hypothesis, let $\sqrt{-d}$ act on $A$ through
+an order of $K$. If an abelian subvariety $B\ne A$ has
+$T_{0}B\supseteq T_{+}$, then $H_{1}(B,\QQ)\cap\sqrt{-d}\,H_{1}(B,\QQ)$ is a
+$K$-stable sub-Hodge structure, hence $H_{1}(C,\QQ)$ for a $K$-stable abelian
+subvariety $C\subseteq B$, and $T_{0}C=T_{0}B\cap\sqrt{-d}\,T_{0}B$ still
+contains $T_{+}$, on which $\sqrt{-d}$ acts by a scalar. The $K$-stable
+complement $C'$ of $C$ for the polarisation is nonzero, since
+$C\subseteq B\ne A$, and $T_{0}C'$ is a $K$-stable complement of
+$T_{0}C\supseteq T_{+}$, so $T_{0}C'\subseteq T_{-}$ and $K$ acts on $C'$
+through a single embedding. Conversely, if a nonzero $K$-stable $C'\ne A$ has
+$T_{0}C'\subseteq T_{-}$, its $K$-stable complement $B$ is proper with
+$T_{0}B\supseteq T_{+}$. For the three cases: a simple $A$ has no nonzero
+proper abelian subvariety; for $X\times\widehat X$ with $X$ simple and
+$\End^{0}(X)=\QQ$ the sub-Hodge structures of $H_{1}(X)\otimes\QQ^{2}$ are
+$H_{1}(X)\otimes W$ with $W\subseteq\QQ^{2}$, and since $K$ acts on
+$\QQ^{2}$ through a quadratic field, $W$ is $K$-stable only for $W=0$ or
+$\QQ^{2}$; and at a general quaternionic member $A$ is either simple or, when
+the quaternion algebra of \Cref{setup:quat} splits, isogenous to $C\times C$
+with $C$ a general
+principally polarised abelian $n$-fold, whose sub-Hodge structures are again
+$H_{1}(C)\otimes W$ with the same conclusion.
+\end{proof}
+
+\subsection{The Hochschild action and the two branches}
+
+\Cref{thm:p2forces} computes the annihilator summand by summand and reads off
+what the vanishing of the evaluation map on it means for $E$. That
+description hides a structure which is easily brought out and gives more:
+the annihilator is the mixed part of a splitting of $HH^{1}(A)$ into two
+halves, one for each of the two conjugate pieces $\alpha_{+}$ and
+$\alpha_{-}$ of the Weil class, and the same splitting describes the
+annihilator in every degree. The results of this subsection concern the
+Hochschild cohomology of $A$ alone, and their consequences for $E$ follow
+formally.
+
+\begin{setupenv}[Hochschild cohomology in these terms]\label{setup:hh}
+For an abelian variety $A$ the Hochschild--Kostant--Rosenberg isomorphism
+identifies
+\[
+  HH^{*}(A)\;\cong\;HT^{*}(A)=\bigoplus_{p,q}H^{p}\bigl(\textstyle\bigwedge^{q}T_{A}\bigr)
+  =\textstyle\bigwedge^{*}\bigl(H^{0,1}(A)\oplus H^{0}(T_{A})\bigr),
+\]
+as graded rings, the grading being $p+q$: the Todd class of $A$ is trivial,
+so the twist by $\td^{1/2}$ in \cite{Cal05}, \cite{CRV12} is the identity and
+the plain identification is already multiplicative. Write
+$HH^{1}(A)=H^{0,1}(A)\oplus H^{0}(T_{A})$, of dimension $4n$, so that
+$HH^{*}(A)$ is the exterior algebra on it, of dimension $2^{4n}$. It acts on
+$H^{*}(A,\CC)=\bigwedge^{*}\bigl(H^{1,0}\oplus H^{0,1}\bigr)$ by wedging with
+the classes of $H^{0,1}$ and contracting the classes of $H^{1,0}$ against
+$H^{0}(T_{A})$; the two families of operators involve disjoint generators, so
+they pairwise anticommute and the action is an action of the exterior algebra.
+In degree two this is the operator $x\lrcorner$ of \Cref{setup:criterion}, and
+$\operatorname{ev}_{E}\colon HH^{*}(A)\to\Ext^{*}(E,E)$ is a homomorphism of
+graded rings into the graded centre, with
+$\sigma_{E}\circ\operatorname{ev}_{E}=(\,\cdot\,)\lrcorner\ch(E)$
+\cite[Section 6]{BF08}, \cite{Cal05}, \cite{CRV12}.
+\end{setupenv}
+
+\begin{theorem}[The annihilator is the mixed part of a splitting]
+\label{thm:hhsplitting}
+Let $A$ be of $(K,-1,n)$-Weil type with $n\ge2$, and let
+$\omega=a\alpha_{+}+b\alpha_{-}$ lie on the Weil line with $ab\ne0$. Put
+\[
+  P=\Ann_{HH^{1}}(\alpha_{+})=V_{+}^{0,1}\oplus T_{-},
+  \qquad
+  Q=\Ann_{HH^{1}}(\alpha_{-})=V_{-}^{0,1}\oplus T_{+} .
+\]
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item $\dim P=\dim Q=2n$ and $HH^{1}(A)=P\oplus Q$; in particular
+  $\Ann_{HH^{1}}(\omega)=0$.
+\item $\Ann_{HH^{2}}(\omega)=P\wedge Q$, of dimension $4n^{2}$. This is the
+  space computed in \Cref{thm:p2forces}(i), written as the mixed part of the
+  splitting.
+\item Contraction with $\alpha_{-}$ is injective on $\bigwedge^{*}P$, and
+  contraction with $\alpha_{+}$ is injective on $\bigwedge^{*}Q$; the two
+  images meet in exactly one line, in degree $2n$.
+\item For every $k\ge1$,
+  \[
+    \Ann_{HH^{k}}(\omega)
+    =\Bigl(\bigoplus_{\substack{i+j=k\\ i,j\ge1}}
+      \textstyle\bigwedge^{i}P\wedge\bigwedge^{j}Q\Bigr)\;\oplus\;\epsilon_{k},
+  \]
+  where $\epsilon_{k}=0$ for $k\ne2n$ and $\epsilon_{2n}$ is the line of
+  \textup{(iii)}. So
+  $\dim\Ann_{HH^{k}}(\omega)=\binom{4n}{k}-2\binom{2n}{k}+\delta_{k,2n}$ for
+  $k\ge1$, while $\Ann_{HH^{0}}(\omega)=0$, and the annihilator is the ideal
+  generated by its degree-two part together with that one line.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Choose bases $x_{1},\dots,x_{n}$ of $V_{+}^{1,0}$ and $y_{1},\dots,y_{n}$ of
+$V_{-}^{1,0}$, and bases $\bbar x_{i}$ of $V_{+}^{0,1}$ and $\bbar y_{j}$ of
+$V_{-}^{0,1}$ (the bar is notation only: complex conjugation carries
+$V_{+}^{1,0}$ to $V_{-}^{0,1}$), so that
+$\alpha_{+}=x_{1}\cdots x_{n}\bbar x_{1}\cdots\bbar x_{n}$ and
+$\alpha_{-}=y_{1}\cdots y_{n}\bbar y_{1}\cdots\bbar y_{n}$, and write
+$\partial_{x_{i}},\partial_{y_{j}}$ for the dual basis of
+$H^{0}(T_{A})=T_{+}\oplus T_{-}$.
+
+(i) Of the $4n$ basis operators, $\bbar x_{i}\wedge$ kills $\alpha_{+}$
+because $\bbar x_{i}$ already occurs in it, and $\partial_{y_{j}}\lrcorner$
+kills $\alpha_{+}$ because no $y$ occurs in it; so $P\supseteq
+V_{+}^{0,1}\oplus T_{-}$. Conversely, the classes
+$\bbar y_{j}\wedge\alpha_{+}$ are linearly independent, as are the classes
+$\partial_{x_{i}}\lrcorner\alpha_{+}$, and the two families lie in different
+summands of $H^{*}$, so no nonzero combination of the operators
+$\bbar y_{j}\wedge$ and $\partial_{x_{i}}\lrcorner$ kills $\alpha_{+}$:
+$P=V_{+}^{0,1}\oplus T_{-}$, of dimension $2n$. The computation for $Q$ is the
+same with the roles of the two eigenspaces exchanged, and
+$P\cap Q=0$ with $\dim P+\dim Q=4n$, so $HH^{1}=P\oplus Q$. A class of degree
+one that kills $\omega$ kills $\alpha_{+}$ and $\alpha_{-}$ separately, the
+two images lying in different summands and $ab\ne0$, so it lies in
+$P\cap Q=0$.
+
+(iii) A monomial $\bbar x_{I}\partial_{y_{J}}\in\bigwedge^{*}P$ sends
+$\alpha_{-}$ to $\pm\,\bbar x_{I}\,y_{[n]\setminus J}\,\bbar y_{[n]}$, and
+these are linearly independent for distinct pairs $(I,J)$, which is the
+injectivity; the statement for $Q$ is symmetric. For the intersection, the
+image of $\bigwedge^{*}P$ is spanned by monomials with no factor $x$ and all
+$n$ factors $\bbar y$, and the image of $\bigwedge^{*}Q$, by the same
+computation, by monomials with no factor $y$ and all $n$ factors $\bbar x$.
+Both images are spanned by monomials, so their intersection is spanned by the
+monomials common to both, and the only such monomial is
+$\bbar x_{[n]}\bbar y_{[n]}$. It is the image of
+$\pi_{P}=\bbar x_{[n]}\partial_{y_{[n]}}$ and of
+$\pi_{Q}=\bbar y_{[n]}\partial_{x_{[n]}}$, both of degree $2n$. So the
+intersection is the single line spanned by that class.
+
+(ii) and (iv) Decompose $\bigwedge^{k}HH^{1}=\bigoplus_{i+j=k}\bigwedge^{i}P
+\wedge\bigwedge^{j}Q$. A summand with $i,j\ge1$ annihilates $\alpha_{+}$,
+because it has a factor in $P$ and the action is an action of the algebra, and
+annihilates $\alpha_{-}$ for the same reason with $Q$; so it lies in the
+annihilator of $\omega$. The sum of these summands over all $k$ is the ideal
+generated by $P\wedge Q$, since each of their monomials has, after
+reordering, a factor $p\wedge q$ with $p\in P$ and $q\in Q$. On the remaining
+two summands, $\xi_{P}\in\bigwedge^{k}P$ has
+$\xi_{P}\lrcorner\omega=b\,\xi_{P}\lrcorner\alpha_{-}$ and
+$\xi_{Q}\in\bigwedge^{k}Q$ has $\xi_{Q}\lrcorner\omega=a\,\xi_{Q}\lrcorner\alpha_{+}$,
+so a combination $\xi_{P}+\xi_{Q}$ annihilates $\omega$ if and only if
+$b\,\xi_{P}\lrcorner\alpha_{-}=-a\,\xi_{Q}\lrcorner\alpha_{+}$. By (iii) both
+contractions are injective and their images meet only in degree $2n$, in one
+line; so this happens only for $k=2n$, and then only on the line spanned by
+$b^{-1}\pi_{P}-a^{-1}\pi_{Q}$, with $\pi_{P}$ and $\pi_{Q}$ scaled so that
+$\pi_{P}\lrcorner\alpha_{-}=\pi_{Q}\lrcorner\alpha_{+}$. In degree zero the
+annihilator is zero because $\omega\ne0$. Taking $k=2$ and $n\ge2$, so that
+$2\ne2n$, gives (ii), the dimension being
+$\dim P\cdot\dim Q=4n^{2}$; the general count is
+$\binom{4n}{k}-\binom{2n}{k}-\binom{2n}{k}$ plus the exceptional line.
+\end{proof}
+
+\begin{corollary}[Consequences for the Hochschild action]
+\label{cor:hhfactor}
+Let $A$ and $\omega$ be as above and let $E$ be a nonzero perfect complex on
+$A$ with $\ch(E)=N\omega$, $N\ne0$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item Unconditionally, $\dim\Ext^{2}(E,E)\ge2n(2n-1)$.
+\item If $\sigma_{E}$ is injective then $\operatorname{ev}_{E}$ vanishes on
+  $P\wedge Q$, hence on the ideal it generates, and the ring homomorphism
+  $\operatorname{ev}_{E}\colon HH^{*}(A)\to\Ext^{*}(E,E)$ factors through
+  \[
+    R\;=\;\textstyle\bigwedge^{*}P\;\oplus_{\CC}\;\bigwedge^{*}Q,
+    \qquad \dim_{\CC}R=2^{2n+1}-1,
+  \]
+  the two exterior algebras glued along their scalars, inside $HH^{*}(A)$ of
+  dimension $2^{4n}$. At $n=2$ that is $31$ out of $256$.
+\item Granting the compatibility
+  $\sigma_{E}\circ\operatorname{ev}_{E}=(\,\cdot\,)\lrcorner\ch(E)$ in degree
+  $k$ \cite{Cal05}, \cite{CRV12}, the induced map on $R$ is injective away
+  from the line of \Cref{thm:hhsplitting}(iii), so
+  \[
+    \dim\Ext^{k}(E,E)\;\ge\;2\binom{2n}{k}\quad(1\le k<2n),
+    \qquad
+    \sum_{k\ge1}\dim\Ext^{k}(E,E)\;\ge\;2^{2n+1}-3 .
+  \]
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+(i) By \Cref{setup:hh}, $\ker\operatorname{ev}_{E}\subseteq\Ann_{HH^{2}}(\ch E)$
+in degree two, since $\sigma_{E}(\operatorname{ev}_{E}(\xi))=\xi\lrcorner\ch(E)$
+and the right side is nonzero off the annihilator. Hence
+$\dim\Ext^{2}(E,E)\ge\dim HH^{2}(A)-\dim\Ann_{HH^{2}}(\omega)
+=\binom{4n}{2}-4n^{2}=2n(2n-1)$ by \Cref{thm:hhsplitting}(ii). No hypothesis
+on $\sigma_{E}$ is used.
+
+(ii) $\operatorname{ev}_{E}$ vanishes on the annihilator by
+\Cref{thm:p2forces}(ii), its kernel is an ideal because it is a ring map, and
+the ideal generated by $P\wedge Q$ in $\bigwedge^{*}(P\oplus Q)
+=\bigwedge^{*}P\otimes\bigwedge^{*}Q$ is the sum of the summands with
+$i,j\ge1$, whose complement is $\bigwedge^{*}P\oplus_{\CC}\bigwedge^{*}Q$ of
+dimension $2\cdot2^{2n}-1$.
+
+(iii) With the compatibility in degree $k$, the argument of (i) gives
+$\ker\operatorname{ev}_{E}\subseteq\Ann_{HH^{k}}(\omega)$, and by
+\Cref{thm:hhsplitting}(iv) that annihilator meets $\bigwedge^{k}P\oplus
+\bigwedge^{k}Q$ only in the exceptional line. So the map induced on $R$ has
+kernel contained in that one line and its image has dimension at least
+$\dim R-1=2^{2n+1}-2$. One of those dimensions sits in degree zero, where the
+image is $\CC\cdot\id_{E}$, nonzero because $E$ is; the remaining
+$2^{2n+1}-3$ lie in positive degrees, which is the second inequality. For
+$1\le k<2n$ the exceptional line has no component in degree $k$, so
+$\bigwedge^{k}P\oplus\bigwedge^{k}Q$, of dimension $2\binom{2n}{k}$, maps
+injectively, which is the first.
+\end{proof}
+
+\begin{remark}[The two branches]\label{rem:twobranches}
+The ring $R$ of \Cref{cor:hhfactor}(ii) is the ring of functions on two odd
+affine spaces of dimension $2n$ crossing at the origin. In these terms, if $E$
+satisfies the criterion, the deformations of $D^{b}(A)$ along which its
+Hochschild action survives form two branches, $P$ and $Q$, which meet only at
+the trivial deformation and are the annihilators of the two conjugate pieces
+$\alpha_{+}$ and $\alpha_{-}$ of the Weil class. The criterion says that $E$
+sees the two halves of the class separately and their interaction not at all.
+
+The splitting $HH^{1}=P\oplus Q$ is not the splitting into eigenspaces of
+$K$, which are $V_{+}^{0,1}\oplus T_{+}$ and $V_{-}^{0,1}\oplus T_{-}$; $P$
+and $Q$ cut across them. It is the splitting into the annihilators of
+$\alpha_{+}$ and of $\alpha_{-}$, and it exists because each of the two
+pieces of the Weil class is a top form on an eigenspace. Nor is the
+conclusion a contradiction in itself. $R$ is a perfectly good ring, and the
+bound of (iii) is consistent with the value of $\chi(E,E)$ computed in
+\Cref{prop:objectsize}, since $\sum_{k}(-1)^{k}2\binom{2n}{k}=0$. The
+corollary says how large such an $E$ must be and how little of the Hochschild
+cohomology it may see, but nothing in the Hochschild computation forbids an
+$E$ of the required shape. The exclusion comes from a different direction,
+deformation to non-algebraic Weil tori, in \Cref{thm:p2false}.
+\end{remark}
+
+\subsection{The numerical form of the criterion and the support}
+
+The same square gives two further results. The first converts the rank of
+$\sigma_{E}$ into a single dimension, the form in which a candidate can be
+tested. The second locates the support of $E$, and it excludes the first
+place one would look: a cycle representing the Weil class.
+
+\begin{theorem}[The criterion as a dimension]\label{thm:p2numerical}
+Let $A$, $\omega$ and $E$ be as in \Cref{cor:hhfactor}, so that
+$\ch(E)=N\omega$ with $N\ne0$ and no other component.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item If $\dim\Ext^{2}(E,E)=2n(2n-1)$, the least value that
+  \Cref{cor:hhfactor}(i) allows, then $\operatorname{ev}_{E}\colon
+  HH^{2}(A)\to\Ext^{2}(E,E)$ is surjective with kernel exactly $P\wedge Q$,
+  the map $\sigma_{E}$ is injective, and every class of $\Ext^{2}(E,E)$ is a
+  sum of products $\operatorname{ev}_{E}(p)\operatorname{ev}_{E}(p')
+  +\operatorname{ev}_{E}(q)\operatorname{ev}_{E}(q')$ with $p,p'\in P$ and
+  $q,q'\in Q$, hence lies in the graded centre of $\Ext^{*}(E,E)$.
+\item Conversely, if $\sigma_{E}$ is injective, then
+  $\operatorname{ev}_{E}(HH^{2}(A))$ has dimension exactly $2n(2n-1)$, and
+  $\sigma_{E}$ carries it isomorphically onto $HH^{2}(A)\lrcorner\,\omega$.
+\item Consequently, if at one base point $s_{0}$ of a family some perfect
+  complex $E$ with $\ch(E)=N\omega_{1}$ has $\dim\Ext^{2}(E,E)=2n(2n-1)$,
+  then $\Sigma=\cD_{n,n}$, and the Hodge conjecture holds in every degree for
+  every member of that family with $\Hg(A)=\SU(V,H)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) The square of \Cref{setup:hh} gives $\ker\operatorname{ev}_{E}
+\subseteq\Ann_{HH^{2}}(\omega)=P\wedge Q$ in degree two, the equality being
+\Cref{thm:hhsplitting}(ii). Hence $\operatorname{rank}\operatorname{ev}_{E}
+\ge\binom{4n}{2}-4n^{2}=2n(2n-1)=\dim\Ext^{2}(E,E)$, so
+$\operatorname{ev}_{E}$ is onto and its kernel, of dimension $4n^{2}$ and
+contained in $P\wedge Q$, is all of $P\wedge Q$. Every class of
+$\Ext^{2}(E,E)$ is then $\operatorname{ev}_{E}(\xi)$ for some $\xi$, and
+$\sigma_{E}(\operatorname{ev}_{E}(\xi))=N\,\xi\lrcorner\,\omega$ vanishes only
+for $\xi\in P\wedge Q=\ker\operatorname{ev}_{E}$; so $\sigma_{E}$ is injective.
+Since $HH^{2}(A)=\bigwedge^{2}P\oplus(P\wedge Q)\oplus\bigwedge^{2}Q$ and
+$\operatorname{ev}_{E}$ is a ring map into the graded centre, the image is
+$\operatorname{ev}_{E}(\bigwedge^{2}P)+\operatorname{ev}_{E}(\bigwedge^{2}Q)$,
+which is the description of the classes.
+
+(ii) By \Cref{thm:p2forces}(ii) the kernel of $\operatorname{ev}_{E}$ in
+degree two contains $P\wedge Q$, and by the argument of (i) it is contained in
+it, so it equals $P\wedge Q$ and the image has dimension $2n(2n-1)$. The
+composite $\sigma_{E}\circ\operatorname{ev}_{E}$ is contraction into
+$\ch(E)=N\omega$, whose kernel is exactly $P\wedge Q=\ker\operatorname{ev}_{E}$,
+so $\sigma_{E}$ maps the image isomorphically onto
+$HH^{2}(A)\lrcorner\,\omega$.
+
+(iii) By (i) the map $\sigma_{E}$ is injective, and \Cref{thm:semiregclosure}
+applies.
+\end{proof}
+
+\Cref{thm:p2numerical}(iii) is a sufficient condition for
+$\mathbf{W}(K,n,\delta)$ that mentions no map at all: one object, at one
+point, and one number. At $n=2$ the number is $12$ and at $n=3$ it is $30$.
+By \Cref{thm:p2false} no complex attains it, but the first two parts of the
+theorem hold for the polarised criterion (P2$'$) with the number $r(\gamma)$
+of \Cref{thm:p2primenumber}(iv) in place of $2n(2n-1)$, and that is the form
+in which the polarised criterion can be tested.
+
+The dimension of $\Ext^{2}(E,E)$ is computable in a way the rank of
+$\sigma_{E}$ is not. For a complex built from sheaves whose cohomology is
+known, the local-to-global spectral sequence
+$E_{2}^{p,q}=H^{p}(A,\cE xt^{q}(E,E))\Rightarrow\Ext^{p+q}(E,E)$ reduces the
+count to the cohomology of the local $\cE xt$ sheaves, and on an abelian
+variety the cohomology of a sheaf supported on an abelian subvariety, or of a
+homogeneous bundle, is a question of linear algebra. The rank of
+$\sigma_{E}$, by contrast, requires the trace of the exponential of the
+Atiyah class on every class of $\Ext^{2}$, a computation with the object and
+not only with its invariants. Part (ii) says that, on the central part of
+$\Ext^{2}$, nothing is lost by reading the criterion this way. Whether an
+injective $\sigma_{E}$ forces the whole of $\Ext^{2}(E,E)$ to be central is,
+by Serre duality, a statement about $\Ext^{2n-2}$, which the square in degree
+two does not reach; nothing below uses it.
+
+The second result rests on a local fact about complexes supported at a point,
+which we state and prove first.
+
+\begin{lemma}[Two jet classes on a complex of finite length]
+\label{lem:finiteproduct}
+Let $R=\CC[[x_{1},\dots,x_{c}]]$ with $c\ge2$, let $M$ be a bounded complex of
+finitely generated free $R$-modules whose cohomology has finite length, and
+put $\chi(M)=\sum_{i}(-1)^{i}\ell(H^{i}(M))$. For $a\in\CC^{c}$ let
+$J(a)\in\Ext^{1}_{R}(M,M)$ be the jet class of $M$ along the constant vector
+field $\sum_{i}a_{i}\partial_{i}$, represented by the chain map
+$-\sum_{i}a_{i}\partial_{i}(d)$ as in the proof of \Cref{thm:p2forces}(iv).
+If $\chi(M)\ne0$ and $a,b$ are linearly independent, then $J(a)J(b)\ne0$ in
+$\Ext^{2}_{R}(M,M)$.
+\end{lemma}
+
+\begin{proof}
+Let $T$ be an abelian variety of dimension $c$ and $t\in T$ a point. Linear
+coordinates on the universal cover identify the completed local ring
+$\widehat{\cO}_{T,t}$ with $R$ in such a way that the translation invariant
+vector fields become the constant fields $\sum_{i}a_{i}\partial_{i}$: the
+exponential map from $T_{t}T=\CC^{c}$ is a local biholomorphism carrying the
+constant vector fields to the translation invariant ones, and its germ at the
+origin identifies $\widehat{\cO}_{T,t}$ with $\CC[[x_{1},\dots,x_{c}]]$
+compatibly with derivations. A complex of $R$-modules with finite length
+cohomology is the same thing as a complex of $\cO_{T,t}$-modules with finite
+length cohomology, since modules of finite length over either ring are
+modules over $\cO_{T,t}/\mathfrak{m}^{N}$ for $N$ large, so $M$ defines a
+perfect complex $M_{T}$ on $T$ supported at $t$. Its local $\cE xt$ sheaves
+are skyscrapers at $t$, so the local-to-global spectral sequence gives
+$\Ext^{*}_{T}(M_{T},M_{T})=\Ext^{*}_{R}(M,M)$, and by \Cref{lem:edge} the
+translation classes $A_{a}$, $A_{b}$ of $M_{T}$ restrict to $J(a)$, $J(b)$.
+Apply the square of \Cref{setup:criterion} on $T$ to the bivector $a\wedge b$:
+\[
+  \sigma_{M_{T}}\bigl(A_{a}A_{b}\bigr)=(a\wedge b)\lrcorner\,\ch(M_{T}).
+\]
+A sheaf of length $\ell$ supported at a point has Chern character
+$\ell\cdot[\mathrm{pt}]$, and Chern characters are additive over the
+cohomology of a complex, so $\ch(M_{T})=\chi(M)\,[\mathrm{pt}]$. The class of a
+point is a nonzero multiple of $dz_{1}\cdots dz_{c}\,d\bbar z_{1}\cdots
+d\bbar z_{c}$, and contracting it with $a\wedge b$ removes two holomorphic
+factors and leaves a nonzero class of type $(c-2,c)$, because $a$ and $b$ are
+independent. So the right side is nonzero when $\chi(M)\ne0$, hence so is
+$A_{a}A_{b}$, and so is its restriction $J(a)J(b)$, the restriction map being
+an isomorphism.
+\end{proof}
+
+The hypothesis on $\chi(M)$ cannot be dropped. The Euler characteristic is
+the only additive invariant here: the Grothendieck group of complexes with
+finite length cohomology over a regular local ring is $\ZZ$, generated by the
+residue field, since every module of finite length has a composition series
+whose factors are all isomorphic to it. The lemma says that the product of two
+independent jet classes detects this generator, and on a complex of Euler
+characteristic zero the product can vanish. Let $K$ be the Koszul resolution
+of the residue field $k$ of $\QQ[x_{1},x_{2}]$, on which the jet class of a
+derivation $D$ is the chain map $-D(d_{K})$, and let $u=\partial_{2}(d_{K})
+\partial_{1}(d_{K})\colon K\to K[2]$ represent $J(\partial_{2})J(\partial_{1})$.
+The entries of $d_{K}$ are $\pm x_{1},\pm x_{2}$, so $u$ has constant
+entries. Let $C$ be the cone of $u$, with $C^{m}=K^{m+1}\oplus K^{m+2}$ and
+$d_{C}(a,b)=(-d_{K}a,\,u(a)+d_{K}b)$. As $u$ induces zero on cohomology, $C$ has
+two cohomology modules, each isomorphic to $k$, so $\chi(C)=0$. Since
+$\partial_{i}(u)=0$, the matrix $\partial_{i}(d_{C})$ is block diagonal, and the
+product $J(\partial_{2})J(\partial_{1})$ on $C$ is $(a,b)\mapsto(u(a),u(b))$,
+which equals $d_{C}H+Hd_{C}$ for $H(a,b)=(b,0)$: it is null homotopic, the
+gluing has killed it. On the split complex $k\oplus k[1]$, whose Euler
+characteristic is also zero, the same product is $u\oplus u[1]$, which is not
+null homotopic because $u\ne0$ in $\Ext^{2}(k,k)$ by the lemma applied to $k$.
+
+\begin{theorem}[The support of an object meeting the criterion]
+\label{thm:p2support}
+Let $A$ be an abelian $2n$-fold of $(K,-1,n)$-Weil type with $n\ge2$, let
+$\omega=a\alpha_{+}+b\alpha_{-}$ with $ab\ne0$, and let $E$ be a perfect
+complex on $A$ with $\ch(E)=N\omega$, $N\ne0$, no other component, and
+$\sigma_{E}$ injective. For an irreducible component $Z$ of the support of $E$
+write
+\[
+  m_{Z}(E)=\sum_{i}(-1)^{i}\,\ell_{\cO_{A,Z}}\bigl(\cH^{i}(E)_{Z}\bigr)
+\]
+for the multiplicity of $Z$ in the cycle of $E$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item If $Z$ has codimension at least two and $m_{Z}(E)\ne0$, then $Z$ is a
+  union of cosets of an abelian subvariety $B\subsetneq A$ with
+  $T_{0}B\supseteq T_{+}$ or $T_{0}B\supseteq T_{-}$.
+\item If $A$ has no proper abelian subvariety $B$ with $T_{0}B\supseteq T_{+}$
+  or $T_{0}B\supseteq T_{-}$, which by \Cref{cor:p2shape} holds when $A$ is
+  simple, at every split member $X\times\widehat X$ with $X$ simple and
+  $\End^{0}(X)=\QQ$, and at a general point of the quaternionic locus, then
+  $m_{Z}(E)=0$ for every component $Z$ of codimension at least two, and the
+  cycle of $E$ is a divisor.
+\item At every member of the family, whatever its endomorphisms, the support
+  of $E$ has an irreducible component of codimension less than $n$.
+\end{enumerate}
+In particular no perfect complex whose support has codimension at least $n$,
+at any member of any Weil family, satisfies the criterion of
+\Cref{thm:semiregclosure}. This includes every complex assembled from the
+structure sheaves of the components of a cycle representing $\omega$, the base
+cycle of \Cref{thm:everyfamily} among them.
+\end{theorem}
+
+\begin{proof}
+(i) Let $c\ge2$ be the codimension of $Z$ and let $U\subseteq Z$ be the dense
+open set of smooth points of $Z_{\mathrm{red}}$ that lie on no other component
+of the support. Fix $\theta\in T_{+}$ and $\theta'\in T_{-}$; by
+\Cref{thm:p2forces}(ii), $A_{\theta}A_{\theta'}=0$ in $\Ext^{2}(E,E)$.
+Suppose that at some $p\in U$ the images $\bar\theta,\bar\theta'$ of
+$\theta,\theta'$ in $N_{p}=T_{p}A/T_{p}Z$ are linearly independent, and
+complete them by images of constant fields $\nu_{3},\dots,\nu_{c}$ to a basis
+of $N_{p}$. In linear coordinates on the universal cover the constant fields
+are coordinate derivations, and the germ $S$ at $p$ of the translate of the
+span of $\theta,\theta',\nu_{3},\dots,\nu_{c}$ is a smooth germ of dimension
+$c$, transverse to $Z$ at $p$, to which $\theta$ and $\theta'$ are tangent.
+Let $j\colon S\to A$ be the inclusion and $M=Lj^{*}E$ on
+$\widehat{\cO}_{S,p}\cong\CC[[x_{1},\dots,x_{c}]]$. Derived restriction is a
+ring map $\Ext^{*}(E,E)\to\Ext^{*}(M,M)$, and it carries the germ of
+$A_{\theta}$ to the jet class of $M$ along $\theta|_{S}$, because the Atiyah
+class is functorial for pullback and $\theta$ is tangent to $S$
+\cite[Section 3]{BF03}. So $J(\theta)J(\theta')=0$ on $M$. Near $p$ the support
+of $E$ is $Z$, and $Z\cap S=\{p\}$, so $M$ has finite length cohomology; its
+Euler characteristic is the intersection multiplicity of the cycle of $E$
+with $S$ at $p$, which, $S$ being transverse to $Z$ at a smooth point lying on
+no other component, is $m_{Z}(E)$, by Serre's formula for intersection
+multiplicities applied to each cohomology sheaf and summed with signs
+\cite[Chapter~V]{Ser00}.%
+\footnote{Serre's formula expresses $\sum_{i}(-1)^{i}\ell(\mathrm{Tor}_{i}(F,
+\cO_{S}))$, for a module $F$ and a smooth germ $S$ meeting its support
+properly at $p$, as a sum over the components $Z'$ of the support of
+$\ell(F_{Z'})$ times the intersection multiplicity of $Z'$ and $S$ at $p$. For
+$S$ transverse to a component smooth at $p$ the intersection multiplicity is
+one. For a complex the Tor spectral sequence gives the same formula with
+alternating sums over the cohomology, which define $m_{Z}(E)$.}
+Since $\theta$ and $\theta'$ are independent directions on $S$,
+\Cref{lem:finiteproduct} applied to $M$ gives $m_{Z}(E)=0$.
+
+So if $m_{Z}(E)\ne0$, then at every $p\in U$ and for all $\theta\in T_{+}$,
+$\theta'\in T_{-}$ the images satisfy $\bar\theta\wedge\bar\theta'=0$ in
+$\bigwedge^{2}N_{p}$. As in the proof of \Cref{thm:p2forces}(iv), the images
+$I_{\pm}$ of $T_{\pm}$ in $N_{p}$ span $N_{p}$, which has dimension $c\ge2$,
+so one of them is zero: $T_{+}\subseteq T_{p}Z$ or $T_{-}\subseteq T_{p}Z$.
+The two conditions cut out closed subsets of the irreducible set $U$ whose
+union is $U$, so one of them, say the first, holds on all of $U$, and the
+argument of \Cref{cor:p2shape} shows that $Z$ is stable under translation by
+the identity component $B$ of its stabiliser, an abelian subvariety with
+$T_{0}B\supseteq T_{+}$. Since $Z\ne A$, $B\ne A$.
+
+(ii) follows from (i), since no such $B$ exists; if $A$ itself is a
+component of the support, its multiplicity is the rank of $E$, which is zero,
+so the cycle of $E$ is a divisor.
+
+(iii) Suppose every component of the support has codimension at least $n$.
+Then $\ch_{k}(E)=0$ for $k<n$ and $\ch_{n}(E)=\sum_{Z}m_{Z}(E)[Z]$, the sum
+over the components of codimension exactly $n$; this is Riemann--Roch without
+denominators in its simplest case \cite[Chapter~15]{Ful98}. By (i), each $Z$
+with $m_{Z}(E)\ne0$ is $\pi^{-1}(\pi(Z))$ for the quotient $\pi\colon A\to A/B$
+by an abelian subvariety $B$ with $T_{0}B\supseteq T_{+}$ or
+$T_{0}B\supseteq T_{-}$, so $[Z]=\pi^{*}[\pi(Z)]$ lies in the subring of
+$H^{*}(A,\CC)$ generated by $\pi^{*}H^{1}(A/B,\CC)$, the space of classes of
+degree one that vanish on $T_{0}B$ and on its conjugate. When
+$T_{0}B\supseteq T_{+}$, a
+$(1,0)$-form vanishing on $T_{+}$ lies in $V_{-}^{1,0}$, and a $(0,1)$-form
+vanishing on the conjugate of $T_{+}$ lies in $V_{+}^{0,1}$, because complex
+conjugation exchanges the two eigenvalues of $K$;%
+\footnote{The field $K$ acts on $H_{1}(A,\QQ)$ by rational endomorphisms, so
+on the complexification its action commutes with complex conjugation, which
+carries the eigenspace of $\sqrt{-d}$ for one embedding of $K$ to that for the
+other. On the tangent space the conjugate of $T_{+}$ is the eigenspace in
+$T^{0,1}$ for the second embedding; it pairs with $V_{-}^{0,1}$, not with
+$V_{+}^{0,1}$.}
+so the subring lies in $\bigwedge^{*}(V_{-}^{1,0}\oplus V_{+}^{0,1})$. When
+$T_{0}B\supseteq T_{-}$ it lies in $\bigwedge^{*}(V_{+}^{1,0}\oplus
+V_{-}^{0,1})$. Choose bases of the four pieces. Both exterior algebras are
+spanned by monomials in these bases, so their sum is too, and $\alpha_{+}$, a
+single monomial in $n$ generators of $V_{+}^{1,0}$ and $n$ of $V_{+}^{0,1}$,
+is not among the monomials spanning it; nor is $\alpha_{-}$. As $ab\ne0$, the
+class $N\omega$ has nonzero coordinates on both and is not in the sum, which
+contradicts $\ch_{n}(E)=N\omega$. So some component has codimension less
+than $n$. The last assertion follows, since a complex assembled from
+structure sheaves of the components of a cycle of codimension $n$ is
+supported on that cycle.
+\end{proof}
+
+\Cref{fig:support} draws the slice and the bivector of the proof.
+
+\begin{figure}[tbp]
+\centering
+  \includegraphics[width=\textwidth]{fig_support}
+\caption{The proof of \Cref{thm:p2support}. The grey sheet stands for a
+component of the support of codimension less than $n$, which the theorem
+forces to exist; the clay curve $Z$ for a component of codimension at least
+two. At a smooth point $p$ of $Z$ the directions $\theta\in T_{+}$ and
+$\theta'\in T_{-}$ span the slice $S$, transverse to $Z$, on which $E$ restricts
+to a complex of finite length with Euler characteristic $m_{Z}(E)$; the amber
+parallelogram is the bivector $\theta\wedge\theta'$, independent modulo
+$T_{p}Z$. Carried to a torus of the same dimension, the product of the two
+jet classes is seen by the semiregularity map as $m_{Z}(E)$ times the class of
+a point contracted with the bivector, which is not zero, so $m_{Z}(E)=0$ or
+the bivector degenerates. The teal lines are cosets of an abelian subvariety
+$B$ tangent to $T_{+}$, the only components of codimension at least two on
+which a nonzero multiplicity survives. The scene is schematic in the
+dimensions and exact in the incidences.}
+\label{fig:support}
+\end{figure}
+
+\subsection{Indecomposability and endomorphisms}
+
+The numerical criterion of \Cref{thm:p2numerical} fixes one number,
+$\dim\Ext^{2}(E,E)$. Together with Serre duality, the lower bounds of
+\Cref{cor:hhfactor} in the other degrees and the Hodge--Riemann relations for
+the Weil class, it fixes a good deal more: the object that carries the class
+can be taken indecomposable, and it has at least three linearly independent
+endomorphisms at $n=2$ and, granting the compatibility of
+\Cref{cor:hhfactor}(iii), at $n=3$, the first case in which the criterion
+is needed at a nontrivial discriminant.
+
+\begin{theorem}[The shape of an object meeting the criterion]
+\label{thm:p2endo}
+Let $A$, $\omega$ and $E$ be as in \Cref{thm:p2numerical}, so that
+$\ch(E)=N\omega$ with $N\ne0$ and no other component, and suppose that
+$\dim\Ext^{2}(E,E)=2n(2n-1)$. Write $e_{k}=\dim\Ext^{k}(E,E)$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item $\chi(E,E)=\sum_{k}(-1)^{k}e_{k}=(-1)^{n}N^{2}\int_{A}\omega^{2}$, and
+  this number is positive.
+\item $E\cong E_{0}\oplus E'$ with $E_{0}$ indecomposable,
+  $\ch(E_{0})=\ch(E)$, $\dim\Ext^{2}(E_{0},E_{0})=2n(2n-1)$, $\ch(E')=0$ and
+  $\Ext^{2}(E_{0},E')=\Ext^{2}(E',E_{0})=\Ext^{2}(E',E')=0$. So $E_{0}$ meets
+  the criterion as well.
+\item If $E$ is indecomposable, then $\End(E)=\CC\cdot\id\oplus J$ with $J$
+  the nilpotent radical, every $f\in J$ annihilates $\Ext^{2}(E,E)$ and
+  $\Ext^{2n-2}(E,E)$ under the Yoneda product, and
+  $\operatorname{ev}_{E}(\bigwedge^{2n}P)=\operatorname{ev}_{E}(\bigwedge^{2n}Q)$
+  is a single line in $\Ext^{2n}(E,E)$. If moreover $e_{1}=4n$, then $J$
+  annihilates $\Ext^{1}(E,E)$ as well.
+\item If $n=2$ or $n=3$, then
+  \[
+    \dim\End(E)\;\ge\;2+\tfrac12\,\chi(E,E)\;>\;2,
+  \]
+  so $E$ has at least three linearly independent endomorphisms, and at
+  $n=3$ also $e_{1}\le e_{0}+9$. In particular no simple object meets the
+  criterion: no stable sheaf, no complex with $\End=\CC$, and no image of one
+  under an autoequivalence of $D^{b}(A)$; and an indecomposable object that
+  meets it has a nonzero nilpotent endomorphism. The smallest profiles
+  $(e_{0},\dots,e_{2n})$ that the constraints allow are $(3,8,12,8,3)$ at
+  $n=2$, with $\chi=2$, and $(3,12,30,40,30,12,3)$ and $(3,12,30,41,30,12,3)$
+  at $n=3$, with $\chi=2$ and $\chi=1$.
+\end{enumerate}
+Parts (i) and (ii), and part (iv) at $n=2$, use the compatibility
+$\sigma_{E}\circ\operatorname{ev}_{E}=(\,\cdot\,)\lrcorner\ch(E)$ of
+\Cref{setup:hh} in degree two only, as \Cref{thm:p2numerical} does. Part
+(iii), and part (iv) at $n=3$, use it in the further degrees in which
+\Cref{cor:hhfactor}(iii) grants it: $2n-2$ and $2n$ for (iii), and three for
+(iv).
+\end{theorem}
+
+\begin{proof}
+(i) The Todd class of $A$ is trivial, so the Riemann--Roch theorem gives
+$\chi(E,E)=\int_{A}\ch(E)^{\vee}\ch(E)$, and $\ch(E)^{\vee}=(-1)^{n}N\omega$
+since $\omega$ has degree $2n$. The polarisation pairs $V_{+}$ only with
+$V_{-}$ (see \Cref{fig:tangent}), so its class $\theta$ lies in
+$V_{+}\otimes V_{-}$ and $\theta\wedge\alpha_{\pm}=0$, because $\alpha_{\pm}$
+spans the top exterior power of $V_{\pm}$. So $\omega$ is a nonzero rational
+primitive class of type $(n,n)$ in the middle degree, and the Hodge--Riemann
+relations give $(-1)^{n(2n-1)}\int_{A}\omega^{2}>0$, where
+$(-1)^{n(2n-1)}=(-1)^{n}$.
+
+(ii) The category $D^{b}(A)$ has finite dimensional morphism spaces and split
+idempotents, so $E=\bigoplus_{i}E_{i}$ with each $E_{i}$ indecomposable. The
+evaluation map and the semiregularity map are compatible with direct sums,
+and by \Cref{thm:p2numerical}(i) the kernel of $\operatorname{ev}_{E}$ in
+degree two is $P\wedge Q$; so $\operatorname{ev}_{E_{i}}(P\wedge Q)=0$ and,
+composing with $\sigma_{E_{i}}$, $(P\wedge Q)\lrcorner\ch(E_{i})=0$ for every
+$i$. We claim that the only classes of Hodge type killed by $P\wedge Q$ are
+those of $\CC\alpha_{+}\oplus\CC\alpha_{-}$. Write
+$H^{*}(A,\CC)=\bigwedge^{*}(A_{+}\oplus B_{+}\oplus A_{-}\oplus B_{-})$ with
+$A_{\pm}=V_{\pm}^{1,0}$ and $B_{\pm}=V_{\pm}^{0,1}$, and grade it by the four
+degrees $(i,j,k,l)$. As in \Cref{setup:hh}, $P$ acts by wedging with $B_{+}$
+and contracting $A_{-}$, and $Q$ by wedging with $B_{-}$ and contracting
+$A_{+}$, so $P\wedge Q$ is spanned by four kinds of operators, each of which
+shifts the four degrees by a fixed amount: wedging with $b_{+}\wedge b_{-}$
+kills a component of degree $(i,j,k,l)$ for all choices exactly when $j=n$ or
+$l=n$; wedging with $b_{+}$ after contracting $a_{+}$, exactly when $i=0$ or
+$j=n$; contracting $a_{-}$ and wedging with $b_{-}$, exactly when $k=0$ or
+$l=n$; and contracting $a_{-}$ and $a_{+}$, exactly when $i=0$ or $k=0$. Each
+of these is a statement about a tensor product of maps that are injective
+unless the degree in question is extreme. A class of type $(p,p)$ has
+$i+k=j+l=p$ in every component. If $j=n$, then $l=n$ would force $i=k=n$,
+against the fourth condition, so $l<n$ and the third condition gives $k=0$;
+hence $i=n+l$, so $i=n$ and $l=0$: the component lies in
+$\bigwedge^{n}A_{+}\otimes\bigwedge^{n}B_{+}=\CC\alpha_{+}$. If $j<n$, the
+first two conditions give $l=n$ and $i=0$, hence $k=n$ and $j=0$: the
+component lies in $\CC\alpha_{-}$. This proves the claim. Since $\ch(E_{i})$ is a rational class of
+Hodge type killed by $P\wedge Q$, it lies on the rational Weil plane, and
+when it is nonzero \Cref{cor:hhfactor}(i) gives
+$\dim\Ext^{2}(E_{i},E_{i})\ge2n(2n-1)$, a nonzero rational Weil class having
+both coefficients $a$ and $b$ nonzero. As
+$\Ext^{2}(E,E)=\bigoplus_{i,j}\Ext^{2}(E_{i},E_{j})$ has dimension
+$2n(2n-1)$ and $\sum_{i}\ch(E_{i})=N\omega\ne0$, exactly one summand $E_{0}$
+has nonzero Chern character and every other block of $\Ext^{2}$ vanishes.
+
+(iii) An indecomposable object of a category with finite dimensional
+morphism spaces and split idempotents has a local endomorphism ring, so
+$\End(E)=\CC\cdot\id\oplus J$ with $J$ nilpotent. By
+\Cref{thm:p2numerical}(i), $\operatorname{ev}_{E}$ maps
+$\bigwedge^{2}P\oplus\bigwedge^{2}Q$ isomorphically onto $\Ext^{2}(E,E)$.
+By Serre duality $e_{2n-2}=e_{2}$, and contraction with $\omega$ is injective
+on $\bigwedge^{2n-2}P\oplus\bigwedge^{2n-2}Q$ by \Cref{thm:hhsplitting}(iv),
+since $2n-2\ne2n$; so, with the compatibility in
+degree $2n-2$, $\operatorname{ev}_{E}$ maps that space isomorphically onto
+$\Ext^{2n-2}(E,E)$. In degree $2n$ the semiregularity map is the trace, since
+$H^{q+2n}(\Omega^{q}_{A})=0$ for $q>0$, so
+$\operatorname{tr}\operatorname{ev}_{E}(\xi)$ is the $H^{0,2n}$ component of
+$\xi\lrcorner\ch(E)$; for the generators $\pi_{P}$, $\pi_{Q}$ of
+$\bigwedge^{2n}P$ and $\bigwedge^{2n}Q$ it is $Nc_{P}$ and $Nc_{Q}$ with
+$c_{P}c_{Q}\ne0$. Indeed $\pi_{P}$ wedges with a basis of $B_{+}$ and contracts
+a basis of $A_{-}$, so it kills $\alpha_{+}$, whose factor $\bigwedge^{n}B_{+}$
+is already full, and carries $\alpha_{-}$ to $\pm$ the generator
+$\bigwedge^{n}B_{+}\wedge\bigwedge^{n}B_{-}$ of $H^{0,2n}$; so $c_{P}=\pm b$
+and likewise $c_{Q}=\pm a$, both nonzero. For $f\in\End(E)$ and
+$x\in\bigwedge^{2}P\oplus\bigwedge^{2}Q$ write
+$f\cdot\operatorname{ev}_{E}(x)=\operatorname{ev}_{E}(\varphi_{f}(x))$; then
+$f\mapsto\varphi_{f}$ is a homomorphism of algebras. Let $x\in\bigwedge^{2}P$
+and $y\in\bigwedge^{2n-2}P$, and write $x\wedge y=\beta(x,y)\pi_{P}$. Since
+$\operatorname{ev}_{E}$ is a ring map that kills the ideal generated by
+$P\wedge Q$,
+\[
+  \beta(x,y)\operatorname{tr}\bigl(f\operatorname{ev}_{E}(\pi_{P})\bigr)
+  =\operatorname{tr}\bigl(f\operatorname{ev}_{E}(x)\operatorname{ev}_{E}(y)\bigr)
+  =\operatorname{tr}\operatorname{ev}_{E}\bigl(\varphi_{f}(x)\wedge y\bigr)
+  =Nc_{P}\,\beta\bigl(\varphi_{f}(x)_{P},y\bigr),
+\]
+and the pairing $\beta$ is perfect, so $\varphi_{f}(x)_{P}=\mu_{f}x$ with
+$\mu_{f}=\operatorname{tr}(f\operatorname{ev}_{E}(\pi_{P}))/Nc_{P}$. The same
+computation with $y\in\bigwedge^{2n-2}Q$, where $x\wedge y$ lies in the ideal
+generated by $P\wedge Q$, gives $\varphi_{f}(x)_{Q}=0$. So $f$ acts on
+$\operatorname{ev}_{E}(\bigwedge^{2}P)$ by a scalar $\mu_{f}$, and in the same
+way on $\operatorname{ev}_{E}(\bigwedge^{2}Q)$ by a scalar $\nu_{f}$; $\mu$ and
+$\nu$ are characters of $\End(E)$ and vanish on $J$. So $J$ kills
+$\Ext^{2}(E,E)$, on both sides because $\operatorname{ev}_{E}$ lands in the
+graded centre, and the same argument with the roles of the two degrees
+exchanged shows that it kills $\Ext^{2n-2}(E,E)$. In particular
+$\operatorname{tr}(f\operatorname{ev}_{E}(\pi_{P}))=\mu_{f}Nc_{P}=0$ for
+$f\in J$, so $\operatorname{ev}_{E}(\pi_{P})$ and, likewise,
+$\operatorname{ev}_{E}(\pi_{Q})$ lie in the annihilator of $J$ under the
+perfect pairing of $\End(E)$ with $\Ext^{2n}(E,E)$. That annihilator is a
+line, $J$ having codimension one, and both elements are nonzero, their traces
+being $Nc_{P}$ and $Nc_{Q}$; so they span the same line. Finally, if
+$e_{1}=4n$ then $\Ext^{1}(E,E)=\operatorname{ev}_{E}(HH^{1})$, because
+$\operatorname{ev}_{E}$ is injective on $HH^{1}$, as shown in (iv). For
+$f\in J$ and $h\in HH^{1}$ write $f\operatorname{ev}_{E}(h)=
+\operatorname{ev}_{E}(h')$; then
+$\operatorname{ev}_{E}(h'\wedge h'')=f\operatorname{ev}_{E}(h\wedge h'')=0$ for
+every $h''\in HH^{1}$, so $h'\wedge HH^{1}\subseteq P\wedge Q$, which forces
+$h'=0$ since $\dim P=\dim Q\ge2$.
+
+(iv) By Serre duality $e_{k}=e_{2n-k}$. The map $\operatorname{ev}_{E}$ is
+injective on $HH^{1}$ using degree two alone: if $\operatorname{ev}_{E}(h)=0$
+then $\operatorname{ev}_{E}(h\wedge h')=0$ for every $h'$, so
+$h\wedge HH^{1}\subseteq\Ann_{HH^{2}}(\omega)=P\wedge Q$, and $h=0$ as in
+(iii). So $e_{1}\ge4n$, and \Cref{cor:hhfactor}(iii) gives
+$e_{3}\ge2\binom{6}{3}=40$ at $n=3$. At $n=2$ the Euler
+characteristic is $2e_{0}-2e_{1}+12$, and at $n=3$ it is
+$2e_{0}-2e_{1}+60-e_{3}$. So $2e_{0}=\chi+2e_{1}-12\ge\chi+4$ at $n=2$, and
+$2e_{0}=\chi+2e_{1}+e_{3}-60\ge\chi+4$ at $n=3$, where also
+$e_{1}=e_{0}+30-\frac12(\chi+e_{3})\le e_{0}+9$. With (i) this gives the
+bound. An autoequivalence preserves $\End$, and a stable sheaf is simple.
+An indecomposable object with $\dim\End\ge3$ has $J\ne0$. For the smallest
+profiles take $e_{0}=3$. At $n=2$, $\chi$ is even and positive, so
+$2e_{1}=18-\chi\le16$, and $e_{1}\ge8$ forces $e_{1}=8$ and $\chi=2$. At
+$n=3$, $2e_{1}+e_{3}=66-\chi\le65$ with $e_{1}\ge12$ and $e_{3}\ge40$
+forces $e_{1}=12$ and $e_{3}\in\{40,41\}$, with $\chi=2$ and $\chi=1$.
+\end{proof}
+
+\begin{remark}[Objects excluded by the shape]\label{rem:p2endo}
+\Cref{thm:p2endo} gives necessary conditions only, and their effect is to
+exclude the objects one would construct first. Line bundles, semi-homogeneous
+bundles, skyscraper sheaves, stable sheaves and their Fourier--Mukai
+transforms are simple, and direct sums of them are excluded by (ii) together
+with \Cref{thm:nosum}. At $n=3$, granting the compatibility of
+\Cref{cor:hhfactor}(iii), the shape allowed is an indecomposable object
+with a local endomorphism algebra of dimension at least three whose radical
+kills $\Ext^{2}$ and $\Ext^{4}$ and pairs to zero with the line
+$\operatorname{ev}_{E}(\bigwedge^{6}P)$. The smallest conceivable one has
+$\Hom(E,E)$ of dimension three, $\Ext^{1}(E,E)$ equal to the image of
+$HH^{1}(A)$, of dimension twelve and killed by the radical, and
+$\Ext^{3}(E,E)$ of dimension forty or forty-one. Iterated self-extensions and
+thickenings are the natural objects with nilpotent endomorphisms, but an
+extension of a simple object $F$ by itself has $\ch=2\ch(F)$, so $F$ would
+already have to carry the class, and the question returns one level down.
+For $n\ge4$ write $e_{k}=2\binom{2n}{k}+\delta_{k}$ for $1\le k\le2n-1$,
+with $\delta_{k}\ge0$ and $\delta_{2}=\delta_{2n-2}=0$. Since
+$\sum_{k=1}^{2n-1}(-1)^{k}\binom{2n}{k}=-2$, the Euler characteristic is
+$2e_{0}-4+\sum_{k}(-1)^{k}\delta_{k}$, and an excess $\delta_{k}$ in an even
+degree $4\le k\le2n-4$ can make it positive with $e_{0}=1$; so the bound on
+$\End$ disappears. By
+\Cref{thm:p2false} none of these shapes is realised.
+\end{remark}

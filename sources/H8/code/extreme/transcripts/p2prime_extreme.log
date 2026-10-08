@@ -1,0 +1,88 @@
+(LII) the corrected criterion (P2') as a number
+  (A) the closed form n^2(4-rho), n >= 3
+    [PASS] n=3, pure: rho = 0, dim Ann = n^2(4-rho) = 36, r = 30
+    [PASS] n=3, c_0 only: rho = 1, dim Ann = n^2(4-rho) = 27, r = 39
+    [PASS] n=3, c_2n only: rho = 1, dim Ann = n^2(4-rho) = 27, r = 39
+    [PASS] n=3, e^theta: rho = 1, dim Ann = n^2(4-rho) = 27, r = 39
+    [PASS] n=3, c_1 only: rho = 2, dim Ann = n^2(4-rho) = 18, r = 48
+    [PASS] n=3, c_0 + c_1: rho = 2, dim Ann = n^2(4-rho) = 18, r = 48
+    [PASS] n=3, c_0 + c_2n: rho = 2, dim Ann = n^2(4-rho) = 18, r = 48
+    [PASS] n=3, two exponentials: rho = 2, dim Ann = n^2(4-rho) = 18, r = 48
+    [PASS] n=3, c_n only: rho = 3, dim Ann = n^2(4-rho) = 9, r = 57
+    [PASS] n=3, generic: rho = 3, dim Ann = n^2(4-rho) = 9, r = 57
+    [PASS] n=4, pure: rho = 0, dim Ann = n^2(4-rho) = 64, r = 56
+    [PASS] n=4, c_0 only: rho = 1, dim Ann = n^2(4-rho) = 48, r = 72
+    [PASS] n=4, c_2n only: rho = 1, dim Ann = n^2(4-rho) = 48, r = 72
+    [PASS] n=4, e^theta: rho = 1, dim Ann = n^2(4-rho) = 48, r = 72
+    [PASS] n=4, c_1 only: rho = 2, dim Ann = n^2(4-rho) = 32, r = 88
+    [PASS] n=4, c_0 + c_1: rho = 2, dim Ann = n^2(4-rho) = 32, r = 88
+    [PASS] n=4, c_0 + c_2n: rho = 2, dim Ann = n^2(4-rho) = 32, r = 88
+    [PASS] n=4, two exponentials: rho = 2, dim Ann = n^2(4-rho) = 32, r = 88
+    [PASS] n=4, c_n only: rho = 3, dim Ann = n^2(4-rho) = 16, r = 104
+    [PASS] n=4, generic: rho = 3, dim Ann = n^2(4-rho) = 16, r = 104
+  (B) the generic annihilator is the polarised Weil tangent space
+    [PASS] n=2, generic: Ann_{HT^2}(ch) is the n^2-dimensional tangent space of the polarised Weil family, inside H^1(T)
+    [PASS] n=3, generic: Ann_{HT^2}(ch) is the n^2-dimensional tangent space of the polarised Weil family, inside H^1(T)
+    [PASS] n=4, generic: Ann_{HT^2}(ch) is the n^2-dimensional tangent space of the polarised Weil family, inside H^1(T)
+  (C) the strata and the twist by e^(t theta)
+    [PASS] n=2: rho = 1 on C e^(t theta) and on C theta^(2n)
+    [PASS] n=2: twisting ch by e^(t theta) (t = 1, -1/2) keeps rho and r
+    [PASS] n=3: rho = 1 on C e^(t theta) and on C theta^(2n)
+    [PASS] n=3: twisting ch by e^(t theta) (t = 1, -1/2) keeps rho and r
+  (D) n = 2, where two K-characters meet
+    [PASS] n=2, theta^2 + omega: dim Ann = 4(4-rho) + dim ker((HK)^2 - |u|^2); r = 24 in general, 22 at |u|^2 = 4, 23 at |u|^2 = 16
+           |u|^2 = 1: r = 24, dim Ann = 4
+           |u|^2 = 4: r = 22, dim Ann = 6
+           |u|^2 = 16: r = 23, dim Ann = 5
+           |u|^2 = 4: r = 22, dim Ann = 6
+           |u|^2 = 10: r = 24, dim Ann = 4
+           |u|^2 = 400: r = 24, dim Ann = 4
+           |u|^2 = 16 (u = (12+16i)/5): r = 23
+    [PASS] n=2, four random shapes: the same formula
+  (E) the first-order Hodge locus of ch
+    [PASS] n=3: the first-order Hodge locus of ch is n^2-dimensional unless c_1 = ... = c_(2n-1) = 0, when it is 2n^2
+    [PASS] n=4: the first-order Hodge locus of ch is n^2-dimensional unless c_1 = ... = c_(2n-1) = 0, when it is 2n^2
+    [PASS] n=2: the first-order Hodge locus is 5-dimensional exactly at c_1 = c_3 = 0, |u| = 4|c_2|, 4 otherwise, 8 in the pure case
+           dimensions [5, 5, 5, 4, 4, 4, 8]
+  (F) the Euler characteristic and the rational model
+    [PASS] n=2: int ch^vee ch = (2n)! Q(c) + 2|u|^2 in the normalisation int theta^(2n) = (2n)!
+    [PASS] n=3: int ch^vee ch = (2n)! Q(c) + 2|u|^2 in the normalisation int theta^(2n) = (2n)!
+    [PASS] rational model, n=2: int omega_1^2 = 8d^2 and int eta^4 = 24, so the exceptional ratio c^2 int eta^4 = (3/4) N^2 int omega^2 is c = +-dN/2
+           d=1: int omega_1^2 = 8, int eta^4 = 24, R(c = dN/2) = 3/4
+           d=2: int omega_1^2 = 32, int eta^4 = 24, R(c = dN/2) = 3/4
+           d=3: int omega_1^2 = 72, int eta^4 = 24, R(c = dN/2) = 3/4
+           d=5: int omega_1^2 = 200, int eta^4 = 24, R(c = dN/2) = 3/4
+           d=7: int omega_1^2 = 392, int eta^4 = 24, R(c = dN/2) = 3/4
+  (X) extreme: exact for n = 5, ..., 10
+    [PASS] extreme, n=5, pure: dim Ann = 100 = n^2(4-rho), r = 90 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=5, c_0 only: dim Ann = 75 = n^2(4-rho), r = 115 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=5, c_1 only: dim Ann = 50 = n^2(4-rho), r = 140 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=5, c_n only: dim Ann = 25 = n^2(4-rho), r = 165 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=5, generic: dim Ann = 25 = n^2(4-rho), r = 165 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=6, pure: dim Ann = 144 = n^2(4-rho), r = 132 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=6, c_0 only: dim Ann = 108 = n^2(4-rho), r = 168 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=6, c_1 only: dim Ann = 72 = n^2(4-rho), r = 204 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=6, c_n only: dim Ann = 36 = n^2(4-rho), r = 240 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=6, generic: dim Ann = 36 = n^2(4-rho), r = 240 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=7, pure: dim Ann = 196 = n^2(4-rho), r = 182 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=7, c_0 only: dim Ann = 147 = n^2(4-rho), r = 231 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=7, c_1 only: dim Ann = 98 = n^2(4-rho), r = 280 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=7, c_n only: dim Ann = 49 = n^2(4-rho), r = 329 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=7, generic: dim Ann = 49 = n^2(4-rho), r = 329 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=8, pure: dim Ann = 256 = n^2(4-rho), r = 240 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=8, c_0 only: dim Ann = 192 = n^2(4-rho), r = 304 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=8, c_1 only: dim Ann = 128 = n^2(4-rho), r = 368 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=8, c_n only: dim Ann = 64 = n^2(4-rho), r = 432 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=8, generic: dim Ann = 64 = n^2(4-rho), r = 432 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=9, pure: dim Ann = 324 = n^2(4-rho), r = 306 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=9, c_0 only: dim Ann = 243 = n^2(4-rho), r = 387 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=9, c_1 only: dim Ann = 162 = n^2(4-rho), r = 468 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=9, c_n only: dim Ann = 81 = n^2(4-rho), r = 549 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=9, generic: dim Ann = 81 = n^2(4-rho), r = 549 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=10, pure: dim Ann = 400 = n^2(4-rho), r = 380 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=10, c_0 only: dim Ann = 300 = n^2(4-rho), r = 480 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=10, c_1 only: dim Ann = 200 = n^2(4-rho), r = 580 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=10, c_n only: dim Ann = 100 = n^2(4-rho), r = 680 = (4+rho)n^2-2n, exact
+    [PASS] extreme, n=10, generic: dim Ann = 100 = n^2(4-rho), r = 680 = (4+rho)n^2-2n, exact
+
+  65 checks passed, 0 failed

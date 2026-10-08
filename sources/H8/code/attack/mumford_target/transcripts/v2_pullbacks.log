@@ -1,0 +1,18 @@
+(1) dim (wedge^a V (x) wedge^{4-a} V)^G, a=0..4: [1, 1, 4, 1, 1]
+PASS (1) Hodge classes of X x X of degree 4: 1,1,4,1,1 (total 8)
+PASS (1) dim (wedge^2 V)^G = 1 (the class psi)
+(2) zero-weight space dim 216 ; dim (V^(x)4)^G = 8
+PASS (2) dim (V^{(x)4})^G = 8
+(3) number of generators: 409 ; exact rank of their span: 7
+PASS (3) span of multilinear parts of pull-backs of Hdg^2(X x X) and products of divisors: dim 7
+PASS (4) the S_4-symmetric G-invariants of V^(x)4 form a line (Det)
+(4) Det(x,x,x,x)/Cayley(x) on random x: {Fraction(6, 1)}
+PASS (4) Det restricted to the diagonal is a constant multiple of Cayley's hyperdeterminant
+PASS (4) Det is NOT in the span of (3) (exact)
+PASS (4) the symmetriser kills the span of (3)
+(5) exact rank of span of T4_0 and all composites u o t (t,u in T4_0): 8
+PASS (5) composites of two classes of T4_0 reach Det: span = all of (V^(x)4)^G (dim 8, exact)
+PASS (5) some single composite has nonzero hyperdeterminant component (exact)
+    first such pair (basis indices): 1 1
+
+10 checks passed, 0 failed

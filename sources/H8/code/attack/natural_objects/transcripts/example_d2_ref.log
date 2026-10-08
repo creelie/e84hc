@@ -1,0 +1,24 @@
+points (p,q): [(1, 0), (0, 1), (1, 1), (1, -1), (1, 2), (2, 1), (1, -2), (2, -1)]
+(E1) nullity of [B_1..B_8, W1, W2] = 1 (expect 1)
+     m_i = [4860, 9720, 720, 720, -18, -12, -18, -12]   Weil class = 5 W1 + 0 W2
+     sum m_i [B_i] == x W1 + y W2 exactly: True
+     all m_i nonzero: True   sum m_i^2 = 119135736
+(E2) ch(E) == (x W1 + y W2) + sum_k c_k eta^k exactly: True
+     c_k = ['3', '6', '7', '6', '49/12', '23/10', '397/360', '193/420', '487/2880']
+     Hankel rank rho = 3, r(gamma) = (4+rho)16 - 8 = 104
+(E3) chi(O_Bi, O_Bj) = |det|^8 for all i != j: True
+     chi(O(t eta), O_B) = chi(O_B, O(t eta)) = (t(dp^2+q^2))^4: True
+     chi(O(t eta), O(t' eta)) = (t'-t)^8 d^4: True
+     degrees: O_Bi -> O_Bj in degree 4 (transversal subtori, local Ext^4 only);
+     O(t eta) -> O_B and O_B -> O(t eta) in degree 4 (eta|_B ample, Serre duality);
+     O(t eta) -> O(t' eta) in degree 0 for t' > t, 8 for t' < t.
+     with shifts k_i in {0,1}: number of pairs with cross Ext^1 = 0, cross Ext^2 = 0
+(E4) dim Ext^2(E,E) = 28 * sum m^2 = 3335800692  vs  r(gamma) = 104  (excess 3335800588)
+     dim Ext^1(E,E) = 8 * sum m^2 = 953085912
+     dim T (mod p) = 16
+(E5) rank of T -> (+)_i H^*, v -> (v _| ch F_i)_i  (mod p) = 6  => kappa >= 6
+     dim sum_i HT^2 _| ch F_i (mod p, lower bound) = 280 of 308  => kappa <= 28
+     dim ker sigma_E >= 28 sum(m^2-1) + kappa = 3335800390
+(E6) e - k <= 953085912 - 3335800390 = -2382714478  <  128664 = 8 sum|m_i| <= dim K_E
+     => the hypothesis dim K_E = e - k of prop:p2flat(ii) fails: True
+time 7.9s

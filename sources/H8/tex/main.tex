@@ -1,0 +1,138 @@
+\documentclass[11pt,reqno]{amsart}
+\input{preamble}
+\graphicspath{{figures/}}
+
+\title[Algebraic loci of Weil classes]
+      {Algebraic Loci of Weil Classes on Abelian Varieties}
+
+\author{Deep Bhattacharjee\textsuperscript{\dag}}
+\address{Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL),
+  Bhubaneswar, Odisha 751030, India}
+\email{d.bhattacharjee@erl-forschung.de}
+\email{itsdeep@live.com}
+\urladdr{\textnormal{ORCID
+  \href{https://orcid.org/0000-0003-0466-750X}{0000-0003-0466-750X}}}
+
+\author{Priyabrata Mandal}
+\address{Department of Mathematics, Bioinformatics and Computer
+  Applications, Maulana Azad National Institute of Technology Bhopal,
+  Bhopal 462003, India}
+\email{priyabrata@manit.ac.in}
+\urladdr{\textnormal{ORCID
+  \href{https://orcid.org/0000-0001-6472-6239}{0000-0001-6472-6239}}}
+
+\author{Ushashi Bhattacharya}
+\address{Formerly, National Taiwan University, Taipei 106319, Taiwan}
+\email{rai.bhattacharya.in@gmail.com}
+\urladdr{\textnormal{ORCID
+  \href{https://orcid.org/0009-0002-2254-3914}{0009-0002-2254-3914}}}
+
+\thanks{\textsuperscript{\dag}\,Corresponding author: Deep Bhattacharjee,
+\texttt{d.bhattacharjee@erl-forschung.de}, \texttt{itsdeep@live.com}.}
+
+\thanks{An earlier preprint by the first and third authors, \emph{Relative
+secant cycles and Hodge classes}, Preprints.org (2026),
+\href{https://doi.org/10.20944/preprints202602.0462.v5}{\texttt{doi:10.20944/preprints202602.0462.v5}},
+contains errors and incomplete proofs and is replaced by the present paper;
+Priyabrata Mandal was not an author of it, and Ushashi Bhattacharya was its
+second author.}
+
+\thanks{Every proof is given in the text. Programs that repeat much of the
+finite arithmetic, and a Lean~4 certificate of part of it, are archived as
+described in the statement on data availability at the end of the paper; no
+statement rests on them.}
+
+
+\date{\today}
+
+\subjclass[2020]{Primary 14C30 (Hodge theory), 14C25 (algebraic cycles);
+  Secondary 14K05 (algebraic theory of abelian varieties), 14K22 (complex
+  multiplication), 14K20 (analytic theory of abelian varieties), 14D07
+  (variation of Hodge structures), 14D05 (monodromy of families), 14G35
+  (Shimura varieties), 14F08 (derived categories of sheaves), 14M10 (complete
+  intersections), 14J70 (hypersurfaces), 14H45 (special curves), 14J28 (K3
+  surfaces), 11G10 (abelian varieties of dimension greater than one), 32G20
+  (period matrices), 13D07 (homological functors on modules), 32U40
+  (currents), 49Q15 (integral currents), 03B35 (mechanization of proofs)}
+
+\keywords{Hodge conjecture, Weil classes, abelian varieties}
+
+\begin{document}
+
+\begin{abstract}
+We prove that in every family of abelian varieties of Weil type, for every CM
+field, dimension and discriminant, the Weil classes are algebraic on a dense
+set that contains an explicit CM point and is either the whole family or
+meagre, that every rational Hodge class is algebraic on the very general
+complete intersection of diagonal quadrics of Vandermonde type and on every
+smooth complete intersection of two diagonal cubics, quartics or sextics in
+$\PP^{6}$, and, taking theorems of recent unrefereed preprints as
+hypotheses, that the Weil classes are algebraic on every abelian sixfold of
+Weil type and the Hodge conjecture holds on every power of the Kuga--Satake
+variety of a K3 surface, in particular of a Mumford fourfold.
+\end{abstract}
+
+\maketitle
+
+\setcounter{tocdepth}{0}
+\vspace*{-18pt}
+\begingroup
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\vspace*{-4pt}
+
+\input{sections/01_introduction}
+
+\part{Weil classes and the obstructions}\label{part:obstructions}
+\input{sections/02_conventions}
+\input{sections/03_weiltype}
+\input{sections/03b_explicit_weil}
+\input{sections/04_characters}
+\input{sections/05_fouriermukai}
+\input{sections/06_divisor_obstruction}
+\input{sections/07_numerology}
+\input{sections/08_semiregularity}
+\input{sections/09_hyperplane}
+\input{sections/09b_kugasatake}
+\input{sections/10_reduction}
+\input{sections/10b_escape}
+
+\part{Base points and the algebraic locus}\label{part:basepoints}
+\input{sections/10c1_secant}
+\input{sections/10c2_basepoints}
+\input{sections/10c3_closedlocus}
+\input{sections/10c4_rank}
+
+\part{Semiregularity and secant objects}\label{part:semiregularity}
+\input{sections/10c5_polarised}
+\input{sections/10c6_objects}
+\input{sections/10c7_markman}
+\input{sections/10c8_supports}
+
+\part{Weil classes of CM fields}\label{part:cmfields}
+\input{sections/10d1_cmfields}
+\input{sections/10d2_quartic}
+
+\part{Beyond the Weil classes}\label{part:beyond}
+\input{sections/11a_scope}
+\input{sections/11b_closuregraph}
+\input{sections/11c_mumford}
+\input{sections/11d_mumfordrigid}
+\input{sections/11e_mumfordobject}
+\input{sections/13_families}
+\input{sections/13b_preprints}
+\input{sections/14_closure}
+
+\appendix
+\addcontentsline{toc}{part}{\protect\tocpart{}{}{Appendices A to C}}
+\input{appendices/A_exterior}
+\input{appendices/B_cdk}
+\input{appendices/C_albert}
+
+\addcontentsline{toc}{part}{\protect\tocpart{}{}{Declarations and references}}
+\input{declarations}
+
+\input{bibliography}
+
+\end{document}

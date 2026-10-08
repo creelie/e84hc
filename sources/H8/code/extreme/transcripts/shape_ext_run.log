@@ -1,0 +1,48 @@
+(D) the Euler characteristic, n = [2, 3, 4, 5, 6, 7], excess per degree 0..4
+  [PASS] sum_k (-1)^k m_k = -2 for n = 1..200
+  [PASS] n=2: least dim End(E) allowed by the constraints is 3 (expected 3); free even degrees other than 0 (up to n): []
+         6 admissible profiles enumerated in 0.0s; smallest ones with e_0 = 3: (3, 8, 12, 8, 3) chi=2
+  [PASS] n=2: 2 e_0 >= chi + 4 on every enumerated profile
+  [PASS] n=3: least dim End(E) allowed by the constraints is 3 (expected 3); free even degrees other than 0 (up to n): []
+         19 admissible profiles enumerated in 0.0s; smallest ones with e_0 = 3: (3, 12, 30, 40, 30, 12, 3) chi=2
+  [PASS] n=3: 2 e_0 >= chi + 4 on every enumerated profile
+  [PASS] n=4: least dim End(E) allowed by the constraints is 1 (expected 1); free even degrees other than 0 (up to n): [4]
+         120 admissible profiles enumerated in 0.0s; smallest ones with e_0 = 1: (1, 16, 56, 112, 143, 112, 56, 16, 1) chi=1
+  [PASS] n=5: least dim End(E) allowed by the constraints is 1 (expected 1); free even degrees other than 0 (up to n): [4]
+         694 admissible profiles enumerated in 0.0s; smallest ones with e_0 = 1: (1, 20, 90, 240, 422, 504, 422, 240, 90, 20, 1) chi=2
+  [PASS] n=6: least dim End(E) allowed by the constraints is 1 (expected 1); free even degrees other than 0 (up to n): [4, 6]
+         3820 admissible profiles enumerated in 0.1s; smallest ones with e_0 = 1: (1, 24, 132, 440, 990, 1584, 1851, 1584, 990, 440, 132, 24, 1) chi=1; (1, 24, 132, 440, 991, 1584, 1849, 1584, 991, 440, 132, 24, 1) chi=1
+  [PASS] n=7: least dim End(E) allowed by the constraints is 1 (expected 1); free even degrees other than 0 (up to n): [4, 6]
+         20491 admissible profiles enumerated in 0.6s; smallest ones with e_0 = 1: (1, 28, 182, 728, 2002, 4004, 6008, 6864, 6008, 4004, 2002, 728, 182, 28, 1) chi=2; (1, 28, 182, 728, 2003, 4004, 6007, 6864, 6007, 4004, 2003, 728, 182, 28, 1) chi=2; (1, 28, 182, 728, 2004, 4004, 6006, 6864, 6006, 4004, 2004, 728, 182, 28, 1) chi=2
+  [PASS] for every n = 4..200 an explicit profile with e_0 = 1, e_2 = m_2 and chi in {1, 2} exists (3 added in the middle degree for n even, 2 in degrees 4 and 2n-4 for n odd)
+(C) the top traces and degree 2n-2
+  [PASS] n=4: top(P) and top(Q) contract omega to nonzero multiples of the generator of H^{0,2n}
+         c_P = -5, c_Q = 3
+  [PASS] n=4: contraction with omega is injective on wedge^{2n-2} P + wedge^{2n-2} Q, of dimension 2 binom(2n,2) = 56
+  [PASS] n=4: the pairing wedge^2 P x wedge^{2n-2} P -> wedge^{2n} P is perfect
+  [PASS] n=5: top(P) and top(Q) contract omega to nonzero multiples of the generator of H^{0,2n}
+         c_P = 5, c_Q = 3
+  [PASS] n=5: contraction with omega is injective on wedge^{2n-2} P + wedge^{2n-2} Q, of dimension 2 binom(2n,2) = 90
+  [PASS] n=5: the pairing wedge^2 P x wedge^{2n-2} P -> wedge^{2n} P is perfect
+(B) the Hodge classes annihilated by P ^ Q
+  [PASS] n=4: in every degree the (p,p) classes killed by all 64 monomials of P ^ Q are exactly C alpha_+ + C alpha_-
+         kernel dimensions by p: {0: 0, 1: 0, 2: 0, 3: 0, 4: 2, 5: 0, 6: 0, 7: 0, 8: 0}  (10.5s)
+  [PASS] n=5: in every degree the (p,p) classes killed by all 100 monomials of P ^ Q are exactly C alpha_+ + C alpha_-
+         kernel dimensions by p: {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 2, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0}  (233.3s)
+(A) primitivity and the sign of the intersection form on the rational Weil plane
+  [PASS] n=4, d=1: eta ^ omega_1 = eta ^ omega_2 = 0, and (-1)^n int omega^2 > 0 on the whole rational Weil plane
+         Gram matrix [['128', '0'], ['0', '128']] (pattern diag((-1)^n 2^(2n-1) d^n, (-1)^n 2^(2n-1) d^(n-1)): True), 0.1s
+  [PASS] n=4, d=2: eta ^ omega_1 = eta ^ omega_2 = 0, and (-1)^n int omega^2 > 0 on the whole rational Weil plane
+         Gram matrix [['2048', '0'], ['0', '1024']] (pattern diag((-1)^n 2^(2n-1) d^n, (-1)^n 2^(2n-1) d^(n-1)): True), 0.1s
+  [PASS] n=4, d=3: eta ^ omega_1 = eta ^ omega_2 = 0, and (-1)^n int omega^2 > 0 on the whole rational Weil plane
+         Gram matrix [['10368', '0'], ['0', '3456']] (pattern diag((-1)^n 2^(2n-1) d^n, (-1)^n 2^(2n-1) d^(n-1)): True), 0.1s
+  [PASS] n=5, d=1: eta ^ omega_1 = eta ^ omega_2 = 0, and (-1)^n int omega^2 > 0 on the whole rational Weil plane
+         Gram matrix [['-512', '0'], ['0', '-512']] (pattern diag((-1)^n 2^(2n-1) d^n, (-1)^n 2^(2n-1) d^(n-1)): True), 1.4s
+  [PASS] n=5, d=2: eta ^ omega_1 = eta ^ omega_2 = 0, and (-1)^n int omega^2 > 0 on the whole rational Weil plane
+         Gram matrix [['-16384', '0'], ['0', '-8192']] (pattern diag((-1)^n 2^(2n-1) d^n, (-1)^n 2^(2n-1) d^(n-1)): True), 1.4s
+
+  23 checks passed, 0 failed  (248.6s)
+
+real	4m8.776s
+user	1m49.218s
+sys	0m0.639s

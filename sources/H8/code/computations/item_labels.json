@@ -1,0 +1,325 @@
+{
+ "VI": [
+  "sec:explicit",
+  "rem:balancecount",
+  "prop:p2primeprofile",
+  "prop:p2primelocus",
+  "rem:onlybalanced"
+ ],
+ "VII": [
+  "sec:explicit",
+  "thm:hdgcount"
+ ],
+ "II": [
+  "rem:signcheck",
+  "lem:appsign"
+ ],
+ "I": [
+  "rem:signcheck"
+ ],
+ "XIII": [
+  "ssec:rankzero",
+  "rem:whatitmustbe",
+  "cor:nplusone",
+  "prop:explicitobject",
+  "eq:sigmaob",
+  "eq:sigmaev"
+ ],
+ "XIV": [
+  "ssec:rankzero",
+  "lem:annihilator",
+  "cor:pteobstructed",
+  "rem:familyuniform"
+ ],
+ "XVIII": [
+  "prop:objectsize"
+ ],
+ "XIX": [
+  "eq:phidelta"
+ ],
+ "VIII": [
+  "sec:ks"
+ ],
+ "XI": [
+  "thm:explicitweil",
+  "prop:splitgeom"
+ ],
+ "XXV": [
+  "thm:explicitweil",
+  "eq:sigmaob"
+ ],
+ "XXI": [
+  "rem:themultiple"
+ ],
+ "X": [
+  "ex:splitsmall"
+ ],
+ "XV": [
+  "eq:weilmult"
+ ],
+ "XX": [
+  "prop:notforbidden"
+ ],
+ "XVII": [
+  "prop:lagrangian"
+ ],
+ "XXXVII": [
+  "lem:multiplicity"
+ ],
+ "XXIII": [
+  "prop:quatdivisible"
+ ],
+ "XXIV": [
+  "prop:pencil"
+ ],
+ "XII": [
+  "rem:ntwo"
+ ],
+ "XXXV": [
+  "thm:p2forces",
+  "prop:mumfordproduct",
+  "prop:noabeliantype",
+  "prop:mumfordrm",
+  "prop:mumfordwhere"
+ ],
+ "XXXVIII": [
+  "thm:hhsplitting"
+ ],
+ "XXXIX": [
+  "thm:p2numerical",
+  "thm:p2support"
+ ],
+ "XL": [
+  "lem:finiteproduct"
+ ],
+ "L": [
+  "thm:p2endo",
+  "rem:p2endo",
+  "prop:quarticlocus"
+ ],
+ "LI": [
+  "lem:weiltorushodge",
+  "lem:weiltorussubsets"
+ ],
+ "V": [
+  "rem:tworemain"
+ ],
+ "LII": [
+  "setup:p2prime",
+  "thm:p2primenumber",
+  "prop:p2primelocus",
+  "rem:p2primeexceptional"
+ ],
+ "LIII": [
+  "prop:p2primeprofile"
+ ],
+ "LV": [
+  "prop:p2flat",
+  "thm:twistedcert",
+  "prop:flatall",
+  "setup:lagquadric",
+  "rem:flatsums",
+  "ssec:quartic",
+  "prop:quarticquat",
+  "prop:quarticnl",
+  "prop:quarticscalar",
+  "prop:quarticcasimir",
+  "thm:quarticp2prime",
+  "prop:quarticsecant",
+  "lem:quarticlattice",
+  "prop:quarticother",
+  "thm:quarticobstruction",
+  "prop:f3primestrength",
+  "rem:mumfordks",
+  "prop:mumfordwhere",
+  "thm:mumfordpowers",
+  "rem:mumforddet",
+  "prop:mumfordcmpowers",
+  "rem:mumfordunitary"
+ ],
+ "XXVI": [
+  "eq:sigmaev"
+ ],
+ "XXII": [
+  "eq:levelsums"
+ ],
+ "XXVII": [
+  "prop:markman8"
+ ],
+ "XXVIII": [
+  "eq:bfield",
+  "eq:crecursion"
+ ],
+ "XXIX": [
+  "eq:kunnethext"
+ ],
+ "XXX": [
+  "eq:bmydefect",
+  "cor:fourdiscriminants"
+ ],
+ "XXXI": [
+  "rem:cmsharp"
+ ],
+ "XXXII": [
+  "thm:noci"
+ ],
+ "LXIX": [
+  "thm:lattice"
+ ],
+ "LXX": [
+  "prop:lowrankburch"
+ ],
+ "XXXVI": [
+  "thm:cmbasepoint",
+  "prop:composite"
+ ],
+ "LIX": [
+  "ssec:quartic",
+  "rem:quarticsecantshape",
+  "rem:quarticnegext",
+  "prop:quarticexclusions"
+ ],
+ "LXV": [
+  "thm:quarticrank",
+  "prop:quarticweiltori",
+  "prop:quarticlocus"
+ ],
+ "LXVIII": [
+  "lem:divisorgerm",
+  "prop:markmanquarticclasses",
+  "cor:markmanquarticfails"
+ ],
+ "LVI": [
+  "prop:sexticcount"
+ ],
+ "LVII": [
+  "prop:sexticintegral"
+ ],
+ "LVIII": [
+  "lem:sexticweil"
+ ],
+ "LIV": [
+  "prop:descent"
+ ],
+ "XLII": [
+  "cor:mumfordlefschetz"
+ ],
+ "XLIII": [
+  "thm:mumfordcm",
+  "cor:mumfordequiv",
+  "thm:nosum"
+ ],
+ "LXI": [
+  "prop:aclosure",
+  "rem:f3primefrontier"
+ ],
+ "LXII": [
+  "rem:f3primesharp"
+ ],
+ "LXVI": [
+  "prop:delsarte"
+ ],
+ "LXVII": [
+  "cor:delsarteall"
+ ],
+ "XXXIII": [
+  "setup:rules",
+  "thm:closure",
+  "rem:f2rule"
+ ],
+ "LXIII": [
+  "ex:mumfordmass"
+ ],
+ "XLIX": [
+  "tab:scope",
+  "rem:mumfordneeded"
+ ],
+ "XLI": [
+  "prop:mumfordrm",
+  "lem:mumfordmu",
+  "thm:mumfordks"
+ ],
+ "LX": [
+  "rem:mumfordks",
+  "rem:mumfordpowersopen",
+  "prop:mumfordmotivic",
+  "prop:mumfordformal"
+ ],
+ "XLIV": [
+  "thm:mumfordrigid"
+ ],
+ "XLVII": [
+  "prop:notwistor"
+ ],
+ "XLVIII": [
+  "prop:hksquare"
+ ],
+ "LXIV": [
+  "eq:pimodulo"
+ ],
+ "XLV": [
+  "thm:mumfordprofile",
+  "prop:mumforddivisor"
+ ],
+ "XLVI": [
+  "thm:lefschetzclosure"
+ ],
+ "LXXI": [
+  "prop:weilpieces",
+  "lem:indexsum",
+  "thm:fewpieces",
+  "lem:degreedrop",
+  "prop:nothingenters",
+  "prop:cupkernel",
+  "thm:esixdiagonal",
+  "prop:mixedplacement",
+  "rem:convolutionsopen"
+ ],
+ "LXXII": [
+  "prop:explicitconvolution",
+  "lem:allthree",
+  "thm:noconvolution",
+  "rem:convolutionsopen"
+ ],
+ "LXXIII": [
+  "thm:vandermonde",
+  "cor:twodiagonal",
+  "rem:vandermonde"
+ ],
+ "LXXIV": [
+  "lem:efourshifts",
+  "thm:efourtwolevels",
+  "thm:efourthreelevels",
+  "rem:convolutionsopen"
+ ],
+ "LXXV": [
+  "lem:vgmonodromy",
+  "thm:vgvandermonde",
+  "rem:vandermonde"
+ ],
+ "LXXVI": [
+  "lem:foxmodel",
+  "lem:cabling",
+  "lem:merge",
+  "prop:cyclicmonodromy",
+  "lem:newdisc",
+  "thm:vgvandermonde"
+ ],
+ "LXXVII": [
+  "lem:efourspread",
+  "lem:cayleycut",
+  "thm:efourspreadtwo",
+  "thm:efourspreadthree",
+  "prop:efourgap",
+  "cor:efourfive",
+  "prop:efourcupkernel",
+  "rem:convolutionsopen"
+ ],
+ "LXXVIII": [
+  "lem:efourlonely",
+  "prop:efoursingle",
+  "prop:efourpairs",
+  "cor:efoursix",
+  "rem:convolutionsopen"
+ ]
+}

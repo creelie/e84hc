@@ -1,0 +1,4 @@
+(1) n=3 polarised Fujiki B formula: True
+(3) Delta^*Z'_u - kappa^{-1} c_{(u+u*)/2} lies in Sym^2 NS (n=3): True  NS part: 1/120
+(2) int c_phi x y = tr(phi) q(x,y) + 2 q(phi x, y): True
+(4) t(t+1)/2 for t=21: 231

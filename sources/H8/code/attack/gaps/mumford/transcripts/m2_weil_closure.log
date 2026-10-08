@@ -1,0 +1,11 @@
+  ok: psi_00, psi_01, psi_11 are sp(V)-invariant
+  ok: psi_00 is not sl(V)-invariant (as expected: sl-invariants are smaller)
+  rank of the 15 degree-4 monomials in psi_00, psi_01, psi_11 in H^8(XxX): 15
+  ok: the 15 monomials are linearly independent (dimension 15 of thm:lefschetzclosure)
+  Weil classes: |supp Re| = 128, |supp Im| = 128
+  ok: the Weil classes are fixed by the automorphism J of X x X
+  ok: Re(alpha), Im(alpha) are sl(V)-invariant (all 63 traceless elementary matrices)
+  ok: Re(alpha), Im(alpha) lie in the span of the 15 products of divisor classes
+  ok: the two rational Weil classes are independent
+  ok: mixed Weil classes of Y = X^2 x B (L acting diagonally) are sl(V)-invariant on the V-part
+ALL CHECKS PASSED

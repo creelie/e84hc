@@ -1,0 +1,209 @@
+\section{The divisor obstruction}\label{sec:divisor}
+
+The first way of reaching a Weil class is to import an object from a
+projective space. One restricts an object $\cF$ of $D^{b}(\PP^{N-1})$ to the
+dual abelian variety through a morphism $i\colon\Av\to\PP^{N-1}$ and carries
+the result back to $A$ by the Fourier--Mukai transform $\Phi_{\cP}$. Secant
+varieties of $\Av$ are the usual choice of $\cF$, because a dimension count
+makes the codimension come out right, and this is the construction of the
+preprint cited on the title page. This section shows that no construction of
+this shape produces a Weil class. The proof needs, besides the closed form of
+\Cref{sec:fm}, two facts about a morphism to projective space: the Chern
+character of a restricted object is a polynomial in the pulled-back
+hyperplane class, and this class is the first Chern class of the line bundle
+defining the morphism. When the N\'eron--Severi group of $\Av$ has rank one,
+the transform therefore lands in $\QQ[\theta]$. We then give two proofs of
+\Cref{cor:neverweil}, one through \Cref{prop:notpoly} and one through the
+characters of \Cref{sec:characters}, and isolate the equivariance hypothesis
+on which the second depends.
+
+\subsection{Statement and proof}
+
+\begin{lemma}[Restriction from an ambient projective space]\label{lem:ambient}
+Let $Y$ be a smooth projective variety, let $i\colon Y\to\PP^{N-1}$ be a
+morphism defined by a linear system, let $h\in H^{2}(\PP^{N-1},\QQ)$ be the
+hyperplane class, and let $\cF\in D^{b}(\PP^{N-1})$. Then
+\[
+  \ch\bigl(Li^{*}\cF\bigr)\in\QQ\bigl[\,i^{*}h\,\bigr]\subset H^{*}(Y,\QQ).
+\]
+\end{lemma}
+
+\begin{proof}
+The Chern character commutes with derived pullback:
+$\ch(Li^{*}\cF)=i^{*}\ch(\cF)$. For a locally free sheaf this follows from
+the naturality of Chern classes. It extends to $D^{b}(\PP^{N-1})$ because the
+Chern character is additive on distinguished triangles and, by Beilinson's
+theorem, every object of $D^{b}(\PP^{N-1})$ is quasi-isomorphic to a finite
+complex whose terms are direct sums of line bundles $\cO(-m)$ with
+$0\le m\le N-1$. All that is needed is that the classes of line bundles
+generate $K_{0}(\PP^{N-1})$, which also follows from the Koszul resolutions
+of the structure sheaves of linear subspaces. The cohomology ring of
+$\PP^{N-1}$ is $\QQ[h]/(h^{N})$, so $\ch(\cF)$ is a polynomial in $h$ with
+rational coefficients, and applying the ring homomorphism $i^{*}$ gives a
+polynomial in $i^{*}h$.
+\end{proof}
+
+\Cref{rem:otherambient} records which other ambient varieties behave in the
+same way.
+
+\begin{lemma}[The hyperplane class of a linear system]\label{lem:hyperclass}
+Let $A$ be an abelian variety and $i\colon\Av\to\PP^{N-1}$ a morphism defined
+by a linear system $|M|$ with $M\in\Pic(\Av)$. Then
+$i^{*}h=c_{1}(M)\in\NS(\Av)\otimes\QQ$.
+\end{lemma}
+
+\begin{proof}
+A morphism to $\PP^{N-1}$ defined by the linear system $|M|$, or by a
+subsystem of it, satisfies $i^{*}\cO(1)\cong M$ by construction. Hence
+$i^{*}h=c_{1}(i^{*}\cO(1))=c_{1}(M)$.
+\end{proof}
+
+\begin{theorem}[Divisor obstruction]\label{thm:divisor}
+Let $A$ be a principally polarised complex abelian variety of dimension $g$
+with $\NS(\Av)\otimes\QQ=\QQ\cdot\theta'$, let $i\colon\Av\to\PP^{N-1}$ be any
+morphism defined by a linear system, and let $\cF$ be any object of
+$D^{b}(\PP^{N-1})$. Put $\cE=\Phi_{\cP}(Li^{*}\cF)$. Then
+\[
+  \ch_{k}(\cE)\in\QQ\cdot\theta^{k}\qquad\text{for every }k\ge0 .
+\]
+\end{theorem}
+
+\begin{proof}
+By \Cref{lem:ambient}, $\ch(Li^{*}\cF)\in\QQ[i^{*}h]$, and by
+\Cref{lem:hyperclass}, $i^{*}h=c_{1}(M)$ for the line bundle $M$ defining $i$.
+Since $\NS(\Av)\otimes\QQ=\QQ\theta'$, we have $c_{1}(M)=m\theta'$ for some
+$m\in\QQ$, and therefore $\ch(Li^{*}\cF)\in\QQ[\theta']$. By
+\Cref{prop:grr}, $\ch(\cE)$ is the image of $\ch(Li^{*}\cF)$ under the
+cohomological transform $\Phi_{\cP}$, which carries $\QQ[\theta']$ into
+$\QQ[\theta]$ by \Cref{cor:stability}. Hence $\ch(\cE)\in\QQ[\theta]$, and
+since $\QQ[\theta]\cap H^{2k}(A,\QQ)=\QQ\theta^{k}$, taking the component in
+$H^{2k}(A,\QQ)$ gives the statement.
+\end{proof}
+
+\begin{remark}[The hypothesis on the N\'eron--Severi group]\label{rem:NShyp}
+The hypothesis $\NS(\Av)\otimes\QQ=\QQ\theta'$ holds at the very general point
+of any positive-dimensional family of abelian varieties of Weil type with
+$\End^{0}(A)=\iota(K)$, which is the case in which the Weil classes lie
+outside the divisor subring (\Cref{prop:notpoly}); see \Cref{lem:genericNS}.
+Without it, the conclusion is only that $\ch_{k}(\cE)$ lies in the image
+under $\Phi_{\cP}$ of the divisor subring of $\Av$. \Cref{thm:character}
+makes no hypothesis on $\NS$, which is one reason for giving two proofs of
+\Cref{cor:neverweil}.
+\end{remark}
+
+\begin{lemma}\label{lem:genericNS}
+Let $\mathcal{A}\to S$ be the universal family of abelian varieties of
+$(K,-1,n)$-Weil type over the corresponding moduli space, with $n\ge2$. At a
+very general point $s\in S$ one has $\End^{0}(A_{s})=\iota(K)$ and
+$\NS(A_{s})\otimes\QQ=\QQ\eta_{s}$, of dimension one.
+\end{lemma}
+
+\begin{proof}
+The locus in $S$ where $\End^{0}$ is strictly larger than $\iota(K)$ is a
+countable union of proper closed subvarieties: each additional endomorphism
+imposes a nontrivial algebraic condition on the period point, and there are
+only countably many candidates, the endomorphisms of the lattice
+$H_{1}(A_{s},\ZZ)$. So $\End^{0}(A_{s})=\iota(K)$ at a very general point
+$s$, and there the Hodge group is the full special unitary group
+$\SU(V,H)$ of the $K$-hermitian form $H$ attached to the
+polarisation (\Cref{lem:hermform}), by Weil's computation of the Hodge group of a general abelian
+variety of Weil type \cite{Weil77}. The space
+$\Hdg^{1}(A_{s})=\NS(A_{s})\otimes\QQ$ is the space of Hodge-group invariants
+in $H^{2}(A_{s},\QQ)$. By \Cref{prop:grading} in degree two,
+$H^{2}\otimes\CC=\bigwedge^{2}V_{+}\oplus(V_{+}\otimes V_{-})\oplus\bigwedge^{2}V_{-}$.
+The group $\SU(V,H)$ acts on $V_{+}\otimes V_{-}\cong V_{+}\otimes V_{+}^{\vee}$
+with a one-dimensional space of invariants, spanned by the class of $H$, and on
+$\bigwedge^{2}V_{\pm}$ with no invariants, since $2n\ge4$ and $\bigwedge^{2}$
+of the standard representation of $\SL_{2n}$ has no invariant vector
+unless $2n=2$. Hence the invariants are one-dimensional, and they are spanned
+by $\eta_{s}$.
+\end{proof}
+
+\subsection{Consequences for Weil classes}
+
+Since a Weil class is by construction not in the subring generated by divisor
+classes, the theorem excludes Weil classes at once.
+
+\begin{corollary}\label{cor:neverweil}
+With notation as in \Cref{thm:divisor}, suppose in addition that $g=2n$ and
+that $(A,\iota,\eta)$ is of $(K,-1,n)$-Weil type. Then $\ch_{n}(\cE)$ is a
+Weil class only if $\ch_{n}(\cE)=0$.
+\end{corollary}
+
+The first proof passes through \Cref{prop:notpoly}. The second replaces that
+proposition by the characters of \Cref{sec:characters} and explains in terms
+of representations why the first had to succeed: the $\Kx$-isotypic
+decomposition of $H^{2n}(A,\QQ)$ separates the two classes in question
+(\Cref{fig:route}).
+
+\begin{proof}[Proof of \Cref{cor:neverweil}]
+We work under the hypothesis of \Cref{thm:divisor}. Let $g=2n$ and let
+$(A,\iota,\eta)$ be of $(K,-1,n)$-Weil type with
+$\NS(A)\otimes\QQ=\QQ\eta$. Then $\theta$ is a nonzero multiple of $\eta$,
+and \Cref{thm:divisor} gives
+$\ch_{n}(\cE)\in\QQ\cdot\theta^{n}=\QQ\cdot\eta^{n}\subset D^{2n}(A)$. The
+proof of \Cref{prop:notpoly} uses the hypothesis $\End^{0}(A)=\iota(K)$ only
+to obtain $\NS(A)\otimes\QQ=\QQ\eta$, so it applies here and gives
+$\HW(A)\cap D^{2n}(A)=0$. Hence if $\ch_{n}(\cE)$ is a Weil class, it lies in
+$\HW(A)\cap D^{2n}(A)=0$.
+\end{proof}
+
+\begin{proof}[Second proof of \Cref{cor:neverweil}, via characters]
+By \Cref{lem:NSchar} the class $\eta^{n}$ is a $\Kx$-eigenclass for the
+character $\Nm^{n}$, and hence so is every nonzero element of $\QQ\eta^{n}$.
+As in the first proof, $\ch_{n}(\cE)\in\QQ\eta^{n}$ by
+\Cref{thm:divisor}, so $\ch_{n}(\cE)$ satisfies
+$\iota(\tau)^{*}\ch_{n}(\cE)=\Nm(\tau)^{n}\ch_{n}(\cE)$ for all $\tau\in\Kx$.
+By \Cref{cor:equivariant} it is a Weil class only if it vanishes.
+\end{proof}
+
+The second proof uses \Cref{thm:divisor}, and with it the hypothesis on
+$\NS$, only to know that $\ch_{n}(\cE)$ is an eigenclass for $\Nm^{n}$; the
+rest of the argument uses nothing but this equivariance. We record the
+resulting statement, which does not mention the ambient space at all.
+
+\begin{theorem}[Equivariance suffices]\label{thm:equivsuffices}
+Let $(A,\iota,\eta)$ be of $(K,-1,n)$-Weil type and let $\cE\in D^{b}(A)$ be
+an object such that for every $\tau$ in the order
+$\iota^{-1}(\End(A))\subset K$ one has
+\[
+  \iota(\tau)^{*}\ch_{n}(\cE)=\Nm_{K/\QQ}(\tau)^{n}\,\ch_{n}(\cE).
+\]
+Then $\ch_{n}(\cE)$ is a Weil class only if $\ch_{n}(\cE)=0$.
+\end{theorem}
+
+\begin{proof}
+The hypothesis says that $\ch_{n}(\cE)$ is an eigenclass for $\Nm^{n}$ under
+the nonzero elements of the order, and it is then one under all of $\Kx$.
+Indeed, since the order spans $K$ over $\QQ$, every $\tau\in\Kx$ can be
+written as $\sigma/m$ with $\sigma$ in the order and $m$ a nonzero integer.
+The endomorphism $\iota(m)$ is multiplication by $m$, which acts on
+$H^{2n}(A,\QQ)$ as $m^{2n}=\Nm(m)^{n}$. Hence
+$\iota(\tau)^{*}\ch_{n}(\cE)=\Nm(\sigma)^{n}m^{-2n}\ch_{n}(\cE)
+=\Nm(\tau)^{n}\ch_{n}(\cE)$, and \Cref{cor:equivariant} applies.
+\end{proof}
+
+\begin{remark}[Comparison of the hypotheses]\label{rem:twohyp}
+\Cref{thm:divisor} requires the object to be restricted from an ambient
+projective space and imposes a condition on $\NS(\Av)$;
+\Cref{thm:equivsuffices} requires only that the resulting class be
+equivariant for the norm character. The second hypothesis is weaker, and it
+holds for any construction whose input is $K$-invariant. This includes the
+secant constructions, since the secant varieties of a $K$-invariant
+subvariety are $K$-invariant. We state both because the first can be checked
+by inspection of the construction, while the second requires an equivariance
+computation.
+\end{remark}
+
+\begin{figure}[htbp]
+\centering
+  \includegraphics[width=0.96\textwidth]{fig_chernline}
+\caption{The linear algebra behind \Cref{thm:divisor}, drawn inside
+$H^{2n}(A,\QQ)$. The Weil line $W(A)$ is a plane, free of rank one over $K$
+and of rank two over $\QQ$, and $\Kx$ acts on it through $\tau^{2n}$, so the
+orbit of any nonzero class is a spiral that spans the plane and lies on no
+line in it. The transverse axis carries $\eta^{n}$, on which $\Kx$ acts
+through the norm. A construction returning a single eigenclass returns a
+line, and by \Cref{prop:orbitplane} no line inside $W(A)$ is stable.}
+\label{fig:route}
+\end{figure}

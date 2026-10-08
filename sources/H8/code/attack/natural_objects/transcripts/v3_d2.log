@@ -1,0 +1,16 @@
+(T0) M preserves H^{1,0} and H^{0,1}: True
+(T1) dim T = 16 (expect n^2 = 16)
+(T2) rank T_|eta = 0, T_|W1 = 0, T_|W2 = 0 (expect 0,0,0)
+(T3) O(beta)                  rank T _| ch = 6
+(T3) O(beta+betahat-ell)      rank T _| ch = 6
+(T3) O(2beta-betahat+3ell)    rank T _| ch = 6
+(T3) [B_(1,0)]                rank T _| ch = 6
+(T3) [B_(2,1)]                rank T _| ch = 6
+(T3) [B_(3,-2)]               rank T _| ch = 6
+(T3) [B_(1,1)] e^beta         rank T _| ch = 6
+(T3) [B_(1,2)] e^eta          rank T _| ch = 6
+(T3) point                    rank T _| ch = 0
+(T3) O(eta)                   rank T _| ch = 0
+(T3) O(-2 eta)                rank T _| ch = 0
+(T4) joint rank of v -> (v _| [B_i])_i over the 8 subtori of the example = 6
+time 14.0s

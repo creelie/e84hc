@@ -1,0 +1,7 @@
+  [PASS] sqrt10: R_Z has rank 9
+  det(chi on R_Z) = 6553600000
+sqrt10: scanned 1841 complex-secant planes (forms with coefficients in [-2,2])  (86.5s)
+   chi=6 rankV=2 profile=[1, 8, 12] : 6
+   chi=8 rankV=2 profile=[1, 8, 12] : 10
+ADMISSIBLE: 0
+time 86.5s

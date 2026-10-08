@@ -1,0 +1,749 @@
+\section{The main theorem in every family}\label{sec:families}
+
+\Cref{thm:main} describes the algebraic locus of the Weil classes in one
+family: it contains an explicit CM point, it is dense, it is a countable union
+of closed algebraic strata, and it is the whole family as soon as it has an
+interior point. The first two properties use the Weil classes; the last two
+hold for every flat class on every smooth projective family
+(\Cref{lem:algstrata}). This section carries the theorem to the families that
+carry (F2) and
+\textup{(F3$'$)}, and records what each construction of the paper
+contributes there.
+
+For (F2) the families are abelian schemes with a member of CM type. Every
+Hodge class of every abelian variety lies in such a family
+(\Cref{prop:cmfamily}), and (F2) is equivalent to the statement that in every
+one of them the algebraic locus of a flat Hodge class that is algebraic at a
+CM member has an interior point (\Cref{thm:f2propagation}). The base points
+of \Cref{thm:cmbasepoint} are the CM seeds of the Weil families, and
+Andr\'e's theorem makes the Weil classes of the split families seeds for every
+Hodge class of CM type. For \textup{(F3$'$)} the cohomology of a variety splits
+into the part reached from abelian varieties by algebraic correspondences and
+a complement, and \textup{(F3$'$)} is the statement that the complement
+carries no Hodge class (\Cref{prop:abpart}). On the first varieties where
+\textup{(F3$'$)} is open, the squares of K3 surfaces with real
+multiplication, the algebraic locus of the real multiplication contains every
+CM point, is dense and stable under a group of rational Hodge isometries, and
+is either everything or meagre (\Cref{thm:rmlocus}). In both cases what is
+left is the interior point, and \Cref{thm:twostand} lists what the
+constructions of the paper give towards it.
+
+\subsection{Algebraic loci}\label{ssec:algloci}
+
+\begin{definition}[Algebraic locus]\label{def:algloc}
+Let $S$ be a smooth connected complex quasi-projective variety,
+$f\colon\cX\to S$ a smooth projective morphism, and $\xi$ a global section of
+$R^{2p}f_{*}\QQ$ over $S^{\mathrm{an}}$.\footnote{By Ehresmann's theorem $f$
+is a locally trivial fibration of differentiable manifolds, so
+$R^{2p}f_{*}\QQ$ is a local system with fibre $H^{2p}(\cX_{s},\QQ)$ at $s$. A
+global section is a class $\xi_{s}$ on every fibre that is locally constant
+under the identifications of nearby fibres, equivalently a class on one fibre
+fixed by the monodromy. The set of points $s$ at which $\xi_{s}$ is of type
+$(p,p)$ is in general a proper subset of $S$, and it is algebraic by
+\Cref{thm:cdk}.} The \emph{algebraic locus} of $\xi$
+is
+\[
+  \Sigma(\xi)=\{\,s\in S:\ \xi_{s}\ \text{is the class of an algebraic cycle
+  with rational coefficients on}\ \cX_{s}\,\}.
+\]
+\end{definition}
+
+\begin{lemma}[The dichotomy in every family]\label{lem:algstrata}
+In \Cref{def:algloc} the following hold.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item $\Sigma(\xi)$ is the union of countably many Zariski closed subsets of
+  $S$.
+\item Either $\Sigma(\xi)=S$, or $\Sigma(\xi)$ is meagre in $S^{\mathrm{an}}$.
+\item The following are equivalent: $\Sigma(\xi)=S$; $\Sigma(\xi)$ has an
+  interior point; $\Sigma(\xi)$ is not meagre; $\xi_{s}$ is algebraic for
+  every $s$ outside a countable union of proper closed analytic subsets of
+  $S$. If $\Sigma(\xi)$ is dense, they are also equivalent to $\Sigma(\xi)$
+  being closed.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) The proof of \Cref{thm:closedlocus} applies with
+$(\cA,\cS,\omega)$ replaced by $(\cX,S,\xi)$, as in \Cref{lem:spreading}:
+for a tuple $\underline{P}$ of Hilbert polynomials the fibre product of the
+relative Hilbert schemes $\Hilb^{P_{i}}(\cX/S)$ is projective over $S$
+\cite{Gro61}, the class of a flat family of cycles is a flat section, two flat
+sections over a connected base that agree at one point agree everywhere, and
+the image of a proper morphism is closed. So the set of points at which
+$\xi_{s}=\sum_{i}q_{i}[Z_{i}]$ with $Z_{i}$ of Hilbert polynomial $P_{i}$ is
+Zariski closed, and $\Sigma(\xi)$ is the union of these strata over the
+countably many pairs $(\underline{P},\underline{q})$.
+
+(ii) and (iii). A Zariski closed subset of the irreducible variety $S$ that
+has an interior point in $S^{\mathrm{an}}$ is all of $S$, and a proper one is
+nowhere dense. If no stratum is $S$, then $\Sigma(\xi)$ is a countable union
+of nowhere dense closed sets, hence meagre, and has no interior point, since
+$S^{\mathrm{an}}$ is a Baire space. If one stratum is $S$, then
+$\Sigma(\xi)=S$. This gives (ii) and the equivalence of the first three
+conditions of (iii). The complement of a countable union of proper closed
+analytic subsets is not meagre, by the Baire category theorem, so the fourth
+condition implies the third, and it is implied by the first. Finally, a
+dense set that is closed is $S$.
+\end{proof}
+
+So the dichotomy of \Cref{thm:main}(iii) and the equivalences of
+\Cref{thm:main}(iv) hold for every flat class on every smooth projective
+family; what \Cref{thm:main} adds for the Weil classes is a point of
+$\Sigma(\xi)$ and the density, and neither is automatic, since
+$\Sigma(\xi)$ may be empty.
+
+\subsection{(F2) is propagation from CM points}\label{ssec:f2cm}
+
+\begin{lemma}[Points of CM type are dense]\label{lem:cmdense}
+Let $G$ be a connected reductive group over $\QQ$, let
+$u_{0}\colon\mathrm{U}(1)\to G_{\RR}$ be a homomorphism, and let $\cD$ be
+the orbit of $u_{0}$ under conjugation by $G(\RR)^{+}$, with the topology of
+$G(\RR)^{+}/\mathrm{Stab}(u_{0})$. Then the points $u\in\cD$ for which
+$u(\mathrm{U}(1))\subseteq T_{\RR}$ for some maximal torus $T$ of $G$ defined
+over $\QQ$ are dense in $\cD$.
+\end{lemma}
+
+\begin{proof}
+Let $u_{1}\in\cD$ and let $W$ be a neighbourhood of $u_{1}$. The centraliser
+of the torus $u_{1}(\mathrm{U}(1))$ in $G_{\RR}$ is connected and reductive,
+and a maximal torus of it defined over $\RR$ is a maximal torus $T_{1}$ of
+$G_{\RR}$ containing $u_{1}(\mathrm{U}(1))$. Write $\mathfrak{g}$ for the Lie
+algebra of $G$ and $\mathfrak{t}_{1}\subseteq\mathfrak{g}_{\RR}$ for that of
+$T_{1}$, and choose a regular element $Y_{1}\in\mathfrak{t}_{1}$. The map
+$\varphi\colon G(\RR)^{+}\times\mathfrak{t}_{1}\to\mathfrak{g}_{\RR}$,
+$(g,Y)\mapsto\mathrm{Ad}(g)Y$, has differential
+$(Z,Y')\mapsto[Z,Y_{1}]+Y'$ at $(1,Y_{1})$, which is onto because
+$\mathfrak{g}_{\RR}=\mathfrak{t}_{1}\oplus[\mathfrak{g}_{\RR},Y_{1}]$ for a
+regular semisimple $Y_{1}$. So for neighbourhoods $N_{1}$ of $1$ in
+$G(\RR)^{+}$ with $N_{1}u_{1}N_{1}^{-1}\subseteq W$, and $N_{2}$ of $Y_{1}$
+in $\mathfrak{t}_{1}$ consisting of regular elements, the image
+$\varphi(N_{1}\times N_{2})$ contains a nonempty open subset of
+$\mathfrak{g}_{\RR}$. The rational points $\mathfrak{g}(\QQ)$ are dense in
+$\mathfrak{g}_{\RR}$, so that open subset contains some
+$Y\in\mathfrak{g}(\QQ)$, and $Y=\mathrm{Ad}(g)Y'$ with $g\in N_{1}$ and
+$Y'\in N_{2}$. As $Y$ is rational and regular semisimple, the identity
+component $T$ of its centraliser in $G$ is a maximal torus defined over
+$\QQ$, and $T_{\RR}=gT_{1}g^{-1}$ because the centraliser of $Y'$ has
+identity component $T_{1}$. Then $u=gu_{1}g^{-1}$ lies in $W$ and
+$u(\mathrm{U}(1))\subseteq T_{\RR}$.
+\end{proof}
+
+For an abelian variety the lemma is used with $G$ its Hodge group, the
+smallest algebraic $\QQ$-subgroup of $\GL(H^{1}(A,\QQ))$ whose real points
+contain the image of the homomorphism $\mathrm{U}(1)\to\GL(H^{1}(A,\RR))$
+that defines the Hodge structure. If $\Hg(A)$ lies in a $\QQ$-torus $T$, then
+$A$ is of CM type.\footnote{For an elliptic curve $G=\SL_{2}$ and $\cD$ is
+the upper half-plane. The compact torus $u_{\tau}(\mathrm{U}(1))$ fixing
+$\tau$ lies in the real points of a maximal $\QQ$-torus of $\SL_{2}$ exactly
+when $\tau$ is imaginary quadratic, and the torus is then the group of
+elements of norm one of $\QQ(\tau)$. So the points of \Cref{lem:cmdense}
+are the curves with complex multiplication, and the lemma is the familiar
+density of the imaginary quadratic points in the upper half-plane.} Indeed $T$ lies in a maximal $\QQ$-torus $T'$ of
+$\GL(H^{1}(A,\QQ))$, which is the group of units of a commutative semisimple
+$\QQ$-subalgebra $L\subseteq\End(H^{1}(A,\QQ))$ of dimension $2\dim A$; the
+algebra $L$ commutes with $T'\supseteq\Hg(A)$, so it lies in the commutant of
+$\Hg(A)$, which is $\End^{0}(A)$.
+
+\begin{proposition}[A family with a CM member through every Hodge
+class]\label{prop:cmfamily}
+Let $A_{0}$ be a complex abelian variety and $\gamma$ a Hodge class of degree
+$2p$ on $A_{0}$. There are a smooth connected complex quasi-projective variety
+$S$, a polarised abelian scheme $\pi\colon\cA\to S$, a global section $\xi$ of
+$R^{2p}\pi_{*}\QQ$ that is a Hodge class at every point, and points $s_{0}$,
+$c\in S$, such that $\cA_{s_{0}}\cong A_{0}$ with $\xi_{s_{0}}=\gamma$ under
+this isomorphism and $\cA_{c}$ is of CM type.
+\end{proposition}
+
+\begin{proof}
+Let $\ell\ge1$ be an integer with $\ell\gamma$ integral. We construct a
+section with value $\ell\gamma$ at $s_{0}$ and divide it by $\ell$ at the
+end; until then $\gamma$ stands for $\ell\gamma$. Fix a polarisation of
+$A_{0}$, put $V=H_{1}(A_{0},\QQ)$, and fix a level $N\ge3$. As in \Cref{setup:shimura}, the
+quotient $\cS_{g}$ of the Siegel space $\cH$ of complex structures on
+$V_{\RR}$ compatible with the polarisation, by the principal congruence
+subgroup of level $N$ of the stabiliser of $H_{1}(A_{0},\ZZ)$, is a smooth
+quasi-projective variety carrying a universal family $f\colon\cA_{g}\to\cS_{g}$,
+polarised by the fixed polarisation \cite{BB66}; let $a_{0}\in\cS_{g}$ be the
+point of $A_{0}$ and $J_{0}\in\cH$ a lift, through which the fibre of
+$R^{2p}f_{*}\ZZ$ at every point of the image of $\cH$ is identified with
+$H^{2p}(A_{0},\ZZ)=\bigwedge^{2p}H_{1}(A_{0},\ZZ)^{\vee}$ by parallel
+transport in the simply connected space $\cH$. Put
+$\mathbb{V}=R^{2p}f_{*}\ZZ$, a polarised variation of $\ZZ$-Hodge
+structure. By \Cref{thm:cdk} the connected component $\mathcal{C}$ of its
+locus of Hodge classes that contains $(a_{0},\gamma)$ is a closed algebraic
+subvariety of the total space of $\mathbb{V}$; it has finitely many
+irreducible components.
+
+Let $G=\Hg(A_{0})$, which lies in the symplectic group of the polarisation
+and fixes $\gamma$ \cite[\S3]{Del82}, let
+$u_{0}\colon\mathrm{U}(1)\to G_{\RR}$,
+$u_{0}(e^{i\theta})=\cos\theta+J_{0}\sin\theta$, be the homomorphism defining
+the Hodge structure, and let
+$\cD=\{gJ_{0}g^{-1}:g\in G(\RR)^{+}\}$. For $g\in G(\RR)^{+}$ the complex
+structure $J=gJ_{0}g^{-1}$ is compatible with the polarisation and positive
+for it, since $g$ preserves the polarisation, so $\cD\subseteq\cH$; and
+$\cD$ is the orbit of \Cref{lem:cmdense} when $J$ is identified with
+$u_{J}=gu_{0}g^{-1}$. For $J\in\cD$ the group $u_{J}(\mathrm{U}(1))$ lies in
+$G(\RR)$, so $\Hg(A_{J})\subseteq G$ fixes $\gamma$, which is therefore a
+Hodge class on $A_{J}$. The map sending $J\in\cD$ to the image of $J$ in
+$\cS_{g}$ together with $\gamma$ is thus a continuous map from the
+connected space $\cD$ to the locus of Hodge classes of $\mathbb{V}$, so it
+takes values in $\mathcal{C}$. By \Cref{lem:cmdense} there are points
+$J_{k}\in\cD$ converging to $J_{0}$ with $u_{J_{k}}(\mathrm{U}(1))$ in the
+real points of a $\QQ$-torus of $G$; then $\Hg(A_{J_{k}})$ lies in that torus
+and $A_{J_{k}}$ is of CM type. One of the finitely many irreducible
+components of $\mathcal{C}$, say $\mathcal{C}_{0}$, contains the images of
+infinitely many $J_{k}$, and, being closed, also their limit $(a_{0},\gamma)$.
+
+Let $\rho\colon S\to\mathcal{C}_{0}$ be a resolution of singularities
+\cite{Hir64}: $S$ is smooth, connected and quasi-projective, since
+$\mathcal{C}_{0}$ is irreducible and quasi-projective, and $\rho$ is
+projective and surjective. Let $\pi\colon\cA\to S$ be the pull-back of
+$\cA_{g}$ along $S\to\mathcal{C}_{0}\to\cS_{g}$, a polarised abelian scheme.
+A point of $\mathcal{C}_{0}$ is a pair $(a,v)$ with $v\in\mathbb{V}_{a}$ of
+Hodge type, and $(a,v)\mapsto v$ is a flat section of the pull-back of
+$\mathbb{V}$ to $\mathcal{C}_{0}$, because the total space of a local system
+is a covering space of the base; its pull-back to $S$, divided by $\ell$, is
+a flat section $\xi$ of $R^{2p}\pi_{*}\QQ$ of Hodge type at every point.
+Take $s_{0}$ over $(a_{0},\gamma)$ and $c$ over the image of some $J_{k}$ in
+$\mathcal{C}_{0}$.
+\end{proof}
+
+\begin{theorem}[(F2) is propagation from CM points]\label{thm:f2propagation}
+The following are equivalent.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item \textup{(F2)}.
+\item The Hodge conjecture holds for every complex abelian variety.
+\item For every polarised abelian scheme $\pi\colon\cA\to S$ over a smooth
+  connected complex quasi-projective variety and every global section $\xi$
+  of $R^{2p}\pi_{*}\QQ$, if $\xi_{s}$ is algebraic at one point $s\in S$,
+  then $\Sigma(\xi)=S$.
+\item The same, for the points $s$ at which $\cA_{s}$ is of CM type: if
+  $\xi_{c}$ is algebraic at one point $c$ with $\cA_{c}$ of CM type, then
+  $\Sigma(\xi)=S$.
+\item For every $\pi$ and $\xi$ as in \textup{(iii)} with $\xi_{c}$ algebraic
+  at a point $c$ with $\cA_{c}$ of CM type, $\Sigma(\xi)$ has an interior
+  point.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) and (ii) are equivalent by \Cref{prop:f2isab}. If (ii) holds and
+$\xi_{s}$ is algebraic, then $\xi_{t}$ is a Hodge class at every $t$ by the
+first part of the proof of \Cref{prop:lefvhc}, which uses only the theorem of
+the fixed part and the semisimplicity of polarisable Hodge structures, and it
+is algebraic by (ii); so (ii) implies (iii). (iv) is the case of (iii) at
+points of CM type, and
+(iv) and (v) are equivalent by \Cref{lem:algstrata}(iii).
+
+Assume (iv). Let $F$ be a CM field and $n\ge2$, and let $\delta_{0}$ be the
+trivial class, the discriminant of a hermitian space that is a sum of $n$
+hyperbolic planes, each of determinant $-1$. The family of
+$(F,n,\delta_{0})$-Weil type over its Shimura variety with a level structure,
+as in \Cref{setup:cmfield} and \Cref{setup:shimura}, is a polarised abelian
+scheme over a smooth connected quasi-projective base, on which the Weil
+classes are global sections (\Cref{prop:cmweil}(i)). By \Cref{thm:main}(i)
+they are algebraic at a member isogenous to a product of abelian varieties
+with complex multiplication by $F$, which is of CM type, and by (iv) they are
+algebraic at every member. Let $A$ be an abelian variety of split Weil type
+for $F$ in the sense of \cite[\S2.1]{Mil20}: $F$ acts on it with
+$\dim_{F}H^{1}(A,\QQ)=2n$ and $\dim V_{\sigma}^{1,0}=n$ for every embedding
+$\sigma$, and for some polarisation the hermitian form of
+\Cref{rem:cmmember} has a totally isotropic subspace of dimension $n$, so
+that it is a sum of $n$ hyperbolic planes and $A$ is of
+$(F,n,\delta_{0})$-Weil type. By \Cref{prop:cmweil}(iv) the Hodge structure
+$H^{1}(A,\QQ)$ is isomorphic, compatibly with $F$, to that of a member $A_{s}$
+of the family, so there is an isogeny $A\to A_{s}$ commuting with $F$; its
+pull-back maps $W_{F}(A_{s})$ onto $W_{F}(A)$ and algebraic classes to
+algebraic classes. So every abelian variety of split Weil type has algebraic
+Weil classes, for $n\ge2$ by this argument and for $n=1$ by the theorem of
+Lefschetz on $(1,1)$ classes. By Andr\'e's theorem
+\cite[Theorem~1 and its proof]{Mil20}, every Hodge class on an abelian
+variety $B$ of CM type is a sum $\sum f_{\Delta}^{*}(t_{\Delta})$ of
+pull-backs along homomorphisms $f_{\Delta}\colon B\to A_{\Delta}$ of Weil
+classes $t_{\Delta}$ on abelian varieties $A_{\Delta}$ of split Weil type
+for CM fields $F_{\Delta}$; so the Hodge conjecture holds for every abelian
+variety of CM type. Now let $A_{0}$ be any abelian variety and $\gamma$ a
+Hodge class on it, and take $S$, $\pi$, $\xi$, $s_{0}$, $c$ from
+\Cref{prop:cmfamily}. Then $\xi_{c}$ is algebraic, so by (iv)
+$\xi_{s_{0}}=\gamma$ is algebraic. This is (ii).
+\end{proof}
+
+\Cref{fig:cmseed} draws the theorem in one family.
+
+The implication from \textup{(iii)} to \textup{(ii)} is the argument of
+Deligne and Andr\'e as Milne records it \cite[\S5, Theorem~3 and
+Remark~2]{Mil20}.\footnote{Deligne's proof that Hodge classes on abelian
+varieties are absolutely Hodge uses families of the same kind \cite{Del82}.
+By his Principle B \cite[\S2]{Del82} the property of being absolutely Hodge
+passes from one member of a family to every member, so a family through a
+given Hodge class with a member of CM type reduces the question to that
+member. Algebraicity is not known to pass from one member to all, and
+\textup{(iii)} is precisely that property.} In that argument the families can be taken to be polarised
+abelian schemes and the starting points to be of CM type, which is what
+\textup{(iv)} records, and the converse holds. The seeds
+are explicit: for the Weil classes they are the base points of
+\Cref{thm:cmbasepoint}, and for every other Hodge class they are the CM
+members supplied by \Cref{prop:cmfamily}, at which the class is algebraic once
+the Weil classes of the split families are. For the Weil classes of the
+split family of a CM field, whose base point is of CM type, statement
+\textup{(v)} is the condition of \Cref{thm:main}(iv). So the condition of
+\Cref{thm:main}(iv), required in every polarised abelian scheme with a
+member of CM type at which the class is algebraic, is exactly (F2); it is not a reduction
+of (F2) to something smaller, because the interior point it asks for is the
+conclusion of \textup{(iii)}.
+
+\begin{figure}[tbp]
+\centering
+  \includegraphics[width=\textwidth]{fig_cmseed}
+\caption{\Cref{thm:f2propagation} in one family. The sheet is the base $S$
+of a polarised abelian scheme $\pi\colon\cA\to S$ through a given Hodge
+class, as in \Cref{prop:cmfamily}; the small dots are its points of CM type,
+dense by \Cref{lem:cmdense}, and the green curves are strata of the algebraic
+locus $\Sigma(\xi)$ of the flat class $\xi$ (\Cref{lem:algstrata}). Above
+three points the fibres are drawn as tori, and the loop on each stands for
+$\xi$, carried from fibre to fibre by parallel transport. At the CM member
+$\cA_{c}$ the class is algebraic, and it stays algebraic along the stratum
+through $c$. At a very general member $\cA_{s}$ it is algebraic exactly when
+$\Sigma(\xi)$ has an interior point, and (F2) is the statement that this
+happens in every such family.}
+\label{fig:cmseed}
+\end{figure}
+
+\subsection{(F3$'$) and the part reached from abelian varieties}
+\label{ssec:abpart}
+
+\begin{definition}[The abelian part]\label{def:abpart}
+For a smooth complex projective variety $X$ and $p\ge0$ let
+$H^{2p}_{\mathrm{ab}}(X)\subseteq H^{2p}(X,\QQ)$ be the sum of the images of
+the maps
+$\Gamma_{*}\colon H^{k}(B,\QQ)\to H^{2p}(X,\QQ)$,
+$y\mapsto\mathrm{pr}_{X*}([\Gamma]\cup\mathrm{pr}_{B}^{*}y)$, over all
+complex abelian varieties $B$, the point included, all $k$, and all algebraic
+cycles $\Gamma$ on $B\times X$ with rational coefficients and of the
+codimension that lands in degree $2p$.
+\end{definition}
+
+\begin{proposition}[\textup{(F3$'$)} is a statement about the complement of
+the abelian part]\label{prop:abpart}
+Let $X$ be a smooth complex projective variety and $p\ge0$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item $H^{2p}_{\mathrm{ab}}(X)$ is a sub-Hodge structure of
+  $H^{2p}(X,\QQ)$, spanned by the images of finitely many of the maps
+  $\Gamma_{*}$.
+\item $\mathrm{Ab}^{p}(X)=\Hdg^{p}(X)\cap H^{2p}_{\mathrm{ab}}(X)$.
+\item Let $T^{2p}_{\mathrm{ab}}(X)$ be a complement of
+  $H^{2p}_{\mathrm{ab}}(X)$ in $H^{2p}(X,\QQ)$ as a Hodge structure. Then
+  \textup{(F3$'$)} holds for $X$ in degree $2p$ if and only if
+  $T^{2p}_{\mathrm{ab}}(X)$ contains no nonzero Hodge class, in particular
+  whenever the Hodge group of $T^{2p}_{\mathrm{ab}}(X)$ fixes no nonzero
+  vector.
+\item $X$ lies in the class $\mathcal{A}$ of \Cref{prop:f3prime}(iii) if and
+  only if $T^{2p}_{\mathrm{ab}}(X)=0$ for every $p$ and the odd cohomology is
+  reached in the same way.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) An algebraic cycle $\Gamma$ of codimension $e$ on $B\times X$, with
+$\dim B=b$, induces a morphism of Hodge structures
+$H^{k}(B,\QQ)\to H^{k+2e-2b}(X,\QQ)(e-b)$, so its image is a sub-Hodge
+structure; a sum of sub-Hodge structures is one, and a finite-dimensional
+space is spanned by finitely many of them.
+
+(ii) Every $\Gamma_{*}\beta$ with $\beta$ a Hodge class lies in both sets, so
+$\mathrm{Ab}^{p}(X)$ is contained in the intersection. Conversely take
+$(B_{j},\Gamma_{j},k_{j})$, $1\le j\le r$, as in (i), and let
+\[
+  \Phi=\sum_{j}\Gamma_{j*}\colon
+  \bigoplus_{j}H^{k_{j}}(B_{j},\QQ)(t_{j})\longrightarrow
+  H^{2p}_{\mathrm{ab}}(X),
+\]
+with the Tate twists $t_{j}$ that make it a morphism of pure Hodge structures
+of weight $2p$; it is surjective. Polarisable Hodge structures form a
+semisimple category, so $\Phi$ has a section $\sigma$ that is a morphism of
+Hodge structures. For a Hodge class $\gamma\in H^{2p}_{\mathrm{ab}}(X)$ the
+class $\sigma(\gamma)$ is of type $(p,p)$, so each component
+$\beta_{j}\in H^{k_{j}}(B_{j},\QQ)$ is a Hodge class, $k_{j}$ being even, and
+$\gamma=\sum_{j}\Gamma_{j*}\beta_{j}\in\mathrm{Ab}^{p}(X)$.
+
+(iii) A complement exists by semisimplicity, and the Hodge classes of
+$H^{2p}(X,\QQ)$ are the sums of those of the two summands; by (ii) the
+Hodge classes of the first summand are $\mathrm{Ab}^{p}(X)$. So
+$\Hdg^{p}(X)=\mathrm{Ab}^{p}(X)$ exactly when the second has none, and a
+Hodge class of $T^{2p}_{\mathrm{ab}}(X)$ is a vector fixed by its Hodge group
+\cite[\S3]{Del82}. (iv) is the definition of $\mathcal{A}$ read degree by
+degree.
+\end{proof}
+
+So \textup{(F3$'$)} asks nothing of the abelian part, where by (ii) and
+\Cref{prop:f2isab} the Hodge conjecture reduces to (F2), and it asks of the
+complement that it carry no Hodge class. The abelian part contains every
+algebraic class, taking $B$ a point, so under the Hodge conjecture the
+complement carries none. To prove \textup{(F3$'$)} for $X$ in degree $2p$
+without it, one has to show that every Hodge class of $X$ is a sum of
+classes $\Gamma_{*}\beta$, that is, to construct algebraic cycles $\Gamma$
+on products $B\times X$ that reach it, which is the step
+\Cref{rem:f3primeopen} isolates.
+\Cref{prop:f3prime}(iii), \Cref{prop:aclosure} and \Cref{thm:simplextype}
+are cases in which the complement is zero, and \Cref{prop:k3powers} and
+\Cref{prop:k3ntype} cases in which the conjecture itself makes its Hodge
+classes algebraic.
+
+\subsection{The first open case of (F3$'$) in families}\label{ssec:rmlocus}
+
+The frontier of \textup{(F3$'$)} in \Cref{rem:f3primefrontier} begins with
+$S\times S$ and $S^{[2]}$ for a K3 surface $S$ with real multiplication. These
+surfaces come in families over Hermitian symmetric domains, and the argument
+of \Cref{thm:main} applies to them with rational Hodge isometries in place of
+isogenies.
+
+\begin{setupenv}[A family with real multiplication]\label{setup:rm}
+\enlargethispage{2pt}%
+Let $E$ be a totally real field of degree $r\ge2$ and $T$ a finite-dimensional
+$\QQ$-vector space with an action of $E$ and a nondegenerate symmetric form
+$q$ for which $E$ acts by self-adjoint maps, so that $q=\Tr_{E/\QQ}q_{E}$ for
+a unique $E$-bilinear form $q_{E}$. Put $m=\dim_{E}T\ge3$, and suppose that
+$q_{E}$ has signature $(2,m-2)$ at one real place $\sigma_{1}$ of $E$ and is
+negative definite at the others, and that $(T,q)$ embeds isometrically in
+$\Lambda_{\QQ}$, where $\Lambda$ is the K3 lattice; write
+$N=T^{\perp}\cap\Lambda$. Let $T_{1}=T\otimes_{E,\sigma_{1}}\RR$ and
+\[
+  \cD_{E}=\{\,[\omega]\in\PP(T_{1}\otimes_{\RR}\CC):\ q(\omega,\omega)=0,\
+  q(\omega,\bar\omega)>0\,\}^{+},
+\]
+one of its two components, a bounded symmetric domain of dimension $m-2$. For
+$\omega\in\cD_{E}$ let $S_{\omega}$ be a K3 surface with a marking
+$H^{2}(S_{\omega},\ZZ)\cong\Lambda$ carrying $H^{2,0}(S_{\omega})$ to
+$\CC\omega$, which exists by the surjectivity of the period map
+\cite[Chs.~6--7]{Huy16}; it is projective, since $N$ has signature
+$(1,21-rm)$ and so contains a class of positive square, which is of type
+$(1,1)$ \cite[Ch.~8]{Huy16}. Each $e\in E$ acts on
+$T_{1}\otimes\CC$ by the scalar $\sigma_{1}(e)$ and is self-adjoint, so it
+preserves the Hodge decomposition of $T$, and $T\subseteq H^{2}(S_{\omega},\QQ)$
+is a sub-Hodge structure containing $T(S_{\omega})_{\QQ}$. Write
+$\tilde e_{\omega}\in H^{4}(S_{\omega}\times S_{\omega},\QQ)$ for the class of
+the endomorphism $e\oplus0$ of $H^{2}(S_{\omega},\QQ)=T\oplus N_{\QQ}$, a
+Hodge class, and let
+\[
+  \Sigma_{E}=\{\,\omega\in\cD_{E}:\ \tilde e_{\omega}\ \text{is algebraic
+  for every}\ e\in E\,\}
+\]
+be the algebraic locus of the real multiplication; as $e\mapsto\tilde
+e_{\omega}$ is $\QQ$-linear, it suffices to ask this for $e$ in a $\QQ$-basis
+of $E$. The set $\Sigma_{E}$ does not depend on the choice of the surfaces
+$S_{\omega}$. If $(S,\varphi)$ and $(S',\varphi')$ are two marked choices
+for $\omega$, then $\psi=\varphi'^{-1}\varphi$ is a rational Hodge isometry
+$H^{2}(S,\QQ)\to H^{2}(S',\QQ)$, induced by an algebraic class $Z$ on
+$S\times S'$ by Buskin's theorem \cite{Bus19}, and $Z^{t}$ induces the
+adjoint $\psi^{-1}$; the composite $Z\circ\tilde e\circ Z^{t}$ acts on
+$H^{2}(S',\QQ)$ as $\psi(e\oplus0)\psi^{-1}$, which is $e\oplus0$ for the
+marking $\varphi'$, and by zero on $H^{0}$ and $H^{4}$, so it is the class
+$\tilde e'$ of $S'$, and $\tilde e$ is algebraic if and only if $\tilde e'$
+is. Let $G=\Res_{E/\QQ}\SO(T,q_{E})$, so that
+$G(\RR)=\SO(T_{1})\times\prod_{\sigma\ne\sigma_{1}}\SO(T_{\sigma})$; write
+$G(\RR)^{+}$ for the identity component of this Lie group, which acts
+transitively on $\cD_{E}$ through its first factor, and
+$\Gamma_{\QQ}=G(\QQ)\cap G(\RR)^{+}$.
+\end{setupenv}
+
+The surfaces with real multiplication of \cite{vG08,vGS25} lie in families
+of this kind,\footnote{For a projective K3 surface $S$ the transcendental
+part $T(S)_{\QQ}$ is an irreducible Hodge structure whose algebra of Hodge
+endomorphisms is a field, totally real or CM \cite{Zar83}; $S$ has real
+multiplication when this field is totally real and not $\QQ$. The space
+$T(S)_{\QQ}$ is then a vector space over the field, so its degree divides
+$\dim T(S)_{\QQ}$, and a very general member of a family of
+\Cref{setup:rm} has $T(S_{\omega})_{\QQ}=T$ and real multiplication by
+exactly $E$, as the proof of \Cref{thm:rmlocus} shows.} and so do the surfaces $S_{\lambda}$ of \Cref{thm:mumfordks},
+for which $E$ is cubic, $m=3$ and $\cD_{E}$ is a disc.
+
+\begin{theorem}[The algebraic locus of a real multiplication]
+\label{thm:rmlocus}
+Keep \Cref{setup:rm}.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item The points $\omega$ at which $S_{\omega}$ has complex multiplication,
+  that is, at which the Hodge group of $T(S_{\omega})_{\QQ}$ is commutative,
+  are dense in $\cD_{E}$, and they lie in $\Sigma_{E}$.
+\item $\Sigma_{E}$ is stable under $\Gamma_{\QQ}$, and $\Gamma_{\QQ}$ is dense
+  in $G(\RR)^{+}$.
+\item $\Sigma_{E}$ is dense in $\cD_{E}$, and either $\Sigma_{E}=\cD_{E}$ or
+  $\Sigma_{E}$ is meagre.
+\item The following are equivalent: $\Sigma_{E}$ is closed; $\Sigma_{E}$ has
+  an interior point; $\Sigma_{E}$ is not meagre; $\Sigma_{E}=\cD_{E}$; the
+  Hodge conjecture holds for $S_{\omega}\times S_{\omega}$ for every $\omega$
+  outside a countable union of proper closed analytic subsets of $\cD_{E}$.
+  When they hold, the Hodge conjecture and \textup{(F3$'$)} hold for
+  $S_{\omega}\times S_{\omega}$ and $S_{\omega}^{[2]}$ at every $\omega$ at
+  which $\End_{\mathrm{Hdg}}(T(S_{\omega})_{\QQ})$ is $E$ or a CM field.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+We first record two facts about the very general point. The Hodge structure
+of $S_{\omega}$ on $T$ is given by
+$u_{\omega}\colon\mathrm{U}(1)\to\SO(T_{\RR})$, acting by $z^{2}$ on
+$\CC\omega$, by $z^{-2}$ on $\CC\bar\omega$ and trivially on their orthogonal
+complement; it commutes with $E$, lies in $G(\RR)^{+}$, and
+$u_{g\omega}=gu_{\omega}g^{-1}$ for $g\in G(\RR)^{+}$.
+
+(a) \emph{No nonzero $t\in T$ is orthogonal to every $\omega\in\cD_{E}$.} The
+lines $\CC\omega$, $\omega\in\cD_{E}$, span $T_{1}\otimes\CC$, since
+$\cD_{E}$ is a nonempty open subset of the nondegenerate quadric
+$q(\omega,\omega)=0$ in $\PP(T_{1}\otimes\CC)$, so such a $t$
+would have zero image in $T_{1}$; but $T\to T_{1}$ is injective, since $T$ is
+a free $E$-module and $\sigma_{1}$ is injective.
+
+(b) \emph{An endomorphism $f$ of $T$ that is an endomorphism of Hodge
+structures at every $\omega\in\cD_{E}$ is multiplication by an element of
+$E$.} Such an $f$ commutes with every $u_{\omega}$, hence with the elements
+$X_{\omega}$ of the Lie algebra of $G(\RR)$ that span the Lie algebras of
+the groups $u_{\omega}(\mathrm{U}(1))$. They lie in
+$\mathfrak{so}(T_{1})\oplus0$, which acts on
+$T'=\bigoplus_{\sigma\ne\sigma_{1}}T_{\sigma}$ by zero, and their span is
+stable under $G(\RR)^{+}$, since $u_{g\omega}=gu_{\omega}g^{-1}$, so it is an
+ideal of $\mathfrak{so}(T_{1})$. That ideal has nonzero projection to every
+simple ideal, as the eigenvalues $2i,-2i,0,\dots,0$ of $X_{\omega}$ on
+$T_{1}\otimes\CC$ show also for $m=4$, where
+$\mathfrak{so}(T_{1})\otimes\CC\cong\mathfrak{sl}_{2}\oplus\mathfrak{sl}_{2}$
+and $T_{1}\otimes\CC$ is the tensor product of the two standard
+representations; so it is all of $\mathfrak{so}(T_{1})$, and $f$ commutes
+with $\mathfrak{so}(T_{1})$. For $m\ge3$ the representation of
+$\mathfrak{so}(T_{1})$ on $T_{1}\otimes\CC$ is irreducible and nontrivial, so
+$f$ preserves $T_{1}=\mathfrak{so}(T_{1})\cdot T_{\RR}$ and $T'$ and acts on
+$T_{1}\otimes\CC=T\otimes_{E,\sigma_{1}}\CC$ by a scalar $\lambda$. An
+automorphism $\tau$ of $\CC$, acting on $T\otimes_{\QQ}\CC$ through the
+second factor, commutes with $f$ and maps $T\otimes_{E,\sigma_{1}}\CC$ onto
+$T\otimes_{E,\tau\sigma_{1}}\CC$, so $f$ acts on the latter by
+$\tau(\lambda)$; and every embedding of $E$ is of the form $\tau\sigma_{1}$.
+So $f\otimes1$ is multiplication by an element $e$ of $E\otimes_{\QQ}\CC$ on
+$T\otimes_{\QQ}\CC=T\otimes_{E}(E\otimes_{\QQ}\CC)$, and $e$ is fixed by
+$\mathrm{Aut}(\CC)$ because $f$ is defined over $\QQ$; hence $e\in E$.
+
+For $t\in T$ the set of $\omega$ with $t\perp\omega$ is a closed analytic
+subset of $\cD_{E}$, and for $f\in\End_{\QQ}(T)$ so is the set where $f$ is
+an endomorphism of Hodge structures, namely where $f(\omega)\in\CC\omega$ and
+$f^{*}(\omega)\in\CC\omega$, $f^{*}$ the adjoint. By (a) and (b) these sets
+are proper for $t\ne0$ and $f\notin E$. There are countably many of them, and
+outside their union $\NS(S_{\omega})_{\QQ}\cap T=0$, so
+$T(S_{\omega})_{\QQ}=T$ and $\End_{\mathrm{Hdg}}(T(S_{\omega})_{\QQ})=E$.
+
+(i) The Hodge group of $T$ acts trivially on $T\cap\NS(S_{\omega})_{\QQ}$,
+whose orthogonal complement in $T$ is $P=T(S_{\omega})_{\QQ}$, so it is
+commutative exactly when the Hodge group $H$ of $P$ is. The group $G$ is
+connected and reductive, and $\omega\mapsto u_{\omega}$ identifies $\cD_{E}$
+with the orbit of \Cref{lem:cmdense}, since $g\in G(\RR)^{+}$ fixes
+$u_{\omega}$ exactly when it preserves the line $\CC\omega$, the eigenspace
+of $u_{\omega}(z)$ for $z^{2}$. By \Cref{lem:cmdense} the points at which
+$u_{\omega}(\mathrm{U}(1))$ lies in the real points of a maximal $\QQ$-torus of
+$G$ are dense; at them the Hodge group of $T$, the smallest algebraic
+$\QQ$-subgroup whose real points contain $u_{\omega}(\mathrm{U}(1))$, lies in
+that torus, so these points have complex multiplication. Now let $\omega$ be
+any point at which $H$ is commutative. The Hodge structure $P$ is
+irreducible \cite{Zar83}, so $P$ is an irreducible representation of the
+torus $H$, whose rational points are Zariski dense in it. The
+$\QQ$-subalgebra $L$ of $\End(P)$ that $H(\QQ)$ generates is therefore
+commutative, and $P$ is a simple faithful $L$-module; so $L$ is a field with
+$\dim_{L}P=1$, and its commutant $E'=\End_{\mathrm{Hdg}}(P)$ is $L$. By
+\cite{Zar83} $E'$ is totally real or CM. If it were totally real, the
+embedding $\tau$ through which it acts on the line $H^{2,0}(S_{\omega})$
+would be real, and that line would lie in $P\otimes_{E',\tau}\CC$, which is
+one-dimensional and stable under complex conjugation, so it would also
+contain the different line $H^{0,2}(S_{\omega})$, which is impossible. So
+$E'$ is a CM field, the Hodge conjecture
+holds for $S_{\omega}\times S_{\omega}$ by \Cref{prop:k3powers}(i), and the
+Hodge classes $\tilde e_{\omega}$ are algebraic.
+
+(ii) Let $g\in\Gamma_{\QQ}$ and $\omega\in\Sigma_{E}$. Then $g\omega\in\cD_{E}$,
+and $\phi=\mathrm{id}_{N}\oplus g$ is a rational isometry of
+$\Lambda_{\QQ}=N_{\QQ}\oplus T$ carrying $\CC\omega$ to $\CC g\omega$, so
+through the markings it is a rational Hodge isometry
+$H^{2}(S_{\omega},\QQ)\to H^{2}(S_{g\omega},\QQ)$, induced by an algebraic
+class $Z\in H^{4}(S_{\omega}\times S_{g\omega},\QQ)$ \cite{Bus19}, whose
+transpose induces $\phi^{-1}$. As $g$ is $E$-linear,
+$\phi\circ(e\oplus0)\circ\phi^{-1}=e\oplus0$, so, as in \Cref{setup:rm},
+$\tilde e_{g\omega}=Z\circ\tilde e_{\omega}\circ Z^{t}$ is algebraic.
+
+For the density of $\Gamma_{\QQ}$, let $Y$ be an $E\otimes\RR$-linear map of
+$T\otimes\RR$ that is skew-adjoint for $q$ and has $1-Y$ invertible. Its
+Cayley transform $c(Y)=(1+Y)(1-Y)^{-1}$ is $E\otimes\RR$-linear, has
+$c(Y)^{*}c(Y)=1$ because $1-Y$ is the adjoint of $1+Y$, and has determinant
+one for the same reason, so $c(Y)\in G(\RR)$; and $c$ is a homeomorphism onto
+the open neighbourhood $\{g\in G(\RR):1+g\ \text{invertible}\}$ of $1$, with
+inverse $g\mapsto(g-1)(g+1)^{-1}$. The $E$-linear skew-adjoint maps of $T$
+are dense among these $Y$, and $c$ maps them into $G(\QQ)$. So $\Gamma_{\QQ}$
+is dense in a connected open neighbourhood of $1$, its closure is an open
+subgroup of $G(\RR)^{+}$, and it is all of $G(\RR)^{+}$.
+
+(iii) and (iv). Density follows from (i). If $\Sigma_{E}$ contains a nonempty
+open set $U_{0}$, then $\Sigma_{E}=\cD_{E}$: for $\omega\in\cD_{E}$ choose
+$\omega'\in U_{0}$ and $g_{1}\in G(\RR)^{+}$ with $g_{1}\omega'=\omega$; the
+set of $g\in G(\RR)^{+}$ with $g^{-1}\omega\in U_{0}$ is open and contains
+$g_{1}$, so by (ii) it contains some $g\in\Gamma_{\QQ}$, and
+$\omega=g(g^{-1}\omega)\in\Sigma_{E}$ by (ii).
+
+It remains to show that $\Sigma_{E}$ has an interior point as soon as it is
+not meagre. Fix $h\in N$ with $h^{2}>0$ and $h\cdot\delta\ne0$ for every
+$\delta\in N$ with $\delta^{2}=-2$, which exists because the hyperplanes
+$\delta^{\perp}$ are locally finite in the positive cone of $N_{\RR}$
+\cite[Ch.~8]{Huy16}. Let $\cD^{\circ}$ be the set of $\omega\in\cD_{E}$ that
+are orthogonal to no $\delta\in\Lambda$ with $\delta^{2}=-2$ and
+$h\cdot\delta=0$. Writing such a $\delta$ as $n+t$ with $n\in N_{\QQ}$ and
+$t\in T$, we have $t\ne0$, because $N_{\QQ}\cap\Lambda=N$, and
+$\delta\perp\omega$ exactly when $t\perp\omega$; so by (a) the complement of
+$\cD^{\circ}$ lies in a countable union of proper closed analytic subsets and
+is meagre.
+
+Let $\omega\in\cD^{\circ}$. No class of $\NS(S_{\omega})$ of square $-2$ is
+orthogonal to $h$, so after composing the marking with an isometry $\pm w$,
+$w$ a product of reflections in such classes, which fixes $\omega$ and so
+changes only the choice of $S_{\omega}$, the class $h$ is that of an ample
+line bundle $L$ on $S_{\omega}$ \cite[Ch.~8]{Huy16}. The deformations of the
+pair $(S_{\omega},L)$ form a smooth family over a base that the local period
+map identifies with a neighbourhood of $\omega$ in the domain of periods
+orthogonal to $h$ \cite[Ch.~6]{Huy16}, and that domain contains $\cD_{E}$,
+since $h\in N$. Restricting to $\cD_{E}$, we obtain an open neighbourhood $U$
+of $\omega$ in $\cD_{E}$ and a smooth family $\cX_{U}\to U$ of K3 surfaces with
+markings, whose fibre over $u$ is a choice of $S_{u}$, carrying a line bundle
+that restricts to $L$ on $S_{\omega}$. On $S_{\omega}$ the bundle
+$L^{\otimes3}$ is very ample and has no higher cohomology
+\cite[Ch.~2]{Huy16}; by semicontinuity and base change, after shrinking $U$,
+its direct image is free and its sections embed $\cX_{U}$ in
+$\PP^{M}\times U$ over $U$. The classes $\tilde e$ are flat sections of the
+fourth cohomology of $\cX_{U}\times_{U}\cX_{U}$, which is projective over $U$.
+As in the proof of \Cref{lem:algstrata}(i), with the Hilbert schemes of
+$\PP^{M}\times\PP^{M}$ \cite{Gro61}, which are projective, for each $e$ in a
+$\QQ$-basis of $E$ the set of $u\in U$ at which
+$\tilde e_{u}=\sum_{i}q_{i}[Z_{i}]$ with rational $q_{i}$ and $Z_{i}$ of
+Hilbert polynomial $P_{i}$ is the image, under a proper map, of a union of
+connected components of a fibre product of relative Hilbert spaces over $U$,
+and so it is closed in $U$. Taking the union over the countably many
+$(\underline{P},\underline{q})$ and the intersection over the basis,
+$\Sigma_{E}\cap U$ is a countable union of subsets of $U$ that are closed in
+$U$.
+
+The sets $U$ constructed for the points of $\cD^{\circ}$ cover it, and
+countably many of them, $U_{i}$, suffice, since $\cD_{E}$ has a countable
+basis. If $\Sigma_{E}$ is not meagre, neither is
+$\Sigma_{E}\cap\cD^{\circ}$, so some $\Sigma_{E}\cap U_{i}$ is not meagre, and
+by the Baire category theorem in $U_{i}$ one of the countably many closed
+subsets of $U_{i}$ that make it up has an interior point. This proves (iii),
+and in (iv) the equivalence of the first four conditions, since a dense
+closed set is everything. The fifth condition implies the third, because at
+each point where the Hodge conjecture holds for $S_{\omega}\times S_{\omega}$
+the Hodge classes $\tilde e_{\omega}$ are algebraic, and the complement of a
+countable union of proper closed analytic subsets is not meagre.
+
+If $\Sigma_{E}=\cD_{E}$ and $\End_{\mathrm{Hdg}}(T(S_{\omega})_{\QQ})=E$, then
+$E$ preserves $T(S_{\omega})_{\QQ}$, the smallest sub-Hodge structure of $T$
+whose complexification contains $H^{2,0}(S_{\omega})$, since each $e\ne0$
+maps it onto a sub-Hodge structure of the same dimension that contains
+$H^{2,0}(S_{\omega})$; and each $e\in E$ acts
+on it through the algebraic class $\pi_{T}\circ\tilde e_{\omega}\circ\pi_{T}$,
+where $\pi_{T}$ is the algebraic projector onto $T(S_{\omega})_{\QQ}$ of the
+proof of \Cref{prop:k3powers}; so \Cref{prop:k3powers}(iii) gives the Hodge
+conjecture for $S_{\omega}\times S_{\omega}$ and $S_{\omega}^{[2]}$, and with
+it \textup{(F3$'$)}. If the field is CM, \Cref{prop:k3powers}(i) gives the
+same. Outside the countable union found at the beginning of the proof the
+field is $E$, so the fourth condition implies the fifth.
+\end{proof}
+
+On the families of van Geemen and Sch\"utt with real multiplication by
+$\QQ(\zeta_{7}+\zeta_{7}^{-1})$ and $\QQ(\zeta_{9}+\zeta_{9}^{-1})$ the
+real multiplication is induced by explicit cycles \cite[Theorem~1.2 and
+Section~4.8]{vGS25}, and on the double planes branched along six lines that
+have real multiplication, necessarily by a quadratic field here, by
+Schlickewei's cycles \cite{Sch10,vG08}. Whenever the members on which such
+cycles are known contain a nonempty open subset of $\cD_{E}$, (iv) gives
+$\Sigma_{E}=\cD_{E}$. For the family of the surfaces $S_{\lambda}$,
+\Cref{thm:rmlocus} gives the real multiplication at every CM point and on a
+dense set stable under $\Gamma_{\QQ}$, and \Cref{thm:mumfordks}(ii) gives it
+at $S_{\lambda}$ if the Kuga--Satake class of $S_{\lambda}$ is algebraic;
+whether $\Sigma_{E}$ is closed there is open. Since $\Sigma_{E}$ is stable
+under the group $\Gamma_{\QQ}$, every $\Gamma_{\QQ}$-orbit lies either in
+$\Sigma_{E}$ or in its complement: the Hodge isometries of (ii) move the real
+multiplication along an orbit and never bring it to an orbit where it is not
+yet algebraic, and by \Cref{rem:mumfordks} the composites of Hodge
+similarities that return to $T(S_{\lambda})$ span only the maximal
+multiquadratic subfield of $E$, which is $\QQ$ for a cubic field.
+
+\subsection{What the constructions reach}\label{ssec:reach}
+
+\begin{theorem}[Where (F2) and (F3$'$) stand]\label{thm:twostand}
+\leavevmode
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=3pt]
+\item \emph{What carries over.} In every polarised abelian scheme of
+  \Cref{thm:f2propagation} the algebraic locus of a flat class is a
+  countable union of closed algebraic strata and is either everything or
+  meagre (\Cref{lem:algstrata}); in the Weil families it is moreover dense
+  and contains an explicit CM point (\Cref{thm:main}); in every family of
+  \Cref{setup:rm} the algebraic locus of the real multiplication is dense,
+  contains every CM point, is stable under $\Gamma_{\QQ}$ and is either
+  everything or meagre (\Cref{thm:rmlocus}); and every Hodge class of every
+  abelian variety lies in a polarised abelian scheme with a CM member
+  (\Cref{prop:cmfamily}).
+\item \emph{(F2).} It holds if and only if the algebraic locus of every flat
+  Hodge class algebraic at a CM member of a polarised abelian scheme has an
+  interior point (\Cref{thm:f2propagation}). In the Weil families the
+  constructions of the paper that supply an interior point are: an object
+  with injective semiregularity map, or satisfying the flatness condition,
+  at one point (\Cref{thm:semiregclosure}, \Cref{thm:cmpropagation},
+  \Cref{prop:p2flat}); a bound on the Hilbert data of representatives along
+  the Hecke orbit of a base point (\Cref{thm:degreebound}), which is
+  equivalent to its conclusion (\Cref{thm:p1equivalent}); and the Lefschetz
+  standard conjecture for the total space over a curve through a base point,
+  which implies it and, when the monodromy is Zariski dense, follows from it
+  (\Cref{cor:weilequiv}). For the squares of Mumford fourfolds the last two
+  take the forms of \Cref{thm:modpdensity} and \Cref{cor:mumfordequiv}.
+  Markman's sheaves are objects of the first kind, and with them he proves
+  the algebraicity of the Weil classes on every abelian fourfold of Weil
+  type and on the split sixfolds of every imaginary quadratic field
+  \cite{Mar25a,Mar25b}; with \cite{MZ99} this gives the Hodge conjecture for
+  abelian varieties of dimension at most five. The open cases named in
+  \Cref{sec:scope} include the non-split Weil sixfolds of imaginary
+  quadratic fields, the Weil eightfolds of quartic CM fields, where an
+  object of the first kind needs
+  $\dim\Ext^{2}(E,E)\ge88$ (\Cref{cor:quarticleast}), and the squares of
+  Mumford fourfolds, where the classes are algebraic at every CM point
+  (\Cref{thm:mumfordcm}) and on every member once one Kuga--Satake class is
+  algebraic (\Cref{thm:mumfordks}), or once one complex at one CM point has
+  $\Ext^{2}$ of dimension $119$ (\Cref{thm:mumfordnumerical}). With the
+  theorems of the preprints of \Cref{sec:preprints} as hypotheses, the
+  non-split sixfolds and the squares of Mumford fourfolds are settled
+  (\Cref{thm:weilsix}, \Cref{cor:mumfordall}), and the first open cases are
+  the eightfolds of nontrivial discriminant and the Weil eightfolds of
+  quartic CM fields (\Cref{rem:remains}).
+\item \emph{(F3$'$).} It holds if and only if, for every variety and every
+  degree, the complement of the abelian part carries no Hodge class
+  (\Cref{prop:abpart}). The complement is zero on the class $\mathcal{A}$,
+  which contains the Fermat and Delsarte hypersurfaces of every dimension and
+  the cyclic covers branched along them (\Cref{prop:aclosure},
+  \Cref{cor:delsarteall}), and it carries no Hodge class on the varieties of
+  \Cref{prop:f3primesmall}, \Cref{prop:f3primefibration} and
+  \Cref{prop:f3primedominant}, where \textup{(F3$'$)} is proved, and of
+  \Cref{prop:k3powers} and \Cref{prop:k3ntype}, where the conjecture itself
+  is.
+  On the first open varieties, $S\times S$ and $S^{[2]}$ for a K3 surface
+  with real multiplication, the algebraic locus of the real multiplication
+  is dense, contains every CM point and is either the whole family or meagre
+  (\Cref{thm:rmlocus}); the real multiplication is algebraic on the members
+  of the families of \cite{vGS25} and on the quadratic double planes of
+  \cite{Sch10}, and whether the locus is closed is open for the family of
+  $S_{\lambda}$; with the preprints of \Cref{sec:preprints} as hypotheses
+  the locus is the whole family in every case (\Cref{cor:k3all}). Beyond the
+  varieties of abelian type, a Hodge
+  class off the abelian part is removed only by a new algebraic cycle on a
+  product $B\times X$ (\Cref{rem:f3primeopen}).
+\end{enumerate}
+Neither (F2) nor \textup{(F3$'$)} is proved here, and by \Cref{thm:final}
+together they are the Hodge conjecture.
+\end{theorem}
+
+\begin{proof}
+Each statement is the result cited with it. For (ii), Markman's theorems are
+recalled in the introduction and their reach in \Cref{sec:scope}, where the
+non-split sixfolds and the fields of degree at least four are among the open
+entries, and \Cref{thm:quarticrank} and
+\Cref{cor:quarticleast} give the number $88$. For (iii), the known cases of
+the real multiplication are those recalled in \Cref{rem:mumfordks}.
+\end{proof}

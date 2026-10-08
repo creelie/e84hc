@@ -1,0 +1,62 @@
+(LIX) kernels on X x X for a quartic CM field at n = 2
+(A) one place: the kernel T(d) - P
+  [PASS] model: Phi(X x 0) = 1, Phi(Delta) = pt, Phi(antidiagonal) = 16 e^{-ell/2}; the graph formula gives the class of the graph for 6 maps; P = [X x X] and U0 = pr_2^* pt
+  [PASS] Phi(X x X) at one place is -(the class of X x 0 in A_j), not flat; so ch Phi(O_X [x] F) = 1 (x) Phi(P_2) + Phi(P_1) (x) 1 is not flat
+  [PASS] ch Phi(T(d) - P) = -(1/4)(eta^2 + gamma^2 - d ell^2) at d = 1, 2, 3, 5/2; both sides have degree at most two in d, so this holds for every d
+  [PASS] the same identity in Q(sqrt5, i) at d = tau_1(2 + phi) = (5 + sqrt5)/2
+  [PASS] w = ch Phi(T(d) - P) is flat for su_j(d), of pure degree 4, with Weil part -(1/4) Omega != 0 (d = 1, 2, 3, 5/2)
+  [PASS] (gamma -+ s ell)^2, s = sqrt(-d), is an eigenvector of eigenvalue +-4s of the action of sqrt(-q) in degree four (d = 1, 4), so it spans a line wedge^4 V_sigma of Weil classes
+  [PASS] at X x Xhat the class w is of Hodge type (killed by the derivation of the complex structure, d = 1, 3), and sqrt(-q) commutes with it
+  [PASS] w e^{ell/2} and w e^{-ell/2} are not flat: the statement is about the untwisted character
+  [PASS] int eta^4 : int Omega^2 = 24 d^2 : 32 d^2 = 3/4, so with c = -1/4 and omega = -(1/4) Omega one has c^2 int eta^4 = (3/4) int omega^2: the exceptional ratio of rem:p2primeexceptional
+  [PASS] one place: r(w) = 23 with annihilator of dimension 5 in H^1(T); the general invariant class Omega + eta^2/3 has r = 24, annihilator of dimension 4 = dim T D at one place, contained in that of w (d = 1, 3)
+         (r, ker in H^1(T), r_gen, ker_gen, rank of both) = [(23, 5, 24, 4, 24), (23, 5, 24, 4, 24)]
+(B) the global class ch Phi(Z'')
+  [PASS] Q(zeta_5), q = 2 + phi: ch Phi(Z'') has pure degree 4 (so chi = 0), r^1 = 16, r = 94; annihilator 26 = 16 (T_1 (x) T_2) + 5 + 5 (H^1(T) at each place)
+         r = 94, r^1 = 16, kernels in H^1(T): [5, 5], 5.5s
+  [PASS] Q(sqrt5, i), q = 1: ch Phi(Z'') has pure degree 4 (so chi = 0), r^1 = 16, r = 94; annihilator 26 = 16 (T_1 (x) T_2) + 5 + 5 (H^1(T) at each place)
+         r = 94, r^1 = 16, kernels in H^1(T): [5, 5], 5.5s
+  [PASS] Q(sqrt2)(sqrt(-(2 + sqrt2))), q = 2 + sqrt2: ch Phi(Z'') has pure degree 4 (so chi = 0), r^1 = 16, r = 94; annihilator 26 = 16 (T_1 (x) T_2) + 5 + 5 (H^1(T) at each place)
+         r = 94, r^1 = 16, kernels in H^1(T): [5, 5], 5.5s
+  [PASS] Q(sqrt13)(sqrt(-q)), q = 2 + (1 + sqrt13)/2: ch Phi(Z'') has pure degree 4 (so chi = 0), r^1 = 16, r = 94; annihilator 26 = 16 (T_1 (x) T_2) + 5 + 5 (H^1(T) at each place)
+         r = 94, r^1 = 16, kernels in H^1(T): [5, 5], 5.2s
+(C) rationality of Z''
+  [PASS] D = 5, q = 2 + 1 R: G'' is Gal(F_0/Q)-invariant, and the classes of O-graphs span all 81 rational classes of graph type at both places, so G'' is a rational combination of them
+  [PASS] D = 5, q = 1 + 0 R: G'' is Gal(F_0/Q)-invariant, and the classes of O-graphs span all 81 rational classes of graph type at both places, so G'' is a rational combination of them
+  [PASS] D = 2, q = 2 + 1 R: G'' is Gal(F_0/Q)-invariant, and the classes of O-graphs span all 81 rational classes of graph type at both places, so G'' is a rational combination of them
+  [PASS] D = 2, q = 5 + 1 R: G'' is Gal(F_0/Q)-invariant, and the classes of O-graphs span all 81 rational classes of graph type at both places, so G'' is a rational combination of them
+  [PASS] D = 13, q = 2 + 1 R: G'' is Gal(F_0/Q)-invariant, and the classes of O-graphs span all 81 rational classes of graph type at both places, so G'' is a rational combination of them
+  [PASS] Q(zeta_5): G'' is a rational combination of 36 classes (beta, 1)_*(c) on 21 graphs, beta = m + n phi, c in {1, theta_R^2, theta theta_R, theta^2}
+  [PASS] Q(sqrt5): (theta_1^2 + theta_2^2)/2 = (3 theta^2 - 2 theta theta_R + 2 theta_R^2)/10, so ch F and Z'' = G'' - ch(O_X [x] F) are rational
+(D) secant Orlov products
+  [PASS] D = 5, q = 5/2 + 1/2 sqrt5, six pairs (3 of rank zero): kappa = ch(E) e^{ell/2} is flat and ch(E) is not
+  [PASS] D = 5: kappa_(4,8) = kappa_(4,0) eta_2^4 / (384 tau_2(q)^2) and kappa_(8,4) = eta_1^4 kappa_(0,4) / (384 tau_1(q)^2) for the six pairs; where kappa_(4,0) has a Weil part (5 pairs) kappa has components outside C[eta_1, eta_2] + W_F
+         0.4s
+  [PASS] D = 2, q = 2 + 1 sqrt2, six pairs (2 of rank zero): kappa = ch(E) e^{ell/2} is flat and ch(E) is not
+  [PASS] D = 2: kappa_(4,8) = kappa_(4,0) eta_2^4 / (384 tau_2(q)^2) and kappa_(8,4) = eta_1^4 kappa_(0,4) / (384 tau_1(q)^2) for the six pairs; where kappa_(4,0) has a Weil part (5 pairs) kappa has components outside C[eta_1, eta_2] + W_F
+         0.4s
+(E) kernels supported on graphs, one place
+  [PASS] the classes (b, a)_*(c), c of even degree, span a space L of dimension 24, and Phi(L) has dimension 24
+  [PASS] Phi(L) meets the su_j(d)-invariants exactly in span(1, pt) (d = 1, 3, 2/5)
+  [PASS] the 2-forms B with B ^ Phi(L) in Phi(L) form a space of dimension 7, spanned by the six 2-forms pulled back from X and ell; thetahat is not among them
+         dimension 7
+  [PASS] e^{B} Phi(L) meets the invariants exactly in e^{g eta} span(1, pt) for B = f theta + g thetahat + h ell (four cases, h = -1/2 included)
+  [PASS] Q(zeta_5), graph of R: ch Phi(I_Gamma (x) L) e^{t ell} is not flat for L in {O, p_1^* O(theta)} and t in {0, 1/2, 1}; the two terms are independent at each place
+(F) pure spinors, one place
+  [PASS] the commutant of su_j(d) on H^1(A_j) is span(1, M*) with M*^2 = -d, a field, so H^1(A_j) is irreducible (d = 1, 3, 2/5)
+  [PASS] the invariants of su_j(d) in H^*(A_j) have dimensions 1, 1, 3, 1, 1 in degrees 0, 2, 4, 6, 8, spanned by 1, eta, eta^2, Omega, Lambda, eta^3, eta^4; in degree 2 only eta (d = 1, 3, 2/5)
+  [PASS] Phi of line bundles on 7 graphs are pure spinors: annihilator of dimension 8 in V + V^*, also after e^{ell/2}
+  [PASS] the flat classes w and Omega are not pure (annihilators of dimension 0 and 0), while the Weil class (gamma - s ell)^2 is pure over C (dimension 8), d = 1
+(G) Orlov products with negative Ext groups
+  [PASS] int v_4 ^ v_4 is even for integral 4-forms on an 8-dimensional torus (40 random classes), so chi(v, v) is even
+  [PASS] chi = 4 with (rho, N_w) = (2, 4): m = mu^2 Nm(Delta) in {1, 2, 3}, and the congruences (a) 4m = 16 mod d cap Z, (b) m = 0, 1 mod 4, (c) m even when D = 2 mod 4 leave only D = 3, m = 1 among squarefree D < 200000
+         survivors: [(3, 1)]
+  [PASS] nu = (chi - r^2 + 14)/2 with r^2 = 18, 12, 20: nu >= 2 for (1,4) (chi in 4Z, chi >= 8) and (2,2) (chi >= 2 even); for (2,4) nu >= 1 unless chi = 4, where nu = -1
+         {'(1,4)': 2, '(2,2)': 2, '(2,4)': -1}
+(H) bookkeeping for the Prym loci
+  [PASS] phi(N) = 4 exactly for N = 5, 8, 10, 12 (N < 200), and Q(zeta_10) = Q(zeta_5): the quartic cyclotomic fields are Q(zeta_5), Q(zeta_8), Q(zeta_12)
+  [PASS] 3g - 3 < (phi(N)/2)(g - 1)^2 whenever phi(N) >= 4 and g >= 3 (N < 200, g < 60): the Prym loci never fill D_F; at g = 3, phi(N) = 4 the bound is 6 < 8
+  [PASS] a split (hyperbolic) hermitian form of F-dimension 2n has determinant (-1)^n, so delta = [det H] is trivial for n = g - 1 = 2
+
+  total time 40s
+  40 checks passed, 0 failed

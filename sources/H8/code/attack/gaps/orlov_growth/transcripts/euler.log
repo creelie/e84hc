@@ -1,0 +1,65 @@
+==============================================================================
+(1) chi(F,F) for ch(F) = a u_t + b v_t   (D = int t^n/n!)
+  n= 2: chi = -2*D*(a**2*d + b**2)    matches closed form: True
+  n= 3: chi = 0    matches closed form: True
+  n= 4: chi = 8*D*d*(a**2*d + b**2)    matches closed form: True
+  n= 5: chi = 0    matches closed form: True
+  n= 6: chi = -32*D*d**2*(a**2*d + b**2)    matches closed form: True
+  n= 7: chi = 0    matches closed form: True
+  n= 8: chi = 128*D*d**3*(a**2*d + b**2)    matches closed form: True
+  n= 9: chi = 0    matches closed form: True
+  n=10: chi = -512*D*d**4*(a**2*d + b**2)    matches closed form: True
+  n=11: chi = 0    matches closed form: True
+  n=12: chi = 2048*D*d**5*(a**2*d + b**2)    matches closed form: True
+==============================================================================
+(2),(3) Hochschild profile of a secant class and the Orlov number R
+  n= 2: r_k = [1, 4, 1]   R = 18  (6n^2-2n = 20; check True)
+  n= 3: r_k = [1, 6, 6, 1]   R = 48  (6n^2-2n = 48; check True)
+  n= 4: r_k = [1, 8, 12, 8, 1]   R = 88  (6n^2-2n = 88; check True)
+  n= 5: r_k = [1, 10, 20, 20, 10, 1]   R = 140  (6n^2-2n = 140; check True)
+  n= 6: r_k = [1, 12, 30, 40, 30, 12, 1]   R = 204  (6n^2-2n = 204; check True)
+  n= 7: r_k = [1, 14, 42, 70, 70, 42, 14, 1]   R = 280  (6n^2-2n = 280; check True)
+  n= 8: r_k = [1, 16, 56, 112, 140, 112, 56, 16, 1]   R = 368  (6n^2-2n = 368; check True)
+  n= 9: r_k = [1, 18, 72, 168, 252, 252, 168, 72, 18, 1]   R = 468  (6n^2-2n = 468; check True)
+  n=10: r_k = [1, 20, 90, 240, 420, 504, 420, 240, 90, 20, 1]   R = 580  (6n^2-2n = 580; check True)
+  n=11: r_k = [1, 22, 110, 330, 660, 924, 924, 660, 330, 110, 22, 1]   R = 704  (6n^2-2n = 704; check True)
+  n=12: r_k = [1, 24, 132, 440, 990, 1584, 1848, 1584, 990, 440, 132, 24, 1]   R = 840  (6n^2-2n = 840; check True)
+==============================================================================
+(4) Equality profile (1,2n,n(n-1)) + Serre; Euler characteristic constraints
+  n= 2: fixed e_k (Serre-completed) = [1, 4, 1]
+         no free Ext^k in [0,n]: with Ext^<0 = 0, chi = -2 forced; need -2*D*(a**2*d + b**2) = -2
+  n= 3: fixed e_k (Serre-completed) = [1, 6, 6, 1]
+         n odd: chi = 0 identically on both sides; no constraint
+  n= 4: fixed e_k (Serre-completed) = [1, 8, 12, 8, 1]
+         no free Ext^k in [0,n]: with Ext^<0 = 0, chi = -2 forced; need 8*D*d*(a**2*d + b**2) = -2
+  n= 5: fixed e_k (Serre-completed) = [1, 10, 20, 20, 10, 1]
+         n odd: chi = 0 identically on both sides; no constraint
+  n= 6: fixed e_k (Serre-completed) = [1, 12, 30, '*', 30, 12, 1]
+         free: chi = 38 -e_3(>= 40) ; any integer reachable -> no obstruction
+  n= 7: fixed e_k (Serre-completed) = [1, 14, 42, '*', '*', 42, 14, 1]
+         n odd: chi = 0 identically on both sides; no constraint
+  n= 8: fixed e_k (Serre-completed) = [1, 16, 56, '*', '*', '*', 56, 16, 1]
+         free: chi = 82 -2e_3(>= 112) +e_4(>= 140) ; any integer reachable -> no obstruction
+  n= 9: fixed e_k (Serre-completed) = [1, 18, 72, '*', '*', '*', '*', 72, 18, 1]
+         n odd: chi = 0 identically on both sides; no constraint
+  n=10: fixed e_k (Serre-completed) = [1, 20, 90, '*', '*', '*', '*', '*', 90, 20, 1]
+         free: chi = 142 -2e_3(>= 240) +2e_4(>= 420) -e_5(>= 504) ; any integer reachable -> no obstruction
+  n=11: fixed e_k (Serre-completed) = [1, 22, 110, '*', '*', '*', '*', '*', '*', 110, 22, 1]
+         n odd: chi = 0 identically on both sides; no constraint
+  n=12: fixed e_k (Serre-completed) = [1, 24, 132, '*', '*', '*', '*', '*', '*', '*', 132, 24, 1]
+         free: chi = 218 -2e_3(>= 440) +2e_4(>= 990) -2e_5(>= 1584) +e_6(>= 1848) ; any integer reachable -> no obstruction
+==============================================================================
+(5) n = 2: equality forces (a^2 d + b^2) D = 1
+    chi_needed =  -2*D*(a**2*d + b**2)  must equal 1 - 4 + 1 = -2
+    with t principal (D = 1), a, b integers (rank, c1 = b theta): a^2 d + b^2 = 1,
+    solutions (a,b,d) with d < 50: [(-1, 0, 1), (0, -1, 1), (0, -1, 2), (0, -1, 3), (0, -1, 4), (0, -1, 5), (0, -1, 6), (0, -1, 7), (0, -1, 8), (0, -1, 9), (0, -1, 10), (0, -1, 11), (0, -1, 12), (0, -1, 13), (0, -1, 14), (0, -1, 15), (0, -1, 16), (0, -1, 17), (0, -1, 18), (0, -1, 19), (0, -1, 20), (0, -1, 21), (0, -1, 22), (0, -1, 23), (0, -1, 24), (0, -1, 25), (0, -1, 26), (0, -1, 27), (0, -1, 28), (0, -1, 29), (0, -1, 30), (0, -1, 31), (0, -1, 32), (0, -1, 33), (0, -1, 34), (0, -1, 35), (0, -1, 36), (0, -1, 37), (0, -1, 38), (0, -1, 39), (0, -1, 40), (0, -1, 41), (0, -1, 42), (0, -1, 43), (0, -1, 44), (0, -1, 45), (0, -1, 46), (0, -1, 47), (0, -1, 48), (0, -1, 49), (0, 1, 1), (0, 1, 2), (0, 1, 3), (0, 1, 4), (0, 1, 5), (0, 1, 6), (0, 1, 7), (0, 1, 8), (0, 1, 9), (0, 1, 10), (0, 1, 11), (0, 1, 12), (0, 1, 13), (0, 1, 14), (0, 1, 15), (0, 1, 16), (0, 1, 17), (0, 1, 18), (0, 1, 19), (0, 1, 20), (0, 1, 21), (0, 1, 22), (0, 1, 23), (0, 1, 24), (0, 1, 25), (0, 1, 26), (0, 1, 27), (0, 1, 28), (0, 1, 29), (0, 1, 30), (0, 1, 31), (0, 1, 32), (0, 1, 33), (0, 1, 34), (0, 1, 35), (0, 1, 36), (0, 1, 37), (0, 1, 38), (0, 1, 39), (0, 1, 40), (0, 1, 41), (0, 1, 42), (0, 1, 43), (0, 1, 44), (0, 1, 45), (0, 1, 46), (0, 1, 47), (0, 1, 48), (0, 1, 49), (1, 0, 1)]
+==============================================================================
+(6) n = 4 with negative Ext: base = -2, so
+    2 * sum_{j in S} (-1)^j e_{-j} = chi(F,F) + 2 =  2*(4*D*a**2*d**2 + 4*D*b**2*d + 1)
+    i.e. sum_{j in S} (-1)^j e_{-j} = 4 d (a^2 d + b^2) D + 1  >= 5 for D = 1.
+  n=3: admissible negative-Ext supports S within [1,7]: 21 sets; minimal allowed degree -(n-1) = -2; examples [(), (2,), (3,), (4,), (5,), (6,)]
+  n=4: admissible negative-Ext supports S within [1,8]: 25 sets; minimal allowed degree -(n-1) = -3; examples [(), (3,), (4,), (5,), (6,), (7,)]
+  n=5: admissible negative-Ext supports S within [1,9]: 27 sets; minimal allowed degree -(n-1) = -4; examples [(), (4,), (5,), (6,), (7,), (8,)]
+  n=6: admissible negative-Ext supports S within [1,10]: 36 sets; minimal allowed degree -(n-1) = -5; examples [(), (5,), (6,), (7,), (8,), (9,)]
+  n=4: supports containing an even j (needed for chi > -2): smallest ones [(4,), (6,), (8,), (10,), (12,), (3, 4)]
+done

@@ -1,0 +1,915 @@
+\section{Weil classes of every CM field}\label{sec:cmfields}
+
+The Weil classes of an imaginary quadratic field are the case $m=1$ of a
+construction that makes sense for every CM field $F$ of degree $2m$, and the
+methods of this paper apply to the question whether those classes are
+algebraic. Every theorem of \Cref{sec:construction} that turns the conjecture
+for a Weil family into a propagation statement is a theorem about a connected
+period domain, a flat class on it, a group whose rational points act with
+dense orbits, and a base point where the class is a polynomial in divisor
+classes, and none of these four ingredients depends on the field being
+quadratic. This section carries the four over to every CM field; the only
+one that needs a new argument is the base point, which
+\Cref{thm:cmbasepoint} supplies. Nothing here is conditional on a question
+about semiregularity, because the base point is a CM point: the Weil classes
+there are written out as polynomials with rational coefficients in divisor
+classes, each divisor class is algebraic by the Lefschetz theorem on $(1,1)$
+classes, and products of algebraic classes are algebraic. Nothing is claimed
+about the
+whole Hodge ring at a CM point, which can contain classes that are not
+polynomials in divisor classes.
+
+\subsection{The families}
+
+\begin{setupenv}[Weil type for a CM field]\label{setup:cmfield}
+Let $F$ be a CM field of degree $2m$ with maximal totally real subfield
+$F_{0}$, and write $\alpha\mapsto\bbar\alpha$ for the nontrivial automorphism
+of $F/F_{0}$, which is complex conjugation under every embedding. The real
+places of $F_{0}$ are $\tau_{1},\dots,\tau_{m}$, and each extends to a
+conjugate pair $\sigma_{\tau},\bbar\sigma_{\tau}$ of embeddings of $F$ into
+$\CC$. Let $V$ be an $F$-vector space of dimension $2n$, let
+$H\colon V\times V\to F$ be a nondegenerate hermitian form, $F$-linear in the
+first variable, and fix a totally imaginary $\xi\in F^{\times}$, that is
+$\bbar\xi=-\xi$. Put
+\[
+  E(x,y)=\Tr_{F/\QQ}\bigl(\xi\,H(x,y)\bigr),
+\]
+a nondegenerate alternating $\QQ$-bilinear form with
+$E(\alpha x,y)=E(x,\bbar\alpha y)$. For each $\tau$ let
+$V_{\tau}=V\otimes_{F_{0},\tau}\RR$, a vector space of dimension $2n$ over
+$F\otimes_{F_{0},\tau}\RR\cong\CC$, and let $(p_{\tau},q_{\tau})$ be the
+signature of the hermitian form $H_{\tau}$ induced by $H$ on it. We say that
+$(V,H)$ is of \emph{$(F,n)$-Weil type} if $p_{\tau}=q_{\tau}=n$ for every
+$\tau$, and we call the class of $(-1)^{n}\det H$ in
+$F_{0}^{\times}/\Nm_{F/F_{0}}(F^{\times})$ its discriminant $\delta$; it is
+totally positive, and for $F=K$ it is the discriminant of \Cref{def:disc}. A
+polarised abelian variety $(A,\iota,E)$ of dimension $2mn$ with
+$\iota\colon F\to\End^{0}(A)$ and $H^{1}(A,\QQ)\cong V$ as $F$-modules with
+polarisation $E$ is of $(F,n,\delta)$-Weil type when $(V,H)$ is. As in
+\Cref{lem:Kspace}, we work throughout with $V=H^{1}$; a complex structure on
+$V_{\RR}$ is the same datum as one on the tangent space. The Weil
+classes of $A$ are
+\[
+  W_{F}(A)=\textstyle\bigwedge^{2n}_{F}V\;\subseteq\;\bigwedge^{2n}_{\QQ}V
+  =H^{2n}(A,\QQ),
+\]
+the $\QQ$-subspace whose complexification is
+$\bigoplus_{\sigma}\bigwedge^{2n}V_{\sigma}$, where $V_{\sigma}=V\otimes_{F,\sigma}\CC$
+runs over the $2m$ eigenspaces of $F$ on $V_{\CC}$; it is a one-dimensional
+$F$-vector space, of dimension $2m$ over $\QQ$. Write
+\begin{quote}
+$\mathbf{W}(F,n,\delta)$: every abelian variety of $(F,n,\delta)$-Weil type
+has algebraic Weil classes.
+\end{quote}
+The period domain $\cD_{F}$ is the set of complex structures $J$ on
+$V_{\RR}$ commuting with $F$ and polarised by $E$, and the group
+$G_{F}=\Res_{F_{0}/\QQ}\SU(V,H)$ acts on it. We fix an arithmetic subgroup
+$\Gamma\subset G_{F}(\QQ)$ and write $\cS_{F}=\Gamma\backslash\cD_{F}$ for the
+quotient, $p\colon\cD_{F}\to\cS_{F}$ for the projection,
+$\pi\colon\cA\to\cS_{F}$ for the universal family and
+$\Sigma_{F}\subseteq\cD_{F}$ for the set of $s$ at which $W_{F}(A_{s})$ is
+algebraic. For $m=1$ this is \Cref{setup:family} and \Cref{setup:shimura},
+with $\omega_{s}$ a generator of the line.
+\end{setupenv}
+
+\begin{remark}[Every such abelian variety is a member]\label{rem:cmmember}
+If $A$ is any abelian variety with a CM field $F\subseteq\End^{0}(A)$ such
+that $\dim_{F}H^{1}(A,\QQ)=2n$ and $\dim V_{\sigma}^{1,0}=n$ for every
+embedding $\sigma$, then $A$ is of $(F,n,\delta)$-Weil type for some
+$\delta$: the Rosati involution of any polarisation restricts to a positive
+involution of $F$, hence to conjugation, and the argument of
+\Cref{lem:hermform} writes the polarisation as $\Tr_{F/\QQ}(\xi H)$ for a
+unique hermitian $H$, whose signatures are then forced by the Hodge numbers
+as in \Cref{prop:cmweil}(i). These are exactly the abelian varieties whose
+Weil classes for $F$ are Hodge classes, in the sense of \cite{MZ99}, so
+$\mathbf{W}(F,n,\delta)$ over all $(F,n,\delta)$ is the statement that all
+Weil classes of all CM fields are algebraic.
+\end{remark}
+
+\begin{proposition}[The Weil classes of a CM field]\label{prop:cmweil}
+Keep \Cref{setup:cmfield}, with $(V,H)$ of $(F,n)$-Weil type.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item A polarised complex structure $J$ is the same as an $H_{\tau}$-orthogonal
+  decomposition $V_{\tau}=V_{\tau}^{+}\oplus V_{\tau}^{-}$ for every $\tau$,
+  with $H_{\tau}$ definite of the sign of $\mathrm{Im}\,\sigma_{\tau}(\xi)$ on
+  $V_{\tau}^{+}$ and of the opposite sign on $V_{\tau}^{-}$; then
+  $\dim V^{1,0}_{\sigma_{\tau}}=\dim V_{\tau}^{+}=n$ and
+  $\dim V^{1,0}_{\bbar\sigma_{\tau}}=\dim V_{\tau}^{-}=n$, so every class in
+  $W_{F}(A_{J})$ is of type $(n,n)$. The spaces $W_{F}(A_{J})$ form a flat
+  subsystem $W_{F}$ of $R^{2n}\pi_{*}\QQ$ of rank $2m$ on which $G_{F}$ acts
+  trivially, and $\cD_{F}\cong\prod_{\tau}\cD_{n,n}$ is connected of
+  dimension $mn^{2}$.
+\item If one nonzero element of $W_{F}(A)$ is algebraic, every element is.
+\item If $\Hg(A_{s})=G_{F}$, the Hodge ring of $A_{s}$ is generated by
+  $\NS(A_{s})_{\QQ}$ and by $W_{F}$, so the Hodge conjecture for $A_{s}$ in
+  every degree is equivalent to the algebraicity of $W_{F}$. For $n\ge2$ the
+  space $\NS(A_{s})_{\QQ}$ is the $m$-dimensional space of classes
+  $\eta_{t}=[E(t\,\cdot,\cdot)]$, $t\in F_{0}$.
+\item Two members of $(F,n,\delta)$-Weil type have isomorphic $(V,H)$, so
+  every one of them is a fibre of $\pi$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) A complex structure commuting with $F$ preserves each $V_{\tau}$, since
+$F_{0}\otimes\RR$ acts diagonally, and is $\CC$-linear on it for the
+structure $F\otimes_{F_{0},\tau}\RR\cong\CC$, so it is $\pm\sqrt{-1}$ on two
+complementary $\CC$-subspaces $V_{\tau}^{\pm}$. Write
+$\sigma_{\tau}(\xi)=\sqrt{-1}\,r_{\tau}$ with $r_{\tau}\in\RR^{\times}$. For
+$x\in V^{\epsilon}_{\tau}$ and $y\in V^{\epsilon'}_{\tau}$ one has
+$H_{\tau}(Jx,Jy)=\epsilon\epsilon'H_{\tau}(x,y)$, so
+$E(Jx,Jy)=E(x,y)$ forces $E(x,y)=0$ for $\epsilon\ne\epsilon'$, and replacing
+$x$ by $\sqrt{-1}\,x$ then forces $H_{\tau}(x,y)=0$: the decomposition is
+orthogonal. For $x\in V^{\epsilon}_{\tau}$,
+$E(x,Jx)=2\,\mathrm{Re}\bigl(\sqrt{-1}\,r_{\tau}\,
+\overline{\epsilon\sqrt{-1}}\,H_{\tau}(x,x)\bigr)=2\epsilon r_{\tau}H_{\tau}(x,x)$,
+so positivity is the sign condition stated. Conversely such a decomposition
+defines a polarised $J$. Under $V_{\tau}\otimes_{\RR}\CC=V_{\sigma_{\tau}}
+\oplus V_{\bbar\sigma_{\tau}}$ the space $V^{1,0}$, the $\sqrt{-1}$-eigenspace
+of $J$ on $V_{\CC}$, meets $V_{\sigma_{\tau}}$ in the image of $V_{\tau}^{+}$
+and $V_{\bbar\sigma_{\tau}}$ in the conjugate of the image of $V_{\tau}^{-}$,
+which gives the two equalities of dimensions. Since $H_{\tau}$ has signature
+$(n,n)$ and is definite, of opposite signs, on the complementary orthogonal
+subspaces $V_{\tau}^{\pm}$, both have dimension $n$. So each $V_{\sigma}$ is
+the sum of its intersections with $V^{1,0}$ and $V^{0,1}$, both of dimension
+$n$, and a generator $\alpha_{\sigma}$ of $\bigwedge^{2n}V_{\sigma}$ is of
+type $(n,n)$. The subspace $\bigwedge^{2n}_{F}V$ of $H^{2n}(A_{s},\QQ)$ is
+defined by the action of $F$ on $V$ alone and does not depend on $s$, so it
+is flat; $\SU(V,H)$ acts on $\bigwedge^{2n}_{F}V$ by the $F$-determinant,
+which is $1$. Finally, the choice of $V_{\tau}^{+}$ is a point of the bounded
+symmetric domain of $\SU(V_{\tau},H_{\tau})\cong\SU(n,n)$, of dimension
+$n^{2}$, and $\cD_{F}$ is the product over $\tau$.
+
+(ii) For $\alpha\in\cO_{F}$ the endomorphism $\iota(\alpha)$ acts on
+$\bigwedge^{2n}_{F}V$ by $\alpha^{2n}$, through an algebraic correspondence,
+so the algebraic classes in $W_{F}$ form a $\QQ$-subspace stable under
+multiplication by every $\alpha^{2n}$. By the polarisation identity, in
+characteristic zero every product $x_{1}\cdots x_{2n}$ of elements of a field
+is a rational combination of $2n$-th powers of sums of the $x_{i}$; taking
+$x_{2}=\dots=x_{2n}=1$ shows that the $2n$-th powers span $F$ over $\QQ$, and
+since every element of $F$ is a rational multiple of an element of $\cO_{F}$,
+so do the $\alpha^{2n}$ with $\alpha\in\cO_{F}$. Hence the $\QQ$-span of
+$\{\alpha^{2n}w\}$ is $Fw=W_{F}$ for every $w\ne0$.
+
+(iii) Hodge classes are the invariants of the Hodge group, which here is
+$G_{F}$. Over $\CC$ it is $\prod_{\tau}\SL(U_{\tau})$ with
+$U_{\tau}=V_{\sigma_{\tau}}$, and
+$H$ identifies $V_{\bbar\sigma_{\tau}}$ with $U_{\tau}^{\vee}$, so
+$\bigwedge^{*}V_{\CC}=\bigotimes_{\tau}\bigwedge^{*}(U_{\tau}\oplus U_{\tau}^{\vee})$
+with the $\tau$-th factor of the group acting on the $\tau$-th tensor factor
+alone. The invariants of a product group in a tensor product of
+representations are the tensor product of the invariants, and the invariants
+of $\SL(U)$ in $\bigwedge^{*}(U\oplus U^{\vee})$ are generated by the pairing
+$\psi\in U\otimes U^{\vee}$ and the two determinants, by the computation of
+\Cref{thm:hdgcount}. The classes $\eta_{t}$ are Hodge classes: $J$ commutes
+with $t$ and preserves $E$, hence preserves the $F_{0}$-twisted form
+$E_{t}=E(t\,\cdot,\cdot)=\Tr(\xi tH)$, which for totally positive $t$ is again
+a polarisation of $A_{s}$. The complexified span of the $\eta_{t}$ is
+$\bigoplus_{\tau}\CC\psi_{\tau}$, and the complexification of $W_{F}$
+contains all the determinants. So the $\QQ$-algebra generated by $\NS_{\QQ}$
+and $W_{F}$ has complexification equal to the ring of invariants, hence
+equals $\Hdg^{*}(A_{s})$. Since divisor classes are algebraic, the conjecture
+reduces to $W_{F}$, and by (ii) to one class. For the last sentence, the
+invariants in $\bigwedge^{2}V_{\CC}$ are $\bigoplus_{\tau}\CC\psi_{\tau}$ when
+$n\ge2$: a summand $\bigwedge^{2}U_{\tau}$ or $\bigwedge^{2}U_{\tau}^{\vee}$
+has an $\SL(U_{\tau})$-invariant only if $\dim U_{\tau}=2n$ equals $2$, and a
+summand mixing two different $\tau$ has none. So $\NS(A_{s})_{\QQ}$ has
+dimension $m$, and it contains the classes $\eta_{t}$, which form an
+$m$-dimensional space because $t\mapsto\eta_{t}$ is injective on $F_{0}$, $E$
+being nondegenerate.
+
+(iv) Two hermitian forms over $F/F_{0}$ of the same rank, the same
+discriminant and the same signature at every real place of $F_{0}$ are
+isomorphic \cite[Ch.~10, \S6]{Sch85}. So the datum $(F,n,\delta)$ determines
+$(V,H)$ up to isomorphism, and the Hodge structure of any member is, by (i), a
+polarised complex structure on that $V_{\RR}$, that is a point of $\cD_{F}$.
+\end{proof}
+
+\begin{lemma}[The Hodge group of a very general member]\label{lem:cmgeneric}
+Keep \Cref{setup:cmfield}. For every $s\in\cD_{F}$ one has
+$\Hg(A_{s})\subseteq G_{F}$, and there is a countable union $Z$ of proper
+closed analytic subsets of $\cD_{F}$ such that $\Hg(A_{s})=G_{F}$ for every
+$s\notin Z$.
+\end{lemma}
+
+\begin{proof}
+The Hodge group of $A_{s}$ commutes with $\End^{0}(A_{s})\supseteq F$ and
+preserves $E$, so it lies in $\Res_{F_{0}/\QQ}\mathrm{U}(V,H)$: an $F$-linear
+map preserving $E=\Tr_{F/\QQ}(\xi H)$ preserves $H$, because $H$ is recovered
+from $E$ and the action of $F$ as in \Cref{lem:hermform}. It fixes every Hodge
+class, in particular the Weil classes, which are Hodge classes by
+\Cref{prop:cmweil}(i); an element $g$ of $\Res_{F_{0}/\QQ}\mathrm{U}(V,H)$ acts
+on $\bigwedge^{2n}_{F}V$ by $\det_{F}(g)$, so $\det_{F}(g)=1$ and
+$g\in G_{F}$.
+
+For the second statement let $T$ be the set of rational tensors
+$t\in\bigoplus_{a,b}V^{\otimes a}\otimes(V^{\vee})^{\otimes b}$ that are not
+fixed by $G_{F}$, a countable set, and for $t\in T$ let $Z_{t}$ be the set of
+$s$ at which $t$ is a Hodge class, of type $(p,p)$ with $2p=a-b$, for the
+Hodge structure induced by $A_{s}$. The condition is that $t$ lies in the
+$p$-th step of the Hodge filtration, which varies holomorphically with $s$, so
+$Z_{t}$ is a closed analytic subset of $\cD_{F}$. It is proper. Otherwise $t$
+is fixed by $h_{s}(\mathrm{U}(1))$ for every $s\in\cD_{F}$, where $h_{s}$ is
+the Hodge representation, which acts on the $(p,q)$ part through
+$z^{q-p}$, and hence by the
+subgroup $N$ of $G_{F}(\RR)$ that these tori generate. Since $\cD_{F}$ is one
+orbit of $G_{F}(\RR)^{+}$ and $h_{gs}=gh_{s}g^{-1}$, the group $N$ is a
+connected normal subgroup of $G_{F}(\RR)^{+}=\prod_{\tau}\SU(V_{\tau},H_{\tau})$,
+so its Lie algebra is an ideal of
+$\bigoplus_{\tau}\mathfrak{su}(V_{\tau},H_{\tau})$, a sum of some of these
+simple summands. It contains every summand, because $h_{s}(\sqrt{-1})$ acts on
+$V_{\tau}$ as the complex structure $J$, which is $\sqrt{-1}$ on
+$V^{+}_{\tau}$ and $-\sqrt{-1}$ on $V^{-}_{\tau}$ by \Cref{prop:cmweil}(i),
+and is therefore not central in the factor $\SU(V_{\tau},H_{\tau})$. So
+$N=G_{F}(\RR)^{+}$, which is Zariski dense in the connected group $G_{F}$,
+and $t$ would be fixed by $G_{F}$, contrary to $t\in T$.
+
+Put $Z=\bigcup_{t\in T}Z_{t}$. The Hodge group of $A_{s}$ is the subgroup of
+$\GL(V)$ fixing every rational Hodge class in the spaces
+$V^{\otimes a}\otimes(V^{\vee})^{\otimes b}$ \cite[\S3]{Del82}.
+For $s\notin Z$ each such class is fixed by $G_{F}$, so
+$G_{F}\subseteq\Hg(A_{s})$, and equality follows from the first statement.
+\end{proof}
+
+\subsection{A base point in every family}
+
+\begin{theorem}[A base point in every family, for every CM field]
+\label{thm:cmbasepoint}
+Let $(V,H)$ be of $(F,n)$-Weil type with discriminant $\delta$. Then $\cD_{F}$
+contains a point $s_{0}$ with the following properties.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item $A_{s_{0}}$ is isogenous to $B_{\Phi}^{\,n}\times B_{\bbar\Phi}^{\,n}$,
+  where $B_{\Phi}$ is an abelian $m$-fold with complex multiplication by $F$
+  of type $\Phi=\{\sigma:\mathrm{Im}\,\sigma(\xi)>0\}$ and $B_{\bbar\Phi}$ its
+  conjugate; there is an $H$-orthogonal basis $e_{1},\dots,e_{2n}$ of $V$
+  with $H(e_{i},e_{i})$ totally positive for $i\le n$ and totally negative
+  for $i>n$, and $Fe_{i}=H^{1}(B_{\Phi},\QQ)$ for $i\le n$,
+  $Fe_{i}=H^{1}(B_{\bbar\Phi},\QQ)$ for $i>n$.
+\item For $i\le n$ put $i'=i+n$ and let $D_{ii'}\subseteq H^{2}(A_{s_{0}},\QQ)$
+  be the $F$-balanced part of $Fe_{i}\wedge Fe_{i'}$, spanned by the classes
+  \[
+    \delta_{i}(f)=\sum_{k}\,(\omega_{k}f\,e_{i})\wedge(\omega_{k}^{*}\,e_{i'}),
+    \qquad f\in F,
+  \]
+  for dual $\QQ$-bases $(\omega_{k})$, $(\omega_{k}^{*})$ of $F$ with respect
+  to the trace form. Every $\delta_{i}(f)$ is a Hodge class of type $(1,1)$,
+  hence a divisor class, and $D_{ii'}$ is a one-dimensional $F$-vector space
+  with $\alpha\cdot\delta_{i}(f)=\delta_{i}(\alpha f)$.
+\item The Weil classes are the products
+  \[
+    w(f)=\sum_{k_{1},\dots,k_{n-1}}
+      \delta_{1}(\omega_{k_{1}}f)\cdot\delta_{2}(\omega_{k_{1}}^{*}\omega_{k_{2}})
+      \cdots\delta_{n-1}(\omega_{k_{n-2}}^{*}\omega_{k_{n-1}})\cdot
+      \delta_{n}(\omega_{k_{n-1}}^{*}),\qquad f\in F,
+  \]
+  which lie in $W_{F}(A_{s_{0}})$, span it as $f$ runs over $F$, and are
+  polynomials with rational coefficients in divisor classes. In particular
+  $W_{F}(A_{s_{0}})$ is algebraic, and $\Sigma_{F}\ne\emptyset$ for every $F$,
+  every $n\ge1$ and every $\delta$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) Since $H_{\tau}$ has signature $(n,n)$ at every $\tau$, the determinant
+$\det H$ has sign $(-1)^{n}$ at every real place, so $b=(-1)^{n}\det H$, a
+representative of $\delta$, is totally positive, and the diagonal form $H'=\mathrm{diag}(b,1,\dots,1,-1,\dots,-1)$
+with $n$ positive and $n$ negative entries has the same dimension, the same
+discriminant and the same signatures as $H$. Hermitian forms over $F/F_{0}$
+are classified by these invariants \cite[Ch.~10, \S6]{Sch85}, so
+$(V,H)\cong(F^{2n},H')$ and the standard basis is the required orthogonal
+basis $e_{i}$, with $a_{i}=H(e_{i},e_{i})$. Write $\sigma_{\tau}(\xi)=\sqrt{-1}\,r_{\tau}$
+and define $J$ on $V_{\tau}=\bigoplus_{i}\CC e_{i}$ to be
+$\epsilon_{i,\tau}\sqrt{-1}$ on $\CC e_{i}$, with
+$\epsilon_{i,\tau}=\mathrm{sign}(r_{\tau})\,\mathrm{sign}(\tau(a_{i}))$. The
+decomposition $V_{\tau}^{+}=\bigoplus_{\epsilon_{i,\tau}=+}\CC e_{i}$,
+$V_{\tau}^{-}=\bigoplus_{\epsilon_{i,\tau}=-}\CC e_{i}$ is $H_{\tau}$-orthogonal,
+with $H_{\tau}$ of sign $\mathrm{sign}(r_{\tau})$ on $V_{\tau}^{+}$ and of the
+opposite sign on $V_{\tau}^{-}$, so \Cref{prop:cmweil}(i) makes $J$ a point
+$s_{0}$ of $\cD_{F}$. On $Fe_{i}\otimes\RR=\prod_{\tau}\CC e_{i}$ the
+structure $J$ is multiplication by the element
+$(\epsilon_{i,\tau}\sqrt{-1})_{\tau}$ of $F\otimes_{\QQ}\RR$, so each $Fe_{i}$
+is a rational sub-Hodge structure of weight one with $F$-action, polarised by
+the restriction of $E$; that is, it is the $H^{1}$ of an abelian $m$-fold with
+complex multiplication by $F$, of CM type
+$\Phi_{i}=\{\sigma:(Fe_{i})_{\sigma}\subseteq V^{1,0}\}$, which by the
+computation in \Cref{prop:cmweil}(i) is
+$\{\sigma_{\tau}^{\epsilon_{i,\tau}}\}$, where $\sigma^{+}=\sigma$ and
+$\sigma^{-}=\bbar\sigma$. For $i\le n$ the $a_{i}$ are totally positive, so
+$\epsilon_{i,\tau}=\mathrm{sign}(r_{\tau})$ and
+$\Phi_{i}=\{\sigma:\mathrm{Im}\,\sigma(\xi)>0\}=\Phi$; for $i>n$ the signs are
+reversed and $\Phi_{i}=\bbar\Phi$. So $V=\bigoplus_{i}Fe_{i}$ splits
+$A_{s_{0}}$ up to isogeny as stated.
+
+(ii) Write $L_{i,\sigma}=(Fe_{i})_{\sigma}$, a line, so that
+$V_{\CC}=\bigoplus_{i,\sigma}L_{i,\sigma}$ and $L_{i,\sigma}$ has type $(1,0)$
+exactly when $\sigma\in\Phi_{i}$. For dual bases,
+$\sum_{k}\sigma(\omega_{k})\sigma'(\omega_{k}^{*})=1$ if $\sigma=\sigma'$ and
+$0$ otherwise, because the matrices $(\sigma(\omega_{k}))$ and
+$(\sigma(\omega_{k}^{*}))$ are inverse transposes by the definition of the
+trace form. Let $\ell_{i,\sigma}$ be the component of $e_{i}$ in
+$L_{i,\sigma}$, a generator of that line, so that
+$\omega e_{i}=\sum_{\sigma}\sigma(\omega)\,\ell_{i,\sigma}$ for $\omega\in F$.
+Hence in $Fe_{i}\otimes Fe_{i'}\otimes\CC
+=\bigoplus_{\sigma,\sigma'}L_{i,\sigma}\otimes L_{i',\sigma'}$ the class
+$\delta_{i}(f)$ has component $\sigma(f)\,\ell_{i,\sigma}\wedge\ell_{i',\sigma}$
+on the diagonal $\sigma=\sigma'$ and zero off it. In particular it is
+$F$-balanced: $\alpha\in F$ acting through the first factor and through the
+second agree on it, both multiplying the component at $\sigma$ by
+$\sigma(\alpha)$, and this is the identity
+$\alpha\cdot\delta_{i}(f)=\delta_{i}(\alpha f)$. Since $\Phi_{i'}=\bbar\Phi_{i}$,
+exactly one of $L_{i,\sigma}$, $L_{i',\sigma}$ has type $(1,0)$, so every
+component, hence $\delta_{i}(f)$, has type $(1,1)$; and $\delta_{i}(f)$ is
+rational, being a sum of wedges of rational vectors. By the Lefschetz theorem
+on $(1,1)$ classes it is a divisor class. As $f$ varies the components
+$\sigma(f)$ vary independently, so $D_{ii'}\otimes\CC=\bigoplus_{\sigma}
+L_{i,\sigma}\otimes L_{i',\sigma}$ and $D_{ii'}\cong F$.
+
+(iii) The complexification of $W_{F}$ is spanned by
+$\alpha_{\sigma}=\pm\prod_{i\le n}\ell_{i,\sigma}\wedge\ell_{i',\sigma}$, a
+generator of $\bigwedge^{2n}V_{\sigma}=\bigwedge^{2n}\bigl(\bigoplus_{i}L_{i,\sigma}\bigr)$.
+In the product $w(f)$, the component indexed by $(\sigma_{1},\dots,\sigma_{n})$,
+with $\sigma_{i}$ the embedding chosen in the $i$-th factor, carries the
+coefficient
+$\sigma_{1}(f)\prod_{j=1}^{n-1}\sum_{k_{j}}\sigma_{j}(\omega_{k_{j}})\sigma_{j+1}(\omega_{k_{j}}^{*})$,
+which vanishes unless $\sigma_{1}=\dots=\sigma_{n}$ and then equals
+$\sigma_{1}(f)$. So $w(f)=\sum_{\sigma}\sigma(f)\,\alpha_{\sigma}$ up to the
+sign of the reordering, an element of $W_{F}\otimes\CC$ which is rational
+because it is a rational polynomial in rational classes; as $f$ runs over
+$F$ the vectors $(\sigma(f))_{\sigma}$ span $\CC^{2m}$, so the $w(f)$ span
+$W_{F}$. Each $w(f)$ is a rational combination of $n$-fold products of the
+divisor classes $\delta_{i}(\cdot)$, and a product of divisor classes is
+algebraic.
+\end{proof}
+
+\begin{remark}[The base point for a quadratic field]\label{rem:cmquadratic}
+For $m=1$ the point $s_{0}$ is a member isogenous to $E^{2n}$ for an elliptic
+curve $E$ with complex multiplication by $K$, at which the whole Hodge ring
+is generated by divisor classes, since the Hodge group is a one-dimensional
+torus. It is a second base point in every family of \Cref{sec:construction},
+beside the quaternionic one of \Cref{thm:everyfamily}, and it lies in the
+product locus of \Cref{thm:everyn}. The formula of
+\Cref{thm:cmbasepoint}(iii) then gives the class at that point explicitly.
+\end{remark}
+
+\subsection{The reduction and the propagation}\label{ssec:cmpropagation}
+
+\begin{theorem}[The reduction and the propagation, for every CM field]
+\label{thm:cmpropagation}
+Fix $(F,n,\delta)$ with $n\ge2$, keep \Cref{setup:cmfield}, and let
+$\omega_{s}$ denote a generator of $W_{F}(A_{s})$ chosen flatly.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item $\mathbf{W}(F,n,\delta)$ holds if and only if $\omega_{s}$ is algebraic
+  for every $s\in\cD_{F}$, and then the Hodge conjecture holds in every
+  degree for every member of the family with $\Hg(A_{s})=G_{F}$.
+\item $\Sigma_{F}$ is stable under $G_{F}(\QQ)$, every $G_{F}(\QQ)$-orbit in
+  $\cD_{F}$ is dense, and $\Sigma_{F}$ is dense.
+\item $\Sigma_{F}=p^{-1}\bigl(\bigcup_{\underline{P},\underline{q}}
+  \Sigma_{\underline{P},\underline{q}}\bigr)$ with each
+  $\Sigma_{\underline{P},\underline{q}}$ Zariski closed in $\cS_{F}$, the
+  union countable; either $\Sigma_{F}=\cD_{F}$, or $\Sigma_{F}$ is meagre and
+  the conjecture fails on a dense $G_{\delta}$.
+\item If at every point $s$ of the orbit $G_{F}(\QQ)\cdot s_{0}$ the class
+  $\omega_{s}$ is represented by a cycle whose Hilbert data comes from one
+  finite set, then $\Sigma_{F}=\cD_{F}$.
+\item If some perfect complex $E$ on $A_{s_{0}}$ with
+  $\ch(E)=N\omega_{s_{0}}+P$, where $N\ne0$ and $P$ is a polynomial with
+  rational coefficients in the classes $\eta_{t}$ of
+  \Cref{prop:cmweil}(iii), has injective semiregularity map, then
+  $\Sigma_{F}=\cD_{F}$. Complexes with $\ch(E)=N\omega_{s_{0}}$ exist.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) By \Cref{prop:cmweil}(i) and (iv), every member has its Hodge structure
+at some point of $\cD_{F}$, so $\mathbf{W}(F,n,\delta)$ is the algebraicity of
+$W_{F}$ at every point. By \Cref{prop:cmweil}(ii) this is the algebraicity of
+one generator at every point, and by \Cref{prop:cmweil}(iii) it gives the
+conjecture at the members with full Hodge group.
+
+(ii) The stability is the argument of \Cref{lem:Ginvariance}: $g\in G_{F}(\QQ)$
+carries $J$ to $gJg^{-1}$ and induces, after clearing denominators, an isogeny
+$A_{J}\to A_{gJ}$ whose graph transports algebraic classes to algebraic
+classes, and $g$ fixes $W_{F}$ pointwise by \Cref{prop:cmweil}(i).
+
+For the density we show that the closure $L$ of $G_{F}(\QQ)$ in
+$G_{F}(\RR)=\prod_{\tau}\SU(V_{\tau},H_{\tau})$ contains the identity
+component, which acts transitively on $\cD_{F}$. First, the form $H$ is
+isotropic over $F_{0}$. It is indefinite at every real place, its signature
+being $(n,n)$. At every finite place $v$ its trace form is a quadratic form
+in $4n\ge8$ variables over the local field $F_{0,v}$, hence isotropic, and a
+hermitian form is isotropic as soon as its trace form is
+\cite[Ch.~10, \S1]{Sch85}. Since hermitian forms over the quadratic
+extension $F/F_{0}$ satisfy the Hasse principle \cite[Ch.~10, \S6]{Sch85},
+$H$ is isotropic. Let $X=\{v\in V:H(v,v)=0\}$ be the cone of isotropic
+vectors, a quadric cone in the $4n$-dimensional $F_{0}$-space $V$ with a
+nonzero $F_{0}$-point. Projection from that point shows that the projective
+quadric of its lines is $F_{0}$-rational, that is, $F_{0}$-birational to a
+projective space, so it satisfies weak approximation at the archimedean
+places, $F_{0}$ being dense in $F_{0}\otimes\RR=\prod_{\tau}\RR$. Hence the
+$F_{0}$-points of $X$ are dense in its points over $F_{0}\otimes\RR$, which
+are the products $\prod_{\tau}X_{\tau}$ of the isotropic cones of the
+$H_{\tau}$.
+
+For an isotropic vector $v\in V$ let $U_{v}\subseteq\SU(V,H)$ be the
+unipotent radical of the stabiliser of the line $Fv$, a unipotent
+$F_{0}$-group. The exponential identifies $U_{v}(F_{0})$ with an
+$F_{0}$-vector space and $U_{v}(F_{0}\otimes\RR)=\prod_{\tau}U_{v,\tau}(\RR)$
+with the corresponding real space, so $U_{v}(\QQ)=U_{v}(F_{0})$ is dense in
+$\prod_{\tau}U_{v,\tau}(\RR)$. Hence $L$ contains
+$\prod_{\tau}U_{v,\tau}(\RR)$ for every rational isotropic $v$, in particular
+the factor $U_{v,\tau}(\RR)$ for each $\tau$ separately, and its Lie algebra
+$\mathfrak{l}$ contains $\mathfrak{u}_{v,\tau}$ for every $\tau$ and every
+rational isotropic $v$. The map $v\mapsto\mathfrak{u}_{v,\tau}$ is continuous
+on $X_{\tau}\setminus0$ and rational $v$ are dense in
+$\prod_{\tau}X_{\tau}$, so the closed subspace
+$\mathfrak{l}\cap\mathfrak{su}(V_{\tau},H_{\tau})$ contains
+$\mathfrak{u}_{v,\tau}$ for every isotropic $v\in V_{\tau}$. The span of these
+is stable under the adjoint action of $\SU(V_{\tau},H_{\tau})$, which permutes
+the isotropic lines, so it is a nonzero ideal of the simple Lie algebra
+$\mathfrak{su}(n,n)$, hence everything. Thus
+$\mathfrak{l}\supseteq\bigoplus_{\tau}\mathfrak{su}(V_{\tau},H_{\tau})$ and
+$L\supseteq G_{F}(\RR)^{+}$, so every $G_{F}(\QQ)$-orbit in $\cD_{F}$ is
+dense. Since $\Sigma_{F}$ is nonempty by \Cref{thm:cmbasepoint} and
+$G_{F}(\QQ)$-stable, it contains a dense orbit.
+
+(iii) The proofs of \Cref{thm:closedlocus} and \Cref{cor:allornothing} use
+only three facts: that $\cS_{F}$ is a quasi-projective variety, by the
+theorem of Baily and Borel \cite{BB66}; that the relative Hilbert schemes of
+$\cA/\cS_{F}$ are projective over it \cite{Gro61}; and that $W_{F}$ is a flat
+subsystem consisting of Hodge classes, which is \Cref{prop:cmweil}(i). They
+apply verbatim.
+
+(iv) The argument is the proof of \Cref{thm:degreebound}, which asks for a
+cycle chosen at each point (\Cref{rem:chosencycle}). The orbit is dense by
+(ii), and a finite union of the closed sets of (iii) covering it forces one of
+them to be dense and closed, hence everything; then (i) applies. As in the
+quadratic case, the hypothesis is equivalent to the conclusion
+(\Cref{thm:p1equivalent}), and the transported cycle does not satisfy it
+(\Cref{thm:p1forces}).
+
+(v) The existence of complexes with $\ch(E)=N\omega_{s_{0}}$ is the proof of
+\Cref{prop:ktheory}, applied to the algebraic cycle of \Cref{thm:cmbasepoint}
+with the isomorphism $K_{0}(A)_{\QQ}\cong\CH^{*}(A)_{\QQ}$ \cite{Ful98}. The
+deformation argument is the proof of \Cref{thm:semiregclosure} for a
+polarised Chern character, as in \Cref{rem:p2prime}. Its only inputs are
+the theorem of Buchweitz and Flenner, (iii), and the flatness of $\ch(E)$ as
+a section of Hodge classes over $\cD_{F}$; the last holds because $W_{F}$ is
+flat by \Cref{prop:cmweil}(i) and the classes $\eta_{t}$ remain of Hodge type
+on the whole family, as in the proof of \Cref{prop:cmweil}(iii). At a member
+$A_{s}$ reached by the deformation the component of degree $2n$ of the
+character is $N\omega_{s}+P_{2n}$, with $P_{2n}$ a polynomial in divisor
+classes, so $\omega_{s}$ is algebraic.
+\end{proof}
+
+\begin{corollary}[The Hodge conjecture for the very general member]
+\label{cor:verygeneral}
+Fix $(F,n,\delta)$ with $n\ge2$. The following are equivalent.
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.6em,itemsep=2pt]
+\item $\Sigma_{F}$ is closed in $\cD_{F}$.
+\item $\Sigma_{F}$ has an interior point.
+\item $\Sigma_{F}=\cD_{F}$, that is, the Weil classes are algebraic on every
+  member of the family.
+\item The Hodge conjecture holds for the very general member of the family:
+  there is a countable union of proper closed analytic subsets of $\cD_{F}$
+  outside which the Hodge conjecture holds for $A_{s}$ in every degree.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+If (a) holds, $\Sigma_{F}$ is closed and dense by
+\Cref{thm:cmpropagation}(ii), so (c) holds; and (c) implies (a) and (b). If
+(b) holds, $\Sigma_{F}$ is not meagre, since a nonempty open subset of the
+manifold $\cD_{F}$ is not meagre by Baire's theorem, and
+\Cref{thm:cmpropagation}(iii) gives (c). If (c) holds, the Hodge conjecture
+holds in every degree for every member with $\Hg(A_{s})=G_{F}$ by
+\Cref{thm:cmpropagation}(i), and these are the members outside the set $Z$ of
+\Cref{lem:cmgeneric}, so (d) holds. Finally, if (d) holds with an exceptional
+set $Z'$, then at every $s\notin Z'$ the Weil classes, which are Hodge classes
+at every point by \Cref{prop:cmweil}(i), are algebraic. So $\Sigma_{F}$
+contains the complement of $Z'$, which is not meagre by Baire's theorem,
+since each proper closed analytic subset of the connected manifold $\cD_{F}$
+is nowhere dense; by \Cref{thm:cmpropagation}(iii), $\Sigma_{F}=\cD_{F}$.
+\end{proof}
+
+\begin{proof}[Proof of \Cref{thm:main}]
+Part (i) is \Cref{thm:cmbasepoint}, parts (ii) and (iii) are
+\Cref{thm:cmpropagation}(ii) and (iii), and part (iv) is
+\Cref{cor:verygeneral}.
+\end{proof}
+
+\begin{remark}[Scope of the reduction]\label{rem:cmwhatisnew}
+The propagation statements (iv) and (v) are exactly the two forms (P1) and
+(P2) of \Cref{rem:tworemain} with $F$ in place of $K$, (v) being (P2) in the
+polarised form of \Cref{rem:p2prime}. This section proves that they are the
+whole of the problem for every CM field, and that their hypothesis is never
+vacuous: the base point exists, its cycle is written down, and the orbit
+through it is dense. The theorem of \Cref{thm:p2forces} on what (v) forces
+transfers as well, with the annihilator of a class in $W_{F}$ computed over
+the $2m$ eigenspaces in place of two, and we do not repeat it. Nothing above
+depends on Question 11.4 of \cite{Mar25b} or on any secant construction. The
+route through Weil restriction and CM points is independent of the route
+through secant sheaves and reaches every field at once; Markman has extended
+the route through secant sheaves to these fields \cite{Mar25c} (see (C3) in
+\Cref{ssec:closuremap}, and \Cref{ssec:quartic} for the smallest case).
+\end{remark}
+
+\begin{proposition}[Composite fields]\label{prop:composite}
+Let $F=KF_{0}$ with $K$ imaginary quadratic, and let $A$ be of
+$(F,n,\delta)$-Weil type. Then $A$ is of $(K,-1,mn)$-Weil type for the
+restricted action, its Weil classes $W_{K}(A)\subseteq H^{2mn}(A,\QQ)$ lie in
+the $\QQ$-span of the $m$-fold products of elements of $W_{F}(A)$, and
+$W_{K}(A)$ is algebraic whenever $W_{F}(A)$ is. In particular
+$\mathbf{W}(F,n,\delta)$ implies the algebraicity of the $K$-Weil classes on
+every member of the $F$-family, a closed subvariety of dimension $mn^{2}$ of
+the $K$-family of dimension $m^{2}n^{2}$; the converse implication is not
+available, and \Cref{thm:cmbasepoint} is not a consequence of
+\Cref{thm:everyfamily}.
+\end{proposition}
+
+\begin{proof}
+The eigenspace $V_{\tau_{K}}$ of $K$ on $V_{\CC}$ for the embedding
+$\tau_{K}$ is $\bigoplus_{\sigma|\tau_{K}}V_{\sigma}$, of dimension $2mn$
+with $\dim V_{\tau_{K}}^{1,0}=mn$ by \Cref{prop:cmweil}(i), so $A$ is of
+$K$-Weil type with balanced signature, and
+$\bigwedge^{2mn}V_{\tau_{K}}=\bigotimes_{\sigma|\tau_{K}}\bigwedge^{2n}V_{\sigma}$
+is spanned by $\prod_{\sigma|\tau_{K}}\alpha_{\sigma}$. So
+$W_{K}\otimes\CC$ is contained in the complexification of the $\QQ$-span $P$ of
+the $m$-fold products of elements of $W_{F}$, and a rational subspace whose
+complexification lies in that of $P$ lies in $P$. Since products of
+algebraic classes are algebraic, $W_{K}(A)$ is algebraic whenever $W_{F}(A)$
+is. The last sentence of the statement is a dimension count:
+for $m\ge2$ the $F$-family is a proper subvariety of the $K$-family, and the
+$K$-Weil classes on it are products that carry no information about their
+factors.
+\end{proof}
+
+\subsection{The special locus and an escaping sequence}
+\label{ssec:speciallocus}
+
+The properties of $\Sigma_{F}$ proved so far are shared by a set that is
+meagre, the locus of members whose Hodge group is smaller than
+$G_{F}$, and every construction of algebraic Weil classes available for
+$n\ge4$ produces points of that locus only. In the other direction the
+bounded criterion (iv) of \Cref{thm:cmpropagation} needs far less than an
+orbit: by the theorem of Pila, Shankar and Tsimerman on the Andr\'e--Oort
+conjecture, a bound on one sequence of CM points that leaves every proper
+special subvariety is enough (\Cref{fig:speciallocus}).
+
+\begin{definition}[Special subvarieties and the special locus]
+\label{def:speciallocus}
+Keep \Cref{setup:cmfield}, with $\Gamma$ a congruence subgroup. A
+\emph{special subvariety} of $\cS_{F}$ is an irreducible component of the
+image in $\cS_{F}$ of a connected component of the locus of Hodge classes
+$\Hdg^{p}(\mathbb{V})$, where $\mathbb{V}$ runs over the variations
+$(R^{1}\pi_{*}\ZZ)^{\otimes a}\otimes(R^{1}\pi_{*}\ZZ)^{\vee\,\otimes b}$
+of even weight, or $\cS_{F}$ itself; these are the special subvarieties of
+$\cS_{F}$ for $R^{1}\pi_{*}\ZZ$ in the sense of \cite{KOU}.%
+\footnote{By a theorem of Chevalley every algebraic subgroup of $\GL(V)$ is
+the stabiliser of finitely many tensors \cite[\S3]{Del82}, so the locus where
+the Hodge group lies in a given subgroup is a locus of Hodge tensors, and
+these subvarieties are the special subvarieties of $\cS_{F}$ as a connected
+Shimura variety, the images of the domains of the reductive subgroups of
+$G_{F}$ that contain the Hodge group of one of their points.}
+A \emph{CM point} is a point $p(s)$ at which $A_{s}$ is of CM type, that is,
+at which $\Hg(A_{s})$ is a torus; the CM points are the special points of
+$\cS_{F}$. The \emph{special locus} is
+\[
+  \Sigma^{\mathrm{sp}}_{F}
+  =\{\,s\in\cD_{F}\;:\;\Hg(A_{s})\ne G_{F}\,\}.
+\]
+\end{definition}
+
+\begin{proposition}[The special locus]\label{prop:speciallocus}
+Fix $(F,n,\delta)$ with $n\ge2$ and keep \Cref{def:speciallocus}.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item Special subvarieties are closed algebraic subvarieties of $\cS_{F}$, and
+  there are countably many of them. A special subvariety other than
+  $\cS_{F}$ is proper and nowhere dense.
+\item $\Sigma^{\mathrm{sp}}_{F}$ is the set $Z$ of \Cref{lem:cmgeneric}, and
+  it is the preimage under $p$ of the union of the proper special
+  subvarieties. In particular it is the preimage of a countable union of
+  proper Zariski closed subsets of $\cS_{F}$, and it is meagre.
+\item If $\End^{0}(A_{s})\ne F$, then $s\in\Sigma^{\mathrm{sp}}_{F}$. In
+  particular $\Sigma^{\mathrm{sp}}_{F}$ contains every point at which $A_{s}$
+  is of CM type, the base point $s_{0}$ of \Cref{thm:cmbasepoint}, and, for
+  $F$ imaginary quadratic, the split members of \Cref{setup:family}, the
+  quaternionic members of \Cref{thm:quatweil} and the products of
+  \Cref{lem:products}.
+\item $\Sigma^{\mathrm{sp}}_{F}$ is stable under $G_{F}(\QQ)$ and dense in
+  $\cD_{F}$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) Each image of a component of $\Hdg^{p}(\mathbb{V})$ is closed and
+algebraic by \Cref{thm:cdk}, applied to the polarised variation
+$\mathbb{V}$, after a Tate twist when $a<b$, so its irreducible
+components are irreducible closed subvarieties. There are countably many
+pairs $(a,b)$, each $\Hdg^{p}(\mathbb{V})$ has countably many components by
+\Cref{lem:hodgeanalytic}, and an algebraic set has finitely many irreducible
+components. A proper closed subvariety of the irreducible variety
+$\cS_{F}$ has empty interior.
+
+(ii) Let $s\in Z$, so that some rational tensor $t$ not fixed by $G_{F}$ is a
+Hodge class of $A_{s}$, and let $C$ be the component of
+$\Hdg^{p}(\mathbb{V})$ through the point $(p(s),Nt)$, for $N$ with $Nt$
+integral. Along $C$ the class is carried by parallel transport, so over
+$\cD_{F}$ it is one of the flat sections $\gamma Nt$ with $\gamma\in\Gamma$ on
+each sheet. If the image of $C$ were $\cS_{F}$, then by \Cref{lem:hodgeanalytic}
+and Baire's theorem one such section $\gamma Nt$ would be a Hodge class on a
+nonempty open subset of $\cD_{F}$, hence on all of it, since the locus
+$Z_{\gamma t}$ of \Cref{lem:cmgeneric} is closed analytic in the connected
+manifold $\cD_{F}$; the proof of \Cref{lem:cmgeneric} then shows that
+$\gamma t$, and with it $t$, is fixed by $G_{F}$, a contradiction. So $p(s)$ lies in a proper
+special subvariety. Conversely, if $p(s)$ lies in a proper special
+subvariety, an irreducible component of the image of a component $C$
+through a point $(p(s),v)$, then $v$ is a Hodge class of $A_{s}$. If $v$
+were fixed by $G_{F}$ it would be fixed by $\Gamma$, hence a flat global
+section that is a Hodge class at every point by \Cref{lem:cmgeneric}; its
+graph is open and closed in $\Hdg^{p}(\mathbb{V})$, so it would be $C$, with
+image $\cS_{F}$, and the special subvariety would not be proper. Hence $s\in Z$.
+The rest follows from (i) and \Cref{lem:cmgeneric}.
+
+(iii) The endomorphism algebra $\End^{0}(A_{s})$ is the algebra of Hodge
+classes in $\End(V)$, that is, the commutant of $\Hg(A_{s})$
+\cite[\S3]{Del82}. Over $\CC$ the group $G_{F}$ is
+$\prod_{\tau}\SL(V_{\sigma_{\tau}})$, acting on $V_{\sigma_{\tau}}$ by the
+standard representation and on $V_{\bbar\sigma_{\tau}}$, which $H$ pairs
+perfectly with $V_{\sigma_{\tau}}$, by its dual. These $2m$ representations
+are irreducible and pairwise non-isomorphic, the standard representation of
+$\SL_{2n}$ and its dual being non-isomorphic for $2n\ge3$, so the commutant
+of $G_{F}$ in $\End(V_{\CC})$ is $\CC^{2m}$, and its commutant in
+$\End_{\QQ}(V)$ is a commutative algebra of dimension $2m$ containing $F$,
+hence equal to $F$. So $\Hg(A_{s})=G_{F}$ forces $\End^{0}(A_{s})=F$. A
+member of CM type has a commutative Hodge group, and $G_{F}$ is not
+commutative; at $s_{0}$ the Hodge group lies in that of
+$B_{\Phi}^{\,n}\times B_{\bbar\Phi}^{\,n}$, a torus. The split members
+contain the projections to $X$ and to $\widehat{X}$ in
+$\End^{0}(A)$, the quaternionic members contain a quaternion algebra, and
+the products contain the projections to their factors; none of these lies
+in $K$.
+
+(iv) An element $g\in G_{F}(\QQ)$ induces an isogeny $A_{s}\to A_{gs}$ acting
+on $V$ by $g$, so $\Hg(A_{gs})=g\Hg(A_{s})g^{-1}$, and $gG_{F}g^{-1}=G_{F}$.
+By (iii) the set contains $s_{0}$, hence its orbit, which is dense by
+\Cref{thm:cmpropagation}(ii).
+\end{proof}
+
+\begin{corollary}[What closing the locus requires]\label{cor:speciallocus}
+Fix $(F,n,\delta)$ with $n\ge2$. The set $\Sigma^{\mathrm{sp}}_{F}$ has every
+property of $\Sigma_{F}$ used in \Cref{thm:main}: it contains the explicit CM
+point $s_{0}$, it is dense and stable under $G_{F}(\QQ)$, and it is the
+preimage of a countable union of Zariski closed subsets of $\cS_{F}$; and it
+is meagre. Consequently $\Sigma_{F}=\cD_{F}$ does not follow from these
+properties of $\Sigma_{F}$, and it holds only if the Weil classes are
+algebraic at some $s$ with $\Hg(A_{s})=G_{F}$, where they span, together with
+the products of divisor classes, every Hodge class of $A_{s}$.
+\end{corollary}
+
+\begin{proof}
+The properties are \Cref{prop:speciallocus}(ii) to (iv), and meagreness is
+(ii). If $\Sigma_{F}=\cD_{F}$, then $\Sigma_{F}$ contains the complement of
+$\Sigma^{\mathrm{sp}}_{F}$, which is nonempty by Baire's theorem. The last
+assertion is \Cref{prop:cmweil}(iii).
+\end{proof}
+
+The base points of \Cref{thm:cmbasepoint}, \Cref{thm:everyfamily} and
+\Cref{thm:everyn}, the split members of \Cref{thm:residual}(c), their orbits
+under $G_{F}(\QQ)$, and the members on which the divisorial method of
+\Cref{rem:whatsleftnow} works all lie in $\Sigma^{\mathrm{sp}}_{F}$ by
+\Cref{prop:speciallocus}(iii). These are all the members at which this paper
+exhibits algebraic Weil classes, so the part of $\Sigma_{F}$ exhibited here
+fits inside the meagre alternative, and the two criteria of \Cref{thm:cmpropagation}, a
+bound or a semiregular object, are what would leave it. The first can be
+weakened as follows.
+
+\begin{theorem}[One escaping sequence suffices]\label{thm:escape}
+Fix $(F,n,\delta)$ with $n\ge2$ and keep \Cref{def:speciallocus}.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item There is a sequence $y_{1},y_{2},\dots$ of distinct CM points in
+  $p\bigl(G_{F}(\QQ)\cdot s_{0}\bigr)$ such that every proper special
+  subvariety of $\cS_{F}$ contains only finitely many of them.
+\item Let $y_{1},y_{2},\dots$ be any sequence of distinct CM points of
+  $\cS_{F}$ with this property. Then $\Sigma_{F}=\cD_{F}$ if and only if there
+  is a finite set $\mathcal{T}$ of pairs $(\underline{P},\underline{q})$ such
+  that for every $k$ the class $\omega$ is represented at $y_{k}$ by a cycle
+  whose Hilbert data lies in $\mathcal{T}$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) By \Cref{prop:speciallocus}(i) the proper special subvarieties form a
+countable family $Y_{1},Y_{2},\dots$ of nowhere dense closed subsets. The
+image $p\bigl(G_{F}(\QQ)\cdot s_{0}\bigr)$ is dense in $\cS_{F}$, since the
+orbit is dense in $\cD_{F}$ by \Cref{thm:cmpropagation}(ii) and $p$ is
+continuous and surjective, and it consists of CM points by
+\Cref{prop:speciallocus}(iii), (iv). For each $k$ the complement of
+$Y_{1}\cup\dots\cup Y_{k}\cup\{y_{1},\dots,y_{k-1}\}$ is a nonempty open set,
+so it contains a point $y_{k}$ of the image. Then $y_{k}\in Y_{j}$ forces
+$k<j$, and $Y_{j}$ contains at most $j-1$ of the points.
+
+(ii) If $\Sigma_{F}=\cD_{F}$, then the countably many closed sets
+$\Sigma_{\underline{P},\underline{q}}$ of \Cref{thm:cmpropagation}(iii) cover
+$\cS_{F}$, so by Baire's theorem one of them has an interior point, and being
+Zariski closed in the irreducible $\cS_{F}$ it is all of $\cS_{F}$; take
+$\mathcal{T}$ to be that one pair. Conversely, let $W$ be the union of the
+finitely many $\Sigma_{\underline{P},\underline{q}}$ with
+$(\underline{P},\underline{q})\in\mathcal{T}$, a Zariski closed set that
+contains every $y_{k}$, and let $Y\subseteq W$ be the Zariski closure of the
+set of the $y_{k}$. The variety $\cS_{F}$ is a connected Shimura variety,
+and by the theorem of Pila, Shankar and Tsimerman
+\cite[Theorem~1.1]{PST} a subvariety of a connected Shimura variety contains
+only finitely many maximal special subvarieties.%
+\footnote{This is the Andr\'e--Oort conjecture, proved for $\cA_{g}$ by
+Tsimerman \cite{Tsi18} and in general in \cite{PST}.}
+Each $y_{k}$, being a special point of $Y$, lies in a maximal special
+subvariety contained in $Y$, so one of these finitely many, say $M$,
+contains infinitely many $y_{k}$. By hypothesis $M$ is not proper, so
+$M=\cS_{F}$, and therefore $W=\cS_{F}$. As $\cS_{F}$ is irreducible, one of
+the finitely many closed sets making up $W$ is all of $\cS_{F}$, and
+$\Sigma_{F}=\cD_{F}$ by \Cref{thm:cmpropagation}(iii).
+\end{proof}
+
+\begin{remark}[What the sequence changes]\label{rem:escape}
+\Cref{thm:escape} replaces the dense orbit of \Cref{thm:cmpropagation}(iv)
+by a discrete sequence, which may be chosen inside the orbit or among CM
+points with complex multiplication by different fields; what it must do is
+leave each proper special subvariety. Without the theorem of Pila, Shankar
+and Tsimerman the Zariski closure of such a sequence could be a proper
+subvariety that is not special, and a bound on it would give nothing. Like
+\Cref{thm:p1equivalent}, the statement is an equivalence, so it shrinks the
+set on which a bound is needed and not the problem. Read on the transported
+cycle the bound remains subject to \Cref{thm:p1forces}; read on a
+representative chosen afresh at each $y_{k}$, it is not.
+\end{remark}
+
+\begin{figure}[tbp]
+\centering
+  \includegraphics[width=\textwidth]{fig_speciallocus}
+\caption{\Cref{prop:speciallocus} and \Cref{thm:escape} on the quotient
+$\cS_{F}$. The curves are five of the countably many proper special
+subvarieties $Y_{j}$, whose union is the image of the special locus; it
+contains $p(s_{0})$ and is dense and meagre. The small dots are CM points,
+each lying on some $Y_{j}$, drawn or not. The points $y_{1},\dots,y_{6}$
+begin an escaping sequence chosen as in the proof of \Cref{thm:escape}(i):
+$y_{k}$ lies on no $Y_{j}$ with $j\le k$, so $y_{1}$ may lie on $Y_{3}$ and
+$y_{2}$ on $Y_{4}$. A point $p(s)$ at which the Hodge group is all of $G_{F}$
+lies on none of them.}
+\label{fig:speciallocus}
+\end{figure}
+
+\subsection{Weil tori of a CM field and the pure form}
+\label{ssec:cmweiltori}
+
+The argument of \Cref{thm:p2false} uses the field only through the
+eigenspaces of its action, and it extends to every CM field. For $m\ge2$ the
+Hodge ring of a very general Weil torus is larger than for an imaginary
+quadratic field, since products of Weil classes over a set of embeddings
+closed under conjugation are Hodge classes there, and a Weil torus may carry
+subvarieties of codimension $2n$; but it carries none of codimension $n$, and
+that is all the argument needs.
+
+\begin{setupenv}[Weil tori of a CM field]\label{setup:cmweiltori}
+Keep \Cref{setup:cmfield}, let $n\ge2$ and let $A$ be of $(F,n,\delta)$-Weil
+type, with $V_{\CC}=\bigoplus_{\sigma}V_{\sigma}$ as there. Complex
+conjugation carries $V_{\bbar\sigma}$ onto $V_{\sigma}$. A complex structure on
+$V_{\RR}$ commuting with $F$, with $H^{1,0}\cap V_{\sigma}$ of dimension $n$
+for every $\sigma$, is the same as a choice, for each real place $\tau$, of
+complementary $n$-dimensional subspaces $X_{\tau},Y_{\tau}\subset
+V_{\sigma_{\tau}}$: then $H^{1,0}\cap V_{\sigma_{\tau}}=X_{\tau}$,
+$H^{0,1}\cap V_{\sigma_{\tau}}=Y_{\tau}$, and on $V_{\bbar\sigma_{\tau}}$ the
+two parts are the conjugates of $Y_{\tau}$ and $X_{\tau}$. Call the complex
+torus obtained in this way a Weil torus of $F$, and let $S_{F}$ be the
+connected complex manifold of these choices, of dimension $2mn^{2}$. Its
+tangent space at $A$ is $\Hom_{F}(H^{1,0},H^{0,1})$, the polarised family
+$\cD_{F}$ is the submanifold on which $E$ is of type $(1,1)$, and $S_{F}$
+contains non-algebraic tori. For $\sigma=\sigma_{\tau}$ the line
+$\bigwedge^{2n}V_{\sigma}=\bigwedge^{n}X_{\tau}\otimes\bigwedge^{n}Y_{\tau}$ is
+of type $(n,n)$, and likewise for $\bbar\sigma_{\tau}$, so $W_{F}$ consists
+of Hodge classes on every member of $S_{F}$. For a set $\Sigma$ of
+embeddings write $\alpha_{\Sigma}=\prod_{\sigma\in\Sigma}\alpha_{\sigma}$,
+with $\alpha_{\sigma}$ spanning $\bigwedge^{2n}V_{\sigma}$.
+\end{setupenv}
+
+\begin{lemma}[Hodge classes and subvarieties of a very general Weil torus]
+\label{lem:cmweiltori}
+Let $T$ be a very general member of $S_{F}$ and $d=2mn=\dim T$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item Every Hodge class of $T$ lies in the span of the $\alpha_{\Sigma}$. In
+  particular $\Hdg^{k}(T)=0$ unless $n$ divides $k$, and
+  $\Hdg^{n}(T)=W_{F}(T)$.
+\item Let $\kappa_{0}$ be the K\"ahler class of a hermitian form on the
+  tangent space that is block diagonal for the splitting of $H^{1,0}$ into
+  the $H^{1,0}\cap V_{\sigma}$. Then $\int_{T}\alpha_{\Sigma}\,
+  \kappa_{0}^{\,d-n|\Sigma|}=0$ unless $\Sigma$ is closed under conjugation.
+\item Every irreducible analytic subset of $T$ other than a point and $T$
+  itself has codimension $ns$ with $s$ even, hence at least $2n$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) As in the proof of \Cref{lem:weiltorushodge}: a rational class of Hodge
+type at a very general member is of Hodge type on all of $S_{F}$, and the
+Mumford--Tate group $M$ of a very general member lies in
+$G=\Res_{F/\QQ}\mathrm{GL}_{F}(V)$, since $F$ acts by endomorphisms. Here
+$G(\RR)=\prod_{\tau}\mathrm{GL}(V_{\sigma_{\tau}})$ acts transitively on
+$S_{F}$, and the $\mathrm{Ad}\,G(\RR)$-span of the complex structure of one
+member is an ideal of $\bigoplus_{\tau}\mathfrak{gl}_{2n}(\CC)$ whose
+projection to every factor contains a non-central element, $i$ on $X_{\tau}$
+and $-i$ on $Y_{\tau}$. An ideal of a sum of simple real Lie algebras is a
+sum of some of them, and each $\mathfrak{sl}_{2n}(\CC)$ is simple as a real
+Lie algebra, so the span contains $\bigoplus_{\tau}\mathfrak{sl}_{2n}(\CC)$
+and $M$ contains $\Res_{F/\QQ}\mathrm{SL}_{F}(V)$. Over $\CC$ this group is
+$\prod_{\sigma}\mathrm{SL}(V_{\sigma})$ acting on
+$\bigwedge^{*}V_{\CC}=\bigotimes_{\sigma}\bigwedge^{*}V_{\sigma}$, and the
+invariants of $\mathrm{SL}(V_{\sigma})$ in $\bigwedge^{*}V_{\sigma}$ are
+$\bigwedge^{0}$ and $\bigwedge^{2n}$. So the invariants are spanned by the
+$\alpha_{\Sigma}$, of degree $2n|\Sigma|$, and a rational class in the span
+of the $\alpha_{\sigma}$ lies in $W_{F}$.
+
+(ii) Choose the hermitian form so that $\kappa_{0}=
+\sqrt{-1}\sum_{\sigma}\sum_{k}\xi_{\sigma,k}\wedge\bbar\xi_{\sigma,k}$ with
+$\xi_{\sigma,k}$ a basis of $H^{1,0}\cap V_{\sigma}$; each term lies in
+$V_{\sigma}\otimes V_{\bbar\sigma}$. A product of classes has nonzero
+integral only if its degree in every $V_{\rho}$ is $2n$. The factor
+$\alpha_{\Sigma}$ has degree $2n$ in $V_{\rho}$ for $\rho\in\Sigma$ and $0$
+otherwise, and every term of a power of $\kappa_{0}$ has the same degree in
+$V_{\rho}$ as in $V_{\bbar\rho}$. For $\rho\in\Sigma$ that degree must be
+$0$, so $V_{\bbar\rho}$ must be filled by $\alpha_{\Sigma}$, that is
+$\bbar\rho\in\Sigma$.
+
+(iii) Let $Z$ be irreducible of codimension $c$ with $0<c<d$. For a K\"ahler
+class $\kappa$, $\int_{T}[Z]\,\kappa^{d-c}=\int_{Z}\kappa^{d-c}>0$, so $[Z]$ is
+a nonzero Hodge class of degree $2c$, and by (i) $c=ns$ and $[Z]$ is a
+combination of the $\alpha_{\Sigma}$ with $|\Sigma|=s$. Complex conjugation
+permutes the embeddings without fixed points, so a set closed under it has
+even size; if $s$ were odd, (ii) would give $\int_{T}[Z]\,\kappa_{0}^{d-c}=0$.
+\end{proof}
+
+\begin{proposition}[Coherent sheaves on a very general Weil torus of $F$]
+\label{prop:cmweiltorussheaves}
+Let $T$ be a very general member of $S_{F}$. Every coherent analytic sheaf
+$\mathcal{F}$ on $T$ has $\ch_{k}(\mathcal{F})=0$ in $H^{2k}(T,\QQ)$ for
+$1\le k\le2n-1$.
+\end{proposition}
+
+\begin{proof}
+The Chern classes of \cite{Gri10} are Hodge classes, additive, and
+compatible with restriction to open subsets, so by
+\Cref{lem:cmweiltori}(i) only $k=n$ needs an argument. First let
+$\mathcal{F}$ be supported on a proper analytic subset $W$. Its restriction to
+$T\smallsetminus W$ is zero, so $\ch_{n}(\mathcal{F})$ comes from
+$H^{2n}_{W}(T,\QQ)$, which is isomorphic to the Borel--Moore homology
+$H_{2d-2n}(W,\QQ)$; by \Cref{lem:cmweiltori}(iii) every component of $W$ has
+codimension at least $2n$, so $W$ has real dimension at most $2d-4n<2d-2n$
+and that group vanishes. In general, the torsion of $\mathcal{F}$ is of this
+kind, and so is the cokernel of the inclusion of a torsion-free sheaf in its
+reflexive hull. Every coherent sheaf has $c_{1}=0$, since $\Hdg^{1}(T)=0$, so
+as in the proof of \Cref{prop:weiltorussheaves} a torsion-free sheaf has a
+Jordan--H\"older filtration whose factors $Q_{j}$ are stable for every
+K\"ahler class, and $\ch_{n}(Q_{j})=\ch_{n}(Q_{j}^{**})$. By Bando and Siu
+\cite{BS94}, $\int_{T}c_{2}(Q_{j}^{**})\,\kappa_{0}^{d-2}\ge0$, with equality
+exactly when $Q_{j}^{**}$ is a projectively flat bundle. Here
+$c_{2}(Q_{j}^{**})$ lies in $\Hdg^{2}(T)$, which is zero for $n\ge3$ and is
+$W_{F}(T)$ for $n=2$, where the integral vanishes by
+\Cref{lem:cmweiltori}(ii) with $|\Sigma|=1$. So $Q_{j}^{**}$ is projectively
+flat with $c_{1}=0$, hence flat, and $\ch_{n}(Q_{j})=0$. Summing over the
+factors and adding the torsion gives $\ch_{n}(\mathcal{F})=0$.
+\end{proof}
+
+\begin{theorem}[The pure form is never met, for any CM field]
+\label{thm:cmpurefalse}
+Let $n\ge2$, let $A$ be of $(F,n,\delta)$-Weil type, and let $E$ be a
+perfect complex on $A$ whose Chern character stays of Hodge type on every
+member of $S_{F}$ and has $\ch_{n}(E)\ne0$; for instance
+$\ch(E)=c+N\omega$ with $c\in\QQ$, $N\ne0$ and $\omega$ a nonzero rational
+Weil class. Then $\sigma_{E}$ is not injective, and
+$\dim\Ext^{2}(E,E)>r(\ch E)$. In particular no complex of the pure form
+$\ch(E)=N\omega_{s_{0}}$ in \Cref{thm:cmpropagation}(v), with or without a
+rank, has injective semiregularity map, whatever the CM field.
+\end{theorem}
+
+\begin{proof}
+The proof of \Cref{thm:p2false} applies with $S_{F}$ in place of $S$: an
+injective $\sigma_{E}$ would let $E$ deform, by the theorem of Buchweitz and
+Flenner in Pridham's form and Kuranishi's method, to a bounded complex of
+holomorphic vector bundles on every member of a neighbourhood of $A$ in
+$S_{F}$, with Chern character the parallel transport of $\ch(E)$; at a very
+general member $\ch_{n}$ of that complex vanishes by
+\Cref{prop:cmweiltorussheaves}, while it is the transport of
+$\ch_{n}(E)\ne0$. A class $c+N\omega$ is of Hodge type on all of $S_{F}$ by
+\Cref{setup:cmweiltori}. The inequality follows from the square
+$\sigma_{E}\circ\operatorname{ev}_{E}=(\,\cdot\,)\lrcorner\ch(E)$, since
+$\dim\Ext^{2}(E,E)\ge\operatorname{rk}\operatorname{ev}_{E}\ge r(\ch E)$ and
+equality in both forces $\operatorname{ev}_{E}$ onto with kernel the
+annihilator, and then $\sigma_{E}$ injective, as in
+\Cref{thm:p2primenumber}(iv).
+\end{proof}
+
+For $m=1$ this is \Cref{thm:p2false}, and for $m=1$, $n=2$ the vanishing of
+\Cref{prop:cmweiltorussheaves} is Voisin's theorem \cite[Theorem~10]{Voi02b}.
+So the criterion of \Cref{thm:cmpropagation}(v) needs a polynomial $P$ in the
+classes $\eta_{t}$ that is not constant, for every CM field and every
+$n\ge2$. At a quartic field and $n=2$ this pushes the least possible value of
+$\dim\Ext^{2}(E,E)$ for a complex meeting it from $80$ to $88$
+(\Cref{cor:quarticleast}).

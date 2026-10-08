@@ -1,0 +1,99 @@
+\section{Conventions}\label{sec:conventions}
+\enlargethispage{3pt}
+
+All varieties are over $\CC$ and all cohomology is singular cohomology with
+the indicated coefficients. For a smooth projective variety $X$ we write
+$H^{p,q}(X)$ for the Hodge components of $H^{p+q}(X,\CC)$, and
+\[
+  \Hdg^{p}(X)=H^{2p}(X,\QQ)\cap H^{p,p}(X)
+\]
+for the space of rational Hodge classes of type $(p,p)$. A class is
+\emph{algebraic} if it lies in the image of the cycle class map
+$\cl^{p}_{X}\colon\CH^{p}(X)_{\QQ}\to\Hdg^{p}(X)$. The algebraic classes form
+a subring of $H^{*}(X,\QQ)$, because the cycle class map carries intersection
+products to cup products.%
+\footnote{The intersection product on $\CH^{*}(X)_{\QQ}$ is defined because
+$X$ is smooth, and its compatibility with the cycle class map is proved in
+\cite[Chapter~19]{Ful98}. The integral form of the question, with $\ZZ$ in
+place of $\QQ$, is a different problem and is not considered in this paper.}
+
+An abelian variety $A$ of dimension $g$ has $H^{1}(A,\QQ)$ of dimension $2g$
+and a canonical isomorphism
+\begin{equation}\label{eq:wedge}
+  H^{k}(A,\QQ)\;\cong\;\textstyle\bigwedge^{k}H^{1}(A,\QQ)
+\end{equation}
+of Hodge structures, with the cup product on the left corresponding to the
+wedge product on the right. We use \eqref{eq:wedge} without further comment;
+it is what makes every computation below finite.%
+\footnote{Topologically $A=V/\Lambda$ is a real torus of dimension $2g$, so
+$H^{*}(A,\ZZ)=\bigwedge^{*}\Hom(\Lambda,\ZZ)$ by the K\"unneth formula for
+$(S^{1})^{2g}$, with the cup product corresponding to the wedge product. The
+Hodge decomposition of $H^{k}$ is the $k$-th exterior power of
+$H^{1}=H^{1,0}\oplus H^{0,1}$, because the translation-invariant forms
+$dz_{I}\wedge d\bbar z_{J}$ are harmonic for the flat metric and represent
+every class.}
+The dual abelian variety is $\Av=\Pic^{0}(A)$, and
+$H^{1}(\Av,\QQ)\cong H^{1}(A,\QQ)^{\vee}$.
+
+A polarisation of $A$ is a class $\theta\in\NS(A)\otimes\QQ$ that is ample;
+equivalently, an alternating form $E$ on $H_{1}(A,\QQ)$ satisfying the Riemann
+relations. The polarisation is principal when $E$ is unimodular on
+$H_{1}(A,\ZZ)$, and then $\theta^{g}/g!$ is the class of a point. We write
+$\theta'$ for the polarisation on $\Av$ induced by $\theta$ through the
+isogeny $\phi_{\theta}\colon A\to\Av$; when $\theta$ is principal,
+$\phi_{\theta}$ is an isomorphism and $\phi_{\theta}^{*}\theta'=\theta$.
+
+For an endomorphism $f$ of $A$ we write $f^{*}$ for the induced map on
+cohomology. When a field $K$ acts on $A$ through
+$\iota\colon K\hookrightarrow\End^{0}(A)=\End(A)\otimes\QQ$, each $\tau\in K$
+acts on $H^{*}(A,\QQ)$ through $\iota(\tau)$, and we speak of the action of
+$\tau$ when $\iota$ is understood. For nonzero $\tau$ in the order
+$\iota^{-1}(\End(A))$ the element $\iota(\tau)$ is an isogeny; every element
+of $K$ is a rational multiple of an element of this order, so the general
+case follows by $\QQ$-linearity, and no statement below depends on the
+distinction.
+
+The Chern character of a bounded complex $\cE^{\bullet}$ of locally free
+sheaves is $\ch(\cE^{\bullet})=\sum_{i}(-1)^{i}\ch(\cE^{i})$. On a smooth
+projective variety every bounded complex of coherent sheaves is
+quasi-isomorphic to such a complex, and the resulting class depends only on
+the object of $D^{b}$. We write $\ch_{k}$ for the component in $H^{2k}$.
+On an abelian variety the tangent bundle is trivial, and so is the Todd
+class. Grothendieck--Riemann--Roch therefore reads
+$\ch(f_{!}x)=f_{*}\ch(x)$ for a morphism $f$ between abelian varieties, and
+$\ch\colon K_{0}(A)_{\QQ}\to\CH^{*}(A)_{\QQ}$ is an isomorphism of rings
+\cite[Chapter~15]{Ful98}; both facts are used without further mention. For
+the inclusion of a smooth subvariety, whose normal bundle need not be
+trivial, the Todd class of the normal bundle enters, and it is written out
+where it matters.
+
+For the Fourier--Mukai transform we follow \cite{Muk81}. The Poincar\'e bundle
+$\cP$ on $A\times\Av$ is normalised so that $\cP|_{A\times\{0\}}$ and
+$\cP|_{\{0\}\times\Av}$ are trivial. With $p\colon A\times\Av\to A$ and
+$q\colon A\times\Av\to\Av$ the projections, the transform is
+\[
+  \Phi_{\cP}\colon D^{b}(\Av)\to D^{b}(A),
+  \qquad
+  \Phi_{\cP}(\cG)=Rp_{*}\bigl(Lq^{*}\cG\otimes^{L}\cP\bigr).
+\]
+On cohomology we write the induced map with the same symbol,
+\[
+  \Phi_{\cP}\colon H^{*}(\Av,\QQ)\longrightarrow H^{*}(A,\QQ),
+  \qquad
+  \Phi_{\cP}(x)=p_{*}\bigl(q^{*}x\cdot\ch(\cP)\bigr),
+\]
+and the Grothendieck--Riemann--Roch theorem gives
+$\ch(\Phi_{\cP}(\cG))=\Phi_{\cP}(\ch(\cG))$ because the Todd class of an
+abelian variety is trivial; see \Cref{prop:grr}.
+
+For an imaginary quadratic field $K$ we write $\Nm=\Nm_{K/\QQ}$ for the norm
+and $\bbar{\tau}$ for the conjugate of $\tau\in K$. Characters of $\Kx$ are
+written multiplicatively, and $\Nm^{n}$ denotes $\tau\mapsto\Nm(\tau)^{n}$.
+
+Finally, we say that a construction is \emph{of ambient type} if it has the
+shape of the hypothesis of \Cref{thm:divisor}: a morphism
+$i\colon\Av\to\PP^{N-1}$ defined by a linear system, an object $\cF$ of
+$D^{b}(\PP^{N-1})$, and the class $\ch_{k}(\Phi_{\cP}(Li^{*}\cF))$. Nothing is
+assumed about $\cF$: it may be the structure sheaf of a secant variety, of a
+join, of a determinantal locus or of any other subscheme, and it may be
+twisted by any line bundle from the ambient space.

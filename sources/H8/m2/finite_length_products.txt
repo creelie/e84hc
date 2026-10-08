@@ -1,0 +1,55 @@
+finite length complexes: the product of two independent jet classes
+
+-- c = 2
+  [PASS] k = R/m has finite length
+  [PASS] k = R/m:  chi = 1,  every product J(b)J(a) with a,b independent is nonzero: true
+  [PASS] R/m^2 has finite length
+  [PASS] R/m^2:  chi = 3,  every product J(b)J(a) with a,b independent is nonzero: true
+  [PASS] R/m^3 has finite length
+  [PASS] R/m^3:  chi = 6,  every product J(b)J(a) with a,b independent is nonzero: true
+  [PASS] R/(x1, x2^2) has finite length
+  [PASS] R/(x1, x2^2):  chi = 2,  every product J(b)J(a) with a,b independent is nonzero: true
+  [PASS] R/(x1^2, x2^3) has finite length
+  [PASS] R/(x1^2, x2^3):  chi = 6,  every product J(b)J(a) with a,b independent is nonzero: true
+  [PASS] R/(x1^2+x2^2, x1 x2) has finite length
+  [PASS] R/(x1^2+x2^2, x1 x2):  chi = 4,  every product J(b)J(a) with a,b independent is nonzero: true
+  [PASS] R/(x1^3, x1 x2, x2^2) has finite length
+  [PASS] R/(x1^3, x1 x2, x2^2):  chi = 4,  every product J(b)J(a) with a,b independent is nonzero: true
+  [PASS] R/(x1^2, x1 x2^2, x2^4) has finite length
+  [PASS] R/(x1^2, x1 x2^2, x2^4):  chi = 6,  every product J(b)J(a) with a,b independent is nonzero: true
+  [PASS] R/(x1^3 - x2^3, x1^2 x2, x1 x2^2) has finite length
+  [PASS] R/(x1^3 - x2^3, x1^2 x2, x1 x2^2):  chi = 7,  every product J(b)J(a) with a,b independent is nonzero: true
+  [PASS] m/m^3 (not cyclic) has finite length
+  [PASS] m/m^3 (not cyclic):  chi = 5,  every product J(b)J(a) with a,b independent is nonzero: true
+  [PASS] coker of a 2x3 matrix (not cyclic) has finite length
+  [PASS] coker of a 2x3 matrix (not cyclic):  chi = 3,  every product J(b)J(a) with a,b independent is nonzero: true
+  [PASS] k (+) R/m^2 has finite length
+  [PASS] k (+) R/m^2:  chi = 4,  every product J(b)J(a) with a,b independent is nonzero: true
+
+-- c = 3
+  [PASS] k = R/m has finite length
+  [PASS] k = R/m:  chi = 1,  every product J(b)J(a) with a,b independent is nonzero: true
+  [PASS] R/m^2 has finite length
+  [PASS] R/m^2:  chi = 4,  every product J(b)J(a) with a,b independent is nonzero: true
+  [PASS] R/(y1, y2, y3^2) has finite length
+  [PASS] R/(y1, y2, y3^2):  chi = 2,  every product J(b)J(a) with a,b independent is nonzero: true
+  [PASS] R/(y1^2, y2^2, y3^2) has finite length
+  [PASS] R/(y1^2, y2^2, y3^2):  chi = 8,  every product J(b)J(a) with a,b independent is nonzero: true
+  [PASS] R/(y1 y2, y2 y3, y1 y3, y1^2, y2^2, y3^3) has finite length
+  [PASS] R/(y1 y2, y2 y3, y1 y3, y1^2, y2^2, y3^3):  chi = 5,  every product J(b)J(a) with a,b independent is nonzero: true
+  [PASS] R/(y1^2 - y2^2, y2^2 - y3^2, y1 y2, y2 y3, y1 y3) (Gorenstein) has finite length
+  [PASS] R/(y1^2 - y2^2, y2^2 - y3^2, y1 y2, y2 y3, y1 y3) (Gorenstein):  chi = 5,  every product J(b)J(a) with a,b independent is nonzero: true
+
+-- complexes with more than one cohomology module, c = 2
+  [PASS] k (+) k[1] (+) k:  chi = 1,  every product J(b)J(a) with a,b independent is nonzero: true
+  [PASS] R/m^2 (+) k[1]:  chi = 2,  every product J(b)J(a) with a,b independent is nonzero: true
+  [PASS] R/m^2 (+) k[1] (+) k[1]:  chi = 1,  every product J(b)J(a) with a,b independent is nonzero: true
+
+-- sharpness: chi = 0 is necessary for the product to vanish, and not sufficient
+  [PASS] the cone of J(x2)J(x1) on the Koszul complex is a complex
+  [PASS] its Euler characteristic is 0
+  [PASS] its cohomology has finite length, lengths {0, 1, 1, 0, 0, 0}
+  [PASS] on the cone, J(x2)J(x1) is null homotopic
+  [PASS] on the split complex k (+) k[1], also of Euler characteristic zero, J(x2)J(x1) is not null homotopic
+
+44 checks passed, 0 failed

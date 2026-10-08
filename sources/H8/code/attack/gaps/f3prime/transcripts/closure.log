@@ -1,0 +1,15 @@
+open statements: 16  subsets: 65536
+minimal sets, old rule set: [('P2_cm_s', 'red_ab_mod', 'red_weil'), ('lef_B', 'mot'), ('lef_B', 'red_ab_mod'), ('red_ab',), ('red_ab_mod', 'vhc')]
+minimal sets, with F3' => M: [('P2_cm_s', 'red_ab_mod', 'red_weil'), ('lef_B', 'mot'), ('lef_B', 'red_ab_mod'), ('red_ab',), ('red_ab_mod', 'vhc')]
+[PASS] minimal sufficient sets unchanged by the rule F3' => M
+[PASS] closure of {lef_B, red_ab_mod} contains mot
+[PASS] closure of {red_ab_mod} contains mot but not HC
+[PASS] closure of {mot} does not contain HC
+    ('P2_cm_s', 'red_ab_mod', 'red_weil') -> mot in closure: True
+    ('lef_B', 'mot') -> mot in closure: True
+    ('lef_B', 'red_ab_mod') -> mot in closure: True
+    ('red_ab',) -> mot in closure: False
+    ('red_ab_mod', 'vhc') -> mot in closure: True
+[PASS] every minimal set other than {red_ab} derives mot inside the rules
+[PASS] {lef_B, red_ab_mod} derives every member of {lef_B, mot}
+6 checks passed, 0 failed

@@ -1,0 +1,17 @@
+(B1) dim H_A in H^{2k}, k=0..8: [1, 3, 6, 10, 15, 10, 6, 3, 1]  total 55
+(B2) eta^W1 = 0: True  eta^W2 = 0: True
+     W1, W2 in H_A: True True
+     W1, W2, eta^4 independent: True
+     int W1^2 = 5971968  int W2^2 = 1990656  int W1 W2 = 0  int eta^8 = 3265920
+(B3) [B_(1,0)] = betahat^4/24: True   [B_(0,1)] = beta^4/24: True
+     B_(1,1): in H_A True, int [B]^2 = 0, int [B][B_(1,0)] = 1 (expect q^8 = 1)
+     B_(1,-1): in H_A True, int [B]^2 = 0, int [B][B_(1,0)] = 1 (expect q^8 = 1)
+     B_(2,1): in H_A True, int [B]^2 = 0, int [B][B_(1,0)] = 1 (expect q^8 = 1)
+     B_(1,2): in H_A True, int [B]^2 = 0, int [B][B_(1,0)] = 256 (expect q^8 = 256)
+     B_(3,-2): in H_A True, int [B]^2 = 0, int [B][B_(1,0)] = 256 (expect q^8 = 256)
+(B4) [B_(p,q)] = sum_k p^k q^(8-k) C_k for test points: True
+     rank of C_0..C_8: 9
+     Re P(1,-delta) prop. to W1, Im/delta prop. to W2: (True, Fraction(1, 24)) (True, Fraction(1, 24))
+(B5) W1, W2 in span C_k: True True   eta^4 in span C_k: False
+     degree-8 part of H_A has dim 15 ; span of subtori classes has dim 9
+time 0.2s

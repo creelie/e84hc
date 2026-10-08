@@ -1,0 +1,20 @@
+(V1) fitted on 90 line bundles; rank of graph = 55 (expect 55)
+     subtorus (1,0): ch = +Phi: True, = -Phi: False
+     subtorus (0,1): ch = +Phi: True, = -Phi: False
+     subtorus (1,1): ch = +Phi: True, = -Phi: False
+     subtorus (2,1): ch = +Phi: True, = -Phi: False
+     subtorus (1,-3): ch = +Phi: True, = -Phi: False
+     subtorus (3,2): ch = +Phi: True, = -Phi: False
+     twisted subtorus (1,1) by S=(1,0,0): True
+     twisted subtorus (2,1) by S=(0,1,1): True
+     twisted subtorus (1,-2) by S=(2,-1,1): True
+     point class: True
+(V1) overall: True
+(V2) Phi(Re P(L_+)^4) prop W1: (True, Fraction(1, 24))  Phi(Im) prop W2: (True, Fraction(1, 24))
+     e^{1 eta} = Phi(P(L_{1 diag(d,1)})^4): True
+     e^{2 eta} = Phi(P(L_{2 diag(d,1)})^4): True
+     e^{-1 eta} = Phi(P(L_{-1 diag(d,1)})^4): True
+(V3) rank [P_theta] = 3, rank [P_theta, Re L+] = 4, [P_theta, Im L+] = 4, [P_theta, Re, Im] = 5
+     => L_+- not in P_theta, line L_+L_- misses P_theta iff last rank is 5
+     every tested point of C_theta is conjugate to L_+ (line in Q^3): True
+     (general t: B(ReL, L_t) = (t d - d t)/2 = 0 identically, B(ImL, L_t) = 0)

@@ -1,0 +1,9 @@
+  [PASS] (L) R_Z equals the congruence lattice {V in Herm_3(O_0): V_11 = V_20 mod sqrt5}
+  [PASS] (1) rank-one integral V: 20 | chi  (228 random classes)
+  [PASS] (2) rank-two integral V: adj V = mu lbar l^T, mu in Z, tr(JVJVbar) = chi, sigma_2(JVJVbar) = mu^2 N(Delta), chi^2 = 4 mu^2 N(Delta) mod 5; for complex-secant V also chi^2 >= 4 sigma_2 with equality iff r^2 = 12 (614 classes; complex-secant: {'eq': 0, 'strict': 80})
+         []
+  [PASS] (3) -phi^{2k} and -2 phi^{2k} are not squares modulo 4 Z[phi] (k = 0..11; phi^6 = 1 mod 4)
+         squares mod 4 (coords in 1,phi): [(0, 0), (1, 0), (1, 1), (2, 3)]
+time 40.7s
+
+4 checks passed, 0 failed

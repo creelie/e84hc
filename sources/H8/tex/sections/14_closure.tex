@@ -1,0 +1,301 @@
+\section{The closure theorem}\label{sec:final}
+
+We collect the results of the paper in one theorem. Its first clause is
+\Cref{thm:main}; the second and third give the base of that theorem in its
+sharpest form; the fourth and fifth say what closing the algebraic locus
+requires and which constructions cannot supply it; and the last places the
+Weil classes inside the Hodge conjecture and states what \Cref{thm:main}
+becomes when it is carried to every family. The theorems we quote from the
+literature are used as theorems: the semiregularity theorem of Buchweitz and
+Flenner \cite{BF03}, in the form for perfect complexes that Pridham proves
+\cite{Pri24}; the theorem of Cattani, Deligne and Kaplan \cite{CDK95}; the
+theorem of Baily and Borel \cite{BB66}; the theorem of Pila, Shankar and
+Tsimerman on the Andr\'e--Oort conjecture \cite{PST}; the description of the
+Hodge rings of abelian varieties of dimension at most five by Moonen and Zarhin
+\cite{MZ99}; Markman's theorems on abelian varieties of Weil type
+\cite{Mar25a,Mar25b}; the theorem of Bando and Siu on stable reflexive
+sheaves \cite{BS94}, Kuranishi's theorem in the form of Goldman and Millson
+\cite{Kur65,GM88}, Grivaux's Chern classes of coherent sheaves \cite{Gri10}
+and Voisin's theorem on Weil tori \cite{Voi02b}; and the theorems of Deligne,
+Andr\'e and Milne recorded in \Cref{ssec:bullseye}
+\cite{Del71,And96b,Mil20}.
+
+\begin{theorem}[Closure]\label{thm:final}
+Let $F$ be a CM field of degree $2m$, let $n\ge2$, and let $\delta$ be a
+discriminant. Write $K=\QQ(\sqrt{-d})$ when $m=1$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.8em,itemsep=4pt]
+\item \emph{The algebraic locus.} The algebraic locus $\Sigma_{F}$ of the Weil
+  classes contains an explicit CM point at which they are polynomials with
+  rational coefficients in divisor classes, it is dense, it is a countable
+  union of closed algebraic strata, and it is either the whole domain or
+  meagre. It is closed if and only if the Hodge conjecture holds for the very
+  general member of the family, and then the Weil classes are algebraic on
+  every member (\Cref{thm:main}).
+\item \emph{One class on one connected domain.} For an abelian $2n$-fold $A$ of
+  $(K,-1,n)$-Weil type with $\Hg(A)=\SU(V,H)$ one has
+  $\dim_{\QQ}\Hdg^{k}(A)=1$ for $k\ne n$ and $3$ for $k=n$, and the Hodge
+  conjecture for $A$ in every degree is the algebraicity of the single class
+  $\omega_{1}$ of \eqref{eq:omegagens}, written out with $2^{2n-1}$ integer
+  coefficients. For the family of the triple $(K,n,\delta)$ the conjecture is
+  equivalent to the algebraicity of the absolutely Hodge class $\omega_{s}$ at
+  every point $s$ of the connected period domain $\cD_{n,n}$ of dimension
+  $n^{2}$ (\Cref{thm:hdgcount}, \Cref{cor:whatisleft}, \Cref{thm:residual},
+  \Cref{cor:exactform}).
+\item \emph{A base point in every family.} Every family of every CM field
+  contains a member isogenous to a product of CM abelian $m$-folds at which
+  the Weil classes are polynomials in divisor classes
+  (\Cref{thm:cmbasepoint}). For an imaginary quadratic field every family also
+  contains a member with quaternionic multiplication extending $K$, at which
+  the Weil classes are the real and imaginary parts of the $n$-th power of one
+  explicit $(1,1)$ class, and every product of $n$ abelian surfaces of Weil
+  type is a member whose Weil classes are an explicit integral polynomial in
+  $2n$ divisor classes (\Cref{thm:quatweil}, \Cref{thm:everyfamily},
+  \Cref{thm:everyn}).
+\item \emph{Closing the locus.} If at every point of the orbit
+  $G_{F}(\QQ)\cdot s_{0}$ the Weil class is represented by a cycle whose
+  Hilbert data comes from one finite set, then $\Sigma_{F}=\cD_{F}$; this
+  hypothesis is equivalent to its conclusion, and the transported cycle does
+  not satisfy it whenever a component of the base cycle has finite stabiliser
+  (\Cref{thm:degreebound}, \Cref{thm:p1equivalent}, \Cref{thm:p1forces}).
+  The bound is needed only along one sequence of CM points that leaves every
+  proper special subvariety, and such a sequence exists inside the orbit
+  (\Cref{thm:escape}). The locus of members with smaller Hodge group, which
+  contains every member at which this paper exhibits algebraic Weil
+  classes, contains the base point, is dense, stable under
+  $G_{F}(\QQ)$ and a countable union of closed algebraic strata, and is
+  meagre, so closing the locus requires the algebraicity of the Weil classes
+  at a member with full Hodge group (\Cref{prop:speciallocus}, \Cref{cor:speciallocus}). If
+  at a base point some perfect complex whose Chern character is a nonzero
+  multiple of a rational Weil class plus a polynomial in the divisor classes
+  of the family has injective semiregularity map, or satisfies the flatness
+  condition of \Cref{prop:p2flat}, then $\Sigma_{F}=\cD_{F}$
+  (\Cref{thm:semiregclosure}, \Cref{thm:cmpropagation}). When the Chern
+  character is exactly a multiple of a Weil class, no complex at any member of
+  any family, for any CM field, has injective semiregularity map
+  (\Cref{thm:p2false}, \Cref{thm:cmpurefalse}). In the polarised form, for an
+  imaginary quadratic field and $n\ge3$, every object has
+  $\dim\Ext^{2}(E,E)\ge(4+\rho)n^{2}-2n$, with $\rho\le3$ the rank of the
+  Hankel matrix of the coefficients, and an object attaining the bound meets
+  the criterion (\Cref{thm:p2primenumber}); at a quartic
+  CM field and $n=2$ the number takes fifteen values, an object meeting the
+  criterion has $\dim\Ext^{2}(E,E)\ge88$, and the characters of rank $88$
+  whose Hodge locus leaves the polarised family are exactly those of
+  $\theta^{4}$ shape, which the Weil tori exclude (\Cref{thm:quarticrank},
+  \Cref{cor:quarticleast}, \Cref{prop:quarticlocus},
+  \Cref{cor:quarticlocus}). The statement is needed only for the split
+  families of the CM fields of degree at least four, which carry the Weil
+  classes of every CM field by descent and scalar extension
+  (\Cref{prop:descent}), and for one family it is equivalent to the Lefschetz
+  standard conjecture for the total space of the family over a curve through a
+  base point (\Cref{cor:weilequiv}).
+\item \emph{Constructions that do not reach a Weil class.} Each of the
+  following fails to produce a Weil class on a general member, in the sense
+  and under the hypotheses of the theorem cited, which \Cref{sec:scope}
+  delimits:
+  \begin{enumerate}[label=\textup{(\alph*)},nosep,leftmargin=2.2em]
+  \item an object restricted from a projective space to the dual and
+    transported by the Poincar\'e kernel (\Cref{thm:divisor});
+  \item equivariant for the field with the norm character
+    (\Cref{thm:character});
+  \item an object whose Chern character lies on the Weil line and on which
+    $H^{2}(\cO_{A})$ acts faithfully, whether through semiregularity or
+    through the weakened criterion of \cite[Question~11.4]{Mar25b}
+    (\Cref{thm:rankzero}, \Cref{cor:kernelfamily}, \Cref{thm:weakfails});
+  \item an object with a line bundle summand off the polarisation line, in
+    particular a sum of line bundles (\Cref{thm:linebundle},
+    \Cref{cor:noline});
+  \item an object whose Chern character is effective at a base point
+    (\Cref{thm:positivity});
+  \item induction through hyperplane sections, in either direction
+    (\Cref{thm:hyperplane}, \Cref{thm:returntrip});
+  \item Kuga--Satake from a weight two sub-structure of $H^{2}(A,\QQ)$
+    (\Cref{prop:normpart}, \Cref{cor:ksboundary});
+  \item a divisorial argument at a general member of a family of nontrivial
+    discriminant (\Cref{prop:divfails});
+  \item a secant object whose support has two smooth branches of codimension
+    two meeting transversally at a point, which includes the candidate of
+    \cite[Section~12]{Mar25b} (\Cref{thm:candidatefails},
+    \Cref{cor:localobstruction}, \Cref{cor:cmdichotomy});
+  \item a secant object of rank one whose support is a complete intersection
+    of two divisors (\Cref{thm:noci}), or a secant object quasi-isomorphic to
+    a two-term complex of sums of powers of the polarisation or of simple
+    semi-homogeneous bundles (\Cref{thm:nosplit}, \Cref{thm:noblocks}); on
+    the fourfold, a secant sheaf $\cI_{S}(3\Theta)$ with smooth support
+    unless $d\le9$, that is $d\in\{1,3,5,7\}$ in \Cref{setup:markman}, and
+    one whose ideal sheaf is presented by two bundles
+    with classes in the subring generated by line bundles unless
+    $d\equiv15,23\pmod{24}$ (\Cref{cor:fourdiscriminants},
+    \Cref{cor:latticeburch});
+  \item a representative of the Weil $K$-theory class that is a locally free
+    sheaf on a smooth germ of codimension at least two of its support, or
+    whose support has codimension at least $n$ (\Cref{thm:p2forces},
+    \Cref{thm:p2support});
+  \item at a quartic CM field, a complex with secant character that is
+    locally free on a smooth curve at some point, in particular the explicit
+    pair of \cite[Example~11.2.7]{Mar25c} (\Cref{thm:quarticlocal},
+    \Cref{cor:markmanquarticfails});
+  \item a convolution of fewer than $2n$ line bundles with nondegenerate
+    differences (\Cref{thm:fewpieces}); on $E_{0}^{6}$, every convolution
+    of the Weil pieces with three multiples of the polarisation, and on
+    $E_{0}^{8}$ every one whose pieces have their shifts within six
+    consecutive values (\Cref{thm:noconvolution}, \Cref{cor:efoursix}).
+  \end{enumerate}
+\item \emph{The Weil classes inside the conjecture.} The Hodge conjecture is
+  equivalent to the conjunction of \textup{(F2)}, the algebraicity of the
+  Hodge classes of abelian varieties outside the subring generated by divisor
+  classes and Weil classes of quotients, and \textup{(F3$'$)}, the
+  algebraicity of every Hodge class modulo the images of Hodge classes of
+  abelian varieties under algebraic correspondences; and \textup{(F2)} alone
+  is equivalent to the Hodge conjecture for abelian varieties
+  (\Cref{prop:f2isab}, \Cref{prop:f3prime}). The statement \textup{(F3$'$)}
+  holds on every variety whose cohomology is reached from abelian varieties by
+  correspondences, on every variety of dimension at most three, on every
+  fourfold and fivefold whose zero-cycles are supported in dimension at most
+  three or that is dominated by a variety of the first kind, on every smooth
+  ample divisor of odd dimension in a variety of the first kind, and on every
+  smooth Delsarte hypersurface of every dimension and every cyclic cover
+  branched along one, and on every complete intersection of diagonal
+  hypersurfaces of Vandermonde type, where the Hodge conjecture follows for
+  two diagonal hypersurfaces of degree $3$, $4$ or $6$ in $\PP^{6}$ and for
+  the very general member of degree $2$ in every dimension, of degree $3$ or
+  $4$ up to dimension seven and of degree $6$ up to dimension five
+  (\Cref{prop:f3prime}, \Cref{prop:aclosure},
+  \Cref{prop:f3primesmall}, \Cref{prop:f3primefibration},
+  \Cref{prop:f3primedominant}, \Cref{prop:f3primeample}, \Cref{cor:delsarteall},
+  \Cref{thm:vandermonde}, \Cref{cor:twodiagonal},
+  \Cref{thm:vgvandermonde}). The first instance of
+  \textup{(F2)}, the two exceptional classes on the square of a Mumford
+  fourfold, is algebraic at every CM point of the family, is algebraic on
+  every member once one Kuga--Satake class is algebraic, and is algebraic on
+  every member exactly when the Lefschetz standard conjecture holds for one
+  ninefold (\Cref{thm:mumfordcm}, \Cref{thm:mumfordks},
+  \Cref{cor:mumfordequiv}). Over the rule set formed by the implications of
+  the paper and of the literature, together with \Cref{prop:f2isab}, the
+  minimal sets of statements from which the conjecture follows are
+  $\{\mathrm{F3}\}$, $\{\mathrm{L},\mathrm{M}\}$,
+  $\{\mathrm{L},\mathrm{F3}'\}$, $\{\mathrm{V},\mathrm{F3}'\}$ and
+  $\{\mathrm{F2},\mathrm{F3}'\}$, the first two being each equivalent to it
+  (\Cref{thm:closure}, \Cref{rem:f2rule}). Carried to every family,
+  \Cref{thm:main} gives exactly these two statements back:
+  \textup{(F2)} is equivalent to the statement that in every polarised
+  abelian scheme with a member of CM type the algebraic locus of a flat
+  Hodge class that is algebraic at such a member has an interior point
+  (\Cref{thm:f2propagation}); \textup{(F3$'$)} is equivalent to the absence
+  of Hodge classes off the part of the cohomology reached from abelian
+  varieties by algebraic correspondences (\Cref{prop:abpart}); and on the
+  squares of K3 surfaces with real multiplication, the first varieties on
+  which \textup{(F3$'$)} is open, the algebraic locus of the real
+  multiplication is dense, contains every CM point and is either the whole
+  family or meagre (\Cref{thm:rmlocus}).\footnote{These are the statements
+  \textup{(L)}, \textup{(M)} and \textup{(V)} of \Cref{def:lmv}: $B(X)$ of
+  \Cref{def:Bconj} for every smooth projective $X$; every Hodge class
+  motivated in the sense of Andr\'e \cite[\S2.1]{And96b}; and, for every
+  smooth projective morphism $f$ to a smooth connected base, a flat section of
+  $R^{2p}f_{*}\QQ$ that is algebraic at one point is algebraic at every
+  point. The statement (F3) is the Hodge conjecture for the varieties that
+  are not abelian, which is equivalent to the whole conjecture
+  (\Cref{prop:f3ishc}).}
+  With the theorems of the preprints of \Cref{sec:preprints} as
+  hypotheses, the two exceptional classes are algebraic on every member,
+  the Weil classes are algebraic on every abelian sixfold of Weil type, the
+  real multiplication is algebraic on every K3 surface, and neither
+  \textup{(F2)} nor \textup{(F3$'$)} follows (\Cref{cor:mumfordall},
+  \Cref{thm:weilsix}, \Cref{cor:k3all}, \Cref{rem:remains}).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Each clause is the theorem or theorems cited with it, and no clause is used
+in the proof of another. For (i), \Cref{thm:main} is proved at the end of
+\Cref{ssec:cmpropagation}. For (ii), \Cref{thm:hdgcount} counts the Hodge
+classes, \Cref{cor:whatisleft} reduces every degree to $\omega_{1}$,
+\Cref{thm:explicitgens}(i) shows that $\omega_{1}$ has integer coefficients
+and exactly $2^{2n-1}$ nonzero terms, \Cref{thm:residual}(a) and (b) are the
+two implications for the family, and \Cref{prop:weildomain} gives the
+connectedness and the dimension. For (iii), \Cref{thm:cmbasepoint} gives the
+CM point, \Cref{thm:quatweil}(v) the cycle at a quaternionic point,
+\Cref{thm:everyfamily} places such a point in every family by the
+discriminant computation of \Cref{thm:quatweil}(iv) and \Cref{lem:products},
+and \Cref{thm:everyn} treats products.
+
+For (iv), the bounded criterion is \Cref{thm:degreebound} with
+\Cref{thm:p1equivalent} and \Cref{thm:p1forces}, and its form for a CM field
+is \Cref{thm:cmpropagation}(iv); the escaping sequence is \Cref{thm:escape},
+and the special locus is \Cref{prop:speciallocus} with
+\Cref{cor:speciallocus}. The semiregularity criterion is
+\Cref{thm:semiregclosure} with \Cref{rem:p2prime}, carried to every CM field
+by \Cref{thm:cmpropagation}(v); the flatness form is \Cref{prop:p2flat}. The
+pure form is excluded by \Cref{thm:p2false}, which rests on
+\Cref{lem:weiltorushodge}, \Cref{lem:weiltorussubsets} and
+\Cref{prop:weiltorussheaves}, and for every CM field by
+\Cref{thm:cmpurefalse}. The number of the polarised form is
+\Cref{thm:p2primenumber}(i),
+(iv) and (v); the quartic rank and the Hodge loci are
+\Cref{thm:quarticrank}, \Cref{cor:quarticleast}, \Cref{prop:quarticlocus}
+and \Cref{cor:quarticlocus}. The reduction to the split families is
+\Cref{prop:descent}, and the equivalence with the Lefschetz standard
+conjecture is \Cref{cor:weilequiv}. For (v), each item is the statement of
+the theorem cited, under its own hypotheses, which \Cref{sec:scope} delimits
+item by item.
+
+For (vi), \Cref{prop:f3prime}(i) gives the Hodge conjecture from
+\textup{(F3$'$)} and the conjecture for abelian varieties, and
+\Cref{prop:f2isab} gives the latter from \textup{(F2)}; the converse
+implications hold because \textup{(F2)} is a case of the conjecture and
+\textup{(F3$'$)} is weaker than it. The cases of \textup{(F3$'$)} are
+\Cref{prop:f3prime}(iii) and (iv), \Cref{prop:aclosure},
+\Cref{prop:f3primesmall}, \Cref{prop:f3primefibration},
+\Cref{prop:f3primedominant}, \Cref{cor:delsarteall},
+\Cref{thm:vandermonde}, \Cref{cor:twodiagonal} and \Cref{thm:vgvandermonde}.
+The statements on
+the Mumford classes are \Cref{thm:mumfordcm}, \Cref{thm:mumfordks}(ii) and
+\Cref{cor:mumfordequiv}. The statements on the families are
+\Cref{thm:f2propagation}, \Cref{prop:abpart} and \Cref{thm:rmlocus}. The
+conditional statements are those of \Cref{sec:preprints} cited with them,
+and no other clause uses them. The
+minimal sets are \Cref{thm:closure}(ii) with
+the rule of \Cref{prop:f2isab} adjoined, as computed in \Cref{rem:f2rule},
+and \Cref{thm:closure}(vi) shows that $\{\mathrm{F3}\}$ and
+$\{\mathrm{L},\mathrm{M}\}$ are each equivalent to the conjecture.
+\end{proof}
+
+The theorem arranges the paper around \Cref{thm:main}. Clause (ii) is the
+problem in its smallest form, one explicitly written class on one connected
+domain, and clause (iii) shows that the base case is never the difficulty:
+every family has a base point, for every field, every dimension and every
+discriminant, with a cycle written down rather than an existence statement.
+Clause (iv) reduces the closedness of the locus to one object at one point
+and computes the number that object must attain, and clause (v) shows that
+the constructions that fail do so for identifiable structural reasons: a
+divisor-generated Chern character cannot leave the divisor subring, a norm
+eigenclass sits in the wrong summand of the character grading, a Chern
+character on the Weil line has an annihilator exactly as large as the family,
+a support with two transversal branches of codimension two through a point
+carries a local obstruction that the compensating scalar cannot meet, and a curve along which an object is locally
+free is tangent to at most one of the two eigenplanes of the real
+multiplication. Clause (vi) shows where the Weil classes stand in the whole
+conjecture: the conjecture for abelian varieties is carried by the classes
+beyond the Weil lines, and the rest is algebraicity modulo abelian varieties,
+which holds on every variety whose cohomology comes from abelian varieties,
+on the Delsarte hypersurfaces of every dimension and on the diagonal
+complete intersections of Vandermonde type (\Cref{fig:twohalves}).
+\Cref{sec:families} shows that the structure \Cref{thm:main} finds in the
+Weil families, a CM seed, density and the dichotomy, is present in every
+family that carries (F2) or \textup{(F3$'$)}, and that in each of them the
+one missing property is the interior point that closes the locus
+(\Cref{thm:twostand}).
+
+\begin{figure}[tbp]
+\centering
+  \includegraphics[width=\textwidth]{fig_twohalves}
+\caption{The two halves of the conjecture in \Cref{thm:final}(vi). A Hodge
+class $\gamma$ on a smooth projective variety $X$ is the image
+$\Gamma_{*}\beta$ of a Hodge class $\beta$ on an abelian variety $B$ under an
+algebraic correspondence $\Gamma$ on $B\times X$, which is \textup{(F3$'$)};
+the class $\beta$ is algebraic, which is \textup{(F2)}, equivalently the
+conjecture for abelian varieties (\Cref{prop:f2isab}). The raised plate on
+the lower sheet stands for the families of Weil type, on which
+\Cref{thm:main} makes the algebraic locus of the Weil class $\omega$ dense;
+the dashed part of each correspondence is the part behind the upper sheet.}
+\label{fig:twohalves}
+\end{figure}

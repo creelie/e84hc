@@ -1,0 +1,1274 @@
+\subsection{Smooth supports and four discriminants}
+\label{ssec:smoothsupport}
+
+\Cref{thm:candidatefails} and \Cref{cor:localobstruction} exclude every secant
+object whose support has two transversal branches of codimension two
+through a point. This leaves supports that are smooth or that meet
+themselves only along curves, and \Cref{rem:candidatemeaning} ends with the
+observation that no such object is known. In this subsection we explain why
+the local argument cannot reach the smooth case, and then determine what a
+smooth support can be. The answer is narrow: on the fourfold the invariants
+of the support are forced, and the discriminant is confined to a finite list.
+
+We begin with the fact that at a smooth point there is nothing local left to
+compute.
+
+\begin{proposition}[No local obstruction at a smooth point]\label{prop:smoothlocal}
+Let $Y$ be a smooth variety with $\omega_{Y}\cong\cO_{Y}$ and let $S\subset Y$
+be smooth of codimension two. Then
+\[
+  \cE xt^{0}(\cI_{S},\cI_{S})=\cO_{Y},\qquad
+  \cE xt^{1}(\cI_{S},\cI_{S})=N_{S/Y},\qquad
+  \cE xt^{q}(\cI_{S},\cI_{S})=0\quad(q\ge2),
+\]
+and the same holds for $\cI_{S}\otimes L$ for any line bundle $L$.
+Consequently, for $F=\cI_{S}\otimes L$ both sides of \eqref{eq:heisenberg}
+have vanishing germs in $\cE xt^{2}$, and \Cref{lem:edge} decides nothing.
+\end{proposition}
+
+\begin{proof}
+Twisting by $L$ changes neither side, so take $F=\cI_{S}$. The sheaf
+$\cI_{S}$ is torsion free of rank one, and its dual is $\cO_{Y}$ because $S$
+has codimension two; hence every local endomorphism of $\cI_{S}$ is
+multiplication by a function, and
+$\cE xt^{0}(\cI_{S},\cI_{S})=\cO_{Y}$. Apply $\cH om(-,\cI_{S})$ to
+\begin{equation}\label{eq:idealseq}
+  0\to\cI_{S}\to\cO_{Y}\to\cO_{S}\to0 .
+\end{equation}
+Since $\cE xt^{q}(\cO_{Y},\cI_{S})=0$ for $q\ge1$, the long exact sequence
+gives
+\begin{equation}\label{eq:shift}
+  \cE xt^{q}(\cI_{S},\cI_{S})\cong\cE xt^{q+1}(\cO_{S},\cI_{S})
+  \qquad(q\ge1).
+\end{equation}
+Now apply $\cH om(\cO_{S},-)$ to \eqref{eq:idealseq}. Because $S$ is smooth of
+codimension two, hence a local complete intersection, the Koszul resolution
+gives $\cE xt^{k}(\cO_{S},\cO_{Y})=0$ for $k\ne2$ and
+$\cE xt^{2}(\cO_{S},\cO_{Y})=\omega_{S}\otimes\omega_{Y}^{-1}=\omega_{S}$,
+while $\cE xt^{k}(\cO_{S},\cO_{S})=\bigwedge^{k}N_{S/Y}$ for $0\le k\le2$ and
+zero otherwise. Computing both from the same Koszul complex shows that the
+map
+\[
+  \rho\colon\cE xt^{2}(\cO_{S},\cO_{Y})=\omega_{S}
+  \longrightarrow
+  \cE xt^{2}(\cO_{S},\cO_{S})=\textstyle\bigwedge^{2}N_{S/Y}=\omega_{S}
+\]
+induced by $\cO_{Y}\to\cO_{S}$ is the identity: in local coordinates in which
+$S=\{x_{1}=x_{2}=0\}$, both groups are computed as $M/(x_{1},x_{2})M$ for
+$M=\cO_{Y}$ and $M=\cO_{S}$, and the map is reduction modulo $(x_{1},x_{2})$,
+which is the identity on $\cO_{S}$.
+
+Consider the long exact sequence of $\cH om(\cO_{S},-)$ in degrees two and
+three. Since $\rho$ is surjective and $\cE xt^{3}(\cO_{S},\cO_{Y})=0$, the
+segment
+\[
+  \cE xt^{2}(\cO_{S},\cO_{Y})\xrightarrow{\ \rho\ }
+  \cE xt^{2}(\cO_{S},\cO_{S})\to
+  \cE xt^{3}(\cO_{S},\cI_{S})\to
+  \cE xt^{3}(\cO_{S},\cO_{Y})=0
+\]
+gives $\cE xt^{3}(\cO_{S},\cI_{S})=0$, so $\cE xt^{2}(\cI_{S},\cI_{S})=0$ by
+\eqref{eq:shift}. For $k\ge3$ both $\cE xt^{k}(\cO_{S},\cO_{Y})$ and
+$\cE xt^{k}(\cO_{S},\cO_{S})$ vanish, so
+$\cE xt^{k+1}(\cO_{S},\cI_{S})=0$ and $\cE xt^{k}(\cI_{S},\cI_{S})=0$. In
+degrees one and two, since $\rho$ is injective, the segment
+\[
+  0=\cE xt^{1}(\cO_{S},\cO_{Y})\to
+  N_{S/Y}\to
+  \cE xt^{2}(\cO_{S},\cI_{S})\to
+  \cE xt^{2}(\cO_{S},\cO_{Y})\xrightarrow{\ \rho\ }
+  \cE xt^{2}(\cO_{S},\cO_{S}),
+\]
+in which $N_{S/Y}=\cE xt^{1}(\cO_{S},\cO_{S})$, gives
+$\cE xt^{2}(\cO_{S},\cI_{S})\cong N_{S/Y}$, and this is
+$\cE xt^{1}(\cI_{S},\cI_{S})$ by \eqref{eq:shift}.
+
+For the last assertion, the right side of \eqref{eq:heisenberg} has vanishing
+germs by \Cref{lem:edge}, and the left side lies in
+$\Ext^{2}(F,F\otimes\Omega^{2}_{Y})$, whose sheaf of germs in the
+$\cE xt^{2}$ direction is $\cE xt^{2}(F,F)\otimes\Omega^{2}_{Y}=0$.
+\end{proof}
+
+\begin{remark}[The global form of the criterion]\label{rem:obstructionmoves}
+\Cref{prop:smoothlocal} is the precise reason why the argument of
+\Cref{thm:candidatefails} stops at a smooth support, and it also shows what
+takes its place. Since $\cE xt^{2}=0$, the local-to-global spectral sequence
+for $\Ext^{2}(\cI_{S},\cI_{S})$ has only two surviving rows,
+$H^{1}(S,N_{S/Y})$ and $H^{2}(Y,\cO_{Y})$, and they sit in different steps of
+the filtration: the first is the quotient that records the geometry of $S$,
+the second the subgroup of scalars. A product $A_{\theta}A_{\theta'}$ of
+translation classes therefore has a well defined image in $H^{1}(S,N_{S/Y})$,
+while the scalar on the right of \eqref{eq:heisenberg} has image zero there.
+The criterion thus splits into two conditions of different kinds: a vanishing
+in $H^{1}(S,N_{S/Y})$, which is a statement about the normal bundle and not
+about any point, and an identity in $H^{2}(Y,\cO_{Y})$. At a double point the
+first condition already fails locally. At a smooth support it is a global
+question, and what is decided here is which surfaces $S$ are available at
+all.
+\end{remark}
+
+The invariants of a smooth support are far from free. Since the Todd class of
+an abelian variety is trivial, Grothendieck--Riemann--Roch converts the Chern
+character of the object into the complete set of numerical invariants of the
+surface, and three classical inequalities then constrain them.
+
+\begin{theorem}[The invariants of a smooth support]\label{thm:smoothinvariants}
+Let $(X,\Theta)$ be a principally polarised abelian fourfold, let $d>0$, let
+$b\in\ZZ_{>0}$, and let $\cF=\cI_{S}(b\Theta)$ be a coherent sheaf with
+\[
+  \ch(\cF)=u_{\Theta}+b\,v_{\Theta}
+\]
+and $S\subset X$ smooth. Write $N=\tfrac12\Nm_{K/\QQ}(b+\sqrt{-d})
+=\tfrac12(b^{2}+d)$, $\iota\colon S\hookrightarrow X$ and
+$\lambda=\iota^{*}\Theta$. Then $S$ is a surface and
+\begin{equation}\label{eq:smoothinvariants}
+\begin{aligned}
+  [S]&=N\Theta^{2}, &\qquad \iota_{*}K_{S}&=\tfrac{4bN}{3}\,\Theta^{3},
+  &\qquad \chi(\cO_{S})&=4N(2b^{2}-N),\\
+  K_{S}^{2}&=12N(4b^{2}-N), &\qquad e(S)&=12N(4b^{2}-3N),
+  &\qquad K_{S}\cdot\lambda&=32bN,
+\end{aligned}
+\end{equation}
+with $\lambda^{2}=24N$ and $[S]^{2}=24N^{2}$. Moreover $K_{S}$ is globally
+generated, hence nef; $S$ is minimal of general type; and
+\begin{equation}\label{eq:threebounds}
+  \tfrac{4}{9}b^{2}\ \le\ N\ \le\ b^{2},
+  \qquad\text{equivalently}\qquad
+  -\tfrac{1}{9}b^{2}\ \le\ d\ \le\ b^{2} .
+\end{equation}
+The lower bound is the Hodge index theorem and is implied by $d>0$; the upper
+bound is the Bogomolov--Miyaoka--Yau inequality. In terms of $b$ and $d$ the
+five invariants read
+\begin{equation}\label{eq:bdform}
+  \chi(\cO_{S})=(b^{2}+d)(3b^{2}-d),\quad
+  K_{S}^{2}=3(b^{2}+d)(7b^{2}-d),\quad
+  e(S)=3(b^{2}+d)(5b^{2}-3d),
+\end{equation}
+and the defect in the Bogomolov--Miyaoka--Yau inequality is
+\begin{equation}\label{eq:bmydefect}
+  3e(S)-K_{S}^{2}=24\,(b^{4}-d^{2}),
+\end{equation}
+so that the inequality amounts exactly to $d\le b^{2}$.
+Finally, $K_{S}$ is never numerically proportional to $\lambda$.
+\end{theorem}
+
+\begin{proof}
+Since $\ch_{0}(\cF)=1$ and $c_{1}(\cF)=b\Theta$, the sheaf
+$\cF(-b\Theta)=\cI_{S}$ has $\ch_{0}=1$, $\ch_{1}=0$, so $S$ has codimension
+at least two, and
+\[
+  \ch(\cO_{S})=1-\ch(\cI_{S})=1-\ch(\cF)\,e^{-b\Theta}.
+\]
+Put $z=b+\sqrt{-d}$, so that $z\bbar z=2N$. Since
+$u_{\Theta}=\Re e^{\sqrt{-d}\Theta}$ and
+$\sqrt d\,v_{\Theta}=\Im e^{\sqrt{-d}\Theta}$, we have
+$\ch(\cF)=\Im\bigl(z\,e^{\sqrt{-d}\Theta}\bigr)/\sqrt d$, hence
+$\ch(\cF)e^{-b\Theta}=\Im\bigl(z\,e^{-\bbar z\Theta}\bigr)/\sqrt d$, whose
+coefficient of $\Theta^{k}$ is
+$(-1)^{k}\Im(z\bbar z^{k})/(\sqrt d\,k!)=(-1)^{k+1}\,2N\Im(z^{k-1})/(\sqrt d\,k!)$.
+With $\Im z=\sqrt d$, $\Im z^{2}=2b\sqrt d$ and
+$\Im z^{3}=(3b^{2}-d)\sqrt d$ this gives
+\[
+  \ch_{2}(\cO_{S})=\tfrac{b^{2}+d}{2}\Theta^{2}=N\Theta^{2},\quad
+  \ch_{3}(\cO_{S})=-\tfrac{2bN}{3}\Theta^{3},\quad
+  \ch_{4}(\cO_{S})=\tfrac{3b^{4}+2db^{2}-d^{2}}{24}\Theta^{4}.
+\]
+The first
+identity says $S$ has codimension exactly two, so it is a surface, with class
+$N\Theta^{2}$. Because $T_{X}$ is trivial, $\td(T_{X})=1$, and
+Grothendieck--Riemann--Roch for $\iota$ reads
+$\ch(\iota_{*}\cO_{S})=\iota_{*}\td(T_{S})$. Comparing degrees three and four,
+\[
+  \ch_{3}(\cO_{S})=\iota_{*}\tfrac{c_{1}(T_{S})}{2}=-\tfrac12\iota_{*}K_{S},
+  \qquad
+  \ch_{4}(\cO_{S})=\iota_{*}\tfrac{c_{1}^{2}+c_{2}}{12}
+  =\chi(\cO_{S})\,[\mathrm{pt}],
+\]
+the second by Noether's formula. With $\Theta^{4}=24\,[\mathrm{pt}]$ these give
+$\iota_{*}K_{S}=\tfrac{4bN}{3}\Theta^{3}$ and, after substituting
+$d=2N-b^{2}$, $\chi(\cO_{S})=3b^{4}+2db^{2}-d^{2}=4N(2b^{2}-N)$.
+Then $K_{S}\cdot\lambda=\int_{X}\iota_{*}K_{S}\cdot\Theta=\tfrac{4bN}{3}\cdot24=32bN$
+and $\lambda^{2}=\int_{X}[S]\cdot\Theta^{2}=24N$.
+
+For the last two invariants, the normal bundle sequence and the triviality of
+$T_{X}$ give $c(T_{S})c(N_{S/X})=1$, so $c_{1}(N_{S/X})=K_{S}$ and
+$c_{2}(N_{S/X})=K_{S}^{2}-e(S)$; the self-intersection formula
+$[S]^{2}=\int_{S}c_{2}(N_{S/X})$ then reads
+\[
+  24N^{2}=K_{S}^{2}-e(S),
+\]
+while Noether's formula reads $12\chi(\cO_{S})=K_{S}^{2}+e(S)$. Solving the
+two gives the stated $K_{S}^{2}$ and $e(S)$.
+
+The conormal sequence presents $\Omega^{1}_{S}$ as a quotient of
+$\Omega^{1}_{X}|_{S}=\cO_{S}^{\oplus4}$, so $\Omega^{1}_{S}$ is globally
+generated, and therefore so is $K_{S}=\det\Omega^{1}_{S}$, a quotient of
+$\bigwedge^{2}\cO_{S}^{\oplus4}$. A globally generated line bundle is nef. A
+globally generated rank two bundle on a surface has $c_{2}\ge0$, the class
+$c_{2}$ being represented by the vanishing scheme of a general section, which
+is empty or finite; hence
+\[
+  e(S)=c_{2}(\Omega^{1}_{S})=12N(4b^{2}-3N)\ \ge\ 0,
+\]
+so $N\le\tfrac43b^{2}<4b^{2}$ and therefore $K_{S}^{2}=12N(4b^{2}-N)>0$. A nef
+divisor of positive self-intersection is big, so $\kappa(S)=2$ and, $K_{S}$
+being nef, $S$ is minimal of general type. The Bogomolov--Miyaoka--Yau
+inequality $c_{1}^{2}\le3c_{2}$ therefore applies and reads
+$K_{S}^{2}\le3e(S)$. Substituting $N=\tfrac12(b^{2}+d)$ in
+\eqref{eq:smoothinvariants} gives \eqref{eq:bdform}, hence
+$3e(S)-K_{S}^{2}=24(b^{4}-d^{2})$, and the inequality is $d\le b^{2}$, that
+is $N\le b^{2}$.
+
+For the lower bound, $\lambda$ is ample on $S$, so the Hodge index theorem
+gives $(K_{S}\cdot\lambda)^{2}\ge K_{S}^{2}\,\lambda^{2}$, that is
+$(32bN)^{2}\ge12N(4b^{2}-N)\cdot24N$, which simplifies to $9N\ge4b^{2}$. Since
+$N=\tfrac12(b^{2}+d)$ with $d>0$, this holds automatically. Equality in the
+Hodge index theorem occurs exactly when $K_{S}$ is numerically proportional to
+$\lambda$, hence exactly when $9N=4b^{2}$, and this never happens, because
+$9N=\tfrac92(b^{2}+d)>4b^{2}$ for $d>0$.
+\end{proof}
+
+\Cref{fig:bmywindow} draws the Bogomolov--Miyaoka--Yau defect over the
+quarter plane of $(b,d)$.
+
+\begin{corollary}[Four discriminants on the fourfold]\label{cor:fourdiscriminants}
+Let $(X,\Theta)$ be a principally polarised abelian fourfold and $d>0$
+squarefree. A sheaf $\cI_{S}(3\Theta)$ with Chern character
+$u_{\Theta}+3v_{\Theta}$, the value of \Cref{prop:markman8}(iii), and with
+smooth support $S$ exists only if $d\le9$, that is
+$d\in\{1,2,3,5,6,7\}$; if in addition $N=(9+d)/2$ is an integer, as in
+\Cref{setup:markman}, only
+\[
+  d\in\{1,\,3,\,5,\,7\},\qquad N\in\{5,\,6,\,7,\,8\}.
+\]
+For these values the invariants are forced to be those of
+\Cref{tab:smoothsupport}. In particular, for $d>9$ no such sheaf has smooth
+support.
+\end{corollary}
+
+\begin{proof}
+This is immediate from \eqref{eq:threebounds} at $b=3$ and the arithmetic of
+\eqref{eq:smoothinvariants}, and the table evaluates
+\eqref{eq:smoothinvariants} at $b=3$. The value $d=9$ is the equality case of the
+Bogomolov--Miyaoka--Yau inequality, where $K_{S}^{2}=3e(S)=2916$ and $S$ would
+have to be a quotient of the ball; it is excluded because $9$ is not
+squarefree.
+\end{proof}
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}ccrrrrr@{}}
+\toprule
+$d$ & $N$ & $\chi(\cO_{S})$ & $K_{S}^{2}$ & $e(S)$ &
+$K_{S}\cdot\lambda$ & $\lambda^{2}$ \\
+\midrule
+$1$ & $5$ & $260$ & $1860$ & $1260$ & $480$ & $120$ \\
+$3$ & $6$ & $288$ & $2160$ & $1296$ & $576$ & $144$ \\
+$5$ & $7$ & $308$ & $2436$ & $1260$ & $672$ & $168$ \\
+$7$ & $8$ & $320$ & $2688$ & $1152$ & $768$ & $192$ \\
+\bottomrule
+\end{tabular}
+\caption{The only invariants a smooth support can have on an abelian
+fourfold, by \Cref{thm:smoothinvariants} and
+\Cref{cor:fourdiscriminants}, at $b=3$ and with $N$ an integer. Every entry is
+determined by $\ch(\cF)$ alone. The slope
+$K_{S}^{2}/\chi(\cO_{S})$ runs from $93/13$ at $d=1$ to $42/5$ at $d=7$, and
+reaches the Bogomolov--Miyaoka--Yau ceiling of $9$ only at the excluded value
+$d=9$.}
+\label{tab:smoothsupport}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+  \includegraphics[width=\textwidth]{fig_bmywindow}
+\caption{\Cref{thm:smoothinvariants} over the quarter plane of $(b,d)$. The
+height of the surface is the defect $3e(S)-K_{S}^{2}=24(b^{4}-d^{2})$ in the
+Bogomolov--Miyaoka--Yau inequality for the surface the theorem attaches to the
+pair, compressed by a signed cube root so that four orders of magnitude fit
+one frame; the compression is odd and monotone, so the zero locus and the sign
+are the true ones. The surface is drawn indigo where the defect is positive and
+clay where it is negative, and it crosses zero along $d=b^{2}$, which is
+therefore the whole content of the inequality. The weaker wall $d=\tfrac53
+b^{2}$, where $e(S)$ itself changes sign, is drawn dashed and lies above it.
+On the line $b=3$, which is the value \Cref{prop:markman8}(iii) forces on the
+fourfold, the four squarefree discriminants $d=1,3,5,7$ with $N$ an integer sit
+above the wall and are marked with their drop lines; $d=9$ sits exactly on it,
+the equality case, and $d=11,13,15$ sit below and are excluded.}
+\label{fig:bmywindow}
+\end{figure}
+
+\begin{remark}[Status of the smooth case]\label{rem:smoothremains}
+The local argument does not apply here, for a structural reason given by
+\Cref{prop:smoothlocal}: the sheaf $\cE xt^{2}$ of a smooth ideal vanishes,
+so both sides of \eqref{eq:heisenberg} are locally zero, and the comparison of
+germs that decides \Cref{thm:candidatefails} has nothing to compare.
+
+The surface is rigidly constrained. At $b=3$ its class, its canonical class,
+its Euler characteristic, its Euler number and its two intersection numbers
+with the polarisation are all determined by $d$, and they are compatible with
+existence only for $d\le9$. This is the content of
+\Cref{cor:fourdiscriminants}, and it restricts the construction: for all but
+finitely many imaginary quadratic fields the secant construction of
+\Cref{setup:markman} with smooth support is not available, whatever the
+geometry of the surface.
+
+What remains is a single existence question. For $d\in\{1,3,5,7\}$, does a
+principally polarised abelian fourfold carry a smooth surface $S$ with the
+invariants of \Cref{tab:smoothsupport}, and if so, does the image of
+$A_{\theta}A_{\theta'}$ in $H^{1}(S,N_{S/X})$ vanish for all
+$\theta,\theta'\in H^{0}(T_{X})$? The first half is a question about surfaces
+in abelian fourfolds with prescribed Chern numbers, of the kind that is
+answered by a construction or by a classification argument; the second is a
+question about one cohomology group of one normal bundle. Neither is settled
+here. The simplest surfaces of the right class are ruled out by one entry of
+the table: a complete intersection of divisors in $|a\Theta|$ and
+$|b'\Theta|$ has class $ab'\Theta^{2}$, so $ab'=N$, and canonical class
+$(a+b')\lambda$ by adjunction, so $K_{S}\cdot\lambda=24(a+b')N$; since
+$ab'=N\ge5$ forces $a+b'\ge5$, this exceeds the required $96N$. The
+surface, if it exists, is not cut out by two theta divisors, nor by any two
+divisors algebraically equivalent to multiples of $\Theta$; nor, by
+\Cref{cor:latticeburch} below, is its ideal sheaf presented by any two bundles
+whose classes lie in the subring generated by line bundles. It must also move
+with $X$ to first order in every polarised direction, in the exact sense of
+\Cref{prop:smoothrank}, while the injectivity that \Cref{lem:annihilation}
+asks of it holds automatically when $X$ is simple (\Cref{lem:smoothinjective}).
+
+A positive answer to both, for a surface that moves in this way, together
+with an affirmative answer to \cite[Question 11.4]{Mar25b}, would produce
+Weil classes on abelian
+eightfolds for at most four discriminants; the other discriminants, every
+$n\ge5$ and every field of degree larger than two would still have to be
+reached through \Cref{prop:descent} and the propagation statement.
+\end{remark}
+
+Two of the conditions on a smooth support are decided by the table, and the
+third, which \Cref{thm:factor}(iii)(a) imposes on every candidate, has an
+exact form. The first is the injectivity of $H^{2}(\cO_{X})\to H^{2}(\cO_{S})$
+that \Cref{lem:annihilation} below requires of every support.
+
+\begin{lemma}[The injectivity condition for a smooth support]
+\label{lem:smoothinjective}
+Let $X$ be a simple complex abelian fourfold, let $V=H^{0}(T_{X})$, and let
+$S\subset X$ be a smooth surface. The following are equivalent:
+\begin{enumerate}[label=\textup{(\roman*)},nosep,leftmargin=2.2em]
+\item the restriction $H^{2}(\cO_{X})\to H^{2}(\cO_{S})$ is injective;
+\item no nonzero translation-invariant holomorphic $2$-form on $X$ restricts
+  to zero on $S$;
+\item $S$ is not Lagrangian for any translation-invariant holomorphic
+  symplectic form on $X$;
+\item the Gauss image of $S$ in $\operatorname{Gr}(2,V)\subset\PP(\bigwedge^{2}V)$
+  spans $\PP(\bigwedge^{2}V)$.
+\end{enumerate}
+If $e(S)\ne[S]^{2}$, they hold. In particular they hold for every smooth
+support of \Cref{tab:smoothsupport}, where $e(S)=12N(36-3N)$ and
+$[S]^{2}=24N^{2}$ agree only for $5N=36$.
+\end{lemma}
+
+\begin{proof}
+The restriction $\iota^{*}\colon H^{2}(X,\CC)\to H^{2}(S,\CC)$ is a morphism
+of Hodge structures defined over $\QQ$, so it commutes with complex
+conjugation, which interchanges the $(0,2)$ and $(2,0)$ parts; hence
+$\iota^{*}$ is injective on $H^{0,2}(X)=H^{2}(\cO_{X})$ if and only if it is
+injective on $H^{2,0}(X)=\bigwedge^{2}V^{\vee}$, the translation-invariant
+$2$-forms. A holomorphic $2$-form on a compact surface is zero as a class in
+$H^{2,0}(S)=H^{0}(K_{S})$ if and only if it is zero as a form; this is
+(i)$\Leftrightarrow$(ii). The restriction of $p\wedge q\in\bigwedge^{2}V^{\vee}$
+to $S$ is the pull-back of the Pl\"ucker coordinate $p\wedge q$ along the
+Gauss map $\gamma\colon S\to\operatorname{Gr}(2,V)$, $s\mapsto T_{s}S$, as a
+section of $K_{S}=\gamma^{*}\cO(1)$, so a $2$-form vanishes on $S$ if and
+only if the corresponding hyperplane contains $\gamma(S)$; this is
+(ii)$\Leftrightarrow$(iv).
+
+A nonzero $2$-form on $V\cong\CC^{4}$ has rank two or four. If $\omega$ has
+rank four, $\omega|_{S}=0$ says that every tangent plane of $S$ is
+$\omega$-isotropic, that is, $S$ is Lagrangian for $\omega$. If
+$\omega=\alpha\wedge\beta$ has rank two, with $\alpha,\beta\in V^{\vee}$
+independent, then $\alpha|_{S}$ and $\beta|_{S}$ are independent
+holomorphic $1$-forms on $S$, because $S$ generates the simple $X$ and a nonzero
+invariant $1$-form restricts nontrivially to a generating subvariety, and
+$\alpha|_{S}\wedge\beta|_{S}=0$. By the theorem of Castelnuovo and de
+Franchis \cite{BHPV04} there is a fibration
+$f\colon S\to C$ onto a curve of genus at least two with $\alpha|_{S}$ and
+$\beta|_{S}$ pulled back from $C$. A fibre $F$ of $f$ is a curve in $X$ on
+which $\alpha$ and $\beta$ vanish, so all its tangent lines lie in the fixed
+plane $B=\ker\alpha\cap\ker\beta\subset V$. The abelian subvariety generated
+by $F-F$ is the image of a sum map from a power of $F$, whose differential at
+a general point is spanned by tangent vectors of $F$; so its tangent space
+lies in $B$, its dimension is at most two, and it is nonzero because $F$ is
+not a point. This contradicts the simplicity of $X$. Hence only the
+rank-four case occurs, which is (ii)$\Leftrightarrow$(iii).
+
+Finally, if $S$ is Lagrangian for a symplectic $\omega$, then $\omega$
+identifies $T_{S}$ with the annihilator of $T_{S}$ in $\Omega^{1}_{X}|_{S}$,
+which is the conormal bundle, so $N_{S/X}\cong\Omega^{1}_{S}$ and
+$c_{2}(N_{S/X})=e(S)$; since $T_{X}$ is trivial, $c_{2}(N_{S/X})=[S]^{2}$ by
+the self-intersection formula. So $e(S)\ne[S]^{2}$ excludes (iii). For the
+table, \Cref{thm:smoothinvariants} gives $[S]^{2}=24N^{2}$ and
+$e(S)=12N(36-3N)$ at $b=3$, and $24N^{2}=12N(36-3N)$ reads $5N=36$. For
+general $b$ the two agree only when $N=\tfrac45b^{2}$, that is
+$d=\tfrac35b^{2}$, whose first integral instance is $b=5$, $d=15$.
+\end{proof}
+
+\begin{remark}[The class $K_{S}-4\lambda$]\label{rem:gysinkernel}
+\Cref{thm:smoothinvariants} records $K_{S}\cdot\lambda=96N$ and
+$\lambda^{2}=24N$ at $b=3$, so $K_{S}\cdot\lambda=4\lambda^{2}$, and that
+$K_{S}$ is never numerically proportional to $\lambda$. The sharper
+statement is that
+\[
+  \delta=K_{S}-4\lambda\in\ker\bigl(\iota_{*}\colon H^{2}(S,\QQ)\to H^{6}(X,\QQ)\bigr),
+  \qquad \delta^{2}=-12N(N-4)<0,
+\]
+because $\iota_{*}K_{S}=4N\Theta^{3}$ and
+$\iota_{*}\lambda=\Theta\cup[S]=N\Theta^{3}$. So $\delta$ is a nonzero
+algebraic class of type $(1,1)$, orthogonal by the projection formula to the
+whole image of $H^{2}(X,\QQ)$ in $H^{2}(S,\QQ)$, and of negative square: the
+Picard number of $S$ is at least two, and the kernel of the Gysin map on
+$H^{2}(S,\QQ)$, a sub-Hodge structure, contains an algebraic class. For
+general $b$ the class is $K_{S}-\tfrac{4b}{3}\lambda$, with square
+$\tfrac{4N}{3}(4b^{2}-9N)$, and its vanishing is the equality case $9N=4b^{2}$
+of the Hodge index bound in \Cref{thm:smoothinvariants}. This excludes none
+of the four cases; it describes them.
+\end{remark}
+
+The third condition is the one that \Cref{thm:factor}(iii)(a) imposes on
+every candidate and that the construction of \Cref{setup:markman} meets by
+its uniformity over the moduli of principally polarised fourfolds
+(\Cref{cor:markmancondition}): the object must extend to first order along
+every polarised deformation of $(X,\Theta)$. For $\cF=\cI_{S}(3\Theta)$ with
+$S$ smooth this is a condition on $S$. If $S$ extends along a deformation
+$X_{v}$ of $X$ that keeps $\Theta$ of type $(1,1)$, then so does $\cF$.
+Conversely, the obstruction $v\lrcorner\,\mathrm{At}(\cF)\in\Ext^{2}(\cF,\cF)$
+has, under the edge map to $H^{1}(S,\cE xt^{1}(\cF,\cF))=H^{1}(S,N_{S/X})$ of
+\Cref{rem:obstructionmoves}, the image of $v$ under
+$H^{1}(T_{X})\to H^{1}(\iota^{*}T_{X})\to H^{1}(N_{S/X})$, by
+\Cref{lem:edge} applied on the overlaps of a cover; and that image is the
+obstruction $\operatorname{ob}_{S}(v)$ to extending the subscheme $S$ along
+$X_{v}$. So condition (a) for $\cF$ is the statement that $S$ extends to
+first order along every polarised deformation of $X$, and Bloch's
+semiregularity map \cite{Blo72} puts it in a form that names the object it
+concerns. For $S\subset X$ smooth of codimension two with normal bundle
+$N=N_{S/X}$, let
+\[
+  \pi\colon H^{1}(S,N)\xrightarrow{\ \cong\ }H^{1}(S,N^{\vee}\otimes K_{S})
+  \xrightarrow{\ j\ }H^{1}(S,\iota^{*}\Omega^{1}_{X}\otimes K_{S})
+  \xrightarrow{\ \iota_{*}\ }H^{3}(X,\Omega^{1}_{X})
+\]
+be the composite of $N\cong N^{\vee}\otimes\bigwedge^{2}N$, of the conormal
+inclusion $N^{\vee}\to\iota^{*}\Omega^{1}_{X}$ tensored with $K_{S}$, and of
+the Gysin map, with $K_{X}\cong\cO_{X}$. This is the semiregularity map of
+Bloch for codimension two, and it satisfies
+$\pi(\operatorname{ob}_{S}(v))=v\lrcorner[S]$ for every $v\in H^{1}(X,T_{X})$.
+
+\begin{lemma}[Duality]\label{lem:blochduality}
+Under Serre duality $H^{1}(X,T_{X})\times H^{3}(X,\Omega^{1}_{X})\to H^{4}(\cO_{X})=\CC$,
+\[
+  \{v\in H^{1}(X,T_{X}):S\ \text{extends to first order along }v\}
+  =\pi\bigl(H^{1}(S,N)\bigr)^{\perp}.
+\]
+\end{lemma}
+
+\begin{proof}
+$S$ extends along $v$ if and only if $\operatorname{ob}_{S}(v)=0$, and
+$\operatorname{ob}_{S}$ is the composite of the restriction
+$r\colon H^{1}(X,T_{X})\to H^{1}(S,\iota^{*}T_{X})$ with the map induced by
+$\iota^{*}T_{X}\to N$. The Serre dual of $r$ is the Gysin map
+$\iota_{*}\colon H^{1}(S,\iota^{*}\Omega^{1}_{X}\otimes K_{S})\to H^{3}(X,\Omega^{1}_{X}\otimes K_{X})$,
+and the Serre dual of $H^{1}(\iota^{*}T_{X})\to H^{1}(N)$ is the map
+$H^{1}(N^{\vee}\otimes K_{S})\to H^{1}(\iota^{*}\Omega^{1}_{X}\otimes K_{S})$
+induced by the conormal inclusion. So the dual of $\operatorname{ob}_{S}$ is
+$\iota_{*}\circ j$, which is $\pi$ after the identification
+$N\cong N^{\vee}\otimes K_{S}$, and the kernel of a linear map is the
+annihilator of the image of its dual.
+\end{proof}
+
+\begin{proposition}[The first-order condition is a rank condition]
+\label{prop:smoothrank}
+Let $S\subset X$ be a smooth surface with $[S]=N\Theta^{2}$, $N\ne0$. Then
+$\pi(H^{1}(S,N))\supseteq\Theta\cup H^{0,2}(X)$, a subspace of dimension six,
+and the following are equivalent:
+\begin{enumerate}[label=\textup{(\roman*)},nosep,leftmargin=2.2em]
+\item $S$ extends to first order along every polarised deformation of
+  $(X,\Theta)$, that is, $\cI_{S}(3\Theta)$ satisfies condition (a) of
+  \Cref{thm:factor}(iii);
+\item $\pi(H^{1}(S,N))=\Theta\cup H^{0,2}(X)$;
+\item $\operatorname{rank}\pi=6$, the least value possible.
+\end{enumerate}
+In particular a smooth secant support is as far from semiregular in Bloch's
+sense as a surface with this class can be: $\dim\ker\pi=h^{1}(N)-6$, with
+$h^{1}(N)=2h^{0}(N)-2\chi(\cO_{S})+24N^{2}\ge8-2\chi(\cO_{S})+24N^{2}$, which
+is at least $88$, $296$, $568$ and $904$ for $N=5,6,7,8$.
+\end{proposition}
+
+\begin{proof}
+The polarised deformations form $P=\{v:v\lrcorner\Theta=0\}$, of dimension
+ten in $H^{1}(T_{X})=V\otimes H^{0,1}(X)$. For $z\in H^{0,2}(X)$ the pairing
+is $\langle v,\Theta\cup z\rangle=(v\lrcorner\Theta)\cup z$, so
+$\Theta\cup H^{0,2}(X)\subseteq P^{\perp}$; the map $z\mapsto\Theta\cup z$ is
+injective by hard Lefschetz, so this subspace has dimension six, and
+$\dim P^{\perp}=16-10=6$, so $P^{\perp}=\Theta\cup H^{0,2}(X)$. By
+\Cref{lem:blochduality}, (i) says $P\subseteq\pi(H^{1}(N))^{\perp}$, that is
+$\pi(H^{1}(N))\subseteq P^{\perp}$. On the other hand
+$\pi(\operatorname{ob}_{S}(v))=v\lrcorner[S]=2N\,\Theta\cup(v\lrcorner\Theta)$,
+and $v\mapsto v\lrcorner\Theta$ is surjective onto $H^{0,2}(X)$, because
+$\Theta$ identifies $V$ with $\overline{V}^{\vee}$ and the contraction becomes
+the exterior product $V\otimes\overline{V}^{\vee}\to\bigwedge^{2}\overline{V}^{\vee}$.
+So $\pi(H^{1}(N))\supseteq\Theta\cup H^{0,2}(X)$ always, and (i), (ii), (iii)
+are equivalent. For $h^{1}(N)$, Riemann--Roch with $c_{1}(N)=K_{S}$ and
+$c_{2}(N)=[S]^{2}=24N^{2}$ gives $\chi(N)=2\chi(\cO_{S})-24N^{2}$, Serre
+duality with $N^{\vee}\otimes K_{S}\cong N$ gives $h^{2}(N)=h^{0}(N)$, and
+$h^{0}(N)\ge4$ because the four translation vector fields map injectively to
+$H^{0}(N)$: a translation vector field tangent to $S$ everywhere would restrict
+to a nowhere vanishing vector field on $S$, so that $e(S)=c_{2}(T_{S})=0$,
+while a secant support has $e(S)=12N(36-3N)\ne0$ for $N=5,6,7,8$ by
+\Cref{thm:smoothinvariants}.
+\end{proof}
+
+\begin{remark}[What the rank condition asks]\label{rem:smoothrank}
+\Cref{prop:smoothrank} does not decide the condition; it converts it into the
+statement that the kernel of Bloch's map has codimension exactly six, as it
+has for the complete intersections $\Theta\cap\Theta_{x}$, which do move with
+$X$. The kernel of $\pi$ is
+$j^{-1}\bigl(V^{\vee}\otimes\ker(H^{1}(K_{S})\to H^{3}(\cO_{X}))\bigr)$, and
+for $q(S)=4$ it is the image in $H^{1}(N^{\vee}\otimes K_{S})$ of
+$H^{0}(\Omega^{1}_{S}\otimes K_{S})$ modulo $V^{\vee}\otimes H^{0}(K_{S})$. A
+count with $\chi(\Omega^{1}_{S}\otimes K_{S})=2\chi(\cO_{S})+24N^{2}$ and
+$h^{1}(T_{S})\le h^{0}(N)+12$ shows the rank condition to be consistent with
+every inequality available, so no exclusion follows at this level; what
+would decide it is $\ker\pi$ for an actual surface, and no candidate surface
+is known.
+\end{remark}
+
+\subsection{Depth and the local obstruction}
+\label{ssec:depth}
+
+By \Cref{prop:smoothlocal}, at a smooth point of the support there is
+nothing local to compare. This is a special case of a much more general
+statement, and the general statement shows exactly which supports
+\Cref{thm:candidatefails} and \Cref{cor:localobstruction} exclude and which
+lie beyond their reach. The dividing line is neither smoothness nor the local
+complete intersection property, but depth.
+
+\begin{theorem}[Cohen--Macaulay supports carry no local obstruction]%
+\label{thm:cmvanishing}
+Let $Y$ be a smooth variety with $\omega_{Y}\cong\cO_{Y}$, let $Z\subset Y$ be
+a closed subscheme of codimension two, and let $p\in Z$. If the local ring
+$\cO_{Z,p}$ is Cohen--Macaulay, then
+\[
+  \cE xt^{q}(\cI_{Z},\cI_{Z})_{p}=0\qquad\text{for every }q\ge2 ,
+\]
+and the same holds for $\cI_{Z}\otimes L$ for every line bundle $L$.
+Consequently both sides of \eqref{eq:heisenberg} have vanishing germ at $p$,
+and \Cref{lem:edge} decides nothing there.
+\end{theorem}
+
+\begin{proof}
+Twisting by $L$ changes no $\cE xt$ sheaf, so take $F=\cI_{Z}$. Write
+$A=\cO_{Y,p}$, a regular local ring of dimension $m$, and $I=\cI_{Z,p}$. By
+hypothesis $A/I$ is Cohen--Macaulay of dimension $m-2$, so
+$\operatorname{depth}A/I=m-2$, and the Auslander--Buchsbaum formula gives
+\[
+  \operatorname{pd}_{A}(A/I)=m-\operatorname{depth}_{A}(A/I)=2 .
+\]
+From the exact sequence $0\to I\to A\to A/I\to0$ with $A$ free it follows that
+$\operatorname{pd}_{A}I=1$. A module of projective dimension one has a free
+resolution of length one, so $\Ext^{q}_{A}(I,M)=0$ for every $A$-module $M$
+and every $q\ge2$; taking $M=I$ gives the vanishing, since
+$\cE xt^{q}(\cI_{Z},\cI_{Z})_{p}=\Ext^{q}_{A}(I,I)$. The last assertion
+follows from \Cref{lem:edge}: the right side of \eqref{eq:heisenberg} is
+$z\cdot\id_{F}$ with $z\in H^{2}(\cO_{Y})$ and has vanishing germs, and the
+left side lies in a sheaf whose $\cE xt^{2}$ factor is zero.
+\end{proof}
+
+\begin{remark}[Sharpness of the hypothesis]%
+\label{rem:cmsharp}
+Two observations show that \Cref{thm:cmvanishing} is the right statement.
+
+First, Cohen--Macaulayness is strictly weaker than the more familiar
+conditions that could be imposed instead. Among codimension two germs in
+$\CC^{4}$, the smooth germ $(x_{1},x_{2})$, two planes meeting along a line,
+$(x_{1},x_{2}x_{3})$, three planes meeting along a line,
+$(x_{1},x_{2}x_{3}x_{4})$, the double plane $(x_{1}^{2},x_{2})$ and the
+quadric cone $(x_{1},x_{2}^{2}-x_{3}x_{4})$ are complete intersections. The
+fat plane $(x_{1},x_{2})^{2}$ and the cone over the twisted cubic are the
+ideals of $2\times2$ minors of
+$\left(\begin{smallmatrix}x_{1}&x_{2}&0\\
+0&x_{1}&x_{2}\end{smallmatrix}\right)$ and of
+$\left(\begin{smallmatrix}x_{1}&x_{2}&x_{3}\\
+x_{2}&x_{3}&x_{4}\end{smallmatrix}\right)$, of the expected codimension two,
+so they are Cohen--Macaulay by the Hilbert--Burch theorem, although neither
+is a local complete intersection, both needing three generators. By
+\Cref{thm:cmvanishing}, $\cE xt^{2}(\cI_{Z},\cI_{Z})$ vanishes at all seven.
+Reducedness, irreducibility and the complete intersection property are
+therefore all irrelevant; what matters is the projective dimension, which by
+Auslander--Buchsbaum is a matter of depth.
+
+Second, the vanishing fails at the germs that the construction of
+\Cref{setup:markman} produces. Two planes meeting at a point and three planes
+meeting pairwise at a point are reduced surface germs that become
+disconnected when the point is removed, so they have depth $1$: at least $1$
+because they are reduced, and at most $1$ by the connectedness theorem
+recalled below. A plane with an embedded point has depth $0$. By Auslander--Buchsbaum the projective
+dimensions of $\cO_{Z,p}$ are $3$, $3$ and $4$, and the proof of
+\Cref{cor:cmdichotomy}(i) below gives $\cE xt^{q}(\cI_{Z},\cI_{Z})_{p}\ne0$
+for $q=2$, $2$ and $3$. By Hartshorne's connectedness theorem, a scheme whose local ring at $p$
+is Cohen--Macaulay is connected in codimension one at $p$, so a support with
+two components through $p$ meeting only at $p$ is never Cohen--Macaulay
+there. This is precisely the configuration analysed in
+\Cref{lem:localproducts}.
+\end{remark}
+
+\begin{corollary}[The local dichotomy]%
+\label{cor:cmdichotomy}
+Let $(X,t)$ be a polarised abelian variety of dimension $n\ge4$ and $F$ a
+perfect complex with $\ch(F)=au_{t}+bv_{t}$, $(a,b)\ne(0,0)$, whose germ at
+each point is the germ of $\cI_{Z}\otimes L$ for a subscheme $Z$ of
+codimension two, and let $p\in Z$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em]
+\item If $Z$ is not Cohen--Macaulay at $p$, then
+  $\cE xt^{q}(\cI_{Z},\cI_{Z})_{p}\ne0$ for $q=\operatorname{pd}\cI_{Z,p}\ge2$,
+  so the comparison of germs of \Cref{lem:edge} has room at $p$. If moreover
+  $Z$ has at $p$ two smooth branches of codimension two meeting
+  transversally, as in \Cref{lem:localproducts} and
+  \Cref{cor:localobstruction}, then $F$ does not satisfy the weakened
+  criterion, nor does $\Phi(F\boxtimes F_{2})$ for any secant $F_{2}$.
+\item If $Z$ is Cohen--Macaulay, then there is no local obstruction at any
+  point. Condition (b) of \Cref{thm:factor}(iii) is then a single global
+  condition: it holds if and only if the image of $A_{\theta}A_{\theta'}$ in
+  $H^{1}\bigl(Z,\cE xt^{1}(\cI_{Z},\cI_{Z})\bigr)$ vanishes for all
+  $\theta,\theta'\in H^{0}(T_{X})$, the scalar on the right of
+  \eqref{eq:heisenberg} being forced by the trace. Condition (a), the
+  extension of $F$ to first order along the polarised deformations, is
+  not affected by the depth and remains to be checked.
+\end{enumerate}
+In case (ii), $\cI_{Z}$ has projective dimension one at every point, so it is
+locally the ideal of maximal minors of a Hilbert--Burch matrix; if $Z$ is
+moreover smooth, then $\cE xt^{1}(\cI_{Z},\cI_{Z})=N_{Z/X}$ and the invariants
+of $Z$ are those of \Cref{thm:smoothinvariants}.
+\end{corollary}
+
+\begin{proof}
+(i) Put $A=\cO_{X,p}$, of dimension $n$, and $I=\cI_{Z,p}$. Since $A/I$ is not
+Cohen--Macaulay, $\operatorname{depth}A/I<\dim A/I\le n-2$, so
+$\operatorname{pd}_{A}(A/I)\ge3$ by the Auslander--Buchsbaum formula and
+$q=\operatorname{pd}_{A}I\ge2$. In a minimal free resolution
+$F_{\bullet}\to I$ the entries of the differentials lie in the maximal ideal
+$\mathfrak m$, so $\Ext^{q}_{A}(I,I)$, the cokernel of
+$\Hom(F_{q-1},I)\to\Hom(F_{q},I)$, surjects onto
+$\Hom(F_{q},I)\otimes A/\mathfrak m\ne0$ by Nakayama's lemma. At two
+transversal branches the conclusion is \Cref{thm:candidatefails} and
+\Cref{cor:localobstruction}. (ii) \Cref{thm:cmvanishing} gives
+$\cE xt^{q}=0$ for $q\ge2$ at every point, so the local-to-global spectral
+sequence for $\Ext^{2}(\cI_{Z},\cI_{Z})$ has only the two rows
+$H^{1}(\cE xt^{1})$ and $H^{2}(\cO_{X})$, and these lie in different steps of
+the filtration, the second being the subgroup of scalars. The right side of
+\eqref{eq:heisenberg} lies in that subgroup, so its image in the quotient
+$H^{1}(\cE xt^{1})$ is zero, and (b) forces the image of the left side there
+to vanish. Conversely, if that image vanishes, then
+$\mathrm{At}(F)^{2}=z\cdot\id_{F}$ for some
+$z\in H^{2}(\cO_{X})\otimes\bigwedge^{2}H^{1,0}$, the map
+$z\mapsto z\cdot\id_{F}$ being injective because its composite with the
+trace is multiplication by $\rk F=1$; taking traces,
+$z=\operatorname{tr}\mathrm{At}(F)^{2}=-d\,t^{2}$ by the last assertion of
+\Cref{thm:factor}(iii), which is (b). The statement on projective dimension
+was established in the proof of \Cref{thm:cmvanishing}, and the Hilbert--Burch theorem is the
+structure theorem for ideals of projective dimension one over a regular local
+ring; the last clause is \Cref{prop:smoothlocal} together with
+\Cref{thm:smoothinvariants}.
+\end{proof}
+
+\begin{remark}[Normalisation and depth]%
+\label{rem:normalisationcm}
+\Cref{cor:cmdichotomy} explains the tension recorded in
+\Cref{rem:normalisedpoints}. The partial normalisation performed in
+\Cref{setup:markman} separates the two branches at an isolated double point,
+and separating them is exactly what would make the local ring
+Cohen--Macaulay there; the normalisation is thus an attempt to reach case
+(ii). \Cref{rem:normalisedpoints} shows that the attempt cannot succeed:
+normalising every isolated point moves $\chi(\cO_{\widetilde Z})$ to $50N$,
+while the secant plane demands $(d+9)(27-d)=72N-4N^{2}$, and the two agree
+only at $N=11/2$. Repairing the depth destroys the Chern character, and
+keeping the Chern character keeps a point where the depth fails. This is the
+precise form of the obstruction, and it explains why a construction
+assembled from intersections of translates of a polarisation cannot be made
+to work: by \Cref{cor:localobstruction} such a chain always has a point of
+the bad type, and by \Cref{rem:normalisedpoints} it cannot be separated
+without leaving the plane.
+\end{remark}
+
+\subsection{Hilbert--Burch resolutions}
+\label{ssec:hilbertburch}
+
+\Cref{cor:cmdichotomy} leaves one class of supports and, beside the
+extension along the polarised deformations, one condition on them.
+The class consists of the Cohen--Macaulay subschemes of codimension two, and
+for these the proof of \Cref{thm:cmvanishing} gives more than the vanishing
+it was used for: the ideal sheaf has projective dimension one at every point.
+This is the Hilbert--Burch shape, whose invariants are polynomials in the twists.
+
+\begin{setupenv}[A resolution of the support]\label{setup:burch}
+Let $(X,\Theta)$ be a principally polarised abelian fourfold with
+$\NS(X)_{\QQ}=\QQ\Theta$, let $Z\subset X$ be Cohen--Macaulay of codimension
+two, and suppose $\cI_{Z}$ admits a global resolution
+\begin{equation}\label{eq:burchres}
+  0\longrightarrow E_{1}\stackrel{\varphi}{\longrightarrow}E_{0}
+  \longrightarrow\cI_{Z}\longrightarrow0,
+  \qquad \rk E_{0}=r+1,\quad\rk E_{1}=r,
+\end{equation}
+with $E_{0}=\bigoplus_{i=1}^{r+1}\cO(e_{i}\Theta)$ and
+$E_{1}=\bigoplus_{j=1}^{r}\cO(f_{j}\Theta)$ sums of line bundles. Put
+$p_{i}=e_{i}+b$ and $q_{j}=f_{j}+b$.
+\end{setupenv}
+
+\begin{lemma}[The resolution in moments]\label{lem:burchmoments}
+In \Cref{setup:burch}, $\ch(\cI_{Z}(b\Theta))=u_{\Theta}+b\,v_{\Theta}$ holds
+if and only if
+\begin{equation}\label{eq:burchsystem}
+  \sum_{i=1}^{r+1}p_{i}^{\,k}-\sum_{j=1}^{r}q_{j}^{\,k}=c_{k},
+  \qquad k=0,1,2,3,4,
+  \qquad (c_{k})=(1,\;b,\;-d,\;-db,\;d^{2}).
+\end{equation}
+The equation at $k=0$ is the rank count and is automatic. In addition,
+$\varphi$ can be injective only if $\max_{i}e_{i}\ge\max_{j}f_{j}$, and
+$\cO_{X}$ embeds in $E_{0}^{\vee}$ only if $\min_{i}e_{i}\le0$.
+\end{lemma}
+
+\begin{proof}
+From \eqref{eq:burchres}, $\ch(\cI_{Z})=\ch(E_{0})-\ch(E_{1})$, so
+$\ch(\cI_{Z}(b\Theta))=\sum_{i}e^{p_{i}\Theta}-\sum_{j}e^{q_{j}\Theta}$.
+Comparing coefficients of $\Theta^{k}/k!$ with those of
+$u_{\Theta}+bv_{\Theta}$, which are the $c_{k}$ displayed, gives
+\eqref{eq:burchsystem}. For the last two statements, recall that on an
+abelian variety $\Hom(\cO(f\Theta),\cO(e\Theta))=H^{0}(\cO((e-f)\Theta))$
+vanishes unless $e\ge f$. If $\varphi$ is injective, each summand of $E_{1}$
+must map nonzero to $E_{0}$, which requires $\max_{i}e_{i}\ge f_{j}$ for
+every $j$. Dualising \eqref{eq:burchres} and using $\cI_{Z}^{\vee}=\cO_{X}$
+gives an injection $\cO_{X}\hookrightarrow E_{0}^{\vee}$, which requires
+$-e_{i}\ge0$ for some $i$.
+\end{proof}
+
+The case $r=1$ consists of the complete intersections, and it is settled for
+every $b$ and every $d$ by an argument that needs no search.
+
+\begin{theorem}[No complete intersection supports a secant object]%
+\label{thm:noci}
+Let $(X,\Theta)$ be a principally polarised abelian fourfold with
+$\NS(X)_{\QQ}=\QQ\Theta$, let $d>0$ and $b\ge1$. No complete intersection
+$Z=D_{1}\cap D_{2}$ of two divisors satisfies
+$\ch(\cI_{Z}(b\Theta))=u_{\Theta}+b\,v_{\Theta}$.
+\end{theorem}
+
+\begin{proof}
+Such a $Z$ is \Cref{setup:burch} with $r=1$, the resolution being the Koszul
+complex of the two equations. Put $w(x)=x^{2}+d$, which is strictly positive
+on $\RR$ because $d>0$, and read \eqref{eq:burchsystem} in the combinations
+$c_{k+2}+d\,c_{k}$ for $k=0,1,2$. Those three numbers are
+\[
+  c_{2}+dc_{0}=-d+d=0,\qquad
+  c_{3}+dc_{1}=-db+db=0,\qquad
+  c_{4}+dc_{2}=d^{2}-d^{2}=0,
+\]
+so that
+\[
+  \sum_{i}w(p_{i})\,p_{i}^{\,k}=\sum_{j}w(q_{j})\,q_{j}^{\,k},
+  \qquad k=0,1,2 .
+\]
+The two sides are the moments of order $0$, $1$ and $2$ of the positive
+measures $\nu_{P}=\sum_{i}w(p_{i})\delta_{p_{i}}$ and
+$\nu_{Q}=\sum_{j}w(q_{j})\delta_{q_{j}}$, so those measures have the same
+mass, the same mean and the same variance. At $r=1$ the measure $\nu_{Q}$ has
+one atom, hence variance zero, so $\nu_{P}$ has variance zero as well, and a
+positive measure with two atoms has variance zero only if the atoms coincide.
+Hence $p_{1}=p_{2}$, and equality of the means forces $q_{1}=p_{1}$. The
+resolution \eqref{eq:burchres} then cancels, and $\cI_{Z}\cong\cO(e_{1}\Theta)$
+would be a line bundle, which the ideal sheaf of a subscheme of codimension
+two is not.
+
+In terms of the divisors, the same computation shows that their degrees
+$a_{1}$ and $a_{2}$ would have to satisfy $a_{1}+a_{2}=\tfrac43b$ and
+$(b-a_{1})(b-a_{2})=\tfrac12\bigl(\tfrac13b^{2}+d\bigr)$; the quadratic with
+roots $b-a_{1}$ and $b-a_{2}$ then has discriminant $-\tfrac29b^{2}-2d<0$, so
+the degrees are not even real.
+\end{proof}
+
+For $r\ge2$ the moment conditions alone no longer decide the question. The
+Chern characters of the bundles of \Cref{setup:burch}, and of every bundle
+built from line bundles, lie in one lattice, and the secant plane meets that
+lattice only along a congruence. Write a class $\xi\in\QQ[\Theta]/(\Theta^{5})$
+as $\xi=\sum_{k=0}^{4}c_{k}(\xi)\,\Theta^{k}/k!$, as in
+\Cref{lem:burchmoments}, so that $c_{k}(e^{j\Theta})=j^{k}$, and let
+$\cL_{\Theta}$ be the subgroup generated by the classes
+$e^{j\Theta}=\ch\cO_{X}(j\Theta)$, $j\in\ZZ$. It is a subring, since
+$e^{a\Theta}e^{b\Theta}=e^{(a+b)\Theta}$, and it contains $\ch$ of every
+bundle obtained from line bundles algebraically equivalent to multiples of
+$\Theta$ by direct sums, tensor products, duals, exterior and symmetric
+powers, kernels of surjections and cokernels of injections between such
+bundles, and extensions;
+in particular the kernel bundles
+$M_{m\Theta}=\ker\bigl(H^{0}(\cO(m\Theta))\otimes\cO_{X}\to\cO_{X}(m\Theta)\bigr)$,
+of class $m^{4}-e^{m\Theta}$, and their duals and twists.
+
+\begin{lemma}[Binomial moments]\label{lem:binomialmoments}
+Define $m_{k}(\xi)\in\QQ$, $0\le k\le4$, by
+\begin{equation}\label{eq:stirling}
+  c_{i}(\xi)=\sum_{k=0}^{i}S(i,k)\,k!\,m_{k}(\xi),
+\end{equation}
+where $S(i,k)$ are the Stirling numbers of the second kind; explicitly
+\begin{gather*}
+  m_{0}=c_{0},\qquad m_{1}=c_{1},\qquad m_{2}=\tfrac12(c_{2}-c_{1}),\\
+  m_{3}=\tfrac16(c_{3}-3c_{2}+2c_{1}),\qquad
+  m_{4}=\tfrac1{24}(c_{4}-6c_{3}+11c_{2}-6c_{1}).
+\end{gather*}
+Then $\xi\in\cL_{\Theta}$ if and only if $m_{k}(\xi)\in\ZZ$ for $k=0,\dots,4$.
+\end{lemma}
+
+\begin{proof}
+For $\xi=\sum_{j}a_{j}e^{j\Theta}$ one has $c_{i}(\xi)=\sum_{j}a_{j}j^{i}$,
+and $j^{i}=\sum_{k}S(i,k)\,k!\binom{j}{k}$, so \eqref{eq:stirling} holds
+with $m_{k}(\xi)=\sum_{j}a_{j}\binom{j}{k}\in\ZZ$. Conversely, the five
+vectors $\bigl(\binom{j}{0},\dots,\binom{j}{4}\bigr)$ for $j=0,\dots,4$
+form a unitriangular matrix, so every integer vector $(m_{0},\dots,m_{4})$
+is an integer combination of them, and the corresponding
+$\sum_{j=0}^{4}a_{j}e^{j\Theta}$ lies in $\cL_{\Theta}$ with the prescribed
+moments. Since \eqref{eq:stirling} is invertible over $\QQ$, the moments
+determine $\xi$.
+\end{proof}
+
+Equivalently, sending $e^{j\Theta}$ to $x^{j}$ identifies
+$\QQ[\Theta]/(\Theta^{5})$ with $\QQ[y]/(y^{5})$, $y=x-1$, the class
+$e^{j\Theta}$ going to $(1+y)^{j}$; then $m_{k}(\xi)$ is the coefficient of
+$y^{k}$ and $\cL_{\Theta}$ is $\ZZ[y]/(y^{5})$.
+
+\begin{theorem}[The secant plane and the lattice of line bundles]
+\label{thm:lattice}
+For $(a,b)\in\ZZ^{2}$ and $d\ge1$,
+\[
+  m\bigl(a\,u_{\Theta}+b\,v_{\Theta}\bigr)
+  =\Bigl(a,\ b,\ -\frac{ad+b}{2},\ \frac{3ad+2b-bd}{6},\
+  \frac{ad^{2}-11ad+6bd-6b}{24}\Bigr).
+\]
+Consequently $a\,u_{\Theta}+b\,v_{\Theta}\in\cL_{\Theta}$ if and only if
+\begin{gather*}
+  ad\equiv b\pmod 2,\qquad 3ad+2b-bd\equiv0\pmod 6,\\
+  ad^{2}-11ad+6bd-6b\equiv0\pmod{24}.
+\end{gather*}
+For $a=1$ and $b=3$ the moments are
+$\bigl(1,3,-\tfrac{d+3}{2},1,\tfrac{(d+9)(d-2)}{24}\bigr)$, and
+$u_{\Theta}+3v_{\Theta}\in\cL_{\Theta}$ if and only if $d$ is odd and
+$24\mid(d+9)(d-2)$, that is, if and only if
+\[
+  d\equiv15\ \text{or}\ 23\pmod{24}.
+\]
+\end{theorem}
+
+\begin{proof}
+In the variable $y=x-1$ put
+$L=\log(1+y)=y-\tfrac12y^{2}+\tfrac13y^{3}-\tfrac14y^{4}$ modulo $y^{5}$.
+Under $e^{j\Theta}\mapsto x^{j}$ the class $\Theta$ goes to $L$, hence
+$u_{\Theta}\mapsto1-\tfrac d2L^{2}+\tfrac{d^{2}}{24}L^{4}$ and
+$v_{\Theta}\mapsto L-\tfrac d6L^{3}$. With
+$L^{2}=y^{2}-y^{3}+\tfrac{11}{12}y^{4}$, $L^{3}=y^{3}-\tfrac32y^{4}$ and
+$L^{4}=y^{4}$ modulo $y^{5}$, the coefficients of $1,y,\dots,y^{4}$ in
+$a\,u_{\Theta}+b\,v_{\Theta}$ are the five displayed expressions, and the
+congruences are the integrality of the last three. For $b=3$ the second
+reads $3d+6-3d=6$, so $m_{3}=1$, and the third reads
+$d^{2}+7d-18=(d+9)(d-2)$. Modulo $8$ the condition is $8\mid(d+1)(d-2)$
+with $d$ odd, hence $d\equiv7\pmod8$; modulo $3$ it is $3\mid d(d-2)$, hence
+$d\equiv0,2\pmod3$; together $d\equiv15,23\pmod{24}$.
+\end{proof}
+
+\begin{corollary}[Split resolutions, for every rank and every twist]
+\label{cor:latticeburch}
+Let $Z\subset X$ be Cohen--Macaulay of codimension two with a resolution
+$0\to E_{1}\to E_{0}\to\cI_{Z}\to0$ in which $\ch E_{0}$ and $\ch E_{1}$ both
+lie in $\cL_{\Theta}$: for instance \Cref{setup:burch} with any rank and any
+twists, or $E_{0}$ and $E_{1}$ built from such line bundles and from the
+bundles $M_{m\Theta}$ by the operations listed above. If
+$\ch(\cI_{Z}(3\Theta))=u_{\Theta}+3v_{\Theta}$, then $d\equiv15$ or
+$23\pmod{24}$. In particular this never happens for the four discriminants
+of \Cref{cor:fourdiscriminants}.
+\end{corollary}
+
+\begin{proof}
+$\ch(\cI_{Z}(3\Theta))=e^{3\Theta}(\ch E_{0}-\ch E_{1})\in\cL_{\Theta}$, and
+\Cref{thm:lattice} applies.
+\end{proof}
+
+\begin{remark}[What the congruence measures]\label{rem:latticedefect}
+The fractional part of $m_{4}$ is the invariant that separates the secant
+plane from the line bundles. For $d\in\{1,3,5,7\}$ it is
+$-\tfrac{5}{12},\tfrac12,\tfrac34,\tfrac13$ modulo $\ZZ$, and any object with
+Chern character $u_{\Theta}+3v_{\Theta}$ must carry a class outside
+$\cL_{\Theta}$ with exactly that defect. Two checks. A point has
+$m=(0,0,0,0,1/24)$, and the partial normalisation of \Cref{setup:markman} at
+$(d+9)(2d-1)$ isolated points shifts $m_{4}$ by $(d+9)(2d-1)/24$; since
+$(d+9)(d-2)+(d+9)(2d-1)=3(d+9)(d-1)\equiv0\pmod{24}$ for odd $d$, the
+unnormalised chain, which lies in $\cL_{\Theta}$, is moved onto the plane by
+exactly the right defect, as it must be. For a smooth support the class of
+the structure sheaf has $m(\cO_{S})=\bigl(0,0,N,-3N,N(83-2N)/12\bigr)$, and
+$N(83-2N)/12$ is not an integer for $N\in\{5,6,7,8\}$; so a smooth secant
+support is a surface whose structure sheaf is not in the line-bundle
+subring, unlike every complete intersection of translates of $\Theta$ and
+every degeneracy locus of a map between bundles in $\cL_{\Theta}$. The
+Fourier--Mukai transforms of line bundles and the push-forwards of line
+bundles along isogenies do have classes outside $\cL_{\Theta}$, which is why
+the semi-homogeneous bundles need the separate argument of
+\Cref{thm:noblocks}.
+\end{remark}
+
+The lattice constrains the classes of the two terms of a resolution; their
+ranks constrain the Chern classes, because a vector bundle of rank $s$ has
+$c_{k}=0$ for $k>s$, and on a fourfold this bites for $s\le3$.
+
+\begin{proposition}[Resolutions of rank one and two]\label{prop:lowrankburch}
+Let $(X,\Theta)$ be a principally polarised abelian fourfold, let $b\ge1$
+and $d>0$, and let $Z\subset X$ be of codimension two with a resolution
+\[
+  0\longrightarrow E_{1}\longrightarrow E_{0}\longrightarrow\cI_{Z}
+  \longrightarrow0
+\]
+by vector bundles of ranks $r$ and $r+1$, and with
+$\ch(\cI_{Z}(b\Theta))=u_{\Theta}+b\,v_{\Theta}$.
+\begin{enumerate}[label=\textup{(\roman*)},nosep,leftmargin=2.2em]
+\item $r\ge2$, whatever the bundles. Equivalently, $Z$ is not the zero locus
+  of a section of a vector bundle of rank two.
+\item If $r=2$ and the Chern classes of $E_{1}$ are polynomials in $\Theta$,
+  as they are when $\Hdg^{2}(X)=\QQ\Theta$ and $\Hdg^{4}(X)=\QQ\Theta^{2}$,
+  then, writing $c_{1}(E_{1}(b\Theta))=a\Theta$ with $a\in\ZZ$,
+  \[
+    3d-b^{2}-4ab\equiv0\pmod{12}.
+  \]
+  At $b=3$ this says $d\equiv3\pmod4$.
+\end{enumerate}
+In particular, at the discriminants $d=1$ and $d=5$ of
+\Cref{cor:fourdiscriminants}, a resolution whose Chern classes are
+polynomials in $\Theta$ has $r\ge3$.
+\end{proposition}
+
+\begin{proof}
+Put $E=E_{1}(b\Theta)$, $G=E_{0}(b\Theta)$ and $F=\cI_{Z}(b\Theta)$, so that
+$0\to E\to G\to F\to0$ is exact and $c(G)=c(E)\,c(F)$. Newton's identities
+applied to $\ch(F)=1+b\Theta-\frac d2\Theta^{2}-\frac{db}{6}\Theta^{3}
++\frac{d^{2}}{24}\Theta^{4}$ give, with $N=\frac12(b^{2}+d)$,
+\[
+  c(F)=1+b\Theta+N\Theta^{2}+\tfrac{bN}{3}\Theta^{3}
+  +\tfrac{N(b^{2}-3d)}{12}\Theta^{4}.
+\]
+Since $E$ and $G$ are vector bundles, $c_{k}(E)=0$ for $k>r$ and
+$c_{k}(G)=0$ for $k>r+1$.
+
+(i) Let $r=1$ and $\ell=c_{1}(E)$, so that $c(G)=(1+\ell)\,c(F)$. The rank
+two bundle $G$ has $c_{3}(G)=\frac{bN}{3}\Theta^{3}+N\ell\,\Theta^{2}=0$, and
+cup product with $\Theta^{2}$ is an isomorphism $H^{2}(X,\QQ)\to H^{6}(X,\QQ)$
+by hard Lefschetz, so $\ell=-\frac b3\Theta$. Then
+\[
+  c_{4}(G)=c_{4}(F)+\ell\,c_{3}(F)
+  =N\Bigl(\frac{b^{2}-3d}{12}-\frac{b^{2}}{9}\Bigr)\Theta^{4}
+  =-\frac{N(b^{2}+9d)}{36}\,\Theta^{4},
+\]
+which is not zero, since $N>0$ and $d>0$. A section of a rank two bundle $V$
+vanishing in codimension two exactly on $Z$ gives the Koszul resolution
+$0\to\det V^{\vee}\to V^{\vee}\to\cI_{Z}\to0$, which has $r=1$; conversely,
+at $r=1$ the map $E_{1}\to E_{0}$ is a section of $E_{0}\otimes E_{1}^{\vee}$
+with zero locus $Z$.
+
+(ii) Let $r=2$, and write $c_{1}(E)=a\Theta$ and $c_{2}(E)=\frac m2\Theta^{2}$
+with $a,m\in\ZZ$, since $\Theta$ and $\frac12\Theta^{2}$ are primitive
+integral classes. Now $c_{3}(E)=c_{4}(E)=0$, and the rank three bundle $G$
+has
+\[
+  c_{4}(G)=c_{4}(F)+c_{1}(E)\,c_{3}(F)+c_{2}(E)\,c_{2}(F)=0 .
+\]
+Integrating, with $\int_{X}\Theta^{4}=24$, and dividing by $2N$ gives
+$6m=3d-b^{2}-4ab$. By Riemann--Roch with trivial Todd class,
+$\chi(E)=\int_{X}\ch_{4}(E)=a^{4}-2a^{2}m+\frac12m^{2}$ is an integer, so $m$
+is even, which is the congruence. At $b=3$ it reads $3(d-3)\equiv12a\equiv0$
+modulo $12$, that is, $d\equiv3\pmod4$.
+\end{proof}
+
+\begin{remark}[What the ranks exclude]\label{rem:lowrankburch}
+Part (i) extends \Cref{thm:noci} from two divisors to the zero locus of a
+section of any rank two bundle, stable or not, so the construction of Serre
+produces no secant support; it holds for every $X$, with no condition on
+$\NS(X)$. Part (ii) holds for arbitrary bundles whose Chern classes are
+polynomials in $\Theta$, not only for sums of line bundles, and at $b=3$ it
+excludes $r=2$ whenever $d\not\equiv3\pmod4$. The integrality of
+the Chern classes of $E_{0}$ is automatic, since
+$c(E_{0}(b\Theta))=c(E_{1}(b\Theta))\,c(F)$ and $c(F)$ is integral, so it is
+the vanishing above the rank, and not integrality, that constrains. Neither
+condition restricts $r\ge3$: a bundle of rank four has no vanishing Chern
+class on a fourfold, and at $r=3$ the only condition, $c_{4}(E)=0$, involves
+$E$ alone.
+\end{remark}
+
+\Cref{cor:latticeburch} says where a split resolution can have the right
+Chern character. A stronger statement holds: no object with a split
+resolution satisfies the criterion, at any rank and for any discriminant
+(\Cref{thm:nosplit}). It
+rests on a necessary condition that we isolate, because it applies to
+every object and can be tested on any candidate before any global
+computation is attempted.
+
+\begin{lemma}[Morphisms to a line bundle are killed by $H^{2}(\cO)$]
+\label{lem:annihilation}
+Let $(X,t)$ be a polarised abelian variety of dimension $n\ge3$, let $F$ be
+a perfect complex with $\ch(F)=au_{t}+bv_{t}$, $(a,b)\ne(0,0)$, which
+satisfies the weakened criterion of \Cref{setup:criterion}, and let $L$ be a
+line bundle with $c_{1}(L)\in\QQ\,t$. Then for every $m\in\ZZ$, every
+morphism $p\colon F\to L[m]$, every morphism $q\colon L[m]\to F$, and every
+$z\in H^{2}(\cO_{X})$,
+\[
+  z\cdot p=0\ \ \text{in }\Hom(F,L[m+2]),\qquad
+  z\cdot q=0\ \ \text{in }\Hom(L[m],F[2]),
+\]
+where $z\cdot(\,\cdot\,)$ is the $H^{*}(\cO_{X})$-module structure on
+morphisms in $D^{b}(X)$. In particular, if $F=\cI_{Z}\otimes L'$ for a closed
+subscheme $Z$ and a line bundle $L'$ with $c_{1}(L')\in\QQ t$, then the
+restriction $H^{n-2}(\cO_{X})\to H^{n-2}(\cO_{Z})$ is injective.
+\end{lemma}
+
+\begin{proof}
+For a constant bivector $\pi$ the class
+$x_{\pi}=(\tfrac d2\,\pi\lrcorner\,t^{2},0,\pi)$ preserves $\ch(F)$ by
+\Cref{thm:factor}(ii), so $\operatorname{ev}_{F}(x_{\pi})=0$ by hypothesis.
+The Hochschild action is by natural transformations $\id\to\id[2]$ of
+$D^{b}(X)$, so for $p\colon F\to L[m]$ we have
+$\operatorname{ev}_{L[m]}(x_{\pi})\circ p=p\circ\operatorname{ev}_{F}(x_{\pi})=0$,
+where $\operatorname{ev}_{L[m]}=\operatorname{ev}_{L}[m]$. By
+\eqref{eq:evsplit}, $\operatorname{ev}_{L}(x_{\pi})=c_{\pi}\cdot\id_{L}$ with
+$c_{\pi}=\tfrac12\,\pi\lrcorner\,(\lambda^{2}+d\,t^{2})\in H^{0,2}(X)$ and
+$\lambda=c_{1}(L)=e\,t$, that is,
+$c_{\pi}=\tfrac{e^{2}+d}{2}\,\pi\lrcorner\,t^{2}$. Since $e^{2}+d>0$ and
+$\pi\mapsto\pi\lrcorner\,t^{2}$ is an isomorphism from
+$H^{0}(\bigwedge^{2}T_{X})$ onto $H^{0,2}(X)$, as in the proof of
+\Cref{thm:factor}(iii), $c_{\pi}$ runs over all of $H^{2}(\cO_{X})$ as $\pi$
+varies; as $(c_{\pi}\cdot\id_{L})\circ p=c_{\pi}\cdot p$, this proves the
+assertion for $p$. The assertion for $q$ follows in the same way from the
+square
+$\operatorname{ev}_{F}(x_{\pi})\circ q=q\circ\operatorname{ev}_{L[m]}(x_{\pi})$.
+For the last assertion, apply the first to the inclusion
+$p\colon\cI_{Z}\otimes L'\to L'$. After twisting by $L'^{-1}$, the sequence
+$0\to\cI_{Z}\to\cO_{X}\to\cO_{Z}\to0$ gives an exact sequence
+\[
+  \Ext^{2}(\cO_{Z},\cO_{X})\longrightarrow H^{2}(\cO_{X})
+  \longrightarrow\Ext^{2}(\cI_{Z},\cO_{X}),
+\]
+in which the second map is $z\mapsto z\cdot p$. So $z\cdot p=0$ for all $z$
+means that the first map is surjective, and by Serre duality, $\omega_{X}$
+being trivial, the first map is dual to the restriction
+$H^{n-2}(\cO_{X})\to H^{n-2}(\cO_{Z})$.
+\end{proof}
+
+\begin{theorem}[No two-term complex of powers of the polarisation satisfies
+the criterion]\label{thm:nosplit}
+Let $(X,t)$ be a polarised abelian variety of dimension $n\ge3$ and $M$ an
+ample line bundle with $c_{1}(M)\in\QQ t$. Let $A$ and $B$ be direct sums of
+tensor powers $M^{\otimes e}$, $e\in\ZZ$, let $\varphi\colon A\to B$ be any
+morphism, and let $F$ be the cone of $\varphi$, or any shift of it. If $F\ne0$
+and $\ch(F)=au_{t}+bv_{t}$ with $(a,b)\ne(0,0)$, then $F$ does not satisfy
+the weakened criterion. In particular, no object with a resolution
+$0\to E_{1}\to E_{0}\to F\to0$ by sums of powers of $M$ satisfies it,
+whatever the rank.
+\end{theorem}
+
+\begin{proof}
+A pair of summands $M^{\otimes e}$ of $A$ and $M^{\otimes e}$ of $B$ joined
+by a nonzero entry of $\varphi$, which is then a nonzero scalar, can be
+cancelled without changing the cone up to isomorphism; do this until no such
+pair remains. If $A=0$ or $B=0$ after cancelling, $F$ is a shifted sum of
+line bundles, $\operatorname{ev}_{F}(x_{\pi})$ is diagonal with the nonzero
+entries $c_{\pi}\cdot\id$ of the proof of \Cref{lem:annihilation}, and the
+criterion fails as in \Cref{cor:noline}; so suppose both are nonzero and
+consider the triangle $A\xrightarrow{\varphi}B\xrightarrow{\;q\;}F\to A[1]$.
+Let $M^{\otimes b_{j}}$ be a summand of $B$, $\iota_{j}$ its inclusion into
+$B$, and $q_{j}=q\circ\iota_{j}\colon M^{\otimes b_{j}}\to F$. Applying
+$\Hom(M^{\otimes b_{j}},-)$ to the triangle gives the exact sequence
+\[
+  \Hom(M^{\otimes b_{j}},A[2])\xrightarrow{\;\varphi_{*}\;}
+  \Hom(M^{\otimes b_{j}},B[2])\xrightarrow{\;q_{*}\;}
+  \Hom(M^{\otimes b_{j}},F[2]),
+\]
+and $z\cdot q_{j}=q_{*}(z\cdot\iota_{j})$ for $z\in H^{2}(\cO_{X})$. Now
+$\Hom(M^{\otimes b_{j}},B[2])=\bigoplus_{k}H^{2}(M^{\otimes(b_{k}-b_{j})})$,
+and $H^{2}(M^{\otimes m})=0$ for $m\ne0$: for $m>0$ by Kodaira vanishing,
+$\omega_{X}$ being trivial, and for $m<0$ because a negative line bundle on
+an abelian variety has cohomology only in degree $n\ge3$. So $z\cdot\iota_{j}$
+is the element with component $z$ in the summand $k=j$ and zero elsewhere. It
+lies in the image of $\varphi_{*}$ only if there is
+$\psi\in\Hom(M^{\otimes b_{j}},A[2])=\bigoplus_{i}H^{2}(M^{\otimes(a_{i}-b_{j})})$
+with $(\varphi\circ\psi)_{j}=\sum_{i}\varphi_{ji}\psi_{i}=z$; but $\psi_{i}\ne0$
+forces $a_{i}=b_{j}$, and for such $i$ the entry $\varphi_{ji}$ is a scalar,
+zero after the cancellation. So $z\cdot q_{j}\ne0$ for every $z\ne0$, which
+contradicts \Cref{lem:annihilation}. The last assertion is the case of a
+resolution, where $F\cong\coker\varphi$ is the cone of $\varphi\colon E_{1}\to E_{0}$.
+\end{proof}
+
+The powers of the polarisation are not the only bundles on which the
+compensated Poisson classes act by scalars. The same holds for every bundle
+whose Atiyah class is a multiple of the identity, and on an abelian variety
+these are the semi-homogeneous bundles of Mukai \cite{Muk78}. The argument of
+\Cref{thm:nosplit} goes through for them, with the cohomology of the fibre
+product of two isogenies in place of the cohomology of a power of $\Theta$.
+We state the result in a self-contained form.
+
+\begin{definition}[Isogeny blocks]\label{def:block}
+Let $(X,\Theta)$ be a polarised abelian variety. An \emph{isogeny block} is a
+vector bundle $E=\pi_{*}L$, where $\pi\colon Y\to X$ is an isogeny and $L$ is
+a line bundle on $Y$ with $c_{1}(L)=\nu\,\pi^{*}\Theta$ in $H^{2}(Y,\QQ)$,
+$\nu\in\QQ$; its \emph{slope} is $\nu$, so that $c_{1}(E)=\nu\deg(\pi)\,\Theta$.
+The block is \emph{simple} if $\tau_{g}^{*}L\not\cong L$ for every nonzero
+$g\in\ker\pi$. The powers $\cO(e\Theta)$ are the blocks with $\pi=\id$.
+\end{definition}
+
+\begin{lemma}[Three properties of a block]\label{lem:blocks}
+Let $E=\pi_{*}L$ be an isogeny block of slope $\nu$ on an abelian $n$-fold.
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item $\mathrm{At}(E)=\nu\Theta\cdot\id_{E}$; hence for a constant bivector
+  $\pi$ the compensated class $x_{\pi}$ of \Cref{thm:factor}(ii) acts by
+  $\operatorname{ev}_{E}(x_{\pi})=\tfrac{\nu^{2}+d}{2}\,(\pi\lrcorner\,\Theta^{2})\cdot\id_{E}$,
+  and \Cref{lem:annihilation} holds with $E$ in place of the line bundle $L$.
+\item For a second block $E'=\pi'_{*}L'$ of slope $\nu'$,
+  $\Ext^{q}(E',E)=H^{q}(Z,M)$ with $Z=Y'\times_{X}Y$, a disjoint union of
+  abelian varieties isogenous to $X$, and $M$ a line bundle whose class on
+  each component is $(\nu-\nu')$ times the pullback of $\Theta$. If
+  $\nu\ne\nu'$ and $n\ge3$ then $\Ext^{2}(E',E)=0$. If $E$ is simple then
+  $\Ext^{2}(E,E)=H^{2}(\cO_{X})\cdot\id_{E}$.
+\item A simple block is $\mu$-stable with respect to $\Theta$; hence a
+  nonzero morphism between simple blocks of the same slope is an
+  isomorphism.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) Since $\pi$ is \'etale, $\pi^{*}\Omega^{1}_{X}=\Omega^{1}_{Y}$ and $\pi_{*}$
+is exact, so the first jet sequence of $\pi_{*}L$ is the direct image of
+that of $L$, and $\mathrm{At}(\pi_{*}L)$ is the image of $\mathrm{At}(L)$
+under $\pi_{*}\colon\Ext^{1}_{Y}(L,L\otimes\pi^{*}\Omega^{1}_{X})\to
+\Ext^{1}_{X}(\pi_{*}L,\pi_{*}L\otimes\Omega^{1}_{X})$. As $\mathrm{At}(L)=c_{1}(L)\cdot\id_{L}
+=\nu\,\pi^{*}\Theta\cdot\id_{L}$, the projection formula gives
+$\nu\Theta\cdot\id_{\pi_{*}L}$. Then \eqref{eq:evgeneral} with a scalar Atiyah
+class gives the value of $\operatorname{ev}_{E}(x_{\pi})$, and the proof of
+\Cref{lem:annihilation} used nothing else about $L$.
+
+(ii) Adjunction for the finite \'etale $\pi'$, flat base change along the
+cartesian square with vertices $Z$, $Y'$, $Y$, $X$, and the projection formula
+give $\Ext^{q}_{X}(\pi'_{*}L',\pi_{*}L)=H^{q}(Y',L'^{-1}\otimes\pi'^{*}\pi_{*}L)
+=H^{q}(Z,p'^{*}L'^{-1}\otimes p^{*}L)$, with $p,p'$ the two projections; the
+class of $M=p'^{*}L'^{-1}\otimes p^{*}L$ is $(\nu-\nu')$ times the pullback of
+$\Theta$ on every component, which is an abelian variety finite \'etale over
+$Y'$. A line bundle on an abelian $n$-fold whose class is a positive
+multiple of an ample class has cohomology only in degree $0$, and one whose
+class is a negative multiple only in degree $n$, by Kodaira vanishing and
+Serre duality with trivial canonical bundle; so $H^{2}(Z,M)=0$ when
+$\nu\ne\nu'$ and $n\ge3$. When $E'=E$, the components of $Y\times_{X}Y$ are
+the graphs of the translations by $g\in\ker\pi$, on which $M$ restricts to
+$L^{-1}\otimes\tau_{g}^{*}L\in\Pic^{0}(Y)$; a nontrivial element of $\Pic^{0}$
+has no cohomology, so $\Ext^{q}(E,E)=\bigoplus_{g}H^{q}(\cO_{Y})$ over the
+$g$ with $\tau_{g}^{*}L\cong L$, which for a simple block is $g=0$ alone, and
+$H^{q}(\cO_{Y})=H^{q}(\cO_{X})$ through $\pi$.
+
+(iii) The pullback $\pi^{*}E=\bigoplus_{g\in\ker\pi}\tau_{g}^{*}L$ is a direct
+sum of line bundles of one slope, hence $\mu$-semistable, and semistability
+descends along the finite \'etale $\pi$; so $E$ is semistable. If $F\subset E$
+is a saturated subsheaf of the same slope, then $\pi^{*}F\subset\pi^{*}E$ is
+a saturated subsheaf of the same slope of a direct sum of pairwise
+non-isomorphic line bundles, the $\tau_{g}^{*}L$ being distinct because the
+block is simple, hence a partial sum $\bigoplus_{g\in S}\tau_{g}^{*}L$; it is
+invariant under the translations by $\ker\pi$, which permute the summands
+transitively, so $S$ is empty or everything and $F=0$ or $F=E$. Finally, a
+nonzero morphism $f$ between $\mu$-stable bundles of the same slope is
+injective and generically surjective, so the two bundles have the same rank;
+for blocks of the same slope $\nu$ they then have the same $c_{1}$, since
+$c_{1}(E)=\nu\,\rk(E)\,\Theta$, and $\det f$ is a nonzero section of a
+numerically trivial line bundle, hence nowhere zero. So $f$ is an
+isomorphism.
+\end{proof}
+
+\begin{theorem}[No two-term complex of simple blocks satisfies the criterion]
+\label{thm:noblocks}
+Let $(X,\Theta)$ be a polarised abelian variety of dimension $n\ge3$, let $A$
+and $B$ be direct sums of simple isogeny blocks, let $\varphi\colon A\to B$
+be any morphism and let $F$ be the cone of $\varphi$ or a shift of it. If
+$F\ne0$ and $\ch(F)=au_{\Theta}+bv_{\Theta}$ with $(a,b)\ne(0,0)$, then $F$
+does not satisfy the weakened criterion. In particular, no object with a
+resolution $0\to E_{1}\to E_{0}\to F\to0$ by sums of simple isogeny blocks
+satisfies it, whatever the rank.
+\end{theorem}
+
+\begin{proof}
+Cancel, by Gaussian elimination in the two-term complex, every pair of
+isomorphic blocks of $A$ and $B$ joined by an entry of $\varphi$ that is an
+isomorphism; this changes neither the cone nor the block structure of the
+remaining terms. By \Cref{lem:blocks}(iii), every remaining entry between
+blocks of the same slope is zero. If $A$ or $B$ is empty after cancelling,
+$F$ is a shifted sum of blocks, on each of which $\operatorname{ev}(x_{\pi})$
+is a nonzero scalar by (i). Otherwise the rest is the proof of
+\Cref{thm:nosplit} with \Cref{lem:blocks} in place of the vanishing of
+$H^{2}(M^{\otimes m})$. For a block $E'$ of $B$ with inclusion $\iota$ and
+$q'=q\circ\iota\colon E'\to F$, the class $z\cdot\iota\in\Hom(E',B[2])$ has
+component $z\cdot\id_{E'}\ne0$ in $\Ext^{2}(E',E')=H^{2}(\cO_{X})\cdot\id_{E'}$
+by (ii). It lies in the image of $\varphi_{*}$ only if
+$\sum_{i}\varphi_{ji}\psi_{i}=z\cdot\id_{E'}$ for some
+$\psi_{i}\in\Ext^{2}(E',A_{i})$, and $\psi_{i}\ne0$ forces $A_{i}$ to have
+the slope of $E'$ by (ii), for which $\varphi_{ji}=0$. So $z\cdot q'\ne0$,
+contradicting \Cref{lem:annihilation} in the form given by (i).
+\end{proof}
+
+\begin{remark}[Semi-homogeneous bundles]\label{rem:blocks}
+By Mukai \cite{Muk78}, the simple isogeny blocks are exactly the simple
+semi-homogeneous bundles, a bundle $E$ being semi-homogeneous if for every
+$x$ there is $P\in\Pic^{0}(X)$ with $\tau_{x}^{*}E\cong E\otimes P$; and
+every semi-homogeneous bundle on a variety with $\NS(X)_{\QQ}=\QQ\Theta$ is
+an iterated extension of such blocks and their twists by $\Pic^{0}$. We do
+not use this. In these terms, \Cref{thm:noblocks} says that the bundles in a
+Hilbert--Burch resolution of a candidate cannot all have scalar Atiyah
+class. The obstruction is always the same: the compensated Poisson classes
+act on a block by the scalar $\tfrac{\nu^{2}+d}{2}\,\pi\lrcorner\,\Theta^{2}$,
+which would vanish only for $\nu^{2}=-d$, and cones of maps between blocks
+inherit the scalar through the summand inclusions, because $\Ext^{2}$
+between blocks of different slopes vanishes. A candidate must therefore be
+built from a bundle whose Atiyah class is not a scalar, that is, one which
+is not projectively flat.
+\end{remark}
+
+\begin{corollary}[Split resolutions and the remaining shapes]
+\label{cor:disjointroutes}
+Let $(X,\Theta)$ be a principally polarised abelian fourfold.
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item No secant object of rank one whose support has a resolution
+  \eqref{eq:burchres} by sums of powers of $\Theta$ satisfies the weakened
+  criterion, for any $r$, any twists and any $d$, whether or not its matrix
+  degenerates in codimension two.
+\item If a secant object $\cI_{Z}(b\Theta)$ satisfies the criterion, then
+  $Z$ has no point at which two smooth branches of codimension two meet
+  transversally, no two-term resolution of $\cI_{Z}$ splits into powers of
+  $\Theta$ or into simple semi-homogeneous bundles, and the restriction
+  $H^{2}(\cO_{X})\to H^{2}(\cO_{Z})$ is injective. If $Z$ is
+  Cohen--Macaulay, $\cI_{Z}$ has projective dimension one. If $b=3$ and $Z$
+  is smooth, then $d\le9$, so $d\in\{1,3,5,7\}$ when $N=(9+d)/2$ is an
+  integer as in \Cref{setup:markman}, the two terms of a resolution do not
+  both have classes in $\cL_{\Theta}$, and when $X$ is simple the
+  injectivity is automatic.
+\item At $b=3$, smooth supports and split resolutions are disjoint, for
+  every rank and every twist of the resolution: a smooth support forces
+  $d\le9$, and a resolution by bundles with classes in $\cL_{\Theta}$ forces
+  $d\equiv15,23\pmod{24}$, hence $d\ge15$, so that, even without (i), no
+  support could have both properties.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+Part (i) is \Cref{thm:nosplit} with $M=\cO_{X}(\Theta)$, the resolution
+\eqref{eq:burchres} presenting $\cI_{Z}(b\Theta)$ as the cone of
+$\varphi\otimes\cO(b\Theta)$. In (ii), the branches are excluded by
+\Cref{cor:cmdichotomy}(i), projective dimension one comes from
+\Cref{cor:cmdichotomy}(ii), the non-splitting from \Cref{thm:nosplit} and
+\Cref{thm:noblocks}, the injectivity from the last assertion of
+\Cref{lem:annihilation}, the bound on $d$ from
+\Cref{cor:fourdiscriminants}, the statement on the two terms from
+\Cref{cor:latticeburch}, and the automatic injectivity from
+\Cref{lem:smoothinjective}. Part (iii) compares
+\Cref{cor:fourdiscriminants} with \Cref{cor:latticeburch}: no $d\le9$ is
+congruent to $15$ or $23$ modulo $24$.
+\end{proof}

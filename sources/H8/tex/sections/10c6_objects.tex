@@ -1,0 +1,2839 @@
+\section{Secant objects on the split member}\label{sec:secantobjects}
+
+\subsection{Sums of line bundles and the positivity obstruction}
+\label{ssec:whatobject}
+
+\Cref{thm:semiregclosure} asks for one perfect complex at one base point.
+The cheapest candidate is a sum of line bundles on a split member, because
+there the Weil classes are already polynomials in $\beta$, $\widehat\beta$ and
+$\ell$ by \Cref{thm:splitclosed}, so the Chern character one wants is
+manifestly in reach. This subsection settles that candidate. It does not
+exist, and the obstruction is not semiregularity: it is the Chern character
+condition, and it fails because the norm form of $K$ is positive
+definite.
+
+The norm rules out three different constructions in this paper, by three
+different mechanisms, and they should be kept apart.
+\Cref{thm:character} uses the norm \emph{character} of $\Kx$ and an
+equivariance hypothesis. \Cref{prop:divfails} uses the fact that the part $R$
+of $H^{2}$ on which $\Kx$ acts through $\tau^{2}$ and $\bbar\tau^{\,2}$ has no
+Hodge classes at a general point, which is a statement about the Hodge group.
+\Cref{thm:positivity} below uses neither: it uses that $\Nm_{K/\QQ}$ is a
+positive definite quadratic form on $K$ and that the multiplicities of a
+filtration are positive integers. The three are independent, and only the
+third is available at a special point, which is exactly where the object of
+\Cref{prop:ktheory} has to live.
+
+\begin{lemma}[The semiregularity map of a split object]\label{lem:splitsemireg}
+Let $Y$ be a smooth projective complex variety and let
+\[
+  E=\bigoplus_{i=1}^{s}L_{i}[p_{i}]^{\oplus m_{i}},
+  \qquad \lambda_{i}=c_{1}(L_{i}),
+\]
+with the $L_{i}$ line bundles, the $\lambda_{i}$ pairwise distinct and
+$p_{i}\in\ZZ$. Then for $\zeta=(\zeta_{ij})\in\Ext^{2}(E,E)$,
+\begin{equation}\label{eq:splitsigma}
+  \sigma_{E}(\zeta)_{q}
+  =\frac{1}{q!}\sum_{i=1}^{s}(-1)^{p_{i}}\,
+    \mathrm{tr}(\zeta_{ii})\,\lambda_{i}^{\,q},
+\end{equation}
+so $\sigma_{E}$ annihilates $\Ext^{2}(L_{i}[p_{i}],L_{j}[p_{j}])$ for $i\ne j$
+and the traceless part of each diagonal block. Consequently $\sigma_{E}$ is
+injective if and only if all three of the following hold:
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item $m_{i}=1$ for every $i$;
+\item $H^{\,2+p_{i}-p_{j}}\bigl(Y,L_{j}L_{i}^{-1}\bigr)=0$ for all $i\ne j$;
+\item the map
+  \[
+    \Phi\colon H^{2}(\cO_{Y})^{\oplus s}\longrightarrow H^{*}(Y,\CC),
+    \qquad
+    (\zeta_{i})\longmapsto\sum_{i}e^{\lambda_{i}}\zeta_{i},
+  \]
+  is injective.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+The Atiyah class of a direct sum is the direct sum of the Atiyah classes, and
+that of a line bundle is its first Chern class, so $\mathrm{At}(E)$ is
+diagonal with entries $\lambda_{i}$ and $\mathrm{At}(E)^{q}$ is diagonal with
+entries $\lambda_{i}^{\,q}$. The matrix product $\zeta\circ\mathrm{At}(E)^{q}$
+therefore has $(i,j)$ entry $\zeta_{ij}\lambda_{i}^{\,q}$, and the trace keeps
+only the diagonal; a shift by $p$ multiplies the trace by $(-1)^{p}$. That is
+\eqref{eq:splitsigma}, and it exhibits the two spaces the map kills.
+
+For the equivalence, the off-diagonal part of $\Ext^{2}(E,E)$ is
+$\bigoplus_{i\ne j}\Ext^{2}(L_{i}[p_{i}],L_{j}[p_{j}])
+=\bigoplus_{i\ne j}H^{2+p_{i}-p_{j}}(L_{j}L_{i}^{-1})$, which must vanish,
+giving (ii); the diagonal block at $i$ is $H^{2}(\cO_{Y})\otimes
+\mathrm{End}(\CC^{m_{i}})$ and only its trace survives, so $m_{i}=1$, giving
+(i). What is left is $\bigoplus_{i}H^{2}(\cO_{Y})$, and by
+\eqref{eq:splitsigma} an element $(\zeta_{i})$ of it dies exactly when
+$\sum_{i}\lambda_{i}^{\,q}\zeta_{i}=0$ for every $q\ge0$, which is (iii) after
+absorbing the signs $(-1)^{p_{i}}$ into the $\zeta_{i}$ and the factorials
+into the grading.
+\end{proof}
+
+Condition (ii) is cheap, because the shifts $p_{i}$ are at our disposal: only
+their parities are fixed by the Chern character, and a line bundle whose first
+Chern class is nondegenerate of index $k$ has cohomology in degree $k$ alone,
+so one may choose the $p_{i}$ to avoid every index that occurs. Condition
+(iii) is a rank condition, and condition (i) is free. What is not free is the
+Chern character itself, and that is the subject of the rest of this
+subsection.
+
+\begin{notation}[Coordinates on the divisor classes]\label{not:splitcoords}
+Let $A_{0}=X\times\widehat{X}$ be a split member, $n\ge2$, and keep
+$\gamma=d\beta-\widehat{\beta}$ from \Cref{not:threeclasses}. Write
+\[
+  \theta^{\pm}=\gamma\mp\sqrt{-d}\,\ell\in\textstyle\bigwedge^{2}V_{\pm},
+  \qquad
+  R_{0}=\QQ\gamma\oplus\QQ\ell\subset R .
+\]
+Every $\theta\in R_{0}$ is $\theta=u\theta^{+}+\bbar u\,\theta^{-}$ for a
+unique $u\in K$, and in coordinates $u=g+h\sqrt{-d}$ corresponds to
+$\theta=2g\gamma+2dh\,\ell$. By \Cref{prop:splitgeom}(iv) the group
+$\NS(A_{0})_{\QQ}$ at a split member with $X$ general is
+$\QQ\eta\oplus R_{0}$, so every divisor class $\lambda$ is $e\eta+\theta$ with
+$e\in\QQ$ and $\theta\in R_{0}$, and we write $u(\lambda)\in K$ for the
+coordinate of its $R_{0}$-part.
+\end{notation}
+
+\begin{lemma}[A basis in degree four]\label{lem:sixmonomials}
+For $n\ge2$ the six products
+$\beta^{2},\widehat\beta^{2},\ell^{2},\beta\widehat\beta,\beta\ell,
+\widehat\beta\ell$
+are linearly independent in $H^{4}(A_{0},\QQ)$. Equivalently the six classes
+$\eta^{2}$, $\eta\theta^{+}$, $\eta\theta^{-}$, $(\theta^{+})^{2}$,
+$(\theta^{-})^{2}$, $\theta^{+}\theta^{-}$ are a basis of the degree four part
+of the subring generated by the divisor classes.
+\end{lemma}
+
+\begin{proof}
+Grade $H^{*}(A_{0},\QQ)=\bigwedge^{*}U\otimes\bigwedge^{*}U^{\vee}$ by
+bidegree. Then $\beta$ has bidegree $(2,0)$, $\widehat\beta$ has $(0,2)$ and
+$\ell$ has $(1,1)$, so the six products have bidegrees $(4,0)$, $(0,4)$,
+$(2,2)$, $(2,2)$, $(3,1)$, $(1,3)$. All are distinct except for the pair
+$\beta\widehat\beta$ and $\ell^{2}$, and those two are independent in
+$\bigwedge^{2}U\otimes\bigwedge^{2}U^{\vee}$ because
+$\beta\widehat\beta=\beta\otimes\widehat\beta$ is decomposable there while
+$\ell^{2}=-2\sum_{i<j}(x_{i}x_{j})\otimes(\xi_{i}\xi_{j})$ is diagonal in
+the induced bases, of tensor rank $\binom{2n}{2}>1$. The second
+description follows because the change of basis between the two sets of six
+classes is invertible over $K$: $\eta=d\beta+\widehat\beta$ and
+$\gamma=d\beta-\widehat\beta$ span the same plane as
+$\beta$ and $\widehat\beta$ since $\det\begin{psmallmatrix}d&1\\
+d&-1\end{psmallmatrix}=-2d\ne0$, and $\theta^{\pm}$ span the same plane
+as $\gamma$ and $\ell$ over $\CC$.
+\end{proof}
+
+The next lemma says the same thing at every abelian variety of Weil type, not
+only at a split member, and it says it without coordinates. It is the fact on
+which the positivity argument turns.
+
+\begin{lemma}[$\theta^{+}\theta^{-}$ is never proportional to $\eta^{2}$]
+\label{lem:tensorrank}
+Let $(A,\iota,\eta)$ be of $(K,-1,n)$-Weil type with $n\ge2$, and let
+$0\ne\theta^{\pm}\in\bigwedge^{2}V_{\pm}$. Then $\theta^{+}\theta^{-}$ is not a
+scalar multiple of $\eta^{2}$ in $H^{4}(A,\CC)$.
+\end{lemma}
+
+\begin{proof}
+Both classes lie in the summand
+$\bigwedge^{2}V_{+}\otimes\bigwedge^{2}V_{-}$ of $H^{4}(A,\CC)$, the isotypic
+component for the character $\Nm^{2}$, so the question is one of tensor rank
+there. The polarisation class $\eta$ lies in $V_{+}\otimes V_{-}$ and is the
+hermitian form of \Cref{prop:weilline}, hence nondegenerate: in dual bases
+$\eta=\sum_{a=1}^{2n}v_{a}\wedge w_{a}$ with $v_{a}$ a basis of $V_{+}$ and
+$w_{a}$ a basis of $V_{-}$. Squaring,
+\[
+  \eta^{2}
+  =\sum_{a,b}(v_{a}\wedge w_{a})(v_{b}\wedge w_{b})
+  =-2\sum_{a<b}(v_{a}v_{b})\otimes(w_{a}w_{b}),
+\]
+which is diagonal in the induced bases of $\bigwedge^{2}V_{+}$ and
+$\bigwedge^{2}V_{-}$ and therefore has tensor rank exactly $\binom{2n}{2}$.
+The class $\theta^{+}\theta^{-}$ is, up to sign,
+$\theta^{+}\otimes\theta^{-}$, of tensor rank one. For $n\ge2$ one has
+$\binom{2n}{2}\ge6>1$, so the two cannot be proportional.
+\end{proof}
+
+\begin{theorem}[The positivity obstruction]\label{thm:positivity}
+Let $(A,\iota,\eta)$ be of $(K,-1,n)$-Weil type with $n\ge2$, and suppose that
+the only divisor classes on which $\Kx$ acts through the norm character are
+the multiples of $\eta$, that is
+\begin{equation}\label{eq:noextranorm}
+  \NS(A)_{\QQ}\cap\bigl(V_{+}\otimes V_{-}\bigr)=\QQ\,\eta .
+\end{equation}
+Let $E$ be a perfect complex on $A$ whose Chern character is effective in the
+exponential basis, meaning
+\begin{equation}\label{eq:effectivech}
+  \ch(E)=\sum_{i=1}^{s}m_{i}\,e^{\lambda_{i}},
+  \qquad m_{i}\in\QQ_{>0},\quad\lambda_{i}\in\NS(A)_{\QQ},
+\end{equation}
+and write $\lambda_{i}=e_{i}\eta+\theta_{i}$ with $\theta_{i}$ in the part $R$
+of $H^{2}(A,\QQ)$ carrying the characters $\tau^{2}$ and $\bbar\tau^{\,2}$, and
+$u_{i}\in K$ for the $\theta^{+}$-coordinate of $\theta_{i}$. If $\ch_{2}(E)$
+is a flat Hodge class, then
+\begin{equation}\label{eq:normsum}
+  \sum_{i=1}^{s}m_{i}\,\Nm_{K/\QQ}(u_{i})=0 ,
+\end{equation}
+and since $\Nm_{K/\QQ}$ is positive definite and every $m_{i}$ is positive,
+$u_{i}=0$ for every $i$. Hence every $\lambda_{i}$ is a rational multiple of
+$\eta$, and $\ch_{k}(E)\in\QQ\,\eta^{k}$ for every $k$. In particular
+$\ch_{n}(E)$ has no component on the Weil line.
+\end{theorem}
+
+\begin{proof}
+From \eqref{eq:effectivech},
+$\ch_{2}(E)=\tfrac12\sum_{i}m_{i}\lambda_{i}^{2}$, and hypothesis
+\eqref{eq:noextranorm} is what makes the decomposition
+$\lambda_{i}=e_{i}\eta+\theta_{i}$ available with $e_{i}$ a scalar. Decompose
+$H^{4}(A,\CC)$ into $\Kx$-isotypic pieces and keep the one for $\Nm^{2}$,
+namely $\bigwedge^{2}V_{+}\otimes\bigwedge^{2}V_{-}$. Writing
+$\theta_{i}=u_{i}\theta^{+}+\bbar u_{i}\theta^{-}$ for a fixed choice of
+generators $\theta^{\pm}$ of $\bigwedge^{2}V_{\pm}$, one has
+\[
+  \lambda_{i}^{2}
+  =e_{i}^{2}\eta^{2}
+   +2e_{i}\eta\theta_{i}
+   +u_{i}^{2}(\theta^{+})^{2}+\bbar u_{i}^{2}(\theta^{-})^{2}
+   +2\Nm_{K/\QQ}(u_{i})\,\theta^{+}\theta^{-},
+\]
+and of these five terms only the first and the last are in the $\Nm^{2}$
+piece: $\eta\theta_{i}$ carries $\Nm\tau^{2}$ and $\Nm\bbar\tau^{\,2}$, and
+$(\theta^{\pm})^{2}$ carry $\tau^{4}$ and $\bbar\tau^{\,4}$, all four distinct
+from $\Nm^{2}$. So the $\Nm^{2}$-part of $\ch_{2}(E)$ is
+\[
+  \tfrac12\Bigl(\sum_{i}m_{i}e_{i}^{2}\Bigr)\eta^{2}
+  +\Bigl(\sum_{i}m_{i}\Nm_{K/\QQ}(u_{i})\Bigr)\theta^{+}\theta^{-}.
+\]
+
+Now compare with the flat Hodge classes of degree four. For $n\ge3$ they are
+$\QQ\eta^{2}$ by \Cref{thm:hdgcount}. For $n=2$ they are
+$\QQ\eta^{2}\oplus\HW(A)$, and $\HW(A)$ spans the summands for $\tau^{4}$ and
+$\bbar\tau^{\,4}$, which are not $\Nm^{2}$. In both cases the $\Nm^{2}$-part
+of a flat Hodge class of degree four is a multiple of $\eta^{2}$. By
+\Cref{lem:tensorrank} the class $\theta^{+}\theta^{-}$ is not such a multiple,
+so its coefficient must vanish, which is \eqref{eq:normsum}.
+
+Finally $\Nm_{K/\QQ}(g+h\sqrt{-d})=g^{2}+dh^{2}$ with $d>0$, so
+$\Nm_{K/\QQ}(u)\ge0$ with equality only at $u=0$, and a sum of nonnegative
+terms with positive weights vanishes only when every term does. Then
+$\ch_{k}(E)=\frac{1}{k!}\bigl(\sum_{i}m_{i}e_{i}^{k}\bigr)\eta^{k}$, and
+$\eta^{k}$ is not on the Weil line by \Cref{thm:hdgcount}.
+\end{proof}
+
+\begin{corollary}[Objects filtered by line bundles]\label{cor:nofiltered}
+Let $A$ satisfy \eqref{eq:noextranorm}, which holds at every split member of
+\Cref{thm:splitclosed} and at every quaternionic base point of
+\Cref{thm:quatweil}. Then \Cref{thm:semiregclosure} cannot be applied at $A$
+with any of the following:
+\begin{enumerate}[label=\textup{(\alph*)},nosep]
+\item a coherent sheaf admitting a filtration by line bundles, in particular
+  any direct sum of line bundles;
+\item a simple semi-homogeneous vector bundle in the sense of Mukai
+  \cite{Muk78}, since such a bundle of rank $r$ has $\ch(E)=r\,e^{c_{1}(E)/r}$;
+\item any iterated extension of the objects in (a) and (b).
+\end{enumerate}
+In each case the failure is not of the semiregularity hypothesis but of the
+Chern character hypothesis of \Cref{prop:ktheory}: no such $E$ has a Chern
+character which is a flat section of Hodge classes with a nonzero Weil
+component.
+\end{corollary}
+
+\begin{proof}
+First, \eqref{eq:noextranorm} holds at the points named. At a split member
+$\NS(A)_{\QQ}$ has rank three with basis $\beta,\widehat\beta,\ell$ by
+\Cref{prop:splitgeom}(iv), and of these $\eta$ spans the norm-character part
+while $\gamma$ and $\ell$ span $R$. At a quaternionic point $\NS(A)_{\QQ}$ is
+the space of Rosati-symmetric elements of $B=(-d,b)_{\QQ}$, which is spanned
+by $1$, $j$ and $ij$; the first gives $\eta$ and the other two are semilinear
+over $K$, hence lie in $R$. In both cases the norm-character part of
+$\NS(A)_{\QQ}$ is exactly $\QQ\eta$.
+
+Each of (a), (b) and (c) has a Chern character of the shape
+\eqref{eq:effectivech} with positive multiplicities, by additivity of $\ch$
+along a filtration and by Mukai's computation of the Chern character of a
+simple semi-homogeneous bundle. The conclusion of \Cref{thm:positivity} then
+contradicts the requirement that $\ch_{n}(E)$ have a nonzero component on the
+Weil line.
+\end{proof}
+
+\begin{remark}[Scope of the theorem, and the objects of
+Markman]\label{rem:markmanpositivity}
+At a very general member of the family $\NS(A)_{\QQ}=\QQ\eta$, so
+\Cref{thm:positivity} is true for the empty reason that there are no
+$\theta_{i}$ to begin with. Its content is at the special members, which is
+exactly where \Cref{thm:semiregclosure} needs its object to live and where the
+base points of \Cref{thm:everyfamily} are. That is the opposite of the usual
+situation in this paper, where the special members are the easy ones.
+
+The theorem does not touch the objects of Markman \cite{Mar25a,Mar25b}.
+Those are sheaves whose class in $K_{0}$ is not a positive combination of
+exponentials of divisor classes, so \eqref{eq:effectivech} fails for them at
+the first step; and they live at very general points, where, as just noted,
+the statement is vacuous. What the theorem does is remove the class of
+objects one would reach for first, and it removes it for a reason which is
+visible before any cohomology is computed.
+\end{remark}
+
+\begin{remark}[Signed sums of line bundles]
+\label{rem:whatitmustbe}
+\Cref{thm:positivity} uses positivity of the multiplicities and nothing else,
+so it says exactly where to go next: the object must be a complex whose
+class in $K_{0}$ is not effective, that is one in which the line bundles
+appear with multiplicities of both signs. Such objects exist. Writing
+$E=F\oplus G[1]$ with $F$ and $G$ sums of line bundles, the class in $K_{0}$
+is $[F]-[G]$ and \eqref{eq:normsum} becomes
+$\sum_{L_{i}\subset F}\Nm(u_{i})=\sum_{L_{j}\subset G}\Nm(u_{j})$, which is
+satisfiable; and \Cref{lem:splitsemireg} still applies verbatim, with the
+shifts absorbing condition (ii).
+
+The object of \Cref{thm:semiregclosure}, if it exists at a split member, is
+not a sum of line bundles in any arrangement of signs and shifts:
+\Cref{cor:noline} below proves this in every dimension. It must have
+$\Ext^{2}$ that the trace does not see, that is, it must be indecomposable in
+the derived category. This description of the remaining construction is
+sharper than the one in \Cref{rem:tworemain}.
+\end{remark}
+
+\subsection{An explicit object and the Prouhet--Tarry--Escott problem}
+\label{ssec:pte}
+
+\Cref{prop:ktheory} produces the object of \Cref{thm:semiregclosure} by an
+existence argument: the Chern character is an isomorphism onto the Chow ring
+with rational coefficients, so a $K$-theory class with the right character
+exists. That is enough for the theorem and tells one nothing about the object.
+This subsection writes it down. The answer turns the question into a
+Diophantine one, and the Diophantine problem has a classical name.
+
+\begin{setupenv}[Objects supported on $R$]\label{setup:pte}
+Let $A$ be of $(K,-1,n)$-Weil type, $n\ge2$, satisfying
+\eqref{eq:noextranorm}, and keep $\theta^{\pm}$ from
+\Cref{not:splitcoords}. For $u\in K$ with $\theta(u)=u\theta^{+}+\bbar
+u\,\theta^{-}\in\NS(A)_{\QQ}$, and for multiplicities $m_{i}\in\ZZ$, consider
+\[
+  v=\sum_{i=1}^{s}m_{i}\,e^{\theta(u_{i})},
+  \qquad
+  T_{q,r}=\sum_{i=1}^{s}m_{i}\,u_{i}^{q}\,\bbar u_{i}^{\,r}
+  \quad (q,r\ge0).
+\]
+\end{setupenv}
+
+\begin{proposition}[The Chern character in terms of the $u_{i}$]
+\label{prop:chintermsofu}
+In \Cref{setup:pte},
+\begin{equation}\label{eq:chexpansion}
+  v_{k}
+  =\sum_{\substack{q+r=k\\ 0\le q,r\le n}}
+    \frac{T_{q,r}}{q!\,r!}\,(\theta^{+})^{q}(\theta^{-})^{r},
+\end{equation}
+because $(\theta^{\pm})^{q}=0$ for $q>n$. Consequently $v$ is a flat section
+of Hodge classes with a nonzero Weil component if
+\begin{equation}\label{eq:pteconditions}
+  T_{q,r}=0\ \ \text{for all } 0\le q,r\le n \text{ with }
+  (q,r)\notin\{(0,0),(n,0),(0,n)\},
+  \qquad T_{n,0}\ne0,
+\end{equation}
+and then $v_{0}=T_{0,0}=\sum_{i}m_{i}$, $v_{k}=0$ for $0<k<2n$ with $k\ne n$,
+and
+\[
+  v_{n}=\frac{1}{n!}\Bigl(T_{n,0}(\theta^{+})^{n}
+        +\bbar{T}_{n,0}(\theta^{-})^{n}\Bigr),
+\]
+a nonzero rational multiple of a generator of the Weil line, by
+\Cref{thm:splitclosed}.
+\end{proposition}
+
+\begin{proof}
+Expand $\theta(u_{i})^{k}$ by the binomial theorem, divide by $k!$ and collect;
+the vanishing of $(\theta^{\pm})^{q}$ for $q>n$ is because
+$\theta^{\pm}\in\bigwedge^{2}V_{\pm}$ and $\dim_{\CC}V_{\pm}=2n$. Under
+\eqref{eq:pteconditions} the only surviving terms of \eqref{eq:chexpansion}
+are the ones listed, and $(\theta^{+})^{n}$ spans $\bigwedge^{2n}V_{+}$, which
+is the Weil line over $\CC$.
+\end{proof}
+
+So the search for the object of \Cref{thm:semiregclosure} is the search for a
+finitely supported integer-valued function on $\cO_{K}$ that annihilates every
+monomial $u^{q}\bbar u^{\,r}$ with $q,r\le n$ except three of them. Two things
+follow at once, and they pull in opposite directions.
+
+\begin{lemma}[Equal norms force the Prouhet--Tarry--Escott condition]
+\label{lem:pte}
+Suppose all the $u_{i}$ in \Cref{setup:pte} have the same norm
+$N=\Nm_{K/\QQ}(u_{i})>0$. Then \eqref{eq:pteconditions} holds if and only if
+\begin{equation}\label{eq:ptepure}
+  \sum_{i}m_{i}u_{i}^{\,k}=0\ \ \text{for } k=0,1,\dots,n-1,
+  \qquad
+  \sum_{i}m_{i}u_{i}^{\,n}\ne0 .
+\end{equation}
+With $m_{i}=\pm1$ this says that the $u_{i}$ split into two multisets on the
+circle $\Nm=N$ whose power sums agree through degree $n-1$ and differ at
+degree $n$: a Prouhet--Tarry--Escott pair of degree $n-1$, constrained to a
+norm circle of $\cO_{K}$.
+\end{lemma}
+
+\begin{proof}
+For $q\ge r$ one has $u^{q}\bbar u^{\,r}=N^{r}u^{q-r}$, so
+$T_{q,r}=N^{r}\sum_{i}m_{i}u_{i}^{\,q-r}$, and the pairs $(q,r)$ with
+$q,r\le n$ realise every difference $k=q-r$ from $0$ to $n$. The excluded
+pairs $(0,0)$ and $(n,0)$ are the ones with $r=0$ and $k=0$ or $k=n$; but
+$k=0$ also occurs at $(1,1),\dots,(n,n)$, which are not excluded, so
+$\sum_{i}m_{i}=0$ is still required. The remaining differences
+$k=1,\dots,n-1$ each occur at some non-excluded pair, and $k=n$ occurs only at
+$(n,0)$.
+\end{proof}
+
+\begin{theorem}[Equal norms cannot be semiregular]\label{thm:equalnorms}
+Let $E=\bigoplus_{i}L_{i}[p_{i}]$ realise \eqref{eq:ptepure} with all norms
+equal. Then $\ch_{0}(E)=0$, and the semiregularity map $\sigma_{E}$ has a
+kernel of dimension at least $n^{2}$.
+\end{theorem}
+
+\begin{proof}
+By \Cref{lem:pte} the case $k=0$ of \eqref{eq:ptepure} gives
+$\sum_{i}m_{i}=0$, which is $\ch_{0}(E)$. For the kernel, take
+$\zeta_{i}=m_{i}\zeta$ for a single $\zeta\in H^{2}(\cO_{A})$; then by
+\Cref{lem:splitsemireg}(iii)
+\[
+  \Phi\bigl((m_{i}\zeta)_{i}\bigr)
+  =\Bigl(\sum_{i}m_{i}e^{\lambda_{i}}\Bigr)\zeta=\ch(E)\,\zeta ,
+\]
+which by \Cref{prop:chintermsofu} is a multiple of $\omega\,\zeta$ with
+$\omega$ a generator of the Weil line. Now $\HW(A)_{\CC}$ is spanned by
+$\bigwedge^{2n}V_{+}$ and $\bigwedge^{2n}V_{-}$, and the Weil type condition
+says $\dim V_{\pm}^{0,1}=n$; writing
+$H^{2}(\cO_{A})=\bigwedge^{2}(V_{+}^{0,1}\oplus V_{-}^{0,1})$, the product of
+a generator of $\bigwedge^{2n}V_{+}$ with $\zeta$ kills the components of
+$\zeta$ in $\bigwedge^{2}V_{+}^{0,1}$ and in
+$V_{+}^{0,1}\otimes V_{-}^{0,1}$, and likewise with the roles exchanged. So
+$\omega\,\zeta=0$ for every $\zeta$ in
+$V_{+}^{0,1}\otimes V_{-}^{0,1}$, a space of dimension $n^{2}$, and all of
+those lie in the kernel of $\Phi$.
+\end{proof}
+
+\begin{corollary}[At least $n+1$ norms]\label{cor:nplusone}
+If $E$ as in \Cref{setup:pte} satisfies \eqref{eq:pteconditions} and
+$\ch_{0}(E)\ne0$, then the $u_{i}$ take at least $n+1$ distinct norms.
+\end{corollary}
+
+\begin{proof}
+Let $N_{1},\dots,N_{\nu}$ be the distinct norms and $M_{j}$ the sum of the
+$m_{i}$ over the level $\Nm(u_{i})=N_{j}$. The conditions $T_{r,r}=0$ for
+$r=1,\dots,n$ read $\sum_{j}M_{j}N_{j}^{\,r}=0$ for $r=1,\dots,n$. The matrix
+$(N_{j}^{\,r})_{1\le r\le n,\,1\le j\le\nu}$ has rank $\min(n,\nu)$ because the
+$N_{j}$ are distinct and nonzero, so $\nu\le n$ forces every $M_{j}=0$ and
+hence $\ch_{0}(E)=\sum_{j}M_{j}=0$.
+\end{proof}
+
+\subsubsection*{The smallest solution}
+
+At $n=3$ and $K=\QQ(\sqrt{-3})$ the Prouhet--Tarry--Escott condition of
+\Cref{lem:pte} has a particularly simple solution: the norm circle
+$\Nm=1$ carries the six roots of unity of $K$, and the two cosets of the cube
+roots of $-1$ and of $+1$ are a Prouhet--Tarry--Escott pair of degree
+two. Explicitly, with $\zeta_{6}$ a primitive sixth root of unity, the
+cube roots of $-1$ are $\zeta_{6},\zeta_{6}^{3},\zeta_{6}^{5}$ and those of
+$+1$ are $1,\zeta_{6}^{2},\zeta_{6}^{4}$; each triple sums to zero and has
+zero sum of squares,
+while the sums of cubes are $-3$ and $+3$.
+
+\begin{proposition}[An explicit object at $n=3$]\label{prop:explicitobject}
+Let $K=\QQ(\sqrt{-3})$, $n=3$, and let $A_{0}=X\times\widehat X$ be a split
+member. In the basis $\beta,\widehat\beta,\ell$ of $\NS(A_{0})_{\QQ}$ put
+\[
+  \lambda_{1}=(3,-1,3),\quad
+  \lambda_{2}=(-6,2,0),\quad
+  \lambda_{3}=(3,-1,-3),
+\]
+and $\lambda_{3+i}=-\lambda_{i}$ for $i=1,2,3$, with $m_{i}=+1$ for
+$i\le3$ and $m_{i}=-1$ for $i\ge4$. Then the six classes are distinct and
+integral, the perfect complex
+\[
+  E=\bigl(L_{1}\oplus L_{2}\oplus L_{3}\bigr)\ \oplus\
+    \bigl(L_{4}\oplus L_{5}\oplus L_{6}\bigr)[3]
+\]
+has
+\[
+  \ch_{k}(E)=0\ \ (k\ne3),
+  \qquad
+  \ch_{3}(E)=12\,\omega_{1},
+\]
+and every difference $\lambda_{j}-\lambda_{i}$ with $i\ne j$ is nondegenerate
+of index exactly $3$, so that conditions (i) and (ii) of
+\Cref{lem:splitsemireg} hold for this shift. Condition (iii) fails: the map
+$\Phi$ has rank $75$ instead of $90$, with kernel of dimension
+$15=\dim H^{2}(\cO_{A_{0}})$.
+\end{proposition}
+
+\begin{proof}
+With $d=3$, the class $\theta(u)=2g\gamma+6h\ell$ of $u=g+h\sqrt{-3}$ has
+coordinates $(6g,-2g,6h)$, so $\lambda_{1},\lambda_{2},\lambda_{3}$ are the
+images of the cube roots $\zeta_{6},\zeta_{6}^{3},\zeta_{6}^{5}$ of $-1$ and
+$\lambda_{4},\lambda_{5},\lambda_{6}$ those of the cube roots of $+1$; the six
+classes are distinct and integral. All six have norm $1$, and
+$\sum_{i}m_{i}u_{i}^{k}$ is $0$ for $k=0,1,2$ and $-3-3=-6$ for $k=3$, so
+\eqref{eq:ptepure} holds at $n=3$. By \Cref{lem:pte} and
+\Cref{prop:chintermsofu}, $\ch_{k}(E)=0$ for $k\ne3$ and
+$\ch_{3}(E)=-\bigl((\theta^{+})^{3}+(\theta^{-})^{3}\bigr)$, and by
+\Cref{ex:splitsmall} at $n=3$,
+$\omega_{1}\pm\sqrt{-3}\,\omega_{2}=-\frac16(\theta^{\mp})^{3}$; so
+$\ch_{3}(E)=12\,\omega_{1}$.
+
+Every difference is $\lambda_{j}-\lambda_{i}=\theta(w)$ with
+$w=u_{j}-u_{i}\ne0$, and $\theta(w)$ is nondegenerate of index $n$ for every
+$w\in K^{\times}$. Indeed $\theta(1)=2\gamma$ and $\theta(\sqrt{-d})=2d\ell$ are of
+type $(1,1)$, hence so are $\theta^{\pm}$, so
+$\theta^{+}\in V_{+}^{1,0}\otimes V_{+}^{0,1}$, and $V_{+}^{0,1}$ is the
+conjugate of $V_{-}^{1,0}$. In the splitting of the tangent space dual to
+$H^{1,0}=V_{+}^{1,0}\oplus V_{-}^{1,0}$, the hermitian form of $\theta(w)$
+therefore has the block form
+$\bigl(\begin{smallmatrix}0&wP\\ \bar wP^{*}&0\end{smallmatrix}\bigr)$, with $P$
+the block of $2\gamma$, which is invertible because $\gamma$ is nondegenerate.
+Its eigenvalues are plus and minus the singular values of $wP$, so it has
+signature $(n,n)$, and a line bundle with this class has cohomology only in
+degree $n$ \cite[Chapter~3]{BL04}. For the shift, condition (ii) asks that
+$2+p_{i}-p_{j}\ne3$ whenever $i\ne j$, that is $p_{i}-p_{j}\ne1$; within each
+of the two blocks the difference is $0$, and between them it is $\pm3$.
+
+For the rank, the $u_{i}$ are the six sixth roots of unity, each once, and
+$\bbar u_{i}=u_{i}^{-1}$. Absorb the signs into the $\zeta_{i}$ as in
+\Cref{lem:splitsemireg}(iii) and expand
+$e^{\lambda_{i}}=e^{u_{i}\theta^{+}}e^{\bbar u_{i}\theta^{-}}$:
+\[
+  \Phi(\zeta)=\sum_{a,b=0}^{3}\frac{(\theta^{+})^{a}(\theta^{-})^{b}}{a!\,b!}\,Z_{a-b},
+  \qquad Z_{k}=\sum_{i}u_{i}^{k}\zeta_{i},
+\]
+with $k$ read modulo $6$. The $Z_{0},\dots,Z_{5}$ determine the $\zeta_{i}$,
+by a Vandermonde matrix. Split
+$H^{0,2}(A_{0})=\bigwedge^{2}V_{+}^{0,1}\oplus(V_{+}^{0,1}\otimes V_{-}^{0,1})
+\oplus\bigwedge^{2}V_{-}^{0,1}$, write $Z_{k}=Z_{k}^{+}+Z_{k}^{0}+Z_{k}^{-}$
+accordingly, and grade $H^{*}(A_{0})=\bigwedge^{*}V_{+}\otimes\bigwedge^{*}V_{-}$
+by the Hodge types of the two factors. The term
+$(\theta^{+})^{a}(\theta^{-})^{b}Z_{k}^{0}$ has types $(a,a+1)$ and $(b,b+1)$,
+the term with $Z_{k}^{+}$ has types $(a,a+2)$ and $(b,b)$, and the term with
+$Z_{k}^{-}$ has types $(a,a)$ and $(b,b+2)$. These are different for
+different $(a,b)$ and different pieces, so every term vanishes separately.
+Since $\theta^{\pm}$ pairs $V_{\pm}^{1,0}$ nondegenerately with $V_{\pm}^{0,1}$,
+both of dimension $3$, multiplication by $(\theta^{\pm})^{a}$ is injective on
+$\bigwedge^{j}V_{\pm}^{0,1}$ when $a+j\le3$ and zero otherwise; in bases
+with $\theta^{+}=\sum_{i}e_{i}f_{i}$ it sends $f_{J}$ to a signed sum of the
+$e_{I}f_{I\cup J}$ with $I\cap J=\emptyset$, $|I|=a$, and different $J$ give
+disjoint supports. Hence $Z_{k}^{0}=0$ unless no $a,b\le2$ have $a-b\equiv k$,
+which leaves $k=3$; $Z_{k}^{+}=0$ unless no $a\le1$, $b\le3$ have
+$a-b\equiv k$, which leaves $k=2$; and likewise $Z_{k}^{-}=0$ unless $k=4$. So
+$\ker\Phi$ is $V_{+}^{0,1}\otimes V_{-}^{0,1}$ at $k=3$ together with
+$\bigwedge^{2}V_{+}^{0,1}$ at $k=2$ and $\bigwedge^{2}V_{-}^{0,1}$ at $k=4$, of
+dimension $9+3+3=15=\dim H^{2}(\cO_{A_{0}})$, and $\Phi$ has rank
+$90-15=75$. The first summand is the kernel of \Cref{thm:equalnorms}.
+\end{proof}
+
+\begin{remark}[What the construction settles]\label{rem:pteoutcome}
+Three things are settled. The object of \Cref{prop:ktheory} is not an
+abstraction: at $n=3$ over $\QQ(\sqrt{-3})$ it is six line bundles and a
+shift, and its Chern character is exactly $12$ times a Weil class with every
+other graded piece zero. The construction is completely general, and
+\Cref{lem:pte} identifies the constraint as a Prouhet--Tarry--Escott problem
+on a norm circle, a question of a kind that can be attacked directly. And
+\Cref{cor:nplusone} says what any semiregular solution must look like: the
+$u_{i}$ must take at least $n+1$ distinct norms, because otherwise the rank is
+zero and the argument of \Cref{thm:equalnorms} produces a kernel of
+dimension $n^{2}$.
+
+This leaves the existence of a solution with $n+1$ norms. The level sums are
+then forced up to scale (\Cref{thm:pterange}), and \Cref{cor:noline} shows
+that no solution could serve, because a line bundle summand off the
+polarisation line is obstructed along the family whatever the norms.
+\end{remark}
+
+\subsubsection*{The obstruction classes of the explicit object}
+
+\Cref{cor:kernelfamily} and \Cref{rem:whatmeasures} say that the kernel of
+$\sigma_{E}$ contains a copy of the tangent space of the Weil family, and
+that this is a statement about where the semiregularity map is blind, not a
+statement that the object is obstructed. For the explicit object the
+obstruction classes can be written down, and they are not zero. The
+computation is elementary and we record it in general.
+
+Recall the conventions of \Cref{ssec:tangent}: a first-order deformation of
+$A$ is $v\in\Hom(H^{1,0},H^{0,1})=H^{1}(A,T_{A})$, extended by zero on
+$H^{0,1}$ and acting on $H^{*}(A,\CC)$ as a derivation $v\lrcorner$; a class
+$\xi$ of type $(p,p)$ stays of type $(p,p)$ to first order along $v$ exactly
+when $v\lrcorner\,\xi=0$. For a line bundle $L$ with $\lambda=c_{1}(L)$ the
+Atiyah class is $\lambda\in H^{1}(\Omega^{1}_{A})$, its contraction with $v$
+is $v\lrcorner\,\lambda\in H^{2}(\cO_{A})=H^{0,2}(A)$, and this is the
+obstruction to deforming $L$ along $v$; a shift does not change it. For
+$E=\bigoplus_{i}L_{i}[p_{i}]$ the Atiyah class is diagonal with entries
+$\lambda_{i}$, as in the proof of \Cref{lem:splitsemireg}, so the
+obstruction to deforming $E$ along $v$ is the diagonal element
+\begin{equation}\label{eq:obdef}
+  \ob_{E}(v)=\bigl(v\lrcorner\,\lambda_{i}\bigr)_{i}
+  \in\bigoplus_{i}H^{0,2}(A)\subset\Ext^{2}(E,E).
+\end{equation}
+
+\begin{proposition}[The obstruction map of a split object]
+\label{prop:splitobstruction}
+Let $A_{0}=X\times\widehat X$ be a split member with $\beta$ principal and
+$X$ general, so that $\NS(A_{0})_{\QQ}=\langle\beta,\widehat\beta,\ell\rangle$
+by \Cref{prop:splitgeom}(iv). Let $T=T_{[A_{0}]}\cD_{n,n}$ be the space of
+polarised first-order deformations commuting with $K$, of dimension $n^{2}$
+by \Cref{prop:firstorder}, and put
+\[
+  T_{\mathrm{spl}}
+  =\bigl\{\,v\in\Hom(H^{1,0},H^{0,1})\;:\;
+    v\lrcorner\,\beta=v\lrcorner\,\widehat\beta=v\lrcorner\,\ell=0\,\bigr\}.
+\]
+Let $E=\bigoplus_{i=1}^{s}L_{i}[p_{i}]$ with $\lambda_{i}=c_{1}(L_{i})$ and
+let $\ob_{E}\colon T\to\bigoplus_{i}H^{0,2}(A_{0})$ be the map
+\eqref{eq:obdef} restricted to $T$.
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item $T_{\mathrm{spl}}$ is the tangent space to the split locus: it has
+  dimension $n(n+1)/2$, it is contained in $T$, and it consists of the
+  deformations of $X\times\widehat X$ induced by the polarised deformations
+  of $(X,\beta)$.
+\item If the classes $\lambda_{i}$ together with $\eta$ span
+  $\NS(A_{0})_{\QQ}$, then $\ker\ob_{E}=T_{\mathrm{spl}}$ and
+  $\operatorname{rank}\ob_{E}=n(n-1)/2$, the codimension of the split locus
+  in $\cD_{n,n}$.
+\item If $\ch_{k}(E)\in\QQ\eta^{k}$ for $k\ne n$ and
+  $\ch_{n}(E)\in\QQ\eta^{n}\oplus\HW(A_{0})$, then
+  $\sigma_{E}\circ\ob_{E}=0$ on $T$: for every $v\in T$,
+  \begin{equation}\label{eq:sigmaob}
+    \sigma_{E}\bigl(\ob_{E}(v)\bigr)=v\lrcorner\,\ch(E)=0 .
+  \end{equation}
+\item For the object of \Cref{prop:explicitobject}, at $n=3$ and
+  $K=\QQ(\sqrt{-3})$: $\ker\ob_{E}=T_{\mathrm{spl}}$ has dimension $6$ and
+  $\ob_{E}$ has rank $3$; the image of $\ob_{E}$ lies in $\ker\sigma_{E}$;
+  the subspace $\Delta=\{z\cdot\id_{E}:z\in\Ann_{H^{0,2}}(\omega_{1})\}$ of
+  \Cref{cor:kernelfamily} has dimension $9$ and meets the image of $\ob_{E}$
+  only in zero, so that $\Delta\oplus\image\ob_{E}$ is a twelve-dimensional
+  subspace of the fifteen-dimensional kernel of $\sigma_{E}$; and
+  $\ob_{E}(v)$ has components $v\lrcorner\,\lambda_{i}$ on $L_{i}$ and
+  $-v\lrcorner\,\lambda_{i}$ on $L_{i}^{-1}[3]$, so it lies on the line of
+  vectors of the shape $(z,\dots,z)$ only when it vanishes. In particular
+  $E$ has a nonzero first-order obstruction along every $v\in T$ not tangent
+  to the split locus, and no element $z\cdot\id_{E}$ of $\Ext^{2}(E,E)$
+  cancels it.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) Let $P=H^{1,0}(X)\subset H^{1}(X,\CC)=U^{\vee}_{\CC}$ with basis
+$p_{1},\dots,p_{n}$, so that $p_{1},\dots,p_{n},\bbar p_{1},\dots,\bbar p_{n}$
+is a basis of $U^{\vee}_{\CC}$, and let $q_{a},\bbar q_{a}$ be the dual basis
+of $U_{\CC}=H^{1}(\widehat X,\CC)$; the dual of a conjugate basis is the
+conjugate of the dual basis, so the notation is consistent. The Poincar\'e
+class is the identity element of $U^{\vee}\otimes U$,
+\[
+  \ell=\sum_{a=1}^{n}\bigl(p_{a}\wedge q_{a}+\bbar p_{a}\wedge\bbar q_{a}\bigr),
+\]
+and it is of type $(1,1)$, which forces $H^{1,0}(\widehat X)=\langle\bbar
+q_{a}\rangle$ and $H^{0,1}(\widehat X)=\langle q_{a}\rangle$: the Hodge
+structure of $\widehat X$ is the dual one. Since $\beta$ is of type $(1,1)$
+and nondegenerate, $\beta=\sum_{a,b}h_{ab}\,p_{a}\wedge\bbar p_{b}$ with
+$h\in\GL_{n}(\CC)$; and since $\beta$ is principal with Gram matrix $B$ in a
+symplectic basis of $U$ and $\widehat\beta$ has Gram matrix $-B^{-1}=B$ in
+the dual basis of $U^{\vee}$, the Gram matrix of $\widehat\beta$ in the
+basis $p_{a},\bbar p_{a}$ is minus the inverse of the Gram matrix
+$\begin{psmallmatrix}0&h\\-h^{\top}&0\end{psmallmatrix}$ of $\beta$ in the
+basis $q_{a},\bbar q_{a}$, which gives
+$\widehat\beta=-\sum_{a,b}(h^{-1})_{ab}\,\bbar q_{a}\wedge q_{b}$.
+
+Now $H^{1,0}(A_{0})=\langle p_{a}\rangle\oplus\langle\bbar q_{a}\rangle$ and
+$H^{0,1}(A_{0})=\langle\bbar p_{a}\rangle\oplus\langle q_{a}\rangle$, so a
+deformation $v$ is four $n\times n$ matrices,
+\[
+  v(p_{a})=\sum_{c}\bigl(A_{ca}\,\bbar p_{c}+C_{ca}\,q_{c}\bigr),
+  \qquad
+  v(\bbar q_{a})=\sum_{c}\bigl(B_{ca}\,\bbar p_{c}+D_{ca}\,q_{c}\bigr),
+\]
+and $v$ kills $\bbar p_{a}$ and $q_{a}$. Contracting,
+\[
+  v\lrcorner\,\ell
+  =\sum_{a,c}\Bigl(A_{ca}\,\bbar p_{c}\wedge q_{a}+C_{ca}\,q_{c}\wedge q_{a}
+   +B_{ca}\,\bbar p_{a}\wedge\bbar p_{c}+D_{ca}\,\bbar p_{a}\wedge q_{c}\Bigr),
+\]
+and reading off the three kinds of monomials, $v\lrcorner\,\ell=0$ if and only
+if $D=-A^{\top}$ and $B$, $C$ are symmetric. Next
+\[
+  v\lrcorner\,\beta
+  =\sum_{a,b,c}h_{ab}\Bigl(A_{ca}\,\bbar p_{c}\wedge\bbar p_{b}
+   +C_{ca}\,q_{c}\wedge\bbar p_{b}\Bigr),
+\]
+so $v\lrcorner\,\beta=0$ if and only if $Ch=0$, that is $C=0$, and $Ah$ is
+symmetric. Likewise $v\lrcorner\,\widehat\beta=0$ if and only if $B=0$ and
+$Dh^{-1}$ is symmetric. Given $D=-A^{\top}$, the last condition reads
+$A^{\top}h^{-1}=h^{-\top}A$, which after multiplication by $h^{\top}$ on the
+left and by $h$ on the right is $h^{\top}A^{\top}=Ah$, the symmetry of $Ah$
+again. Hence
+\[
+  T_{\mathrm{spl}}=\bigl\{(A,B,C,D)=(A,0,0,-A^{\top})\;:\;Ah\ \text{symmetric}\bigr\},
+\]
+of dimension $n(n+1)/2$. It is the tangent space to the split locus: the
+same computation on $X$ alone shows that the polarised first-order
+deformations of $(X,\beta)$ are the matrices $A$ with $Ah$ symmetric, the
+space $T_{[X]}\cA_{n}$ of dimension $n(n+1)/2$; the deformation of
+$\widehat X$ induced by $A$ is the dual one, $-A^{\top}$; and the map
+$A\mapsto(A,0,0,-A^{\top})$ is injective. Finally $T_{\mathrm{spl}}\subseteq
+T$: for $v\in T_{\mathrm{spl}}$, $v\lrcorner\,\eta=0$ because
+$\eta\in\langle\beta,\widehat\beta\rangle$, so $v$ is polarised, and
+$v\lrcorner\,\omega_{1}=v\lrcorner\,\omega_{2}=0$ because $\omega_{1}$ and
+$\omega_{2}$ are polynomials in $\beta,\widehat\beta,\ell$ by
+\Cref{thm:splitclosed} and $v\lrcorner$ is a derivation; by
+\Cref{prop:firstorder} such a $v$ commutes with $K$.
+
+(ii) Every $v\in T$ has $v\lrcorner\,\eta=0$. If the $\lambda_{i}$ and
+$\eta$ span $\NS(A_{0})_{\QQ}=\langle\beta,\widehat\beta,\ell\rangle$, then
+$v\lrcorner\,\lambda_{i}=0$ for all $i$ is equivalent, for $v\in T$, to
+$v\lrcorner\,\beta=v\lrcorner\,\widehat\beta=v\lrcorner\,\ell=0$, so
+$\ker\ob_{E}=T\cap T_{\mathrm{spl}}=T_{\mathrm{spl}}$ by (i), and the rank
+is $n^{2}-n(n+1)/2=n(n-1)/2$, which is the codimension of
+\Cref{prop:splitgeom}(iii).
+
+(iii) By \eqref{eq:splitsigma}, $\sigma_{E}(\zeta)=\sum_{i}(-1)^{p_{i}}
+\zeta_{ii}\,e^{\lambda_{i}}$ for a diagonal $\zeta$. Since $v\lrcorner$ is a
+derivation and $v\lrcorner\,\lambda_{i}$ has even degree,
+$v\lrcorner\,\lambda_{i}^{\,q}=q\,\lambda_{i}^{\,q-1}(v\lrcorner\,\lambda_{i})$
+and so $v\lrcorner\,e^{\lambda_{i}}=(v\lrcorner\,\lambda_{i})\,e^{\lambda_{i}}$.
+Therefore
+\[
+  \sigma_{E}\bigl(\ob_{E}(v)\bigr)
+  =\sum_{i}(-1)^{p_{i}}(v\lrcorner\,\lambda_{i})\,e^{\lambda_{i}}
+  =v\lrcorner\sum_{i}(-1)^{p_{i}}e^{\lambda_{i}}
+  =v\lrcorner\,\ch(E).
+\]
+For $v\in T$ one has $v\lrcorner\,\eta^{k}=k\eta^{k-1}(v\lrcorner\,\eta)=0$,
+and $v\lrcorner\,\omega=0$ for every $\omega\in\HW(A_{0})$ by
+\Cref{prop:firstorder}; under the hypothesis on $\ch(E)$ this gives
+\eqref{eq:sigmaob}.
+
+(iv) The three classes $\lambda_{1}=\gamma+3\ell$, $\lambda_{2}=-2\gamma$,
+$\lambda_{3}=\gamma-3\ell$ span $\langle\gamma,\ell\rangle$, and
+$\langle\eta,\gamma\rangle=\langle\beta,\widehat\beta\rangle$ by the
+determinant in the proof of \Cref{lem:sixmonomials}, so (ii) applies and
+gives the kernel and the rank; \Cref{prop:explicitobject} gives the
+hypothesis of (iii), so the image lies in $\ker\sigma_{E}$. The subspace
+$\Delta$ has dimension $\dim\Ann_{H^{0,2}}(\omega_{1})=n^{2}=9$ by
+\Cref{lem:annihilator}. The components of $\ob_{E}(v)$ on $L_{i}$ and on
+$L_{i}^{-1}[3]$ are $v\lrcorner\,\lambda_{i}$ and
+$v\lrcorner\,(-\lambda_{i})=-v\lrcorner\,\lambda_{i}$, so an element of the
+image of the shape $(z,\dots,z)$ has $z=-z$, hence is zero; this is
+$\Delta\cap\image\ob_{E}=0$, and with $\dim\ker\sigma_{E}=15$ from
+\Cref{prop:explicitobject} the dimension count follows.
+\end{proof}
+
+\begin{remark}[Meaning of the obstruction classes]\label{rem:obstructionmeaning}
+\Cref{prop:splitobstruction} sharpens \Cref{rem:whatmeasures} in one
+respect and exposes a limit of the criterion in another. First, for the
+explicit object the obstruction classes along the family are nonzero, and
+they are nonzero exactly in the $n(n-1)/2$ directions normal to the split
+locus, which are the directions in which the Weil class has to be
+transported. Second, those classes lie in the kernel of $\sigma_{E}$ by
+\eqref{eq:sigmaob}, and \eqref{eq:sigmaob} holds for every object whose
+Chern character is a flat section of Hodge classes along the family, so the
+semiregularity map cannot detect the obstruction of any such object. The
+obstruction is therefore nonzero, and the criterion cannot see it. For
+the explicit object the
+situation is the worst possible: the twelve dimensions
+$\Delta\oplus\image\ob_{E}$ of the kernel are accounted for by the two
+mechanisms of \Cref{cor:kernelfamily} and \eqref{eq:obdef}, the remaining
+three lie on the even side of \Cref{cor:pteobstructed} as well, and none of
+the fifteen is an artefact. The classes of the shape $z\cdot\id_{E}$ are the
+ones a change of the twisting class would contribute, one and the same $z$
+to every rank one summand; the last assertion of (iv) says that no such
+change removes the obstruction. So the explicit object does not move off the
+split locus to first order, either as a complex or as a twisted complex, and
+the question of \Cref{q:residual} for it is not one of verifying a
+hypothesis but of replacing the object.
+
+The positive content is a recipe. By (ii), a split object whose classes
+span $\NS(A_{0})_{\QQ}$ with $\eta$ has obstruction map of rank
+$n(n-1)/2$ against the family, and the spanning hypothesis is more than is
+needed: a single class $\theta\in\NS(A_{0})_{\QQ}$ not proportional to
+$\eta$ already has $\{v\in T:v\lrcorner\,\theta=0\}=T_{\mathrm{spl}}$.
+Indeed, every $v\in T$ kills $\eta$ and commutes with $K$, so it is a pair
+$(v_{+},v_{-})$ with $v_{\pm}\in\Hom(V_{\pm}^{1,0},V_{\pm}^{0,1})$. Since
+$\theta^{\pm}$ is of type $(1,1)$ in $\bigwedge^{2}V_{\pm}$, the $R_{0}$-part
+$u\theta^{+}+\bbar u\,\theta^{-}$ of $\theta$, with $u\ne0$, gives
+$v\lrcorner\,\theta=u\,v_{+}\lrcorner\,\theta^{+}+\bbar u\,v_{-}\lrcorner\,\theta^{-}$,
+whose two terms lie in the different summands $\bigwedge^{2}V_{+}^{0,1}$ and
+$\bigwedge^{2}V_{-}^{0,1}$ of $H^{0,2}(A_{0})$. So the kernel of
+$v\mapsto v\lrcorner\,\theta$ on $T$ does not depend on $u\ne0$; it is
+therefore the common kernel for $\gamma$ and $\ell$, the cases $u=1$ and
+$u=\sqrt{-d}$, which is $T_{\mathrm{spl}}$ by (ii). So every split object built from line bundles
+other than powers of $\eta$ is obstructed in exactly the normal directions
+to the split locus, and \Cref{thm:positivity} says that an object built
+from powers of $\eta$ carries no Weil class. What survives is the statement
+of \Cref{rem:familyuniform}: the object must have positive rank.
+\end{remark}
+
+\subsubsection*{The evaluation map of the explicit object}
+
+\Cref{thm:weakfails} places the copy $\Delta$ of the tangent space inside the
+image of the evaluation map. For a split object the whole of
+$\operatorname{ev}_{E}$ can be written down, and for the explicit object the
+entire kernel of $\sigma_{E}$ turns out to lie in its image. We identify
+$HH^{2}(A_{0})$ with
+\begin{equation}\label{eq:HT2}
+  HT^{2}(A_{0})
+  =H^{0,2}(A_{0})\;\oplus\;\Hom\bigl(H^{1,0},H^{0,1}\bigr)\;\oplus\;
+   \textstyle\bigwedge^{2}\bigl(H^{1,0}\bigr)^{\vee}
+\end{equation}
+by the Hochschild--Kostant--Rosenberg isomorphism, the three summands being
+$H^{2}(\cO)$, $H^{1}(T)$ and $H^{0}(\bigwedge^{2}T)$ for the trivial tangent
+bundle. An element $x=(z,v,\pi)$ acts on $H^{*}(A_{0},\CC)$ by $z\wedge$, by
+the derivation $v\lrcorner$ of \Cref{ssec:tangent}, and by the double
+contraction $\pi\lrcorner$, which removes two $(1,0)$ slots; we write
+$x\lrcorner\,\xi$ for the sum of the three.
+
+The double contraction is a second order operator. For a class $\lambda$ of
+type $(1,1)$, which has a single $(1,0)$ slot, $\pi\lrcorner\,\lambda=0$ and
+$\pi\lrcorner\,\lambda^{k}=\binom{k}{2}\lambda^{k-2}\,(\pi\lrcorner\,\lambda^{2})$,
+because $\pi\lrcorner$ is a composite of two interior products, each of which
+is an antiderivation, and the only nonzero terms are those in which the two
+interior products hit two different factors. Summing over $k$ with the
+factorials gives
+$\pi\lrcorner\,e^{\lambda}=\tfrac12(\pi\lrcorner\,\lambda^{2})\,e^{\lambda}$,
+exactly parallel to $v\lrcorner\,e^{\lambda}=(v\lrcorner\,\lambda)\,e^{\lambda}$
+for the first order operator $v\lrcorner$. This is the whole content of the
+compatibility \eqref{eq:sigmaev} below: the semiregularity map of a line
+bundle is multiplication by $e^{\lambda}$, and every summand of $HT^{2}$ acts
+on $e^{\lambda}$ as multiplication by a class in $H^{0,2}$ which is precisely
+the value of $\operatorname{ev}_{L}$. The same identity, for arbitrary $E$, is
+the commutative square of Buchweitz and Flenner \cite[Corollary 4.3]{BF03} and
+its Hochschild form in \cite[Lemma 11.3]{Mar25b}; on an abelian variety the
+Todd class is trivial and no correction to the HKR map is needed
+\cite{Cal05,BF08}.
+
+\begin{proposition}[The evaluation map of a split object]\label{prop:evaluation}
+Let $A_{0}$ be a split member with $X$ general and let
+$E=\bigoplus_{i=1}^{s}L_{i}[p_{i}]$ with $\lambda_{i}=c_{1}(L_{i})$ and all
+$\Ext^{2}(L_{i}[p_{i}],L_{j}[p_{j}])$, $i\ne j$, zero, so that
+$\Ext^{2}(E,E)=\bigoplus_{i}H^{0,2}(A_{0})$.
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item Under \eqref{eq:HT2}, $\operatorname{ev}_{E}$ is diagonal:
+  \begin{equation}\label{eq:evsplit}
+    \operatorname{ev}_{E}(z,v,\pi)_{i}
+    =z+v\lrcorner\,\lambda_{i}+\tfrac12\,\pi\lrcorner\,\lambda_{i}^{2}
+    \;\in\;H^{0,2}(A_{0})=\Ext^{2}\bigl(L_{i}[p_{i}],L_{i}[p_{i}]\bigr).
+  \end{equation}
+\item For every $x\in HT^{2}(A_{0})$,
+  \begin{equation}\label{eq:sigmaev}
+    \sigma_{E}\bigl(\operatorname{ev}_{E}(x)\bigr)=x\lrcorner\,\ch(E),
+  \end{equation}
+  and consequently
+  $\ker\sigma_{E}\cap\image\operatorname{ev}_{E}
+   =\operatorname{ev}_{E}\bigl(\{x:x\lrcorner\,\ch(E)=0\}\bigr)$.
+  The weakened hypothesis of \cite[Question 11.4]{Mar25b} holds for $E$ if
+  and only if $\operatorname{ev}_{E}$ kills every $x$ that preserves
+  $\ch(E)$ to first order.
+\item $\dim HT^{2}(A_{0})=2\binom{2n}{2}+4n^{2}$ and
+  $\dim\Ext^{2}(E,E)=s\binom{2n}{2}$; for $s\ge5$ and every $n\ge2$ the
+  second exceeds the first, so $\operatorname{ev}_{E}$ is not surjective and
+  \cite[Lemma 11.3]{Mar25b} cannot apply to a sum of five or more line
+  bundles.
+\item For the object of \Cref{prop:explicitobject}, with
+  $\lambda_{i}=u_{i}\theta^{+}+\bbar u_{i}\theta^{-}$ as in
+  \Cref{not:splitcoords}: the space $\{x:x\lrcorner\,\ch(E)=0\}$ is
+  $\Ann_{H^{0,2}}(\omega_{1})\oplus\{v:v\lrcorner\,\omega_{1}=0\}\oplus
+  \{\pi:\pi\lrcorner\,\omega_{1}=0\}$, of dimensions $9$, $18$ and $9$; the
+  first and the third summands are both carried by $\operatorname{ev}_{E}$
+  onto $\Delta$; the second is carried onto
+  \[
+    \Sigma=\bigl\{\,(u_{i}a+\bbar u_{i}b)_{i=1}^{6}\;:\;
+      a\in\textstyle\bigwedge^{2}V_{+}^{0,1},\ b\in\bigwedge^{2}V_{-}^{0,1}\,\bigr\},
+    \qquad \dim\Sigma=n(n-1)=6,
+  \]
+  which contains the image of the obstruction map of
+  \Cref{prop:splitobstruction}; $\Delta\cap\Sigma=0$; and
+  \[
+    \ker\sigma_{E}=\Delta\oplus\Sigma\subseteq\image\operatorname{ev}_{E}.
+  \]
+  So every direction in which $\sigma_{E}$ is blind is the value of
+  $\operatorname{ev}_{E}$ on a Hochschild class that preserves $\ch(E)$ to
+  first order, and the weakened hypothesis fails for $E$ by all fifteen
+  dimensions. The rank of $\operatorname{ev}_{E}$ is $45$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) The evaluation map is the action of $HH^{*}(A_{0})$ on
+$\Ext^{*}(E,E)$, which under HKR is contraction of a polyvector in
+$H^{q}(\bigwedge^{p}T)$ with $\tfrac{1}{p!}\mathrm{At}(E)^{p}$
+\cite{BF08}; for $p=0$ this is $z\cdot\id_{E}$ as in the proof of
+\Cref{thm:weakfails}, for $p=1$ it is $v\lrcorner\,\mathrm{At}(E)$, the map
+\eqref{eq:obdef}, and for $p=2$ it is $\tfrac12\pi\lrcorner\,\mathrm{At}(E)^{2}$.
+The Atiyah class of $E$ is diagonal with entries $\lambda_{i}$, so all three
+are diagonal with the entries displayed.
+
+(ii) By \eqref{eq:splitsigma}, $\sigma_{E}(\zeta)=\sum_{i}(-1)^{p_{i}}\zeta_{i}
+e^{\lambda_{i}}$ for diagonal $\zeta$. The three terms of \eqref{eq:evsplit}
+are exactly the factors by which $z\wedge$, $v\lrcorner$ and $\pi\lrcorner$
+multiply $e^{\lambda_{i}}$: the first trivially, the second because
+$v\lrcorner$ is a derivation and $v\lrcorner\,\lambda_{i}$ has even degree,
+the third by the formula for $\pi\lrcorner\,e^{\lambda}$ above. Hence
+$\sigma_{E}(\operatorname{ev}_{E}(x))=\sum_{i}(-1)^{p_{i}}\,x\lrcorner\,
+e^{\lambda_{i}}=x\lrcorner\,\ch(E)$. The description of
+$\ker\sigma_{E}\cap\image\operatorname{ev}_{E}$ follows: $\operatorname{ev}_{E}(x)$
+lies in $\ker\sigma_{E}$ if and only if $x\lrcorner\,\ch(E)=0$.
+
+(iii) The three summands of \eqref{eq:HT2} have dimensions $\binom{2n}{2}$,
+$4n^{2}$ and $\binom{2n}{2}$. The inequality
+$s\binom{2n}{2}>2\binom{2n}{2}+4n^{2}$ is $(s-2)(2n-1)>4n$, and
+$4n/(2n-1)\le8/3$ for $n\ge2$, so it holds for $s\ge5$.
+
+(iv) Since $\ch(E)=12\omega_{1}$ is of type $(3,3)$, the three summands of
+$x\lrcorner\,\ch(E)$ have types $(3,5)$, $(2,4)$ and $(1,3)$, so the kernel
+is the direct sum of the three kernels. The first is $\Ann_{H^{0,2}}(\omega_{1})$,
+of dimension $n^{2}=9$ by \Cref{lem:annihilator}. The second is
+$\Hom(V_{+}^{1,0},V_{+}^{0,1})\oplus\Hom(V_{-}^{1,0},V_{-}^{0,1})$, of
+dimension $2n^{2}=18$, by the proof of \Cref{prop:firstorder}, whose
+argument for (i)$\Leftrightarrow$(iii) does not use the polarisation. For the
+third, decompose $\bigwedge^{2}(H^{1,0})^{\vee}$ as
+$\bigwedge^{2}(V_{+}^{1,0})^{\vee}\oplus(V_{+}^{1,0})^{\vee}\otimes(V_{-}^{1,0})^{\vee}
+\oplus\bigwedge^{2}(V_{-}^{1,0})^{\vee}$; here $\omega_{1}$ is a combination
+of $(\theta^{+})^{3}$ and $(\theta^{-})^{3}$ with both coefficients nonzero,
+$(\theta^{\pm})^{3}$ spans $\bigwedge^{3}V_{\pm}^{1,0}\otimes\bigwedge^{3}V_{\pm}^{0,1}$,
+the outer blocks of $\pi$ act injectively on the respective factor
+$\bigwedge^{3}V_{\pm}^{1,0}$ and land in different summands of $H^{1,3}$,
+and the middle block kills both; so the third kernel is the middle block,
+of dimension $n^{2}=9$.
+
+At a split point $\theta^{\pm}$ are of type $(1,1)$, so $\theta^{\pm}\in
+V_{\pm}^{1,0}\otimes V_{\pm}^{0,1}$, and they are nondegenerate pairings
+because $(\theta^{\pm})^{3}\ne0$. Write $\lambda_{i}^{2}=u_{i}^{2}(\theta^{+})^{2}
++\bbar u_{i}^{2}(\theta^{-})^{2}+2\Nm(u_{i})\,\theta^{+}\theta^{-}$. A middle
+block $\pi$ kills $(\theta^{\pm})^{2}$, which have no $V_{\mp}^{1,0}$ slot, so
+$\tfrac12\pi\lrcorner\,\lambda_{i}^{2}=\Nm(u_{i})\,\pi\lrcorner\,(\theta^{+}\theta^{-})$;
+the six $u_{i}$ of \Cref{prop:explicitobject} are $\pm\zeta_{6},\pm1,
+\pm\zeta_{6}^{-1}$, all of norm one, so this value is independent of $i$ and
+$\operatorname{ev}_{E}(\pi)=z_{\pi}\cdot\id_{E}$ with
+$z_{\pi}=\pi\lrcorner\,(\theta^{+}\theta^{-})$. The map $\pi\mapsto z_{\pi}$
+from the middle block to $V_{+}^{0,1}\otimes V_{-}^{0,1}$ is the tensor
+product of the two nondegenerate pairings, hence an isomorphism onto the
+middle block of $H^{0,2}$, which is $\Ann_{H^{0,2}}(\omega_{1})$ by
+\Cref{lem:annihilator}. So $\operatorname{ev}_{E}$ carries the third kernel
+onto $\Delta$, as it carries the first by \Cref{thm:weakfails}.
+
+For $v=(v_{+},v_{-})$ in the second kernel,
+$v\lrcorner\,\lambda_{i}=u_{i}\,v_{+}\lrcorner\,\theta^{+}+\bbar u_{i}\,
+v_{-}\lrcorner\,\theta^{-}$ with $a=v_{+}\lrcorner\,\theta^{+}\in
+\bigwedge^{2}V_{+}^{0,1}$ and $b=v_{-}\lrcorner\,\theta^{-}\in\bigwedge^{2}V_{-}^{0,1}$;
+as $v_{\pm}$ ranges over $\Hom(V_{\pm}^{1,0},V_{\pm}^{0,1})$, $a$ and $b$
+range over the whole of $\bigwedge^{2}V_{\pm}^{0,1}$ because the pairings
+$\theta^{\pm}$ are nondegenerate, which is the surjectivity of
+$\operatorname{alt}(Vc)$ in \eqref{eq:phidelta}. So the image is $\Sigma$.
+The map $(a,b)\mapsto(u_{i}a+\bbar u_{i}b)_{i}$ is injective, because
+$(u_{1},\bbar u_{1})$ and $(u_{2},\bbar u_{2})$ are linearly independent in
+$\CC^{2}$, $u_{1}/\bbar u_{1}=\zeta_{6}^{2}$ differing from
+$u_{2}/\bbar u_{2}=1$; hence $\dim\Sigma=2\binom{n}{2}=n(n-1)=6$. The
+obstruction map of \Cref{prop:splitobstruction} is the restriction to the
+polarised $K$-commuting $v$, so its image lies in $\Sigma$. An element of
+$\Sigma$ of the shape $(z,\dots,z)$ has $u_{i}a+\bbar u_{i}b=z=-z$ on
+comparing $i$ with $3+i$, so $z=0$ and then $a=b=0$: $\Delta\cap\Sigma=0$.
+By (ii), $\Delta\oplus\Sigma\subseteq\ker\sigma_{E}\cap\image\operatorname{ev}_{E}$,
+and its dimension $9+6=15$ equals $\dim\ker\sigma_{E}$ by
+\Cref{prop:explicitobject}, so the three spaces coincide.
+
+For the rank, each term of \eqref{eq:evsplit} is a scalar depending on $i$
+times a class independent of $i$. Write $\mathbf{u}^{k}=(u_{i}^{k})_{i}\in\CC^{6}$
+and $M=V_{+}^{0,1}\otimes V_{-}^{0,1}$. The class $z$ contributes
+$\mathbf{u}^{0}\otimes z$. Split $v$ into its four blocks
+$v_{\varepsilon\varepsilon'}\colon V_{\varepsilon}^{1,0}\to V_{\varepsilon'}^{0,1}$;
+then $v\lrcorner\,\theta^{+}$ is the sum of $v_{++}\lrcorner\,\theta^{+}\in
+\bigwedge^{2}V_{+}^{0,1}$ and $v_{+-}\lrcorner\,\theta^{+}\in M$, the first
+ranging over $\bigwedge^{2}V_{+}^{0,1}$ as above and the second over $M$
+because $\theta^{+}$ is a nondegenerate pairing, and symmetrically for
+$v\lrcorner\,\theta^{-}$ with the blocks $v_{--}$ and $v_{-+}$. As
+$\bbar u_{i}=u_{i}^{-1}$, the values on the second summand of
+\eqref{eq:HT2} are therefore $\mathbf{u}^{1}\otimes(a+c)+\mathbf{u}^{-1}\otimes(b+c')$
+with $a$, $b$, $c$, $c'$ ranging independently over
+$\bigwedge^{2}V_{+}^{0,1}$, $\bigwedge^{2}V_{-}^{0,1}$, $M$, $M$. On the
+third summand, the outer block $\pi_{++}$ kills $(\theta^{-})^{2}$ and
+$\theta^{+}\theta^{-}$, and $\pi_{++}\mapsto\frac12\pi_{++}\lrcorner\,(\theta^{+})^{2}$
+is an isomorphism onto $\bigwedge^{2}V_{+}^{0,1}$ (in bases with
+$\theta^{+}=\sum_{j}e_{j}f_{j}$ it sends $e_{j}^{\vee}\wedge e_{k}^{\vee}$ to
+$\pm f_{j}f_{k}$); likewise for
+$\pi_{--}$, and the middle block contributes $\mathbf{u}^{0}\otimes z_{\pi}$.
+So
+\[
+  \image\operatorname{ev}_{E}
+  =\mathbf{u}^{0}\otimes H^{0,2}
+  +\mathbf{u}^{\pm1}\otimes\bigl(\textstyle\bigwedge^{2}V_{\pm}^{0,1}\oplus M\bigr)
+  +\mathbf{u}^{\pm2}\otimes\textstyle\bigwedge^{2}V_{\pm}^{0,1}.
+\]
+The $u_{i}$ are the six sixth roots of unity, so the vectors
+$\mathbf{u}^{k}$ for $k=0,\pm1,\pm2$ are distinct characters of the cyclic
+group they form and are linearly independent. The sum is direct, and the
+rank is $15+2\cdot12+2\cdot3=45$.
+\end{proof}
+
+\Cref{fig:evaluation} draws the three kernels and their images in
+$\Ext^{2}(E,E)$.
+
+\begin{figure}[tbp]
+\centering
+  \includegraphics[width=\textwidth]{fig_evaluation}
+\caption{\Cref{prop:evaluation} for the explicit object at $n=3$. Left: the
+three summands of $HT^{2}(A_{0})$, drawn with heights proportional to their
+dimensions, and inside each the part that preserves $\ch(E)$ to first order:
+the annihilator of $\omega_{1}$, the deformations killing $\omega_{1}$ with
+the polarised $K$-commuting tangent space $T$ in front, and the middle block
+of bivectors. Right: $\Ext^{2}(E,E)$ as six stacked copies of $H^{0,2}$, one
+per summand of $E$, and inside it the kernel of $\sigma_{E}$: the column
+$\Delta$, one and the same class in every layer, and the column $\Sigma$,
+whose entries depend on the summand through $u_{i}$. The three arrows are the
+evaluation map on the three kernels; the two teal ones both land on
+$\Delta$, the ochre one on $\Sigma$, and together they cover the kernel.
+Below, the commutative square that makes this a statement about the weakened
+criterion of \cite[Question 11.4]{Mar25b}.}
+\label{fig:evaluation}
+\end{figure}
+
+\begin{remark}[Question 11.4 for split objects]
+\label{rem:question114}
+For a split object the two criteria stand or fall together, and for the
+explicit object both fall completely. \Cref{thm:weakfails} makes the first
+$n^{2}$ dimensions of the failure uniform over every concentrated object in
+every dimension; \Cref{prop:evaluation}(iv) accounts for the remaining
+$n(n-1)$ at $n=3$ by the deformations of the two halves $V_{\pm}$ of the
+Hodge structure separately, and the equality $\ker\sigma_{E}=\Delta\oplus\Sigma$
+says that the two mechanisms exhaust the kernel: nothing in it is
+accidental. None of this touches the case for which the question was asked.
+A sheaf of positive rank has $z\cdot\ch(E)\ne0$ for every $z\ne0$, so its
+$\Delta$ is zero, and whether $\operatorname{ev}_{E}$ kills the deformations
+that preserve $\kappa(E)$ is a statement about the sheaf and not about its
+Chern character. Markman's candidate in \cite[Section 12]{Mar25b}, a rank
+one complex on a principally polarised abelian fourfold with Chern character
+on the secant $\langle e^{\pm\sqrt{-d}\Theta}\rangle$, is exactly such a
+sheaf, and he records that the verification remains to be done.
+\Cref{thm:factor} reduces that verification to one identity on the fourfold,
+and \Cref{thm:candidatefails} shows that the identity fails: the candidate
+does not satisfy the weakened criterion either.
+\end{remark}
+
+\subsubsection*{Solutions of nonzero rank}
+
+We return to the Diophantine problem of \Cref{setup:pte}. By
+\Cref{cor:nplusone} a solution with $\ch_{0}(E)\ne0$ needs at least $n+1$
+distinct norms, and multiplicity one bounds each level sum by the number of
+elements of $\cO_{K}$ of that norm.
+
+\begin{proposition}[The level sums]\label{thm:pterange}
+Keep \Cref{setup:pte} and suppose $E$ satisfies \eqref{eq:pteconditions} with
+$\ch_{0}(E)\ne0$, so that the $u_{i}$ take $\nu\ge n+1$ distinct norms by
+\Cref{cor:nplusone}. Write $N_{1}<\dots<N_{\nu}$ for those norms, $M_{j}$ for
+the sum of the $m_{i}$ at level $N_{j}$, and
+$r_{K}(N)=\#\{u\in\cO_{K}:\Nm_{K/\QQ}(u)=N\}$. If $\nu=n+1$ then, with
+$P=\prod_{k}N_{k}$, $S=\ch_{0}(E)$ and
+$D_{j}=N_{j}\prod_{k\ne j}(N_{j}-N_{k})$,
+\begin{equation}\label{eq:levelsums}
+  M_{j}=(-1)^{n}\,\frac{S\,P}{D_{j}},
+\end{equation}
+the least $S>0$ making every $M_{j}$ an integer is
+$S_{\min}=\operatorname{lcm}_{j}\bigl(|D_{j}|/\gcd(|D_{j}|,P)\bigr)$, and
+multiplicity one, \Cref{lem:splitsemireg}(i), forces
+$|M_{j}|\le r_{K}(N_{j})$ for every $j$.
+\end{proposition}
+
+\begin{proof}
+The conditions $T_{r,r}=0$ for $r=1,\dots,n$ say that the linear
+functional $f\mapsto\sum_{j}M_{j}f(N_{j})$ kills $x,x^{2},\dots,x^{n}$, hence
+sends every polynomial $f$ of degree at most $n$ to $S\,f(0)$. Applying it to
+$f(x)=\prod_{k\ne j}(x-N_{k})$, which has degree $n$, gives
+\[
+  M_{j}\prod_{k\ne j}(N_{j}-N_{k})=S\,(-1)^{n}\prod_{k\ne j}N_{k},
+\]
+and multiplying by $N_{j}$ turns this into \eqref{eq:levelsums}. The value of
+$S_{\min}$ is the definition of a least common multiple, and the bound on
+$|M_{j}|$ holds because each $u$ of norm $N_{j}$ contributes at most one term
+$m_{i}=\pm1$ to $M_{j}$.
+\end{proof}
+
+So the level sums are determined by the norms up to the scale $S$, and they
+compete with the supply $r_{K}(N_{j})$ of elements at each level. That
+competition is arithmetic. A second mechanism, in the cohomology of $A$,
+closes the split route for every $n$ and every set of norms at once.
+
+\begin{corollary}[Sums of line bundles fail both criteria]\label{cor:noline}
+Let $A$ be of $(K,-1,n)$-Weil type with $n\ge2$, and let
+$E=\bigoplus_{i}L_{i}[p_{i}]^{\oplus m_{i}}$ be a sum of shifted line bundles,
+twisted by a common class or not, whose (twisted) Chern character remains of
+Hodge type to first order along $\cD_{n,n}$ and has a nonzero Weil component.
+Then $\sigma_{E}$ is not injective on the image of $\operatorname{ev}_{E}$:
+$E$ is neither semiregular nor semiregular in the weakened sense of
+\cite[Question 11.4]{Mar25b}, and it is obstructed to first order along some
+direction of the Weil family. In particular every object of \Cref{setup:pte}
+satisfying \eqref{eq:pteconditions}, for every $n\ge2$, every field $K$,
+every rank and every set of norms, fails both criteria.
+\end{corollary}
+
+\begin{proof}
+Write $\lambda_{i}$ for the twisted first Chern classes of the summands. If
+every $\lambda_{i}$ were a real multiple of $\eta$, it would be a rational
+multiple, both classes being rational, and the twisted Chern character
+$\sum_{i}m_{i}e^{\lambda_{i}}$ would be a polynomial in $\eta$; its component
+in degree $2n$ would then lie in $\QQ\eta^{n}$, which meets the Weil line in
+zero by \Cref{prop:grading}, against the hypothesis. So some $\lambda_{i}$ is
+not a real multiple of $\eta$, and \Cref{thm:linebundle} applies to the
+summand $L_{i}[p_{i}]$. For an object of \Cref{setup:pte} the classes are
+$\lambda_{i}=\theta(u_{i})\in R_{0}$, and $R_{0}\cap\QQ\eta=0$; no twist is
+needed because $c_{1}(E)=\theta(T_{1,0})=0$ by \eqref{eq:pteconditions}, as
+$(1,0)$ is not an excluded pair for $n\ge2$; and \eqref{eq:pteconditions}
+gives a flat Chern character with a nonzero Weil component by
+\Cref{prop:chintermsofu}.
+\end{proof}
+
+\begin{remark}[What the corollary asks of an object]\label{rem:nolinemeaning}
+By \Cref{cor:noline} there is no sum of line bundles, at any member of any
+Weil family in any dimension, that could run the semiregularity argument in
+either form. The reason is \Cref{prop:rigidity}(i): the
+only divisor class that stays of type $(1,1)$ across the whole family is the
+polarisation, so every line bundle summand off that line is obstructed in
+some direction of the family, and the semiregularity map, whose composite
+with the obstruction is contraction with the flat class $\ch(E)$, cannot see
+it. The object the argument needs is one with no rank one
+summand off the polarisation line, of positive rank, indecomposable enough
+that its Atiyah class contracted with every direction of $T$ vanishes.
+Markman's reflexive sheaves at $n=3$ are of that kind, and nothing here
+says that their analogues at $n\ge4$ do not exist.
+\end{remark}
+
+\subsection{Convolutions of line bundles}\label{ssec:convolutions}
+
+After \Cref{cor:noline} the next objects built from line bundles are their
+convolutions, the iterated cones of shifted line bundles. Their Chern
+character is the same signed sum of exponentials as for a direct sum, but
+their $\Ext$ groups are cut down by the maps between the pieces, so the
+argument of \Cref{thm:linebundle} no longer applies as it stands. This
+subsection shows that fewer than $2n$ pieces with nondegenerate differences
+never serve (\Cref{thm:fewpieces}); writes down, at a CM member for
+$K=\QQ(i)$, a signed sum of $2\cdot4^{n-1}$ line bundles that is exactly a
+real Weil class (\Cref{prop:weilpieces}); and determines, for the
+convolutions of those pieces with three multiples of the polarisation at
+$n=3$, which products in the twisted differential can act on the $525$
+diagonal classes of degree two, of which at least $468$ must disappear
+before the polarised criterion can hold (\Cref{thm:esixdiagonal}). Nothing
+enters the diagonal, cup products remove at most $276$ of these classes, and
+everything else would have to be removed by fourfold products along a path
+through the three multiples and one of the Weil pieces: one family of them
+for some placements of the multiples, and two families that exclude each
+other for the others (\Cref{prop:mixedplacement}); one order of the pieces
+gives a convolution that solves the Maurer--Cartan equation
+(\Cref{prop:explicitconvolution}). Off the diagonal, the classes between two
+pieces that differ in every coordinate are reached by no product
+(\Cref{lem:allthree}), and no
+convolution of these pieces meets the polarised criterion
+(\Cref{thm:noconvolution}). At $n=4$ the same classes, now between pieces
+that differ in three coordinates, are reached by no product in any
+convolution, and they exclude every convolution whose $128$ pieces
+$L_{\zeta}$ occupy two shifts (\Cref{thm:efourtwolevels}) or three
+consecutive ones (\Cref{thm:efourthreelevels}); with the groups between
+pieces whose shifts differ by two or three (\Cref{lem:efourspread}) they
+exclude every convolution whose pieces have their shifts within five
+consecutive values (\Cref{cor:efourfive}); the diagonal classes at a lonely
+shift (\Cref{lem:efourlonely}) and the interleaved shifts
+(\Cref{prop:efourpairs}) extend this to six (\Cref{cor:efoursix}).
+
+\begin{setupenv}[Convolutions]\label{setup:convolution}
+Let $A$ be an abelian variety of dimension $g$ with a flat K\"ahler metric,
+and let $L_{1},\dots,L_{m}$ be line bundles on $A$ with hermitian metrics of
+constant curvature, hermitian forms $H_{1},\dots,H_{m}$ and pairwise distinct
+first Chern classes. For integers $d_{1},\dots,d_{m}$ put
+$P_{a}=L_{a}[-d_{a}]$. A \emph{convolution} of $P_{1},\dots,P_{m}$ is an
+object $E$ given by a one-sided twisted
+complex\footnote{Every object obtained from $P_{1},\dots,P_{m}$ by iterated
+cones in this order is of this form, because the Dolbeault complexes form a
+differential graded enhancement of the full subcategory of line bundles. All
+the objects of this subsection are given in this way.}
+\[
+  \Bigl(\,\bigoplus_{a}\cA^{0,*}(L_{a})[-d_{a}],\ \bar\partial+\delta\Bigr),
+  \qquad
+  \delta=(\delta_{ab})_{a<b},\quad
+  \delta_{ab}\in\cA^{0,1+d_{a}-d_{b}}\bigl(L_{a}^{-1}\otimes L_{b}\bigr),
+\]
+with $\bar\partial\delta+\delta\circ\delta=0$, so that
+$\ch(E)=\sum_{a}(-1)^{d_{a}}e^{c_{1}(L_{a})}$. Write
+$\cA(a,b)=\cA^{0,*}(L_{a}^{-1}\otimes L_{b})$ and $\cH(a,b)$ for its harmonic
+forms, so that $\cH^{q}(a,b)\cong H^{q}(A,L_{a}^{-1}\otimes L_{b})$, and write
+$\pi$, $G$ and $h=\bar\partial^{*}G$ for the harmonic projection, the Green
+operator and the homotopy, with $1-\pi=\bar\partial h+h\bar\partial$ and
+$\pi h=h\pi=h^{2}=0$. A form of degree $q$ in $\cA(a,b)$ is a morphism
+$P_{a}\to P_{b}$ of degree $w=q-d_{a}+d_{b}$; we call $q$ its $\Ext$ degree
+and, when $w=1$, call $q-1$ its \emph{excess}. When $H_{b}-H_{a}$ is
+nondegenerate, $\cH(a,b)$ is concentrated in the single degree
+$n(H_{b}-H_{a})$, the number of negative eigenvalues \cite[Chapter~3]{BL04}.
+\end{setupenv}
+
+\begin{lemma}[The harmonic model]\label{lem:harmonicmodel}
+In \Cref{setup:convolution}:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item $E$ is isomorphic to a convolution of the same pieces with
+  $h\delta=0$, and then $\delta=\delta^{H}-h(\delta\circ\delta)$ with
+  $\delta^{H}=\pi\delta$ harmonic. Substituting repeatedly, every
+  $\delta_{ab}$ is a finite sum of planar binary trees whose leaves are
+  components $\delta^{H}_{cd}$ with $c<d$, whose internal vertices compose,
+  and whose internal edges carry $-h$.
+\item $\Ext^{*}(E,E)$ is the cohomology of
+  $\cH_{E}=\bigoplus_{a,b}\cH(a,b)$, graded by $w$, with the differential
+  $d_{E}=\sum_{k\ge0}\pi\,Q(-hQ)^{k}$, where $Q=[\delta,-]$.
+\item For $x\in\cH(a,b)$, the component of $d_{E}(x)$ in $\cH(c,e)$ is a sum
+  of terms $\pm\pi\,T$, one for each planar binary tree $T$ with $k\ge2$
+  leaves, internal vertices composing, $-h$ on the internal edges other
+  than the root, whose leaves read in order are the components along a path
+  $c=a_{0}\to a_{1}\to\dots\to a_{k}=e$ in which one step is
+  $x\colon a\to b$ and the others are components $\delta^{H}_{a_{j}a_{j+1}}$
+  with $a_{j}<a_{j+1}$. The $\Ext$ degree of such a term is the sum of the
+  $\Ext$ degrees of its leaves minus $k-2$.
+\end{enumerate}
+\end{lemma}
+
+The terms with $k$ leaves in (iii) are the Massey products of length $k$ of
+the pieces;\footnote{In the language of $A_{\infty}$-categories they are the
+higher products $m_{k}$ of the minimal model of the line bundles, evaluated
+on the Maurer--Cartan element $\delta^{H}$ of the twisted complex; for
+$k=2$ they are cup products.} (iii) is all that is used of them below.
+
+\begin{proof}
+(i) Suppose $h\delta_{cd}=0$ for $d-c<r$. Conjugating by $1+g$, with $g$ of
+degree $0$ supported at distance $r$, replaces $\delta_{ab}$ for $b-a=r$ by
+$X_{ab}+\bar\partial g_{ab}$, where $X_{ab}$ depends only on $\delta$, and
+leaves the components at smaller distance unchanged. With
+$g_{ab}=-hX_{ab}$ the new component is $X_{ab}-\bar\partial hX_{ab}$, and
+$h\bar\partial h=h(1-\pi-h\bar\partial)=h$ gives $h(X_{ab}-\bar\partial
+hX_{ab})=0$. Induction on $r$ gives $h\delta=0$, and then
+$\delta=\pi\delta+\bar\partial h\delta+h\bar\partial\delta
+=\delta^{H}-h(\delta\circ\delta)$ by the Maurer--Cartan equation. The
+component $(\delta\circ\delta)_{ab}$ involves only components at distance
+less than $b-a$, so the substitution ends.
+(ii) The endomorphism complex of $E$ is $\bigoplus_{a,b}\cA(a,b)$ with the
+differential $\bar\partial+Q$. Blockwise, the inclusion of harmonic forms,
+$\pi$ and $-h$ form a strong deformation retraction of
+$(\bigoplus\cA(a,b),\bar\partial)$ onto $(\cH_{E},0)$, and $Q$ raises $b-a$,
+so $hQ$ is nilpotent. The basic perturbation lemma gives a homotopy
+equivalence of $(\bigoplus\cA(a,b),\bar\partial+Q)$ with $(\cH_{E},d_{E})$,
+with the chain maps $\iota_{E}=\sum_{k}(-hQ)^{k}$ on $\cH_{E}$ and
+$\pi_{E}=\pi\sum_{k}(-Qh)^{k}$. (iii) Each $Q$ in $d_{E}$ composes with one
+component of $\delta$ on the left or on the right; writing that component as
+in (i) gives the trees, the edges from (i) and those from $d_{E}$ being
+exactly the internal edges other than the root. Composition adds degrees,
+$h$ lowers them by one, and a binary tree with $k$ leaves has $k-2$ internal
+edges.
+\end{proof}
+
+\begin{lemma}[The index of a sum]\label{lem:indexsum}
+For hermitian forms $X,Y$ on $\CC^{g}$, $n(X+Y)\le n(X)+n(Y)$. If
+$H_{1}+\dots+H_{k}=0$, then $\sum_{j}n(H_{j})\ge g-\dim\ker H_{i}$ for every
+$i$; in particular $\sum_{j}n(H_{j})\ge g$ when one $H_{i}$ is
+nondegenerate.
+\end{lemma}
+
+\begin{proof}
+A subspace on which $X+Y$ is negative definite meets the subspaces on which
+$X\ge0$ and $Y\ge0$, of codimensions $n(X)$ and $n(Y)$, only in zero, so its
+dimension is at most $n(X)+n(Y)$. For the second statement,
+$-H_{i}=\sum_{j\ne i}H_{j}$ gives
+$g-n(H_{i})-\dim\ker H_{i}=n(-H_{i})\le\sum_{j\ne i}n(H_{j})$.
+\end{proof}
+
+\begin{theorem}[Fewer than $2n$ pieces]\label{thm:fewpieces}
+Let $A$ be of $(K,-1,n)$-Weil type with $n\ge2$, and let $E$ be a
+convolution of $m<2n$ shifted line bundles whose differences $H_{b}-H_{a}$
+are all nondegenerate. Suppose that $\ch(E)$ remains of Hodge type to first
+order along $\cD_{n,n}$ and has a nonzero Weil component, as every polarised
+character $N\omega_{1}+p(\theta)$ with $N\ne0$ does. Then there is
+$v\in T_{[A]}\cD_{n,n}$ with
+\[
+  \operatorname{ev}_{E}(v)\ne0
+  \qquad\text{and}\qquad
+  \sigma_{E}\bigl(\operatorname{ev}_{E}(v)\bigr)=0 ,
+\]
+so $\sigma_{E}$ is not injective, and for a polarised character
+$\dim\Ext^{2}(E,E)>r(\ch E)$ by \Cref{thm:p2primenumber}(iv).
+\end{theorem}
+
+\begin{proof}
+First, no element of degree one of $\cH_{E}$ has a differential with a
+nonzero component in the diagonal classes $\cH^{2}(c,c)=H^{2}(A,\cO_{A})$.
+Such a component is a sum of terms of \Cref{lem:harmonicmodel}(iii) whose
+$k$ leaves have degree one and run around a closed path $c\to\dots\to c$; the
+pieces before the step $x$ increase from $c$ and those after it increase to
+$c$, so the path passes through $k$ distinct pieces and $k\le m$. Its
+leaves have $\Ext$ degrees $q_{j}=n(H_{a_{j+1}}-H_{a_{j}})$, and the output
+has $\Ext$ degree $\sum_{j}q_{j}-(k-2)=2$, so $\sum_{j}q_{j}=k<2n$. The $k$
+differences are nondegenerate and add up to zero, so \Cref{lem:indexsum}
+gives $\sum_{j}q_{j}\ge g=2n$, a contradiction. Hence taking diagonal
+components gives a well defined map
+$\pi_{D}\colon\Ext^{2}(E,E)\to\bigoplus_{a}H^{2}(A,\cO_{A})$.
+
+Next, $\operatorname{ev}_{E}(v)=v\lrcorner\mathrm{At}(E)$, as in the proof
+of \Cref{thm:linebundle}. In the twisted complex the Atiyah class is
+represented by the commutator of the Chern $(1,0)$-connection
+$\bigoplus_{a}\nabla_{a}$ with $\bar\partial+\delta$; its diagonal entries
+are the curvatures $F_{a}$, constant forms representing $c_{1}(L_{a})$, and
+its other entries $\nabla\delta_{ab}$ lie above the diagonal. So
+$\operatorname{ev}_{E}(v)$ is represented by an upper triangular $z$ with
+$z_{aa}=v\lrcorner F_{a}$, and in $\cH_{E}$ by $\pi_{E}(z)$. The operators
+$Q$ and $h$ preserve upper triangular forms and $Q$ makes them strictly upper
+triangular, so the diagonal of $\pi_{E}(z)$ is that of $\pi(z)$, and
+$\pi_{D}(\operatorname{ev}_{E}(v))=(v\lrcorner c_{1}(L_{a}))_{a}$.
+
+If every $c_{1}(L_{a})$ were a real multiple of the polarisation, it would
+be a rational one and $\ch(E)$ a polynomial in it, whose component in degree
+$2n$ meets the Weil line in zero by \Cref{prop:grading}. So some
+$c_{1}(L_{a})$ is not, and by \Cref{prop:rigidity}(i) some
+$v\in T_{[A]}\cD_{n,n}$ has $v\lrcorner c_{1}(L_{a})\ne0$; then
+$\pi_{D}(\operatorname{ev}_{E}(v))\ne0$, while
+$\sigma_{E}(\operatorname{ev}_{E}(v))=v\lrcorner\ch(E)=0$.
+\end{proof}
+
+\Cref{thm:linebundle} is the case $\delta=0$, with any number of pieces. A
+convolution reaches its diagonal classes once it has $2n$ pieces, when a
+cycle through all of them can have total index $2n$, the equality case of
+\Cref{lem:indexsum}. A convolution meeting the polarised criterion must
+therefore have at least $2n$ pieces, or pieces with degenerate differences.
+The next construction has both.
+
+\begin{proposition}[A pure Weil class from line bundles]
+\label{prop:weilpieces}
+Let $E_{0}=\CC/\ZZ[i]$, $A=E_{0}^{2n}$ with coordinates $z_{1},\dots,z_{2n}$
+and $n\ge2$, let $K=\QQ(i)$ act by $i$ on $z_{1},\dots,z_{n}$ and by $-i$
+on $z_{n+1},\dots,z_{2n}$, and let $\theta$ be the product principal
+polarisation; then $A$ is of $(\QQ(i),-1,n)$-Weil type, a CM member as in
+\Cref{rem:cmquadratic}. Write $B_{j}$ for the surface with coordinates
+$(z_{j},z_{n+j})$, so that $A=B_{1}\times\dots\times B_{n}$. For $p\in\ZZ$
+and $\zeta\in\mu_{4}^{n}$ let $L_{\zeta}$ be a line bundle whose hermitian
+form is $\bigl(\begin{smallmatrix}p&\zeta_{j}\\ \bbar\zeta_{j}&p
+\end{smallmatrix}\bigr)$ on $B_{j}$ and zero between different surfaces, and
+put $\alpha=\prod_{j}\tfrac{i}{2}\,dz_{j}\wedge d\bar z_{n+j}$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item $\alpha$ and $\bbar\alpha$ span the Weil classes of $A$, and
+  \[
+    \sum_{\prod\zeta=1}e^{c_{1}(L_{\zeta})}
+    -\sum_{\prod\zeta=-1}e^{c_{1}(L_{\zeta})}
+    =2\cdot4^{n-1}\,(\alpha+\bbar\alpha).
+  \]
+\item For distinct integers $t_{1},t_{2},t_{3}$ and signs $\sigma_{i}$, the
+  character
+  $\gamma=2\cdot4^{n-1}(\alpha+\bbar\alpha)+\sum_{i}\sigma_{i}e^{t_{i}\theta}$
+  has Hankel rank $3$, so $r(\gamma)=7n^{2}-2n$. A convolution with this
+  character of the $2\cdot4^{n-1}$ bundles $L_{\zeta}$, with
+  $(-1)^{d}=\prod\zeta$, and of three line bundles $M_{i}$ with
+  $c_{1}(M_{i})=t_{i}\theta$ has $2\cdot4^{n-1}+3$ pieces and
+  $(2\cdot4^{n-1}+3)\,n(2n-1)$ diagonal classes of degree two: $525$
+  against $r=57$ at $n=3$, and $3668$ against $104$ at
+  $n=4$.\footnote{At $n=2$ the same construction has $8+3=11$ pieces and
+  $66$ diagonal classes against $r=24$.}
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+The hermitian forms have imaginary parts integral on $\ZZ[i]^{2n}$, so the
+line bundles exist. On $B_{j}$ write $c_{1}$ of the restriction as
+$p(a_{j}+b_{j})+\zeta_{j}c_{j}+\bbar\zeta_{j}c'_{j}$, where
+$a_{j}=\tfrac i2dz_{j}\wedge d\bar z_{j}$,
+$b_{j}=\tfrac i2dz_{n+j}\wedge d\bar z_{n+j}$,
+$c_{j}=\tfrac i2dz_{j}\wedge d\bar z_{n+j}$ and
+$c'_{j}=\tfrac i2dz_{n+j}\wedge d\bar z_{j}$. Since $c_{j}^{2}=c_{j}'^{2}=0$,
+\[
+  e^{c_{1}(L_{\zeta})}=\prod_{j}f_{j}(\zeta_{j}),\qquad
+  f_{j}(z)=e^{p(a_{j}+b_{j})}\bigl(1+zc_{j}+\bbar zc'_{j}+c_{j}c'_{j}\bigr).
+\]
+For
+$u\in\mu_{4}$, $\tfrac12(u+\bbar u)$ is $u$ when $u=\pm1$ and $0$ when
+$u=\pm i$, so the left side of (i) is
+$\tfrac12\bigl(\prod_{j}\sum_{z}zf_{j}(z)+\prod_{j}\sum_{z}\bbar zf_{j}(z)\bigr)$.
+Now $\sum_{z\in\mu_{4}}z=\sum z^{2}=0$ and $\sum|z|^{2}=4$, so
+$\sum_{z}zf_{j}(z)=4e^{p(a_{j}+b_{j})}c'_{j}=4c'_{j}$, because $a_{j}c'_{j}$
+and $b_{j}c'_{j}$ repeat a differential, and likewise
+$\sum_{z}\bbar zf_{j}(z)=4c_{j}$. This gives
+$2\cdot4^{n-1}(\prod c'_{j}+\prod c_{j})=2\cdot4^{n-1}(\bbar\alpha+\alpha)$.
+The differentials $dz_{j}$, $j\le n$, and $d\bar z_{n+j}$ span the
+$i$-eigenspace of $K$ on $H^{1}(A,\CC)$, and $\alpha$ spans its top exterior
+power, which is a Weil class, and $\bbar\alpha$ the conjugate one. (ii) The
+moments $\mu_{m}=\sum_{i}\sigma_{i}t_{i}^{m}$ make the Hankel matrix of
+\Cref{setup:p2prime} a product of Vandermonde matrices of rank $3$, and
+\Cref{thm:p2primenumber}(ii) gives $r$. The counts are immediate.
+\end{proof}
+
+The pieces $L_{\zeta}$ and $L_{\zeta'}$ have a degenerate difference as soon
+as $\zeta$ and $\zeta'$ share a coordinate, so \Cref{thm:fewpieces} does not
+apply to them, and there are more than $2n$ of them. The rest of this
+subsection computes what the Massey products can do to the diagonal classes
+of such a convolution. The pieces are external products over the surfaces
+$B_{j}$, and the first tool is a bound on how far a product can lower the
+degree on each surface.
+
+\begin{lemma}[Degree drop on a product]\label{lem:degreedrop}
+Let $A=B_{1}\times\dots\times B_{n}$ with a product metric, and let every
+$L_{a}$ be an external product with a product metric. Decompose the leaves
+of a term of \Cref{lem:harmonicmodel}(iii) with $k$ leaves into tensor
+products of harmonic forms on the factors. Then the output has degree
+$s_{j}-d_{j}$ on $B_{j}$, where $s_{j}$ is the sum of the degrees of the
+leaves on $B_{j}$ and $d_{j}\ge0$, $\sum_{j}d_{j}=k-2$, and
+\[
+  d_{j}\le\max(0,\,u_{j}-2),
+\]
+where $u_{j}$ is the number of leaves whose component on $B_{j}$ is not a
+multiple of the unit section of $\cO_{B_{j}}$ (such a unit occurs only where
+source and target agree on $B_{j}$).
+\end{lemma}
+
+\begin{proof}
+The Laplacian is $\Delta=\sum_{j}\Delta_{j}$, so $h=\sum_{j}h_{j}$ with
+$h_{j}=\bar\partial_{j}^{*}G=G\bar\partial_{j}^{*}$, which lowers the degree
+on $B_{j}$ by one and keeps the others; expand every internal edge
+accordingly, and let $d_{j}$ be the number of edges carrying $h_{j}$. Let
+$V_{j}$, $U_{j}$ and $W_{j}$ be the forms whose component on $B_{j}$ is
+$\Delta_{j}$-harmonic, a multiple of the unit, or in the image of
+$\bar\partial_{j}^{*}$. The operators $G$ and $h_{i}$, $i\ne j$, preserve all
+three, $h_{j}$ kills $V_{j}$ and $W_{j}$, $\pi$ kills $W_{j}$, and
+multiplication by an element of $U_{j}$ preserves $V_{j}$, $U_{j}$ and
+$W_{j}$. For an edge $e$ carrying $h_{j}$ let $N(e)$ be the set of leaves
+below $e$ whose component on $B_{j}$ is not a unit. If $|N(e)|\le1$ the
+value below $e$ lies in $V_{j}$ and the term vanishes. If $e$ lies below the
+next such edge $e'$ with $N(e)=N(e')$, everything composed in between lies
+in $U_{j}$, the value at $e'$ lies in $W_{j}$, and the term vanishes; if
+$N(e)$ is the set of all $u_{j}$ such leaves for the highest such edge, the
+value at the root lies in $W_{j}$ and $\pi$ kills it. So in a nonzero term
+the sets $N(e)$ are distinct, of size at least two, different from the whole
+set, and pairwise nested or disjoint. Together with the whole set they form
+a family of that kind, which has at most $u_{j}-1$ members, since its members
+are the internal vertices of a forest with $u_{j}$ leaves in which every
+internal vertex has at least two children. Hence $d_{j}\le u_{j}-2$.
+\end{proof}
+
+\begin{proposition}[Nothing enters the diagonal]\label{prop:nothingenters}
+Keep \Cref{prop:weilpieces} with $n\ge3$, and let $t_{1},t_{2},t_{3}$ be
+distinct with $|t_{i}-p|\ge2$. For every convolution $E$ of the pieces
+$L_{\zeta}$ and $M_{i}$, in any order, with any shifts of the given parities
+and with the pieces twisted by any line bundles of degree zero, no element of
+degree one of $\cH_{E}$ has a differential with a nonzero diagonal
+component. Consequently
+\[
+  \dim\Ext^{2}(E,E)\;\ge\;\dim\ker\bigl(d_{E}|_{D^{2}}\bigr),
+  \qquad
+  D^{2}=\bigoplus_{a}H^{2}(A,\cO_{A}).
+\]
+\end{proposition}
+
+\begin{proof}
+As in the proof of \Cref{thm:fewpieces}, a term that reaches the diagonal
+runs around a closed path of distinct pieces whose $k$ steps have degree one
+and total excess $0$. The step from $L_{\zeta}$ to $L_{\zeta'}$ has $\Ext$
+degree $1$ on each surface where $\zeta_{j}\ne\zeta'_{j}$, the difference
+there having eigenvalues $\pm|\zeta'_{j}-\zeta_{j}|$, and at least $0$
+elsewhere. If $\prod\zeta=\prod\zeta'$ the two differ on at least two
+surfaces; otherwise the step has even $\Ext$ degree, the shifts having
+opposite parities. Either way its excess is at least $1$. The difference
+between $L_{\zeta}$ and $M_{i}$ has eigenvalues $t_{i}-p\pm1$ on every
+surface, so it is definite: the step has $\Ext$ degree $0$ and excess $-1$
+if it goes up the value $\phi$, where $\phi(L_{\zeta})=p$ and
+$\phi(M_{i})=t_{i}$, and $\Ext$ degree $2n$ and excess $2n-1$ if it goes
+down; the same holds between the $M_{i}$. A maximal run of the cycle through
+the $M_{i}$ starts and ends at the value $p$, or is the whole cycle, so it
+has at least one step down and at most three steps up; its excess is at least
+$2n-1-3\ge2$. So every cycle has excess at least $1$. Twisting by line
+bundles of degree zero leaves the forms unchanged and can only make some
+$\cH(a,b)$ vanish. For the inequality, the diagonal components of cocycles
+of degree two vanish on coboundaries, so $\dim\Ext^{2}(E,E)$ is at least the
+dimension of their image, which contains the kernel of $d_{E}$ on $D^{2}$.
+\end{proof}
+
+At $n=2$ the bound on a run is $0$ and a cycle through the three multiples
+can reach the diagonal; this is why the analysis below starts at $n=3$.
+
+\begin{figure}[tbp]
+\centering
+  \includegraphics[width=\textwidth]{fig_convolutions}
+\caption{The pieces of \Cref{prop:weilpieces} at their values $\phi$, with
+$\phi(L_{\zeta})=p$ and $\phi(M_{i})=t_{i}$. (a) A step of degree one
+between pieces with a definite difference has $\Ext$ degree $0$ going up
+and $2n$ going down, so excess $-1$ or $2n-1$; a step between two
+$L_{\zeta}$ has excess at least $1$. The cycle drawn runs up through all
+three $M_{i}$ and down once, the worst case, and still has excess
+$2n-3>0$, so for $n\ge3$ no term reaches the diagonal
+(\Cref{prop:nothingenters}). (b) The one path whose products act on the
+diagonal at $n=3$ when the $t_{i}$ lie above $p$
+(\Cref{thm:esixdiagonal}(i)), drawn at the same heights
+and in the order of the convolution, with the $\Ext$ degrees of its steps
+and the shifts they force; the dashed arrow is the value of the product with
+a diagonal class $y$.}
+\label{fig:convolutions}
+\end{figure}
+
+\begin{proposition}[Cup products on the diagonal]\label{prop:cupkernel}
+Keep \Cref{prop:nothingenters} with $n=3$, so that $D^{2}$ has dimension
+$35\cdot15=525$. The terms of $d_{E}$ on $D^{2}$ with two leaves, the cup
+products, vanish on the $45$ diagonal classes of the $M_{i}$, and on the
+$480$ diagonal classes of the $L_{\zeta}$ they have a kernel of dimension at
+least $204$. So their kernel on $D^{2}$ has dimension at least $249$.
+\end{proposition}
+
+\begin{proof}
+For $y=(y_{a})\in D^{2}$ the cup products in $\cH(a,b)$ are
+$(y_{a}-y_{b})\wedge\delta^{H}_{ab}$, since $y$ has even degree. On a surface
+where the pieces differ, $\delta^{H}_{ab}$ has degree $1$, the only degree of
+the cohomology there, and the product with a component of $y$ of positive
+degree lands in a degree where the cohomology vanishes. The pieces $M_{i}$
+differ from every other piece on every surface, which gives the first
+statement. Write $y_{a}$ by its type $\tau\in\{0,1,2\}^{3}$, $|\tau|=2$, the
+degrees on the three surfaces: three types $(2,0,0)$ of dimension one and
+three types $(1,1,0)$ of dimension four. The degree count on each surface
+and the parity of $\Ext$ degrees show that $L_{\zeta}$ and $L_{\zeta'}$ can
+carry a nonzero cup product on the type $\tau$ only if either $\zeta'$
+differs from $\zeta$ by a sign in one coordinate outside the support of
+$\tau$, or $\zeta'$ is $\zeta$ multiplied by $(i,i)$ or $(-i,-i)$ in two
+coordinates and $\tau$ is $2$ on the third. Let $\Gamma_{\tau}$ be the graph
+on the $32$ pieces with these edges. If each component $y^{\tau}$ is
+constant on the connected components of $\Gamma_{\tau}$, every cup product
+vanishes. For $\tau=(2,0,0)$ the coordinate $\zeta_{1}$ is constant along
+the edges, and the eight pieces with a given $\zeta_{1}$ are connected, so
+$\Gamma_{\tau}$ has $4$ components; for $\tau=(1,1,0)$ the edges change the
+sign of $\zeta_{3}$ only, and $\Gamma_{\tau}$ has $16$ components. The
+kernel therefore contains a space of dimension $3\cdot4\cdot1+3\cdot16\cdot4
+=12+192=204$.
+\end{proof}
+
+\begin{theorem}[The diagonal on $E_{0}^{6}$]\label{thm:esixdiagonal}
+Let $n=3$ and let $E$ be a convolution of the $32$ bundles $L_{\zeta}$ and
+of $M_{1},M_{2},M_{3}$ as in \Cref{prop:weilpieces}, with
+$p+2\le t_{1}<t_{2}<t_{3}$ and signs $\sigma_{i}$, so that
+$\ch(E)=32(\alpha+\bbar\alpha)+\sum_{i}\sigma_{i}e^{t_{i}\theta}$ and the
+polarised criterion asks for $\dim\Ext^{2}(E,E)=57$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item The Massey products of length at least three vanish on $D^{2}$, except
+  those of length four along a path
+  $M_{2}\to M_{3}\to L_{\zeta}\to M_{1}$ taken in this order in the
+  convolution, which occur only if $\sigma_{1}=\sigma_{3}=-\sigma_{2}$ and
+  take values in
+  $\cH^{6}(M_{2},M_{1})\cong H^{6}\bigl(A,\cO_{A}(-(t_{2}-t_{1})\theta)\bigr)$,
+  of dimension $(t_{2}-t_{1})^{6}$.
+\item $\dim\Ext^{2}(E,E)\ge249-\min\bigl(249,(t_{2}-t_{1})^{6}\bigr)$, and
+  $\dim\Ext^{2}(E,E)\ge249$ unless the order and the signs are as in (i).
+  In particular $E$ does not meet the polarised criterion when
+  $t_{2}-t_{1}\le2$, since $249-64=185>57$, nor when the signs or the order
+  differ from (i).
+\item If $E$ meets the polarised criterion, then the length four products
+  of (i) have rank at least $249-57=192$ on the kernel of the cup products,
+  and $t_{2}-t_{1}\ge3$.
+\end{enumerate}
+The same holds for $t_{1}<t_{2}<t_{3}\le p-2$ with $E$ replaced by its dual.
+\end{theorem}
+
+\begin{proof}
+(i) By \Cref{lem:harmonicmodel}(iii) a term with $k\ge3$ leaves acting on
+$y\in H^{2}(\cO_{A})$ at a piece $c$ runs along a chain
+$s=a_{0}\to\dots\to a_{k-1}=e$ of distinct pieces, increasing in the order
+of the convolution, whose $k-1$ steps are components of degree one, with $y$
+inserted at $c$. Its value lies in $\cH(s,e)$, in $\Ext$ degree
+$2+\sum_{j}q_{j}-(k-2)=3+\varepsilon$, where $\varepsilon$ is the sum of the
+excesses of the steps; so $-3\le\varepsilon\le3$, and $\cH(s,e)$ must be
+nonzero in degree $3+\varepsilon$. By the proof of \Cref{prop:nothingenters}
+a step between two $L_{\zeta}$ has excess at least $1$, with equality only
+between pieces of opposite parities, and a step between pieces at different
+values of $\phi$ has excess $-1$ and $\Ext$ degree $0$ going up, excess $5$
+and $\Ext$ degree $6$ going down. Let $U$ and $D$ be the numbers of steps
+up and down and $\lambda$ the total excess of the steps between two
+$L_{\zeta}$, so that $\varepsilon=5D-U+\lambda$. For two distinct
+$L_{\zeta}$, $L_{\zeta'}$ differing in $m\ge1$ coordinates, $\cH(L_{\zeta},
+L_{\zeta'})$ vanishes above degree $6-m$; for pieces at different values it
+sits in degree $0$ if the target is higher and in degree $6$ if it is lower.
+
+Two observations remove chains. First, a chain of total excess $-2$ has no
+step down, and so consists of steps between $L_{\zeta}$ followed by at most
+three steps up. Second, let $a\to b\to c$ be two consecutive steps of
+$\Ext$ degree $0$, sections $x_{ab}$ and $x_{bc}$ of line bundles. The
+Maurer--Cartan equation $\pi(\delta\circ\delta)=0$ of the proof of
+\Cref{prop:explicitconvolution}(i) has, in $\cH^{0}(a,c)$, one term for each
+chain from $a$ to $c$ of total excess $-2$. If $a\to b\to c$ is the only such
+chain, the equation reads $x_{ab}x_{bc}=0$, a product of holomorphic
+sections being holomorphic and so harmonic; since $A$ is connected, $x_{ab}$
+or $x_{bc}$ vanishes, and every term along a chain through both steps is
+zero.
+
+Here every step up ends at one of $M_{1},M_{2},M_{3}$, so $U\le3$, and
+$D\le1$. If $D=0$, the chain is $r\ge0$ pieces $L_{\zeta}$ followed by
+multiples in increasing order. When it ends at an $L_{\zeta}$, $k\ge3$ gives
+$\lambda\ge2$, so $s$ and $e$ differ in one coordinate and $\lambda=2$; then
+the two steps change the parity twice, whereas $s$ and $e$ have opposite
+parities. When it ends at a multiple, $e$ lies above $s$, so $\varepsilon=-3$,
+which forces $U=3$, $\lambda=0$ and the chain $L_{\zeta}\to M_{1}\to
+M_{2}\to M_{3}$; by the first observation $L_{\zeta}\to M_{1}\to M_{2}$ is the
+only chain of excess $-2$ from $L_{\zeta}$ to $M_{2}$, and the second removes
+it. If $D=1$, then $U\ge2+\lambda$, so $(U,\lambda)$ is $(2,0)$, $(3,0)$ or
+$(3,1)$ and $\varepsilon$ is $3$, $2$ or $3$. For $\varepsilon=3$ the piece
+$s$ is a multiple and $e$ lies below it. With $(3,1)$ the three steps up
+would end at three multiples other than $s$, which do not exist. With $(2,0)$
+the chain has three steps, and a step down lands at an $L_{\zeta}$, since a
+fourth multiple does not exist. It is $M_{1}\to M_{2}\to M_{3}\to L_{\zeta}$,
+removed by the second observation at $M_{1}\to M_{2}\to M_{3}$; or
+$M_{a}\to M_{b}\to L_{\zeta}\to M_{c}$ with $t_{a}<t_{b}$ and $t_{c}<t_{a}$,
+that is $M_{2}\to M_{3}\to L_{\zeta}\to M_{1}$; or
+$M_{a}\to L_{\zeta}\to M_{b}\to M_{c}$ with $t_{b}<t_{c}<t_{a}$, that is
+$M_{3}\to L_{\zeta}\to M_{1}\to M_{2}$, removed at $L_{\zeta}\to M_{1}\to
+M_{2}$. For $\varepsilon=2$, with $(U,\lambda)=(3,0)$, the pieces $s$ and $e$
+are $L_{\zeta}$ differing in one coordinate; the last step is the step down,
+preceded by three steps up from $s$, so the chain is $L_{\zeta}\to M_{1}\to
+M_{2}\to M_{3}\to L_{\zeta'}$, removed at $L_{\zeta}\to M_{1}\to M_{2}$.
+
+Only $M_{2}\to M_{3}\to L_{\zeta}\to M_{1}$ remains. Its steps have $\Ext$
+degrees $0$, $6$ and $0$, so degree one forces $d_{M_{3}}=d_{M_{2}}+1$,
+$d_{L}=d_{M_{3}}-5$ and $d_{M_{1}}=d_{L}+1$; this gives the signs, and the
+value lies in
+$\cH^{3+d_{M_{2}}-d_{M_{1}}}(M_{2},M_{1})=\cH^{6}(M_{2},M_{1})$, whose
+dimension is $|\chi(\cO_{A}((t_{1}-t_{2})\theta))|=(t_{2}-t_{1})^{6}$.
+(ii) By \Cref{prop:nothingenters} it suffices to bound the kernel of $d_{E}$
+on $D^{2}$. By \Cref{prop:cupkernel} the cup products have a kernel $Y$ of
+dimension at least $249$, and on $Y$ the differential is the sum of the
+products of (i), of rank at most $(t_{2}-t_{1})^{6}$. (iii) follows from
+(ii). For the dual, $E\mapsto E^{\vee}$ preserves $\Ext^{2}$ and sends the
+configuration with $p$, $t_{i}$ to the one with $-p$, $-t_{i}$, the set of
+the $L_{\zeta}$ being stable under $\zeta\mapsto-\zeta$.
+\end{proof}
+
+\begin{figure}[tbp]
+\centering
+  \includegraphics[width=\textwidth]{fig_diagonalbudget}
+\caption{The $525$ diagonal classes of degree two at $n=3$
+(\Cref{prop:cupkernel,thm:esixdiagonal}). The cup products remove $276$ of
+them for general components, and at most that many in any case, leaving
+$204$ at the pieces $L_{\zeta}$ and the $45$ at the $M_{i}$; when the $t_{i}$
+lie on one side of $p$, the fourfold products of the surviving path remove
+at most $(t_{2}-t_{1})^{6}$ more,
+which is $1$ or $64$ for the gaps $1$ and $2$ and no constraint from the
+third gap on. The criterion asks for $57$, so $468$ classes must disappear
+in all and $192$ after the cup products. On the right, the graphs
+$\Gamma_{\tau}$ on the $32$ pieces, one row for each value of $\zeta_{1}$:
+for $\tau=(2,0,0)$ each row is a component, for $\tau=(1,1,0)$ the
+components are the pairs differing in the sign of $\zeta_{3}$; a class
+constant on the components of every $\Gamma_{\tau}$ has vanishing cup
+products.}
+\label{fig:diagonalbudget}
+\end{figure}
+
+The placements of the $t_{i}$ on both sides of $p$ are not covered by
+\Cref{thm:esixdiagonal}. There two families of fourfold products occur
+instead of one, and no convolution carries both.
+
+\begin{proposition}[Placements on both sides of $p$]\label{prop:mixedplacement}
+Keep \Cref{thm:esixdiagonal}, but let $t_{1}\le p-2$ and
+$p+2\le t_{2}<t_{3}$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item The Massey products of length at least three vanish on $D^{2}$ unless
+  $\sigma_{1}=\sigma_{2}=-\sigma_{3}$. In that case the only ones that act
+  have length four and run along one of the paths
+  \[
+    \textup{(a)}\ \ M_{2}\to M_{3}\to M_{1}\to L_{\zeta},
+    \qquad
+    \textup{(b)}\ \ M_{3}\to M_{1}\to L_{\zeta}\to M_{2},
+  \]
+  taken in this order in the convolution, with $\prod\zeta=\sigma_{3}$. The
+  products along (a) take values in $\cH^{6}(M_{2},L_{\zeta})$, of dimension
+  $\bigl((t_{2}-p)^{2}-1\bigr)^{3}$, and those along (b) in
+  $\cH^{6}(M_{3},M_{2})$, of dimension $(t_{3}-t_{2})^{6}$. A convolution
+  carries at most one of the two kinds, since (a) puts $M_{2}$ before $M_{3}$
+  and (b) puts $M_{3}$ before $M_{2}$.
+\item If $E$ meets the polarised criterion, then
+  $\sigma_{1}=\sigma_{2}=-\sigma_{3}$, and the products along (a) or those
+  along (b) have rank at least $192$ on the kernel of the cup products. For
+  (b) this needs $t_{3}-t_{2}\ge3$. The sixteen targets of (a) have
+  dimension $16\bigl((t_{2}-p)^{2}-1\bigr)^{3}\ge432$, so for (a) the
+  count gives no condition.
+\end{enumerate}
+For $t_{1}<t_{2}\le p-2$ and $t_{3}\ge p+2$ the same holds for
+$E^{\vee}[1]$, and the condition on the signs becomes
+$\sigma_{2}=\sigma_{3}=-\sigma_{1}$.
+\end{proposition}
+
+\begin{proof}
+(i) We use the notation and the two observations of the proof of
+\Cref{thm:esixdiagonal}(i). Now $\phi(M_{1})=t_{1}<p<t_{2}<t_{3}$; a step up
+ends at $M_{2}$, at $M_{3}$, or at an $L_{\zeta}$ coming from $M_{1}$, so
+again $U\le3$ and $D\le1$. If $D=0$, the values do not decrease along the
+chain. When $e$ lies above $s$, $\varepsilon=-3$ forces $U=3$, $\lambda=0$
+and the chain $M_{1}\to L_{\zeta}\to M_{2}\to M_{3}$, removed at
+$L_{\zeta}\to M_{2}\to M_{3}$, the only chain of excess $-2$ from
+$L_{\zeta}$ to $M_{3}$. When $e$ and $s$ have the same value, they are two
+$L_{\zeta}$ joined by steps between $L_{\zeta}$, which is excluded as before.
+If $D=1$, $(U,\lambda)$ is $(2,0)$, $(3,0)$ or $(3,1)$. For
+$\varepsilon=3$, $e$ lies below $s$. With $(3,1)$ the steps up end at
+$M_{2}$, $M_{3}$ and an $L_{\zeta}$ following $M_{1}$; then $s$ is an
+$L_{\zeta}$, so $e=M_{1}$, which is followed by a step: impossible. With
+$(2,0)$ the chain has three steps and no two consecutive $L_{\zeta}$. As
+$M_{1}$ is the lowest piece, it is never the end of a step up, and a step up
+into an $L_{\zeta}$ comes from $M_{1}$; so two consecutive steps up end at
+$M_{2}$ or $M_{3}$. The chain cannot start at $M_{1}$. If it starts at an
+$L_{\zeta}$, it ends at $M_{1}$ with the step down, after two steps up:
+$L_{\zeta}\to M_{2}\to M_{3}\to M_{1}$, removed at $L_{\zeta}\to M_{2}\to
+M_{3}$. If it starts at $M_{3}$, the first step goes down and the last two
+go up, ending at $M_{2}$; the middle piece is then an $L_{\zeta}$ entered
+from $M_{1}$, and the chain is $M_{3}\to M_{1}\to L_{\zeta}\to M_{2}$, path
+(b). If it starts at $M_{2}$, then $e\in\{L_{\zeta},M_{1}\}$, so the last two
+steps are not both up; the first step goes up to $M_{3}$, the second down,
+and the third up into $e=L_{\zeta}$ from $M_{1}$: the chain is $M_{2}\to
+M_{3}\to M_{1}\to L_{\zeta}$, path (a). For $\varepsilon=2$,
+$(U,\lambda)=(3,0)$ and $s$, $e$ are $L_{\zeta}$ differing in one
+coordinate. The last step enters $e$ from $M_{1}$, since a step down into
+$e$ would follow three steps up from $s$, one more than the values allow;
+$M_{1}$ is entered by the step down, after two steps up from $s$:
+$L_{\zeta}\to M_{2}\to M_{3}\to M_{1}\to L_{\zeta'}$, removed at
+$L_{\zeta}\to M_{2}\to M_{3}$.
+Along (a) the steps have $\Ext$ degrees $0$, $6$ and $0$, so degree one
+forces $d_{M_{3}}=d_{M_{2}}+1$, $d_{M_{1}}=d_{M_{3}}-5$ and
+$d_{L}=d_{M_{1}}+1$. Along (b) they have $\Ext$ degrees $6$, $0$ and $0$,
+which forces $d_{M_{1}}=d_{M_{3}}-5$, $d_{L}=d_{M_{1}}+1$ and
+$d_{M_{2}}=d_{L}+1$. This gives the signs and puts the values in
+$\cH^{3+d_{M_{2}}-d_{L}}(M_{2},L_{\zeta})=\cH^{6}(M_{2},L_{\zeta})$ and in
+$\cH^{3+d_{M_{3}}-d_{M_{2}}}(M_{3},M_{2})=\cH^{6}(M_{3},M_{2})$. On $B_{j}$
+the line bundle $L_{\zeta}\otimes M_{2}^{-1}$ has the hermitian form
+$\bigl(\begin{smallmatrix}p-t_{2}&\zeta_{j}\\ \bbar\zeta_{j}&p-t_{2}
+\end{smallmatrix}\bigr)$, with eigenvalues $p-t_{2}\pm1<0$ and determinant
+$(t_{2}-p)^{2}-1$, which gives the first dimension. The second is that of
+\Cref{thm:esixdiagonal}(i) with $t_{3}$, $t_{2}$ in place of $t_{2}$,
+$t_{1}$.
+(ii) \Cref{prop:nothingenters,prop:cupkernel} do not depend on the
+placement of the $t_{i}$, so as in \Cref{thm:esixdiagonal}(ii)
+$\dim\Ext^{2}(E,E)\ge249-\rho$, where $\rho$ is the rank on the kernel of
+the cup products of the products of (i) that $E$ carries, and $\rho=0$
+unless $\sigma_{1}=\sigma_{2}=-\sigma_{3}$. The criterion asks for $57$,
+so $\rho\ge192$, and $(t_{3}-t_{2})^{6}\ge192$ exactly when
+$t_{3}-t_{2}\ge3$. For the last statement, $E\mapsto E^{\vee}[1]$ preserves
+$\Ext^{2}$, sends $p$ and the $t_{i}$ to $-p$ and the $-t_{i}$, reverses the
+order of the pieces and changes every sign.
+\end{proof}
+
+The Maurer--Cartan equation can be solved for one order of the pieces.
+
+\begin{proposition}[An explicit convolution]\label{prop:explicitconvolution}
+Keep \Cref{thm:esixdiagonal} with $p=0$ and $t=(2,5,6)$, take the pieces to
+be external products $L_{\zeta}=N_{1,\zeta_{1}}\boxtimes N_{2,\zeta_{2}}
+\boxtimes N_{3,\zeta_{3}}$ and $M_{i}=M_{i,1}\boxtimes M_{i,2}\boxtimes
+M_{i,3}$ of line bundles on the $B_{j}$, and order them as $M_{2}$, $M_{3}$,
+the sixteen $L_{\zeta}$ with $\prod\zeta=1$, $M_{1}$, the sixteen $L_{\zeta}$
+with $\prod\zeta=-1$, with the shifts $0$, $1$, $-4$, $-3$, $-5$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item The components that the degrees allow are
+  $x_{1}\in\cH^{0}(M_{2},M_{3})$, $x_{2}^{\zeta}\in\cH^{6}(M_{3},L_{\zeta})$,
+  $x_{3}^{\zeta}\in\cH^{0}(L_{\zeta},M_{1})$, components in
+  $\cH^{2}(L_{\zeta},L_{\zeta'})$ for the $48+96$ pairs with
+  $\prod\zeta=1=-\prod\zeta'$ that differ in one or two coordinates, and
+  components in $\cH^{6}(M_{2},L_{\zeta'})$, $\prod\zeta'=-1$, which we take
+  to be zero. For harmonic components the Maurer--Cartan equation is exactly
+  \[
+    x_{1}x_{2}^{\zeta}=0\ \text{in}\ H^{6}(A,M_{2}^{-1}\otimes L_{\zeta})
+    \ \text{for every}\ \zeta,
+    \qquad
+    \sum_{\zeta}x_{2}^{\zeta}x_{3}^{\zeta}=0\ \text{in}\
+    H^{6}(A,M_{3}^{-1}\otimes M_{1}),
+  \]
+  and every solution is the harmonic part of a convolution $E$ with
+  $\ch(E)=32(\alpha+\bbar\alpha)+e^{5\theta}-e^{6\theta}-e^{2\theta}$.
+\item There are solutions with every $x_{2}^{\zeta}\ne0$ and
+  $x_{1}x_{2}^{\zeta}=x_{2}^{\zeta}x_{3}^{\zeta}=0$.
+\item For every solution $\dim\Ext^{2}(E,E)\ge2560$, so $E$ does not meet
+  the polarised criterion.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) A component from $P_{a}$ to $P_{b}$ has $\Ext$ degree $1+d_{a}-d_{b}$, and
+the forms give the cohomology of each pair: $\cH(M_{2},M_{3})$ and
+$\cH(L_{\zeta},M_{1})$ sit in degree $0$, $\cH(M_{3},L_{\zeta})$,
+$\cH(M_{2},L_{\zeta'})$ and $\cH(M_{2},M_{1})$ in degree $6$, and
+$\cH(L_{\zeta},L_{\zeta'})$ in degree $2$ exactly for the pairs listed; no
+other pair has cohomology in the degree a component needs. Put
+$\delta=\delta^{H}-h(\delta\circ\delta)$ recursively, as in
+\Cref{lem:harmonicmodel}(i), and $\Phi=\bar\partial\delta+\delta\circ\delta$.
+Then $\Phi=\pi(\delta\circ\delta)+h\bar\partial(\delta\circ\delta)$ and
+$\bar\partial(\delta\circ\delta)=\Phi\circ\delta-\delta\circ\Phi$, so by
+induction on $b-a$ the twisted complex exists exactly when
+$\pi(\delta\circ\delta)=0$. The components of $\pi(\delta\circ\delta)$ come
+from paths of two or more components; those that land in a nonzero group
+are $x_{1}x_{2}^{\zeta}$ in $\cH^{6}(M_{2},L_{\zeta})$ and
+$\sum_{\zeta}x_{2}^{\zeta}x_{3}^{\zeta}$ in $\cH^{6}(M_{3},M_{1})$, while the
+product along $M_{2}\to M_{3}\to L_{\zeta}\to M_{1}$ would lie in
+$\cH^{5}(M_{2},M_{1})=0$ and $x_{2}^{\zeta}$ composed with a component in
+$\cH^{2}(L_{\zeta},L_{\zeta'})$ in degree eight. The signs
+$(-1)^{d}$ are $+,-,+,-,-$, which gives the Chern character by
+\Cref{prop:weilpieces}(i).
+(ii) Take $x_{1}$ and the $x_{3}^{\zeta}$ to be external products of
+nonzero sections on the $B_{j}$. On each $B_{j}$ the products with their
+factors map $H^{2}(B_{j},M_{3}^{-1}L_{\zeta})$, of dimension $35$, to spaces
+of dimensions $24$ and $16$, so they have kernels of dimensions at least $11$
+and $19$. A sum of external products whose factor on one surface lies in the
+first kernel and whose factor on another lies in the second is a nonzero
+$x_{2}^{\zeta}$ with $x_{1}x_{2}^{\zeta}=x_{2}^{\zeta}x_{3}^{\zeta}=0$, which
+solves (i).\footnote{Such solutions are far from unique: the equations of
+(i) are linear in each of $x_{1}$, $x_{2}^{\zeta}$, $x_{3}^{\zeta}$
+separately, and the components on the $144$ pairs do not enter them at
+all.}
+(iii) The sixteen $L_{\zeta}$ with $\prod\zeta=1$ have shift $-4$ and the
+others $-5$, so \Cref{lem:allthree} below applies to every pair of them
+that differ in all three coordinates: there are $112$ such pairs, and their
+groups $\cH^{3}$ have dimensions adding up to $16\cdot160=2560$.
+\end{proof}
+
+The classes counted in (iii) are the ones no product can reach. Two pieces
+$L_{\zeta}$, $L_{\zeta'}$ that differ in every coordinate have a difference
+that is indefinite on every surface, so $\cH(L_{\zeta},L_{\zeta'})$ is
+$\bigotimes_{j}H^{1}(B_{j},\cdot)$, concentrated in degree three, of
+dimension $D(\zeta,\zeta')=\prod_{j}|\zeta_{j}-\zeta'_{j}|^{2}$; no component
+can join them, and if their shifts differ by one their classes have degree
+two.
+
+\begin{lemma}[Pieces that differ everywhere]\label{lem:allthree}
+Keep \Cref{prop:nothingenters} with $n=3$. Suppose that for some integer $r$
+either $p+2\le t_{1}<t_{2}<t_{3}$ and $M_{1}$, $M_{2}$, $M_{3}$ have the
+shifts $r+1$, $r+4$, $r+5$, or $t_{1}\le p-2<p+2\le t_{2}<t_{3}$ and they
+have the shifts $r-1$, $r+3$, $r+4$ or $r-1$, $r+1$, $r+4$; these are the
+shifts forced by the paths of \Cref{thm:esixdiagonal}(i) and of
+\Cref{prop:mixedplacement}(i), (a) and (b), with $r$ the shift of the
+$L_{\zeta}$ on the path. Let $L_{\zeta}$, $L_{\zeta'}$ differ in all three
+coordinates, with $d_{L_{\zeta}}=d_{L_{\zeta'}}+1$. Then $d_{E}$ vanishes on
+$\cH^{3}(L_{\zeta},L_{\zeta'})$, and no element of degree one has a
+differential with a nonzero component there. Consequently
+\[
+  \dim\Ext^{2}(E,E)\;\ge\;\dim\ker\bigl(d_{E}|_{D^{2}}\bigr)
+  +\sum D(\zeta,\zeta'),
+\]
+the sum running over the pairs of this kind.
+\end{lemma}
+
+\begin{proof}
+Only the shifts are used, and the order of the pieces only removes
+components, so we ignore it. A component from $P_{a}$ to $P_{b}$ of $\Ext$
+degree $q$ has $d_{b}=d_{a}+1-q$. Between distinct $L_{\zeta}$ the degree $q$
+is at least $2$: there is no $\cH^{0}$, and $\cH^{1}$ occurs only for pieces
+differing in one coordinate, which have opposite parities, while $q=1$ would
+need equal shifts. So a component between two $L_{\zeta}$ lowers the shift
+by at least one, and by exactly one only in degree two. For a multiple
+$M_{i}$ let $\mu_{i}$ and $\nu_{i}$ be the shifts of an $L_{\zeta}$ that a
+component from $M_{i}$ reaches and from which a component reaches $M_{i}$:
+$\mu_{i}=d_{M_{i}}-5$ and $\nu_{i}=d_{M_{i}}-1$ when $t_{i}>p$, and
+$\mu_{i}=d_{M_{i}}+1$, $\nu_{i}=d_{M_{i}}+5$ when $t_{i}<p$. Between the
+multiples the degrees allow only $M_{2}\to M_{3}$ in the first case,
+$M_{2}\to M_{3}\to M_{1}$ in the second, and $M_{3}\to M_{1}$ in the third.
+Let $\lambda_{i}$ be the largest $\mu_{k}$ and $\kappa_{i}$ the least
+$\nu_{k}$ over the multiples $M_{k}$ reachable from $M_{i}$, respectively
+reaching $M_{i}$, through these steps, $M_{i}$ included. The values, in the
+order $M_{1}$, $M_{2}$, $M_{3}$ and relative to $r$, are
+\[
+\begin{array}{l|ccc|ccc|ccc|ccc}
+ & \multicolumn{3}{c|}{\mu} & \multicolumn{3}{c|}{\nu}
+ & \multicolumn{3}{c|}{\lambda} & \multicolumn{3}{c}{\kappa}\\
+\hline
+r+1,\,r+4,\,r+5 & -4&-1&0 & 0&3&4 & -4&0&0 & 0&3&3\\
+r-1,\,r+3,\,r+4 & 0&-2&-1 & 4&2&3 & 0&0&0 & 2&2&2\\
+r-1,\,r+1,\,r+4 & 0&-4&-1 & 4&0&3 & 0&-4&0 & 3&0&3
+\end{array}
+\]
+and in all three cases, for all $i$ and $k$,
+\begin{equation}\label{eq:allthree}
+  \lambda_{i}\le r\le\kappa_{k},\qquad
+  \kappa_{i}\ge\lambda_{i}+2,\qquad
+  \lambda_{i}\le\mu_{i}+2,\qquad
+  \nu_{i}\le\kappa_{i}+2,
+\end{equation}
+while $\mu_{i}\le\lambda_{i}$ and $\nu_{i}\ge\kappa_{i}$ by definition. A
+run $L\to M_{k}\to\dots\to M_{i}\to L'$ through multiples goes from the shift
+$\nu_{k}\ge\kappa_{k}$ to $\mu_{i}\le\lambda_{k}\le\kappa_{k}-2$, so every chain
+of components from one $L$ to another lowers the shift, by at least two if it
+passes through a multiple and by exactly one only if it is a single component
+of degree two. In particular a chain from an $L$ of shift $x$ into $M_{i}$
+has $x\ge\kappa_{i}$, and a chain from $M_{i}$ to an $L$ of shift $y$ has
+$y\le\lambda_{i}$.
+
+By \Cref{lem:harmonicmodel}(iii), a term of $d_{E}$ on a class $u$ of $\Ext$
+degree $q_{u}$ in $\cH(a',b')$ runs along a chain $c\to\dots\to a'$, the
+step $u$, and a chain $b'\to\dots\to e$, and since the degrees of the
+components telescope, its value lies in $\cH(c,e)$ in $\Ext$ degree
+\[
+  q_{u}+1+(d_{c}-d_{a'})+(d_{b'}-d_{e}).
+\]
+Write $a=L_{\zeta}$ and $b=L_{\zeta'}$, so that $d_{a}=d_{b}+1$.
+
+\emph{Nothing reaches $\cH^{3}(a,b)$.} Let $u$ have degree one, so
+$q_{u}=1+d_{a'}-d_{b'}$, with chains from $a$ to $a'$ and from $b'$ to $b$
+and $(a',b')\ne(a,b)$. If $a'$ and $b'$ are both pieces $L$, then
+$d_{a'}\le d_{a}$ and $d_{b'}\ge d_{b}$, not both with equality, so
+$q_{u}\le1$; $q_{u}=0$ is impossible, and $q_{u}=1$ needs either $a'=b'$, and
+then a chain from $a$ to $b$ lowering the shift by one, a single component in
+$\cH^{2}(a,b)=0$, or $a'$, $b'$ differing in one coordinate, of opposite
+parities, against $d_{a'}=d_{b'}$. If $a'=M_{i}$ and $b'$ is an $L$, then
+$u$ lies in the degree of a component, so $d_{b'}=\mu_{i}$, while
+$d_{b'}\ge d_{b}=d_{a}-1\ge\kappa_{i}-1\ge\lambda_{i}+1>\mu_{i}$. If $a'$ is
+an $L$ and $b'=M_{k}$, then $d_{a'}=\nu_{k}$ and
+$d_{a}-d_{b}\ge\nu_{k}-\lambda_{k}\ge\kappa_{k}-\lambda_{k}\ge2$. If
+$a'=M_{i}$ and $b'=M_{k}$, then $d_{a}-d_{b}\ge\kappa_{i}-\lambda_{k}$; for
+$i=k$ this is at least $2$, and for $i\ne k$ the class $u$ lies in the
+degree of a step $M_{i}\to M_{k}$, so $\lambda_{k}\le\lambda_{i}$ and again
+$d_{a}-d_{b}\ge2$. Each case contradicts $d_{a}-d_{b}=1$.
+
+\emph{$d_{E}$ vanishes on $\cH^{3}(a,b)$.} Here $u$ is the class itself and a
+term lands in $\cH(c,e)$, $(c,e)\ne(a,b)$, in degree $3+d_{c}-d_{e}$, with
+chains from $c$ to $a$ and from $b$ to $e$. If $c$ and $e$ are both pieces
+$L$, then $d_{c}-d_{e}\ge2$; $c=e$ is impossible, and otherwise a class of
+degree at least $5$ needs $c$, $e$ differing in one coordinate, in degree
+$5$, so $d_{c}-d_{e}=2$ against their opposite parities. If $c=M_{i}$ and
+$e$ is an $L$, the degree is that of a component when $d_{e}=\mu_{i}+2$, but
+$d_{e}\le d_{b}<d_{a}\le\lambda_{i}\le\mu_{i}+2$. If $c$ is an $L$ and
+$e=M_{k}$, it is that of a component when $d_{c}=\nu_{k}-2$, but
+$d_{c}\ge d_{a}>d_{b}\ge\kappa_{k}\ge\nu_{k}-2$. If $c=M_{i}$ and
+$e=M_{k}$, then $d_{a}\le\lambda_{i}\le r\le\kappa_{k}\le d_{b}$, against
+$d_{a}>d_{b}$.
+
+For the inequality: a coboundary has no component on $D^{2}$
+(\Cref{prop:nothingenters}) and none on these groups, so the cocycles of
+$\ker(d_{E}|_{D^{2}})$ and of these groups span a space that meets the
+coboundaries only in zero. Twisting the pieces by line bundles of degree
+zero does not change $D(\zeta,\zeta')$, the forms being nondegenerate on
+every surface, and can only remove components.
+\end{proof}
+
+\begin{theorem}[No convolution of these pieces meets the criterion]
+\label{thm:noconvolution}
+Keep \Cref{prop:nothingenters} with $n=3$: let $E$ be any convolution of
+the $32$ bundles $L_{\zeta}$ and of $M_{1}$, $M_{2}$, $M_{3}$, with
+$t_{1}<t_{2}<t_{3}$ and $|t_{i}-p|\ge2$, in any order, with any shifts of the
+given parities and with the pieces twisted by any line bundles of degree
+zero. Then $\dim\Ext^{2}(E,E)\ge69$. In particular no such convolution meets
+the polarised criterion, which asks for $57$.
+\end{theorem}
+
+\begin{proof}
+Replacing $E$ by $E^{\vee}$ or $E^{\vee}[1]$, which preserves $\Ext^{2}$, we
+may assume that the $t_{i}$ are as in \Cref{thm:esixdiagonal} or in
+\Cref{prop:mixedplacement}. If no fourfold product of those results acts,
+$\dim\Ext^{2}(E,E)\ge249$. Otherwise the path fixes the shifts of the
+$M_{i}$ as in \Cref{lem:allthree}, with $r$ the shift of every $L_{\zeta}$
+on a path; let $P$ be the sixteen pieces of the parity of $r$, $Q$ the
+other sixteen, and $m$ the number of pieces on paths.
+
+The fourfold products act on $D^{2}$ only through the classes at the
+$M_{i}$ and at the $m$ pieces on paths, so their rank is at most $45+15m$,
+and by \Cref{prop:cupkernel}
+$\dim\ker(d_{E}|_{D^{2}})\ge249-45-15m=204-15m$. If $m\le9$ this is at
+least $69$.
+
+Let $m\ge10$, so that at least ten pieces of $P$ have the shift $r$. Every
+$W\in Q$ has $3$, $6$ and $7$ partners in $P$ differing from it in one, two
+and three coordinates, and for the seven $D=16$ six times and $D=64$
+once.\footnote{The ratios $\zeta'_{j}/\zeta_{j}$ of two pieces of opposite
+parities have product $-1$; when all three differ from $1$ they are
+$(-1,-1,-1)$, with $D=4^{3}$, or a permutation of $(i,-i,-1)$, with
+$D=2\cdot2\cdot4$.} If $d_{W}=r\pm1$, at most six pieces of $P$ lack the
+shift $r$, so one of the seven has it, and \Cref{lem:allthree} gives at least
+$16$ classes. If $d_{W}\ne r\pm1$, consider for each type $\tau$ of the form
+$(1,1,0)$ the partner $W^{\tau}\in P$ obtained by changing the sign of the
+coordinate where $\tau$ vanishes. By the proof of \Cref{prop:cupkernel},
+$W^{\tau}$ is the only piece with which $W$ can carry a nonzero cup product
+on the type $\tau$, and conversely; a cup product between them needs a
+component of degree two, hence shifts differing by one. If they do, the
+classes of type $\tau$ equal at $W$ and $W^{\tau}$ and zero elsewhere have
+vanishing cup products, and $W^{\tau}$, of shift $d_{W}\pm1\ne r$, lies on no
+path; if they do not, the classes of type $\tau$ at $W$ alone have vanishing
+cup products. Either way these $4$ classes lie in $\ker(d_{E}|_{D^{2}})$,
+$12$ for each such $W$, and those of different $W$ are independent, since
+$W\mapsto W^{\tau}$ is injective. Adding over $Q$, \Cref{lem:allthree}
+gives $\dim\Ext^{2}(E,E)\ge16\cdot12=192$.
+\end{proof}
+
+At $n=4$ there are $128$ pieces $L_{\zeta}$, and the classes that no
+product reaches are again those between pieces that differ in three
+coordinates and have adjacent shifts. The shifts along a chain are now
+controlled by counting alone.
+
+\begin{lemma}[Shifts along chains at $n=4$]\label{lem:efourshifts}
+Keep \Cref{prop:weilpieces} with $n=4$, take the $L_{\zeta}$ to be external
+products $N_{1,\zeta_{1}}\boxtimes\dots\boxtimes N_{4,\zeta_{4}}$ of line
+bundles on the $B_{j}$, let $t_{1},t_{2},t_{3}$ be distinct with
+$|t_{i}-p|\ge2$, and let $E$ be a convolution of the $L_{\zeta}$ and of
+$M_{1},M_{2},M_{3}$ with shifts of the given parities. Call a component of
+$\delta^{H}$, or an element of degree one of $\cH_{E}$ in one group
+$\cH(a,b)$, a step from $P_{a}$ to $P_{b}$; a step of $\Ext$ degree $q$ has
+$d_{b}=d_{a}+1-q$. Put $\phi(L_{\zeta})=p$ and $\phi(M_{i})=t_{i}$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item A step between distinct $L_{\zeta}$ has $\Ext$ degree at least two, so
+  it lowers the shift by at least one, and by exactly one only in $\Ext$
+  degree two. A step in $\cH^{1}(a,a)=H^{1}(A,\cO_{A})$ keeps the shift.
+\item A step between an $L_{\zeta}$ and a multiple, or between two
+  multiples, has $\Ext$ degree $0$ if it goes up the value $\phi$ and $8$ if
+  it goes down, so it raises the shift by one or lowers it by seven.
+\item A sequence of steps from an $L_{\zeta}$ to an $L_{\zeta'}$ through
+  multiples, distinct before one marked step and distinct after it, where
+  the marked step may lie in $\cH^{1}(a,a)$ at a multiple, lowers the shift
+  by at least four. Consequently a sequence of steps from one $L_{\zeta}$ to
+  another, at most one of them not a component, lowers the shift by at least
+  one, and by exactly one only if it consists of steps between pieces
+  $L_{\zeta}$, one of $\Ext$ degree two and the others in $\cH^{1}(a,a)$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) For $\zeta\ne\zeta'$ the group $\cH(L_{\zeta},L_{\zeta'})$ is the tensor
+product over the surfaces of $H^{1}$ of a line bundle with a nondegenerate
+form, on the $k\ge1$ surfaces where $\zeta$ and $\zeta'$ differ, and of
+$H^{*}(B_{j},\cO_{B_{j}})$ on the others, the factors of $L_{\zeta}$ and
+$L_{\zeta'}$ on those being equal. So its degrees are at least $k$, and degree
+one needs $k=1$. Then the ratio $\zeta'_{j}/\zeta_{j}\ne1$ in the one
+coordinate is the ratio of $\prod\zeta'$ and $\prod\zeta$, which is $-1$, and
+the shifts have opposite parities, while a step of $\Ext$ degree one keeps
+the shift. (ii) The forms of $M_{i}\otimes L_{\zeta}^{-1}$ have the
+eigenvalues $t_{i}-p\pm1$ on every surface, which have the sign of $t_{i}-p$;
+the form of $M_{k}\otimes M_{i}^{-1}$ is $(t_{k}-t_{i})\,\mathrm{Id}$. A
+definite form has cohomology in degree $0$ if it is positive and $2n=8$ if
+it is negative \cite[Chapter~3]{BL04}.%
+\footnote{This is Mumford's index theorem: a line bundle on an abelian
+variety whose hermitian form is nondegenerate with $i$ negative eigenvalues
+has cohomology only in degree $i$. On $B_{j}=E_{0}\times E_{0}$ the form of
+$M_{i}\otimes L_{\zeta}^{-1}$ is
+$\bigl(\begin{smallmatrix}t_{i}-p&-\zeta_{j}\\-\bar\zeta_{j}&t_{i}-p\end{smallmatrix}\bigr)$,
+with eigenvalues $t_{i}-p\pm1$, and $|t_{i}-p|\ge2$ makes both of the sign of
+$t_{i}-p$; over the four surfaces the index is $0$ or $8$. The hypothesis
+$|t_{i}-p|\ge2$ is what keeps the steps between a piece and a multiple out
+of the middle degrees.}
+(iii) Let $U$ and $D$ be the numbers of steps up and down outside
+$\cH^{1}(a,a)$; by (ii) the shift changes by $U-7D$. The values start and
+end at $p$ and pass through the values of multiples, so $D\ge1$. If $D=1$,
+the values increase strictly before the step down and strictly after it, so
+those before it lie above $p$ and those after it below $p$, each multiple
+occurs once, and $U\le3$: the drop $7-U$ is at least four.%
+\footnote{The bound is attained: with $p$ below the three values $t_{i}$, the
+run $L_{\zeta}\to M_{1}\to M_{2}\to M_{3}\to L_{\zeta'}$, up three times and
+down once, changes the shift by $3-7=-4$. With $p$ in the middle,
+$t_{1}<p<t_{2}<t_{3}$, the run up through $M_{2}$ and $M_{3}$, down to $M_{1}$
+and up to $L_{\zeta'}$ changes it by $3-7=-4$ as well.} If $D\ge2$, at most
+six multiples occur, counted with repetition, so there are at most seven
+steps outside $\cH^{1}(a,a)$, $U\le7-D$, and the drop $7D-U\ge8D-7$ is at
+least nine. For the consequence, split the sequence at the pieces
+$L_{\zeta}$ it visits: each part through multiples lowers the shift by at
+least four, and by (i) each other part lowers it by at least one, unless it
+lies in $\cH^{1}(a,a)$.
+\end{proof}
+
+\begin{theorem}[Two shifts on $E_{0}^{8}$]\label{thm:efourtwolevels}
+Keep \Cref{lem:efourshifts}, and let $L_{\zeta}$ and $L_{\zeta'}$ differ in
+exactly three coordinates and have the shifts $d_{L_{\zeta}}=d_{L_{\zeta'}}+1$.
+Then $\cH(L_{\zeta},L_{\zeta'})$ has its classes of degree two in
+$\cH^{3}(L_{\zeta},L_{\zeta'})$, of dimension
+$D(\zeta,\zeta')=\prod_{\zeta_{j}\ne\zeta'_{j}}|\zeta_{j}-\zeta'_{j}|^{2}$,
+which is $16$ or $64$, and:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item for every convolution, no element of degree one has a differential
+  with a nonzero component in $\cH^{3}(L_{\zeta},L_{\zeta'})$;
+\item if the $L_{\zeta}$ occupy two consecutive shifts, those with
+  $\prod\zeta=\epsilon$ the shift $s$ and the others $s-1$, for a sign
+  $\epsilon$ and an integer $s$, then $d_{E}$ vanishes on these groups, and
+  for every order of the pieces, every choice of the shifts of the $M_{i}$
+  and every placement of the $t_{i}$,
+  \[
+    \dim\Ext^{2}(E,E)\;\ge\;64\cdot640=40960 .
+  \]
+  In particular $E$ does not meet the polarised criterion, which asks for
+  $\dim\Ext^{2}(E,E)=104$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Write $W=L_{\zeta}$ and $V=L_{\zeta'}$. By the proof of
+\Cref{lem:efourshifts}(i), $\cH(W,V)$ has degrees $3$, $4$ and $5$, the last
+two from the surface where $\zeta$ and $\zeta'$ agree, and its classes of
+degree $w=2$ have $\Ext$ degree $2+d_{W}-d_{V}=3$; the dimension of
+$\cH^{3}(W,V)$ is the product over the three other surfaces of the
+determinants $|\zeta_{j}-\zeta'_{j}|^{2}$, as in \Cref{lem:allthree}.
+
+(i) As in the proof of \Cref{lem:allthree}, a term of the differential of an
+element $u$ of degree one in $\cH(a',b')$ with a component in $\cH(W,V)$
+runs along a chain of components $W\to\dots\to a'$, the step $u$, and a chain
+$b'\to\dots\to V$, with $(a',b')\ne(W,V)$. This is a sequence of steps from
+$W$ to $V$, one of them $u$, lowering the shift by one. By
+\Cref{lem:efourshifts}(iii) it consists of steps between pieces $L_{\zeta}$,
+one of $\Ext$ degree two and at most one, $u$, in $\cH^{1}(a,a)$. If $u$ is
+not in $\cH^{1}(a,a)$, it is the step of degree two and both chains are
+empty, against $(a',b')\ne(W,V)$. If $u$ is in $\cH^{1}(a,a)$, the rest is a
+single component $W\to V$ of $\Ext$ degree two, in $\cH^{2}(W,V)=0$.
+
+(ii) A term of $d_{E}$ on $x\in\cH^{3}(W,V)$ runs along chains of components
+$c\to\dots\to W$ and $V\to\dots\to e$, not both empty, and lands in $\cH(c,e)$
+in $\Ext$ degree $3+1+(d_{c}-d_{W})+(d_{V}-d_{e})=3+d_{c}-d_{e}$. No piece
+$L_{\zeta''}$ other than $W$ lies on the first chain: by
+\Cref{lem:efourshifts}(iii) it would have the shift at least $d_{W}+1=s+1$.
+Likewise only multiples follow $V$ on the second chain, and each chain has at
+most three pieces besides $W$ or $V$. Let $U$ and $D$ be the numbers of steps
+up and down along both chains, so that $U+D\le6$; by
+\Cref{lem:efourshifts}(ii), $d_{W}=d_{c}+U_{1}-7D_{1}$ and
+$d_{e}=d_{V}+U_{2}-7D_{2}$, and the $\Ext$ degree is
+\[
+  3+d_{c}-d_{e}=4-U+7D .
+\]
+If $c=e$, this degree is $3$, so $U=7D+1$, and $D\ge1$ because the values
+return to $\phi(c)\ne p$; then $U\ge8$, which is impossible. If $c\ne e$, the
+group $\cH(c,e)$ sits in degree $0$ if $\phi(e)>\phi(c)$ and in degree $8$ if
+$\phi(e)<\phi(c)$, by \Cref{lem:efourshifts}(ii). Degree $0$ needs
+$U=4+7D\ge4$ with $D=0$, so the values increase strictly, the multiples are
+distinct and $U\le3$. Degree $8$ needs $7D=U+4$, so $D=1$ and $U=3$; the
+values increase strictly before the step down, from $\phi(c)$, and after it,
+up to $\phi(e)<\phi(c)$, so the five values along the path, with $W$ and $V$
+counted once, are distinct, and four of them are values of multiples, of
+which there are three. So no term reaches a nonzero group, and $d_{E}$
+vanishes on $\cH^{3}(W,V)$.
+
+By (i) and (ii) the classes of these groups are cocycles of degree two, and
+no nonzero combination of them is a coboundary, since every coboundary has
+zero components there. Each piece of the shift $s$ has $28$ partners of the
+other parity differing from it in exactly three
+coordinates,\footnote{The ratios $\zeta'_{j}/\zeta_{j}$ in the three
+coordinates have product $-1$, so they are $(-1,-1,-1)$, with $D=64$, or a
+permutation of $(i,-i,-1)$, with $D=16$; with four places for the
+coordinate where they agree this gives $4\cdot7=28$ partners and
+$4\cdot(64+6\cdot16)=640$ classes.} all of the shift $s-1$, and the $28$
+groups have dimensions adding up to $640$; there are $64$ pieces of the shift
+$s$.
+\end{proof}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{fig_efourshifts}
+\caption{\Cref{lem:efourshifts} and \Cref{thm:efourtwolevels}, in the
+placement $p<t_{1}<t_{2}<t_{3}$. Horizontal: the value $\phi$ of a piece;
+vertical: its shift. The pieces $L_{\zeta}$ with $\prod\zeta=\epsilon$ sit at
+the shift $s$ and the others at $s-1$. A run through the multiples, up three
+times with $\Ext$ degree $0$ and down once with $\Ext$ degree $8$, ends four
+shifts lower, the least drop of \Cref{lem:efourshifts}(iii), so it never
+joins a top piece $W$ to a partner $V$ one shift lower; the group
+$\mathcal{H}^{3}(W,V)$ survives in $\Ext^{2}(E,E)$.}
+\label{fig:efourshifts}
+\end{figure}
+
+\Cref{fig:efourshifts} draws the shifts along a run. The hypothesis of (ii) is the arrangement of the explicit convolution of
+\Cref{prop:explicitconvolution} at $n=3$, where the sixteen pieces of each
+parity share a shift. The pieces
+must not be twisted by line bundles of degree zero here, unlike in
+\Cref{thm:noconvolution}: a twist that is nontrivial on the surface where
+$\zeta$ and $\zeta'$ agree removes $\cH(L_{\zeta},L_{\zeta'})$.
+
+With a third shift, a component of $\Ext$ degree two can follow or precede
+a class of $\cH^{3}(L_{\zeta},L_{\zeta'})$, so the differential no longer
+vanishes on these classes. When the three shifts are consecutive, such terms
+reach only the groups
+between the highest and the lowest shift, which are too small to remove the
+classes.
+
+\begin{theorem}[Three consecutive shifts on $E_{0}^{8}$]
+\label{thm:efourthreelevels}
+Keep \Cref{lem:efourshifts}, and suppose that the shifts of the $L_{\zeta}$
+lie in $\{s,s-1,s-2\}$ for an integer $s$. By their parities, for a sign
+$\epsilon$, the pieces with $\prod\zeta=\epsilon$ have the shift $s-1$ and
+the others the shift $s$ or $s-2$; let $T$ and $B$ be the sets of pieces of
+the shifts $s$ and $s-2$. Then, for every order of the pieces, every choice
+of the shifts of the $M_{i}$ and every placement of the $t_{i}$:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item every two pieces $L_{\zeta}$, $L_{\zeta'}$ that differ in exactly three
+  coordinates have shifts differing by one, and the groups
+  $\cH^{3}(L_{\zeta},L_{\zeta'})$ of \Cref{thm:efourtwolevels}, taken from
+  the piece of the larger shift, have dimensions adding up to $40960$;
+\item $d_{E}$ maps the sum of these groups into
+  $\bigoplus_{c\in T,\,e\in B}\cH^{5}(c,e)$, and on them it consists of cup
+  products with a single component of $\Ext$ degree two;
+\item
+  \[
+    \dim\Ext^{2}(E,E)\;\ge\;40960-\sum_{c\in T,\,e\in B}\dim\cH^{5}(c,e)
+    \;\ge\;40960-18432=22528 .
+  \]
+\end{enumerate}
+In particular $E$ does not meet the polarised criterion. When $T$ or $B$ is
+empty this is \Cref{thm:efourtwolevels}(ii).
+\end{theorem}
+
+\begin{proof}
+(i) The ratios $\zeta'_{j}/\zeta_{j}$ in the three coordinates have
+product $-1$, so the two pieces have opposite parities: one has the shift
+$s-1$ and the other $s$ or $s-2$. Each of the $64$ pieces of the shift $s-1$
+has $28$ such partners, whose groups have dimensions adding up to $640$, as
+in the proof of \Cref{thm:efourtwolevels}; this gives $64\cdot640=40960$.
+
+(ii) Let $x\in\cH^{3}(a,b)$ with $d_{a}=d_{b}+1$. As in the proof of
+\Cref{thm:efourtwolevels}(ii), a term of $d_{E}(x)$ runs along chains of
+components $c\to\dots\to a$ and $b\to\dots\to e$, not both empty, and lands
+in $\cH(c,e)$ in $\Ext$ degree $3+d_{c}-d_{e}$. The shifts of the pieces
+$L_{\zeta}$ differ by at most two, so by \Cref{lem:efourshifts}(iii) no part
+of a chain between two pieces $L_{\zeta}$ passes through a multiple. Hence a
+chain $c\to\dots\to a$ that starts at a multiple $M_{i}$ is a run
+$M_{i}=m_{0}\to\dots\to m_{r}\to L_{1}$ of distinct multiples, $r\le2$,
+followed by pieces $L_{\zeta}$ only; let $U_{1}$ and $D_{1}$ be the numbers
+of its steps up and down the value $\phi$ before $L_{1}$, so that
+$d_{L_{1}}=d_{M_{i}}+U_{1}-7D_{1}$ by \Cref{lem:efourshifts}(ii) and
+$U_{1}+D_{1}=r+1\le3$. Likewise a chain $b\to\dots\to e$ ending at a multiple
+$M_{k}$ ends with a run from a piece $L_{2}$ with $U_{2}$ steps up and $D_{2}$
+down, $U_{2}+D_{2}\le3$ and $d_{M_{k}}=d_{L_{2}}+U_{2}-7D_{2}$. Put
+$L_{1}=c$ if $c$ is a piece $L_{\zeta}$ and $L_{2}=e$ if $e$ is one, and
+$\delta=d_{L_{1}}-d_{L_{2}}$; then $1=d_{a}-d_{b}\le\delta\le2$.
+
+If $c$ and $e$ are both pieces $L_{\zeta}$, each nonempty chain lowers the
+shift by at least one, so $3+d_{c}-d_{e}\ge5$, while $\delta\le2$ gives at
+most $5$. So the degree is $5$, $c\in T$, $e\in B$, and the two chains
+together consist of one component, of $\Ext$ degree two by
+\Cref{lem:efourshifts}(i): the term is a cup product of $x$ with that
+component.
+
+If $c=M_{i}$ and $e$ is a piece $L_{\zeta}$, the degree is
+$3+\delta-U_{1}+7D_{1}$, and $\cH(c,e)$ sits in degree $0$ or $8$ by
+\Cref{lem:efourshifts}(ii). Degree $0$ needs $U_{1}\ge3+\delta\ge4$, and
+degree $8$ needs $7D_{1}-U_{1}=5-\delta\in\{3,4\}$, so $D_{1}\ge1$ and
+$U_{1}\ge3$; both contradict $U_{1}+D_{1}\le3$. The case of a piece $c$ and
+a multiple $e$ is the same with the second run.
+
+If $c=M_{i}$ and $e=M_{k}$, the degree is $3+\delta-U+7D$ with
+$U=U_{1}+U_{2}\le6$ and $D=D_{1}+D_{2}$. For $i=k$ it is $3$, so
+$U-7D=\delta\ge1$; $D=0$ is impossible, since the values would increase from
+$t_{i}$ to $p$ along the first run and from $p$ to $t_{i}$ along the second,
+and $D\ge1$ gives $U\ge8$. For $i\ne k$, $\cH(c,e)$ sits in degree $0$ if
+$t_{k}>t_{i}$ and $8$ if $t_{k}<t_{i}$. Degree $0$ needs $U=3+\delta+7D$,
+so $D=0$ and $U\ge4$; but then the multiples of the first run have values
+below $p$ and those of the second values above $p$, so they are distinct and
+$U\le3$. Degree $8$ needs $7D-U=5-\delta$, so $D=1$ and $U\ge3$: the runs
+have at least four steps, so some multiple lies on both. One run increases
+strictly. If it is the second, its values lie in $(p,t_{k}]$, while those of
+the first lie at or above $t_{i}>t_{k}$ before its step down and below $p$
+after it. If it is the first, its values lie in $[t_{i},p)$, while those of
+the second lie above $p$ before its step down and at or below $t_{k}<t_{i}$
+after it. Either way no multiple lies on both runs, a contradiction.
+
+(iii) By \Cref{thm:efourtwolevels}(i), which holds for every convolution, no
+coboundary has a component in these groups, so the kernel of $d_{E}$ on
+their sum injects into $\Ext^{2}(E,E)$, and by (ii) its dimension is at
+least $40960$ minus the dimension of the targets. For pieces $c$, $e$ of the
+same parity, $\cH^{5}(c,e)$ is nonzero only when they differ in two or three
+coordinates, and each piece has such partners with groups $\cH^{5}$ of
+dimensions adding up to $960$.\footnote{The ratios $e_{j}/c_{j}\ne1$ have
+product $1$. In two coordinates they are $(-1,-1)$, with $D=16$, or
+$(i,-i)$, $(-i,i)$, with $D=4$; then
+$\cH^{5}=\cH^{1}\otimes\cH^{1}\otimes\cH^{3}(B_{j}\times B_{k},\cO)$ has
+dimension $4D$, and the six pairs of coordinates give
+$6\cdot64+12\cdot16=576$. In three coordinates they are a permutation of
+$(i,i,-1)$ or of $(-i,-i,-1)$, with $D=16$, and
+$\cH^{5}=(\cH^{1})^{\otimes3}\otimes H^{2}(B_{l},\cO)$ has dimension $16$;
+the four triples give $4\cdot6\cdot16=384$. In four coordinates
+$\cH(c,e)$ sits in degree $4$.}\enlargethispage{3pt} So the sum in (iii) is at most
+$\min(|T|,|B|)\cdot960\le32\cdot960=30720$, which already gives
+$\dim\Ext^{2}(E,E)\ge10240$. The dimension of $\cH^{5}(c,e)$ depends only on
+the ratio $e/c$, so the sum is the weight of the cut $(T,B)$ of a weighted
+Cayley graph on the group of ratios of two pieces of one parity, of order
+$64$ and degree $960$. For the vector $x=\pm1$ of the cut, the weight is
+$\tfrac14\bigl(64\cdot960-x^{\mathsf T}Ax\bigr)\le16\,(960-\lambda)$, with
+$A$ the weighted adjacency matrix and $\lambda$ its least eigenvalue. Its
+eigenvalues are the character sums $\sum_{g}\dim\cH^{5}(1,g)\,\chi(g)$. A
+character is $\chi(g)=\prod_{j}g_{j}^{k_{j}}$ with $k\in(\ZZ/4)^{4}$, up to
+adding $(1,1,1,1)$; put $\omega_{j}=i^{k_{j}}$, $W=\sum_{j}\omega_{j}$,
+$\varrho=\sum_{j}\omega_{j}^{2}$ and $\Omega=\prod_{j}\omega_{j}$. By the
+list in the footnote, the ratios that move the pair of coordinates
+$\{j,l\}$ contribute $64\,\omega_{j}^{2}\omega_{l}^{2}
++32\,\Re(\omega_{j}\bbar\omega_{l})$, and those that fix only the
+coordinate $o$ contribute $32\,\Re\bigl(\Omega\bbar\omega_{o}(W-\omega_{o})\bigr)$.
+Summing,
+\[
+  \chi\bigl(\textstyle\sum_{g}\dim\cH^{5}(1,g)\,g\bigr)
+  =32\varrho^{2}+16|W|^{2}-192+32\,\Re(\Omega)\bigl(|W|^{2}-4\bigr).
+\]
+If $\Re\Omega=0$, the sum of the $k_{j}$ is odd, so an odd number of them
+are odd, $|\varrho|=2$, and the value is at least $-64$. If $\Re\Omega=1$,
+an even number are odd: with none or four, $|\varrho|=4$ and the value is at
+least $192$; with two, $\varrho=0$, and $W=0$ would force the $k_{j}$ to be
+$0,1,2,3$, whose sum is not divisible by $4$, so $|W|^{2}\ge4$ and the value
+is at least $-128$. If $\Re\Omega=-1$, the value is
+$32\varrho^{2}-16|W|^{2}-64$, and $|W|^{2}\le8+2\varrho^{2}$: when all
+$k_{j}$ have the same parity, $|W|\le4=|\varrho|$, and when two are odd,
+$\varrho=0$ and $W$ is a sum of two of $\pm1$ and two of $\pm i$, so
+$|W|^{2}\le8$. Hence $\lambda\ge-192$,\footnote{The eight values are $960$,
+$384$, $192$, $96$, $-32$, $-64$, $-128$ and $-192$. The bound $18432$ is
+attained by the cut $\zeta_{3}\zeta_{4}\in\{1,i\}$ against
+$\zeta_{3}\zeta_{4}\in\{-1,-i\}$, so $22528$ is the best bound that this
+count gives.} and the sum is at most $16\cdot1152=18432$.
+\end{proof}
+
+\Cref{fig:efourthree} draws the three shifts and the budget.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{fig_efourthree}
+\caption{\Cref{thm:efourthreelevels}. Left: the pieces $L_{\zeta}$ at three
+consecutive shifts, those of one parity at $s-1$ and the others split between
+$T$ at $s$ and $B$ at $s-2$; a group $\cH^{3}$ between two pieces that differ
+in three coordinates (teal) can meet a component of $\Ext$ degree two
+(indigo) only in a group $\cH^{5}(c,e)$ with $c\in T$ and $e\in B$ (magenta).
+Middle: the $40960$ classes against the targets, at most $30720$ by counting
+and $18432$ by the least eigenvalue, against the $104$ that the criterion
+allows. Right: the eigenvalues of the Cayley graph of the targets.}
+\label{fig:efourthree}
+\end{figure}
+
+The groups of \Cref{thm:efourtwolevels} join two pieces whose shifts differ
+by one. All groups between pieces whose shifts differ by three, and thirteen
+kinds between pieces whose shifts differ by two, are also left alone by the
+differential, and with them the argument covers every
+arrangement of the shifts within five consecutive values. For pieces $a$ and
+$b$ call $d_{a}-d_{b}$ the \emph{spread} of $\cH(a,b)$; its classes of degree
+two have $\Ext$ degree $2+d_{a}-d_{b}$. For $\zeta,\zeta'\in\mu_{4}^{4}$ call
+$\zeta'/\zeta=(\zeta'_{j}/\zeta_{j})_{j}$ their \emph{ratio}; it
+\emph{moves} the coordinates where it differs from $1$, and it changes the
+parity, $\prod\zeta'=-\prod\zeta$, exactly when the product of its entries is
+$-1$. As before,
+$D(\zeta,\zeta')=\prod_{\zeta_{j}\ne\zeta'_{j}}|\zeta_{j}-\zeta'_{j}|^{2}$.
+
+\begin{lemma}[Groups of spread two and three]\label{lem:efourspread}
+Keep \Cref{lem:efourshifts}, and let $E$ be any convolution of the
+$L_{\zeta}$ and the $M_{i}$, in any order, with any shifts of the given
+parities and any placement of the $t_{i}$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item For a class $x$ of degree two in $\cH(L_{\zeta},L_{\zeta'})$ of
+  positive spread, every term of $d_{E}(x)$ has all its leaves between
+  pieces $L_{\zeta''}$.
+\item Let $\prod\zeta=\prod\zeta'$, let $\zeta'/\zeta$ move all four
+  coordinates, one of them by $-1$, and let $d_{L_{\zeta}}=d_{L_{\zeta'}}+2$.
+  The classes of degree two of $\cH(L_{\zeta},L_{\zeta'})$ form
+  $\cH^{4}(L_{\zeta},L_{\zeta'})$, of dimension $D(\zeta,\zeta')\in\{64,256\}$;
+  no element of degree one has a differential with a nonzero component in
+  it, and $d_{E}$ vanishes on it.
+\item Let $\prod\zeta=-\prod\zeta'$ and $d_{L_{\zeta}}=d_{L_{\zeta'}}+3$. The
+  classes of degree two of $\cH(L_{\zeta},L_{\zeta'})$ lie in
+  $\cH^{5}(L_{\zeta},L_{\zeta'})$, and $d_{E}$ vanishes on them.
+\item Let $\zeta$ and $\zeta'$ differ in exactly three coordinates, with
+  $d_{L_{\zeta}}=d_{L_{\zeta'}}+1$. Every term of $d_{E}$ on
+  $\cH^{3}(L_{\zeta},L_{\zeta'})$ runs along chains of components
+  $c\to\dots\to L_{\zeta}$ and $L_{\zeta'}\to\dots\to e$ between pieces
+  $L_{\zeta''}$ that together lower the shift by one or two.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Write $a=L_{\zeta}$, $b=L_{\zeta'}$ and $\delta=d_{a}-d_{b}$. As in the proof
+of \Cref{thm:efourtwolevels}(ii), a term of $d_{E}$ on a class of degree two
+in $\cH(a,b)$ runs along chains of components $c\to\dots\to a$ and
+$b\to\dots\to e$, not both empty, and lands in $\cH(c,e)$ in $\Ext$ degree
+$3+d_{c}-d_{e}$, which is $3$ if $c=e$.
+
+(i) Let $L_{1}$ be the first piece $L_{\zeta''}$ of the first chain and
+$L_{2}$ the last of the second, and put
+$X=(d_{L_{1}}-d_{a})+(d_{b}-d_{L_{2}})$. By \Cref{lem:efourshifts}(iii),
+$X\ge0$, and $X\ge4$ if a multiple lies between $L_{1}$ and $a$ or between
+$b$ and $L_{2}$. Before $L_{1}$ the first chain is a run of distinct
+multiples, with $U_{1}$ steps up and $D_{1}$ steps down the value $\phi$ and
+$U_{1}+D_{1}\le3$; after $L_{2}$ the second chain is a run with $U_{2}$ and
+$D_{2}$ steps, $U_{2}+D_{2}\le3$. By \Cref{lem:efourshifts}(ii) the term has
+$\Ext$ degree $3+\delta+X-U+7D$, where $U=U_{1}+U_{2}$ and $D=D_{1}+D_{2}$.
+If $c$ and $e$ are pieces, this is $3+\delta+X$; a multiple on a chain makes
+it at least $8$, but $\cH^{8}(c,e)\ne0$ only for $c=e$, where the degree is
+$3$. If $c=M_{i}$ and $e$ is a piece, $\cH(c,e)$ sits in degree $0$ if
+$t_{i}<p$ and in degree $8$ if $t_{i}>p$. Degree $0$ needs
+$U_{1}\ge3+\delta+X\ge4$. Degree $8$ needs a step down on the run from
+$t_{i}$ to $p$, so $D_{1}\ge1$, and then
+$U_{1}=7D_{1}-5+\delta+X\ge3$. Both contradict $U_{1}+D_{1}\le3$, and a
+piece $c$ with a multiple $e$ is the same. Let $c=M_{i}$ and $e=M_{k}$. For
+$i=k$ the degree is $3$, so $U-7D=\delta+X\ge1$; $D\ge1$ would give $U\ge8$,
+and $D=0$ would make the values increase from $t_{i}$ to $p$ and then from
+$p$ to $t_{i}$. For $i\ne k$, $\cH(c,e)$ sits in degree $0$ if $t_{k}>t_{i}$
+and in degree $8$ if $t_{k}<t_{i}$. Degree $0$ needs $U=3+\delta+X+7D$, so
+$D=0$ and $U\ge4$; but then the first run lies below $p$ and the second
+above, so the multiples are distinct and $U\le3$. Degree $8$ needs $D\ge1$,
+since with $D=0$ the values would satisfy $t_{i}<p<t_{k}$; then
+$7D-U=5-\delta-X\le4$ gives $D=1$ and $U\ge3$, so the runs have at least
+four steps and share a multiple, which the last paragraph of the proof of
+\Cref{thm:efourthreelevels}(ii) excludes.
+
+(ii) By the proof of \Cref{lem:efourshifts}(i), $\cH(a,b)$ is the tensor
+product of four groups $H^{1}$ and sits in degree $4$, of dimension
+$D(\zeta,\zeta')$; the ratio is $(-1,-1,-1,-1)$, with $D=256$, or a
+permutation of $(i,-i,-1,-1)$, with $D=64$.\footnote{A ratio that moves
+every coordinate has entries in $\{i,-1,-i\}$ and product $1$. With a $-1$
+among them it is $(-1,-1,-1,-1)$ or has exactly two entries $-1$ and the
+entries $i$ and $-i$, twelve ratios; together thirteen, and
+$256+12\cdot64=1024$. The other eight ratios have all four entries in
+$\{i,-i\}$ and $D=16$; (ii) makes no statement about them.}\enlargethispage{3pt} A coboundary with a component in $\cH(a,b)$ is
+a sum of terms of \Cref{lem:harmonicmodel}(iii) along a path
+$a\to\dots\to b$ of morphisms of degree one, one of them an element $u$ and
+the others components, that lowers the shift by two. By
+\Cref{lem:efourshifts}(iii) no multiple lies on it, and by
+\Cref{lem:efourshifts}(i) each step between distinct pieces lowers the shift
+by at least one. So the path consists of a component of $\Ext$ degree three
+from $a$ to $b$, which lies in $\cH^{3}(a,b)=0$, and a class of
+$\cH^{1}(a,a)$ or $\cH^{1}(b,b)$; or of two steps $a\to c\to b$ of $\Ext$
+degree two, possibly with a class of $H^{1}(A,\cO_{A})$ at one of the three
+pieces. The output has degree one on every surface. Without the class of
+$H^{1}$ the two steps have degrees adding up to one on every surface, so they
+move disjoint pairs of coordinates and have degree zero elsewhere; a step of
+$\Ext$ degree two changes the parity, so its two moved entries have product
+$-1$ and are $(i,i)$ or $(-i,-i)$, and $\zeta'/\zeta$ has no entry $-1$.
+With the class of $H^{1}$, \Cref{lem:degreedrop} gives a drop of one on a
+surface where all three leaves have positive degree, and the output has
+degree at least two there.
+
+Now let a term of $d_{E}$ on $\cH^{4}(a,b)$ carry the components
+$y_{1},\dots,y_{m}$, $m\ge1$, between pieces by (i), and land in
+$\cH(c,e)$; let $K$ be the set of coordinates fixed by the ratio of $c$ and
+$e$, and $X\ge m$ the drop of the chains. The output has $\Ext$ degree
+$5+X$. Let $n_{j}$ be the number of the $y_{i}$ of positive degree on
+$B_{j}$; the class $x$ has degree one there, so \Cref{lem:degreedrop} bounds
+the drop on $B_{j}$ by $\max(0,n_{j}-1)$. For $j\notin K$ the output has
+degree $1$ on $B_{j}$, so the degrees of the $y_{i}$ there add up to at most
+$\max(0,n_{j}-1)$, which forces $n_{j}=0$. For $j\in K$ the $y_{i}$ undo the
+entry $\zeta'_{j}/\zeta_{j}\ne1$, so $n_{j}\ge1$, and the output has degree
+at least $1+n_{j}-(n_{j}-1)=2$ there, hence exactly $2$. So
+$5+X=(4-|K|)+2|K|$, that is $X=|K|-1$. The components change the parity
+$X$ times modulo two, and together their ratio is $\zeta/\zeta'$ on $K$ and
+$1$ elsewhere, so
+\[
+  \prod_{j\in K}\zeta'_{j}/\zeta_{j}=(-1)^{|K|-1}.
+\]
+For the ratio $(-1,-1,-1,-1)$ the left side is $(-1)^{|K|}$. For a
+permutation of $(i,-i,-1,-1)$ the left side is real only if $K$ contains
+both or neither of the coordinates moved by $\pm i$, and then it is again
+$(-1)^{|K|}$. So no term is nonzero.
+
+(iii) The classes of degree two have $\Ext$ degree $5$. By (i) a term of $d_{E}$ on them lands
+in $\Ext$ degree $6+X$, with $X\ge1$ the drop of the chains between pieces.
+For $X\ge2$ this is at least $8$, which needs $c=e$ and degree $3$. For $X=1$
+the pieces $c$, $e$ have shifts differing by four, hence the same parity, so
+their ratio moves at least two coordinates and $\cH(c,e)$ has no degree above
+$6$.
+
+(iv) By (i) a term lands in $\Ext$ degree $4+X$, with $X\ge1$ the drop of the
+chains between pieces. For $X\ge4$ the degree is at least $8$, which needs
+$c=e$. For $X=3$ the degree is $7$, which needs a ratio moving one
+coordinate, hence opposite parities, while $d_{c}-d_{e}=4$ is even.
+\end{proof}
+
+The groups of (ii) are reached by no coboundary and left by no term in every
+convolution, so they survive in $\Ext^{2}(E,E)$ as soon as the shifts give
+them the spread two. That happens along every edge of a Cayley graph that
+crosses between two shift values of one parity, and a cut of that graph is
+never light.
+
+\begin{lemma}[Cuts of a Cayley graph]\label{lem:cayleycut}
+Let $G$ be a finite abelian group, $S\subset G\setminus\{0\}$ a generating
+set and $w\colon S\to\RR_{>0}$ a weight, extended by $0$ to $G$. For every
+subset $T\subset G$ with $T\ne\emptyset,G$,
+\[
+  \sum_{c\in T,\ e\notin T}w(e-c)\;\ge\;\min_{H}\,|H|\cdot w(S\setminus H),
+\]
+the minimum over the proper subgroups $H$ of $G$. For the group $G_{0}$ of
+the $64$ ratios of pieces of one parity, with $S$ the thirteen ratios of
+\Cref{lem:efourspread}(ii) and $w=D$, the minimum is $1024$, attained only at
+$H=0$, so every such cut weighs at least $1024$.
+\end{lemma}
+
+\begin{proof}
+The left side is $\sum_{s\in S}w(s)\,|(T+s)\setminus T|$. Let $H$ be the
+stabiliser of $T$, a proper subgroup since $T\ne\emptyset,G$. Then $T$ and
+$T+s$ are unions of cosets of $H$, and for $s\notin H$ the set
+$(T+s)\setminus T$ is nonempty, since $|T+s|=|T|$, so it has at least $|H|$
+elements. This gives the inequality. In $G_{0}$, written additively as the
+quadruples in $(\ZZ/4)^{4}$ of sum $0$, the ratios of type $(i,-i,-1,-1)$
+generate, since the differences of two of them give every $e_{j}-e_{k}$. The
+weights are $256$ once and $64$ otherwise, and $|S\cap H|\le|H|-1$. So
+$|H|\,w(S\setminus H)$ is $1024$ for $H=0$, at least
+$|H|\,(1024-256-64(|H|-2))$, which is $1536$, $2560$ and $3072$, for
+$|H|=2,4,8$, and at least $64|H|\ge1024$ for $|H|\ge16$, because some
+generator lies outside $H$.\footnote{The orders of the subgroups of
+$G_{0}\cong(\ZZ/4)^{3}$ are powers of two. A cut at one vertex weighs exactly
+$1024$, so the bound is sharp.}
+\end{proof}
+
+\begin{theorem}[One parity at two or three values]\label{thm:efourspreadtwo}
+Keep \Cref{lem:efourshifts}, and suppose that the shifts of the pieces
+$L_{\zeta}$ with $\prod\zeta=\epsilon$ take exactly two values $s$ and $s-2$,
+or exactly three values $s+2$, $s$ and $s-2$, for a sign $\epsilon$ and an
+integer $s$. Then, for every order of the pieces, all shifts of the other
+pieces, every choice of the shifts of the $M_{i}$ and every placement of the
+$t_{i}$,
+\[
+  \dim\Ext^{2}(E,E)\;\ge\;1024 .
+\]
+In particular $E$ does not meet the polarised criterion.
+\end{theorem}
+
+\begin{proof}
+Let $T$ be the set of pieces of parity $\epsilon$ at the shift $s$; it is
+neither empty nor all of them. Two pieces of parity $\epsilon$, one in $T$
+and the other not, have shifts differing by exactly two. When their ratio is
+one of the thirteen of \Cref{lem:efourspread}(ii), the group $\cH^{4}$ from
+the piece of the larger shift to the other is reached by no coboundary and
+killed by no term, so its classes inject into $\Ext^{2}(E,E)$, and those of
+different pairs lie in different summands $\cH(a,b)$. Their dimensions add up
+to the weight of the cut $(T,\complement T)$ of the Cayley graph of
+\Cref{lem:cayleycut}, since the pieces of parity $\epsilon$ form a coset of
+$G_{0}$; so they add up to at least $1024$.
+\end{proof}
+
+\begin{theorem}[Shifts three apart]\label{thm:efourspreadthree}
+Keep \Cref{lem:efourshifts}, and suppose that the pieces $L_{\zeta}$ with
+$\prod\zeta=\epsilon$ all have the shift $s$ and the others have shifts in
+$\{s-3,s+3\}$. Then, for every order, every choice of the shifts of the
+$M_{i}$ and every placement of the $t_{i}$,
+\[
+  \dim\Ext^{2}(E,E)\;\ge\;64\cdot1072-128\cdot8=67584 .
+\]
+\end{theorem}
+
+\begin{proof}
+Every piece $W$ of parity $-\epsilon$ and every piece $V$ of parity $\epsilon$
+have shifts differing by three. By \Cref{lem:efourspread}(iii) the classes
+of degree two of the group from the higher to the lower of the two lie in
+$\cH^{5}$, and $d_{E}$ vanishes on them. For each $W$ these groups have
+dimensions adding up to $1072$.\footnote{Let the ratio move $k$
+coordinates. For $k=1$ it is $-1$ in one coordinate, $D=4$, and $\cH^{5}$
+is $H^{1}$ tensored with the part of degree four of $H^{*}(\cO)$ on the
+other three surfaces, of dimension $\binom{6}{4}=15$: four partners with
+$60$ each. For $k=2$ it is $(i,i)$ or $(-i,-i)$, $D=4$, and the part of
+degree three on the other two surfaces has dimension $\binom43=4$: twelve
+partners with $16$ each. For $k=3$ the part of degree two on the last surface
+has dimension one, and the $28$ partners give $640$ as in
+\Cref{thm:efourtwolevels}. For $k=4$ the group sits in degree $4$. So
+$240+192+640=1072$.} A coboundary with a component in such a group runs
+along a path of morphisms of degree one that lowers the shift by three;
+no multiple lies on it, by \Cref{lem:efourshifts}(iii), and a step between
+distinct pieces lowers the shift by at least one, while no piece has a shift
+strictly between those of $W$ and $V$. So the path is the component between
+$W$ and $V$ together with a class of $H^{1}(A,\cO_{A})$ at one of them, and
+the components of all coboundaries in these groups come from
+$\bigoplus_{a}\cH^{1}(a,a)$ over the $128$ pieces, of dimension
+$128\cdot8=1024$. The $64\cdot1072=68608$ classes are cocycles, and at most
+$1024$ dimensions of them are coboundaries.
+\end{proof}
+
+When one parity sits at a single shift, the groups $\cH^{3}$ of
+\Cref{thm:efourtwolevels} survive next to it unless pieces of the other
+parity crowd it from both sides.
+
+\begin{proposition}[A gap of four]\label{prop:efourgap}
+Keep \Cref{lem:efourshifts}, let the pieces $L_{\zeta}$ with
+$\prod\zeta=\epsilon$ all have the shift $y$, and let $T$ be the set of
+pieces of parity $-\epsilon$ at the shift $y+1$. If $T$ is not empty and no
+piece has the shift $y-1$ or $y+3$, then for every order, every choice of
+the shifts of the $M_{i}$ and every placement of the $t_{i}$, the groups
+$\cH^{3}(W,V)$ with $W\in T$ and $V$ differing from $W$ in exactly three
+coordinates are reached by no coboundary and killed by no term, and
+\[
+  \dim\Ext^{2}(E,E)\;\ge\;640\,|T|\;\ge\;640 .
+\]
+The same holds with $y+1$, $y-1$, $y+3$ replaced by $y-1$, $y+1$, $y-3$ and
+the groups $\cH^{3}(V,W)$.
+\end{proposition}
+
+\begin{proof}
+By \Cref{thm:efourtwolevels}(i), which holds for every convolution, no
+coboundary reaches these groups. By \Cref{lem:efourspread}(iv) a term of
+$d_{E}$ on $\cH^{3}(W,V)$ runs along chains of components between pieces
+into $W$ and out of $V$ that lower the shift by one or two in all; the
+first would pass through a piece at the shift $y+2$ or $y+3$, the second
+through one at $y-1$ or $y-2$. The shifts $y\pm2$ have parity $\epsilon$,
+whose pieces are all at $y$, and $y-1$, $y+3$ are excluded. Each $W\in T$
+has $28$ partners $V$, all at the shift $y$, with groups of dimensions adding
+up to $640$. The second statement has the same proof, with the chains into
+$V$ and out of $W$ in place of those into $W$ and out of $V$.
+\end{proof}
+
+\begin{corollary}[Five consecutive shifts]\label{cor:efourfive}
+Keep \Cref{lem:efourshifts}. If the shifts of the $128$ pieces $L_{\zeta}$
+lie in five consecutive integers, then, for every order, every choice of the
+shifts of the $M_{i}$ and every placement of the $t_{i}$,
+$\dim\Ext^{2}(E,E)\ge640$; no such convolution meets the polarised
+criterion.
+\end{corollary}
+
+\begin{proof}
+Let the values be $s,\dots,s-4$, with one parity at values in
+$\{s,s-2,s-4\}$ and the other at values in $\{s-1,s-3\}$. If the second
+parity takes both its values, or the first takes two values two apart or all
+three, \Cref{thm:efourspreadtwo} applies. Otherwise the second parity sits at
+one value $y$ and the first at one value or at $\{s,s-4\}$. One value each,
+at an odd distance at most three: \Cref{thm:efourtwolevels} or
+\Cref{thm:efourspreadthree}. The first at $\{s,s-4\}$: for $y=s-1$ the
+pieces at $y+1=s$ are not empty and $y-1$, $y+3$ are empty, and for $y=s-3$
+the pieces at $y-1=s-4$ are not empty and $y+1$, $y-3$ are empty, so
+\Cref{prop:efourgap} applies. The least of the bounds is $640$.
+\end{proof}
+
+Within six consecutive values two arrangements are left, up to exchanging
+the parities: each parity at one shift, five apart, and the parities at
+$\{s,s-4\}$ and $\{s-1,s-5\}$. The first is settled by the diagonal, whose
+classes at a shift with no other piece nearby can be reached only through
+all three multiples, and the second by the groups of
+\Cref{thm:efourtwolevels} once more.
+
+\begin{lemma}[The diagonal at a lonely shift]\label{lem:efourlonely}
+Keep \Cref{lem:efourshifts}, and let the pieces $L_{\zeta}$ with
+$\prod\zeta=\epsilon$ all have the shift $s$ and the others the shift $s-g$,
+for a sign $\epsilon$ and an odd integer $g\ge5$. Let $y\in\cH^{2}(a,a)$ be
+a diagonal class at a piece $a$, and let a term of $d_{E}(y)$ in
+\Cref{lem:harmonicmodel}(iii) be nonzero. Then $a$ is the only piece on its
+path, the path passes through $M_{1}$, $M_{2}$ and $M_{3}$, and the shifts
+of $a$, $M_{1}$, $M_{2}$, $M_{3}$ are pairwise incongruent modulo $4$.
+\end{lemma}
+
+\begin{proof}
+Write the path as $c\to\dots\to a\to\dots\to e$, with the chain of
+components into $a$ and the chain out of $a$ not both empty, so that
+$c\ne e$, since the components of a convolution go up the order of the
+pieces. Let $L_{1}$ and $L_{2}$ be the first and the last piece on it and
+$X=d_{L_{1}}-d_{L_{2}}$; before $L_{1}$ and after $L_{2}$ the path is a run
+of distinct multiples, with $U$ steps up and $D$ steps down the value $\phi$
+in all. As in the proof of \Cref{lem:efourspread}(i), now with $\delta=0$,
+the term has $\Ext$ degree $3+X-U+7D$ by \Cref{lem:efourshifts}(ii). A
+sequence of components from one piece to another lowers the shift by
+\Cref{lem:efourshifts}(iii), and the pieces have the shifts $s$ and $s-g$;
+so $X\in\{0,g\}$, and $X=0$ exactly when $a$ is the only piece on the path.
+
+If $c$ and $e$ are pieces, then $U=D=0$ and $X=g$, and $\cH^{3+g}(c,e)=0$
+since $3+g\ge8$ and $c\ne e$. If $c$ is a multiple and $e$ a piece, then
+$\cH(c,e)$ sits in degree $0$ or $8$. Degree $0$ needs $U=3+X+7D$, so
+$X=D=0$ and $U=3$. Degree $8$ needs $7D-U=5-X$: for $X=0$ this gives $D=1$
+and $U=2$; for $X=g$ it gives $D=0$ and $U=g-5$, which is at least one
+because the run before $L_{1}$ is not empty and at most three, so $g=7$; but
+then the path lowers the shift by seven from $L_{1}$ to $e$, by a single
+component, of $\Ext$ degree eight between distinct pieces, or by a run
+through multiples, and neither is possible.\footnote{Between distinct pieces
+$\cH^{8}=0$. A run from a piece through $m\le3$ distinct multiples to a piece
+has $m+1$ steps, at least one up and one down, and lowers the shift by
+$7D'-U'$ with $U'+D'=m+1$: by $6$, $5$, $4$ for $D'=1$, by $13$, $12$ for
+$D'=2$ and by $20$ for $D'=3$, never by seven.} A piece $c$ with a multiple $e$ is the same
+with the runs exchanged. If $c$ and $e$ are multiples, both runs are
+nonempty and together pass through at most three multiples, so $U+D\le3$
+and $U+D\ge2$. Degree $0$ needs $U=3+X+7D$, so $X=D=0$ and $U=3$. Degree $8$
+needs $7D-U=5-X$; $D=0$ gives $U=X-5\ge2$, so $X=g=7$, which is excluded as
+before; $D=1$ gives $U=2+X\le2$, so $X=0$ and $U=2$; $D\ge2$ gives $U\ge9$.
+
+So in every case $X=0$ and $U+D=3$: the path consists of $a$ and the three
+multiples, with three steps. A step up raises the shift by one and a step
+down lowers it by seven, so every step adds one modulo $4$, and the four
+nodes of the path have the shifts $d_{c},d_{c}+1,d_{c}+2,d_{c}+3$ modulo $4$
+in the order of the path.\footnote{With the values $t_{1}<t_{2}<t_{3}$ and
+$p$, the path with $U=3$ visits the four nodes in the order of their values;
+a path with $U=2$ and $D=1$ ending in degree eight visits the largest $j$
+values in increasing order and then the others, $j=1,2,3$. So each placement
+has exactly four such paths, and for each the shifts of the multiples are
+determined by $d_{a}$.}
+\end{proof}
+
+\begin{proposition}[Single shifts]\label{prop:efoursingle}
+Keep \Cref{lem:efourshifts}, and suppose that the pieces $L_{\zeta}$ with
+$\prod\zeta=\epsilon$ all have the shift $s$ and the others all have the
+shift $s-g$, for a sign $\epsilon$ and an odd integer $g$. Then, for every
+order, every choice of the shifts of the $M_{i}$ and every placement of the
+$t_{i}$,
+\[
+  \dim\Ext^{2}(E,E)\;\ge\;64\cdot28=1792 .
+\]
+\end{proposition}
+
+\begin{proof}
+Exchanging the parities, we may take $g>0$. For $g=1$ and $g=3$ this is
+\Cref{thm:efourtwolevels} and \Cref{thm:efourspreadthree}. Let $g\ge5$. If a
+term of $d_{E}$ were nonzero on a diagonal class at a piece of shift $s$ and
+another on a diagonal class at a piece of shift $s-g$, then by
+\Cref{lem:efourlonely} the shifts of the three multiples would be pairwise
+incongruent modulo $4$ and miss both the residue of $s$ and that of $s-g$,
+which differ, since $g$ is odd. So at one of the two shifts $d_{E}$ vanishes
+on the $28$ diagonal classes of each of the $64$ pieces there, and by
+\Cref{prop:nothingenters}, which holds for $n=4$, these $1792$ classes
+inject into $\Ext^{2}(E,E)$.\footnote{The proof does not look at the classes
+between the two parities. For $g=5$ these are $64\cdot16=1024$ classes of
+degree two in groups $\cH^{7}$, on which $d_{E}$ vanishes by
+\Cref{lem:efourspread}(i); but the coboundaries of the loops in
+$\cH^{1}(a,a)$, and, when two multiples have suitable shifts, the products
+along runs $W\to M_{i}\to M_{j}\to V$, reach them, and counting alone gives
+nothing there.}
+\end{proof}
+
+\begin{proposition}[Interleaved shifts]\label{prop:efourpairs}
+Keep \Cref{lem:efourshifts}, and suppose that the shifts of the pieces
+$L_{\zeta}$ with $\prod\zeta=\epsilon$ take exactly the two values $s$ and
+$s-4$, and those of the others exactly the two values $s-1$ and $s-5$. Then,
+for every order, every choice of the shifts of the $M_{i}$ and every
+placement of the $t_{i}$, $\dim\Ext^{2}(E,E)\ge640$.
+\end{proposition}
+
+\begin{proof}
+Let $A$ and $A'$ be the pieces of parity $\epsilon$ at the shifts $s$ and
+$s-4$, and $B$ and $B'$ those of parity $-\epsilon$ at $s-1$ and $s-5$; all
+four are nonempty. Let $W$ and $V$ differ in exactly three coordinates, with
+$d_{W}=d_{V}+1$, that is $W\in A$ and $V\in B$, or $W\in A'$ and $V\in B'$.
+By \Cref{thm:efourtwolevels}(i) no coboundary reaches $\cH^{3}(W,V)$, and by
+\Cref{lem:efourspread}(iv) a term of $d_{E}$ on it passes through a piece at
+the shift $d_{W}+1$ or $d_{W}+2$ or at $d_{V}-1$ or $d_{V}-2$. These are
+$s+1$, $s+2$, $s-2$, $s-3$ for $W\in A$ and $s-3$, $s-2$, $s-6$, $s-7$ for
+$W\in A'$, and no piece has these shifts. So the groups inject into
+$\Ext^{2}(E,E)$.
+
+Let $\Gamma$ be the group of the ratios of two pieces, of order $128$,
+which acts simply transitively on the pieces, and $S_{3}\subset\Gamma$ the
+$28$ ratios that move exactly three coordinates and change the parity, with
+the weight $D$, which adds up to $640$ (\Cref{thm:efourtwolevels}). With
+$X=A\cup B'$ the pairs above are exactly the edges of the Cayley graph of
+$(\Gamma,S_{3})$ between $X$ and its complement $A'\cup B$; so the
+dimensions add up to the weight of that cut, and $X$ is neither empty nor
+everything. Written additively, as the quadruples in $(\ZZ/4)^{4}$ of even
+sum, the differences of two ratios of type $(i,-i,-1,1)$ give every
+$e_{j}-e_{k}$, which generate the quadruples of sum $0$ modulo $4$, and the
+elements of $S_{3}$ have sum $2$ modulo $4$; so $S_{3}$ generates $\Gamma$.
+In \Cref{lem:cayleycut},
+$H=0$ gives $640$; for $|H|=2,4,8,16$ at most $|H|-1$ elements of $S_{3}$ lie
+in $H$, at most four of them of weight $64$, so $|H|\,w(S_{3}\setminus H)$ is
+at least $2\cdot576$, $4\cdot448$, $8\cdot336$ and $16\cdot208$; for
+$|H|=32$ some $r\in S_{3}$ lies outside $H$, and so does $-r$, which gives
+weight at least $32$, or $64$ if $r=-r$; and for $|H|=64$ the weight outside
+$H$ is at least $16$. So every such cut weighs at least $640$.\footnote{The
+subgroups of $\Gamma\cong(\ZZ/4)^{3}\times\ZZ/2$ have orders that are powers
+of two. A cut at a single vertex weighs exactly $640$, so the bound is
+sharp.}
+\end{proof}
+
+\begin{corollary}[Six consecutive shifts]\label{cor:efoursix}
+Keep \Cref{lem:efourshifts}. If the shifts of the $128$ pieces $L_{\zeta}$
+lie in six consecutive integers, then, for every order, every choice of the
+shifts of the $M_{i}$ and every placement of the $t_{i}$,
+$\dim\Ext^{2}(E,E)\ge640$; no such convolution meets the polarised
+criterion.
+\end{corollary}
+
+\begin{proof}
+By \Cref{cor:efourfive} we may assume that the shifts take both values $s$
+and $s-5$ of the window $s,\dots,s-5$; let the parity at $s$ have its values
+in $\{s,s-2,s-4\}$ and the other in $\{s-1,s-3,s-5\}$. If one of them takes
+two values two apart, or three, \Cref{thm:efourspreadtwo} applies.
+Otherwise the first takes $\{s\}$ or $\{s,s-4\}$ and the second $\{s-5\}$ or
+$\{s-1,s-5\}$. For $\{s\}$ and $\{s-5\}$ this is \Cref{prop:efoursingle},
+and for $\{s,s-4\}$ and $\{s-1,s-5\}$ it is \Cref{prop:efourpairs}. For
+$\{s\}$ and $\{s-1,s-5\}$, \Cref{prop:efourgap} applies in its second form
+with $y=s$: the shift $s-1$ is taken and $s+1$, $s-3$ are not. For
+$\{s,s-4\}$ and $\{s-5\}$ it applies in its first form with $y=s-5$: the
+shift $s-4$ is taken and $s-6$, $s-2$ are not. The least of the bounds is
+$640$.
+\end{proof}
+
+For the arrangements outside these results the diagonal still carries a
+large part of the obstruction.
+
+\begin{proposition}[Cup products on the diagonal at $n=4$]
+\label{prop:efourcupkernel}
+Keep \Cref{lem:efourshifts}, so that $D^{2}$ has dimension $131\cdot28=3668$.
+For every convolution the cup products vanish on the $84$ diagonal classes of
+the $M_{i}$, and on the $3584$ diagonal classes of the $L_{\zeta}$ they have
+a kernel of dimension at least $400$. So their kernel on $D^{2}$ has
+dimension at least $484$, and a convolution meeting the polarised criterion
+needs products of length at least three that remove at least $380$ diagonal
+classes.
+\end{proposition}
+
+\begin{proof}
+As in the proof of \Cref{prop:cupkernel}, the cup products in $\cH(a,b)$
+are $(y_{a}-y_{b})\wedge\delta^{H}_{ab}$, they vanish on the classes of the
+$M_{i}$, and for $L_{\zeta}$, $L_{\zeta'}$ and a type $\tau$ of degree two on
+the four surfaces they vanish on the part of type $\tau$ unless $\zeta'/\zeta$
+fixes the coordinates in the support of $\tau$. So a class whose part of type
+$\tau$ depends only on the coordinates of $\zeta$ in the support of $\tau$
+has vanishing cup products. The four types $(2,0,0,0)$ have dimension one and
+four values of the coordinate, the six types $(1,1,0,0)$ have dimension four
+and sixteen values of the two coordinates: $4\cdot4+6\cdot16\cdot4=400$. By
+\Cref{prop:nothingenters}, which holds for $n=4$, the kernel of $d_{E}$ on
+$D^{2}$ injects into $\Ext^{2}(E,E)$, and it is at most $104$ only if the
+longer products remove $380$ dimensions of these $484$.
+\end{proof}
+
+\Cref{fig:efourspread} and \Cref{fig:efoursix} draw the
+arrangements and the bounds.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{fig_efourspread}
+\caption{The shift arrangements of the pieces $L_{\zeta}$ on $E_{0}^{8}$.
+Left: one parity at two values two apart; a piece $c$ is joined to the
+thirteen pieces whose ratio moves every coordinate, one by $-1$, and the
+groups $\cH^{4}$ of the edges crossing between the values survive, weighing
+at least $1024$ (\Cref{lem:efourspread}(ii), \Cref{lem:cayleycut}). Middle:
+the four kinds of arrangement within five consecutive values, with the
+result that excludes each and its bound on $\dim\Ext^{2}$. Right: the
+diagonal at $n=4$; the cup products leave at least $484$ of the $3668$
+classes, and the criterion allows $104$ (\Cref{prop:efourcupkernel}).}
+\label{fig:efourspread}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{fig_efoursix}
+\caption{The arrangements within six consecutive values on $E_{0}^{8}$.
+Left: the parities at single shifts $s$ and $s-g$, $g$ odd and at least five;
+a term on a diagonal class at a piece $a$ runs through $M_{1}$, $M_{2}$,
+$M_{3}$ and no other piece, and since each step adds one to the shift modulo
+$4$ the four nodes have distinct residues, so the multiples serve at most one
+of the two shifts and the $1792$ diagonal classes at the other survive
+(\Cref{lem:efourlonely}, \Cref{prop:efoursingle}). Middle: the interleaved
+shifts; the groups $\cH^{3}$ between $A$ and $B$ and between $A'$ and $B'$
+survive and form a cut of the Cayley graph of the $28$ ratios that move
+three coordinates, of weight at least $640$ (\Cref{prop:efourpairs}).
+Right: the four arrangements left within six values by the results for five
+values, each with its bound on $\dim\Ext^{2}$ (\Cref{cor:efoursix}).}
+\label{fig:efoursix}
+\end{figure}
+
+\begin{remark}[What the route gives]\label{rem:convolutionsopen}
+At $n=3$ the route through convolutions of these pieces is decided. The
+diagonal obstruction of \Cref{thm:esixdiagonal} leaves room only for the
+fourfold products along one path, and the explicit convolution of
+\Cref{prop:explicitconvolution} solves the Maurer--Cartan equation. The
+obstruction that decides the route lies off the diagonal, in classes that no
+product of any length can reach: those between pieces that differ in every coordinate and have
+adjacent shifts (\Cref{lem:allthree}), and, at pieces whose shifts are not
+adjacent to the shift of the paths, the classes of type $(1,1,0)$. No order
+and no choice of shifts or twists avoids both, and
+\Cref{thm:noconvolution} excludes every convolution of the $35$ pieces; in
+the explicit convolution the first kind alone gives $2560$ classes against
+the $57$ allowed. In each placement exactly two of the eight sign patterns
+carry products, and the two are exchanged by a symmetry of the
+construction.\footnote{The automorphism of $A$ that is $-1$ on the coordinate
+$z_{n+1}$ and the identity on the others changes $\alpha$ into $-\alpha$,
+fixes $\theta$ and permutes the $L_{\zeta}$, changing $\zeta_{1}$ into
+$-\zeta_{1}$; composed with the shift $[1]$ it changes every $\sigma_{i}$
+into $-\sigma_{i}$ and keeps everything else.} The member $E_{0}^{6}$ with
+this Weil structure has trivial discriminant, where the Weil classes are
+algebraic on every member by Markman's theorem \cite{Mar25a,Mar25b}, so a
+convolution meeting the criterion here would have given a second proof of a
+known case rather than a new one. At $n=4$ the classes between pieces that
+differ in three coordinates and have adjacent shifts are again reached by
+nothing, in every convolution, and when the pieces $L_{\zeta}$ occupy two
+shifts, as in the explicit convolution, no term of $d_{E}$ leaves them, so
+that $\dim\Ext^{2}(E,E)\ge40960$ against the $104$ allowed
+(\Cref{thm:efourtwolevels}). With three consecutive shifts the
+differential reaches these classes, but only through cup products into the
+groups between the highest and the lowest shift, and at least $22528$ of
+them survive (\Cref{thm:efourthreelevels}). The groups of spread three, and
+those of spread two whose ratio moves every coordinate, one of them by $-1$,
+are untouched as well, in every convolution
+(\Cref{lem:efourspread}): the latter cross every cut between
+two shift values of one parity, and weigh at least $1024$ there
+(\Cref{thm:efourspreadtwo}); with one parity at a single shift, those of
+spread three, or of spread one beside a gap, survive in their turn
+(\Cref{thm:efourspreadthree}, \Cref{prop:efourgap}). Together they exclude
+every convolution whose pieces $L_{\zeta}$ have their shifts within five
+consecutive values (\Cref{cor:efourfive}). The two arrangements left within
+six values fall as well: with each parity at a single shift, at any odd
+distance, the diagonal classes at one of the two shifts can be reached only
+through all three multiples, and the multiples serve at most one of them
+(\Cref{lem:efourlonely}, \Cref{prop:efoursingle}); the interleaved shifts
+leave the groups of \Cref{thm:efourtwolevels} on a cut
+(\Cref{prop:efourpairs}). So every convolution whose shifts lie in six
+consecutive values fails (\Cref{cor:efoursix}). For wider arrangements the
+cup products still leave $484$ diagonal classes, so products of length at
+least three would have to remove $380$ (\Cref{prop:efourcupkernel}), and
+products of length three and four among the $L_{\zeta}$ pass every test of
+\Cref{thm:esixdiagonal}. Whether some convolution of the $131$ pieces whose
+shifts do not lie in six consecutive values, and whose parities do not each
+sit at one shift, meets the criterion at $n=4$ is open. Markman's theorem
+does not reach the eightfolds of Weil type, so such a convolution would give
+a new case.
+\Cref{fig:convolutions} shows the excess count and the
+surviving path, and \Cref{fig:diagonalbudget} the budget of diagonal
+classes.
+\end{remark}

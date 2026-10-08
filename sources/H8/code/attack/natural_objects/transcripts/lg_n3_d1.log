@@ -1,0 +1,2 @@
+n=3 d=1: graph rank on the full grid (343 line bundles) = 30, dim H_A = 30
+   subtori, twisted subtori, point consistent with the same Phi_n (up to sign, P -> -P): True

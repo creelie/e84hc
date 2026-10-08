@@ -1,0 +1,25 @@
+PASS Catalan dimensions 1,2,5,14
+PASS dim (V^(x)4)^G = 8
+character of S_4 on (V^(x)4)^G: {'e': Fraction(8, 1), '(12)': Fraction(0, 1), '(12)(34)': Fraction(8, 1), '(123)': Fraction(-1, 1), '(1234)': Fraction(0, 1)}
+PASS S_4-module (V^(x)4)^G = (4) + (1^4) + 3 (2,2)
+PASS the S_4-trivial part of (V^(x)4)^G is one-dimensional (the hyperdeterminant)
+  dim (wedge^0 V (x) wedge^4 V)^G = 1
+  dim (wedge^1 V (x) wedge^3 V)^G = 1
+  dim (wedge^2 V (x) wedge^2 V)^G = 4
+  dim (wedge^3 V (x) wedge^1 V)^G = 1
+  dim (wedge^4 V (x) wedge^0 V)^G = 1
+PASS Hodge classes of X x X of degree 4 over Q-bar: 1,1,4,1,1 in the Kunneth components
+PASS T4_0 = S_4-span of Hdg(XxX) in degree 4 has dimension 7 (exact) [got 7]
+PASS the symmetriser kills every generator, so Det is not in T4_0 (exact)
+PASS basis of T4_0 has 7 elements
+PASS 210 ways to contract two disjoint pairs among 8 legs
+  first contraction with nonzero hyperdeterminant component: ((3, 3), ((0, 4), (2, 6)))
+PASS a contraction of two Hodge classes of X x X (a composite of correspondences) has nonzero hyperdeterminant component (exact)
+PASS T4 generated = all of (V^(x)4)^G, dim 8 (rank mod p = 8 is a lower bound)
+PASS T6 generated = all of (V^(x)6)^G, dim 125 (rank mod p = 125 is a lower bound)
+
+12 checks passed, 0 failed
+
+real	3m26.240s
+user	3m24.896s
+sys	0m0.207s

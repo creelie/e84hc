@@ -1,0 +1,51 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "LaTeX source and verification code for the paper Algebraic Loci of Weil Classes on Abelian Varieties"
+abstract: "The complete LaTeX source of the paper of the same name, with its figures and the compiled PDF, together with exact-arithmetic verification code, a kernel-checked Lean 4 certificate of the finite arithmetic, Macaulay2 computations and the generators and TikZ sources of every figure."
+type: software
+license: MIT
+authors:
+  - family-names: Bhattacharjee
+    given-names: Deep
+    orcid: "https://orcid.org/0000-0003-0466-750X"
+keywords:
+  - Hodge conjecture
+  - Weil classes
+  - semiregularity
+  - secant sheaves
+  - abelian varieties
+  - Cohen-Macaulay supports
+  - Lean 4
+version: "5.0.1"
+doi: "10.5281/zenodo.23225483"
+date-released: "2026-10-07"
+repository-code: "https://github.com/creelie/H8"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22950275"
+    description: "Concept DOI of all versions"
+  - type: doi
+    value: "10.5281/zenodo.23225483"
+    description: "Version DOI of release v5.0.1"
+  - type: doi
+    value: "10.5281/zenodo.23221435"
+    description: "Version DOI of release v5.0.0"
+  - type: doi
+    value: "10.5281/zenodo.23197107"
+    description: "Version DOI of release v4.0.0"
+  - type: doi
+    value: "10.5281/zenodo.23093099"
+    description: "Version DOI of release v3.2.0"
+  - type: doi
+    value: "10.5281/zenodo.23078541"
+    description: "Version DOI of release v3.1.1"
+  - type: doi
+    value: "10.5281/zenodo.23047883"
+    description: "Version DOI of release v3.0.0"
+  - type: doi
+    value: "10.5281/zenodo.23038895"
+    description: "Version DOI of release v2.0.0"
+  - type: doi
+    value: "10.5281/zenodo.22950276"
+    description: "Version DOI of release v1.0.0"
+url: "https://doi.org/10.5281/zenodo.22950275"

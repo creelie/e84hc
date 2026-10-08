@@ -1,0 +1,108 @@
+%% fig_product.tex -- multiplicativity of the Weil class, and the loci it
+%% reaches inside the family.  Left: the K-line of each factor and of the
+%% product, drawn as a tower.  Right: dimensions of the known loci against the
+%% dimension of the family.
+\documentclass[tikz,border=9pt]{standalone}
+\usepackage{amsmath,amssymb}
+\usetikzlibrary{arrows.meta,calc,backgrounds,positioning}
+\input{palette}
+
+\tikzset{obl/.style={x={(1cm,0cm)}, y={(0.52cm,0.40cm)}, z={(0cm,1cm)}}}
+
+%% a thin K-line plate: corner (x0,y0,z0), width w, depth p, thickness t
+\newcommand{\plate}[7]{%
+  \begin{scope}[obl]
+    \fill[#7 top] (#1,#2,#3+#6) -- (#1+#4,#2,#3+#6) -- (#1+#4,#2+#5,#3+#6) -- (#1,#2+#5,#3+#6) -- cycle;
+    \fill[#7 front] (#1,#2,#3) -- (#1+#4,#2,#3) -- (#1+#4,#2,#3+#6) -- (#1,#2,#3+#6) -- cycle;
+    \fill[#7 side] (#1+#4,#2,#3) -- (#1+#4,#2+#5,#3) -- (#1+#4,#2+#5,#3+#6) -- (#1+#4,#2,#3+#6) -- cycle;
+    \draw[#7 edge] (#1,#2,#3) -- (#1+#4,#2,#3) -- (#1+#4,#2,#3+#6) -- (#1,#2,#3+#6) -- cycle;
+    \draw[#7 edge] (#1+#4,#2,#3) -- (#1+#4,#2+#5,#3) -- (#1+#4,#2+#5,#3+#6) -- (#1+#4,#2,#3+#6);
+    \draw[#7 edge] (#1,#2,#3+#6) -- (#1,#2+#5,#3+#6) -- (#1+#4,#2+#5,#3+#6);
+  \end{scope}}
+
+\tikzset{
+  f top/.style={fill=WTeal}, f front/.style={fill=WTeal!78!PTeal!35},
+  f side/.style={fill=WTeal!58!PTeal!45}, f edge/.style={draw=PTeal,line width=0.6pt},
+  p top/.style={fill=WOchre}, p front/.style={fill=WOchre!78!POchre!35},
+  p side/.style={fill=WOchre!58!POchre!45}, p edge/.style={draw=POchre,line width=0.8pt},
+}
+
+\begin{document}
+\begin{tikzpicture}[font=\footnotesize,text=PInk]
+
+%% =====================================================================
+%% Left panel: the two factors and the product.
+%% =====================================================================
+\begin{scope}
+  \plate{0}{0}{0}{2.5}{1.5}{0.32}{f}
+  \begin{scope}[obl]\coordinate (F1) at (0,0,0.16);\coordinate (F1r) at (2.5,0.75,0.16);\end{scope}
+  \node[anchor=east,align=right,text=PTeal] at ([xshift=-3mm]F1)
+    {$A_{1}$, type $(K,-1,n_{1})$\\[-1pt]{\scriptsize $\omega(A_{1})\in K\otimes\HW(A_{1})$}};
+
+  \plate{0}{0}{1.35}{2.5}{1.5}{0.32}{f}
+  \begin{scope}[obl]\coordinate (F2) at (0,0,1.51);\coordinate (F2r) at (2.5,0.75,1.51);\end{scope}
+  \node[anchor=east,align=right,text=PTeal] at ([xshift=-3mm]F2)
+    {$A_{2}$, type $(K,-1,n_{2})$\\[-1pt]{\scriptsize $\omega(A_{2})\in K\otimes\HW(A_{2})$}};
+
+  \plate{0}{0}{3.0}{2.5}{1.5}{0.46}{p}
+  \begin{scope}[obl]\coordinate (P) at (0,0,3.23);\coordinate (Pr) at (2.5,0.75,3.23);\end{scope}
+  \node[anchor=east,align=right,text=POchre] at ([xshift=-3mm]P)
+    {$A_{1}\times A_{2}$\\[-1pt]{\scriptsize type $(K,-1,n_{1}{+}n_{2})$}};
+
+  % the multiplication arrow up the right-hand side
+  \draw[-{Stealth[length=2.4mm]},POchre,line width=1.1pt]
+    ([xshift=7mm,yshift=-1mm]F1r) .. controls ([xshift=17mm,yshift=8mm]F1r) ..
+    ([xshift=7mm,yshift=-2mm]Pr);
+  \node[anchor=west,align=left,text=POchre,font=\scriptsize] at ([xshift=19mm,yshift=4mm]F2r)
+    {$\omega(A_{1})\,\omega(A_{2})=\omega(A_{1}\times A_{2})$};
+  \node[anchor=west,align=left,text=PInk,font=\scriptsize] at ([xshift=19mm,yshift=-4mm]F2r)
+    {$\bigwedge^{2n}_{K}(V_{1}\oplus V_{2})
+      =\bigwedge^{2n_{1}}_{K}V_{1}\otimes\bigwedge^{2n_{2}}_{K}V_{2}$};
+
+  \node[anchor=north,align=center,font=\scriptsize,text=PInk] at (1.6,-1.15)
+    {so algebraicity passes from the factors to the product,\\
+     and at $n=1$ the factors are divisors};
+\end{scope}
+
+%% =====================================================================
+%% Right panel: dimensions of the loci reached, against the family.
+%% =====================================================================
+\begin{scope}[shift={(10.7,-0.9)}]
+  \def\ux{0.62}   % x unit per n
+  \def\uy{0.072}  % y unit per dimension
+  \foreach \v in {10,20,30,40}
+    \draw[PRule!45,line width=0.3pt] (0,\v*\uy) -- (7.3*\ux,\v*\uy);
+  % the codimension of the quaternionic loci, shaded
+  \fill[PViolet!14] plot coordinates {(1*\ux,1*\uy) (2*\ux,4*\uy) (3*\ux,9*\uy) (4*\ux,16*\uy) (5*\ux,25*\uy) (6*\ux,36*\uy) (7*\ux,49*\uy)}
+    -- plot coordinates {(7*\ux,28*\uy) (6*\ux,21*\uy) (5*\ux,15*\uy) (4*\ux,10*\uy) (3*\ux,6*\uy) (2*\ux,3*\uy)} -- cycle;
+  \draw[PRule,-{Stealth[length=2mm]}] (0,0) -- (7.6*\ux,0) node[anchor=west,font=\scriptsize,text=PInk] {$n$};
+  \draw[PRule,-{Stealth[length=2mm]}] (0,0) -- (0,53*\uy);
+  \node[anchor=south,font=\scriptsize,text=PInk] at (0,53*\uy) {$\dim_{\mathbb{C}}$};
+  \foreach \n in {1,...,7}
+    \node[font=\tiny,text=PSlate,anchor=north] at (\n*\ux,-0.05) {\n};
+  \foreach \v in {0,10,20,30,40}
+    \node[font=\tiny,text=PSlate,anchor=east] at (-0.05,\v*\uy) {\v};
+
+  % family n^2
+  \draw[PInk,thick] plot coordinates {(1*\ux,1*\uy) (2*\ux,4*\uy) (3*\ux,9*\uy) (4*\ux,16*\uy) (5*\ux,25*\uy) (6*\ux,36*\uy) (7*\ux,49*\uy)};
+  \foreach \n/\v in {1/1,2/4,3/9,4/16,5/25,6/36,7/49} \fill[PInk] (\n*\ux,\v*\uy) circle (1.1pt);
+  \node[anchor=west,font=\scriptsize,text=PInk] at (7*\ux+0.12,49*\uy) {$\dim\mathcal{D}_{n,n}=n^{2}$};
+
+  % quaternionic n(n+1)/2
+  \draw[PViolet,thick] plot coordinates {(1*\ux,1*\uy) (2*\ux,3*\uy) (3*\ux,6*\uy) (4*\ux,10*\uy) (5*\ux,15*\uy) (6*\ux,21*\uy) (7*\ux,28*\uy)};
+  \foreach \n/\v in {1/1,2/3,3/6,4/10,5/15,6/21,7/28} \fill[PViolet] (\n*\ux,\v*\uy) circle (1.1pt);
+  \node[anchor=west,font=\scriptsize,text=PViolet] at (7*\ux+0.12,28*\uy) {quaternionic, $\tfrac{n(n+1)}{2}$};
+  \node[font=\scriptsize,text=PViolet] at (6.62*\ux,33*\uy) {$\binom{n}{2}$};
+
+  % product locus n
+  \draw[POchre,thick] plot coordinates {(1*\ux,1*\uy) (2*\ux,2*\uy) (3*\ux,3*\uy) (4*\ux,4*\uy) (5*\ux,5*\uy) (6*\ux,6*\uy) (7*\ux,7*\uy)};
+  \foreach \n/\v in {1/1,2/2,3/3,4/4,5/5,6/6,7/7} \fill[POchre] (\n*\ux,\v*\uy) circle (1.1pt);
+  \node[anchor=west,font=\scriptsize,text=POchre] at (7*\ux+0.12,7*\uy) {products of surfaces, $n$};
+
+  \node[anchor=north west,align=left,font=\scriptsize,text=PInk] at (0,-0.40)
+    {shaded: the codimension $\binom{n}{2}$ of a quaternionic locus;\\
+     from $n=2$ on every known locus is a proper subvariety};
+\end{scope}
+
+\end{tikzpicture}
+\end{document}

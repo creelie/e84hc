@@ -1,0 +1,464 @@
+"""Item (LXXV): very general complete intersections of Vandermonde type.
+
+Setting.  As in item (LXXIII), X = X_{d,r}(lambda) is a complete
+intersection of c = N - r diagonal hypersurfaces of degree d in P^N with
+coefficients of Vandermonde type, C = X_{d,1}(lambda) is the generalised
+Fermat curve with group H = mu_d^{N+1}/mu_d, and
+
+    H^r(X) = C eta  +  sum over orbits [a] of W_[a],
+    W_[a] = sum_{a' in [a]} wedge^r V_{a'},   dim V_a = #supp(a) - 2.
+
+For a of order two, V_a is the first cohomology of the hyperelliptic curve
+y^2 = prod_{i in S} (t - lambda_i), S = supp(a); for a of order three it is
+an eigenspace of the cyclic triple cover y^3 = prod (t - lambda_i)^{a_i}.
+
+Paper: thm:vgvandermonde in tex/sections/11b_closuregraph.tex.  The theorem
+rests on the monodromy of these curves: for order two, the squares of the
+Dehn twists along a chain of vanishing cycles, whose logarithms generate
+the symplectic Lie algebra; for order three, the theorem of Achter and Pries
+that the monodromy is the special unitary group.  The parts below are exact.
+
+  (A) the logarithms X_k = v_k <., v_k> of the squared Picard-Lefschetz
+      transvections along a chain v_1, ..., v_{2g} of vanishing cycles
+      preserve the intersection form and generate a Lie algebra of
+      dimension g(2g+1), that is sp_{2g}, for g = 1, ..., 7;
+  (B) the chain of 2g+1 vanishing cycles of a hyperelliptic curve of genus g
+      has an intersection matrix of rank 2g, its first 2g members a
+      unimodular one, for g = 1, ..., 12;
+  (C) the invariants of sp_{2g} in wedge^r of the standard representation
+      are the line of omega^{r/2} for r even and zero for r odd, g <= 4;
+      the invariants of sl_n in wedge^r are zero for 0 < r < n, n <= 6;
+  (D) the signature of an eigenspace of a cyclic triple cover against the
+      branch data of Achter and Pries: n_1 = 2p - q + 1, n_2 = 2q - p + 1;
+  (E) the determinant of the trace form of a hermitian lattice over
+      Z[zeta_3]: |det Tr(c v^T M w)| = 3^g N(c)^g det(M)^2, so a unimodular
+      polarisation with c = 1/(2 sqrt(-3)) has det M = +-2^g, and for g even
+      the discriminant (-1)^{g/2} det M is a norm;
+  (F) the dimension of the space of Hodge classes of degree r on the very
+      general member, by enumeration of the characters against the closed
+      formulas 1 + sum_{j > r/2} binom(N+1, 2j) (d = 2) and
+      1 + binom(N+1, r+2) binom(r+2, r/2+1) (d = 3);
+  (G) those dimensions against the Hodge numbers h^{r/2,r/2}: never larger,
+      and equal to them for a quadric, a Fermat cubic (c = 1) and two
+      quadrics of even dimension, where every class of type (p,p) is
+      algebraic.
+"""
+import itertools
+import math
+import sys
+from fractions import Fraction as Fr
+
+from diagonal_ci import hodge_middle_ci
+
+PASS, FAIL = [], []
+
+
+def check(name, ok, detail=""):
+    (PASS if ok else FAIL).append(name)
+    print(("  [PASS] " if ok else "  [FAIL] ") + name +
+          (("   " + detail) if detail else ""))
+
+
+# ---------------------------------------------------------------- linear algebra
+
+def rank_rows(rows):
+    """rank of a list of vectors with Fraction or int entries"""
+    M = [[Fr(x) for x in r] for r in rows]
+    rank, col = 0, 0
+    ncols = len(M[0]) if M else 0
+    while rank < len(M) and col < ncols:
+        piv = next((i for i in range(rank, len(M)) if M[i][col] != 0), None)
+        if piv is None:
+            col += 1
+            continue
+        M[rank], M[piv] = M[piv], M[rank]
+        p = M[rank][col]
+        M[rank] = [x / p for x in M[rank]]
+        for i in range(len(M)):
+            if i != rank and M[i][col] != 0:
+                f = M[i][col]
+                M[i] = [a - f * b for a, b in zip(M[i], M[rank])]
+        rank += 1
+        col += 1
+    return rank
+
+
+def det_int(M):
+    """determinant of a square matrix with Fraction entries"""
+    A = [[Fr(x) for x in r] for r in M]
+    n, d = len(A), Fr(1)
+    for c in range(n):
+        piv = next((i for i in range(c, n) if A[i][c] != 0), None)
+        if piv is None:
+            return Fr(0)
+        if piv != c:
+            A[c], A[piv] = A[piv], A[c]
+            d = -d
+        d *= A[c][c]
+        for i in range(c + 1, n):
+            f = A[i][c] / A[c][c]
+            A[i] = [a - f * b for a, b in zip(A[i], A[c])]
+    return d
+
+
+def matmul(A, B):
+    return [[sum(A[i][k] * B[k][j] for k in range(len(B)))
+             for j in range(len(B[0]))] for i in range(len(A))]
+
+
+def bracket(A, B):
+    AB, BA = matmul(A, B), matmul(B, A)
+    return [[a - b for a, b in zip(r, s)] for r, s in zip(AB, BA)]
+
+
+def flat(A):
+    return [x for r in A for x in r]
+
+
+def chain_form(m):
+    """intersection matrix of a chain of m curves: <v_k, v_{k+1}> = 1"""
+    C = [[0] * m for _ in range(m)]
+    for k in range(m - 1):
+        C[k][k + 1], C[k + 1][k] = 1, -1
+    return C
+
+
+def lie_closure(gens, limit):
+    """dimension of the Lie algebra generated by gens (matrices)"""
+    basis, vecs = [], []
+    for g in gens:
+        if rank_rows(vecs + [flat(g)]) > len(vecs):
+            basis.append(g)
+            vecs.append(flat(g))
+    frontier = list(basis)
+    while frontier and len(basis) < limit:
+        new = []
+        for A in frontier:
+            for B in gens:
+                Cm = bracket(A, B)
+                v = flat(Cm)
+                if any(v) and rank_rows(vecs + [v]) > len(vecs):
+                    basis.append(Cm)
+                    vecs.append(v)
+                    new.append(Cm)
+        frontier = new
+    return len(basis)
+
+
+# ---------------------------------------------------------------- (A), (B)
+
+def part_A():
+    dims, ok = [], True
+    for g in range(1, 8):
+        m = 2 * g
+        C = chain_form(m)
+        gens = []
+        for k in range(m):
+            # X_k x = <x, v_k> v_k with <x, y> = x^T C y in the basis v
+            X = [[0] * m for _ in range(m)]
+            for j in range(m):
+                X[k][j] = C[j][k]
+            gens.append(X)
+            # X_k preserves the form: X^T C + C X = 0
+            XT = [list(r) for r in zip(*X)]
+            S = [[a + b for a, b in zip(r, s)]
+                 for r, s in zip(matmul(XT, C), matmul(C, X))]
+            ok &= all(x == 0 for x in flat(S))
+            ok &= all(x == 0 for x in flat(matmul(X, X)))
+        dim = lie_closure(gens, g * (2 * g + 1) + 1)
+        dims.append(dim)
+        ok &= dim == g * (2 * g + 1)
+    check("(A) the logarithms of the squared transvections along a chain of "
+          "2g vanishing cycles preserve the form, square to zero and generate "
+          "sp_{2g}: dimension g(2g+1) for g = 1..7", ok, "dims %s" % dims)
+
+
+def part_B():
+    ok, rk = True, []
+    for g in range(1, 13):
+        C = chain_form(2 * g + 1)
+        r = rank_rows(C)
+        rk.append(r)
+        ok &= r == 2 * g
+        ok &= det_int(chain_form(2 * g)) == 1
+    check("(B) the 2g+1 vanishing cycles of a hyperelliptic curve of genus g: "
+          "intersection matrix of rank 2g, the first 2g unimodular, g = 1..12",
+          ok, "ranks %s" % rk)
+
+
+# ---------------------------------------------------------------- (C)
+
+def wedge_action(X, n, r):
+    """matrix of the derivation induced by X on wedge^r of Q^n"""
+    subsets = list(itertools.combinations(range(n), r))
+    index = {s: i for i, s in enumerate(subsets)}
+    M = [[Fr(0)] * len(subsets) for _ in subsets]
+    for col, s in enumerate(subsets):
+        for pos, j in enumerate(s):
+            for i in range(n):
+                if X[i][j] == 0:
+                    continue
+                t = list(s)
+                t[pos] = i
+                if len(set(t)) < r:
+                    continue
+                sign = 1
+                # sort t, tracking the sign of the permutation
+                t2 = t[:]
+                for a in range(len(t2)):
+                    for b in range(len(t2) - 1 - a):
+                        if t2[b] > t2[b + 1]:
+                            t2[b], t2[b + 1] = t2[b + 1], t2[b]
+                            sign = -sign
+                M[index[tuple(t2)]][col] += sign * X[i][j]
+    return M, subsets
+
+
+def common_kernel_dim(mats):
+    rows = [r for M in mats for r in M]
+    n = len(mats[0][0])
+    return n - rank_rows(rows)
+
+
+def part_C():
+    ok, rec = True, []
+    for g in range(1, 5):
+        n = 2 * g
+        C = chain_form(n)
+        gens = []
+        for k in range(n):
+            X = [[0] * n for _ in range(n)]
+            for j in range(n):
+                X[k][j] = C[j][k]
+            gens.append(X)
+        for r in range(0, n + 1):
+            if r == 0:
+                kd = 1
+            else:
+                mats = [wedge_action(X, n, r)[0] for X in gens]
+                kd = common_kernel_dim(mats)
+            rec.append(kd)
+            ok &= kd == (1 if r % 2 == 0 else 0)
+    # omega^{r/2} lies in the kernel: omega = sum of the dual form
+    check("(C) invariants of sp_{2g} in wedge^r: a line for r even, zero for "
+          "r odd, g = 1..4", ok)
+    ok2 = True
+    for n in range(2, 7):
+        gens = []
+        for i in range(n):
+            for j in range(n):
+                if i != j:
+                    E = [[0] * n for _ in range(n)]
+                    E[i][j] = 1
+                    gens.append(E)
+        for r in range(1, n + 1):
+            mats = [wedge_action(E, n, r)[0] for E in gens]
+            kd = common_kernel_dim(mats)
+            ok2 &= kd == (1 if r == n else 0)
+    check("(C) invariants of sl_n in wedge^r: zero for 0 < r < n and the line "
+          "of the top power for r = n, n = 2..6", ok2)
+
+
+# ---------------------------------------------------------------- (D), (E)
+
+def part_D():
+    ok, seen = True, 0
+    for n1 in range(0, 13):
+        for n2 in range(0, 13):
+            if (n1 + 2 * n2) % 3 or n1 + n2 < 3:
+                continue
+            p = Fr(2 * n1 + n2, 3) - 1
+            q = Fr(n1 + 2 * n2, 3) - 1
+            ok &= p.denominator == 1 and q.denominator == 1
+            ok &= n1 == 2 * p - q + 1 and n2 == 2 * q - p + 1
+            ok &= p + q == n1 + n2 - 2
+            seen += 1
+    check("(D) cyclic triple covers: an eigenspace of signature (p,q) has "
+          "n_1 = 2p - q + 1 branch points of exponent 1 and n_2 = 2q - p + 1 "
+          "of exponent 2, as in Achter-Pries", ok, "%d branch data" % seen)
+
+
+class Eis:
+    """a + b*zeta with zeta^2 = -1 - zeta, rational a, b"""
+
+    def __init__(self, a, b=0):
+        self.a, self.b = Fr(a), Fr(b)
+
+    def __add__(self, o):
+        o = o if isinstance(o, Eis) else Eis(o)
+        return Eis(self.a + o.a, self.b + o.b)
+
+    __radd__ = __add__
+
+    def __sub__(self, o):
+        o = o if isinstance(o, Eis) else Eis(o)
+        return Eis(self.a - o.a, self.b - o.b)
+
+    def __mul__(self, o):
+        o = o if isinstance(o, Eis) else Eis(o)
+        # (a + b z)(c + d z) = ac + (ad + bc) z + bd z^2, z^2 = -1 - z
+        return Eis(self.a * o.a - self.b * o.b,
+                   self.a * o.b + self.b * o.a - self.b * o.b)
+
+    __rmul__ = __mul__
+
+    def conj(self):
+        # conj(zeta) = zeta^2 = -1 - zeta
+        return Eis(self.a - self.b, -self.b)
+
+    def trace(self):
+        return 2 * self.a - self.b
+
+    def norm(self):
+        return self.a * self.a - self.a * self.b + self.b * self.b
+
+    def inv(self):
+        nm = self.norm()
+        c = self.conj()
+        return Eis(c.a / nm, c.b / nm)
+
+    def is_rational(self):
+        return self.b == 0
+
+
+SQRT_M3 = Eis(1, 2)            # 1 + 2 zeta = sqrt(-3)
+
+
+def det_eis(M):
+    n = len(M)
+    if n == 1:
+        return M[0][0]
+    total = Eis(0)
+    for j in range(n):
+        minor = [r[:j] + r[j + 1:] for r in M[1:]]
+        term = M[0][j] * det_eis(minor)
+        total = total + term if j % 2 == 0 else total - term
+    return total
+
+
+def part_E():
+    import random
+    rng = random.Random(41)
+    ok, cnt = True, 0
+    c = (SQRT_M3 * 2).inv()                     # 1/(2 sqrt(-3))
+    for g in (1, 2, 3, 4):
+        for _ in range(6):
+            M = [[None] * g for _ in range(g)]
+            for i in range(g):
+                M[i][i] = Eis(rng.randint(-5, 5))
+                for j in range(i + 1, g):
+                    z = Eis(rng.randint(-4, 4), rng.randint(-4, 4))
+                    M[i][j], M[j][i] = z, z.conj()
+            dM = det_eis(M)
+            ok &= dM.is_rational()
+            # Z-basis e_i, zeta e_i of Z[zeta]^g; B(v,w) = Tr(c v^T M conj(w))
+            basis = [(i, Eis(1)) for i in range(g)] + \
+                    [(i, Eis(0, 1)) for i in range(g)]
+            B = [[(c * u * M[i][j] * w.conj()).trace()
+                  for (j, w) in basis] for (i, u) in basis]
+            dB = det_int(B)
+            target = Fr(3) ** g * c.norm() ** g * dM.a ** 2
+            ok &= abs(dB) == target
+            cnt += 1
+    # a unimodular trace form forces det M = +-2^g; for g even 2^g is a norm
+    ok &= all((Fr(3) ** g * c.norm() ** g * Fr(2) ** (2 * g)) == 1
+              for g in range(1, 9))
+    ok &= all(Eis(2 ** (g // 2)).norm() == 2 ** g for g in range(2, 13, 2))
+    check("(E) hermitian lattices over Z[zeta_3]: |det Tr(c v^T M w)| = "
+          "3^g N(c)^g det(M)^2 on %d random lattices; with c = 1/(2 sqrt(-3)) "
+          "a unimodular form has det M = +-2^g = +-N(2^{g/2})" % cnt, ok)
+
+
+# ---------------------------------------------------------------- (F), (G)
+
+def characters(d, N):
+    for a in itertools.product(range(d), repeat=N + 1):
+        if sum(a) % d == 0 and any(a):
+            yield a
+
+
+def order(a, d):
+    o = 1
+    while any((o * x) % d for x in a):
+        o += 1
+    return o
+
+
+def h10(a, d):
+    return sum(Fr((-x) % d, d) for x in a) - 1
+
+
+def vg_count_enum(d, N, r):
+    """1 + number of Hodge classes in W_[a] at the very general member:
+    order two: one class per S with |S| >= r + 2; order three: the two
+    classes of W_[a] when dim V_a = r and h10 = r/2"""
+    total = 1
+    for a in characters(d, N):
+        s = sum(1 for x in a if x)
+        dimV = s - 2
+        o = order(a, d)
+        if o == 2 and dimV >= r:
+            total += 1
+        elif o == 3 and dimV == r and h10(a, d) == Fr(r, 2):
+            total += 1          # a and -a each give one complex class
+    return total
+
+
+def vg_count_formula(d, N, r):
+    if d == 2:
+        return 1 + sum(math.comb(N + 1, 2 * j)
+                       for j in range(r // 2 + 1, (N + 1) // 2 + 1))
+    return 1 + math.comb(N + 1, r + 2) * math.comb(r + 2, r // 2 + 1)
+
+
+def part_F():
+    ok, table = True, []
+    for d, N, r in [(2, N, r) for N in range(3, 10) for r in (2, 4, 6)
+                    if r <= N - 1] + \
+                   [(3, N, r) for N in range(3, 9) for r in (2, 4, 6)
+                    if r <= N - 1]:
+        e, f = vg_count_enum(d, N, r), vg_count_formula(d, N, r)
+        ok &= e == f
+        table.append((d, N, r, f))
+    check("(F) Hodge classes of degree r on the very general member, "
+          "enumerated over the characters = closed formula for d = 2, 3", ok,
+          "e.g. %s" % [t for t in table if t[2] == 4][:6])
+
+
+def part_G():
+    ok, rec = True, []
+    for d, N, r in [(2, N, r) for N in range(3, 10) for r in (2, 4, 6)
+                    if r <= N - 1] + \
+                   [(3, N, r) for N in range(3, 9) for r in (2, 4, 6)
+                    if r <= N - 1]:
+        c = N - r
+        h = hodge_middle_ci(d, N, c)
+        hpp = h[r // 2]
+        v = vg_count_formula(d, N, r)
+        ok &= v <= hpp
+        if c == 1:
+            ok &= v == hpp
+            rec.append(("c=1", d, r, v))
+        if d == 2 and c == 2:
+            ok &= v == hpp == N + 2
+            rec.append(("two quadrics", N, v))
+    check("(G) the very general count never exceeds h^{r/2,r/2}; it equals it "
+          "for quadrics, Fermat cubics (7, 21, 71) and two quadrics (N + 2)",
+          ok, "%s" % rec[:8])
+
+
+def main():
+    part_A()
+    part_B()
+    part_C()
+    part_D()
+    part_E()
+    part_F()
+    part_G()
+    print()
+    print("passed %d, failed %d" % (len(PASS), len(FAIL)))
+    return 0 if not FAIL else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

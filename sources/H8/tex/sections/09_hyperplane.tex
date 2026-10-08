@@ -1,0 +1,249 @@
+\section{The hyperplane obstruction}\label{sec:hyperplane}
+
+This section sets the constructions on abelian varieties aside and turns to
+the other classical approach: induction on the dimension of the variety
+through hyperplane sections. One places the variety in a family of hyperplane
+sections, uses the algebraicity of the Hodge locus to control where a class
+stays of type $(p,p)$, appeals to the conjecture in one dimension lower, and
+transports the resulting cycles back up. Each ingredient of such
+an argument is a theorem: the Lefschetz hyperplane theorem, hard Lefschetz,
+the algebraicity of the Hodge locus \cite{CDK95}, and the properness of
+relative Hilbert schemes. The question is whether they compose into an
+induction. They do not, for an elementary reason that applies to every
+argument of this shape, however the family of hypersurfaces is chosen.
+
+Throughout, $X$ is a smooth complex projective variety of dimension $d$,
+$j\colon Y\hookrightarrow X$ is a smooth hypersurface in the linear system of
+an ample divisor, and $L=c_{1}(\cO_{X}(Y))\in H^{2}(X,\QQ)$.
+
+\subsection{Two classical inputs}
+
+\begin{theorem}[Lefschetz hyperplane theorem]\label{thm:LHT}
+The restriction $j^{*}\colon H^{k}(X,\QQ)\to H^{k}(Y,\QQ)$ is an isomorphism
+for $k\le d-2$ and is injective for $k=d-1$.
+\end{theorem}
+
+This is the topological form of the theorem. The standard proof, due to
+Andreotti and Frankel, is by Morse theory on the smooth affine variety
+$X\smallsetminus Y$; see \cite[Chapter~1]{Voi03}.
+
+\begin{lemma}[Gysin and restriction]\label{lem:gysinrestrict}
+For every $k$ and every $x\in H^{k}(X,\QQ)$,
+\[
+  j_{*}j^{*}x=x\cup L .
+\]
+Moreover $j_{*}\colon H^{k}(Y,\QQ)\to H^{k+2}(X,\QQ)$ is injective for
+$k\ge d$.
+\end{lemma}
+
+\begin{proof}
+The first identity is the projection formula together with
+$j_{*}1=[Y]=L$. For the second, Poincar\'e duality on $X$ and on $Y$
+identifies $j_{*}\colon H^{k}(Y)\to H^{k+2}(X)$ with the dual of
+\[
+  j^{*}\colon H^{2d-k-2}(X)\longrightarrow H^{2(d-1)-k}(Y)=H^{2d-k-2}(Y),
+\]
+so $j_{*}$ is injective on $H^{k}(Y)$ if and only if this $j^{*}$ is
+surjective. By \Cref{thm:LHT} that $j^{*}$ is surjective whenever
+$2d-k-2\le d-2$, that is whenever $k\ge d$.
+\end{proof}
+
+\subsection{The middle degree}
+
+\begin{theorem}[Hyperplane obstruction]\label{thm:hyperplane}
+Let $d=2p$ and let $\alpha\in H^{2p}(X,\QQ)$ be primitive. Then
+$j^{*}\alpha=0$ for every smooth ample hypersurface $j\colon Y\hookrightarrow X$.
+\end{theorem}
+
+The primitive middle degree is where the Hodge conjecture is hard, and it is
+where the restriction map returns nothing. \Cref{fig:ladder} draws the
+Lefschetz decomposition of an abelian fourfold and the part of it that
+restriction annihilates. The proof takes three lines.
+
+\begin{proof}[Proof of \Cref{thm:hyperplane}]
+Let $d=2p$ and let $\alpha\in H^{2p}(X,\QQ)$ be primitive. A class of degree
+$k\le d$ is primitive when $L^{d-k+1}$ annihilates it, so in the middle degree
+primitivity means $L\alpha=0$, that is,
+$H^{d}_{\mathrm{prim}}(X,\QQ)=\ker\bigl(L\colon H^{d}(X,\QQ)\to H^{d+2}(X,\QQ)\bigr)$.
+By \Cref{lem:gysinrestrict},
+\[
+  j_{*}\bigl(j^{*}\alpha\bigr)=\alpha\cup L=0 .
+\]
+The class $j^{*}\alpha$ lies in $H^{d}(Y,\QQ)$, on which $j_{*}$ is injective
+by the case $k=d$ of \Cref{lem:gysinrestrict}. Hence $j^{*}\alpha=0$.
+\end{proof}
+
+\begin{corollary}[Blindness in the middle degree]\label{cor:blind}
+Let $d=2p$ and let $\alpha,\beta\in H^{2p}(X,\QQ)$ be primitive Hodge classes.
+Then $j^{*}\alpha=j^{*}\beta=0$ for every smooth ample hypersurface $Y$. In
+particular no property of the restricted classes distinguishes $\alpha$ from
+$\beta$, and no statement about Hodge classes on hypersurfaces of $X$, however
+strong, carries any information about the primitive middle cohomology of $X$.
+\end{corollary}
+
+\begin{remark}[The size of what is lost]\label{rem:sizeofloss}
+The primitive middle cohomology is not a small correction term. When $X$ is
+a smooth hypersurface of degree $m$ in $\PP^{d+1}$, the dimension of
+$H^{d}_{\mathrm{prim}}(X,\QQ)$ grows like $m^{d+1}$; and when $d=2p$, the
+Hodge conjecture for $X$ in degree $2p$ is the statement that the Hodge
+classes in $H^{d}_{\mathrm{prim}}(X,\QQ)$ are algebraic, since the remaining
+Hodge classes of degree $2p$ are the multiples of $L^{p}$. By
+\Cref{cor:blind}, all of this cohomology is invisible to hyperplane
+restriction.
+\end{remark}
+
+\subsection{Below the middle degree}
+
+Below the middle degree the restriction map is injective, and in degrees at
+most $d-2$ it is an isomorphism, so a class can be transported downwards. The
+difficulty moves to the return trip.
+
+\begin{definition}[Lefschetz standard conjecture]\label{def:Bconj}
+For a smooth projective variety $X$ of dimension $d$ with ample class $L$,
+hard Lefschetz gives isomorphisms
+$L^{d-k}\colon H^{k}(X,\QQ)\to H^{2d-k}(X,\QQ)$, and makes $H^{*}(X,\QQ)$
+a representation of $\mathfrak{sl}_{2}$ in which $L$ raises the degree by
+$2$ and $H$ acts on $H^{k}$ by $k-d$. Let $\Lambda$ denote the unique
+endomorphism of degree $-2$ with $[L,\Lambda]=H$. The Lefschetz standard
+conjecture $B(X)$ asserts that $\Lambda$ is induced by an algebraic cycle on
+$X\times X$; this is equivalent to Kleiman's formulations \cite{Kle68,Kle94}.
+\end{definition}
+
+\begin{lemma}[$\Lambda$ undoes $L$ on primitive classes]\label{lem:LambdaL}
+Let $\alpha\in H^{k}(X,\QQ)$ be primitive with $k\le d$. Then
+$\Lambda L\alpha=(d-k)\,\alpha$.
+\end{lemma}
+
+\begin{proof}
+This follows from the relation $[L,\Lambda]=H$, where $H$ acts on $H^{k}$ by
+the scalar $k-d$, and from $\Lambda\alpha=0$, which holds because the
+primitive classes of degree at most $d$ are the lowest weight vectors of the
+$\mathfrak{sl}_{2}$-representation. Explicitly,
+$\Lambda L\alpha=L\Lambda\alpha-[L,\Lambda]\alpha=0-(k-d)\alpha
+=(d-k)\alpha$.
+\end{proof}
+
+\begin{theorem}[The return trip]\label{thm:returntrip}
+Let $2p\le d-2$, so that $j^{*}\colon H^{2p}(X,\QQ)\to H^{2p}(Y,\QQ)$ is an
+isomorphism. If $j^{*}\alpha$ is algebraic on $Y$, then $L\alpha$ is algebraic
+on $X$. The implication ``$L\alpha$ algebraic $\Rightarrow$ $\alpha$
+algebraic'', asked of all smooth projective $X$ and all Hodge classes
+$\alpha$, is
+equivalent to the Lefschetz standard conjecture.
+\end{theorem}
+
+\begin{proof}[Proof of \Cref{thm:returntrip}]
+Let $2p\le d-2$, so $j^{*}\colon H^{2p}(X,\QQ)\to H^{2p}(Y,\QQ)$ is an
+isomorphism by \Cref{thm:LHT}. If $j^{*}\alpha=\cl(W)$ for some
+$W\in\CH^{p}(Y)_{\QQ}$, then $j_{*}W\in\CH^{p+1}(X)_{\QQ}$ and
+\[
+  \cl(j_{*}W)=j_{*}j^{*}\alpha=L\alpha
+\]
+by \Cref{lem:gysinrestrict} and the compatibility of the cycle class map with
+proper push-forward, so $L\alpha$ is algebraic.
+
+For the second statement, suppose $B(X)$ holds and $\alpha$ is primitive of
+degree $2p<d$ with $L\alpha$ algebraic. Then $\Lambda$ is induced by an algebraic correspondence, hence
+carries algebraic classes to algebraic classes, and
+$\alpha=(d-2p)^{-1}\Lambda(L\alpha)$ by \Cref{lem:LambdaL}, so $\alpha$ is
+algebraic. The same holds without primitivity. Write $P^{m}$ for the
+primitive part of $H^{m}(X,\QQ)$. Iterating the relation $[L,\Lambda]=H$ as in
+the proof of \Cref{lem:LambdaL} shows that $\Lambda L$ acts on the summand
+$L^{i}P^{2p-2i}$ of the Lefschetz decomposition of $H^{2p}(X,\QQ)$ by the
+scalar $(i+1)(d-2p+i)$, which is nonzero because $2p<d$. So $\Lambda L$ is
+invertible on $H^{2p}(X,\QQ)$, its inverse there is a polynomial in
+$\Lambda L$ with rational coefficients, and
+$\alpha=(\Lambda L)^{-1}\Lambda(L\alpha)$ is algebraic.
+
+Conversely, suppose that for every smooth projective variety and every Hodge
+class $\alpha$ on it the algebraicity of $L\alpha$ implies that of $\alpha$.
+Applied repeatedly, this shows that on every smooth projective variety of
+dimension $e$ the hard Lefschetz isomorphisms
+$L^{e-k}\colon H^{k}\to H^{2e-k}$, $k\le e$, carry the algebraic classes of
+degree $k$ onto those of degree $2e-k$, since the preimage of an algebraic
+class under $L^{e-k}$ is a Hodge class. This is Kleiman's conjecture $A$ for
+every smooth projective variety, and $A$ for $X\times X$ implies $B(X)$
+\cite{Kle68,Kle94}.
+\end{proof}
+
+Together the two theorems give the following.
+
+\begin{corollary}[No dimensional induction through hyperplane sections]%
+\label{cor:noinduction}
+Let $X$ be smooth projective of dimension $d$ and let $\alpha\in\Hdg^{p}(X)$.
+An argument that deduces the algebraicity of $\alpha$ from the Hodge
+conjecture for smooth ample hypersurfaces of $X$, using only $j^{*}$ and
+$j_{*}$, returns no information when $2p=d$ and $\alpha$ is primitive, and
+otherwise establishes the algebraicity of $L\alpha$ rather than of $\alpha$.
+\end{corollary}
+
+\begin{proof}[Proof of \Cref{cor:noinduction}]
+Suppose the argument uses only $j^{*}$ and $j_{*}$ to relate classes on $X$ to
+classes on smooth ample hypersurfaces $Y\subset X$. First let $2p=d$ with
+$\alpha$ primitive. Then $j^{*}\alpha=0$ by \Cref{thm:hyperplane}. A cycle on
+$Y$ of codimension $p-1$ has its class in $H^{d-2}(Y,\QQ)$, which is
+$j^{*}H^{d-2}(X,\QQ)$ by \Cref{thm:LHT}, so by \Cref{lem:gysinrestrict} its
+image under $j_{*}$ lies in $L\cdot H^{d-2}(X,\QQ)$. By the Lefschetz
+decomposition this subspace meets the primitive part of $H^{d}(X,\QQ)$ only
+in $0$, so $j_{*}$ produces $\alpha$ only when $\alpha=0$, and no conclusion
+about $\alpha$ is available. In the remaining cases the best that
+$j_{*}j^{*}$ produces is $L\alpha$, and \Cref{thm:returntrip} identifies the
+passage from $L\alpha$ to $\alpha$ with the Lefschetz standard conjecture.
+\end{proof}
+
+\subsection{Two gaps in inductive arguments}
+
+In practice an induction of this shape breaks at one of two steps, each of
+which looks harmless.
+
+\begin{remark}[The dimension bookkeeping]\label{rem:dimensionbookkeeping}
+A common formulation places $X$ in a Lefschetz pencil by choosing a generic
+pencil $\{X_{t}\}_{t\in\PP^{1}}$ of hyperplane sections \emph{of $X$} and then
+setting $X=X_{t_{0}}$ for some $t_{0}$. The two requirements are
+incompatible: the members of a pencil of hyperplane sections of $X$ have
+dimension $d-1$, so none of them is $X$. An induction that reads
+$\dim X_{t}=d-1<d$ in its inductive step, and $X_{t_{0}}=X$ when it transports
+the resulting cycle back, is using both readings of the same symbol.
+
+Neither way of resolving the ambiguity rescues the argument. If $X$ is
+required to be a member of the pencil, then the pencil lives in an ambient
+variety of dimension $d+1$ and every member has dimension $d$; the inductive
+parameter does not decrease and the induction is circular. If instead
+$\dim X_{t}=d-1$, then the class $\alpha$ lives on $X$ and not on the members,
+and the only available transports are $j^{*}$ and $j_{*}$. This is the
+situation of \Cref{thm:hyperplane,thm:returntrip}, and \Cref{cor:noinduction}
+applies.
+\end{remark}
+
+\begin{remark}[Pointwise existence is not a family]\label{rem:pointwise}
+The second gap appears in arguments that produce cycles fibrewise and then
+assemble them. Suppose an inductive hypothesis furnishes, for each $t$ in the
+base $S$ of a family, a cycle $Z_{t}$ with a prescribed class. It does not
+follow that the Hilbert polynomial $t\mapsto P_{Z_{t}}$ is constructible, or
+semicontinuous, or takes finitely many values. Those are theorems about a flat
+family, and the input here is a bare existence statement at each point with
+no coherence between points. Without constructibility there is no section of
+a relative Hilbert scheme over a dense open subset, and therefore nothing for
+the valuative criterion of properness to extend. The step looks safe because
+the relative Hilbert scheme of each fixed Hilbert polynomial is proper over
+$S$; but properness extends a section that exists over a punctured curve, and
+supplies no section where none is given.
+\end{remark}
+
+\begin{figure}[htbp]
+\centering
+  \includegraphics[width=\textwidth]{fig_ladder}
+\caption{The Betti numbers $\binom{8}{k}$ of an abelian fourfold, drawn as
+prisms and divided according to the Lefschetz decomposition
+$H^{k}=\bigoplus_{i}L^{i}P^{k-2i}$: the primitive part $P^{k}$ is drawn dark,
+and each image $L^{i}P^{k-2i}$ is drawn light in the colour of $P^{k-2i}$. The
+arcs are the hard Lefschetz isomorphisms $L^{4-k}\colon H^{k}\to H^{8-k}$.
+Below the middle degree the restriction $j^{*}$ to a smooth ample hypersurface
+is injective and a class descends, but the return trip $j_{*}j^{*}$ multiplies
+by $L$, and recovering the class is the Lefschetz standard conjecture; above
+the middle degree a class is carried to the lower half by an arc. The
+primitive middle cohomology $P^{4}$, of dimension $70-28=42$, is annihilated
+by $j^{*}$ (\Cref{thm:hyperplane}), and neither an arc nor a restriction
+reaches it.}
+\label{fig:ladder}
+\end{figure}

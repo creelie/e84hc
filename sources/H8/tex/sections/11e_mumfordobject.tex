@@ -1,0 +1,1160 @@
+\subsection{Objects, reduction modulo $p$ and the motivic group}
+\label{ssec:mumfordobject}
+
+\Cref{thm:mumfordnumerical} reduces the semiregularity route to one object at
+one CM point. We first derive what any object with the right Chern character
+must satisfy, whether or not it is semiregular: no sequence of standard
+operations produces it from line bundles; it extends along no first order
+deformation of $D^{b}(Y)$ other than the direction of the curve; if it is
+semiregular, it splits only into summands with no $\Ext^{2}$ between them;
+and its self-extensions are large in every degree, with an odd part that the
+Euler characteristic forces beyond what Hochschild cohomology supplies. We
+then turn to reduction modulo $p$. By Li's proof of the Tate conjecture for
+powers of abelian fourfolds over finite fields, the classes are represented
+by cycles at every closed point of every reduction of the curve, and the
+target is equivalent to a bound on those cycles on a Zariski dense set of
+closed points. Finally, the motivic group of $X$ is one of four groups, and
+the kinds of algebraic classes known on products of $X$ with other abelian
+varieties generate no exceptional class. None of this constructs such an
+object or proves the target.
+
+\begin{lemma}[The contraction ranks are symmetric]\label{lem:rankduality}
+Let $A$ be an abelian variety of dimension $g$ and $c\in H^{*}(A,\CC)$ a class
+each of whose components has Hodge type $(p,p)$ for some $p$. For $k\ge0$ put
+$r_{k}(c)=\dim\bigl(HT^{k}(A)\lrcorner\,c\bigr)$, with the action of
+\Cref{setup:hh}. Then $r_{k}(c)=r_{g-k}(c)$ for $0\le k\le g$, and
+$r_{k}(c)=0$ for $k>g$.
+\end{lemma}
+
+\begin{proof}
+Write $H^{1,0}=H^{1,0}(A)$ and $A'=H^{0,1}(A)$, both of dimension $g$, so
+that $H^{*}(A,\CC)=\bigwedge^{*}H^{1,0}\otimes\bigwedge^{*}A'$ and
+$HT^{*}(A)=\bigwedge^{*}(A'\oplus T)$ with $T=(H^{1,0})^{\vee}$. Fix a
+generator of $\bigwedge^{g}A'$ and let
+$\star\colon\bigwedge^{q}A'\to\bigwedge^{g-q}A'^{\vee}$ send $\eta$ to
+$\zeta\mapsto\eta\wedge\zeta$. Under $\Phi=\mathrm{id}\otimes\star$, wedging
+with $z\in A'$ becomes, up to a sign fixed on each bigraded piece, contraction
+with $z$ on the second factor, while $T$ still contracts the first. So $\Phi$
+identifies the action of $HT^{*}(A)$ with the action of
+$\bigwedge^{*}U^{\vee}$ by interior products on $\bigwedge^{*}U$, where
+$U=H^{1,0}\oplus A'^{\vee}$ has dimension $2g$, up to signs that do not change
+ranks. A class of type $(p,p)$ goes to
+$\bigwedge^{p}H^{1,0}\otimes\bigwedge^{g-p}A'^{\vee}\subset\bigwedge^{g}U$,
+so $\eta=\Phi(c)$ lies in the middle degree whatever the $p$ of its
+components. Hence $r_{k}(c)$ is the rank of
+$\bigwedge^{k}U^{\vee}\to\bigwedge^{g-k}U$, $x\mapsto\iota_{x}\eta$, which is
+zero for $k>g$. Its transpose for the natural pairings is
+$\bigwedge^{g-k}U^{\vee}\to\bigwedge^{k}U$, $y\mapsto\pm\iota_{y}\eta$,
+because $\langle\iota_{x}\eta,y\rangle=\langle\eta,x\wedge y\rangle
+=\pm\langle\iota_{y}\eta,x\rangle$. A map and its transpose have the same
+rank.
+\end{proof}
+
+\begin{theorem}[The self-extensions of an object with an exceptional Chern
+character]\label{thm:mumfordprofile}
+Let $c\in C$ and $Y=X_{c}\times X_{c}$, and write
+$e_{k}=\dim\Ext^{k}(E,E)$ for a perfect complex $E$ on $Y$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item For every $E$ and every $k$, $e_{k}\ge r_{k}(\ch E)$ and
+  $e_{k}=e_{8-k}$.
+\item For a rational exceptional class $\omega=\omega_{a}$ with
+  $L_{0}(a)\ne0$: $r_{0}=r_{8}=1$, $r_{1}=r_{7}=16$ and $r_{2}=r_{6}=119$.
+\item Let $\omega$ be a rational exceptional class and $\ch(E)=N\omega$
+  with $N\ne0$. Then
+  \[
+    e_{1}+e_{3}=e_{0}+e_{2}+\tfrac12e_{4}
+      +\sum_{j\ge1}(-1)^{j}e_{-j}.
+  \]
+  If $\Ext^{<0}(E,E)=0$, for instance if $E$ is a sheaf, then
+  $\sum_{k\ \mathrm{odd}}e_{k}=\sum_{k\ \mathrm{even}}e_{k}$, and
+  $e_{1}+e_{3}\ge120+\frac12e_{4}$ when $L_{0}(a)\ne0$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) The identity $\sigma_{E}\circ\operatorname{ev}_{E}=(\,\cdot\,)\lrcorner
+\ch(E)$ of \Cref{setup:hh} holds in every degree, so the kernel of
+$\operatorname{ev}_{E}$ on $HT^{k}(Y)$ lies in the annihilator of $\ch(E)$,
+and the image of $HT^{k}(Y)$ in $\Ext^{k}(E,E)$ has dimension at least
+$r_{k}(\ch E)$. Serre duality with the trivial canonical bundle gives
+$e_{k}=e_{8-k}$.
+
+(ii) $r_{0}=1$ because $\omega\ne0$, and $r_{2}=119$ is
+\Cref{thm:mumfordrigid}(ii). If $w\in HT^{1}(Y)$ annihilates $\omega$, so does
+$w'\wedge w$ for every $w'\in HT^{1}(Y)$, since the annihilator is a left
+ideal; for $w\ne0$ these products span a space of dimension $15$, which cannot
+lie in $\Ann_{HT^{2}}(\omega)=\CC\kappa$. So $r_{1}=16$, and
+\Cref{lem:rankduality} gives $r_{8},r_{7},r_{6}$.
+
+(iii) Since $\ch(E)$ has only a component in $H^{4}$, $\ch(E^{\vee})\ch(E)$
+lies in $H^{8}(Y)$ and $\chi(E,E)=\int_{Y}\ch(E^{\vee})\ch(E)=0$, the Todd
+class being trivial. By (i) and Serre duality, which also pairs
+$\Ext^{-j}$ with $\Ext^{8+j}$,
+\[
+  0=\chi(E,E)=2(e_{0}-e_{1}+e_{2}-e_{3})+e_{4}
+  +2\sum_{j\ge1}(-1)^{j}e_{-j},
+\]
+which is the displayed identity. With no negative extensions the odd and even
+parts are equal, and $e_{0}\ge1$, $e_{2}\ge119$ by (i) and (ii) when
+$L_{0}(a)\ne0$.
+\end{proof}
+
+\begin{proposition}[Divisor classes do not reach the exceptional classes]
+\label{prop:mumforddivisor}
+Let $t\in C$ and let $\omega$ be a rational exceptional class. Then $\omega_{t}$
+is not in the $\QQ$-span of products of divisor classes of $X_{t}\times
+X_{t}$: that span meets the rational Hodge classes of $H^{2}\otimes H^{2}$
+exactly in the classes with $\alpha\in\QQ$. Consequently no perfect complex
+whose Chern character lies in the subring generated by divisor classes, in
+particular no bounded complex of direct sums of line bundles, has
+$\ch(E)=N\omega$ with $N\ne0$. At a CM point $c$ the fourfold $X_{c}$ has eight
+Hodge classes in $H^{4}$, of which the products of divisor classes span six.
+\end{proposition}
+
+\begin{proof}
+At a point with Hodge group $G$, the divisor classes of $X_{t}\times X_{t}$ are
+the three classes of \Cref{prop:mumfordproduct}(ii), all invariant under
+$\Sp(V,\psi)$, and so are their products; the $\Sp(V,\psi)$-invariant part of
+$H^{2}\otimes H^{2}$ is spanned by $\pi_{0}$ and $\pi_{12}+\pi_{13}+\pi_{23}$,
+the classes with $a_{1}=a_{2}=a_{3}$. At a CM point the Hodge group is a
+maximal torus of $G$ (proof of \Cref{thm:mumfordcm}), so the Hodge classes
+are the monomials of weight zero. The proof of \Cref{prop:cmsource}(ii)
+counts them: $16$ divisor classes $e^{(i)}_{w}e^{(j)}_{-w}$, $132$ Hodge
+classes in degree four, of which the products of divisor classes span $100$,
+and modulo that span
+$\omega_{a}\equiv\frac12\bigl((a_{2}-a_{3})u_{12}+(a_{1}-a_{3})u_{13}
++(a_{1}-a_{2})u_{23}\bigr)$ with $u_{12},u_{13},u_{23}$ linearly independent.
+So the span meets that of the four $\pi$ in exactly the classes with
+$a_{1}=a_{2}=a_{3}$. For a rational class these
+coordinates are the conjugates of $\alpha$, which by \Cref{lem:conjugates} are
+equal only if $\alpha\in\QQ$. The Chern character of a complex in the subring
+generated by divisor classes has its component in $H^{4}$ in the span of
+products of two divisor classes, which excludes $N\omega$. For $X_{c}$ itself
+the monomials of weight zero in $H^{4}$ are the six products
+$e_{w}e_{-w}e_{w'}e_{-w'}$ over two opposite pairs, which are products of
+divisor classes, and the two tetrahedron monomials.
+\end{proof}
+
+At a CM point the Hodge classes of $X_{c}$ in $H^{4}$ that are not products
+of divisor classes are among the classes that the proof of
+\Cref{thm:mumfordcm} pulls back along homomorphisms $X_{c}\times X_{c}\to
+X_{c}$; they are algebraic by Markman's theorem \cite{Mar25a}. Li proves,
+independently and more generally, that every Hodge class on every power of
+every complex CM abelian fourfold is algebraic \cite[Theorem~1.3]{Li26}, which
+gives \Cref{thm:mumfordcm} for every power $X_{c}^{n}$ and not only for the
+square.
+
+By \Cref{prop:mumforddivisor}, an object with $\ch(E)=N\omega$ cannot have
+its Chern character in the subring generated by divisor classes, so it cannot
+be assembled from line bundles alone. The next theorem shows that no sequence
+of the standard operations of the derived category, applied to line bundles
+on powers of $X_{t}$, gets any further.
+
+\begin{theorem}[Objects generated by line bundles]\label{thm:lefschetzclosure}
+Let $t\in C$, $X=X_{t}$, and let $L(X)\subseteq\Sp(V,\psi)$ be the Lefschetz
+group of $X$, the centraliser of $\End^{0}(X)$ in $\Sp(V,\psi)$. Let
+$\mathcal{A}$ be the class of abelian varieties isogenous to a power of $X$;
+through an isogeny $X^{n}\to B$ the group $L(X)$ acts diagonally on
+$H^{*}(B,\QQ)$, and the action does not depend on the isogeny. Let
+$\mathcal{L}$ be the smallest class of objects of the categories
+$D^{b}(B)$, $B\in\mathcal{A}$, that contains the line bundles and is closed
+under shifts, cones, derived tensor products, derived duals, translations,
+the functors $Lf^{*}$ and $Rf_{*}$ for homomorphisms $f$ between members of
+$\mathcal{A}$, and the Fourier--Mukai functors $\Phi_{K}\colon D^{b}(B)\to
+D^{b}(B')$ with kernel $K\in\mathcal{L}$ on $B\times B'$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item Every object of $\mathcal{L}$ has an $L(X)$-invariant Chern character.
+\item $L(X)=\Sp(V,\psi)$ if $t$ is not a CM point, and $L(X)$ is a maximal
+  torus of $\Sp(V,\psi)$ if it is. In both cases the $L(X)$-invariant classes
+  on $X\times X$ form the subring generated by divisor classes, of dimensions
+  $1,3,6,10,15,10,6,3,1$, respectively $1,16,100,304,454,304,100,16,1$, in
+  the degrees $0,2,\dots,16$.
+\item No rational exceptional class $\omega_{t}$ is $L(X)$-invariant. Hence
+  for no object $E\in\mathcal{L}$ on $X\times X$ and no $N\ne0$ is
+  $\ch(E)-N\omega_{t}$ invariant under $L(X)$; in particular
+  $\ch(E)\ne N\omega_{t}$.
+\item The $\Sp(V,\psi)$-module generated by $\pi_{12}-\pi_{13}$ is
+  irreducible, of highest weight $2\varpi_{2}$ and dimension $308$, and it
+  meets the span of the four $\pi$ in the plane of the classes with
+  $a_{0}=0$ and $a_{1}+a_{2}+a_{3}=0$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) Two isogenies $X^{n}\to B$ differ by an element of $\End^{0}(X^{n})=
+M_{n}(\End^{0}(X))$, which commutes with $L(X)$ acting diagonally, so the
+action is well defined. For the same reason a homomorphism $f$ between members
+of $\mathcal{A}$ is $L(X)$-equivariant on $H^{1}$, so $f^{*}$ is equivariant
+on $H^{*}$, and so is $f_{*}$, which is $f^{*}$ conjugated by Poincar\'e
+duality, since $L(X)\subseteq\SL(V)$ fixes the orientation classes.
+Translations act trivially on cohomology. The Chern character is additive on
+distinguished triangles and multiplicative on derived tensor products,
+$\ch(E^{\vee})=\sum_{i}(-1)^{i}\ch_{i}(E)$, $\ch(Lf^{*}E)=f^{*}\ch(E)$, and
+$\ch(Rf_{*}E)=f_{*}\ch(E)$ by the Grothendieck--Riemann--Roch theorem
+\cite[Theorem~15.2]{Ful98}, the Todd class of an abelian variety being $1$;
+and $\Phi_{K}=Rp_{2*}(p_{1}^{*}(\,\cdot\,)\otimes^{L}K)$. So the objects with
+$L(X)$-invariant Chern character form a class with all the closure
+properties, and it remains to see that it contains the line bundles, that is,
+that $c_{1}(\mathcal{O}(D))$ is $L(X)$-invariant. Pulled back along an
+isogeny, which is injective on rational cohomology, $c_{1}$ becomes a Hodge
+class of degree two on some $X^{n}$, an element of the invariants of the
+Hodge group in ${\textstyle\bigwedge^{2}}(V^{\vee}\otimes\QQ^{n})=
+{\textstyle\bigwedge^{2}}V^{\vee}\otimes S^{2}\QQ^{n}\oplus S^{2}V^{\vee}
+\otimes{\textstyle\bigwedge^{2}}\QQ^{n}$. If $t$ is not a CM point, the Hodge
+group is $G$, whose invariants in ${\textstyle\bigwedge^{2}}V$ are the multiples of $\psi$
+and in $S^{2}V$ are zero, since every summand of $S^{2}(V_{1}\otimes V_{2}
+\otimes V_{3})$ contains a factor $S^{2}V_{i}$; so the Hodge classes of degree
+two are $\Sp(V,\psi)$-invariant. If $t$ is a CM point, a monomial of degree two
+in a weight basis has weight zero for the Hodge torus exactly when its two
+weights are opposite, and then it has weight zero for $L(X)$, by the
+description in (ii).
+
+(ii) If $t$ is not a CM point, $\End^{0}(X)=\QQ$ and $L(X)=\Sp(V,\psi)$. At a
+CM point $\End^{0}(X)\otimes\CC$ is the algebra of diagonal matrices in a
+weight basis (proof of \Cref{thm:mumfordcm}), and $\psi$ pairs each weight
+with its opposite only, so $L(X)_{\CC}$ is the torus of diagonal matrices
+$\operatorname{diag}(\lambda_{w})$ with $\lambda_{w}\lambda_{-w}=1$, of rank
+four. For $t$ not CM, the first fundamental theorem for $\Sp(V,\psi)$
+\cite[Chapter~5]{GW09} shows that its invariants in
+${\textstyle\bigwedge^{*}}(V\otimes\QQ^{2})$ are spanned by the products of
+the three quadratic invariants, which are the divisor classes. Their
+dimensions follow from the skew Cauchy formula
+${\textstyle\bigwedge^{2m}}(V\otimes\QQ^{2})=\bigoplus_{\lambda}S_{\lambda}V
+\otimes S_{\lambda'}\QQ^{2}$, over the partitions $\lambda=(2^{r},1^{s})$ of
+$2m$ with at most two columns, and the rule that $S_{\lambda}V$ contains the
+trivial representation of $\Sp(V,\psi)$, then once, exactly when both columns
+of $\lambda$ have even length at most $8$ \cite{GW09}: the invariants of
+degree $2m$ have dimension $\sum(s+1)$, over the even $r,s\ge0$ with
+$2r+s=2m$ and $r+s\le8$, which is $1,3,6,10,15,10,6,3,1$ for
+$m=0,\dots,8$. At a CM point the invariants are spanned by the
+monomials of weight zero for $L(X)$; a set of weights $\pm e_{j}$ with sum
+zero is a union of opposite pairs, so each such monomial is, up to sign, a
+product of monomials of degree two and weight zero, which are divisor
+classes. For each opposite pair $\{w,-w\}$ the four vectors
+$e^{(1)}_{\pm w}$, $e^{(2)}_{\pm w}$ give one monomial of weight zero in
+degree $0$, four in degree $2$ and one in degree $4$, so the numbers of these
+monomials are the coefficients of $(1+4y+y^{2})^{4}$.
+
+(iii) If $t$ is not a CM point, the $\Sp(V,\psi)$-invariant combinations of the
+$\pi$ are those with $a_{1}=a_{2}=a_{3}$ (\Cref{prop:mumforddivisor}), and
+the coefficients of $\omega_{t}$ are the distinct conjugates of $\alpha$
+(\Cref{lem:conjugates}). At a CM point use the map $x\mapsto E_{x}$ of the
+proof of \Cref{lem:oneexceptional}, which is $\Sp(V,\psi)$-equivariant: it
+carries $\omega_{t}$ to an element $(r,\beta)$ of $\QQ\times F$ with
+$\beta\notin\QQ$, acting on $U_{ij}$ by the conjugate $\sigma_{k}(\beta)$
+(\Cref{prop:mumfordrm}(ii)), and $\omega_{t}$ is $L(X)$-invariant only if
+$E_{\omega_{t}}$ preserves the weight spaces of $L(X)$ in ${\textstyle\bigwedge^{2}}V$. Take
+weight vectors $v=x\otimes y\otimes z$ and $w=x\otimes y'\otimes z'$ of
+weights $(1,1,1)$ and $(1,-1,-1)$ for the Hodge torus. They are not
+opposite, so $v\wedge w$ spans a weight space of $L(X)$, every weight of
+$L(X)$ on $V$ having multiplicity one. But
+$v\wedge w=(x\cdot x)\otimes\bigl(y\cdot y'\otimes z\wedge z'+y\wedge y'
+\otimes z\cdot z'\bigr)$ has nonzero components in $U_{12}$ and in $U_{13}$,
+on which $E_{\omega_{t}}$ acts by $\sigma_{3}(\beta)\ne\sigma_{2}(\beta)$. So
+the line is not preserved. The rest of (iii) follows from (i).
+
+(iv) Write $H^{2}(X)=\QQ\theta\oplus P$, with $P$ the primitive part, the
+irreducible $\Sp(V,\psi)$-module of highest weight $\varpi_{2}$ and dimension
+$27$. Through the form ${\textstyle\bigwedge^{2}}\psi$ the four $\pi$ are
+self-adjoint endomorphisms of $H^{2}(X)$, and $\pi_{12}-\pi_{13}$ kills
+$\theta$ and is a trace-free self-adjoint endomorphism of $P$, an element of
+$S^{2}P$ orthogonal to the invariant. Restricting
+$S^{2}({\textstyle\bigwedge^{2}}V)=S_{(2,2)}V\oplus{\textstyle\bigwedge^{4}}V$
+from $\GL(V)$ to $\Sp(V,\psi)$ gives, with dimensions $336=308+27+1$ and
+$70=42+27+1$, the decomposition $S^{2}P=V(2\varpi_{2})\oplus V(\varpi_{4})
+\oplus V(\varpi_{2})\oplus\QQ$. The element $\pi_{12}-\pi_{13}$ is
+$G$-invariant. The summand $V(\varpi_{2})\cong P$ has no $G$-invariant, since
+$({\textstyle\bigwedge^{2}}V)^{G}=\QQ\theta$, and neither has $V(\varpi_{4})$,
+which lies in ${\textstyle\bigwedge^{4}}V$, whose $G$-invariants are the line
+of $\theta^{2}$ (\Cref{prop:mumfordproduct}(i)), invariant under all of
+$\Sp(V,\psi)$. So $\pi_{12}-\pi_{13}$ is a nonzero vector of the irreducible
+module $V(2\varpi_{2})$, which it generates; its dimension is $308$ by Weyl's
+dimension formula. The same argument puts every trace-free combination of
+$\pi_{12},\pi_{13},\pi_{23}$ in $V(2\varpi_{2})$, while $\pi_{0}$ and
+$\pi_{12}+\pi_{13}+\pi_{23}$ are $\Sp(V,\psi)$-invariant and independent
+modulo it; so adding the four $\pi$ raises the dimension by two.
+\end{proof}
+
+\Cref{fig:hodgecount} compares the Hodge classes of $X_{t}\times X_{t}$ with
+the subring generated by divisor classes, degree by degree.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{fig_hodgecount}
+\caption{\Cref{thm:lefschetzclosure}(ii). The Hodge classes of
+$X_{t}\times X_{t}$ degree by degree, against the subring $D^{p}$ generated
+by divisor classes, which contains the Chern character of every object of
+$\mathcal{L}$: at a very general point of the Mumford curve (left) and at a
+CM point (right). The hatched classes, the exceptional ones among them, are
+reached by no object of $\mathcal{L}$.}
+\label{fig:hodgecount}
+\end{figure}
+
+\begin{remark}[Where a construction has to leave $\mathcal{L}$]
+\label{rem:leavel}
+\Cref{thm:lefschetzclosure} extends \Cref{prop:mumforddivisor} from sums of
+line bundles to everything the standard operations make out of them, at every
+point of the curve, including the CM points, where the exceptional classes
+are algebraic. There the cycles that represent them are not Chern characters
+of objects of $\mathcal{L}$, and neither are the two Hodge classes of $X_{c}$
+in degree four that are not products of divisor classes. At a point that is
+not CM, every Chern character of an object of $\mathcal{L}$ lies in the
+isotypic component of the trivial representation of $\Sp(V,\psi)$, while by
+\Cref{thm:lefschetzclosure}(iv) an object with $\ch(E)=N\omega$ must have a
+nonzero component in the one of highest weight $2\varpi_{2}$. Every
+construction of such an object therefore contains a step that does not commute with the Lefschetz group on
+cohomology: passing to a direct summand, a subobject or a Jordan--H\"older
+factor, choosing a point of a moduli space, or deforming from a member with
+more endomorphisms. The last is what semiregularity does along the curve
+(\Cref{thm:mumfordnumerical}).
+\end{remark}
+
+\begin{lemma}[The summands of a semiregular object]\label{lem:semiregsum}
+Let $Z$ be a smooth projective variety and $E_{1},E_{2}$ perfect complexes on
+$Z$. On $\Ext^{2}(E_{1}\oplus E_{2},E_{1}\oplus E_{2})=\bigoplus_{i,j}
+\Ext^{2}(E_{j},E_{i})$ the semiregularity map is
+$\sigma_{E_{1}\oplus E_{2}}(\zeta)=\sigma_{E_{1}}(\zeta_{11})
++\sigma_{E_{2}}(\zeta_{22})$. So $\sigma_{E_{1}\oplus E_{2}}$ is injective if
+and only if $\sigma_{E_{1}}$ and $\sigma_{E_{2}}$ are injective, their images
+meet only in zero, and $\Ext^{2}(E_{1},E_{2})=\Ext^{2}(E_{2},E_{1})=0$.
+\end{lemma}
+
+\begin{proof}
+The Atiyah class is natural, so $\mathrm{At}(E_{1}\oplus E_{2})$ is the
+diagonal sum of $\mathrm{At}(E_{1})$ and $\mathrm{At}(E_{2})$. In
+$\sigma(\zeta)=\sum_{q}\frac1{q!}\operatorname{tr}(\zeta\circ\mathrm{At}^{q})$
+of \Cref{thm:BF} the composite $\zeta\circ\mathrm{At}^{q}$ has diagonal blocks
+$\zeta_{ii}\circ\mathrm{At}(E_{i})^{q}$, and the trace of a block matrix of
+morphisms is the sum of the traces of its diagonal blocks. In particular the
+off-diagonal blocks $\zeta_{12}$ and $\zeta_{21}$ lie in the kernel, so
+injectivity forces them to vanish; on the diagonal blocks the map is
+$(\zeta_{11},\zeta_{22})\mapsto\sigma_{E_{1}}(\zeta_{11})+\sigma_{E_{2}}
+(\zeta_{22})$, which is injective exactly when both summands are injective
+and their images meet only in zero.
+\end{proof}
+
+The condition on the images cannot be dropped, and the objects that show it
+are the simplest ones: the structure sheaves of abelian subvarieties of half
+dimension, each of which is semiregular on its own.
+
+\begin{lemma}[Abelian subvarieties of half dimension are semiregular]
+\label{lem:absemireg}
+Let $A$ be an abelian variety of dimension $2n$ and $B\subseteq A$ an abelian
+subvariety of dimension $n$. Then $\operatorname{ev}_{\cO_{B}}\colon
+HT^{2}(A)\to\Ext^{2}(\cO_{B},\cO_{B})$ is surjective, its kernel is
+$\Ann_{HT^{2}}([B])$, of dimension $6n^{2}-n$, and $\sigma_{\cO_{B}}$ is
+injective.
+\end{lemma}
+
+\begin{proof}
+The normal bundle of $B$ is trivial, so $\ch(\cO_{B})=[B]$ by the
+Grothendieck--Riemann--Roch theorem for the embedding, and
+$\Ext^{*}(\cO_{B},\cO_{B})\cong{\textstyle\bigwedge^{*}}\CC^{2n}$ (proof of
+\Cref{cor:naturalsums}), so $\dim\Ext^{2}(\cO_{B},\cO_{B})=\binom{2n}{2}
+=2n^{2}-n$, while $\dim HT^{2}(A)=2\binom{2n}{2}+4n^{2}=8n^{2}-2n$. Choose a
+complementary abelian subvariety $B'$; the isogeny $B\times B'\to A$
+identifies $H^{1}(A,\CC)$ with $H^{1}(B)\oplus H^{1}(B')$ compatibly with the
+Hodge decompositions, identifies $HT^{2}(A)$ with $HT^{2}(B\times B')$
+compatibly with contraction, and carries $[B]$ to a nonzero multiple of
+$1\otimes[\mathrm{pt}_{B'}]$, where $[\mathrm{pt}_{B'}]$ spans
+${\textstyle\bigwedge^{2n}}H^{1}(B')$. Write $T=T_{B}\oplus T_{B'}$ for the
+tangent space and $H^{0,1}(A)=H^{0,1}(B)\oplus H^{0,1}(B')$. A class
+$\zeta\in H^{0,2}(A)={\textstyle\bigwedge^{2}}H^{0,1}(A)$ has
+$\zeta\cup[B]=\zeta_{BB}\otimes[\mathrm{pt}_{B'}]$, with $\zeta_{BB}$ its
+component in ${\textstyle\bigwedge^{2}}H^{0,1}(B)$, because every factor from
+$H^{0,1}(B')$ is killed by the top class of $B'$; so the annihilator in
+$H^{0,2}$ has dimension $\binom{2n}{2}-\binom{n}{2}$. For $a\otimes v\in
+H^{0,1}(A)\otimes T=H^{1}(T_{A})$ the contraction is $a\wedge(v\lrcorner[B])
+=a_{B}\otimes(v_{B'}\lrcorner[\mathrm{pt}_{B'}])$, since $v_{B}$ kills
+$[\mathrm{pt}_{B'}]$ and $a_{B'}\wedge(v_{B'}\lrcorner[\mathrm{pt}_{B'}])$
+would have type $(n-1,n+1)$ on the $n$-fold $B'$; the map
+$v\mapsto v_{B'}\lrcorner[\mathrm{pt}_{B'}]$ has rank $n$, as does
+$a\mapsto a_{B}$, so the contraction has rank $n^{2}$ on the space
+$H^{0,1}(A)\otimes T$ of dimension $4n^{2}$ and the annihilator there has
+dimension $3n^{2}$. For $\vartheta\in{\textstyle\bigwedge^{2}}T$ only the
+component in ${\textstyle\bigwedge^{2}}T_{B'}$ contracts $[\mathrm{pt}_{B'}]$
+nontrivially, and injectively; so the annihilator in
+${\textstyle\bigwedge^{2}}T$ has dimension $\binom{2n}{2}-\binom{n}{2}$.
+Altogether $\dim\Ann_{HT^{2}}([B])=2\binom{2n}{2}-2\binom{n}{2}+3n^{2}
+=6n^{2}-n$. By the square $\sigma_{E}\circ\operatorname{ev}_{E}=
+(\,\cdot\,)\lrcorner\ch(E)$ of \Cref{setup:criterion} the kernel of
+$\operatorname{ev}_{\cO_{B}}$ lies in $\Ann_{HT^{2}}([B])$, so
+$\operatorname{ev}_{\cO_{B}}$ has rank at least $(8n^{2}-2n)-(6n^{2}-n)
+=2n^{2}-n=\dim\Ext^{2}(\cO_{B},\cO_{B})$: it is surjective and its kernel is
+the annihilator. If $\sigma_{\cO_{B}}(y)=0$, write $y=\operatorname{ev}(x)$;
+then $x\lrcorner[B]=0$, so $x$ lies in the annihilator, which is the kernel,
+and $y=0$.
+\end{proof}
+
+\begin{remark}[Sums of abelian subvarieties]\label{rem:absums}
+Let $B_{1},\dots,B_{r}\subseteq A$ be abelian subvarieties of dimension
+$n\ge3$, translated so that any two of them meet in finitely many points or
+not at all, which generic translates achieve, and let $E=\bigoplus_{j}
+\cO_{B_{j}}[k_{j}]$. The sheaves $\mathcal{E}xt^{q}(\cO_{B_{i}},\cO_{B_{j}})$
+for $i\ne j$ are supported on $B_{i}\cap B_{j}$ and vanish for $q\ne n$,
+by the Koszul resolution of $\cO_{B_{i}}$ restricted to $B_{j}$, so
+$\Ext^{2}(\cO_{B_{i}}[k_{i}],\cO_{B_{j}}[k_{j}])=H^{2+k_{j}-k_{i}-n}
+(B_{i}\cap B_{j},\mathcal{E}xt^{n})$ vanishes when all $k_{j}$ are equal and
+$n\ge3$, and when $|k_{i}-k_{j}|\le1$ and $n\ge4$; and each
+$\sigma_{\cO_{B_{j}}}$ is injective by \Cref{lem:absemireg}. In these cases
+every hypothesis of \Cref{lem:semiregsum}, applied to one summand and the
+sum of the others, holds except the one on the images. Now let $v\in HT^{2}(A)$
+satisfy $v\lrcorner\ch(E)=\sum_{j}(-1)^{k_{j}}v\lrcorner[B_{j}]=0$ with
+$v\lrcorner[B_{1}]\ne0$. Then $\zeta=\bigoplus_{j}\operatorname{ev}_{\cO_{B_{j}}}(v)$
+is nonzero, because $v$ is not in the annihilator of $[B_{1}]$, and
+$\sigma_{E}(\zeta)=\sum_{j}(-1)^{k_{j}}v\lrcorner[B_{j}]=0$: the images of
+the $\sigma_{\cO_{B_{j}}}$ meet, and $E$ is not semiregular. This is exactly
+the situation at a member of a Weil family on which a Weil class is a
+combination of classes of abelian subvarieties of dimension $n$, as on a
+product of elliptic curves: a tangent direction $v$ of the family keeps
+$\ch(E)$ of Hodge type but moves any $[B_{j}]$ outside
+$\QQ\theta^{n}\oplus\HW(A)$, and \Cref{cor:naturalsums} excludes such sums
+for this reason. The sum is obstructed although its summands are not.
+\end{remark}
+
+\begin{corollary}[Hochschild deformations and direct summands]
+\label{cor:mumfordsplit}
+Let $c\in C$, $Y=X_{c}\times X_{c}$, $\omega=\omega_{a}$ a rational
+exceptional class with $L_{0}(a)\ne0$, and $E$ a perfect complex on $Y$ with
+$\ch(E)=N\omega$, $N\ne0$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item $E$ extends to the first order deformation of $D^{b}(Y)$ given by
+  $x\in HH^{2}(Y)=HT^{2}(Y)$ only if $x\in\CC\kappa$. No $B$-field, no
+  Poisson bivector and no commutative deformation off the curve carries it.
+\item If $\sigma_{E}$ is injective and $E=E_{1}\oplus E_{2}$ with both
+  summands nonzero, then $\Ext^{2}(E_{1},E_{2})=\Ext^{2}(E_{2},E_{1})=0$, each
+  $\sigma_{E_{i}}$ is injective, each $E_{i}$ extends to first order along the
+  curve, and $\kappa\lrcorner\ch(E_{i})=0$. If moreover
+  $\dim\Ext^{2}(E,E)=119$, then $\dim\Ext^{2}(E_{i},E_{i})=
+  120-\dim\Ann_{HT^{2}}(\ch E_{i})$, and
+  \[
+    \Ann_{HT^{2}}(\ch E_{1})+\Ann_{HT^{2}}(\ch E_{2})=HT^{2}(Y),\qquad
+    \Ann_{HT^{2}}(\ch E_{1})\cap\Ann_{HT^{2}}(\ch E_{2})=\CC\kappa .
+  \]
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+(i) The kernel of $\operatorname{ev}_{E}$ on $HH^{2}(Y)$ is the space of
+deformations of $D^{b}(Y)$ along which $E$ deforms to first order
+\cite{Tod09}, \cite[Section~8.3]{Mar25a}. If $\operatorname{ev}_{E}(x)=0$ then
+$N\,x\lrcorner\,\omega=\sigma_{E}(\operatorname{ev}_{E}(x))=0$, so
+$x\in\CC\kappa$ by \Cref{thm:mumfordrigid}(ii). The three kinds of
+deformation named are the three summands of $HT^{2}(Y)$.
+
+(ii) The first two assertions are \Cref{lem:semiregsum}. By
+\Cref{thm:mumfordnumerical}(ii), $\operatorname{ev}_{E}(\kappa)=0$, and
+$\operatorname{ev}_{E}$ is the diagonal sum of $\operatorname{ev}_{E_{1}}$
+and $\operatorname{ev}_{E_{2}}$, so each vanishes at $\kappa$; then
+$\kappa\lrcorner\ch(E_{i})=\sigma_{E_{i}}(\operatorname{ev}_{E_{i}}(\kappa))
+=0$. Put $e(x)=120-\dim\Ann_{HT^{2}}(x)$, the rank of contraction into $x$.
+It is subadditive in $x$, and by \Cref{thm:mumfordprofile}(i)
+$\dim\Ext^{2}(E_{i},E_{i})\ge e(\ch E_{i})$. The cross terms vanish, so
+\[
+  119=\dim\Ext^{2}(E,E)=\sum_{i}\dim\Ext^{2}(E_{i},E_{i})
+  \ge e(\ch E_{1})+e(\ch E_{2})\ge e(N\omega)=119,
+\]
+and every inequality is an equality. Hence
+$\dim\Ann(\ch E_{1})+\dim\Ann(\ch E_{2})=121$. The intersection of the two
+annihilators lies in $\Ann(N\omega)=\CC\kappa$ and contains $\kappa$, so it is
+$\CC\kappa$, and the sum has dimension $120$.
+\end{proof}
+
+Part (ii) plays for the Mumford classes the role of \Cref{thm:nosum}: a
+semiregular object attaining the bound either does not split, or splits into
+two pieces whose annihilators fill $HT^{2}(Y)$ and meet only in the direction
+of the curve. The two annihilators are the analogue of the two branches $P$
+and $Q$ of \Cref{rem:twobranches}.
+
+\begin{proposition}[Tate classes at every closed point of every reduction]
+\label{prop:modp}
+There are a finitely generated subring $R\subset\CC$, a model $W_{R}\to
+C_{R}$ of $W\to C$ over $R$, with $C_{R}$ smooth and projective over $R$ with
+geometrically connected fibres and $W_{R}$ an abelian scheme, projective over
+$C_{R}$, and a finite surjective morphism $C'_{R}\to C_{R}$ from a second curve of the same
+kind, with the following properties. Put $Y'=(W_{R}\times_{C_{R}}W_{R})
+\times_{C_{R}}C'_{R}$, with projection $\pi'\colon Y'\to C'_{R}$, and let
+$\omega$ be a rational exceptional class. For every prime $\ell$ there is a
+global section $\omega_{\ell}$ of the lisse sheaf
+$R^{4}\pi'_{*}\QQ_{\ell}(2)$ on $C'_{R}[1/\ell]$ whose restriction to
+$C'_{R}\otimes_{R}\CC$ is the pull-back of $\omega\otimes1$; write
+$\omega_{\ell}(\bar{x})$ for its value at a geometric point over a point $x$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item At a closed point $x$ of $C'_{R}[1/\ell]$ the residue field
+  $\kappa(x)$ is finite, $Y'_{x}$ is the square of an abelian fourfold over
+  it, and $\omega_{\ell}(\bar{x})$ is fixed by $\Gal(\bar{\kappa}/\kappa(x))$.
+\item At such a point $\omega_{\ell}(\bar{x})$ is a $\QQ_{\ell}$-linear
+  combination of classes of algebraic cycles of codimension two on $Y'_{x}$,
+  defined over $\kappa(x)$.
+\item Let $s$ be a closed point of $\Spec R[1/\ell]$ and $\eta_{s}$ the generic
+  point of the reduction $C'_{s}$. Then $\omega_{\ell}(\bar\eta_{s})$ is fixed
+  by the Galois group of the function field $\kappa(\eta_{s})$, and it is not
+  a $\QQ_{\ell}$-linear combination of products of divisor classes of
+  $Y'_{\bar\eta_{s}}$.
+\end{enumerate}
+Every closed point $x$ of a reduction $C_{s}$ of $C$ is the image of a closed
+point $x'$ of $C'_{s}$, and $Y'_{x'}=Y_{x}\otimes_{\kappa(x)}\kappa(x')$; so
+(i) and (ii) hold at every closed point of every reduction of $C$, after a
+finite extension of its residue field.
+\end{proposition}
+
+\begin{proof}
+\emph{The models.} The family $W\to C$ is defined over a subfield
+$k_{1}\subset\CC$ finitely generated over $\QQ$, say as $W_{1}\to C_{1}$. Let
+$K_{1}$ be the function field of $C_{1}$ and fix an embedding over $k_{1}$ of
+an algebraic closure $\bar{K}_{1}$ into $\CC$; it sends the geometric generic
+point of $C_{1}$ to a point $t\in C$, and $Y_{t}=X_{t}\times X_{t}$ is the base
+change of $Y_{\bar{K}_{1}}$. The class $\omega_{t}$ is a Hodge class on an
+abelian variety, hence absolutely Hodge, so it comes from an absolutely Hodge
+class of $Y_{\bar{K}_{1}}$, and $\Gal(\bar{K}_{1}/K_{1})$ acts on these
+through a finite quotient \cite[Theorem~2.11 and Proposition~2.9]{Del82}. Let
+$K'\subset\bar{K}_{1}$ be a finite extension of $K_{1}$ on which the action is
+trivial, $k'$ the algebraic closure of $k_{1}$ in $K'$, and $C'$ the smooth
+projective curve over $k'$ with function field $K'$; it is geometrically
+connected over $k'$ and maps finitely onto $C_{1}\otimes_{k_{1}}k'$.
+Spreading out $W_{1}\to C_{1}$, $C'$ and this map over a finitely generated
+subring of $k'$, and inverting one element of it, gives a normal $R$ and
+models with the stated properties.
+
+\emph{The section.} By smooth and proper base change
+$R^{4}\pi'_{*}\QQ_{\ell}(2)$ is lisse on $C'_{R}[1/\ell]$. Its stalk at the
+geometric generic point $\Spec\bar{K}_{1}$ is $H^{4}(Y_{\bar{K}_{1}},
+\QQ_{\ell}(2))=H^{4}(Y_{t},\QQ)\otimes\QQ_{\ell}$, and $\omega_{t}\otimes1$
+is the $\ell$-adic component of an absolutely Hodge class, so it is fixed by
+$\Gal(\bar{K}_{1}/K')$. The scheme $C'_{R}[1/\ell]$ is normal and integral
+with function field $K'$, so $\Gal(\bar{K}_{1}/K')$ maps onto its fundamental
+group \cite[Tag~0BQI]{Stacks}, and the vector extends to a global section
+$\omega_{\ell}$. On the connected curve $C'_{R}\otimes_{R}\CC$ it agrees with
+the pull-back of $\omega\otimes1$, the two being global sections of the same
+local system that agree at a point over $t$.
+
+(i) and (ii). A scheme of finite type over $\ZZ$ has finite residue fields at
+its closed points. A global section of a lisse sheaf is fixed by the
+fundamental group of every point, which is (i); and (ii) is Li's theorem
+\cite[Theorem~1.1]{Li26}, with $n=r=2$, for the abelian fourfold that is the
+fibre of $W_{R}$ at the image of $x$, base changed to $\kappa(x)$.
+
+(iii) The first assertion holds for the same reason as (i). For the second,
+let $\bar\eta$ be a geometric generic point of $C'_{R}$ and $\bar{s}$ a
+geometric point over $s$. The morphism $C'_{R}\to\Spec R$ is flat and proper
+with geometrically connected and geometrically reduced fibres, so the
+specialisation map $\pi_{1}(C'_{\bar\eta})\to\pi_{1}(C'_{\bar{s}})$ is
+surjective \cite[Tag~0C0P]{Stacks}, and it is compatible with the actions of
+the two groups on the first cohomology of the fibres of $W_{R}$, identified by
+cospecialisation. The image of $\pi_{1}(C'_{\bar\eta})$ contains that of
+$\pi_{1}(C'_{\CC})$, the closure of the image of the topological fundamental
+group of a finite cover of $C$, whose Zariski closure contains
+$G_{\QQ_{\ell}}$ because the connected monodromy group of $W\to C$ is $G$
+(proof of \Cref{cor:mumfordlefschetz}). So the Zariski closure of the
+monodromy of $W_{R}$ over $C'_{\bar{s}}$ contains $G_{\QQ_{\ell}}$. A divisor
+class of $Y'_{\bar\eta_{s}}$ is defined over a finite extension of
+$\kappa(\eta_{s})$, so it is fixed by an open subgroup of the Galois group,
+whose image in $\pi_{1}(C'_{s})$ is open \cite[Tag~0BQI]{Stacks} and meets
+$\pi_{1}(C'_{\bar{s}})$ in an open subgroup; the Zariski closure of the image
+of an open subgroup has the same identity component, so the class is
+$G_{\QQ_{\ell}}$-invariant. The $G$-invariants of ${\textstyle\bigwedge^{2}}(V\oplus V)$ are the
+three divisor classes of \Cref{prop:mumfordproduct}(ii), which are
+$\Sp(V,\psi)$-invariant, so every product of divisor classes of
+$Y'_{\bar\eta_{s}}$ is $\Sp(V,\psi)$-invariant. The class
+$\omega_{\ell}(\bar\eta_{s})$ corresponds to $\omega\otimes1$, whose
+coefficients $a_{1},a_{2},a_{3}$ are the distinct conjugates of $\alpha$
+(\Cref{lem:conjugates}), and the $\Sp(V,\psi)$-invariant classes among the
+$\omega_{a}$ are those with $a_{1}=a_{2}=a_{3}$ (\Cref{prop:mumforddivisor}).
+The last sentence of the statement holds because $C'_{R}\to C_{R}$ is finite
+and surjective.
+\end{proof}
+
+At the generic point of each reduction the class is therefore a Tate class
+over a global function field that is not a combination of products of divisor
+classes, exactly as over $\CC$, while at every closed point it is a
+combination of classes of cycles. The next theorem shows that a bound on those
+cycles is all that is missing, with no passage through $p$-adic Hodge theory.
+
+\begin{theorem}[The Mumford target is a degree bound in positive
+characteristic]\label{thm:modpdensity}
+Keep \Cref{prop:modp}, fix a prime $\ell$ and a relatively ample line bundle
+on $Y'\to C'_{R}$, and for a finite set $\Phi$ of tuples of Hilbert
+polynomials say that $\omega$ is \emph{$\Phi$-represented} at a point $x$ of
+$C'_{R}[1/\ell]$ if $\omega_{\ell}(\bar{x})=\sum_{i}q_{i}\operatorname{cl}(Z_{i})$
+for some $q_{i}\in\QQ_{\ell}$ and closed subschemes $Z_{i}\subset Y'_{\bar{x}}$
+of pure codimension two whose Hilbert polynomials form a tuple in $\Phi$. The
+following are equivalent.
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.6em,itemsep=2pt]
+\item $\omega_{t}$ is algebraic for every $t\in C$.
+\item For some finite $\Phi$, the closed points of $C'_{R}[1/\ell]$ at which
+  $\omega$ is $\Phi$-represented are Zariski dense in $C'_{R}$.
+\item For some finite $\Phi$ and some Zariski dense set $S$ of closed points of
+  $\Spec R[1/\ell]$, the class $\omega$ is $\Phi$-represented at infinitely
+  many closed points of $C'_{s}$ for every $s\in S$.
+\end{enumerate}
+For a single closed point $s$ of $\Spec R[1/\ell]$, the class $\omega$ is
+$\Phi$-represented at infinitely many closed points of $C'_{s}$, for some
+finite $\Phi$, if and only if $\omega_{\ell}(\bar\eta_{s})$ is a
+$\QQ_{\ell}$-linear combination of classes of algebraic cycles on
+$Y'_{\bar\eta_{s}}$.
+\end{theorem}
+
+\begin{proof}
+One standard property of the $\ell$-adic cycle class is used beyond those over
+a field: if $\mathcal{O}$ is a discrete valuation ring in which $\ell$ is
+invertible, $\mathcal{Y}\to\Spec\mathcal{O}$ is smooth and projective, and
+$\mathcal{Z}\subset\mathcal{Y}$ is a closed subscheme flat over $\mathcal{O}$,
+then the specialisation isomorphism of $\ell$-adic cohomology carries the
+cycle class of the geometric generic fibre of $\mathcal{Z}$ to that of its
+geometric special fibre \cite[Cycle]{SGA4h}. The specialisation isomorphism
+also carries the values of a global section of a lisse sheaf to each other,
+by its construction.
+
+\emph{Step 1: the represented loci are closed.} For a tuple
+$\underline{P}=(P_{1},\dots,P_{m})$ let $\cH_{\underline{P}}$ be the fibre
+product over $C'_{R}[1/\ell]$ of the relative Hilbert schemes
+$\Hilb^{P_{i}}(Y'/C'_{R}[1/\ell])$. It is projective over $C'_{R}[1/\ell]$
+\cite{Gro61}, so it has finitely many connected components. On a component
+$T$, with universal subschemes $\mathcal{Z}_{i}$, put $A(h)=\{q\in
+\QQ_{\ell}^{m}:\sum_{i}q_{i}\operatorname{cl}(\mathcal{Z}_{i,\bar{h}})
+=\omega_{\ell}(\bar{h})\}$ for $h\in T$. If $h'$ is a specialisation of $h$,
+there is a discrete valuation ring mapping to $T$ with generic point to $h$ and
+closed point to $h'$ \cite[Tag~054F]{Stacks}, and the property above, applied
+to the pull-backs of $Y'$ and of the $\mathcal{Z}_{i}$, gives $A(h)=A(h')$.
+Any two points of the connected noetherian scheme $T$ are joined by a chain of
+specialisations and generisations, through the generic points of its
+irreducible components, so $A$ is constant on $T$, say $A_{T}$. Let
+$\Sigma_{\underline{P}}$ be the union of the images in $C'_{R}[1/\ell]$ of the
+components $T$ with $A_{T}\ne\emptyset$. It is closed, as a finite union of
+images of proper morphisms, and it is the set of points at which $\omega$ is
+$\{\underline{P}\}$-represented: at a point $x$ of the image of such a $T$, a
+closed point of the fibre of $T$ over $x$ has residue field finite over
+$\kappa(x)$ and gives subschemes of $Y'_{\bar{x}}$. Put
+$\Sigma_{\Phi}=\bigcup_{\underline{P}\in\Phi}\Sigma_{\underline{P}}$.
+
+\emph{Step 2: (b) implies (a).} $\Sigma_{\Phi}$ is closed and contains a dense
+set, so it is $C'_{R}[1/\ell]$ and contains the generic point $\xi$ of
+$C'_{R}$, whose residue field is $K'$. So $\omega_{t}\otimes1=
+\omega_{\ell}(\bar\xi)=\sum_{i}q_{i}\operatorname{cl}(Z_{i})$ with
+$q\in\QQ_{\ell}^{m}$ and subschemes $Z_{i}$ of $Y_{\bar{K}_{1}}$, and so of
+$Y_{t}$. The cycle class maps are compatible with the comparison isomorphism
+$H^{4}(Y_{t},\QQ)\otimes\QQ_{\ell}\cong H^{4}(Y_{t},\QQ_{\ell})$
+\cite[Section~1 and Example~2.1(a)]{Del82}, so the linear system
+$\omega_{t}=\sum_{i}q_{i}[Z_{i}]$, which has rational coefficients, is
+solvable over $\QQ_{\ell}$, hence over $\QQ$, and $\omega_{t}$ is algebraic.
+The $Z_{i}$ are defined over a finite extension of $K'$, so they spread out to
+subschemes, flat over a nonempty open subset \cite[Tag~052A]{Stacks}, of the
+pull-back of $W\times_{C}W$ to a finite cover of $C$, and by the local
+constancy of the cycle class used in the proof of \Cref{thm:closedlocus},
+$\omega$ is algebraic at every point of a nonempty Zariski open subset of $C$,
+which is uncountable. \Cref{cor:mumfordequiv} gives (a).
+
+\emph{Step 3: (c) implies (b).} Let $D$ be the set of closed points at which
+$\omega$ is $\Phi$-represented and $\bar{D}$ its closure. For $s\in S$ the set
+$D\cap C'_{s}$ is infinite, so its closure is the irreducible curve $C'_{s}$,
+and $C'_{s}\subseteq\bar{D}$. The points $u$ of $\Spec R[1/\ell]$ over which
+the fibre of $\bar{D}$ has dimension at least one form a closed set, by the
+upper semicontinuity of the dimension of the fibres of a proper morphism
+\cite[Tag~0D4I]{Stacks}; it contains the dense set $S$, so it contains the
+generic point. The generic fibre of $\bar{D}$ is then a closed subset of
+dimension one of the irreducible curve $C'_{R}\otimes_{R}k'$, so it contains
+$\xi$, and $\bar{D}=C'_{R}[1/\ell]$.
+
+\emph{Step 4: (a) implies (c).} By (a) and Step 1, applied over $\bar{K}_{1}$
+with the Betti class in place of the $\ell$-adic one, $\omega_{t}$ is the
+class of a rational combination of subschemes of $Y_{\bar{K}_{1}}$, defined
+over a finite extension $L$ of $K'$. Enlarge $R$ to a finitely generated
+subring of the algebraic closure of $k'$ in $L$, let $C''_{R}\to C'_{R}$ be the
+normalisation in $L$, and spread the subschemes out over $C''_{R}$; by generic
+flatness \cite[Tag~052A]{Stacks} they are flat over a dense open subset $U$ of
+$C''_{R}[1/\ell]$, with constant Hilbert polynomials. By Step 1 applied on $U$,
+$\omega$ is represented by their fibres at every point of $U$. The image of $U$
+in $C'_{R}[1/\ell]$ contains a dense open subset $U'$, every closed point of
+$U'$ is the image of a closed point of $U$, and $U'$ meets $C'_{s}$ in a
+nonempty open, hence infinite, subset for every $s$ in a dense open subset of
+$\Spec R[1/\ell]$.
+
+\emph{The single reduction.} If $\omega$ is $\Phi$-represented at infinitely
+many closed points of $C'_{s}$, then $\Sigma_{\Phi}\cap C'_{s}$ is closed and
+infinite, so it is $C'_{s}$ and contains $\eta_{s}$. Conversely, cycles at
+$\bar\eta_{s}$ are defined over a finite extension of $\kappa(\eta_{s})$, and
+spreading them out as in Step 4 over a finite cover of $C'_{s}$ represents
+$\omega$, with fixed Hilbert polynomials, at every closed point of a nonempty
+open subset of $C'_{s}$.
+\end{proof}
+
+\begin{remark}[What is left in positive characteristic]\label{rem:modpremains}
+By \Cref{prop:modp}(ii) the class is represented at every closed point of
+$C'_{R}[1/\ell]$, so \Cref{thm:modpdensity} turns the Mumford target into a
+statement of uniformity alone: the Hilbert data of some representation must
+stay in one finite set on a Zariski dense set of closed points, for instance
+at infinitely many closed points of infinitely many reductions. The passage
+to characteristic zero is then done by the specialisation of cycle classes
+along $C'_{R}$, and neither the $p$-adic variational Hodge conjecture nor a
+lifting of cycles is needed. Li's theorem gives no bound: where its proof
+carries cycles into a prescribed isogeny class, it does so by an isogeny whose
+degree it does not control \cite[proof of Theorem~1.2, Step~3]{Li26}.
+
+Nor do the natural representatives at the supersingular points supply the
+bound. At a closed point $x$ whose fibre is supersingular, the Frobenius
+eigenvalues on $H^{2}(Y'_{\bar{x}},\QQ_{\ell}(1))$ are roots of unity, so by
+Tate's theorem \cite{Tat66} this space is spanned by divisor classes, and
+$\omega_{\ell}(\bar{x})\in{\textstyle\bigwedge^{4}}H^{1}$ is a combination of
+products of two of them. But for a closed point $s$ of $\Spec R[1/\ell]$ and
+a finite set of Hilbert polynomials, only finitely many closed points of
+$C'_{s}$ carry such a combination $\sum_{i}q_{i}\operatorname{cl}(D_{i})
+\operatorname{cl}(D'_{i})$ with effective divisors $D_{i},D'_{i}$ whose
+Hilbert polynomials lie in that set: otherwise Step~1 of the proof of
+\Cref{thm:modpdensity}, run on relative Hilbert schemes of divisors, would
+give one at $\bar\eta_{s}$, against \Cref{prop:modp}(iii). This holds whether
+or not the supersingular points are dense. They are dense in $C'_{R}$ when $R$
+has dimension one. Indeed, for every prime $p\ge5$ not dividing the
+discriminants of $F$ and $D$, which is all but finitely many, the
+supersingular points of the reduction at a prime over $p$ of Kisin's integral
+model of the Shimura curve, with hyperspecial level at $p$, are its whole
+Newton jumping locus and number $(p^{r}-1)(g-1)$ on each component of genus
+$g$, $r$ being the local degree of $F$ \cite[Theorem~1.2 and
+Corollary~5.17]{SZ11}. For all but finitely many $s$ the curve $C'_{s}$ maps
+finitely onto such a component, of genus at least two, so it has at least
+$p-1$ supersingular points, while a closed subset of $C'_{R}$ of dimension one
+meets all but finitely many of the $C'_{s}$ in boundedly many points.
+
+Within one reduction the bound is equivalent to the class being algebraic at
+the generic point of $C'_{s}$ (\Cref{thm:modpdensity}), a Tate class over a
+global function field that is not a combination of products of divisor
+classes (\Cref{prop:modp}(iii)). This is the codimension two case of the
+variational Tate conjecture along $C'_{s}$, which Morrow proves for divisors
+in its crystalline form \cite{Mor19}. From one reduction alone, the way back
+to characteristic zero would be the $p$-adic variational Hodge conjecture for
+$W\times_{C}W$ over the Witt vectors of $\kappa(s)$, with rational rather than
+$\ell$-adic coefficients and with the crystalline class of the cycle matching
+the de Rham class of $\omega$. Bloch, Esnault and Kerz lift such a class in
+$K_{0}\otimes\QQ$ of the special fibre to the formal completion for $p>15$,
+the dimension being nine, and the algebraisation of the formal class is the
+remaining step of their programme \cite[Theorem~1.3]{BEK14}. The route
+therefore runs through the uniform bound or through this conjecture.
+\end{remark}
+
+Five of the routes of \Cref{rem:bypassaudit} survive the rigidity theorems:
+\emph{specialisation}, \emph{reduction modulo $p$}, \emph{semiregularity},
+\emph{Kuga--Satake} and \emph{motivated classes}. The next corollary shows
+that they are not five separate obligations.
+
+\begin{corollary}[The five routes reduce to one statement]\label{cor:mumfordone}
+Let $W\to C$ be as in \Cref{cor:mumfordlefschetz}, let $\omega$ be a rational
+exceptional class, and let the \emph{Mumford target} be the first case of
+\textup{(F2)}: the Hodge conjecture for $X_{t}\times X_{t}$ for every $t\in C$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item Each of the following is equivalent to the Mumford target: $\omega_{t}$ is
+  algebraic for uncountably many $t\in C$; $B(W\times_{C}W)$ holds for
+  $L_{W\times_{C}W}$; $\omega$ is represented with Hilbert data in one finite
+  set at infinitely many points of $C$, for instance at infinitely many CM
+  points; $\omega$ is represented with Hilbert data in one finite set on a
+  Zariski dense set of closed points of the arithmetic model of
+  \Cref{thm:modpdensity}.
+\item Each of the following implies the Mumford target: a perfect complex $E$
+  at one point of $C$ with $\ch(E)=N\omega$, $N\ne0$, no other component, and
+  $\dim\Ext^{2}(E,E)=119$; the algebraicity, for uncountably many $t$, of the
+  Kuga--Satake class of the surface $S_{\lambda}$ of \Cref{thm:mumfordks}
+  attached to $X_{t}$; a rational map as in \Cref{prop:hksquare}(iv), under
+  its hypotheses, from $X_{t}\times X_{t}$ for uncountably many $t$.
+\item There is a countable set $\Sigma_{0}\subset C$ containing the CM points
+  such that the Mumford target holds as soon as the Hodge conjecture holds for
+  $X_{c}\times X_{c}$ at one point $c\notin\Sigma_{0}$.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+(i) The first two are \Cref{cor:mumfordequiv}, with \Cref{lem:oneexceptional}
+for one class in place of two, the third is \Cref{cor:mumfordbounded} and the
+fourth is \Cref{thm:modpdensity}. (ii) The first is
+\Cref{thm:mumfordnumerical}(iii). The second and the third give the Hodge
+conjecture for $X_{t}\times X_{t}$ at each of the uncountably many points, by
+\Cref{thm:mumfordks}(ii) and \Cref{prop:hksquare}(iv), and then (i) applies.
+(iii) In the proof of \Cref{cor:mumfordbounded} the set of points at which
+$\omega$ is algebraic is the union of the countably many closed sets
+$\Sigma_{\underline{P},\underline{q}}$, each finite or equal to $C$. Let
+$\Sigma_{0}$ be the union of the finite ones and of the CM points. If
+$\omega_{c}$ is algebraic at a point $c\notin\Sigma_{0}$, then $c$ lies in
+some $\Sigma_{\underline{P},\underline{q}}$ that is not finite, which is $C$,
+and (i) applies.
+\end{proof}
+
+\begin{remark}[Which routes are needed]\label{rem:mumfordneeded}
+Of the five routes, specialisation, reduction modulo $p$ and motivated
+classes are the Mumford target itself in three other forms, by
+\Cref{cor:mumfordone}(i) and, for the motivated classes,
+\Cref{cor:mumfordequiv}; semiregularity and Kuga--Satake are stronger inputs
+that imply it. So any one route suffices. Each of the three
+forms is the whole of the problem, a bound on Hilbert data or a case of
+\textup{(L)} that is equivalent to the target, and the two stronger inputs
+ask for an object and for a cycle.
+\end{remark}
+
+The target can also be read at a single member, through the motivic group of
+$X$ rather than through cycles on the family; it then becomes the question of
+which of four groups this is.
+
+\begin{proposition}[Four possible motivic groups]\label{prop:mumfordmotivic}
+In \Cref{setup:mumford}, let $M$ be the group of the Tannakian category of
+homological motives generated by $h(X)$, with the Betti realisation as fibre
+functor, let $M^{1}=M\cap\Sp(V,\psi)$, and let $N$ be the normaliser of $G$ in
+$\Sp(V,\psi)$. Over $\bar{\QQ}$ identify $V_{1}$, $V_{2}$ and $V_{3}$ with one
+plane, carrying $\epsilon_{1}$, $\epsilon_{2}$, $\epsilon_{3}$ to one form, and
+let $\zeta\in\Sp(V,\psi)(\bar{\QQ})$ be the cyclic permutation
+$v_{1}\otimes v_{2}\otimes v_{3}\mapsto v_{3}\otimes v_{1}\otimes v_{2}$ of
+the three factors. It normalises $G$, and other identifications change it by
+an element of $G(\bar{\QQ})$; so it acts through $V$ on the Hodge classes of
+every power of $X$, independently of the choice.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item $N/G$ is a form of the symmetric group $S_{3}$,
+  $M=\mathbb{G}_{m}\cdot M^{1}$, and $M^{1}$ is one of $G$, $G\cdot A_{3}$,
+  $N$ and $\Sp(V,\psi)$, where $G\cdot A_{3}$ is the inverse image in $N$ of
+  the subgroup of order three of $N/G$. The last three contain $\zeta$.
+\item The following are equivalent: $M^{1}=G$; the Hodge conjecture holds for
+  $X^{n}$ for every $n\ge1$; the two exceptional classes of $X\times X$ are
+  algebraic; some algebraic class on some power of $X$ is not fixed by
+  $\zeta$.
+\item Let $\mathrm{Det}\in(V^{\otimes4})^{G}\subset H^{4}(X^{4},\QQ)$ be the
+  Hodge class of \Cref{rem:mumforddet}, and write $r_{1}$ also for the Hodge
+  class $t\in(V^{\otimes4})^{G}$ with $\hat{t}=r_{1}=s_{1}+s_{2}+s_{3}$, in the
+  notation of Steps~2 and~3 of the proof of \Cref{thm:mumfordpowers}. Both
+  are fixed by $N$ and not by $\Sp(V,\psi)$, and each of them is algebraic if
+  and only if $M^{1}\ne\Sp(V,\psi)$. So the algebraicity of either excludes
+  the last case only; by this argument it does not give the exceptional
+  classes, which are not algebraic when $M^{1}$ is $G\cdot A_{3}$ or $N$.
+\item Let $W\to C$ be as in \Cref{cor:mumfordlefschetz}, and suppose that it
+  is defined over a number field; this holds for the restriction of the
+  universal family of a fine moduli space of polarised abelian fourfolds with
+  level structure to the normalisation of one of the Shimura curves of
+  \cite{Mum69} in it, and for its pull-backs to finite \'etale covers. Then the
+  set $\Sigma_{0}$ constructed in the proof of \Cref{cor:mumfordone}(iii) lies
+  in $C(\bar{\QQ})$, and the Mumford target holds as soon as, at one point
+  $t\in C(\CC)\setminus C(\bar{\QQ})$, some algebraic cycle on some power of
+  $X_{t}$ has a class that is not fixed by $\zeta$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+\emph{The group.} On an abelian variety homological and numerical
+equivalence coincide \cite{Lie68}, so the homological motives generated by
+$h(X)$ and the Lefschetz motive form a semisimple abelian category
+\cite{Jan92}. The K\"unneth projectors are algebraic \cite[\S2]{Kle68}, so
+after the usual change of sign in the commutativity constraint this is a
+Tannakian category over $\QQ$, with the Betti realisation as a fibre functor,
+faithful by the definition of homological equivalence. Its group $M$ is
+reductive, the category being semisimple, and the $M$-invariants in the
+realisation of a motive $P$ are the image of $\Hom(\mathbf{1},P)$
+\cite[Theorem~2.11]{DM82}; so for all $m$ and $p$ the $M$-invariants of
+$H^{2p}(X^{m},\QQ)(p)$ are the classes of algebraic cycles. The group $M$ acts
+faithfully on $V\oplus\QQ(1)$ and fixes the polarisation class, so it lies in
+$\mathrm{GSp}(V,\psi)$ and acts on $\QQ(1)$ through the multiplier. Through
+$\psi$ and the K\"unneth projectors every tensor space of $V\oplus\QQ(1)$ is a
+sum of direct summands of spaces $H^{k}(X^{k},\QQ)(j)$ cut out by algebraic
+projectors, so the $M$-invariants there are algebraic classes, hence Hodge
+classes, fixed by $\MT(X)=\mathbb{G}_{m}\cdot G$; as a reductive group is the
+subgroup fixing its invariants in the tensor spaces
+\cite[Proposition~3.1]{Del82}, $\MT(X)\subseteq M$ and $G\subseteq M^{1}$. An
+element of $M$ with multiplier $\nu$ is a square root of $\nu$ times an
+element of $M^{1}$, so $M=\mathbb{G}_{m}\cdot M^{1}$. The homotheties act
+trivially on the spaces $H^{2p}(X^{m},\QQ)(p)$, so there the algebraic classes
+are the $M^{1}$-invariants, as the Hodge classes are the $G$-invariants.
+
+\emph{The groups between $G$ and $\Sp(V,\psi)$.} Over $\bar{\QQ}$ the Lie
+algebra $\mathfrak{sp}(V,\psi)\cong S^{2}V$ is the sum of
+$\operatorname{Lie}G=T_{1}\oplus T_{2}\oplus T_{3}$, where $T_{i}\cong
+S^{2}V_{i}\otimes{\textstyle\bigwedge^{2}}V_{j}\otimes{\textstyle\bigwedge^{2}}V_{k}$, and of
+$S^{2}V_{1}\otimes S^{2}V_{2}\otimes S^{2}V_{3}$, which is an irreducible
+representation of $G$ of dimension $27$; so a $G$-stable subspace of
+$\mathfrak{sp}(V,\psi)$ containing $\operatorname{Lie}G$ is
+$\operatorname{Lie}G$ or $\mathfrak{sp}(V,\psi)$. If $H$ is a closed
+subgroup with $G\subseteq H\subseteq\Sp(V,\psi)$, its Lie algebra is such a
+subspace. If it is $\operatorname{Lie}G$, then $H^{\circ}=G$, which $H$
+normalises, so $H\subseteq N$; if it is $\mathfrak{sp}(V,\psi)$, then
+$H^{\circ}=\Sp(V,\psi)$, which is connected, so $H=\Sp(V,\psi)$.
+
+\emph{The normaliser.} Since $V$ is absolutely irreducible, the centraliser of
+$G$ in $\Sp(V,\psi)$ is $\{\pm1\}$, which lies in $G$ as the image of
+$(-1,1,1)$, and $G(\bar{\QQ})$ maps onto the group of inner automorphisms of
+$G_{\bar{\QQ}}$. So $N(\bar{\QQ})/G(\bar{\QQ})$ embeds in the outer
+automorphism group of $G_{\bar{\QQ}}$, which permutes the three factors,
+$\SL_{2}$ having no outer automorphism. The six permutations of the factors,
+after identifications as above, preserve $\psi=\epsilon_{1}\otimes
+\epsilon_{2}\otimes\epsilon_{3}$ and normalise $G$, so
+$N(\bar{\QQ})/G(\bar{\QQ})\cong S_{3}$. The Galois group acts on it by
+conjugation through its action on the three factors, which is transitive, and
+the subgroups of $S_{3}$ stable under conjugation by a transitive subgroup are
+$1$, $A_{3}$ and $S_{3}$. So the algebraic subgroups of $N$ containing $G$ are
+$G$, $G\cdot A_{3}$ and $N$, and with the previous paragraph this proves (i),
+$\zeta$ mapping to an element of order three of $N/G$.
+
+(ii) If $M^{1}=G$, then $M=\MT(X)$, and every Hodge class on every power of
+$X$ is algebraic. The Hodge conjecture for $X\times X$ includes the
+exceptional classes. If these are algebraic, so is every rational exceptional
+class $\omega_{a}$ of \Cref{setup:omegaa}, and $\omega_{a}$ is not fixed by
+$\zeta$: $\zeta$ permutes the three factors cyclically, so it fixes $\theta$
+and carries $U_{ij}=S^{2}V_{i}\otimes S^{2}V_{j}\otimes{\textstyle\bigwedge^{2}}V_{k}$
+onto $U_{\zeta(i)\zeta(j)}$; labelling the factors so that $\zeta$ sends the
+$i$-th to the $(i+1)$-th, it carries $\pi_{12}$ to $\pi_{23}$, $\pi_{23}$ to
+$\pi_{13}$ and $\pi_{13}$ to $\pi_{12}$ and fixes $\pi_{0}$. So it fixes
+$\omega_{a}$ only if $a_{1}=a_{2}=a_{3}$, whereas these are the distinct
+conjugates of an irrational element of $F$ (\Cref{lem:conjugates}). Finally,
+if $M^{1}\ne G$, then $M^{1}$ contains $\zeta$ by (i), and every algebraic
+class, being $M^{1}$-invariant, is fixed by $\zeta$.
+
+(iii) The class $\mathrm{Det}$ spans $(S^{4}V)^{G}\otimes
+{\textstyle\bigwedge^{4}}\QQ^{4}$, where $(S^{4}V)^{G}$ is a line
+(\Cref{rem:mumforddet}). As $N$ normalises $G$, it preserves this line, and it
+fixes it, because $N(\bar{\QQ})$ is generated by $G(\bar{\QQ})$ and the
+permutations of the factors, which fix Cayley's hyperdeterminant, a
+symmetric function of the three factors, and the restriction of
+$\mathrm{Det}$ to the diagonal is a nonzero multiple of it
+(\Cref{rem:mumforddet}). $\Sp(V,\psi)$
+fixes no nonzero element of $S^{4}V$, which would be a nonzero quartic form
+constant on the single orbit $V\setminus\{0\}$. The permutations of the
+factors conjugate $s_{k}$ into $s_{\sigma(k)}$, so they commute with $r_{1}$,
+as does $G$; and $t\mapsto\hat{t}$ is $\Sp(V,\psi)$-equivariant, since the
+pairing $\int_{X}v\cup w\cup\theta^{3}$ on $V$ is $G$-invariant and
+alternating, hence a multiple of the form $\psi$. So the class $r_{1}$ is
+fixed by $N$. On $S^{2}V\subset V\otimes V$ the endomorphism $r_{1}$ acts by
+$3$ on $S^{2}V_{1}\otimes S^{2}V_{2}\otimes S^{2}V_{3}$ and by $-1$ on the
+$T_{i}$, since $s_{k}$ is $1$ on $S^{2}V_{k}$ and $-1$ on
+${\textstyle\bigwedge^{2}}V_{k}$; as $S^{2}V$ is irreducible under
+$\Sp(V,\psi)$, the class $r_{1}$ is not $\Sp(V,\psi)$-invariant. If
+$M^{1}\ne\Sp(V,\psi)$, then $M^{1}\subseteq N$ by (i), and the two classes are
+$M^{1}$-invariant, hence algebraic; if $M^{1}=\Sp(V,\psi)$, they are not. When
+$M^{1}$ is $G\cdot A_{3}$ or $N$ it contains $\zeta$, which fixes no
+exceptional class.
+
+(iv) A fine moduli space as in the statement is defined over a number field,
+and the curve contains infinitely many CM points, which are algebraic, an
+abelian variety with complex multiplication being defined over a number
+field; so the curve is the Zariski closure of a set of algebraic points and
+is defined over $\bar{\QQ}$, and so are its normalisation, the restricted
+family and their finite \'etale covers. Now let $W\to C$ be defined over
+$\bar{\QQ}$. The moduli map of the family is a finite morphism defined over
+$\bar{\QQ}$, so the CM points of $C$, whose images are algebraic, lie in
+$C(\bar{\QQ})$. The other points of $\Sigma_{0}$ lie in the finite sets
+$\Sigma_{\underline{P},\underline{q}}$ of the proof of
+\Cref{cor:mumfordbounded}, images of unions of connected components of fibre
+products of relative Hilbert schemes of $W\times_{C}W\to C$. These are base
+changes of schemes over $\bar{\QQ}$, and each connected component of the
+base change is the base change of a connected component over $\bar{\QQ}$,
+which is algebraically closed; so a finite
+$\Sigma_{\underline{P},\underline{q}}$ consists of algebraic points. If
+$t\notin C(\bar{\QQ})$, then $t\notin\Sigma_{0}$, the Hodge group of $X_{t}$ is
+$G$, and (ii) for $X_{t}$ gives the Hodge conjecture for $X_{t}\times X_{t}$;
+\Cref{cor:mumfordone}(iii) gives the target.
+\end{proof}
+
+The four cases differ already on $X^{4}$ and $X^{6}$
+(\Cref{fig:mumfordgroups}). Over $\bar{\QQ}$,
+$(V^{\otimes2m})^{G}$ is the tensor product of three copies of the space of
+$\SL_{2}$-invariants of $(\bar{\QQ}^{2})^{\otimes2m}$, of dimension $c=2$ for
+$m=2$ and $c=5$ for $m=3$, with a basis of non-crossing pairings that $\zeta$
+and the transpositions of the factors permute. So the algebraic classes in
+the multilinear part $V^{\otimes2m}\subset H^{2m}(X^{2m},\QQ)$ have dimension
+$c^{3}$, $(c^{3}+2c)/3$, $(c^{3}+3c^{2}+2c)/6$ and $(2m-1)(2m-3)\cdots1$ when
+$M^{1}$ is $G$, $G\cdot A_{3}$, $N$ and $\Sp(V,\psi)$, the last by the first
+fundamental theorem for $\Sp(V,\psi)$: $8$, $4$, $4$, $3$ on $X^{4}$ and
+$125$, $45$, $35$, $15$ on $X^{6}$. The middle two count the orbits of the
+basis under $\langle\zeta\rangle$ and under $S_{3}$: $\zeta$ fixes the $c$
+triples of equal pairings and a transposition fixes $c^{2}$ of them. If $M$ were known to be
+connected, $M^{1}$ would be connected too, since $-1\in G$ lies in its
+identity component; it would then be $G$ or $\Sp(V,\psi)$, and the
+algebraicity of $\mathrm{Det}$ alone would give the Hodge conjecture for every
+power of $X$. The argument does not decide whether $M$ is connected. It is the
+standard use of the motivic group as the stabiliser of the algebraic classes,
+and we claim no priority for \Cref{prop:mumfordmotivic}. It proves no new case
+of the Hodge conjecture: it says what one new cycle on one power of one member
+would have to do.
+
+\begin{figure}[tbp]
+\centering
+  \includegraphics[width=\textwidth]{fig_mumfordgroups}
+\caption{The four possible groups $M^{1}=M\cap\Sp(V,\psi)$ of
+\Cref{prop:mumfordmotivic}, where $M=\mathbb{G}_{m}\cdot M^{1}$, as the chain
+$G\subset G\cdot A_{3}\subset N\subset\Sp(V,\psi)$: the first two inclusions
+have index $3$ and $2$, and $N$, whose identity component is $G$, has
+dimension $9$ against $36$. For each case the table gives the dimension of
+the algebraic classes in the multilinear part $V^{\otimes2m}$ of
+$H^{2m}(X^{2m},\QQ)$ for $m=2$ and $m=3$, from the $c=2$, respectively $c=5$,
+non-crossing pairings; whether $M^{1}$
+contains the cyclic permutation $\zeta$ of the three tensor factors; whether
+$\mathrm{Det}$ and $r_{1}$ are algebraic; and whether the two exceptional
+classes of $X\times X$ are. Only $M^{1}=G$ makes the exceptional classes
+algebraic, and it is equivalent to the Hodge conjecture for every power of
+$X$ (\Cref{prop:mumfordmotivic}(ii)); the proposition does not decide which
+of the four cases occurs. Below, from left to right: $\zeta$; the subgroups of
+$N(\bar{\QQ})/G(\bar{\QQ})\cong S_{3}$, of which only $1$, $A_{3}$ and $S_{3}$
+are stable under the Galois group, which acts transitively on the three
+factors; and $\mathfrak{sp}(V,\psi)=\operatorname{Lie}G\oplus
+S^{2}V_{1}\otimes S^{2}V_{2}\otimes S^{2}V_{3}$, $36=9+27$, the second summand
+irreducible under $G$, with the eigenvalues $-1$ and $3$ of $r_{1}$ on the two
+summands.}
+\label{fig:mumfordgroups}
+\end{figure}
+
+The same invariance explains why the classes known or expected to be
+algebraic on abelian varieties stop short of the exceptional classes, on all
+abelian varieties at once.
+
+\begin{proposition}[The system generated by the known classes]\label{prop:mumfordformal}
+Keep \Cref{setup:mumford}, and $\zeta$ and $G\cdot A_{3}$ as in
+\Cref{prop:mumfordmotivic}. For an abelian variety $A$ let $A_{X}\subseteq A$
+be the largest abelian subvariety isogenous to a power of $X$, and $A'$ the
+identity component of the intersection of the kernels of the homomorphisms
+$A\to X$. Then $A_{X}\times A'\to A$ is an isogeny, $\Hom(X,A')=0$, and
+\[
+  H^{1}(A,\QQ)=\bigl(V\otimes\Hom^{0}(A_{X},X)\bigr)\oplus H^{1}(A',\QQ),
+\]
+the first summand embedded by $v\otimes f\mapsto f^{*}v$. Let $\GL(V)$ act on
+$H^{*}(A,\QQ)={\textstyle\bigwedge^{*}}H^{1}(A,\QQ)$ through the factor $V$. Let $\cS$
+be the smallest family of subspaces $\cS(A)\subseteq H^{*}(A,\QQ)$, over all
+complex abelian varieties $A$, that is closed under linear combinations, cup
+products, exterior products, and pull-back and push-forward along
+homomorphisms, and contains:
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.6em,itemsep=1pt]
+\item the divisor classes;
+\item for every subfield $E\subseteq\End^{0}(A)$, the rational classes whose
+  extension to $\bar{\QQ}$ lies in $\bigoplus_{\sigma}{\textstyle\bigwedge^{d}}
+  H^{1}(A,\bar{\QQ})_{\sigma}$, the sum over the embeddings
+  $\sigma\colon E\to\bar{\QQ}$ of the top exterior powers of the eigenspaces,
+  $d=\dim_{E}H^{1}(A,\QQ)$; among them are the Weil classes;
+\item the Hodge classes of the abelian varieties without isogeny factor $X$;
+\item the Hodge classes of the powers of $X$ that are fixed by $\zeta$, among
+  them $\mathrm{Det}$ and $r_{1}$.
+\end{enumerate}
+Then every class of $\cS$ is invariant under $G\cdot A_{3}$ acting through
+$V$, and the classes obtained from \textup{(a)}, \textup{(b)} and
+\textup{(c)} alone are invariant under $\Sp(V,\psi)$. The Hodge classes in
+$\cS(X^{m})$ are the Hodge classes of $X^{m}$ fixed by $\zeta$, and $\cS$
+contains no exceptional class of $X\times X$.
+\end{proposition}
+
+\begin{proof}
+Up to isogeny $A=A_{X}\times A'$ by Poincar\'e reducibility, with $A_{X}$
+isogenous to some $X^{k}$ and no isogeny factor $X$ in $A'$, so
+$\Hom(X,A')=\Hom(A',X)=0$, $X$ being simple. As $\End^{0}(X)=\QQ$,
+$\Hom^{0}(A_{X},X)$ has dimension $k$ and the displayed map is an isomorphism.
+A homomorphism $h\colon A\to B$ is, up to isogeny, $h_{X}\times h'$ with
+$h_{X}\colon A_{X}\to B_{X}$ and $h'\colon A'\to B'$, and $h^{*}$ acts on
+$H^{1}$ as $(1\otimes(f\mapsto f\circ h_{X}))\oplus h'^{*}$, which commutes
+with $\GL(V)$; so pull-backs are equivariant, and so are cup and exterior
+products, $\GL(V)$ acting on $H^{*}(A\times B)=H^{*}(A)\otimes H^{*}(B)$
+diagonally. The orientation class of $A$ spans
+${\textstyle\bigwedge^{\mathrm{top}}}H^{1}(A)=(\det V)^{\otimes k}\otimes
+(\det\Hom^{0}(A_{X},X))^{\otimes8}\otimes{\textstyle\bigwedge^{\mathrm{top}}}H^{1}(A')$, on
+which $\SL(V)$ acts trivially, so Poincar\'e duality and push-forwards are
+$\SL(V)$-equivariant. Since $G\cdot A_{3}\subseteq\Sp(V,\psi)\subseteq\SL(V)$,
+the classes invariant under either group form a family closed under all the
+operations, and it remains to look at the generators.
+
+(a) A divisor class of $A$ is the sum of its K\"unneth components in
+${\textstyle\bigwedge^{2}}H^{1}(A_{X})$, $H^{1}(A_{X})\otimes H^{1}(A')$ and
+${\textstyle\bigwedge^{2}}H^{1}(A')$, which are Hodge classes. The middle one corresponds to a
+homomorphism from $A'$ to the dual of $A_{X}$, which is zero. The first is a
+Hodge class of $A_{X}$, so a $G$-invariant of ${\textstyle\bigwedge^{2}}(V\otimes\QQ^{k})=
+S^{2}V\otimes{\textstyle\bigwedge^{2}}\QQ^{k}\oplus{\textstyle\bigwedge^{2}}V\otimes S^{2}\QQ^{k}$; as
+$(S^{2}V)^{G}=0$ and $({\textstyle\bigwedge^{2}}V)^{G}=\QQ\psi$ (proof of
+\Cref{thm:lefschetzclosure}(i)), it lies in
+$\psi\otimes S^{2}\QQ^{k}$, which $\Sp(V,\psi)$ fixes. On the third $\GL(V)$
+acts trivially. (b) The field $E$ acts on $Q=\Hom^{0}(A_{X},X)$ and on
+$H^{1}(A')$, and the $\sigma$-eigenspace of $H^{1}(A,\bar{\QQ})$ is
+$V\otimes Q_{\sigma}\oplus H^{1}(A',\bar{\QQ})_{\sigma}$. Its top exterior
+power is $(\det V)^{\otimes\dim Q_{\sigma}}\otimes(\det Q_{\sigma})^{\otimes8}
+\otimes\det H^{1}(A',\bar{\QQ})_{\sigma}$, on which $\SL(V)$ acts trivially.
+(c) For such an abelian variety
+$A_{X}=0$, and $\GL(V)$ acts trivially. (d) The Hodge classes of $X^{m}$ are
+the invariants of $G$, which acts through $V$, and those fixed by $\zeta$ are
+invariant under the group $G\cdot A_{3}$ that $G$ and $\zeta$ generate.
+
+So every class of $\cS$ is $G\cdot A_{3}$-invariant, and those obtained from
+(a), (b) and (c) are $\Sp(V,\psi)$-invariant. The Hodge classes of $X^{m}$ in
+$\cS$ contain those of (d) and are fixed by $\zeta$, so they are exactly the
+Hodge classes fixed by $\zeta$; and an exceptional class of $X\times X$ is not
+fixed by $\zeta$ (proof of \Cref{prop:mumfordmotivic}(ii)).
+\end{proof}
+
+So no argument that uses only these inputs and these operations reaches the
+exceptional classes. The inputs include all Weil classes, whether or not they
+are known to be algebraic, and with them Markman's cycles \cite{Mar25a}; the
+whole Hodge conjecture for the abelian varieties without isogeny factor $X$;
+and the algebraicity of $\mathrm{Det}$ and $r_{1}$. A proof needs a cycle
+outside this system: on a product of a power of $X$ with an abelian variety, a
+class that is not invariant under $G\cdot A_{3}$ acting through $V$, or a cycle
+through a variety that is not an abelian variety, such as the Kuga--Satake
+class of $S_{\lambda}$ would provide (\Cref{prop:mumfordkslink}).
+\Cref{prop:mumfordformal} extends the second limit of
+\Cref{rem:mumfordpowersopen}; it is an obstruction to a method, not to the
+target, and we claim no priority for it.
+
+The same invariance, used the other way round, shows that the statement (F2)
+of \Cref{cor:fourremain} is not smaller than the conjecture for abelian
+varieties. For an abelian variety $Y$ let $R(Y)\subseteq H^{*}(Y,\QQ)$ be the
+subring generated by divisor classes and Weil classes of quotients, as in
+\Cref{rem:f3collapse}.
+
+\begin{proposition}[Statement (F2) is the conjecture for abelian varieties]
+\label{prop:f2isab}
+Statement \textup{(F2)} of \Cref{cor:fourremain} implies the Hodge
+conjecture for every abelian variety, and is therefore equivalent to it.
+\end{proposition}
+
+\begin{proof}
+The conjecture for abelian varieties contains (F2). For the converse, recall
+from \Cref{rem:f3collapse} that (F2) gives every Hodge class of degree $2q$ on
+$Y$ as soon as one Hodge class of degree $2q$ on $Y$ lies outside $R(Y)$. Let
+$X$ be as in \Cref{setup:mumford}, and let $\zeta$ act on the cohomology of
+every abelian variety through the factor $V$, as in \Cref{prop:mumfordformal}.
+Every class of $R(Y)$ lies in $\cS(Y)$, so it is fixed by $\zeta$, for every
+$Y$; and an exceptional class $e_{0}\in H^{4}(X\times X,\QQ)$ is not
+(\Cref{prop:mumfordformal}). Let $\theta$ be an ample class on $X\times X$,
+which $\zeta$ fixes. If $\zeta e_{0}=\lambda e_{0}$, then $\lambda\ne1$ and
+$e=e_{0}+\theta^{2}$ has $\zeta e=\lambda e_{0}+\theta^{2}$, which is not a
+multiple of $e$; otherwise put $e=e_{0}$. In either case $e$ is a Hodge class
+of degree $4$ on $X\times X$ with $\zeta e\notin\bar{\QQ}\,e$.
+
+Let $A$ be an abelian variety and $\beta\ne0$ a Hodge class of degree $2p$ on
+$A$, and put $Y=A\times X\times X$. As $\zeta$ acts on
+$H^{*}(Y)=H^{*}(A)\otimes H^{*}(X\times X)$ diagonally, a class
+$\beta\otimes e$ in $R(Y)$ would satisfy
+$\zeta\beta\otimes\zeta e=\beta\otimes e$, which forces $\zeta e\in\bar{\QQ}\,e$.
+So the Hodge class $\beta\otimes e$ lies outside $R(Y)$, and (F2) makes it
+algebraic. In the same way $e\cup\theta^{4}\notin R(X\times X)$, since
+otherwise $(\zeta e-e)\cup\theta^{4}=0$ and the hard Lefschetz theorem would
+give $\zeta e=e$; so (F2) makes every Hodge class of degree $12$ on
+$X\times X$ algebraic. By the Hodge--Riemann bilinear relations the
+intersection pairing between the Hodge classes of degrees $4$ and $12$ on
+$X\times X$ is nondegenerate, so there is a Hodge class $e'$ of degree $12$
+with $\int_{X\times X}e\cup e'=1$. Then
+\[
+  \beta=\mathrm{pr}_{A*}\bigl((\beta\otimes e)\cup
+  \mathrm{pr}_{X\times X}^{*}e'\bigr),
+\]
+with $\mathrm{pr}_{A}$ and $\mathrm{pr}_{X\times X}$ the projections of $Y$,
+and $\beta$ is algebraic.
+\end{proof}
+
+\begin{remark}[The rule set with \Cref{prop:f2isab}]\label{rem:f2rule}
+\Cref{thm:closure} is a statement about the rule set of \Cref{setup:rules},
+and \Cref{prop:f2isab} is a rule that the set does not contain. Adjoined to
+it, the rule changes the fifth minimal set of \Cref{thm:closure}(ii): the
+minimal sufficient sets become
+\[
+  \{\mathrm{F3}\},\quad\{\mathrm{L},\mathrm{M}\},\quad
+  \{\mathrm{L},\mathrm{F3}'\},\quad\{\mathrm{V},\mathrm{F3}'\},\quad
+  \{\mathrm{F2},\mathrm{F3}'\},
+\]
+and $\mathrm{P2}_{\mathrm{split}}$ lies in none of them. Indeed the new rule
+has the premise (F2) and the conclusion $\mathbf{AB}$, the conjecture for
+abelian varieties, so the sets $C_{1}$, $C_{2}$ and $C_{4}$ of the proof of
+\Cref{thm:closure} stay closed, and a sufficient set meets $H_{1}$, $H_{2}$
+and $H_{4}$. The sets meeting these three that are minimal with this property
+are the five above, by the argument of that proof without $H_{3}$, and each is
+sufficient: $\{\mathrm{F2},\mathrm{F3}'\}$ gives $\mathbf{AB}$ by the new
+rule and then $\mathbf{HC}$ by \Cref{prop:f3prime}(i). So the results of this
+paper on Weil classes do not shorten a route to the conjecture. What they do
+is reduce one case of it, the algebraicity of the Weil classes of every CM
+field, to the single statement $\mathrm{P2}_{\mathrm{split}}$, by a route that
+does not pass through (F2). Like (F3), which is the whole conjecture, (F2) is
+the whole conjecture for abelian varieties, carried by the classes that are
+hardest to reach; the exceptional classes of $X\times X$ are its smallest
+instance, and the proof above shows that the classes $\beta\otimes e$ built
+from them already carry all of it.
+\end{remark}

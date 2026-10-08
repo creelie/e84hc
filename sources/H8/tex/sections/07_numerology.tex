@@ -1,0 +1,115 @@
+\section{Secant numerology}\label{sec:numerology}
+
+The obstructions of \Cref{thm:divisor,thm:character} concern where a class
+can lie in cohomology, and neither of them uses a count of dimensions. A
+secant construction is also subject to such a count, and this section shows
+that the count obstructs nothing. It asks for a polarisation on $\Av$ whose
+Euler characteristic lies below the values at which the theorem of Lefschetz
+guarantees that a linear system is free of base points or very ample. Those
+values are sufficient conditions and not necessary ones, and already on
+abelian surfaces there are base-point-free and very ample systems below them.
+
+\subsection{The dimension count}
+
+\begin{setupenv}[The secant numerology]\label{setup:numerology}
+Let $A$ be of $(K,-1,n)$-Weil type, so that $\dim A=\dim\Av=2n$. Suppose that
+$\Av$ is embedded in $\PP^{N-1}$ by a complete linear system $|M|$ with $M$
+ample. An ample line bundle on an abelian variety has no higher cohomology,
+so $N=h^{0}(M)=\chi(M)$. The $n$-th secant variety of a nondegenerate
+$2n$-fold has expected dimension
+\[
+  \dim\Sec^{n}(\Av)=n(2n+1)-1=2n^{2}+n-1,
+\]
+and for a construction that intersects $\Sec^{n}(\Av)$ with $\Av$ in the
+expected dimension inside $\PP^{N-1}$,
+\[
+  \dim\bigl(\Sec^{n}(\Av)\cap\Av\bigr)
+  =\bigl(2n^{2}+n-1\bigr)+2n-\bigl(N-1\bigr)
+  =2n^{2}+3n-N .
+\]
+Requiring this dimension to be $n$, so that the construction produces a class
+of the required codimension, forces
+\begin{equation}\label{eq:chirequired}
+  N=\chi(M)=2n^{2}+2n .
+\end{equation}
+\end{setupenv}
+
+\begin{lemma}\label{lem:chicompare}
+For every $n\ge2$,
+\[
+  2n^{2}+2n<2^{2n}<3^{2n},
+\]
+and the ratio $2^{2n}/(2n^{2}+2n)$ tends to infinity.
+\end{lemma}
+
+\begin{proof}
+The right inequality is clear. Since $2^{2n}=4^{n}$, put
+$q(n)=4^{n}/(2n^{2}+2n)$, so that $q(2)=16/12>1$. The ratio of consecutive
+values is
+\[
+  \frac{q(n+1)}{q(n)}=\frac{4(2n^{2}+2n)}{2(n+1)^{2}+2(n+1)}=\frac{4n}{n+2},
+\]
+which is at least $2$ for $n\ge2$. Hence $q(n)\ge2^{\,n-2}q(2)>1$ for every
+$n\ge2$, and $q(n)\to\infty$.
+\end{proof}
+
+\subsection{The Lefschetz thresholds}
+
+The theorem of Lefschetz says that for $M$ ample on an abelian variety,
+$M^{\otimes2}$ is free of base points and $M^{\otimes3}$ is very ample
+\cite[Section~4.5]{BL04}. If $M=P^{\otimes2}$ with $P$ ample on an abelian
+variety of dimension $m$, then $\chi(M)=2^{m}\chi(P)\ge2^{m}$, since
+$\chi(L)=(L^{m})/m!$ for every line bundle $L$ by Riemann--Roch, and similarly
+$\chi\ge3^{m}$ in the very ample case. Read as thresholds, these bounds would
+say that there is no base-point-free system below $2^{m}$ and no very ample
+system below $3^{m}$. Both readings turn a sufficient condition into a
+necessary one, and both fail already for abelian surfaces.
+
+\begin{proposition}[The thresholds are not necessary]\label{prop:thresholds}
+Let $S$ be a general complex abelian surface, so $m=2$.
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item A polarisation of type $(1,3)$ on $S$ has $\chi=3<4=2^{2}$ and its
+  complete linear system is free of base points; the associated morphism
+  $S\to\PP^{2}$ is a six-sheeted covering.
+\item A polarisation of type $(1,5)$ on $S$ has $\chi=5<9=3^{2}$ and is very
+  ample; the image is a Horrocks--Mumford abelian surface of degree $10$ in
+  $\PP^{4}$ \textup{\cite{HM73}}.
+\end{enumerate}
+In particular neither $2^{m}$ nor $3^{m}$ is a lower bound for the Euler
+characteristic of a base-point-free, respectively very ample, ample line
+bundle on an abelian variety of dimension $m$.
+\end{proposition}
+
+\begin{proof}
+By Riemann--Roch on an abelian surface, a polarisation $L$ of type $(1,d)$
+has $\chi(L)=(L^{2})/2=d$. The remaining assertions belong to the
+classification of $(1,d)$-polarised abelian surfaces; see Gross and Popescu
+\cite[\S1.2]{GP98}, where the base locus of $|L|$ is determined for each $d$:
+it is empty for $d\ge3$, consists of four points for $d=2$, and $|L|$ is very
+ample for $d\ge5$ on a general surface, the case $d=5$ being the
+Horrocks--Mumford embedding of \cite{HM73}. In that case the image has degree
+$(L^{2})=10$. For $d=3$ the morphism $S\to\PP^{2}$ defined by $|L|$ contracts
+no curve, because $L$ is ample, so it is finite and surjective, of degree
+$(L^{2})=6$.
+\end{proof}
+
+\begin{corollary}\label{cor:nonumerical}
+The count of \Cref{setup:numerology} leads to no contradiction. The
+requirement $\chi(M)=2n^{2}+2n$ of \eqref{eq:chirequired} is compatible with
+$M$ being very ample for all $n$ for which a polarisation of that Euler
+characteristic and suitable type exists on a $2n$-dimensional abelian
+variety. At $n=2$ the requirement $\chi=12$ on an abelian fourfold is met by
+polarisations of type $(1,1,2,6)$ and $(1,1,1,12)$, and nothing in the
+numerology excludes very ampleness for either.
+\end{corollary}
+
+\begin{remark}[The threshold reading]\label{rem:retract}
+The supplementary material of the preprint cited on the title page asserts that the polarisation required by \eqref{eq:chirequired} admits no
+base-point-free linear system, on the basis of a table of the values
+$2n^{2}+2n$, $2^{2n}$ and $3^{2n}$. The table is correct, and
+\Cref{lem:chicompare} reproduces it, but by \Cref{prop:thresholds} the
+inference drawn from it does not hold, and the claim is withdrawn. The obstructions of
+\Cref{thm:divisor,thm:character} are of a different nature: they bound where
+a class can lie in a decomposition of cohomology, and no choice of
+polarisation, ambient space or object affects them.
+\end{remark}

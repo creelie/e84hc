@@ -1,0 +1,36 @@
+========================================================================
+F: all monomials, random members only, criterion (D), rank mod q
+  [PASS] F n=3, d=1, k=1: 66 columns; kernel mod q with (members, kernel): [(1, 36), (2, 6), (3, 0)] (expected final 0)
+         q = 2147483629, 0.1s
+  [PASS] F n=3, d=1, k=2: 495 columns; kernel mod q with (members, kernel): [(2, 15), (3, 0)] (expected final 0)
+         q = 2147483629, 6.9s
+  [PASS] F n=3, d=1, k=3: 924 columns; kernel mod q with (members, kernel): [(2, 20), (3, 2)] (expected final 2)
+         q = 2147483629, 33.9s
+  [PASS] F n=3, d=1, k=4: 495 columns; kernel mod q with (members, kernel): [(2, 15), (3, 0)] (expected final 0)
+         q = 2147483629, 4.4s
+  [PASS] F n=3, d=1, k=5: 66 columns; kernel mod q with (members, kernel): [(1, 36), (2, 6), (3, 0)] (expected final 0)
+         q = 2147483629, 0.1s
+  [PASS] F n=3, d=7, k=1: 66 columns; kernel mod q with (members, kernel): [(1, 36), (2, 6), (3, 0)] (expected final 0)
+         q = 2147483647, 0.0s
+  [PASS] F n=3, d=7, k=2: 495 columns; kernel mod q with (members, kernel): [(2, 15), (3, 0)] (expected final 0)
+         q = 2147483647, 4.5s
+  [PASS] F n=3, d=7, k=3: 924 columns; kernel mod q with (members, kernel): [(2, 20), (3, 2)] (expected final 2)
+         q = 2147483647, 27.4s
+  [PASS] F n=3, d=7, k=4: 495 columns; kernel mod q with (members, kernel): [(2, 15), (3, 0)] (expected final 0)
+         q = 2147483647, 4.0s
+  [PASS] F n=3, d=7, k=5: 66 columns; kernel mod q with (members, kernel): [(1, 36), (2, 6), (3, 0)] (expected final 0)
+         q = 2147483647, 0.1s
+  [PASS] F n=4, d=1, k=1: 120 columns; kernel mod q with (members, kernel): [(1, 64), (2, 8), (3, 0)] (expected final 0)
+         q = 2147483629, 0.2s
+  [PASS] F n=4, d=1, k=2: 1820 columns; kernel mod q with (members, kernel): [(2, 28), (3, 0)] (expected final 0)
+         q = 2147483629, 295.7s
+  [PASS] F n=4, d=1, k=6: 1820 columns; kernel mod q with (members, kernel): [(2, 28), (3, 0)] (expected final 0)
+         q = 2147483629, 212.6s
+  [PASS] F n=4, d=1, k=7: 120 columns; kernel mod q with (members, kernel): [(1, 64), (2, 8), (3, 0)] (expected final 0)
+         q = 2147483629, 0.2s
+
+  14 checks passed, 0 failed  (590.5s)
+
+real	9m51.374s
+user	1m44.423s
+sys	0m12.474s

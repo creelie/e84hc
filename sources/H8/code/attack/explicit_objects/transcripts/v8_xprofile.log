@@ -1,0 +1,9 @@
+n=2 profiles checked (d=1,7,10; 3 secant vectors)  (0.0s)
+n=3 profiles checked (d=1,7,10; 3 secant vectors)  (0.0s)
+n=4 profiles checked (d=1,7,10; 3 secant vectors)  (0.3s)
+n=5 profiles checked (d=1,7,10; 3 secant vectors)  (1.8s)
+n=2 chi formula: True
+n=3 chi formula: True
+n=4 chi formula: True
+n=5 chi formula: True
+n=6 chi formula: True

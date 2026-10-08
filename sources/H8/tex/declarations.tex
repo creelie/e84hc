@@ -1,0 +1,46 @@
+% \zenodoCodeID is the one DOI the paper cites for the code, in the data
+% availability section and in the entry BMB26 of the bibliography: the version
+% DOI of release v5.0.1. Releases v1.0.0, v2.0.0, v3.0.0, v3.1.1, v3.2.0,
+% v4.0.0 and v5.0.0 are 10.5281/zenodo.22950276, 10.5281/zenodo.23038895,
+% 10.5281/zenodo.23047883, 10.5281/zenodo.23078541, 10.5281/zenodo.23093099,
+% 10.5281/zenodo.23197107 and 10.5281/zenodo.23221435; all are versions of the
+% concept record 10.5281/zenodo.22950275.
+\newcommand{\zenodoCodeID}{10.5281/zenodo.23225483}
+\newcommand{\zenodoCodeDOI}{%
+  \href{https://doi.org/\zenodoCodeID}{\texttt{\zenodoCodeID}}}
+
+\section*{Declarations}
+
+\subsection*{Funding}
+The authors received no funding for this work.
+
+\subsection*{Competing interests}
+The authors have no competing interests to declare.
+
+\subsection*{Ethics approval and consent}
+This article reports no research involving human participants, human data or
+animals, so ethics approval and consent to participate or to publish were not
+required. The results are original and have not been published elsewhere,
+and the work of others is credited by citation throughout.
+
+\subsection*{Data availability}
+The programs of the archive \cite{BMB26}, which repeat much of the finite
+arithmetic of the proofs as an independent check, the Lean~4 certificate of
+part of that arithmetic, the Macaulay2
+computations of local $\Ext$ algebras with their output, the sources of the
+paper, and the generators and TikZ sources of every figure are openly
+available on Zenodo under the DOI \zenodoCodeDOI; the version that
+accompanies this paper is release 5.0.1 of the archive. A document in the
+archive lists, for each result of the paper, the computations that check
+it. The programs perform $2218$ checks, all of which pass, and the
+Lean kernel checks four hundred and nine theorems, each depending on no axiom
+or on propositional extensionality alone. Deep Bhattacharjee computed all
+the calculations, in C, Python, Julia, Macaulay2, Lean~4 and shell scripts,
+with the assistance of Claude Code, an AI model developed by Anthropic. The
+programs in the archive are those in Python, which use the C libraries FLINT
+and Arb through python-flint, in Macaulay2 and in shell scripts, together
+with the Lean~4 certificate, in which he formalised the finite arithmetic.
+Every result they certify can be reproduced from the archive
+with the programs and the Lean kernel, and the authors are responsible for
+the mathematical statements and their proofs. No other data were generated
+or analysed.

@@ -1,0 +1,281 @@
+\section{Endomorphism algebras and Weil type}\label{app:albert}
+
+\Cref{def:weiltype} asks for three things: an even dimension, an imaginary
+quadratic field acting with balanced eigenvalue multiplicities, and
+compatibility with the polarisation. This appendix places these conditions
+inside Albert's classification of endomorphism algebras. Two statements used
+in the body come out of it. The first is that the compatibility condition is
+automatic once the field is stable under the Rosati involution, so that it
+reduces to that stability (\Cref{lem:rosatiauto}). The second is that the
+balanced condition is not a normalisation but exactly the condition under
+which the Weil line carries a Hodge class (\Cref{prop:signatureforced}); this
+is why the subject concerns balanced signatures alone.
+
+\subsection{Positive involutions}
+
+\begin{definition}\label{def:positive}
+Let $D$ be a finite dimensional semisimple $\QQ$-algebra. An involution
+$\dagger$ of $D$, that is a $\QQ$-linear anti-automorphism with
+$\dagger^{2}=\id$, is \emph{positive} if
+\[
+  \Tr_{D/\QQ}\bigl(x\,x^{\dagger}\bigr)>0
+  \qquad\text{for every }x\in D,\ x\ne0,
+\]
+where $\Tr_{D/\QQ}$ is the trace of left multiplication on $D$ as a
+$\QQ$-vector space.
+\end{definition}
+
+For an abelian variety $A$ with a polarisation $\eta$, the algebra
+$D=\End^{0}(A)=\End(A)\otimes\QQ$ is semisimple and the Rosati involution
+$\dagger$ attached to $\eta$ is positive \cite[Ch.~5]{BL04}. Everything below
+is a statement about the pair $(D,\dagger)$.
+
+\begin{lemma}[Totally real centre]\label{lem:totallyreal}
+Let $(D,\dagger)$ be as above with $D$ a division algebra, let $F$ be the
+centre of $D$ and $F_{0}=\{z\in F:z^{\dagger}=z\}$. Then $F_{0}$ is a totally
+real number field.
+\end{lemma}
+
+\begin{proof}
+For $z\in F_{0}$ the positivity condition reads
+$\Tr_{D/\QQ}(z^{2})>0$, and $\Tr_{D/\QQ}$ restricted to $F_{0}$ is
+$[D:F_{0}]\cdot\Tr_{F_{0}/\QQ}$, so $\Tr_{F_{0}/\QQ}(z^{2})>0$ for every
+nonzero $z\in F_{0}$. Suppose $F_{0}$ had a complex place $\sigma$. The
+embedding of $F_{0}$ into the product of its archimedean completions has dense
+image, so there is $z\in F_{0}$ with $\sigma(z)$ within $\tfrac1{10}$ of $i$
+and $|\rho(z)|<\varepsilon$ for every other archimedean place $\rho$. Then
+$\Tr_{F_{0}/\QQ}(z^{2})=\sum_{\rho}\rho(z)^{2}$, where a complex place
+contributes twice the real part of $\rho(z)^{2}$. The real part of
+$\sigma(z)^{2}$ is less than $-1+\tfrac{2}{10}+\tfrac{1}{100}<-\tfrac12$, so
+the term from $\sigma$ is less than $-1$, and the remaining terms are
+bounded in absolute value by $2[F_{0}:\QQ]\varepsilon^{2}$, so the total is
+negative for $\varepsilon$ small. This contradicts positivity, so every place
+of $F_{0}$ is real.
+\end{proof}
+
+\begin{theorem}[Albert \cite{Alb34,Alb35a,Alb35b}]\label{thm:albert}%
+\footnote{The numbering of the four types is Albert's and has stuck, although
+it follows no natural order: types I to III have a totally real centre and
+type IV a CM one, so the natural division is two against two rather than three
+against one. Shimura's normalisation of the same classification, in terms of
+the associated symmetric domains, is the one that makes the moduli side
+transparent.}
+Let $(D,\dagger)$ be a division algebra over $\QQ$ with a positive involution,
+$F$ its centre, $F_{0}$ the subfield fixed by $\dagger$, $e_{0}=[F_{0}:\QQ]$
+and $[D:F]=d^{2}$. Then $F_{0}$ is totally real, $[F:F_{0}]\in\{1,2\}$, and
+exactly one of the following holds.
+\begin{enumerate}[label=\textup{Type \Roman*.},leftmargin=4.2em,itemsep=2pt]
+\item $D=F=F_{0}$ is a totally real field and $\dagger$ is the identity.
+\item $F=F_{0}$ is totally real and $D$ is a quaternion algebra over $F$ with
+  $D\otimes_{F,\rho}\RR\cong M_{2}(\RR)$ at every real place $\rho$;
+  $\dagger$ is of orthogonal type.
+\item $F=F_{0}$ is totally real and $D$ is a quaternion algebra over $F$ with
+  $D\otimes_{F,\rho}\RR\cong\mathbb{H}$ at every real place $\rho$; $\dagger$
+  is the canonical involution.
+\item $F$ is a CM field with maximal totally real subfield $F_{0}$, and
+  $\dagger$ induces complex conjugation on $F$.
+\end{enumerate}
+If moreover $D=\End^{0}(A)$ for an abelian variety $A$ of dimension $g$ with
+$\dagger$ the Rosati involution of a polarisation, then
+\[
+  \text{\rm I: } e_{0}\mid g,
+  \qquad
+  \text{\rm II: } 2e_{0}\mid g,
+  \qquad
+  \text{\rm III: } 2e_{0}\mid g,
+  \qquad
+  \text{\rm IV: } e_{0}d^{2}\mid g .
+\]
+\end{theorem}
+
+We quote \Cref{thm:albert} as a classification. \Cref{lem:totallyreal}
+proves the part of it that we use directly, and the four types with their
+divisibility conditions are in \cite[Ch.~9]{BL04}. \Cref{fig:albert} draws the
+signatures of an imaginary quadratic action and the dimensions of their
+families.
+
+\begin{figure}[htbp]
+\centering
+  \includegraphics[width=0.92\textwidth]{fig_signature}
+\caption{The signatures $(p,q)$ of an imaginary quadratic action, with
+$p+q=\dim A$, drawn on the surface of height $pq$, which is the dimension of
+the family of abelian varieties carrying that action, the unitary Shimura
+variety of signature $(p,q)$. Each curve on the surface collects the
+signatures available in one dimension, and on it the diagonal point is the
+highest. The divisibility conditions of \Cref{thm:albert} put no
+constraint on which of them occur when $\End^{0}(A)=K$, by
+\Cref{prop:whichtypes}(i). By \Cref{prop:signatureforced} the Weil line
+consists of Hodge classes exactly at the filled points on the ridge
+$p=q$, and at every open point it is a rational sub-Hodge structure of type
+$\{(p,2n-p),(2n-p,p)\}$ carrying no Hodge class at all. The diagonal is the
+locus that \Cref{cor:weilalgebraic} shows to be an algebraic subvariety of the
+moduli.}
+\label{fig:albert}
+\end{figure}
+
+\subsection{Compatibility with the polarisation}
+
+\begin{lemma}[Rosati on an imaginary quadratic subfield]\label{lem:rosatiauto}
+Let $A$ be an abelian variety with a polarisation $\eta$ and Rosati involution
+$\dagger$, and let $\iota\colon K\hookrightarrow\End^{0}(A)$ be an embedding of
+an imaginary quadratic field such that $\iota(K)$ is stable under $\dagger$.
+Then
+\[
+  \iota(\tau)^{\dagger}=\iota(\bbar{\tau})
+  \qquad\text{for every }\tau\in K .
+\]
+That is, condition \textup{(iii)} of \Cref{def:weiltype} holds automatically,
+and Weil type is the conjunction of \textup{(i)}, \textup{(ii)} and the
+$\dagger$-stability of $\iota(K)$.
+\end{lemma}
+
+\begin{proof}
+Put $D=\End^{0}(A)$. By stability, $\dagger$ restricts to an involutive
+anti-automorphism of the field $\iota(K)\cong K$. An anti-automorphism of a
+commutative ring is an automorphism, and $\Gal(K/\QQ)$ has order two, so the
+restriction is either the identity or complex conjugation. Suppose it were
+the identity, and put $x=\iota(\sqrt{-d})$. Then
+$x\,x^{\dagger}=x^{2}=\iota(-d)=-d\cdot 1$, so
+\[
+  \Tr_{D/\QQ}\bigl(x\,x^{\dagger}\bigr)=-d\cdot\dim_{\QQ}D<0,
+\]
+contradicting the positivity of $\dagger$. Hence $\dagger$ restricts to complex
+conjugation.
+\end{proof}
+
+\begin{remark}\label{rem:whystable}
+Stability is a real hypothesis: a subfield of $\End^{0}(A)$ need not be
+$\dagger$-stable. What \Cref{lem:rosatiauto} removes is the second half of the
+condition, the identification of $\dagger|_{K}$ with a specific automorphism.
+In particular, in the model of \Cref{setup:model} the polarisation need not be
+chosen to match the field, since any $\dagger$-stable embedding does the same
+work.
+\end{remark}
+
+\subsection{The balanced signature}
+
+\begin{definition}[Signature]\label{def:signature}
+Let $\iota\colon K\hookrightarrow\End^{0}(A)$ be as above, $g=\dim A$. The
+operator $\iota(\sqrt{-d})$ acts on the tangent space $T_{0}A\cong\CC^{g}$ with
+the two eigenvalues $\pm i\sqrt{d}$; write $p$ and $q=g-p$ for their
+multiplicities. The pair $(p,q)$ is the \emph{signature} of $(A,\iota)$.
+\end{definition}
+
+The signature is an isogeny invariant, since an isogeny induces an isomorphism
+on tangent spaces commuting with the action. It is locally constant in
+families: the two eigenspaces are the kernels of
+$\iota(\sqrt{-d})\mp i\sqrt{d}$ on the relative tangent bundle, so their
+dimensions are upper semicontinuous, and they sum to $g$. By
+duality $\iota(\tau)^{*}$ acts on $H^{1,0}(A)$ with the same multiplicities, so
+$\dim V^{1,0}_{+}=p$ and $\dim V^{1,0}_{-}=q$ in the notation of
+\Cref{sec:weiltype}.
+
+\begin{proposition}[The balanced signature is forced]\label{prop:signatureforced}
+Let $A$ be an abelian variety of dimension $2n$ with a $\dagger$-stable
+embedding $\iota\colon K\hookrightarrow\End^{0}(A)$ of signature $(p,q)$,
+$p+q=2n$, and let
+\[
+  \HW(A)=\Bigl(\textstyle\bigwedge^{2n}_{\CC}V_{+}
+   \oplus\bigwedge^{2n}_{\CC}V_{-}\Bigr)\cap H^{2n}(A,\QQ)
+\]
+as in \Cref{def:weilline}. Then $\HW(A)$ is a rational sub-Hodge structure of
+$H^{2n}(A,\QQ)$ of dimension two and of Hodge type
+$\{(p,2n-p),\,(2n-p,p)\}$, and the following are equivalent:
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item $p=q=n$, that is $(A,\iota,\eta)$ is of $(K,-1,n)$-Weil type;
+\item $\HW(A)$ contains a nonzero Hodge class;
+\item $\HW(A)$ consists of Hodge classes.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+The space $\bigwedge^{2n}V_{+}$ is a line, and by \eqref{eq:bisplit} it equals
+$\bigwedge^{p}V^{1,0}_{+}\otimes\bigwedge^{2n-p}V^{0,1}_{+}$, which is of pure
+Hodge bidegree $(p,2n-p)$; the conjugate line $\bigwedge^{2n}V_{-}$ is of
+bidegree $(2n-p,p)$. Their sum is stable under conjugation and defined over
+$\QQ$ by the argument of \Cref{prop:weilline}(i), which does not use the
+balanced condition, so $\HW(A)$ is a two-dimensional rational sub-Hodge
+structure of the stated type.
+
+A Hodge class is an element of bidegree $(n,n)$. A nonzero element of
+$\HW(A)\otimes\CC$ has a nonzero component in one of the two lines, so it is of
+bidegree $(n,n)$ only if $(p,2n-p)=(n,n)$ or $(2n-p,p)=(n,n)$, and either
+equality says $p=n$. This proves that (ii) implies (i). If $p=n$ then both
+lines are of bidegree $(n,n)$ and every element of $\HW(A)$ is a Hodge class,
+so (i) implies (iii); and (iii) implies (ii) because $\dim\HW(A)=2>0$.
+\end{proof}
+
+\begin{remark}\label{rem:onlybalanced}
+\Cref{prop:signatureforced} is the reason the literature speaks of abelian
+varieties of Weil type rather than of imaginary quadratic multiplication in
+general. For an unbalanced signature the space $\HW(A)$ is still a canonical
+two-dimensional rational sub-Hodge structure, and it is still not in the
+divisor subring, but it contains no Hodge class and therefore predicts
+nothing. The exceptional Hodge classes appear exactly at balance, and the
+locus of balance is the algebraic subvariety of \Cref{cor:weilalgebraic}.
+\end{remark}
+
+\subsection{Endomorphism algebras of Weil type}
+
+\begin{proposition}[Weil type in the classification]\label{prop:whichtypes}
+Let $A$ be an abelian variety of dimension $2n$ admitting a $\dagger$-stable
+embedding of an imaginary quadratic field $K$ with balanced signature, and
+suppose $\End^{0}(A)$ is a division algebra $D$ with centre $F$ as in
+\Cref{thm:albert}. Then:
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item if $D=K$ then $D$ is of type IV with $e_{0}=1$ and $d=1$, and the
+  divisibility condition of \Cref{thm:albert} is vacuous, so every even
+  dimension occurs;
+\item the classification does not exclude type III with $F_{0}=\QQ$: a
+  totally definite quaternion algebra over $\QQ$ contains imaginary
+  quadratic subfields on which the canonical involution is conjugation;
+\item $D$ is not of type I, because a totally real field contains no
+  imaginary quadratic subfield.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) If $D=K$ then $F=K$ is a CM field with $F_{0}=\QQ$, so $e_{0}=1$; and
+$[D:F]=1$ gives $d=1$. The involution is conjugation by
+\Cref{lem:rosatiauto}, which is type IV. The condition $e_{0}d^{2}\mid g$ reads
+$1\mid 2n$.
+
+(ii) Let $D$ be a quaternion algebra over $\QQ$ ramified at the infinite place,
+with standard generators $u,v$ satisfying $u^{2}=a<0$, $v^{2}=b<0$, $uv=-vu$,
+and canonical involution $x\mapsto\bbar{x}$ fixing $\QQ$ and negating
+$u,v,uv$. Then $\QQ(u)\cong\QQ(\sqrt{a})$ is imaginary quadratic, stable under
+the involution, and the involution restricts to conjugation on it. Whether
+such a $D$ occurs as $\End^{0}(A)$ together with a balanced signature
+is a separate question about the moduli, but nothing in the classification
+excludes it.
+
+(iii) is immediate, since a totally real field has no element of negative
+square.
+\end{proof}
+
+\begin{remark}[The generic case]\label{rem:genericcase}
+Case (ii) of \Cref{prop:whichtypes} is a special position: there
+$\End^{0}(A)$ is larger than $K$, the Hodge group is correspondingly smaller,
+and $\Hdg^{n}(A)$ can be larger than the three dimensions of
+\Cref{thm:hdgcount}. It is also a case in which the Weil classes can become
+accessible: \Cref{rem:special} records that at such points the Weil line can
+meet the divisor subring, which is the split situation. The hard case, and the
+one addressed throughout \Cref{sec:divisor,sec:characters,sec:hyperplane}, is
+case (i) with $\Hg(A)=\SU(V,H)$.
+\end{remark}
+
+\begin{remark}[Dimension four]\label{rem:dimfour}
+For $n=1$ the Weil line lies in $H^{2}(A,\QQ)$ and consists of divisor
+classes, algebraic by the Lefschetz theorem on $(1,1)$ classes, so it predicts
+nothing new; this is the same boundary as in \Cref{prop:normpart}. Moonen and
+Zarhin determined the Hodge classes on abelian varieties of dimension at most
+five \cite{MZ99}, and on simple abelian fourfolds in \cite{MZ95}: through
+dimension three the Hodge ring is generated by divisor classes, and the first
+Hodge classes not of that form occur in dimension four, on abelian fourfolds of
+Weil type. Thus $n=2$ is at once the first case of \Cref{def:weiltype} with
+exceptional Hodge classes, the first case where \Cref{thm:hdgcount} gives
+three rather than one, and the first case of the Hodge conjecture for
+abelian varieties that needed more than divisor classes; Markman settled it
+\cite[Corollary 1.6.1]{Mar25a}. The next case is $n=3$ with nontrivial
+discriminant, by \Cref{prop:separate}(ii).
+\end{remark}

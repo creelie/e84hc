@@ -1,0 +1,891 @@
+\section{The semiregularity target}\label{sec:semireg}
+
+Markman's construction at $n=2$ deforms a sheaf across a family and controls
+the obstruction by a semiregularity argument in the sense of Bloch and of
+Buchweitz and Flenner \cite{Blo72,BF03}. As for the secant construction of
+\Cref{sec:numerology}, one may ask whether a dimension count blocks this route
+for $n\ge4$. We compute the target of the semiregularity map and show that it
+grows too fast for the count to impose any such constraint, so that neither
+route meets a numerical obstruction. The constraint that does exist is
+structural. In \Cref{ssec:rankzero} we show that the annihilator of the Weil
+line in $H^{0,2}(A)$ has dimension $n^{2}$, and that it prevents every object
+whose Chern character is concentrated on the Weil line from being
+semiregular as soon as $H^{2}(\cO_{A})$ acts on the object faithfully. In
+\Cref{ssec:tangent} we identify this annihilator with the tangent space to the
+Weil family.
+
+\subsection{The dimension of the target}
+
+\begin{lemma}[Hodge numbers of an abelian variety]\label{lem:hodgenumbers}
+For an abelian variety $A$ of dimension $g$ one has
+$h^{p,q}(A)=\binom{g}{p}\binom{g}{q}$.
+\end{lemma}
+
+\begin{proof}
+By \eqref{eq:wedge} and the compatibility of the Hodge decomposition with the
+exterior algebra structure,
+$H^{p,q}(A)=\bigwedge^{p}H^{1,0}\otimes\bigwedge^{q}H^{0,1}$, and
+$\dim H^{1,0}=\dim H^{0,1}=g$.
+\end{proof}
+
+\begin{proposition}[The semiregularity target]\label{prop:target}
+Let $A$ be an abelian variety of dimension $g=2n$. The target of the
+semiregularity map, namely $\bigoplus_{q}H^{q+2}(A,\Omega^{q}_{A})$, has
+dimension
+\[
+  \sum_{q\ge0}h^{q,q+2}(A)=\binom{4n}{2n-2}.
+\]
+\end{proposition}
+
+\begin{proof}
+By \Cref{lem:hodgenumbers} with $g=2n$,
+\[
+  \sum_{q\ge0}h^{q,q+2}
+  =\sum_{q\ge0}\binom{2n}{q}\binom{2n}{q+2}
+  =\sum_{q\ge0}\binom{2n}{q}\binom{2n}{2n-q-2}
+  =\binom{4n}{2n-2},
+\]
+the last step being the Vandermonde convolution.
+\end{proof}
+
+\begin{corollary}[The dimension count]\label{cor:countnotbind}
+The target dimension $\binom{4n}{2n-2}$ takes the values
+$28,495,8008,125970,1961256,30421755$ for $n=2,\dots,7$, growing by a factor
+exceeding ten at each step. Any source whose dimension grows polynomially in
+$n$, for instance the quadratic quantity $\binom{2n}{2}=n(2n-1)$, which takes
+the values $6,15,28,45,66,91$ over the same range, is eventually negligible
+against it. In particular, for large $n$ a comparison of the two dimensions
+cannot obstruct the existence of a semiregular sheaf; the inequality it
+produces points the other way.
+\end{corollary}
+
+\begin{remark}[Consistency at $n=2$]\label{rem:markmanconsistent}
+At $n=2$ the target has dimension $28$, and the sheaf produced by Markman has
+$\dim\Ext^{2}=12$, well below it, which is consistent with the construction
+succeeding there. Nothing in the numbers changes character between $n=2$ and
+$n=4$, so if the construction cannot be carried out for larger $n$, the reason
+is not this comparison.
+\end{remark}
+
+\begin{remark}[The remaining requirement]\label{rem:semiregneed}
+\Cref{cor:countnotbind} does not show that the semiregularity route works.
+It removes one apparent obstruction and leaves the actual requirement in
+place, namely the construction of a sheaf on $A$ whose Chern character has a
+nonzero component along the Weil line. By \Cref{thm:character} such a sheaf
+cannot be $K$-equivariant with the norm character, so it cannot be produced
+by any functorial construction from $K$-invariant data on $\Av$; Markman's
+sheaf at $n=2$ is not produced in this way. In this sense the problem for
+$n\ge3$ is one of breaking equivariance, and the dimensions play no role in
+it.
+\end{remark}
+
+\subsection{The annihilator of the Weil line and objects of rank zero}
+\label{ssec:rankzero}
+
+By \Cref{rem:semiregneed}, what remains is to construct a sheaf whose Chern
+character has a component along the Weil line. The most economical way to
+arrange this is to make the Chern character lie \emph{entirely} on the Weil
+line, that is, to take an object of rank zero with every $\ch_{k}$ vanishing
+except $\ch_{n}$, as the construction of \Cref{sec:construction} does. We show
+that this choice is incompatible with semiregularity whenever $H^{2}(\cO_{A})$
+acts faithfully on the object, for a reason that depends only on the position
+of the Chern character and not on how the object is built.
+
+We first recall the semiregularity map, on which the rest of this subsection
+turns. For a coherent sheaf $\cE$ on a smooth projective variety $A$ the semiregularity
+map is defined through the Atiyah class
+$\mathrm{At}(\cE)\in\Ext^{1}(\cE,\cE\otimes\Omega^{1}_{A})$: a class
+$\xi\in\Ext^{2}(\cE,\cE)$ is sent to the trace of
+$\xi\cdot\exp(\mathrm{At}(\cE))$, and the component of that trace in
+$H^{q+2}(A,\Omega^{q}_{A})=H^{q,q+2}(A)$ is the $q$-th coordinate of
+$\sigma_{\cE}(\xi)$. Bloch introduced the map for local complete
+intersections \cite{Blo72}, and Buchweitz and Flenner extended it to
+arbitrary coherent sheaves and perfect complexes \cite{BF03}. If $A$ moves in
+a family $\cA\to S$, the obstruction to extending $\cE$ to first order along
+$v\in T_{s}S$ is a class $\mathrm{ob}_{v}(\cE)\in\Ext^{2}(\cE,\cE)$, and the
+theorem of Buchweitz and Flenner identifies $\sigma_{\cE}(\mathrm{ob}_{v}(\cE))$
+with the derivative of $\ch(\cE)$ in the direction $v$, projected off the
+diagonal of the Hodge decomposition. Hence if $\ch(\cE)$ stays of Hodge type
+along $S$, then $\sigma_{\cE}(\mathrm{ob}_{v}(\cE))=0$, and if $\sigma_{\cE}$ is
+also injective, then $\mathrm{ob}_{v}(\cE)=0$ and $\cE$ deforms.
+Injectivity thus converts a statement about the Chern character into a
+statement about the sheaf, and it is the one hypothesis in the argument that
+sees more than $\ch(\cE)$.
+
+Two special cases are all that is needed below. For a line bundle $L$ one has
+$\Ext^{2}(L,L)=H^{2}(\cO_{A})=H^{0,2}(A)$, and $\sigma_{L}$ is multiplication
+by $e^{c_{1}(L)}$. For a direct sum, $\Ext^{2}$ is the sum of the
+$\Ext^{2}(\cE_{i},\cE_{j})$, and $\sigma$ acts on each diagonal block
+$H^{2}(\cO_{A})\cdot\id_{\cE_{i}}$ by multiplication by the Chern character of
+that summand. Both formulae follow at once from the definition by the trace.
+
+\begin{lemma}[The annihilator of the Weil line in $H^{0,2}$]
+\label{lem:annihilator}
+Let $A$ be of $(K,-1,n)$-Weil type and let $\omega\in\HW(A)\otimes\RR$ be
+any nonzero real element of the Weil line. Then the multiplication map
+\[
+  H^{0,2}(A)\longrightarrow H^{n,n+2}(A),\qquad z\longmapsto z\cdot\omega,
+\]
+has kernel of dimension exactly $n^{2}$, spanned by the products $u\wedge v$
+with $u\in V_{+}^{0,1}$ and $v\in V_{-}^{0,1}$. In particular the kernel is
+the same subspace for every $\omega$ on the line.
+\end{lemma}
+
+\begin{proof}
+Write $\omega=a\,\alpha_{+}+b\,\alpha_{-}$ with $\alpha_{\pm}$ generating
+$\bigwedge^{2n}V_{\pm}$, which is possible because
+$\HW(A)\otimes\CC=\bigwedge^{2n}V_{+}\oplus\bigwedge^{2n}V_{-}$ (see the proof
+of \Cref{prop:weilline}). Complex conjugation interchanges $V_{+}$ and
+$V_{-}$, so $\bbar{\alpha}_{+}=\mu\,\alpha_{-}$ for some $\mu\ne0$, and
+comparing $\omega$ with $\bbar{\omega}=\omega$ gives $b=\bbar{a}\,\mu$. Since
+$\omega\ne0$, the coefficients $a$ and $b$ are therefore both nonzero. As
+$H^{0,1}=V_{+}^{0,1}\oplus V_{-}^{0,1}$ with each summand of dimension $n$,
+the space $H^{0,2}=\bigwedge^{2}H^{0,1}$ decomposes as
+\[
+  H^{0,2}
+  =\textstyle\bigwedge^{2}V_{+}^{0,1}
+  \;\oplus\;\bigl(V_{+}^{0,1}\otimes V_{-}^{0,1}\bigr)
+  \;\oplus\;\bigwedge^{2}V_{-}^{0,1},
+\]
+of dimensions $\binom{n}{2}$, $n^{2}$ and $\binom{n}{2}$.
+For $u\in V_{+}^{0,1}$ and $v\in V_{-}^{0,1}$ the mixed product $u\wedge v$
+satisfies $u\wedge v\wedge\alpha_{+}=0$, because $u\wedge\alpha_{+}$ lies in
+$\bigwedge^{2n+1}V_{+}=0$, and $u\wedge v\wedge\alpha_{-}=0$ for the same
+reason with $v$. So the middle summand lies in the kernel.
+
+Conversely, let $z=z_{++}+z_{+-}+z_{--}$ be in the kernel. For the same
+reason $z_{++}\wedge\alpha_{+}$, $z_{--}\wedge\alpha_{-}$ and
+$z_{+-}\wedge\omega$ vanish, so
+$z\cdot\omega=a\,z_{--}\wedge\alpha_{+}+b\,z_{++}\wedge\alpha_{-}$. If $n=1$
+the outer summands are zero and there is nothing to prove. If $n\ge2$ the two
+terms lie in the distinct summands
+$\bigwedge^{2n}V_{+}\otimes\bigwedge^{2}V_{-}$ and
+$\bigwedge^{2}V_{+}\otimes\bigwedge^{2n}V_{-}$ of
+$\bigwedge^{2n+2}V_{\CC}=\bigwedge^{2n+2}(V_{+}\oplus V_{-})$, so each of them
+vanishes. Wedging with a generator of $\bigwedge^{2n}V_{+}$ is injective on
+$\bigwedge^{2}V_{-}$, and wedging with a generator of $\bigwedge^{2n}V_{-}$ is
+injective on $\bigwedge^{2}V_{+}$. Since $a\neq0$ we get $z_{--}=0$, and since
+$b\neq0$ we get $z_{++}=0$, so the kernel is the middle summand.
+\end{proof}
+
+The reality of $\omega$ is needed: for the non-real element
+$\omega=\alpha_{+}$ of $\HW(A)\otimes\CC$ the same computation gives the
+kernel $V_{+}^{0,1}\otimes V_{-}^{0,1}\oplus\bigwedge^{2}V_{+}^{0,1}$, of
+dimension $n^{2}+\binom{n}{2}$. \Cref{fig:fibres} draws the mixed block that forms the kernel.
+
+\begin{theorem}[The rank-zero obstruction]
+\label{thm:rankzero}
+Let $A$ be of $(K,-1,n)$-Weil type. Let $\cE_{1}$ and $\cE_{2}$ be coherent
+sheaves on $A$ such that
+\[
+  \ch(\cE_{1})-\ch(\cE_{2})=c\,\omega,\qquad c\neq0,\quad \omega\in\HW(A),
+\]
+such that $\Ext^{2}(\cE_{1},\cE_{2})=\Ext^{2}(\cE_{2},\cE_{1})=0$, and such
+that the map $H^{2}(\cO_{A})\to\Ext^{2}(\cE_{1},\cE_{1})$,
+$z\mapsto z\cdot\id_{\cE_{1}}$, is injective, as it is whenever
+$\rk\cE_{1}\neq0$. Put $\cE=\cE_{1}\oplus\cE_{2}$. Then the semiregularity
+map
+\[
+  \sigma_{\cE}\colon\ \Ext^{2}(\cE,\cE)\longrightarrow\bigoplus_{q\ge0}H^{q,q+2}(A)
+\]
+has kernel of dimension at least $n^{2}$. In particular $\cE$ is not
+semiregular, for any $n\ge1$.
+\end{theorem}
+
+\begin{proof}
+The vanishing of the off-diagonal $\Ext^{2}$ groups gives
+$\Ext^{2}(\cE,\cE)=\Ext^{2}(\cE_{1},\cE_{1})\oplus\Ext^{2}(\cE_{2},\cE_{2})$,
+and each summand receives $H^{2}(\cO_{A})$ through the $\cO_{A}$-module
+structure, $z\mapsto z\cdot\id_{\cE_{i}}$. For $z\in H^{2}(\cO_{A})=H^{0,2}(A)$
+consider the element $\xi_{z}=z\cdot\id_{\cE_{1}}-z\cdot\id_{\cE_{2}}$. Its
+component in $\Ext^{2}(\cE_{1},\cE_{1})$ is $z\cdot\id_{\cE_{1}}$, so by
+hypothesis $z\mapsto\xi_{z}$ is injective. The semiregularity map is
+compatible with direct sums, and on $H^{0,2}\cdot\id_{\cE_{i}}$ it is
+multiplication by the Chern character of $\cE_{i}$, so
+\[
+  \sigma_{\cE}(\xi_{z})=z\cdot\ch(\cE_{1})-z\cdot\ch(\cE_{2})
+  =c\,z\cdot\omega .
+\]
+If $\omega=0$ this vanishes for every $z$, and
+$\dim H^{0,2}=n(2n-1)\ge n^{2}$. Otherwise $\omega$, being rational, is a
+nonzero real element of the Weil line, and by \Cref{lem:annihilator} the
+product vanishes for every $z$ in an $n^{2}$-dimensional subspace of
+$H^{0,2}$. The corresponding $\xi_{z}$ are linearly independent, and hence
+$\dim\ker\sigma_{\cE}\ge n^{2}$.
+
+It remains to justify the claim in the statement that the hypothesis on
+$\cE_{1}$ holds in positive rank. For a coherent sheaf $\cF$ the map
+$H^{2}(\cO_{A})\to\Ext^{2}(\cF,\cF)$, $z\mapsto z\cdot\id_{\cF}$, is the edge
+map of the local-to-global spectral sequence, and
+$\operatorname{tr}(z\cdot\id_{\cF})=\rk(\cF)\,z$. When $\rk\cF\ne0$ the trace
+therefore splits the map up to the factor $\rk\cF$, and the map is
+injective; this applies in particular to a direct sum of line bundles. For a
+sheaf of rank zero the map can vanish: for a skyscraper sheaf it factors
+through $H^{2}$ of the structure sheaf of a point, which is zero. The direct
+sum $\cE_{1}\oplus\cE_{2}$ is used only to produce an element of $\Ext^{2}$
+whose image under $\sigma$ is $z\cdot(\ch\cE_{1}-\ch\cE_{2})$ rather than
+$z\cdot(\ch\cE_{1}+\ch\cE_{2})$.
+\end{proof}
+
+\begin{corollary}[The construction of \Cref{sec:construction}]
+\label{cor:pteobstructed}
+Let $L_{1},\dots,L_{m}$ be line bundles on $A$ with
+$\sum_{i}c_{1}(L_{i})=0$ such that the virtual class
+$\sum_{i}\bigl([L_{i}]-[L_{i}^{-1}]\bigr)$ has Chern character on the Weil
+line and every difference
+$\varepsilon\,c_{1}(L_{i})-\varepsilon'c_{1}(L_{j})$ with
+$\varepsilon,\varepsilon'\in\{\pm1\}$ and $(\varepsilon,i)\ne(\varepsilon',j)$
+is nondegenerate of index different from $2$. Then the sheaf
+$\bigoplus_{i}(L_{i}\oplus L_{i}^{-1})$ has semiregularity kernel of
+dimension at least $n^{2}$. At $n=3$ the explicit object of
+\Cref{sec:construction} has kernel of dimension exactly
+$15=n^{2}+n(n-1)$, of which the $n^{2}=9$ dimensions on the odd side are
+the ones supplied by \Cref{thm:rankzero}; the remaining $n(n-1)=6$ come from
+the even side and are specific to the line-bundle structure.
+\end{corollary}
+
+\begin{proof}
+Take $\cE_{1}=\bigoplus L_{i}$ and $\cE_{2}=\bigoplus L_{i}^{-1}$. Then
+$\Ext^{2}(\cE_{1},\cE_{2})=\bigoplus_{i,j}H^{2}(L_{i}^{-1}\otimes L_{j}^{-1})$
+and $\Ext^{2}(\cE_{2},\cE_{1})=\bigoplus_{i,j}H^{2}(L_{i}\otimes L_{j})$, and
+the first Chern classes $\mp\bigl(c_{1}(L_{i})+c_{1}(L_{j})\bigr)$ occurring
+here, for all $i$ and $j$, are differences of the kind in the hypothesis,
+with $\varepsilon'=-\varepsilon$. A nondegenerate line bundle has cohomology only in
+the degree equal to its index, so the index hypothesis gives the required
+$\Ext^{2}$ vanishing. The sheaf $\cE_{1}$ has rank $m\ne0$, and the Chern
+character hypothesis is that of \Cref{thm:rankzero}.
+Since $e^{\lambda}$ and $e^{-\lambda}$ combine into $\cosh\lambda$ and
+$\sinh\lambda$, which occupy disjoint degrees, the map splits by parity, and
+the odd part is the annihilator of \Cref{lem:annihilator} tensored with the
+sign vector. At $n=3$ the dimensions are read off from the proof of
+\Cref{prop:explicitobject}, where the signs are absorbed in the same way:
+the kernel consists of the vectors $(u_{i}^{-k}z)_{i}$ with $z$ in the mixed
+block $V_{+}^{0,1}\otimes V_{-}^{0,1}$ for $k=3$, which change sign under
+$u_{i}\mapsto-u_{i}$, and with $z$ in $\bigwedge^{2}V_{+}^{0,1}$ or
+$\bigwedge^{2}V_{-}^{0,1}$ for $k=2$ or $k=4$, which do not.
+\end{proof}
+
+\begin{remark}[Uniformity over the configurations]
+\label{rem:familyuniform}
+By \Cref{cor:pteobstructed} the kernel has dimension at least $n^{2}$ for
+every configuration of line bundles $L_{i}^{\pm1}$ whose virtual Chern
+character lies on the Weil line and whose differences are nondegenerate of
+index different from $2$. The deficiency is therefore not special to the six
+line bundles of \Cref{prop:explicitobject}: \Cref{thm:rankzero} produces it
+from the vanishing of the rank alone.
+
+\Cref{thm:rankzero} excludes the economical choice described at the start of
+this subsection. An object on which $H^{2}(\cO_{A})$ acts faithfully and which
+realises a Weil class through semiregularity cannot have its Chern character
+concentrated on the Weil line. It must carry a nonzero rank, or nonzero Chern
+character in other degrees, so that $z\mapsto z\cdot\ch(\cE)$ is injective on
+$H^{0,2}$; the degree-two component of that product is $\rk(\cE)\cdot z$, and
+rank zero is the case in which it vanishes. Markman's sheaves have nonzero
+rank, and this is essential to his method: the class he shows to be
+deformation-invariant is the normalised character
+$\exp(-c_{1}(\cE)/\rk\cE)\ch(\cE)$, which divides by the rank, and the objects
+at $n=3$ are reflexive sheaves \cite{Mar25a,Mar25b}. This narrows the fourth
+ingredient of \Cref{rem:deformation}: it is a single sheaf of positive rank
+whose Chern character has a Weil component alongside other components, rather
+than a difference of two sheaves whose classes cancel outside the Weil line.
+\end{remark}
+
+\Cref{thm:rankzero} is stated for a direct sum because there the element
+$\xi_{z}$ is explicit. The mechanism applies to any perfect complex on which
+$H^{2}(\cO_{A})$ acts faithfully, and in particular to the object used in
+\Cref{sec:reduction}.
+
+\begin{proposition}[Complexes with concentrated Chern character]
+\label{prop:concentrated}
+Let $A$ be of $(K,-1,n)$-Weil type and let $E$ be a nonzero perfect complex on
+$A$ with $\ch_{k}(E)=0$ for $k\ne n$ and $\ch_{n}(E)=N\omega$ for some
+$N\ne0$ and some nonzero $\omega\in\HW(A)$. If the natural map
+\begin{equation}\label{eq:idmap}
+  H^{2}(\cO_{A})\longrightarrow\Ext^{2}(E,E),\qquad z\longmapsto z\cdot\id_{E},
+\end{equation}
+is injective, then $\dim\ker\sigma_{E}\ge n^{2}$, so $E$ is not semiregular.
+The map \eqref{eq:idmap} is injective whenever $E$ is represented by a virtual
+sum of line bundles, in particular at every base point of
+\Cref{cor:splitalgebraic}, \Cref{thm:quatweil} and \Cref{thm:everyn}.
+\end{proposition}
+
+\begin{proof}
+For any perfect complex the semiregularity map satisfies
+$\sigma_{E}(z\cdot\id_{E})=z\cdot\ch(E)$, since
+$\operatorname{tr}\bigl(z\cdot\id_{E}\circ\exp\mathrm{At}(E)\bigr)
+=z\cdot\operatorname{tr}\exp\mathrm{At}(E)=z\cdot\ch(E)$. Hence for $z$ in the
+annihilator of $\omega$ in $H^{0,2}(A)$,
+\[
+  \sigma_{E}(z\cdot\id_{E})=N\,z\cdot\omega=0 ,
+\]
+and that annihilator has dimension $n^{2}$ by \Cref{lem:annihilator}. If
+\eqref{eq:idmap} is injective, the classes $z\cdot\id_{E}$ for $z$ in a basis
+of the annihilator are linearly independent, which gives the bound.
+
+For the last sentence, write the class of $E$ in $K_{0}(A)$ as
+$\sum_{i}\varepsilon_{i}[L_{i}]$ with $\varepsilon_{i}=\pm1$ and $L_{i}$ line
+bundles, and realise it by the direct sum of the $L_{i}$ with
+$\varepsilon_{i}=1$ and of the shifts $L_{i}[1]$ of those with
+$\varepsilon_{i}=-1$. The map \eqref{eq:idmap} is then $z\mapsto(z,\dots,z)$
+into $\bigoplus_{i}\Ext^{2}(L_{i},L_{i})=\bigoplus_{i}H^{2}(\cO_{A})$, which is
+injective. At a split member $\omega_{1}$ is a polynomial in
+$\beta,\widehat\beta,\ell$ by \Cref{thm:splitclosed}(iii), at a quaternionic
+member it is a polynomial in divisor classes by \Cref{thm:quatweil}, and at a
+product it is one by \Cref{thm:everyn}; in each case the Chern character is a
+ring expression in classes of line bundles, so such a representation exists.
+\end{proof}
+
+\begin{proposition}[The class forces the size of the object]%
+\label{prop:objectsize}
+Let $A$ be of $(K,-1,n)$-Weil type, let $\omega$ be a nonzero element of the
+Weil line and let $E$ be a perfect complex on $A$ with
+\[
+  \ch(E)=r+N\omega,\qquad r\in H^{0}(A,\QQ),\ N\ne0,
+\]
+and no other component. Then
+\[
+  \chi(E,E)\;=\;(-1)^{n}N^{2}\!\int_{A}\omega^{2},
+\]
+independently of $r$, and consequently
+\[
+  \sum_{i}\dim\Ext^{i}(E,E)\;\ge\;N^{2}\Bigl|\int_{A}\omega^{2}\Bigr|\;>\;0 .
+\]
+\end{proposition}
+
+\begin{proof}
+The Todd class of an abelian variety is $1$, so Riemann--Roch for the Ext
+algebra reads $\chi(E,E)=\int_{A}\ch(E)^{\vee}\ch(E)$ with
+$\ch_{k}^{\vee}=(-1)^{k}\ch_{k}$. Expanding,
+\[
+  \ch(E)^{\vee}\ch(E)
+  = r^{2}+\bigl(1+(-1)^{n}\bigr)rN\omega+(-1)^{n}N^{2}\omega^{2},
+\]
+and of the three terms only the last has degree $4n$, so only it survives the
+integral; the rank enters solely through $r^{2}$, which sits in degree zero.
+For the inequality, $\chi(E,E)=\sum_{i}(-1)^{i}\dim\Ext^{i}(E,E)$, so the
+total dimension is at least $|\chi(E,E)|$. Finally $\int_{A}\omega^{2}\ne0$.
+Write $\omega=\alpha_{+}+\alpha_{-}$ with $\alpha_{\pm}\in\bigwedge^{2n}V_{\pm}$,
+both nonzero by the proof of \Cref{lem:annihilator}. Each $\alpha_{\pm}$ is a
+top form on its own eigenspace and squares to zero, so
+$\omega^{2}=2\alpha_{+}\alpha_{-}$, which is a nonzero multiple of the
+fundamental class.
+\end{proof}
+
+\begin{remark}[The constant]\label{rem:sizeconstant}
+The bound concerns the whole Ext algebra and does not depend on the rank, so
+increasing the rank does not weaken it. The constant $|\int\omega^{2}|$
+depends on the normalisation of $\omega$; measured against $\eta$ it picks up
+factors of $d$ and of the polarisation type, and no dimension-free growth
+rate can be read off from it. The bound uses only that the Weil class is not
+isotropic. Together with \Cref{prop:concentrated} it constrains an object
+carrying the class in two ways. If the Chern character is concentrated on the
+Weil line, the semiregularity map has a kernel of dimension at least $n^{2}$
+unless $H^{2}(\cO_{A})$ acts on the object degenerately; and whatever the
+rank, the Ext algebra has dimension at least $N^{2}|\int\omega^{2}|$.
+\end{remark}
+
+\begin{remark}[Consequences for the semiregularity reduction]
+\label{rem:killsreduction}
+\Cref{thm:semiregclosure} proves $\Sigma=\cD_{n,n}$, that is, the
+algebraicity of the Weil class on the whole family, under the hypothesis that
+$\sigma_{E}$ is injective for the complex $E$ of \Cref{prop:ktheory}, whose
+Chern character is $N\omega_{1}$ in degree $n$ and zero elsewhere. This
+complex satisfies the hypotheses of \Cref{prop:concentrated} at every base
+point of \Cref{cor:splitalgebraic}, \Cref{thm:quatweil} and
+\Cref{thm:everyn}, so there the hypothesis of \Cref{thm:semiregclosure} fails
+for it, by $n^{2}$ dimensions.
+
+This does not make \Cref{thm:semiregclosure} vacuous, for two reasons. First,
+the hypothesis concerns a chosen perfect complex representing a class in
+$K_{0}(A)_{\QQ}$, and distinct representatives of one class have distinct
+$\Ext^{2}$ groups; what is ruled out is the representative that the
+construction supplies. Second, \Cref{prop:concentrated} needs
+\eqref{eq:idmap} to be injective, which is a real restriction for an object
+of rank zero: it fails, for instance, for a sheaf supported at a point. A
+representative escaping \Cref{prop:concentrated} must therefore
+receive $H^{2}(\cO_{A})$ non-injectively, which for a rank-zero object means
+that its support is degenerate. Of the two reductions of
+\Cref{sec:reduction}, the degree bound of \Cref{thm:degreebound} is untouched
+by anything here, and the semiregularity reduction of
+\Cref{thm:semiregclosure} is unavailable for the complexes that the
+constructions at these base points supply.
+\end{remark}
+
+\begin{figure}[t]
+\centering
+  \includegraphics[width=0.94\textwidth]{fig_annihilator}
+\caption{The structure behind \Cref{lem:annihilator}, drawn at $n=3$.
+$H^{0,2}(A)=\bigwedge^{2}H^{0,1}$ splits into three blocks by how many factors
+come from $V_{+}^{0,1}$ and how many from $V_{-}^{0,1}$. The two outer blocks,
+of dimension $\binom{n}{2}=3$ each, are carried injectively by multiplication
+with the Weil class. The middle block, of dimension $n^{2}=9$ and spanned by
+the mixed products, goes to zero, because each such product repeats a factor
+of $\alpha_{+}$ and a factor of $\alpha_{-}$. Its dimension $n^{2}$ is the
+deficit in \Cref{prop:concentrated}.}
+\label{fig:annihilator}
+\end{figure}
+
+
+\subsection{The annihilator and the tangent space to the family}
+\label{ssec:tangent}
+
+The number $n^{2}$ of \Cref{lem:annihilator} is also the dimension of the
+Weil family. We show in this subsection that the polarisation identifies the
+annihilator with the tangent space to the family, canonically and in every
+dimension. Two consequences follow. First, the deficiency of the
+semiregularity map at an object of rank zero cannot be removed by a better
+choice of object, since it is the family itself, seen inside $H^{0,2}$.
+Second, the first-order Hodge locus of the Weil line is the Weil family, so
+the directions that the semiregularity map cannot see are those along which
+the class stays Hodge and along which it would have to be carried.
+
+Write $V_{\pm}$ for the two eigenspaces of $K$ on $H^{1}(A,\CC)$, each of
+dimension $2n$, and
+\[
+  V_{\pm}^{1,0}=V_{\pm}\cap H^{1,0},\qquad
+  V_{\pm}^{0,1}=V_{\pm}\cap H^{0,1},
+\]
+each of dimension $n$ by \Cref{lem:balanced}. Let $E$ denote the
+polarisation form on $H^{1}(A,\QQ)$, extended to $H^{1}(A,\CC)$. We use
+throughout that $E$ vanishes on $V_{+}\times V_{+}$ and on $V_{-}\times V_{-}$
+and pairs $V_{+}$ with $V_{-}$ perfectly, which is condition (iii) of
+\Cref{def:weiltype} read on the eigenspaces, and that $E$ vanishes on
+$H^{1,0}\times H^{1,0}$ and on $H^{0,1}\times H^{0,1}$, which is the first
+Riemann bilinear relation. For the first statement, let $x,y\in V_{+}$. Then
+$E(\sqrt{-d}\,x,y)=\sqrt{-d}\,E(x,y)$ from the eigenvalue, and
+$E(\sqrt{-d}\,x,y)=-E(x,\sqrt{-d}\,y)=-\sqrt{-d}\,E(x,y)$ from
+\Cref{def:weiltype}(iii), so $E(x,y)=0$. The same holds on $V_{-}$, and the
+nondegeneracy of $E$ then forces the pairing between $V_{+}$ and $V_{-}$ to
+be perfect. Together, the two vanishing statements say that of the four
+blocks of $E$ on
+$(V_{+}^{1,0}\oplus V_{+}^{0,1})\times(V_{-}^{1,0}\oplus V_{-}^{0,1})$ only
+$V_{+}^{1,0}\times V_{-}^{0,1}$ and $V_{+}^{0,1}\times V_{-}^{1,0}$ are
+nonzero, and each of these two is a perfect pairing of $n$-dimensional
+spaces. This block structure is all that the proof of \Cref{thm:anntangent}
+uses of $E$.
+
+A first-order deformation of $A$ is a class in $H^{1}(A,T_{A})$, which for an
+abelian variety is canonically $\Hom(H^{1,0},H^{0,1})$, since the tangent
+bundle is trivial and $H^{1,0}$ is the dual of its space of sections. Such a
+$v$ is extended to $H^{1}(A,\CC)$ by zero on $H^{0,1}$ and acts on
+$H^{k}(A,\CC)=\bigwedge^{k}H^{1}(A,\CC)$ as the derivation it generates; we
+write $v\lrcorner\,\xi$ for that action. A Hodge class $\xi$ of type $(p,p)$
+remains of type $(p,p)$ to first order along $v$ exactly when
+$v\lrcorner\,\xi=0$. We call $v$ \emph{polarised} when
+$E(vx,y)+E(x,vy)=0$ for all $x,y\in H^{1,0}$, which is the condition that the
+deformation preserve the polarisation. The polarised $v$ form a space of
+dimension $n(2n+1)=\dim\cA_{2n}$.
+
+\begin{proposition}[The first-order Hodge locus of the Weil line]
+\label{prop:firstorder}
+Let $A$ be of $(K,-1,n)$-Weil type and let $v$ be a polarised first-order
+deformation of $A$. The following are equivalent.
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item $v\lrcorner\,\omega=0$ for every $\omega$ in the Weil line.
+\item $v$ commutes with the action of $K$.
+\item $v\bigl(V_{+}^{1,0}\bigr)\subseteq V_{+}^{0,1}$ and
+  $v\bigl(V_{-}^{1,0}\bigr)\subseteq V_{-}^{0,1}$.
+\end{enumerate}
+The space of such $v$ has dimension $n^{2}$, and under
+\Cref{prop:weildomain} it is the tangent space at $[A]$ to the Weil family
+$\cD_{n,n}$. Each of the two rational generators of the Weil line already
+cuts it out by itself.
+\end{proposition}
+
+\begin{proof}
+The equivalence of (ii) and (iii) is immediate. Since $K$ acts on $V_{\pm}$
+by the two scalars $\pm\sqrt{-d}$, commuting with $K$ means preserving $V_{+}$
+and $V_{-}$. The extension of $v$ kills $H^{0,1}$ and takes values in
+$H^{0,1}$, so preserving $V_{\pm}$ amounts to
+$v(V_{\pm}^{1,0})\subseteq V_{\pm}\cap H^{0,1}=V_{\pm}^{0,1}$.
+
+For (i) and (iii), let $\alpha_{+}$ generate $\bigwedge^{2n}V_{+}$ and write
+$\alpha_{+}=e_{1}\wedge\cdots\wedge e_{2n}$ for a basis $e_{1},\dots,e_{2n}$
+of $V_{+}$ adapted to $V_{+}=V_{+}^{1,0}\oplus V_{+}^{0,1}$. As a derivation,
+\[
+  v\lrcorner\,\alpha_{+}
+  =\sum_{j=1}^{2n}e_{1}\wedge\cdots\wedge v(e_{j})\wedge\cdots\wedge e_{2n}.
+\]
+Split $v(e_{j})$ along $H^{1}(A,\CC)=V_{+}\oplus V_{-}$. The $V_{+}$
+components contribute
+$\operatorname{tr}\bigl(\pi_{+}\circ v|_{V_{+}}\bigr)\,\alpha_{+}$, and that
+trace vanishes: the map $\pi_{+}\circ v|_{V_{+}}$ kills $V_{+}^{0,1}$ and
+carries $V_{+}^{1,0}$ into $V_{+}^{0,1}$, so in the adapted basis its matrix
+has zero diagonal blocks. Writing
+$v(e_{j})_{-}=\sum_{k}c_{jk}f_{k}$ for a basis $f_{1},\dots,f_{2n}$ of
+$V_{-}$, the $V_{-}$ components contribute
+\[
+  \sum_{j,k}\pm\,c_{jk}\;
+  e_{1}\wedge\cdots\wedge\widehat{e_{j}}\wedge\cdots\wedge e_{2n}\wedge f_{k},
+\]
+and the $4n^{2}$ monomials appearing here are distinct members of the
+standard basis of $\bigwedge^{2n}H^{1}(A,\CC)$, hence linearly independent.
+So $v\lrcorner\,\alpha_{+}=0$ if and only if every $c_{jk}$ vanishes, which is
+$v(V_{+})\subseteq V_{+}$. The same argument on $\alpha_{-}$ gives
+$v\lrcorner\,\alpha_{-}=0$ if and only if $v(V_{-})\subseteq V_{-}$. The Weil
+line spans $\bigwedge^{2n}V_{+}\oplus\bigwedge^{2n}V_{-}$ over $\CC$ by
+\Cref{prop:weilline}, and each of the two rational generators of
+\Cref{thm:explicitgens} has both components nonzero, so a single generator
+already forces both conditions. This is (i) if and only if (iii).
+
+For the dimension, let $v$ satisfy (iii), and write $v_{+}$ and $v_{-}$ for
+its restrictions to $V_{+}^{1,0}$ and $V_{-}^{1,0}$. If $x$ and $y$ both lie
+in $V_{+}^{1,0}$, then $v_{+}x$ and $y$ both lie in $V_{+}$, so both terms of
+the polarisation condition vanish, and likewise if both lie in $V_{-}^{1,0}$.
+For $x\in V_{+}^{1,0}$ and $y\in V_{-}^{1,0}$ the condition reads
+$E(v_{+}x,y)=-E(x,v_{-}y)$. The left side is determined by $v_{+}$, and the
+pairing between $V_{+}^{1,0}$ and $V_{-}^{0,1}$ is perfect, so for each $y$
+there is exactly one $v_{-}y\in V_{-}^{0,1}$ satisfying this for all $x$, and
+it depends linearly on $y$. Hence $v_{-}$ is determined by $v_{+}$, which may
+be chosen freely, and the polarised deformations satisfying (iii) form a
+space of dimension $\dim\Hom(V_{+}^{1,0},V_{+}^{0,1})=n^{2}$. By
+\Cref{prop:weildomain} the family $\cD_{n,n}$ is an open subset of the
+Grassmannian of $n$-planes in $V_{+}$, whose tangent space at
+$V_{+}^{1,0}$ is $\Hom(V_{+}^{1,0},V_{+}/V_{+}^{1,0})=\Hom(V_{+}^{1,0},V_{+}^{0,1})$,
+and the identification just made is that isomorphism.
+\end{proof}
+
+\begin{proposition}[Infinitesimal rigidity of divisor classes]%
+\label{prop:rigidity}
+Keep the notation above, put $P=V_{+}^{1,0}$ and $P'=V_{-}^{1,0}$ as in the
+proof of \Cref{prop:weildomain}, so that $\bbar{P}=V_{-}^{0,1}$ and
+$\bbar{P}'=V_{+}^{0,1}$, and write a class $\delta\in H^{1,1}$ in the four
+blocks
+\[
+  a\ \text{on}\ P\otimes\bbar{P},\quad
+  b\ \text{on}\ P'\otimes\bbar{P}',\quad
+  c\ \text{on}\ P\otimes\bbar{P}',\quad
+  e\ \text{on}\ P'\otimes\bbar{P},
+\]
+the first two carrying the norm character of $\Kx$ and the last two the
+characters $\tau^{2}$ and $\bbar\tau^{\,2}$; reality makes $a$ and $b$
+anti-hermitian and ties $e$ to $-\bbar{c}^{\,T}$. Identify the tangent space
+$\Hom(P,\bbar{P}')$ to $\cD_{n,n}$ with the $n\times n$ matrices $V$ as in
+\Cref{thm:anntangent}, and write $\operatorname{alt}$ for the alternating part
+of a matrix, viewed in $\bigwedge^{2}$. Then contraction with a tangent
+vector is
+\begin{equation}\label{eq:phidelta}
+  \Phi_{\delta}(V)
+  \;=\;\bigl(\,Va+b^{T}V,\ \ \operatorname{alt}(Vc),\ \
+       \operatorname{alt}(-V^{T}e)\,\bigr),
+\end{equation}
+with values in
+$\bbar{P}'\otimes\bbar{P}\oplus\bigwedge^{2}\bbar{P}'\oplus\bigwedge^{2}\bbar{P}
+=H^{0,2}$, and $\ker\Phi_{\delta}$ is the tangent space to the locus where
+$\delta$ stays of type $(1,1)$. Consequently:
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item $\Phi_{\delta}=0$ if and only if $\delta$ is a real multiple of $\eta$.
+  The rigid classes form a real line, which is the infinitesimal form of the
+  statement that $\NS(A)_{\QQ}$ has rank one at the general member.
+\item For the norm-character class with block $a$ and $b=c=e=0$,
+  \[
+    \dim\ker\Phi_{\delta}\;=\;n\,(n-\operatorname{rank}a),
+  \]
+  so such a class cuts a locus of codimension $n\operatorname{rank}a$, at
+  least $n$.
+\item A general class has $\ker\Phi_{\delta}=0$: to first order it
+  rigidifies the family to a point.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+For \eqref{eq:phidelta}, a polarised deformation commuting with $K$ sends $P$
+into $\bbar{P}'$ and $P'$ into $\bbar{P}$, and the polarisation condition
+$E(vx,y)+E(x,vy)=0$ forces the second matrix to be $-V^{T}$, as in the proof
+of \Cref{prop:firstorder}. Applying $v$ to the $(1,0)$ slot of each block and
+collecting terms in $H^{0,2}$ gives the three displayed components; the sign
+in the first comes from $\bbar{P}\wedge\bbar{P}'=-\bbar{P}'\wedge\bbar{P}$.
+
+(i) If $\Phi_{\delta}=0$ then $\operatorname{alt}(Vc)=0$ for every $V$, which
+for $n\ge2$ forces $c=0$, and likewise $e=0$. The first component gives
+$Va=-b^{T}V$ for every $V$; taking $V$ to run over the matrix units shows
+$a$ is a scalar $\lambda$ and $b^{T}=-\lambda$. Anti-hermitian scalars are
+the purely imaginary ones, so the solutions form a real line. It contains
+$\eta$, whose blocks are $a=i$, $b=-i$, and the two therefore agree.
+
+(ii) With $b=c=e=0$ the condition is $Va=0$, that is, the rows of $V$
+annihilate the column space of $a$; the solution space has dimension
+$n(n-\operatorname{rank}a)$.
+
+(iii) By (ii), the class with $a$ of rank $n$ (for instance $a=i$) and
+$b=c=e=0$, which is real since $a$ is anti-hermitian, has
+$\ker\Phi_{\delta}=0$. Since $\Phi_{\delta}$ depends linearly on $\delta$, the
+classes with $\ker\Phi_{\delta}\ne0$ are cut out by the vanishing of the
+maximal minors of $\Phi_{\delta}$ and form a proper real algebraic subset of
+the real classes of type $(1,1)$, which gives (iii).
+\end{proof}
+
+\begin{remark}[The divisorial supply]\label{rem:rigiditywhy}
+\Cref{prop:rigidity}(ii) explains why the divisorial supply of
+\Cref{thm:divcriterion} cannot be enlarged by a better choice of class. Any
+norm-character class other than a multiple of $\eta$ has
+$\operatorname{rank}a\ge1$ and so cuts a locus of codimension at least $n$;
+that locus is proper, and by (i) only the real multiples of $\eta$ cut
+nothing. Each further class therefore yields a subvariety and never an open
+set, which is \Cref{prop:divfails} with the codimension made explicit.
+\end{remark}
+
+\begin{figure}[htbp]
+\centering
+  \includegraphics[width=0.46\textwidth]{fig_fibres}
+\caption{The geometry behind \Cref{lem:annihilator}, drawn schematically for
+the real shadow of the hermitian form. The ruled surface is the null cone of
+$H$; the two transverse planes are the conjugate isotropic subspaces $V_{+}$
+and $V_{-}$, which conjugation interchanges, so that neither is defined over
+$\QQ$ and only their sum is. The segments join a vector of one to its
+conjugate in the other, and the strip they sweep stands for the mixed block
+$V_{+}^{0,1}\otimes V_{-}^{0,1}$, of dimension $n^{2}$, which multiplication
+by the Weil class sends to zero and which is the deficit in
+\Cref{prop:concentrated}.}
+\label{fig:fibres}
+\end{figure}
+
+\begin{theorem}[The annihilator is the tangent space]\label{thm:anntangent}
+Let $A$ be of $(K,-1,n)$-Weil type and let $\omega$ be a rational generator of
+the Weil line. The polarisation induces an isomorphism
+\[
+  T_{[A]}\cD_{n,n}\;\xrightarrow{\ \sim\ }\;
+  \operatorname{Ann}_{H^{0,2}(A)}(\omega),
+\]
+canonical in the sense that it depends on no choice of basis and on no choice
+of $\omega$ on the line. Explicitly, if $p_{1},\dots,p_{n}$ is a basis of
+$V_{+}^{1,0}$ and $q_{1},\dots,q_{n}$ the basis of $V_{-}^{0,1}$ dual to it
+under $E$, then $\varphi\in\Hom(V_{+}^{1,0},V_{+}^{0,1})$ corresponds to
+\[
+  \sum_{a=1}^{n}q_{a}\wedge\varphi(p_{a})\;\in\;
+  V_{-}^{0,1}\otimes V_{+}^{0,1}\;\subset\;\textstyle\bigwedge^{2}H^{0,1}
+  =H^{0,2}(A).
+\]
+\end{theorem}
+
+\begin{proof}
+The form $E$ pairs $V_{+}$ with $V_{-}$ perfectly and vanishes on
+$V_{+}^{1,0}\times V_{-}^{1,0}$, the latter because both spaces lie in
+$H^{1,0}$. Hence $E$ restricted to $V_{+}^{1,0}\times V_{-}$ kills
+$V_{-}^{1,0}$ and descends to a pairing
+\[
+  V_{+}^{1,0}\times V_{-}^{0,1}\longrightarrow\CC .
+\]
+This pairing is perfect: both spaces have dimension $n$, and a vector of
+$V_{+}^{1,0}$ orthogonal to $V_{-}^{0,1}$ is orthogonal to all of $V_{-}$,
+hence zero. It gives a canonical isomorphism
+$\bigl(V_{+}^{1,0}\bigr)^{*}\cong V_{-}^{0,1}$, and therefore
+\[
+  T_{[A]}\cD_{n,n}
+  =\Hom\bigl(V_{+}^{1,0},V_{+}^{0,1}\bigr)
+  =\bigl(V_{+}^{1,0}\bigr)^{*}\otimes V_{+}^{0,1}
+  \;\cong\;V_{-}^{0,1}\otimes V_{+}^{0,1},
+\]
+the first equality being the tangent space computation at the end of the proof
+of \Cref{prop:firstorder}. Since $H^{0,1}=V_{+}^{0,1}\oplus V_{-}^{0,1}$, the
+map $q\otimes u\mapsto q\wedge u$ identifies $V_{-}^{0,1}\otimes V_{+}^{0,1}$
+with the middle summand of
+$\bigwedge^{2}H^{0,1}$, and that summand is the annihilator by
+\Cref{lem:annihilator}. The displayed formula is the composite of these
+isomorphisms written in a dual pair of bases, so it is independent of the
+basis chosen; and \Cref{lem:annihilator} gives the same subspace for every
+$\omega$ on the line, so the isomorphism does not depend on $\omega$ either.
+\end{proof}
+
+\begin{figure}[tbp]
+\centering
+  \includegraphics[width=\textwidth]{fig_tangent}
+\caption{\Cref{thm:anntangent}. The polarisation has only two nonzero blocks
+on $V_{+}\times V_{-}$: it pairs $V_{+}^{1,0}$ with $V_{-}^{0,1}$ and
+$V_{+}^{0,1}$ with $V_{-}^{1,0}$, each perfectly, and the other two blocks
+vanish by the first Riemann relation. The upper right block turns the tangent
+space $\Hom(V_{+}^{1,0},V_{+}^{0,1})$ to the Weil family into
+$V_{-}^{0,1}\otimes V_{+}^{0,1}$, which is the middle block of
+$\bigwedge^{2}H^{0,1}$ drawn in \Cref{fig:annihilator} and the annihilator of
+the Weil line. The two $n^{2}$-dimensional spaces are therefore the same
+subspace of $H^{0,2}$, and the directions that the semiregularity map cannot
+see are the directions of the family along which the class stays Hodge.}
+\label{fig:tangent}
+\end{figure}
+
+
+\begin{corollary}[The kernel contains the tangent space to the family]
+\label{cor:kernelfamily}
+Let $A$ be of $(K,-1,n)$-Weil type and let $E$ be a nonzero perfect complex on
+$A$ satisfying the hypotheses of \Cref{prop:concentrated}, that is, with Chern
+character concentrated on the Weil line and with \eqref{eq:idmap} injective.
+Then $\ker\sigma_{E}$ contains a subspace canonically isomorphic to
+$T_{[A]}\cD_{n,n}$, namely the image of the composite
+\[
+  T_{[A]}\cD_{n,n}\;\cong\;\operatorname{Ann}_{H^{0,2}}(\omega)
+  \;\hookrightarrow\;H^{2}(\cO_{A})\;\xrightarrow{\;z\mapsto z\cdot\id_{E}\;}\;
+  \Ext^{2}(E,E).
+\]
+By \Cref{prop:firstorder} that subspace is also the tangent space to the
+first-order Hodge locus of the class $\ch_{n}(E)$.
+\end{corollary}
+
+\begin{proof}
+Immediate from \Cref{thm:anntangent}, \Cref{prop:concentrated} and
+\Cref{prop:firstorder}.
+\end{proof}
+
+\begin{theorem}[The weakened criterion is unavailable for concentrated
+Chern characters]\label{thm:weakfails}
+Let $A$ be of $(K,-1,n)$-Weil type and let $E$ be a nonzero perfect complex on
+$A$ satisfying the hypotheses of \Cref{prop:concentrated}. Let
+\[
+  \operatorname{ev}_{E}\colon HH^{2}(A)\longrightarrow\Ext^{2}(E,E)
+\]
+be the evaluation on $E$ of the natural transformations $\id\to\id[2]$ of
+$D^{b}(A)$, as in \cite[Section 11.4]{Mar25b}. Then
+\[
+  \operatorname{ev}_{E}\bigl(H^{2}(\cO_{A})\bigr)\cap\ker\sigma_{E}
+  =\Delta:=\bigl\{\,z\cdot\id_{E}\;:\;z\in\Ann_{H^{0,2}}(\omega)\,\bigr\},
+\]
+a subspace of dimension $n^{2}$. In particular $\sigma_{E}$ is not injective
+on the image of $\operatorname{ev}_{E}$, so $E$ satisfies neither the
+hypothesis of \cite[Lemma 11.3]{Mar25b} nor the weakened hypothesis of
+\cite[Question 11.4]{Mar25b}.
+\end{theorem}
+
+\begin{proof}
+The Hochschild cohomology $HH^{*}(A)=\Ext^{*}_{A\times A}(\cO_{\Delta},\cO_{\Delta})$
+is the algebra of natural transformations of the identity functor, and the
+Hochschild--Kostant--Rosenberg isomorphism \cite{Cal05,BF08} writes
+$HH^{2}(A)\cong H^{2}(\cO_{A})\oplus H^{1}(A,T_{A})\oplus H^{0}(A,\bigwedge^{2}T_{A})$,
+with no correction from the Todd class because $T_{A}$ is trivial. The first
+summand is the image of $H^{2}(\cO_{A})=\Ext^{2}(\cO_{A},\cO_{A})$ under
+pullback to $A\times A$, and the natural transformation it defines sends a
+complex $F$ to the composite $F=F\otimes\cO_{A}\xrightarrow{\;\id\otimes z\;}
+F\otimes\cO_{A}[2]=F[2]$, that is, to $z\cdot\id_{F}$. This is the statement
+that the action of $HH^{*}(A)$ on $\Ext^{*}(F,F)$ restricts on $H^{*}(\cO_{A})$
+to the $\cO_{A}$-module structure. Concretely, a class $z\in H^{2}(\cO_{A})$
+is represented by a $2$-extension of $\cO_{A}$ by itself; its pullback
+$\pi_{1}^{*}z$ to $A\times A$ is a $2$-extension of $\cO_{A\times A}$ by
+itself, and tensoring with $\cO_{\Delta}$ gives a $2$-extension of
+$\cO_{\Delta}$ by itself, which is the element of $HH^{2}(A)$ in question. The
+Fourier--Mukai transform with kernel $\cO_{\Delta}$ is the identity, and the
+transform with kernel this extension is the extension of the identity by
+itself twisted by $z$, so its value on $F$ is $z\cdot\id_{F}$. Markman uses
+this identification when he writes the left vertical arrow of the diagram in
+the proof of \cite[Lemma~11.3]{Mar25b} as the HKR isomorphism followed by
+contraction with $\ch(E)$. On the summand $H^{2}(\cO_{A})$ contraction is the
+cup product $z\mapsto z\cdot\ch(E)$, which is $\sigma_{E}(z\cdot\id_{E})$ by
+the computation in the proof of \Cref{thm:rankzero}.
+
+Hence $\operatorname{ev}_{E}(z)=z\cdot\id_{E}$ for $z\in H^{2}(\cO_{A})$, and
+$\sigma_{E}(z\cdot\id_{E})=z\cdot\ch(E)=N\,z\cdot\omega$ by the proof of
+\Cref{prop:concentrated}, which vanishes exactly for
+$z\in\Ann_{H^{0,2}}(\omega)$. So
+$\operatorname{ev}_{E}(H^{2}(\cO_{A}))\cap\ker\sigma_{E}=\Delta$, and
+$\dim\Delta=\dim\Ann_{H^{0,2}}(\omega)=n^{2}$ by \Cref{lem:annihilator} and
+the injectivity of \eqref{eq:idmap}. Since $\Delta\ne0$, the restriction of
+$\sigma_{E}$ to the image of $\operatorname{ev}_{E}$ has a nonzero kernel.
+The hypothesis of \cite[Lemma 11.3]{Mar25b} is that
+$\ker\operatorname{ev}_{E}$ equals the kernel of contraction with $\ch(E)$ and
+that $\operatorname{ev}_{E}$ is surjective; the two conditions together would
+make $\sigma_{E}$ injective on all of $\Ext^{2}(E,E)$, contradicting
+\Cref{prop:concentrated}. The weakened hypothesis of
+\cite[Question 11.4]{Mar25b} is injectivity of $\sigma_{E}$ on the image,
+which we have just shown to fail.
+\end{proof}
+
+\begin{theorem}[A line bundle summand off the polarisation line obstructs]
+\label{thm:linebundle}
+Let $A$ be of $(K,-1,n)$-Weil type with $n\ge2$ and let $T=T_{[A]}\cD_{n,n}$.
+Let $E$ be a perfect complex on $A$ with a direct summand $L[p]$, $L$ a line
+bundle, and suppose that $\ch(E)$ remains of Hodge type to first order along
+$\cD_{n,n}$, that is $v\lrcorner\,\ch(E)=0$ for every $v\in T$. If $c_{1}(L)$
+is not a real multiple of $\eta$, then there is $v\in T$ with
+\[
+  \operatorname{ev}_{E}(v)\ne0
+  \qquad\text{and}\qquad
+  \sigma_{E}\bigl(\operatorname{ev}_{E}(v)\bigr)=0 .
+\]
+Consequently $E$ is not semiregular, does not satisfy the weakened hypothesis
+of \cite[Question 11.4]{Mar25b}, and is obstructed to first order along $v$.
+The same holds for a twisted complex, with $c_{1}(L)$ replaced by the twisted
+first Chern class of the summand, which is $c_{1}(L)$ shifted by the class
+common to all summands.
+\end{theorem}
+
+\begin{proof}
+The class $c_{1}(L)$ is a real class of type $(1,1)$ and not a real multiple
+of $\eta$, so by \Cref{prop:rigidity}(i) the contraction
+$\Phi_{c_{1}(L)}\colon T\to H^{0,2}(A)$ is not zero: there is $v\in T$ with
+$v\lrcorner\,c_{1}(L)\ne0$. On the summand $H^{1}(A,T_{A})$ of $HH^{2}(A)$ the
+evaluation map is contraction with the Atiyah class,
+$\operatorname{ev}_{E}(v)=v\lrcorner\,\mathrm{At}(E)$. This is the top row of
+the diagram of Buchweitz and Flenner reproduced as \cite[(2.1)]{Mar25b}; its
+identification with the Hochschild evaluation is in \cite{BF08}, and Markman
+uses it in the proof of \cite[Lemma~11.3]{Mar25b}. The Atiyah class of a
+direct sum is the direct sum of the Atiyah classes, and that of $L[p]$ is
+$c_{1}(L)$, so the
+component of $\operatorname{ev}_{E}(v)$ in the summand
+$\Ext^{2}(L[p],L[p])=H^{0,2}(A)$ of $\Ext^{2}(E,E)$ is
+$v\lrcorner\,c_{1}(L)\ne0$. On the other hand the same diagram gives
+$\sigma_{E}(\operatorname{ev}_{E}(v))=v\lrcorner\,\ch(E)$, which vanishes by
+hypothesis. So $\operatorname{ev}_{E}(v)$ is a nonzero element of
+$\ker\sigma_{E}\cap\image\operatorname{ev}_{E}$; this is the failure of both
+hypotheses, and $v\lrcorner\,\mathrm{At}(E)\ne0$ is the statement that $E$
+does not lift to a first-order deformation of the pair along $v$, as recalled
+in \cite[Section 2]{Mar25b}. Twisting by a class $B$ replaces the Atiyah
+class of every rank one summand by its shift by $B$ and $\ch(E)$ by the
+twisted Chern character, and nothing else in the argument changes.
+\end{proof}
+
+\begin{remark}[Scope of the kernel computation]
+\label{rem:whatmeasures}
+The semiregularity criterion converts a statement about the Chern character
+into a statement about the object by requiring $\sigma_{E}$ to be injective.
+\Cref{cor:kernelfamily} says that for an object whose Chern character is
+concentrated on the Weil line this requirement fails, and that the failure is
+measured by the tangent space to the family across which the class is to be
+transported, in every dimension and with no hypothesis beyond
+\eqref{eq:idmap}. This concerns the size and the position of the kernel. By
+itself it does not say that the obstruction classes are nonzero, nor that
+the Weil class fails to deform. For the explicit object of
+\Cref{prop:explicitobject} the obstruction classes are computed in
+\Cref{prop:splitobstruction}: they are nonzero in every direction of the
+family normal to the split locus, they lie in $\ker\sigma_{E}$, and they meet
+the subspace of \Cref{cor:kernelfamily} only in zero. The Weil class deforms
+along the family, by \Cref{prop:firstorder}, while that object does not.
+
+The same computation bears on a weaker criterion, which it settles only in
+part. Markman asks in \cite[Question 11.4]{Mar25b} whether the
+semiregularity theorem survives when $\sigma_{E}$ is required to be injective
+only on the image of the evaluation map $\operatorname{ev}_{E}$ rather than
+on all of $\Ext^{2}(E,E)$, and records in his Section 12 that an affirmative
+answer would carry the method to higher dimensions and to fields of larger
+degree. By \Cref{thm:weakfails} the classes of \Cref{cor:kernelfamily} lie in
+that image, so for concentrated Chern characters the weakened hypothesis
+fails as well, in every dimension and by the same $n^{2}$ dimensions. By
+\Cref{thm:linebundle} it fails for every object with a line bundle summand
+off the polarisation line, whatever the rank and at every member of the
+family, and by \Cref{cor:noline} this excludes every sum of line bundles.
+For the explicit split object of \Cref{prop:explicitobject} the failure is
+complete: \Cref{prop:evaluation} shows that every one of the fifteen
+dimensions of $\ker\sigma_{E}$ is the value of $\operatorname{ev}_{E}$ on a
+Hochschild class that already preserves $\ch(E)$ to first order.
+
+The next question is whether an object of positive rank can satisfy the
+weakened hypothesis without satisfying the original one. Markman's own
+sheaves are of positive rank and are not of the concentrated shape
+(\Cref{rem:familyuniform}); for them he avoids the question by descending to
+a quotient on which $\sigma_{E}$ is injective on an invariant subspace
+containing the image of $\operatorname{ev}_{E}$
+\cite[Proposition~11.5]{Mar25b}. In his Section 12 he proposes a rank one
+complex on a principally polarised abelian fourfold, built from $(d+9)/2$
+translates of the theta divisor, as a candidate for the weakened criterion in
+dimension eight. \Cref{thm:candidatefails}
+shows that the candidate fails, for every discriminant, at every isolated
+double point of its support.
+
+Voisin's account of the subject \cite{Voi26} makes the same point
+qualitatively, for the variational Hodge conjecture in general: semiregular
+objects are hard to construct and too restricted to carry a general argument.
+\Cref{cor:kernelfamily} gives this observation a quantitative form for one
+family of classes, in which the restriction amounts to $n^{2}$ dimensions and
+those dimensions are the tangent directions of the family. Totaro's account
+\cite{Tot26} describes Markman's method as the construction of enough
+semiregular sheaves to prove the conjecture for abelian fourfolds and
+fivefolds, and records that it needed the semiregularity theorem for twisted
+sheaves, which Pridham supplied \cite{Pri24}.
+\end{remark}
+

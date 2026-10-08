@@ -1,0 +1,648 @@
+\section{Weil classes in coordinates}\label{sec:explicit}
+
+\Cref{sec:weiltype} defines the Weil line as an intersection inside
+$H^{2n}(A,\CC)$. That description is convenient for proofs but exhibits no
+single class, and in this section we write the Weil classes out. We build an
+abelian variety of $(K,-1,n)$-Weil type from a $2n$-dimensional $K$-vector
+space with a hermitian form, write two integral generators
+$\omega_{1},\omega_{2}$ of the Weil line as sums of $2^{2n-1}$ monomials each,
+and display them in full for $n=2$ and in a table for $n=3$. The coordinates
+then give two things that the abstract description does not: an elementary
+second proof that the Weil line misses the powers of the polarisation, and a
+complete count of the Hodge classes in every degree, which reduces the Hodge
+conjecture for a general member to the algebraicity of the single class
+$\omega_{1}$.
+
+\subsection{The standard model}
+
+\begin{setupenv}[The model]\label{setup:model}
+Fix a squarefree positive integer $d$, let $K=\QQ(\sqrt{-d})$, and fix the
+embedding $K\hookrightarrow\CC$ carrying $\sqrt{-d}$ to $\delta:=i\sqrt{d}$.
+Fix $n\ge1$ and let
+\[
+  V=K^{2n},
+  \qquad
+  u_{1},\dots,u_{2n}\ \text{the standard $K$-basis},
+\]
+regarded as a $\QQ$-vector space of dimension $4n$ with the basis
+\[
+  x_{j}:=u_{j},
+  \qquad
+  y_{j}:=\sqrt{-d}\,u_{j},
+  \qquad 1\le j\le 2n .
+\]
+Let $S\colon V\to V$ be multiplication by $\sqrt{-d}$, so that in this basis
+\begin{equation}\label{eq:Sbasis}
+  S x_{j}=y_{j},
+  \qquad
+  S y_{j}=-d\,x_{j}.
+\end{equation}
+Let $\epsilon_{j}=-1$ for $1\le j\le n$ and $\epsilon_{j}=+1$ for
+$n<j\le 2n$, and let $Q$ be the alternating $\QQ$-bilinear form on $V$ with
+\begin{equation}\label{eq:Qbasis}
+  Q(x_{j},y_{j})=\epsilon_{j},
+  \qquad
+  Q(x_{j},x_{k})=Q(y_{j},y_{k})=0,
+  \qquad
+  Q(x_{j},y_{k})=0 \ \ (j\ne k).
+\end{equation}
+Finally let $\eta\in\bigwedge^{2}V$ be the class with the same coefficients,
+\begin{equation}\label{eq:etabasis}
+  \eta=\sum_{j=1}^{2n}\epsilon_{j}\,x_{j}\wedge y_{j}.
+\end{equation}
+\end{setupenv}
+
+Over $\CC$ the operator $S$ has the two eigenvalues $\pm\delta$, and its
+eigenvectors can be written down directly.
+
+\begin{lemma}[Eigenbasis]\label{lem:eigenbasis}
+For $1\le j\le2n$ and $s\in\{+,-\}$ put
+\begin{equation}\label{eq:eigenvec}
+  u_{j}^{s}\;=\;\tfrac12\Bigl(x_{j}-s\,\tfrac{\delta}{d}\,y_{j}\Bigr)
+  \ \in V_{\CC}.
+\end{equation}
+Then $S u_{j}^{s}=s\,\delta\,u_{j}^{s}$, the vectors $u_{1}^{+},\dots,u_{2n}^{+}$
+form a basis of $V_{+}$ and $u_{1}^{-},\dots,u_{2n}^{-}$ a basis of $V_{-}$,
+and complex conjugation on $V_{\CC}$ interchanges $u_{j}^{+}$ and $u_{j}^{-}$.
+\end{lemma}
+
+\begin{proof}
+Using \eqref{eq:Sbasis} and $\delta^{2}=-d$,
+\[
+  S u_{j}^{s}
+  =\tfrac12\bigl(y_{j}+s\,\tfrac{\delta}{d}\,d\,x_{j}\bigr)
+  =\tfrac{s\delta}{2}\bigl(x_{j}+\tfrac{1}{s\delta}y_{j}\bigr)
+  =\tfrac{s\delta}{2}\bigl(x_{j}-s\tfrac{\delta}{d}y_{j}\bigr)
+  =s\,\delta\,u_{j}^{s},
+\]
+where the third equality uses $1/\delta=-\delta/d$. The change of basis
+$(x_{j},y_{j})\mapsto(u_{j}^{+},u_{j}^{-})$ is block diagonal with
+$2\times2$ blocks of determinant $\delta/(2d)\ne0$, so the $4n$ vectors
+$u_{j}^{\pm}$ are linearly independent. Since $V_{+}$ and $V_{-}$ have
+dimension $2n$ each by \Cref{not:eigen}, the $u_{j}^{+}$ form a basis of
+$V_{+}$ and the $u_{j}^{-}$ a basis of $V_{-}$. Conjugation fixes $x_{j}$ and
+$y_{j}$ and sends $\delta$ to $-\delta$, which interchanges the two formulas.
+\end{proof}
+
+\begin{definition}[The complex structure]\label{def:modelHS}
+Define a Hodge structure of weight one on $V$ by
+\begin{equation}\label{eq:V10}
+  V^{1,0}
+  =\bigl\langle u_{1}^{+},\dots,u_{n}^{+},\,
+      u_{n+1}^{-},\dots,u_{2n}^{-}\bigr\rangle_{\CC},
+  \qquad
+  V^{0,1}=\overline{V^{1,0}} .
+\end{equation}
+\end{definition}
+
+The first $n$ basis directions contribute to $V^{1,0}$ through their
+$+$-eigenvector and the last $n$ through their $-$-eigenvector, so each of
+$V_{\pm}$ meets $V^{1,0}$ in a subspace of dimension $n$. The signs
+$\epsilon_{j}$ of \eqref{eq:Qbasis} are matched to this choice and are not
+free: the proof of \Cref{thm:model} shows that the second Riemann relation
+holds for them and fails as soon as one of them is reversed (see also
+\Cref{rem:twosignatures}). Reversing all of them replaces $Q$ by $-Q$, and
+the construction then goes through with $V^{1,0}$ and $V^{0,1}$ interchanged.
+
+\begin{theorem}[The model is of Weil type]\label{thm:model}
+With the data of \Cref{setup:model,def:modelHS}, the pair $(V,V^{1,0})$ is a
+polarised rational Hodge structure of weight one with polarising form $Q$, so
+$V=H^{1}(A,\QQ)$ for an abelian variety $A$ of dimension $2n$; the
+multiplication $S$ makes $K$ act on $A$ up to isogeny; $\eta$ is the class of
+the polarisation; and $(A,\iota,\eta)$ is of $(K,-1,n)$-Weil type in the sense
+of \Cref{def:weiltype}.
+\end{theorem}
+
+\begin{proof}
+We verify the two Riemann bilinear relations, then the three conditions of
+\Cref{def:weiltype}.
+
+\emph{The form vanishes on $V^{1,0}$.} By \eqref{eq:Qbasis} the form $Q$ is
+block diagonal for the decomposition of $V$ into the planes
+$\langle x_{j},y_{j}\rangle$, so $Q(u_{j}^{s},u_{k}^{t})=0$ whenever $j\ne k$.
+Within one block, $Q(u_{j}^{s},u_{j}^{s})=0$ because $Q$ is alternating, and
+\begin{equation}\label{eq:Qplusminus}
+  Q(u_{j}^{+},u_{j}^{-})
+  =\tfrac14\,Q\bigl(x_{j}-\tfrac{\delta}{d}y_{j},\;
+                    x_{j}+\tfrac{\delta}{d}y_{j}\bigr)
+  =\tfrac14\cdot\tfrac{2\delta}{d}\,Q(x_{j},y_{j})
+  =\frac{\delta\,\epsilon_{j}}{2d}.
+\end{equation}
+The basis \eqref{eq:V10} of $V^{1,0}$ contains, for each $j$, exactly one of
+$u_{j}^{+},u_{j}^{-}$. Hence any two of its members either lie in different
+blocks or are equal, and in both cases $Q$ vanishes on them. So
+$Q(V^{1,0},V^{1,0})=0$.
+
+\emph{Positivity.} Let $0\ne v=\sum_{j}a_{j}v_{j}\in V^{1,0}$, where $v_{j}$ is
+$u_{j}^{+}$ for $j\le n$ and $u_{j}^{-}$ for $j>n$. Then
+$\bbar{v}=\sum_{j}\bbar{a_{j}}\,\bbar{v_{j}}$ with $\bbar{v_{j}}$ the other
+eigenvector in the same block, so again only the diagonal terms survive:
+\[
+  i\,Q(v,\bbar{v})
+  =\sum_{j\le n}i\,|a_{j}|^{2}\,Q(u_{j}^{+},u_{j}^{-})
+   +\sum_{j>n}i\,|a_{j}|^{2}\,Q(u_{j}^{-},u_{j}^{+}) .
+\]
+By \eqref{eq:Qplusminus} and $\delta=i\sqrt{d}$ the first kind of term is
+$i\cdot\delta\epsilon_{j}/(2d)=-\epsilon_{j}/(2\sqrt{d})$ and the second is
+$+\epsilon_{j}/(2\sqrt{d})$. With $\epsilon_{j}=-1$ for $j\le n$ and $+1$ for
+$j>n$ both are $+1/(2\sqrt{d})$, so $i\,Q(v,\bbar{v})=\|a\|^{2}/(2\sqrt{d})>0$.
+This is the second Riemann relation. For the complex structure
+\eqref{eq:V10} it forces the signature of $\epsilon$ to be $(n,n)$, since
+reversing any single $\epsilon_{j}$ makes the corresponding term negative.
+
+\emph{Weil type.} Condition (i) is $\dim A=\tfrac12\dim_{\QQ}V=2n$. For (ii),
+$V^{1,0}$ is spanned by the $u_{j}^{+}$ with $j\le n$ and the $u_{j}^{-}$ with
+$j>n$, so $\dim V^{1,0}_{+}=\dim V^{1,0}_{-}=n$; by duality, as in the proof
+of \Cref{lem:balanced}, this is the balanced eigenvalue condition on the
+tangent space. For (iii), write $\tau=a+b\sqrt{-d}$, so that $\iota(\tau)$
+acts by
+\[
+  x_{j}\longmapsto a\,x_{j}+b\,y_{j},
+  \qquad
+  y_{j}\longmapsto -bd\,x_{j}+a\,y_{j},
+\]
+and $\iota(\bbar{\tau})$ by the same formulas with $b$ replaced by $-b$. Since
+$Q$ is block diagonal and $\iota(\tau)$ preserves each block, it suffices to
+compare $Q(\iota(\tau)v,w)$ with $Q(v,\iota(\bbar{\tau})w)$ for basis vectors
+$v,w$ of one block, where
+\begin{align*}
+  Q\bigl(\iota(\tau)x_{j},y_{j}\bigr)&=a\epsilon_{j}
+   =Q\bigl(x_{j},\iota(\bbar{\tau})y_{j}\bigr),\\
+  Q\bigl(\iota(\tau)x_{j},x_{j}\bigr)&=-b\epsilon_{j}
+   =Q\bigl(x_{j},\iota(\bbar{\tau})x_{j}\bigr),\\
+  Q\bigl(\iota(\tau)y_{j},y_{j}\bigr)&=-bd\,\epsilon_{j}
+   =Q\bigl(y_{j},\iota(\bbar{\tau})y_{j}\bigr),
+\end{align*}
+and the remaining pair $(y_{j},x_{j})$ follows from the first line with
+$\tau$ replaced by $\bbar{\tau}$ and the antisymmetry of $Q$. So
+$\iota(\tau)^{\dagger}=\iota(\bbar{\tau})$. Equivalently, in the form used
+later, $\iota(\tau)^{*}\eta=\Nm(\tau)\,\eta$: by \eqref{eq:eigenvec},
+$x_{j}\wedge y_{j}=\tfrac{2d}{\delta}\,u_{j}^{+}\wedge u_{j}^{-}$, and
+$\iota(\tau)$ multiplies $u_{j}^{+}\wedge u_{j}^{-}$ by $\tau\bbar{\tau}$.
+
+Finally, $\eta$ is of type $(1,1)$, because each $x_{j}\wedge y_{j}$ is a
+multiple of $u_{j}^{+}\wedge u_{j}^{-}$ and in each block one of
+$u_{j}^{+},u_{j}^{-}$ lies in $V^{1,0}$ and the other in $V^{0,1}$. Since in
+addition $\eta^{2n}\ne0$, the class $\eta$ is a polarisation class.
+\end{proof}
+
+\begin{lemma}[The hermitian form]\label{lem:hermform}
+On the model of \Cref{setup:model} there is a unique $K$-hermitian form $H$ on
+$V$, linear in the first variable, with
+\begin{equation}\label{eq:QfromH}
+  Q(v,w)=\tfrac12\Tr_{K/\QQ}\bigl(\delta^{-1}H(v,w)\bigr),
+  \qquad\text{namely}\qquad
+  H(v,w)=Q(\sqrt{-d}\,v,\,w)+\sqrt{-d}\,Q(v,w),
+\end{equation}
+and in the basis $u_{1},\dots,u_{2n}$ it is
+$H=\mathrm{diag}(-\epsilon_{1},\dots,-\epsilon_{2n})$, of signature $(n,n)$.
+\end{lemma}
+
+\begin{proof}
+$K$-linearity in the first variable is the computation
+\[
+  H(\sqrt{-d}v,w)=Q(-dv,w)+\sqrt{-d}\,Q(\sqrt{-d}v,w)=\sqrt{-d}\,H(v,w),
+\]
+and the hermitian symmetry $\overline{H(w,v)}=H(v,w)$ follows from
+$Q(v,\sqrt{-d}\,w)=-Q(\sqrt{-d}\,v,w)$, which is condition (iii) of
+\Cref{def:weiltype} for $\tau=\sqrt{-d}$. Multiplying by $\delta^{-1}$ and
+taking the trace kills the first summand of \eqref{eq:QfromH}, since $Q$ is
+$\QQ$-valued and $\Tr_{K/\QQ}(\delta^{-1})=0$, and doubles the second; this
+gives $Q$. For uniqueness, if $H'$ is a second such form and
+$z=H(v,w)-H'(v,w)$, then $\Tr_{K/\QQ}(\delta^{-1}z)=0$, and replacing $v$ by
+$\sqrt{-d}\,v$ gives $\Tr_{K/\QQ}(z)=0$; together these force $z=0$. Finally
+$H(u_{j},u_{j})=Q(y_{j},x_{j})=-\epsilon_{j}$ and
+$H(u_{j},u_{k})=0$ for $j\ne k$, so the signature is the number of indices with
+$\epsilon_{j}=-1$ against the number with $\epsilon_{j}=+1$, that is $(n,n)$.
+\end{proof}
+
+\begin{remark}\label{rem:twosignatures}
+The two signatures that have appeared express the same condition. The hermitian
+form $H$ has signature $(n,n)$ by \Cref{lem:hermform}, and the $K$-action on
+the tangent space has eigenvalue multiplicities $(n,n)$ by
+\Cref{def:weiltype}(ii). The positivity computation in the proof of
+\Cref{thm:model} passes from one to the other: the sign $\epsilon_{j}$
+decides both which eigenvector of the $j$-th block is holomorphic and the sign
+of $H$ on that block.
+\end{remark}
+
+\begin{remark}\label{rem:lattice}
+Taking the lattice $\cO^{2n}$ for an order $\cO\subset K$ and scaling $Q$ to be
+integral on it produces an abelian variety and not only a Hodge structure.
+Nothing below depends on the lattice, so we work with the rational Hodge
+structure throughout. Varying \eqref{eq:V10} over the period domain of the
+hermitian form gives the Weil family, of dimension $n^{2}$ inside the
+$n(2n+1)$-dimensional moduli of principally polarised abelian $2n$-folds
+(\Cref{prop:weildomain}).
+\end{remark}
+
+\subsection{The two generators}
+
+\begin{notation}\label{not:wT}
+For $T\subseteq\{1,\dots,2n\}$ write
+\[
+  w^{(T)}=w^{(T)}_{1}\wedge w^{(T)}_{2}\wedge\cdots\wedge w^{(T)}_{2n},
+  \qquad
+  w^{(T)}_{j}=
+  \begin{cases}
+    y_{j}, & j\in T,\\
+    x_{j}, & j\notin T .
+  \end{cases}
+\]
+The $2^{2n}$ elements $w^{(T)}$ are part of the monomial basis of
+$\bigwedge^{2n}V$, which has dimension $\binom{4n}{2n}$; they are the
+monomials that contain exactly one of $x_{j},y_{j}$ for each $j$.
+\end{notation}
+
+\begin{theorem}[The Weil line in coordinates]\label{thm:explicitgens}
+Let $(A,\iota,\eta)$ be the model of \Cref{thm:model} and let
+\begin{equation}\label{eq:omegagens}
+  \omega_{1}=\sum_{\substack{T\subseteq\{1,\dots,2n\}\\ |T|\ \mathrm{even}}}
+    (-1)^{|T|/2}\,d^{\,n-|T|/2}\;w^{(T)},
+  \qquad
+  \omega_{2}=\sum_{\substack{T\subseteq\{1,\dots,2n\}\\ |T|\ \mathrm{odd}}}
+    (-1)^{(|T|-1)/2}\,d^{\,n-(|T|+1)/2}\;w^{(T)} .
+\end{equation}
+Then
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item $\omega_{1}$ and $\omega_{2}$ have integer coefficients and each has
+  exactly $2^{2n-1}$ nonzero terms;
+\item $\omega_{1},\omega_{2}$ is a $\QQ$-basis of the Weil line
+  $\HW(A)$ of \Cref{def:weilline};
+\item writing $\omega_{\pm}=u_{1}^{\pm}\wedge\cdots\wedge u_{2n}^{\pm}$ for the
+  generators of $\bigwedge^{2n}V_{\pm}$,
+  \[
+    \omega_{+}+\omega_{-}=\frac{\omega_{1}}{2^{2n-1}d^{\,n}},
+    \qquad
+    \frac{\omega_{+}-\omega_{-}}{\delta}=-\frac{\omega_{2}}{2^{2n-1}d^{\,n}} ;
+  \]
+\item $\iota(\tau)^{*}\omega_{+}=\tau^{2n}\omega_{+}$ and
+  $\iota(\tau)^{*}\omega_{-}=\bbar{\tau}^{\,2n}\omega_{-}$ for all
+  $\tau\in\Kx$, so on the plane $\langle\omega_{1},\omega_{2}\rangle$ the
+  element $\iota(\tau)$ acts by the $\QQ$-rational matrix of multiplication by
+  $\tau^{2n}$ on $K$;
+\item $\omega_{1}$ and $\omega_{2}$ are of Hodge type $(n,n)$, hence are Hodge
+  classes.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(iii) and (i). Expanding \eqref{eq:eigenvec} in the product defining
+$\omega_{s}$ and collecting the monomials $w^{(T)}$,
+\begin{equation}\label{eq:omegaexp}
+  \omega_{s}
+  =\frac{1}{2^{2n}}\sum_{T}\Bigl(-s\,\frac{\delta}{d}\Bigr)^{|T|}w^{(T)},
+\end{equation}
+because the factor from index $j$ contributes $x_{j}$ with coefficient $1/2$
+and $y_{j}$ with coefficient $-s\delta/(2d)$, and the monomials $w^{(T)}$
+appear in the order $j=1,\dots,2n$ with no reordering sign. Therefore
+\[
+  \omega_{+}+\omega_{-}
+  =\frac{1}{2^{2n-1}}\sum_{|T|\ \mathrm{even}}\Bigl(\frac{\delta}{d}\Bigr)^{|T|}w^{(T)},
+  \qquad
+  \frac{\omega_{+}-\omega_{-}}{\delta}
+  =-\frac{1}{2^{2n-1}}\sum_{|T|\ \mathrm{odd}}\frac{\delta^{|T|-1}}{d^{|T|}}\,w^{(T)} ,
+\]
+since the terms with $|T|$ odd cancel in the first sum and those with $|T|$
+even in the second. Now
+$\delta^{2m}=(-d)^{m}$, so for $|T|=2m$ the coefficient in the first sum is
+$(-1)^{m}d^{-m}$, and for $|T|=2m+1$ the coefficient in the second is
+$-(-1)^{m}d^{-m-1}$. Multiplying by $2^{2n-1}d^{\,n}$ clears denominators,
+since $m\le n$ in the first case and $m+1\le n$ in the second, and gives
+\eqref{eq:omegagens}. The term counts are
+$\sum_{m}\binom{2n}{2m}=\sum_{m}\binom{2n}{2m+1}=2^{2n-1}$.
+
+(ii). By (iii), $\omega_{1}$ and $\omega_{2}$ lie in
+$\bigwedge^{2n}V_{+}\oplus\bigwedge^{2n}V_{-}$. They are fixed by complex
+conjugation, which interchanges $\omega_{+}$ and $\omega_{-}$ by
+\Cref{lem:eigenbasis} and sends $\delta$ to $-\delta$, and by (i) they have
+rational coefficients. Hence they lie in
+$\bigl(\bigwedge^{2n}V_{+}\oplus\bigwedge^{2n}V_{-}\bigr)\cap H^{2n}(A,\QQ)$,
+which is $\HW(A)$ by \Cref{def:weilline} and has dimension two by
+\Cref{prop:weilline}(i). They are linearly independent over $\CC$ since
+$\omega_{+},\omega_{-}$ are, so they form a basis of $\HW(A)$.
+
+(iv). The first two identities are immediate, since $\iota(\tau)$ multiplies
+each of the $2n$ factors $u_{j}^{+}$ by $\tau$ and each $u_{j}^{-}$ by
+$\bbar{\tau}$. For the last clause, by (iii) the space $\HW(A)\otimes\CC$ is
+$\CC\omega_{+}\oplus\CC\omega_{-}$, on which $\iota(\tau)$ acts by
+$\tau^{2n}$ and $\bbar{\tau}^{\,2n}$; so under the isomorphism
+$\HW(A)\cong K$ of \Cref{prop:weilline}(iii) the action of $\iota(\tau)$ is
+multiplication by $\tau^{2n}$, whose matrix in the basis
+$\omega_{1},\omega_{2}$ has rational entries.
+
+(v). By \eqref{eq:V10} the monomial $\omega_{+}=u_{1}^{+}\wedge\cdots\wedge
+u_{2n}^{+}$ has $n$ factors in $V^{1,0}$, namely those with $j\le n$, and $n$
+factors in $V^{0,1}$; so $\omega_{+}$ is of type $(n,n)$, and likewise
+$\omega_{-}$. By (iii), so are $\omega_{1}$ and $\omega_{2}$.
+\end{proof}
+
+\begin{remark}[Balanced signature]\label{rem:balancecount}
+The balanced condition enters the proof of \Cref{thm:explicitgens} only in
+part (v). If \eqref{eq:V10} is replaced by a complex structure with
+$\dim V^{1,0}_{+}=p$ and $\dim V^{1,0}_{-}=2n-p$, everything else being kept,
+then $\omega_{+}$ has $p$ holomorphic factors and is of type $(p,2n-p)$, so
+$\HW(A)$ is a rational sub-Hodge structure of $H^{2n}(A,\QQ)$ of type
+$\{(p,2n-p),(2n-p,p)\}$, and it contains a nonzero Hodge class if and only if
+$p=n$. The balanced signature
+in \Cref{def:weiltype}(ii) is therefore the condition under which the Weil
+line contains Hodge classes at all. \Cref{prop:signatureforced} proves this
+for every abelian variety with a Rosati-stable action of $K$.
+\end{remark}
+
+\subsection{The case \texorpdfstring{$n=2$}{n=2}}
+
+Here $\dim A=4$, $\dim_{\QQ}V=8$, $H^{4}(A,\QQ)$ has dimension
+$\binom{8}{4}=70$, and each generator has $2^{3}=8$ terms. Writing the
+monomials in the order $j=1,2,3,4$ as in \Cref{not:wT}, \eqref{eq:omegagens}
+reads
+\begin{align}
+  \omega_{1}
+  &= d^{2}\,x_{1}x_{2}x_{3}x_{4}
+     \;-\;d\!\!\sum_{|T|=2}\!\!w^{(T)}
+     \;+\;y_{1}y_{2}y_{3}y_{4},
+     \label{eq:n2omega1}\\[2pt]
+  \omega_{2}
+  &= d\!\!\sum_{|T|=1}\!\!w^{(T)}
+     \;-\;\sum_{|T|=3}\!\!w^{(T)} ,
+     \label{eq:n2omega2}
+\end{align}
+with the wedge signs omitted. For $d=1$, written out in full,
+\begin{align*}
+  \omega_{1}
+  &= x_{1}x_{2}x_{3}x_{4}
+   -y_{1}y_{2}x_{3}x_{4}-y_{1}x_{2}y_{3}x_{4}-y_{1}x_{2}x_{3}y_{4}
+   -x_{1}y_{2}y_{3}x_{4}-x_{1}y_{2}x_{3}y_{4}-x_{1}x_{2}y_{3}y_{4}\\
+  &\qquad{}+y_{1}y_{2}y_{3}y_{4},\\
+  \omega_{2}
+  &= y_{1}x_{2}x_{3}x_{4}+x_{1}y_{2}x_{3}x_{4}+x_{1}x_{2}y_{3}x_{4}
+     +x_{1}x_{2}x_{3}y_{4}\\
+  &\qquad{}-y_{1}y_{2}y_{3}x_{4}-y_{1}y_{2}x_{3}y_{4}-y_{1}x_{2}y_{3}y_{4}
+     -x_{1}y_{2}y_{3}y_{4} .
+\end{align*}
+The square of the polarisation is
+$\eta^{2}=2\sum_{j<k}\epsilon_{j}\epsilon_{k}\,x_{j}y_{j}x_{k}y_{k}$,
+a sum of six monomials, none of which is among the sixteen above;
+\Cref{prop:disjoint} below shows that this separation holds in every
+dimension. \Cref{fig:weilcoeff} arranges the sixteen monomials $w^{(T)}$ on
+the vertices of the $4$-cube.
+
+\subsection{The case \texorpdfstring{$n=3$}{n=3}}
+
+Here $\dim A=6$, $\dim_{\QQ}V=12$, $H^{6}(A,\QQ)$ has dimension
+$\binom{12}{6}=924$, and each generator has $2^{5}=32$ terms. The coefficients
+depend only on $|T|$, so the two classes are recorded completely by
+\Cref{tab:n3coeffs}.
+
+\begin{table}[htbp]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}cccc@{\hskip 2.4em}cccc@{}}
+\toprule
+\multicolumn{4}{c}{$\omega_{1}$} & \multicolumn{4}{c}{$\omega_{2}$}\\
+\cmidrule(r{1.6em}){1-4}\cmidrule(l){5-8}
+$|T|$ & terms & coefficient & at $d=2$ &
+$|T|$ & terms & coefficient & at $d=2$\\
+\midrule
+$0$ & $1$  & $+d^{3}$ & $+8$  & $1$ & $6$  & $+d^{2}$ & $+4$\\
+$2$ & $15$ & $-d^{2}$ & $-4$  & $3$ & $20$ & $-d$     & $-2$\\
+$4$ & $15$ & $+d$     & $+2$  & $5$ & $6$  & $+1$     & $+1$\\
+$6$ & $1$  & $-1$     & $-1$  &     &      &          &     \\
+\midrule
+    & $32$ &          &       &     & $32$ &          &     \\
+\bottomrule
+\end{tabular}
+\caption{The Weil classes at $n=3$. Each row gives the number of index sets
+$T$ of that size and the common coefficient of the corresponding monomials
+$w^{(T)}$ in \eqref{eq:omegagens}. The two classes together involve all $64$
+monomials containing exactly one of $x_{j},y_{j}$ for each $j$, out of the
+$924$ monomials of $H^{6}$.}
+\label{tab:n3coeffs}
+\end{table}
+
+The pattern has a closed description. By \Cref{thm:explicitgens}(iii) and
+\eqref{eq:eigenvec},
+\begin{equation}\label{eq:omegaprod}
+  \omega_{1}+\delta\,\omega_{2}
+  =2^{2n}d^{\,n}\,\omega_{-}
+  =d^{-n}\prod_{j=1}^{2n}\bigl(d\,x_{j}+\delta\,y_{j}\bigr),
+\end{equation}
+the product being the wedge product taken in the order $j=1,\dots,2n$. The
+proof of \Cref{thm:explicitgens} uses of the basis only that the $u_{j}$ form
+a $K$-basis of $V$, so \eqref{eq:omegagens} and \eqref{eq:omegaprod} define
+generators of the Weil line, and hold, for every $K$-basis $u_{1},\dots,u_{2n}$
+of $H^{1}(A,\QQ)$ of an abelian variety of $(K,-1,n)$-Weil type, with
+$x_{j}=u_{j}$ and $y_{j}=\sqrt{-d}\,u_{j}$. For
+$n=3$ and $d=1$ the coefficients in \Cref{tab:n3coeffs} are $+1,-1,+1,-1$
+for $\omega_{1}$ and $+1,-1,+1$ for $\omega_{2}$, and the two classes are the
+real and imaginary parts of $\prod_{j=1}^{6}\bigl(x_{j}+\sqrt{-1}\,y_{j}\bigr)$.
+
+\begin{figure}[htbp]
+\centering
+  \includegraphics[width=0.78\textwidth]{fig_weilcube}
+\caption{The $2^{2n}=16$ monomials $w^{(T)}$ of \Cref{not:wT} at $n=2$, as the
+vertices of the $4$-cube, projected so that the height of $w^{(T)}$ is
+$\lvert T\rvert$. An edge joins two monomials whose index sets differ in one
+element, that is, two monomials related by a single substitution
+$x_{j}\mapsto y_{j}$. The two colours are the bipartition by the parity of
+$\lvert T\rvert$: the eight even vertices carry $\omega_{1}$ and the eight odd
+ones carry $\omega_{2}$. The coefficient of $w^{(T)}$ depends only on
+$\lvert T\rvert$ and is given by \eqref{eq:n2omega1} and
+\eqref{eq:n2omega2}.}
+\label{fig:weilcoeff}
+\end{figure}
+
+\subsection{Disjoint supports}
+
+\Cref{prop:notpoly} is deduced from the character computation of
+\Cref{sec:characters}. In the model the Weil line can be separated from the
+powers of the polarisation without any representation theory: the Weil
+classes and the powers of $\eta$ are supported on disjoint sets of monomials.
+
+\begin{proposition}[Disjoint supports]\label{prop:disjoint}
+In the model of \Cref{thm:model}, every monomial occurring in $\omega_{1}$ or
+in $\omega_{2}$ contains exactly one of $x_{j},y_{j}$ for every
+$j\in\{1,\dots,2n\}$, and every monomial occurring in $\eta^{k}$ contains
+either both or neither, for every $j$ and every $k\ge0$. Consequently
+\[
+  \HW(A)\cap\QQ\,\eta^{n}=0 ,
+\]
+and more generally $\HW(A)$ meets the span of the monomials occurring in
+powers of $\eta$ in zero.
+\end{proposition}
+
+\begin{proof}
+The first assertion holds by \eqref{eq:omegagens} and \Cref{not:wT}. For the
+second, $\eta$ is the combination \eqref{eq:etabasis} of the $2n$ two-forms
+$x_{j}\wedge y_{j}$, which pairwise commute and square to zero, so
+\[
+  \eta^{k}=k!\sum_{\substack{S\subseteq\{1,\dots,2n\}\\|S|=k}}
+    \Bigl(\prod_{j\in S}\epsilon_{j}\Bigr)\,
+    \bigwedge_{j\in S}\bigl(x_{j}\wedge y_{j}\bigr),
+\]
+and the monomial indexed by $S$ contains both $x_{j}$ and $y_{j}$ for $j\in S$
+and neither for $j\notin S$. A monomial cannot satisfy both patterns for a
+given $j$, and since $2n\ge1$ there is at least one index at which to test,
+so the two families of monomials are disjoint. Since
+$\omega_{1},\omega_{2}$ span $\HW(A)$ by \Cref{thm:explicitgens}(ii), a nonzero
+element of $\HW(A)$ has a nonzero coefficient on some $w^{(T)}$. As the
+monomials form a basis of $\bigwedge^{2n}V$ and $w^{(T)}$ occurs in no power
+of $\eta$, such an element does not lie in the span of the monomials
+occurring in powers of $\eta$, and in particular not in $\QQ\,\eta^{n}$.
+\end{proof}
+
+\begin{remark}\label{rem:twoproofs}
+The two proofs that the Weil line misses the powers of the polarisation
+differ in scope. \Cref{prop:disjoint} concerns one model and one basis, and it
+is short because the basis makes the $K$-action block diagonal. The
+character proof is basis free, applies to every abelian variety of Weil type,
+and identifies the obstruction as a difference of characters. The first can
+be checked by hand; the second is the argument that \Cref{thm:character}
+extends.
+\end{remark}
+
+\subsection{The Hodge ring of a general member}
+
+It remains to count the Hodge classes, which measures how much of the Hodge
+conjecture for $A$ is at stake. The Hodge classes of an abelian variety are
+the invariants of its Hodge group, the special Mumford--Tate group
+$\Hg(A)\subseteq\SL(V)$ \cite{Del82}:
+$\Hdg^{k}(A)=H^{2k}(A,\QQ)^{\Hg(A)}$.
+
+\begin{lemma}[The Hodge group]%
+\label{lem:HgSU}
+Let $(A,\iota,\eta)$ be of $(K,-1,n)$-Weil type and let $H$ be the
+$K$-hermitian form of \Cref{lem:hermform}. Then
+\[
+  \Hg(A)\subseteq\SU(V,H) .
+\]
+\end{lemma}
+
+\begin{proof}
+The group $\Hg(A)$ is a $\QQ$-algebraic subgroup of $\SL(V)$ which fixes
+every Hodge class in every tensor construction on $V$. It fixes
+$\eta\in\bigwedge^{2}V$, hence preserves $Q$; and it commutes with $\iota(K)$,
+because each $\iota(\tau)$ is a Hodge class in $V\otimes V^{\vee}$. A
+$\QQ$-linear automorphism of $V$ commuting with the $K$-action and preserving
+$Q$ preserves $H$, by the formula \eqref{eq:QfromH} expressing $H$ through $Q$
+and the $K$-action. Hence $\Hg(A)\subseteq\mathrm{U}(V,H)$. Now
+$\HW(A)$ consists of Hodge classes by \Cref{prop:weilline}(ii), so $\Hg(A)$
+fixes $\HW(A)\otimes\CC$ pointwise, and in particular it fixes the line
+$\bigwedge^{2n}V_{+}$ pointwise. An element $g\in\mathrm{U}(V,H)$ acts on
+$\bigwedge^{2n}V_{+}$ by $\det_{K}(g)$,
+so every $g\in\Hg(A)$ has $\det_{K}(g)=1$, which is the definition of
+$\SU(V,H)$.
+\end{proof}
+
+For a very general member of the Weil family, that is, for every member whose
+point in the period domain $\cD_{n,n}$ of \Cref{prop:weildomain} lies outside
+a certain countable union of proper closed analytic subsets, the containment
+of \Cref{lem:HgSU} is an equality; this is Weil's theorem \cite{Weil77}, in the
+form given by Moonen and Zarhin \cite{MZ99}. The restriction to very general
+members cannot be replaced by a Zariski open condition, since the locus where
+the endomorphism algebra jumps is a countable union of such subsets, by
+\Cref{thm:cdk}, and is dense in the classical topology. For such a member the
+Hodge classes can be counted in every degree.
+
+\begin{theorem}[The Hodge ring of a general member]\label{thm:hdgcount}
+Let $(A,\iota,\eta)$ be of $(K,-1,n)$-Weil type with
+$\Hg(A)=\SU(V,H)$. Then for every $k$ with $0\le k\le 2n$,
+\[
+  \dim_{\QQ}\Hdg^{k}(A)=
+  \begin{cases}
+    3, & k=n,\\[2pt]
+    1, & k\ne n,
+  \end{cases}
+  \qquad\text{and}\qquad
+  \Hdg^{n}(A)=\QQ\,\eta^{n}\oplus\HW(A).
+\]
+\end{theorem}
+
+\begin{proof}
+Complexify. The group $\SU(V,H)\otimes\CC$ is $\SL(V_{+})\cong\SL_{2n}(\CC)$,
+acting on $V_{+}$ tautologically and on $V_{-}$ through the isomorphism
+$V_{-}\cong V_{+}^{\vee}$ induced by $H$. By \Cref{prop:grading},
+\[
+  H^{2k}(A,\CC)=\bigoplus_{r+s=2k}
+    \textstyle\bigwedge^{r}V_{+}\otimes\bigwedge^{s}V_{+}^{\vee},
+\]
+so it suffices to find the invariants in each summand. An invariant is a
+weight-zero vector annihilated by every raising operator. Fix a basis of
+$V_{+}$, take the diagonal torus of $\SL(V_{+})$ as maximal torus, and for
+$T,U\subseteq\{1,\dots,2n\}$ let $v_{T}\in\bigwedge^{|T|}V_{+}$ and
+$v_{U}^{\vee}\in\bigwedge^{|U|}V_{+}^{\vee}$ be the corresponding monomials in
+the basis and its dual. In the weight lattice of $\SL_{2n}$ the weight of
+$v_{T}\otimes v_{U}^{\vee}$ is
+$\mathbf{1}_{T}-\mathbf{1}_{U}$ modulo $(1,1,\dots,1)$; since the entries of
+$\mathbf{1}_{T}-\mathbf{1}_{U}$ lie in $\{-1,0,1\}$, the only multiples of
+$(1,\dots,1)$ it can equal are $0$ and $\pm(1,\dots,1)$, giving
+\[
+  T=U \quad(\text{so } r=s),
+  \qquad
+  (T,U)=\bigl(\{1,\dots,2n\},\emptyset\bigr),
+  \qquad
+  (T,U)=\bigl(\emptyset,\{1,\dots,2n\}\bigr).
+\]
+The last two occur only for $(r,s)=(2n,0)$ and $(0,2n)$, each with a
+one-dimensional weight-zero space consisting of the invariant lines
+$\bigwedge^{2n}V_{+}$ and $\bigwedge^{2n}V_{-}$, which are $\SL$-invariant
+because $\SL$ has trivial determinant. For $r=s$ the weight-zero space has
+dimension $\binom{2n}{r}$ and its invariant subspace is the line spanned by the
+image of the identity under
+$\End(\bigwedge^{r}V_{+})\cong\bigwedge^{r}V_{+}\otimes\bigwedge^{r}V_{+}^{\vee}$,
+which is one dimensional because $\bigwedge^{r}V_{+}$ is an irreducible
+$\SL_{2n}$-module and Schur's lemma applies.
+
+Collecting the contributions: for $k\ne n$ the only one is $(r,s)=(k,k)$, of
+dimension one and spanned by $\eta^{k}$, which is a nonzero invariant lying in
+that summand by \Cref{lem:NSchar}. For $k=n$ there are three contributions,
+$(n,n)$, $(2n,0)$ and $(0,2n)$, of total dimension three; the first is spanned
+by $\eta^{n}$ and the last two span $\HW(A)\otimes\CC$ by \Cref{lem:weilchar}.
+Taking invariants commutes with extension of scalars from $\QQ$ to $\CC$, so
+the dimensions over $\QQ$ are the same.
+\end{proof}
+
+\Cref{fig:hodgespike} displays these dimensions for $n=2,3,4$.
+
+\begin{corollary}[Reduction to one class]\label{cor:whatisleft}
+Let $(A,\iota,\eta)$ be as in \Cref{thm:hdgcount}. The Hodge conjecture holds
+for $A$ in every degree if and only if the single class $\omega_{1}$ of
+\eqref{eq:omegagens} is algebraic.
+\end{corollary}
+
+\begin{proof}
+For $k\ne n$ the Hodge classes are the multiples of $\eta^{k}$, which are
+algebraic, being powers of a divisor class. For $k=n$ they are spanned by
+$\eta^{n}$, $\omega_{1}$ and $\omega_{2}$ by \Cref{thm:hdgcount}. Finally,
+$\omega_{2}$ is algebraic as soon as $\omega_{1}$ is. By
+\Cref{thm:explicitgens}(iv) the plane $\HW(A)$ is a free $K$-module of rank one
+generated by $\omega_{1}$. For $\tau\in\Kx$ some positive integer multiple
+$m\,\iota(\tau)$ lies in $\End(A)$, and on $H^{2n}(A,\QQ)$ the operator
+$\iota(\tau)^{*}$ is $m^{-2n}$ times the pullback by $m\,\iota(\tau)$, so it
+carries algebraic classes to algebraic classes. Any $\tau$ with
+$\tau^{2n}\notin\QQ$, which exists by the argument of \Cref{lem:charsdiffer},
+moves $\omega_{1}$ to a class with a nonzero $\omega_{2}$ component, and so
+$\omega_{2}$ is a rational combination of the algebraic classes $\omega_{1}$
+and $\iota(\tau)^{*}\omega_{1}$.
+\end{proof}
+
+\begin{remark}\label{rem:onlyoneclass}
+\Cref{cor:whatisleft} explains why the Weil line is the standard test case. On a
+general abelian variety of Weil type the Hodge conjecture concerns one
+explicitly written class with $2^{2n-1}$ integer coefficients, and no space of
+classes of unknown structure. The obstruction theorems of this paper
+constrain the ways in which that class can be produced, and
+\Cref{sec:basepoints} exhibits in every Weil family a member on which the
+whole Weil line consists of polynomials in divisor classes.
+\end{remark}
+
+\begin{figure}[htbp]
+\centering
+  \includegraphics[width=0.9\textwidth]{fig_hodgespike}
+\caption{The dimensions of $\Hdg^{k}(A)$ for a general abelian variety of
+$(K,-1,n)$-Weil type, $0\le k\le 2n$, at $n=2,3,4$, as computed in
+\Cref{thm:hdgcount}. Every degree carries the line $\QQ\,\eta^{k}$; the middle
+degree $k=n$ carries in addition the two dimensions of the Weil line
+$\HW(A)$, and nothing else occurs. The profile is the same for every $n$.}
+\label{fig:hodgespike}
+\end{figure}

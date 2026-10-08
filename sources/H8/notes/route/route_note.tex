@@ -1,0 +1,503 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\usepackage[capitalise,nameinlink]{cleveref}
+\crefname{step}{Step}{Steps}
+\crefname{status}{Status}{Statuses}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{step}[theorem]{Step}
+\newtheorem{status}[theorem]{Status}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\ch}{\operatorname{ch}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\cExt}{\mathcal{E}xt}
+\newcommand{\Hdg}{\operatorname{Hdg}}
+\newcommand{\NS}{\operatorname{NS}}
+\newcommand{\Nm}{\operatorname{Nm}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\At}{\mathrm{At}}
+
+\title{Hilbert--Burch Resolutions of Secant Supports on Abelian Fourfolds}
+\author{Deep Bhattacharjee}
+\author{Priyabrata Mandal}
+\author{Ushashi Bhattacharya}
+\date{Working note, 29 September 2026; corrected version of the route note of
+the same day}
+
+\begin{document}
+
+\begin{abstract}
+We prove that the ideal sheaf of the support of a secant object on a
+principally polarised abelian fourfold has no Hilbert--Burch resolution of
+rank one, and none of rank two at the discriminants $1$ and $5$ when its
+Chern classes are polynomials in the polarisation, and we correct the route
+note that proposed these supports.
+\end{abstract}
+
+\maketitle
+
+\section{What this note does}\label{sec:status}
+
+\begin{status}\label{st:proves}
+This note proves no case of the Hodge conjecture. It writes the secant route
+of \cite[Section~18]{BMB} on one principally polarised abelian fourfold as a
+list of steps, records which constructions are excluded, and proves one new
+exclusion, \Cref{prop:lowrank}: the Hilbert--Burch resolution of a secant
+support has rank $r\ge2$, and $r\ge3$ at $d=1,5$ when its Chern classes are
+polynomials in $\Theta$. That proposition is also in the paper
+\cite[Proposition~18.60]{BMB}. The numerical statements of
+\Cref{sec:program,sec:lemma} are checked in exact arithmetic
+(\Cref{sec:checks}); every other statement quoted here is proved in
+\cite{BMB} or in the papers it cites, at the place given.
+\end{status}
+
+\subsection*{The target}
+Markman proved that the Weil classes are algebraic on the abelian sixfolds of
+split Weil type for every imaginary quadratic field \cite{Mar25a,Mar25b}, and
+deduced it for all abelian fourfolds of Weil type, for every field and every
+discriminant, through a product argument of Schoen
+\cite[Proposition~10]{Sch98}; the Hodge conjecture for abelian fourfolds
+follows \cite[Section~1]{BMB}. The fourfolds of Weil type are therefore not a
+target. The secant route starts from a principally polarised abelian fourfold
+$X$ and a secant object $F$ on it, and aims at the Weil classes
+$\mathbf{W}(K,4,\delta)$ on the abelian eightfolds $X\times\widehat X$ of
+Weil type, $K=\QQ(\sqrt{-d})$ \cite[Theorem~18.29(iv),
+Remark~18.69]{BMB}. Besides an object on $X$ it needs an affirmative answer
+to \cite[Question~11.4]{Mar25b}.
+
+\subsection*{Where the route sits}
+The closure theorem \cite[Theorem~20.58]{BMB} lists five minimal sufficient
+sets of open statements,
+\[
+  \{\mathrm{F3}\},\quad\{\mathrm{L},\mathrm{M}\},\quad
+  \{\mathrm{L},\mathrm{F3}'\},\quad\{\mathrm{V},\mathrm{F3}'\},\quad
+  \{\mathrm{P2}_{\mathrm{split}},\mathrm{F2},\mathrm{F3}'\}.
+\]
+Statement (F1) of the paper is the propagation statement, and it is needed
+only in the form $\mathrm{P2}_{\mathrm{split}}$, for the split families of
+the CM fields of degree at least four: (P2) for an imaginary quadratic field
+and for a nontrivial discriminant is derived by descent
+\cite[Proposition~20.13]{BMB}. The secant
+route lies in no minimal sufficient set \cite[Theorem~20.58(iv)]{BMB}:
+granting both of its open demands gives $\mathbf{W}(K,n,\delta)$ for
+imaginary quadratic $K$ and leaves the CM fields of degree at least four
+outside. Statement (F3), the conjecture for the varieties that are not
+abelian, is equivalent to the Hodge conjecture
+\cite[Proposition~20.35]{BMB}; (F3$'$), the conjecture modulo abelian
+varieties \cite[Definition~20.36]{BMB}, is weaker; and (F2) is equivalent to
+the Hodge conjecture for abelian varieties \cite[Proposition~21.49]{BMB}.
+Every element of a minimal sufficient set other than
+$\mathrm{P2}_{\mathrm{split}}$ is a consequence of the Hodge conjecture, and
+$\{\mathrm{F3}\}$ and $\{\mathrm{L},\mathrm{M}\}$ are each equivalent to it
+\cite[Theorem~20.58(vi)]{BMB}.
+
+\section{The reduction to one object}\label{sec:reduction}
+
+Let $(X,\Theta)$ be a principally polarised abelian fourfold, $d>0$, and $F$
+a perfect complex on $X$ with $\ch(F)=a\,u_{\Theta}+b\,v_{\Theta}$, where
+$u_{\Theta},v_{\Theta}$ span the secant plane \cite[Section~18]{BMB}. No
+action of $K$ on $X$ is assumed: the field $K=\QQ(\sqrt{-d})$ enters through
+$\ch(F)$, and the Weil structure lives on $X\times\widehat X$
+\cite[Proposition~18.25(v), Theorem~18.29(iv)]{BMB}.
+
+\begin{theorem}[{\cite[Theorem~18.29(ii), (iii)]{BMB}}]\label{thm:factor}
+The classes of $HT^{2}(X)$ preserving $\ch(F)$ to first order are the ten
+polarised first order deformations of $(X,\Theta)$ and the six Poisson
+directions compensated in $H^{0,2}$. The object $F$ satisfies the weakened
+criterion if and only if
+\begin{enumerate}[label=\textup{(\alph*)},nosep]
+\item $v\lrcorner\At(F)=0$ in $\Ext^{2}(F,F)$ for every $v\in H^{1}(T_{X})$
+  with $v\lrcorner\Theta=0$, that is, $F$ extends to first order along every
+  polarised deformation of $(X,\Theta)$; and
+\item $\At(F)^{2}=-d\,\Theta^{2}\cdot\id_{F}$ in
+  $\Ext^{2}(F,F\otimes\Omega^{2}_{X})$.
+\end{enumerate}
+The trace of \textup{(b)} is automatic.
+\end{theorem}
+
+For Markman's object, built from translates of $\Theta$, condition (a) holds
+and (b) is the whole condition \cite[Corollary~18.30]{BMB}. For any other
+candidate both are needed, and (a) runs over all ten polarised directions.
+
+\section{The local dichotomy and the numerical targets}\label{sec:targets}
+
+Let $F=\cI_{Z}(b\Theta)$ with $Z$ of codimension two. If the local ring
+$\cO_{Z,p}$ is Cohen--Macaulay, then $\cExt^{q}(\cI_{Z},\cI_{Z})_{p}=0$ for
+$q\ge2$ \cite[Theorem~18.48]{BMB}. If $Z$ fails to be Cohen--Macaulay at a
+point of one of the types of \cite[Remark~18.49]{BMB}, then $F$ fails the
+criterion; if $Z$ is Cohen--Macaulay, the criterion is the vanishing of the
+image of $A_{\theta}A_{\theta'}$ in $H^{1}(Z,\cExt^{1}(\cI_{Z},\cI_{Z}))$ for
+all $\theta,\theta'\in H^{0}(T_{X})$, and when $Z$ is smooth
+$\cExt^{1}(\cI_{Z},\cI_{Z})=N_{Z/X}$ \cite[Corollary~18.50]{BMB}.
+
+For a smooth support $S$, Grothendieck--Riemann--Roch with trivial Todd class
+forces \cite[Theorem~18.40]{BMB}
+\[
+  [S]=N\Theta^{2},\qquad N=\tfrac12(b^{2}+d),\qquad
+  \chi(\cO_{S})=(b^{2}+d)(3b^{2}-d),
+\]
+\[
+  K_{S}^{2}=3(b^{2}+d)(7b^{2}-d),\qquad e(S)=3(b^{2}+d)(5b^{2}-3d),\qquad
+  K_{S}\cdot\lambda=32bN,\qquad\lambda^{2}=24N,
+\]
+with $\lambda=\Theta|_{S}$, and the Bogomolov--Miyaoka--Yau inequality is
+exactly $d\le b^{2}$. At $b=3$ with $d$ squarefree and $N$ integral this
+leaves $d\in\{1,3,5,7\}$ \cite[Corollary~18.41]{BMB}, with the invariants of
+\Cref{tab:targets}.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}ccrrrrr@{}}
+\toprule
+$d$ & $N$ & $\chi(\cO_S)$ & $K_S^2$ & $e(S)$ & $K_S\cdot\lambda$ & $\lambda^2$\\
+\midrule
+1 & 5 & 260 & 1860 & 1260 & 480 & 120\\
+3 & 6 & 288 & 2160 & 1296 & 576 & 144\\
+5 & 7 & 308 & 2436 & 1260 & 672 & 168\\
+7 & 8 & 320 & 2688 & 1152 & 768 & 192\\
+\bottomrule
+\end{tabular}
+\caption{The forced invariants of a smooth support at $b=3$.}
+\label{tab:targets}
+\end{table}
+
+\section{What is excluded}\label{sec:excluded}
+
+A candidate in any of the following classes fails before condition (b) is
+reached.
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item Complete intersections of two divisors \cite[Theorem~18.54]{BMB}.
+\item Zero loci of sections of vector bundles of rank two, and more generally
+  every Hilbert--Burch resolution of rank one (\Cref{prop:lowrank}(i)).
+\item Cones of maps between sums of powers of an ample line bundle with class
+  in $\QQ\Theta$, whatever the rank \cite[Theorem~18.63,
+  Corollary~18.68(i)]{BMB}.
+\item Cones of maps between sums of simple isogeny blocks, that is, of simple
+  semi-homogeneous bundles \cite[Theorem~18.66, Remark~18.67]{BMB}; these
+  include all line bundles.
+\item For a smooth support, resolutions whose two terms both have classes in
+  the lattice generated by line bundles \cite[Corollary~18.58]{BMB}.
+\item Markman's explicit complex from $N$ translates of $\Theta$
+  \cite[Theorem~18.34]{BMB}.
+\item Hilbert--Burch resolutions of rank two at $d\equiv1\pmod4$, when the
+  Chern classes are polynomials in $\Theta$ (\Cref{prop:lowrank}(ii)).
+\end{enumerate}
+
+\begin{proposition}[{\cite[Proposition~18.60]{BMB}}]\label{prop:lowrank}
+Let $(X,\Theta)$ be a principally polarised abelian fourfold, $b\ge1$, $d>0$,
+and let $Z\subset X$ be of codimension two with a resolution
+$0\to E_{1}\to E_{0}\to\cI_{Z}\to0$ by vector bundles of ranks $r$ and $r+1$
+and $\ch(\cI_{Z}(b\Theta))=u_{\Theta}+b\,v_{\Theta}$.
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item $r\ge2$, whatever the bundles. Equivalently, $Z$ is not the zero locus
+  of a section of a vector bundle of rank two.
+\item If $r=2$ and the Chern classes of $E_{1}$ are polynomials in $\Theta$,
+  then $3d-b^{2}-4ab\equiv0\pmod{12}$, where
+  $c_{1}(E_{1}(b\Theta))=a\Theta$. At $b=3$ this says $d\equiv3\pmod4$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Put $E=E_{1}(b\Theta)$, $G=E_{0}(b\Theta)$, $F=\cI_{Z}(b\Theta)$, so
+$c(G)=c(E)\,c(F)$, and Newton's identities give
+\[
+  c(F)=1+b\Theta+N\Theta^{2}+\tfrac{bN}{3}\Theta^{3}
+  +\tfrac{N(b^{2}-3d)}{12}\Theta^{4}.
+\]
+A vector bundle of rank $s$ has $c_{k}=0$ for $k>s$. At $r=1$, with
+$\ell=c_{1}(E)$, the rank two bundle $G$ has
+$0=c_{3}(G)=\bigl(\tfrac{bN}{3}\Theta+N\ell\bigr)\Theta^{2}$, so
+$\ell=-\tfrac b3\Theta$ by hard Lefschetz, and then
+$c_{4}(G)=-\tfrac{N(b^{2}+9d)}{36}\Theta^{4}\ne0$. A section of a rank two
+bundle $V$ vanishing in codimension two on $Z$ gives the Koszul resolution
+$0\to\det V^{\vee}\to V^{\vee}\to\cI_{Z}\to0$, of rank one. At $r=2$, with
+$c_{1}(E)=a\Theta$ and $c_{2}(E)=\tfrac m2\Theta^{2}$, the rank three bundle
+$G$ has $0=c_{4}(G)=c_{4}(F)+c_{1}(E)c_{3}(F)+c_{2}(E)c_{2}(F)$, which
+integrates to $6m=3d-b^{2}-4ab$, and
+$\chi(E)=a^{4}-2a^{2}m+\tfrac12m^{2}\in\ZZ$ makes $m$ even.
+\end{proof}
+
+\begin{remark}\label{rem:ranks}
+Neither condition restricts $r\ge3$: a bundle of rank four has no vanishing
+Chern class on a fourfold, and at $r=3$ the only condition, $c_{4}(E)=0$,
+involves $E$ alone \cite[Remark~18.61]{BMB}. From rank three on, Chern
+numbers alone decide nothing, and \Cref{cor:examples}(iii) gives data at every
+$d\in\{1,3,5,7\}$.
+\end{remark}
+
+\begin{status}\label{st:remaining}
+Two shapes remain \cite[Remark~18.69]{BMB}: a smooth support at
+$d\in\{1,3,5,7\}$ whose Hilbert--Burch resolution has rank $r\ge2$, and
+$r\ge3$ at $d=1,5$ in the polynomial case, with one term not projectively
+flat and not both terms in the lattice of line bundles; or a singular
+Cohen--Macaulay support with a resolution over a bundle that is not
+projectively flat. Neither is settled.
+\end{status}
+
+\section{The program}\label{sec:program}
+
+\begin{step}[Base point]\label{step:base}
+Take any principally polarised abelian fourfold $X$; $d$ is fixed by the
+Chern character of the candidate, not by $X$. When $X$ is simple, the
+injectivity of $H^{2}(\cO_{X})\to H^{2}(\cO_{S})$ required by
+\cite[Lemma~18.62]{BMB} holds for a smooth support automatically
+\cite[Lemma~18.43]{BMB}. When $\Hdg^{2}(X)=\QQ\Theta$ and
+$\Hdg^{4}(X)=\QQ\Theta^{2}$, as for a very general $X$, all Chern classes are
+polynomials in $\Theta$ and \Cref{prop:lowrank}(ii) applies. An action of
+$K$ on $X$ is not needed, and it does not help with condition (a)
+(\Cref{step:extension}).
+\end{step}
+
+\begin{step}[Support]\label{step:support}
+Construct a smooth or Cohen--Macaulay surface $Z\subset X$ with
+$[Z]=N\Theta^{2}$ and, if smooth, the invariants of \Cref{tab:targets},
+with a Hilbert--Burch resolution $0\to E\to G\to\cI_{Z}(3\Theta)\to0$ of
+rank $r\ge2$ outside the classes of \Cref{sec:excluded}. The three families
+proposed in the first version of this note stand as follows.
+\begin{enumerate}[label=(\arabic*),leftmargin=2.2em]
+\item Degeneracy loci of maps between Fourier--Mukai transforms. The
+  transform of a nondegenerate line bundle on $\widehat X$ is a simple
+  semi-homogeneous bundle \cite{Muk78,Muk81}, whose rank on a principally
+  polarised fourfold is $q^{4}$ for slope $\tfrac pq\Theta$, never $2$ or $3$;
+  a resolution with both terms sums of such bundles is excluded by
+  \cite[Theorem~18.66]{BMB}. Transforms of other sheaves are not excluded.
+\item Images of $C_{1}\times C_{2}$ or of $C^{(2)}$. A smooth image
+  $S\cong C_{1}\times C_{2}$ has $K_{S}^{2}=8\chi(\cO_{S})$, which with
+  \Cref{tab:targets} reads $5N=4b^{2}$, impossible at $b=3$ and possible only
+  when $5\mid b$. A smooth $S\cong C^{(2)}$ of genus $g$ has
+  $\chi(\cO_{S})=\tfrac12(g-1)(g-2)$, never $260$, $288$, $308$ or $320$.
+  Singular images must be Cohen--Macaulay and are not excluded.
+\item Zero loci of sections of rank two bundles. Excluded by
+  \Cref{prop:lowrank}(i), for every bundle, equivariant or not.
+\end{enumerate}
+\end{step}
+
+\begin{step}[Extension]\label{step:extension}
+Verify condition (a) of \Cref{thm:factor} along all ten polarised
+directions. If $X$ carries an action of $K$ of signature $(2,2)$, the
+$K$-linear polarised directions form a space of dimension $4$, so an
+equivariant construction that persists over the Weil family gives (a) along
+at most four of the ten directions; the other six destroy the action, and
+equivariance says nothing about them. For a smooth support, (a) is
+equivalent to the Bloch semiregularity map of $S$ having rank six, the least
+value possible \cite[Proposition~18.46]{BMB}.
+\end{step}
+
+\begin{step}[The identity \textup{(b)}]\label{step:heisenberg}
+For a Cohen--Macaulay support, verify that the images of $A_{\theta}A_{\theta'}$
+in $H^{1}(Z,\cExt^{1}(\cI_{Z},\cI_{Z}))$ vanish for all
+$\theta,\theta'\in H^{0}(T_{X})$ \cite[Corollary~18.50(ii)]{BMB}. The first
+version proposed computing these classes from the Atiyah classes of $E$ and
+$G$ restricted to $Z$; that formula is a proposal, it is not in \cite{BMB},
+and it has not been carried out for any candidate.
+\end{step}
+
+\begin{step}[Propagation]\label{step:propagation}
+If \Cref{step:support,step:extension,step:heisenberg} succeed for secant
+objects $F_{1},F_{2}$, then $\Phi(F_{1}\boxtimes F_{2})$ on
+$X\times\widehat X$ satisfies the weakened criterion
+\cite[Theorem~18.29(iv)]{BMB}. With an affirmative answer to
+\cite[Question~11.4]{Mar25b}, the semiregularity argument of Buchweitz and
+Flenner \cite{BF03} and Pridham \cite{Pri24} would then make
+$\mathbf{W}(K,4,\delta_{0})$ algebraic on the eightfolds of the family, and
+\cite[Proposition~20.13]{BMB} every $\delta$, for the discriminants reached
+and nothing beyond them \cite[Remark~18.69]{BMB}.
+\end{step}
+
+\section{The numerical lemma, corrected}\label{sec:lemma}
+
+Write the Chern classes of a class $E$ of rank $r$ as
+$c_{k}(E)=m_{k}\Theta^{k}/k!$; since $\Theta^{k}/k!$ is integral and
+primitive, integrality means $m_{k}\in\ZZ$, and $m_{4}$ is a number of
+points. Put $F=\cI_{Z}(3\Theta)$ with $\ch F=u_{\Theta}+3v_{\Theta}$.
+
+\begin{lemma}\label{lem:whitney}
+If $\ch G=\ch E+\ch F$ with $\operatorname{rk}G=r+1$, then $c(G)=c(E)\,c(F)$,
+where $c(F)$ has $m_{k}(F)=(3,\,2N,\,6N,\,6N(3-d))$; so $G$ has integral
+Chern classes whenever $E$ does. The formulas for $n_{k}=m_{k}(G)$ in the
+first version of this note are this product written out. With Bogomolov's
+discriminant $\Delta(V)=2\operatorname{rk}V\,c_{2}(V)
+-(\operatorname{rk}V-1)c_{1}(V)^{2}$, whose coefficient of $\Theta^{2}$ is
+$r\,m_{2}-(r-1)m_{1}^{2}$,
+\[
+  \Delta(G)-\Delta(E)=\bigl(m_{2}-(m_{1}-3)^{2}+18+(r+1)d\bigr)\Theta^{2}.
+\]
+\end{lemma}
+
+The first version displayed $\operatorname{rk}V\,c_{2}(V)
+-(\operatorname{rk}V-1)c_{1}(V)^{2}$, which differs from Bogomolov's in the
+factor $2$ on $c_{2}$, while its values, such as $\Delta(E)=4\Theta^{2}$ for
+$c(E)=1+\Theta^{2}$ in rank two, are Bogomolov's. What the lemma does not
+see is the vanishing of $c_{k}(E)$ for $k>r$ and of $c_{k}(G)$ for $k>r+1$,
+and this is the whole constraint at $r\le2$.
+
+\begin{corollary}\label{cor:examples}
+Let $b=3$ and $d\in\{1,3,5,7\}$, and suppose the Chern classes of $E$ are
+polynomials in $\Theta$.
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item Rank two data exist exactly at $d=3$ and $d=7$. With
+  $c_{1}(E)=a\Theta$ they have $\Delta(E)=\bigl(d+1-(a+2)^{2}\bigr)\Theta^{2}$
+  and $\Delta(G)=\tfrac12\bigl(9(d+1)-4a^{2}\bigr)\Theta^{2}$.
+\item The example of the first version, $c(E)=1+\Theta^{2}$ in rank two, has
+  $c_{4}(G)=180,144,84,0$ points at $d=1,3,5,7$, so it is a resolution datum
+  only at $d=7$. With the conditions of the first version,
+  $\Delta(E)>0$, $\Delta(G)>0$, $\mu(E)<\mu(G)$ and
+  $\chi(E^{\vee}\otimes G)\ge1$, rank two survives only at $d=7$, for
+  $a\in\{-2,-1,0\}$; at $d=3$ the two discriminants are positive only for
+  $a\in\{-2,-1\}$, where $\chi(E^{\vee}\otimes G)=-78$ and $-7$.
+\item In rank three, $c(E)=1+\Theta^{2}$ meets all four conditions at every
+  $d\in\{1,3,5,7\}$, with $\chi(E^{\vee}\otimes G)=53,101,173,269$.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+At $r=2$ the relation of \Cref{prop:lowrank} gives
+$m_{2}=\tfrac12(d-3)-2a$, from which the two discriminants follow. The
+remaining values are finite computations, checked exactly in
+\Cref{sec:checks}; the closed form of $\chi(E^{\vee}\otimes G)$ at $r=2$ is
+$\tfrac18\bigl(24a^{4}+64a^{3}-88a^{2}d+104a^{2}-64ad+192a+57d^{2}-174d
++153\bigr)$.
+\end{proof}
+
+The four conditions of the first version are heuristics: Bogomolov's
+inequality bounds $\Delta$ below for a stable bundle, and
+$\chi(E^{\vee}\otimes G)\ge1$ neither implies nor is implied by the existence
+of a map $E\to G$. Chern numbers therefore decide ranks one and two and say
+nothing from rank three on.
+
+\section{The toy computation}\label{sec:toy}
+
+The first version searched unions of coordinate abelian surfaces
+$\{x_{i}=c_{i},x_{j}=c_{j}\}$ in $X=E_{1}\times E_{2}\times E_{3}\times E_{4}$
+with the product polarisation, at $b=1$, for configurations with the Chern
+character of a secant support, Cohen--Macaulay everywhere, and with a
+combinatorial condition proposed there as necessary for (a). The programs are
+in \texttt{toy/}. A rerun of the search at $b=1$, $d=1$ with forty restarts
+of $60000$ steps found an exact configuration on four fibres per factor,
+twelve surfaces with the required pair and triple counts and
+$\chi(\cO_{Z})=4$, and none on three fibres per factor, where the best
+configuration missed by one in a triple count. At $d=3$ twenty restarts on
+each size found none; the best configurations missed the targets by a total
+of $31$ and $16$. The
+symbolic powers of the union of the six coordinate surfaces through a point
+give no admissible Chern character for $1\le m\le20$.
+
+This says nothing about \Cref{step:support} on a simple fourfold: $b=1$ is
+not Markman's normalisation, $X$ is not simple and $\NS(X)$ has rank at
+least four, so neither \cite[Lemma~18.43]{BMB} nor \Cref{prop:lowrank}(ii)
+applies, and abelian surfaces do not survive a deformation of $X$ to a
+simple fourfold.
+
+\section{The checks}\label{sec:checks}
+
+The program \texttt{route\_checks.py} performs nineteen checks in exact
+arithmetic: the invariants of \Cref{tab:targets} and the class
+$[S]=N\Theta^{2}$; \Cref{lem:whitney} and the formulas of the first version
+on random data; the Bogomolov normalisation; the example and the three parts
+of \Cref{cor:examples}; the value $c_{4}(G)=-6N(1+d)$ points at $r=1$,
+$b=3$; the conditions on products and symmetric squares of curves; the rank
+$q^{4}$ of a simple semi-homogeneous bundle; and the dimension $pq$ of the
+$K$-linear polarised directions for signature $(p,q)$. Item (LXX) of
+\cite[Appendix~D]{BMB} checks \Cref{prop:lowrank}.
+
+\section{Changes from the first version}\label{sec:changes}
+
+\begin{enumerate}[label=(\arabic*),leftmargin=2.2em]
+\item The target. The Hodge conjecture for abelian fourfolds of Weil type is
+  Markman's theorem; the route aims at $\mathbf{W}(K,4,\delta)$ on eightfolds
+  and needs \cite[Question~11.4]{Mar25b}.
+\item The closure framing. (F1) is needed only as $\mathrm{P2}_{\mathrm{split}}$,
+  for CM fields of degree at least four; the secant route lies in no minimal
+  sufficient set; \cite[Proposition~20.35]{BMB} concerns (F3), not (F3$'$).
+\item The base point needs no $K$-action, and a $K$-action gives condition (a)
+  along at most four of ten directions.
+\item The class of a smooth support is $N\Theta^{2}$, not $N\Theta^{2}/2$.
+\item The local statement is one implication, and the global condition is a
+  family of classes indexed by pairs $\theta,\theta'$.
+\item Family (3) is excluded, family (1) is excluded for transforms of line
+  bundles, and smooth products and symmetric squares of curves are excluded
+  at $b=3$.
+\item The numerical lemma omits the vanishing above the rank; its example
+  works only at $d=7$; its displayed discriminant lacks a factor $2$.
+\item The bibliography is that of \cite{BMB}: \cite{Mar25b} is ``Secant
+  sheaves and Weil classes on abelian varieties'', and Pridham's paper is
+  \cite{Pri24}.
+\end{enumerate}
+
+\begin{thebibliography}{Mar25b}
+
+\bibitem[BMB]{BMB}
+D. Bhattacharjee, P. Mandal and U. Bhattacharya,
+\emph{Density of the Algebraic Locus of Weil Classes on Abelian Varieties},
+manuscript, 2026; code and sources:
+\href{https://doi.org/10.5281/zenodo.23038895}{\texttt{doi:10.5281/zenodo.23038895}}.
+Theorem numbers refer to the version of 29 September 2026.
+
+\bibitem[BF03]{BF03}
+R.-O. Buchweitz and H. Flenner,
+\emph{A semiregularity map for modules and applications to deformations},
+Compositio Math. \textbf{137} (2003), no.~2, 135--210.
+\href{https://doi.org/10.1023/A:1023999012081}{\texttt{doi:10.1023/A:1023999012081}}.
+
+\bibitem[Mar25a]{Mar25a}
+E. Markman,
+\emph{Cycles on abelian $2n$-folds of Weil type from secant sheaves on
+abelian $n$-folds}, preprint, arXiv:2502.03415 (2025).
+\href{https://doi.org/10.48550/arXiv.2502.03415}{\texttt{doi:10.48550/arXiv.2502.03415}}.
+
+\bibitem[Mar25b]{Mar25b}
+E. Markman,
+\emph{Secant sheaves and Weil classes on abelian varieties},
+preprint, arXiv:2509.23403 (2025).
+\href{https://doi.org/10.48550/arXiv.2509.23403}{\texttt{doi:10.48550/arXiv.2509.23403}}.
+
+\bibitem[Muk78]{Muk78}
+S. Mukai,
+\emph{Semi-homogeneous vector bundles on an abelian variety},
+J. Math. Kyoto Univ. \textbf{18} (1978), no.~2, 239--272.
+\href{https://doi.org/10.1215/kjm/1250522574}{\texttt{doi:10.1215/kjm/1250522574}}.
+
+\bibitem[Muk81]{Muk81}
+S. Mukai,
+\emph{Duality between $D(X)$ and $D(\hat{X})$ with its application to Picard
+sheaves},
+Nagoya Math. J. \textbf{81} (1981), 153--175.
+\href{https://doi.org/10.1017/S002776300001922X}{\texttt{doi:10.1017/S002776300001922X}}.
+
+\bibitem[Pri24]{Pri24}
+J. P. Pridham,
+\emph{Semiregularity as a consequence of Goodwillie's theorem},
+Forum Math. Sigma \textbf{12} (2024), e126. arXiv:1208.3111.
+\href{https://doi.org/10.1017/fms.2024.132}{\texttt{doi:10.1017/fms.2024.132}}.
+
+\bibitem[Sch98]{Sch98}
+C. Schoen,
+\emph{Addendum to: Hodge classes on self-products of a variety with an
+automorphism},
+Compositio Math. \textbf{114} (1998), no.~3, 329--336.
+\href{https://doi.org/10.1023/A:1000566205021}{\texttt{doi:10.1023/A:1000566205021}}.
+
+\end{thebibliography}
+
+\end{document}

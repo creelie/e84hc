@@ -1,0 +1,62 @@
+name: lean
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: install elan
+        run: |
+          curl -sSfL https://github.com/leanprover/elan/releases/latest/download/elan-x86_64-unknown-linux-gnu.tar.gz \
+            | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: build the package with lake
+        working-directory: lean
+        run: lake build
+
+      - name: check the file
+        working-directory: lean
+        run: lean HodgeObstruction.lean | tee ../axioms.txt
+
+      - name: fail if any theorem depends on an axiom
+        run: |
+          if grep -q "sorryAx" axioms.txt; then
+            echo "a theorem depends on sorryAx"; exit 1
+          fi
+          n=$(grep -c "does not depend on any axioms" axioms.txt)
+          m=$(grep -c "depends on axioms: \\[propext\\]" axioms.txt)
+          bad=$(grep -c "depends on axioms" axioms.txt)
+          echo "axiom-free: $n   propext only: $m"
+          if [ "$bad" -ne "$m" ]; then
+            echo "a theorem depends on an axiom other than propext"; exit 1
+          fi
+          if [ "$((n + m))" -ne 409 ]; then
+            echo "expected 409 theorems, found $((n + m))"; exit 1
+          fi
+
+  scripts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: install sympy, numpy and python-flint
+        run: python3 -m pip install sympy numpy python-flint
+
+      - name: run the exact-arithmetic verification
+        working-directory: code
+        run: |
+          python3 verify_all.py | tee ../checks.txt
+          grep -q "2218 checks passed, 0 failed" ../checks.txt
+          grep -q "overall: PASS" ../checks.txt

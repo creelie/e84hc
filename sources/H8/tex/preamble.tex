@@ -1,0 +1,131 @@
+%% preamble.tex
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,left=1.3in,right=1.3in,top=1.15in,bottom=1.15in,
+  footskip=0.45in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathrsfs}
+\usepackage{mathtools}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,decorations.pathmorphing,
+  patterns,shapes.geometric,matrix,fit,backgrounds}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{placeins}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=DeepBlue,citecolor=DeepBlue,
+  urlcolor=DeepBlue,breaklinks=true]{hyperref}
+\usepackage[capitalize,nameinlink]{cleveref}
+\hypersetup{pdftitle={Algebraic Loci of Weil Classes on Abelian
+  Varieties},
+  pdfauthor={Deep Bhattacharjee, Priyabrata Mandal and Ushashi Bhattacharya},
+  pdfkeywords={Hodge conjecture, Weil classes, abelian varieties}}
+
+\definecolor{DeepBlue}{RGB}{0,0,139}
+\setlength{\emergencystretch}{3em}
+\hbadness=3000
+\raggedbottom
+\interfootnotelinepenalty=0
+
+%% ---------------------------------------------------------------- floats
+\renewcommand{\topfraction}{0.92}
+\renewcommand{\bottomfraction}{0.75}
+\renewcommand{\textfraction}{0.06}
+\renewcommand{\floatpagefraction}{0.72}
+
+%% ---------------------------------------------------------- theorem envs
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{setupenv}[theorem]{Setup}
+\newtheorem{question}[theorem]{Question}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{notation}[theorem]{Notation}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\crefname{setupenv}{Setup}{Setups}
+\crefname{part}{Part}{Parts}
+\Crefname{part}{Part}{Parts}
+\Crefname{setupenv}{Setup}{Setups}
+
+%% ------------------------------------------------------------- notation
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\Av}{A^{\vee}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\cQ}{\mathcal{Q}}
+\newcommand{\Hdg}{\mathrm{Hdg}}
+\newcommand{\HW}{W}                      % the Weil line
+\newcommand{\NS}{\mathrm{NS}}
+\newcommand{\Nm}{\mathrm{N}}             % the norm character
+\newcommand{\cl}{\mathrm{cl}}
+\newcommand{\Cn}{\mathrm{Cn}}
+\newcommand{\bpf}{\mathrm{bpf}}
+
+\DeclareMathOperator{\CH}{CH}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\td}{td}
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Hilb}{Hilb}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\MT}{MT}
+\DeclareMathOperator{\Hg}{Hg}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\image}{im}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Sec}{Sec}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\GU}{GU}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\SU}{SU}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator*{\colim}{colim}
+\DeclareMathOperator{\ob}{ob}
+\DeclareMathOperator{\Ann}{Ann}
+
+\newcommand{\weightlattice}{\Lambda}
+\newcommand{\Kx}{K^{\times}}
+\newcommand{\bbar}[1]{\overline{#1}}
+\allowdisplaybreaks[2]

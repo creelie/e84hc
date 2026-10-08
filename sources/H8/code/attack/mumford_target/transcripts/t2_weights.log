@@ -1,0 +1,21 @@
+wedge^0 V = {(0, 0, 0): 1}
+wedge^1 V = {(1, 1, 1): 1}
+wedge^2 V = {(0, 0, 0): 1, (0, 2, 2): 1, (2, 0, 2): 1, (2, 2, 0): 1}
+wedge^3 V = {(1, 1, 1): 1, (1, 1, 3): 1, (1, 3, 1): 1, (3, 1, 1): 1}
+wedge^4 V = {(0, 0, 0): 1, (0, 0, 4): 1, (0, 2, 2): 1, (0, 4, 0): 1, (2, 0, 2): 1, (2, 2, 0): 1, (2, 2, 2): 1, (4, 0, 0): 1}
+wedge^5 V = {(1, 1, 1): 1, (1, 1, 3): 1, (1, 3, 1): 1, (3, 1, 1): 1}
+wedge^6 V = {(0, 0, 0): 1, (0, 2, 2): 1, (2, 0, 2): 1, (2, 2, 0): 1}
+wedge^7 V = {(1, 1, 1): 1}
+wedge^8 V = {(0, 0, 0): 1}
+PASS no V(2,0,0)-type summand in any wedge^k V
+PASS wedge^2 V = V(2,2,0)+V(2,0,2)+V(0,2,2)+1, wedge^4 V as in prop:mumfordproduct
+multiplicity of T_1 = V(2,0,0) in H^n(X x X), n = 0..16: [0, 0, 1, 0, 6, 0, 16, 0, 24, 0, 16, 0, 6, 0, 1, 0, 0]
+PASS T occurs in H^2(X x X) exactly once (in H^1 (x) H^1)
+PASS T does not occur in odd degree of X x X
+PASS dim H^1(Z) = 12, h^{1,0} = 6
+character-trivial part of wedge^2 H^1(Z): {(2, 0, 0): 1, (0, 2, 0): 1, (0, 0, 2): 1, (0, 0, 0): 3}
+PASS it is T_1 + T_2 + T_3 + 3 copies of the trivial representation
+Hodge numbers of the character-trivial part (p=2,1,0): {1: 10, 2: 1, 0: 1}  -> T: {2: 1, 1: 7, 0: 1}
+PASS T inside H^2(Z) has Hodge numbers (1,7,1): K3 type
+
+7 checks passed, 0 failed

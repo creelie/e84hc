@@ -1,0 +1,104 @@
+  [PASS] sqrt2 q=(2, 1): q is totally positive
+  [PASS] sqrt2 q=(2, 1): dim g_F = 30
+  [PASS] sqrt2 q=(2, 1): two elements generate g_F
+  [PASS] sqrt2 q=(2, 1): degree-2 invariants of dimension 2, eta among them, Lefschetz part of dimension 3
+  [PASS] sqrt2 q=(2, 1) F1=w F2=w: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt2 q=(2, 1) F1=u F2=u: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt2 q=(2, 1) F1=gen F2=gen: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt2 q=(2, 1) F1=w F2=v_1: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt2 q=(3, -1): q is totally positive
+  [PASS] sqrt2 q=(3, -1): dim g_F = 30
+  [PASS] sqrt2 q=(3, -1): two elements generate g_F
+  [PASS] sqrt2 q=(3, -1): degree-2 invariants of dimension 2, eta among them, Lefschetz part of dimension 3
+  [PASS] sqrt2 q=(3, -1) F1=w F2=w: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt2 q=(3, -1) F1=u F2=u: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt2 q=(3, -1) F1=gen F2=gen: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt2 q=(3, -1) F1=w F2=v_1: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+     sqrt2: 7.2s
+  [PASS] sqrt13 q=(3, 1): q is totally positive
+  [PASS] sqrt13 q=(3, 1): dim g_F = 30
+  [PASS] sqrt13 q=(3, 1): two elements generate g_F
+  [PASS] sqrt13 q=(3, 1): degree-2 invariants of dimension 2, eta among them, Lefschetz part of dimension 3
+  [PASS] sqrt13 q=(3, 1) F1=w F2=w: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt13 q=(3, 1) F1=u F2=u: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt13 q=(3, 1) F1=gen F2=gen: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt13 q=(3, 1) F1=w F2=v_1: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt13 q=(4, -1): q is totally positive
+  [PASS] sqrt13 q=(4, -1): dim g_F = 30
+  [PASS] sqrt13 q=(4, -1): two elements generate g_F
+  [PASS] sqrt13 q=(4, -1): degree-2 invariants of dimension 2, eta among them, Lefschetz part of dimension 3
+  [PASS] sqrt13 q=(4, -1) F1=w F2=w: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt13 q=(4, -1) F1=u F2=u: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt13 q=(4, -1) F1=gen F2=gen: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt13 q=(4, -1) F1=w F2=v_1: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+     sqrt13: 8.2s
+  [PASS] sqrt17 q=(4, 1): q is totally positive
+  [PASS] sqrt17 q=(4, 1): dim g_F = 30
+  [PASS] sqrt17 q=(4, 1): two elements generate g_F
+  [PASS] sqrt17 q=(4, 1): degree-2 invariants of dimension 2, eta among them, Lefschetz part of dimension 3
+  [PASS] sqrt17 q=(4, 1) F1=w F2=w: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt17 q=(4, 1) F1=u F2=u: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt17 q=(4, 1) F1=gen F2=gen: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt17 q=(4, 1) F1=w F2=v_1: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt17 q=(5, -1): q is totally positive
+  [PASS] sqrt17 q=(5, -1): dim g_F = 30
+  [PASS] sqrt17 q=(5, -1): two elements generate g_F
+  [PASS] sqrt17 q=(5, -1): degree-2 invariants of dimension 2, eta among them, Lefschetz part of dimension 3
+  [PASS] sqrt17 q=(5, -1) F1=w F2=w: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt17 q=(5, -1) F1=u F2=u: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt17 q=(5, -1) F1=gen F2=gen: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt17 q=(5, -1) F1=w F2=v_1: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+     sqrt17: 8.2s
+  [PASS] sqrt10 q=(4, 1): q is totally positive
+  [PASS] sqrt10 q=(4, 1): dim g_F = 30
+  [PASS] sqrt10 q=(4, 1): two elements generate g_F
+  [PASS] sqrt10 q=(4, 1): degree-2 invariants of dimension 2, eta among them, Lefschetz part of dimension 3
+  [PASS] sqrt10 q=(4, 1) F1=w F2=w: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt10 q=(4, 1) F1=u F2=u: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt10 q=(4, 1) F1=gen F2=gen: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt10 q=(4, 1) F1=w F2=v_1: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt10 q=(5, -1): q is totally positive
+  [PASS] sqrt10 q=(5, -1): dim g_F = 30
+  [PASS] sqrt10 q=(5, -1): two elements generate g_F
+  [PASS] sqrt10 q=(5, -1): degree-2 invariants of dimension 2, eta among them, Lefschetz part of dimension 3
+  [PASS] sqrt10 q=(5, -1) F1=w F2=w: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt10 q=(5, -1) F1=u F2=u: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt10 q=(5, -1) F1=gen F2=gen: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt10 q=(5, -1) F1=w F2=v_1: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+     sqrt10: 8.0s
+  [PASS] sqrt3 q=(2, 1): q is totally positive
+  [PASS] sqrt3 q=(2, 1): dim g_F = 30
+  [PASS] sqrt3 q=(2, 1): two elements generate g_F
+  [PASS] sqrt3 q=(2, 1): degree-2 invariants of dimension 2, eta among them, Lefschetz part of dimension 3
+  [PASS] sqrt3 q=(2, 1) F1=w F2=w: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt3 q=(2, 1) F1=u F2=u: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt3 q=(2, 1) F1=gen F2=gen: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt3 q=(2, 1) F1=w F2=v_1: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt3 q=(3, -1): q is totally positive
+  [PASS] sqrt3 q=(3, -1): dim g_F = 30
+  [PASS] sqrt3 q=(3, -1): two elements generate g_F
+  [PASS] sqrt3 q=(3, -1): degree-2 invariants of dimension 2, eta among them, Lefschetz part of dimension 3
+  [PASS] sqrt3 q=(3, -1) F1=w F2=w: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt3 q=(3, -1) F1=u F2=u: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt3 q=(3, -1) F1=gen F2=gen: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt3 q=(3, -1) F1=w F2=v_1: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+     sqrt3: 6.1s
+  [PASS] sqrt7 q=(3, 1): q is totally positive
+  [PASS] sqrt7 q=(3, 1): dim g_F = 30
+  [PASS] sqrt7 q=(3, 1): two elements generate g_F
+  [PASS] sqrt7 q=(3, 1): degree-2 invariants of dimension 2, eta among them, Lefschetz part of dimension 3
+  [PASS] sqrt7 q=(3, 1) F1=w F2=w: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt7 q=(3, 1) F1=u F2=u: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt7 q=(3, 1) F1=gen F2=gen: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt7 q=(3, 1) F1=w F2=v_1: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt7 q=(4, -1): q is totally positive
+  [PASS] sqrt7 q=(4, -1): dim g_F = 30
+  [PASS] sqrt7 q=(4, -1): two elements generate g_F
+  [PASS] sqrt7 q=(4, -1): degree-2 invariants of dimension 2, eta among them, Lefschetz part of dimension 3
+  [PASS] sqrt7 q=(4, -1) F1=w F2=w: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt7 q=(4, -1) F1=u F2=u: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt7 q=(4, -1) F1=gen F2=gen: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+  [PASS] sqrt7 q=(4, -1) F1=w F2=v_1: kappa is g_F-invariant, kappa_2 is in the degree-2 invariants, and kappa_4 has a nonzero Weil component
+     sqrt7: 6.5s
+
+96 checks passed, 0 failed
