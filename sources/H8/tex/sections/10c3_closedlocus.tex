@@ -1,0 +1,1087 @@
+\section{The algebraic locus and the propagation criteria}\label{sec:propagation}
+
+The results of \Cref{sec:basepoints} are pointwise: a class, a criterion and
+a cycle at a point, and in \Cref{cor:exactform} an implication to be proved
+at every point. This section studies the set of points at which the Weil class
+is algebraic. Properness of the Hilbert scheme makes it a countable union of
+closed subvarieties (\Cref{thm:closedlocus}), and rational isogenies make it
+dense (\Cref{prop:densealg}); together these turn the propagation question
+into a dichotomy (\Cref{cor:allornothing}). Two criteria for propagation
+follow, a bound along one orbit (\Cref{thm:degreebound}) and a rank at one
+point (\Cref{thm:semiregclosure}). We treat the bound first, together with
+the transport of cycles along isogenies, which decides one of its two
+readings, and with the limits of representatives built from products of
+divisors; the rest of the section is devoted to the rank.
+
+\subsection{The algebraic locus}
+\label{ssec:properness}
+
+\Cref{q:residual} is a question about the set
+\[
+  \Sigma \;=\; \bigl\{\,s\in\cD_{n,n} \;:\;
+    \omega_{s}\ \text{is algebraic on}\ A_{s}\,\bigr\}.
+\]
+This set is restricted in shape, and the restriction changes the form
+of the remaining problem: instead of a class to construct at every point, one
+is left with a bound to prove along one orbit, or a rank to compute at one
+point. The reason is that the Hilbert scheme is proper, so each piece of
+$\Sigma$ cut out by bounded data is Zariski closed. The mechanism is standard:
+the locus where a fixed Hodge class becomes algebraic is a countable union of
+closed subvarieties, the companion of the statement that the Hodge locus
+itself is one (see \cite[Chapter~5]{Voi03} and, in the form used in
+\Cref{thm:cdk}, \cite{CDK95}). What is particular to the present situation is
+that the class is determined by \Cref{thm:hdgcount} and written out by
+\Cref{thm:explicitgens}, that its algebraic locus is nonempty in every family
+by \Cref{thm:everyfamily}, and that the group acting on the family is known.
+
+\begin{setupenv}[The quotient and the universal family]\label{setup:shimura}
+Keep \Cref{setup:family}. Fix an integer $N\ge3$ and let $\Gamma$ be the
+subgroup of $\SU(V,H)(\QQ)$ preserving the lattice $L\subset V$ used to build
+the family and acting trivially on $L/NL$. Write
+\[
+  p\colon\cD_{n,n}\longrightarrow\cS=\Gamma\backslash\cD_{n,n} .
+\]
+Since $N\ge3$ the group $\Gamma$ is torsion-free, so it acts freely on
+$\cD_{n,n}$, and by Baily and Borel \cite{BB66} the quotient $\cS$ is a smooth
+quasi-projective complex variety; it is irreducible because $\cD_{n,n}$ is
+connected. The level structure rigidifies, so $\cS$ carries a universal family
+\[
+  f\colon\cA\longrightarrow\cS,
+\]
+and the relative polarisation $3\eta$ is relatively very ample, which fixes a
+relative projective embedding and hence a notion of degree in the fibres.
+Write $G=\SU(V,H)$, an algebraic group over $\QQ$, so that
+$G(\RR)$ acts transitively on $\cD_{n,n}$ and $\Gamma\subset G(\QQ)$.
+\end{setupenv}
+
+We record two facts that are used repeatedly below.
+
+\begin{lemma}[The section descends]\label{lem:omegadescends}
+The section $\omega$ of \Cref{setup:family} is $\Gamma$-invariant, hence
+descends to a flat section of $R^{2n}f_{*}\QQ$ over $\cS$ that is of type
+$(n,n)$ at every point.
+\end{lemma}
+
+\begin{proof}
+The Weil line is $\HW=\bigwedge^{2n}_{K}V$, and an element of $\SU(V,H)$ is by
+definition a $K$-linear automorphism of $V$ of $K$-determinant $1$. Its action
+on the top $K$-exterior power is multiplication by that determinant, so
+$\Gamma$ acts trivially on $\HW$ and in particular fixes $\omega$. Flatness is
+then immediate, and the Hodge type at every point is
+\Cref{prop:weilline}(ii).
+\end{proof}
+
+\begin{lemma}[One component is enough]\label{lem:onecomponent}
+Let $(A,\iota,\eta)$ be of $(K,-1,n)$-Weil type with
+$\iota(\cO_{K})\subseteq\End(A)$, and let $\HW\subset H^{2n}(A,\QQ)$ be its
+Weil line. If one nonzero element of $\HW$ is algebraic, every element of
+$\HW$ is algebraic.
+\end{lemma}
+
+\begin{proof}
+Among the elements $\tau_{m}=m+\sqrt{-d}$ of $\cO_{K}$ with $1\le m\le7$ the
+ratios $\tau_{m}/\bbar{\tau}_{m}$ are pairwise distinct, since
+$\tau_{m}\bbar{\tau}_{m'}$ is rational only when $m=m'$. The group of roots of
+unity in an imaginary quadratic field has order $2$, $4$ or $6$, so some $m$
+in that range has $\tau=\tau_{m}$ with $\tau/\bbar\tau$ not a root of unity,
+and then $\tau^{2n}\ne\bbar{\tau}^{2n}$, that is $\tau^{2n}\notin\QQ$, for
+every $n\ge1$. A range is needed, since the witness $m=1$ fails for two
+fields: for $d=1$ the ratio attached to $1+\sqrt{-1}$ is a primitive fourth
+root of unity, and for $d=3$ the ratio attached to $1+\sqrt{-3}$ is a
+primitive cube root of unity, so $(1+\sqrt{-d})^{2n}$ is rational when $d=1$
+and $n$ is even, and when $d=3$ and $3\mid n$.
+
+Since $\tau\in\cO_{K}$, the element $\iota(\tau)$ is an endomorphism of $A$,
+so $\iota(\tau)^{*}$ on $H^{2n}(A,\QQ)$ is induced by the graph
+correspondence and therefore carries algebraic classes to algebraic classes.
+On $H^{1}$ it is multiplication by $\tau$, so on
+$\bigwedge^{2n}_{K}V$ it is multiplication by $\tau^{2n}$. As
+$\tau^{2n}\notin\QQ$ and $\HW$ is a one-dimensional $K$-vector space, the pair
+$w,\;\tau^{2n}w$ is a $\QQ$-basis of $\HW$ for every $w\ne0$. Explicitly, fix
+a $K$-basis $w_{0}$ of $\HW$ and write $\tau^{2n}=a+b\sqrt{-d}$, so that
+$b\ne0$, and $w=(w_{1}+w_{2}\sqrt{-d})\,w_{0}$; the determinant of the pair
+$w,\tau^{2n}w$ in the $\QQ$-basis $w_{0},\sqrt{-d}\,w_{0}$ is
+$b(w_{1}^{2}+dw_{2}^{2})$, which is nonzero when $w\ne0$. If $w$ is
+algebraic then so is $\iota(\tau)^{*}w=\tau^{2n}w$, and the two together span.
+\end{proof}
+
+\Cref{lem:onecomponent} writes out the last step of the proof of
+\Cref{cor:whatisleft}, where the witness $\tau$ has to be chosen.
+
+\begin{theorem}[The algebraic locus is a countable union of closed
+subvarieties]\label{thm:closedlocus}
+Keep \Cref{setup:shimura}. For a finite tuple $\underline{P}=(P_{1},\dots
+,P_{m})$ of Hilbert polynomials of degree $n$ and a tuple
+$\underline{q}\in\QQ^{m}$ put
+\begin{align*}
+  \cH_{\underline{P}}
+  &\;=\;
+  \Hilb^{P_{1}}(\cA/\cS)\times_{\cS}\cdots\times_{\cS}\Hilb^{P_{m}}(\cA/\cS),
+  \\[2pt]
+  \Sigma_{\underline{P},\underline{q}}
+  &\;=\;
+  \mathrm{pr}\Bigl(\bigl\{\,\underline{Z}\in\cH_{\underline{P}}
+    \;:\;\textstyle\sum_{i}q_{i}[Z_{i}]=\omega\,\bigr\}\Bigr)
+  \;\subseteq\;\cS .
+\end{align*}
+Then each $\Sigma_{\underline{P},\underline{q}}$ is Zariski closed in
+$\cS$, and
+\[
+  p^{-1}\Bigl(\,\bigcup_{\underline{P},\underline{q}}
+    \Sigma_{\underline{P},\underline{q}}\Bigr)\;=\;\Sigma ,
+\]
+the union running over a countable index set.
+\end{theorem}
+
+\begin{proof}
+Each $\Hilb^{P_{i}}(\cA/\cS)$ is projective over $\cS$ by Grothendieck's
+construction of the Hilbert scheme \cite{Gro61}, so the fibre product
+$\cH_{\underline{P}}$ is
+projective over $\cS$, and being of finite type it has finitely many connected
+components.
+
+Fix a connected component $T$, replace it by its reduction, which changes
+neither the underlying space nor any cohomology group, and let
+$\cZ_{i}\subset\cA\times_{\cS}T$ be the pullback of the $i$-th universal
+subscheme. It is flat over $T$ and its fibres have Hilbert polynomial $P_{i}$
+of degree $n$, so the associated $n$-cycles, the top-dimensional components
+counted with their multiplicities, are the fibres of a cycle on
+$\cA\times_{\cS}T$ whose class restricts on the fibre over $t$ to $[Z_{i,t}]$.
+Restriction of a global class to the fibres of a topologically
+locally trivial family is a flat section of the local system, so
+$t\mapsto\sum_{i}q_{i}[Z_{i,t}]$ is flat on $T$; and $\omega$ is flat on $\cS$
+by \Cref{lem:omegadescends}, hence flat after pullback. Two flat sections of a
+local system over a connected base agree everywhere as soon as they agree at
+one point, so the locus where they agree is a union of connected components of
+$\cH_{\underline{P}}$. That locus is therefore itself projective over $\cS$,
+and the image of a proper morphism is Zariski closed.
+
+For the equality of sets, let $s\in\Sigma$. Then
+$\omega_{s}=\sum_{i}q_{i}[Z_{i}]$ for finitely many closed integral subschemes
+$Z_{i}\subset A_{s}$ of dimension $n$ and rationals $q_{i}$; taking
+$P_{i}$ to be the Hilbert polynomial of $Z_{i}$ puts $p(s)$ in
+$\Sigma_{\underline{P},\underline{q}}$. The converse holds because the class
+of the $n$-cycle of a closed subscheme of dimension $n$ is algebraic. The
+index set is countable, since a Hilbert polynomial is determined by its
+finitely many integer coordinates in the binomial basis, and $\QQ$ is
+countable.
+\end{proof}
+
+The bound on the Hilbert polynomials cannot be dropped: without it one takes
+the image of an infinite disjoint union, and an infinite union of closed sets
+need be neither closed nor constructible, and the dichotomy below is what
+can be said of $\Sigma$ itself. Tuples are needed because a rational cycle is a rational combination
+of several integral ones, which may have different Hilbert polynomials. The
+relative Chow variety of effective $n$-cycles of bounded degree would serve
+equally well, with the same proof, since only properness over the base and
+local constancy of the cycle class are used.
+
+\begin{corollary}[The dichotomy]\label{cor:allornothing}
+Exactly one of the following holds.
+\begin{enumerate}[label=\textup{(\alph*)},nosep]
+\item $\Sigma=\cD_{n,n}$, and the Hodge conjecture holds in every degree for
+  every abelian $2n$-fold of $(K,-1,n)$-Weil type with $\Hg(A)=\SU(V,H)$ in
+  the family.
+\item $\Sigma$ has empty interior in the analytic topology. Its complement is
+  then a dense $G_{\delta}$, so $\omega_{s}$ fails to be algebraic for every
+  $s$ outside a meagre set, and the Hodge conjecture fails.
+\end{enumerate}
+In particular, if $\omega_{s}$ is algebraic for all $s$ in some nonempty open
+subset of $\cD_{n,n}$, then it is algebraic for all $s$.
+\end{corollary}
+
+\begin{proof}
+Suppose $\Sigma$ contains a nonempty open set; then so does its image in
+$\cS$, and we may pick a nonempty connected open $U\subseteq\cS$ contained in
+that image. By \Cref{thm:closedlocus} the countably many sets
+$\Sigma_{\underline{P},\underline{q}}\cap U$ are closed in $U$ and cover it.
+A connected complex manifold is a Baire space, so one of them has nonempty
+interior in $U$. A Zariski closed subset of the irreducible variety $\cS$
+either is all of $\cS$ or is a proper closed subvariety, and a proper closed
+subvariety of a connected complex manifold has empty interior. Hence that
+$\Sigma_{\underline{P},\underline{q}}$ is all of $\cS$, so $\Sigma=\cD_{n,n}$
+and (a) holds by \Cref{thm:residual}(a). If $\Sigma$ has empty interior, its
+complement is the intersection of the countably many dense open sets
+$\cD_{n,n}\setminus p^{-1}(\Sigma_{\underline{P},\underline{q}})$, and Baire
+again gives that this intersection is dense. At each of its points
+$\omega_{s}$ is a Hodge class by \Cref{lem:omegadescends} and is not
+algebraic, so the Hodge conjecture fails there.
+\end{proof}
+
+\Cref{fig:properness} draws the two cases.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.88\textwidth]{fig_properness}
+\caption{The dichotomy of \Cref{cor:allornothing}. Each stratum
+$\Sigma_{\underline{P},\underline{q}}$ is Zariski closed by
+\Cref{thm:closedlocus}, and there are countably many of them; the base point
+$s_{0}$ of \Cref{thm:everyfamily} lies on one. By \Cref{prop:densealg} the
+union of the strata is dense, so every neighbourhood of a point $s$ lying
+off all of them meets infinitely many strata. The conjecture for the family
+is the assertion that no such $s$ exists, and by \Cref{cor:allornothing} it
+is enough that one stratum has nonempty interior.}
+\label{fig:properness}
+\end{figure}
+
+\begin{lemma}[Invariance under rational isogenies]\label{lem:Ginvariance}
+$\Sigma$ is stable under the action of $G(\QQ)$ on $\cD_{n,n}$.
+\end{lemma}
+
+\begin{proof}
+A point of $\cD_{n,n}$ is a complex structure $J$ on $V_{\RR}$ compatible with
+$H$, and $g\in G(\QQ)$ carries $J$ to $gJg^{-1}$. The map $g$ is then
+$\QQ$-rational and $\CC$-linear from $(V_{\RR},J)$ to $(V_{\RR},gJg^{-1})$, so
+after clearing denominators it induces an isogeny $A_{J}\to A_{gJ}$, whose
+graph is an algebraic correspondence. Algebraicity of a rational cohomology
+class is preserved by such a correspondence and by its transpose. Finally $g$
+lies in $\SU(V,H)$, so by the computation in \Cref{lem:omegadescends} it fixes
+the Weil line pointwise; the correspondence therefore carries $\omega_{J}$ to
+a nonzero rational multiple of $\omega_{gJ}$, and $\omega_{gJ}$ is algebraic
+when $\omega_{J}$ is.
+\end{proof}
+
+Two density statements should be distinguished. For a class that does not
+remain of Hodge type over the whole family, the locus where it is of Hodge
+type is a countable union of proper closed subvarieties, each algebraic by
+\Cref{thm:cdk}, and density there concerns the distribution of special
+points. For the class $\omega$ of \Cref{setup:family} the Hodge locus is the
+whole family by \Cref{prop:weilline}(ii), so \Cref{thm:cdk} gives no
+information, and the set that carries information is the algebraic locus. The
+next proposition concerns that set, and its proof uses no Hodge theory: the
+algebraic locus is a union of orbits of a group whose rational points are
+dense in its real points.
+
+\begin{proposition}[The algebraic locus is dense]\label{prop:densealg}
+Let $n\ge2$. Then $\Sigma$ is dense in $\cD_{n,n}$ in the analytic topology,
+and its image in $\cS$ is dense.
+\end{proposition}
+
+\begin{proof}
+The hermitian form $H$ has rank $2n\ge4$ over $K$ and signature $(n,n)$, so it
+is isotropic over $\RR$; over every $\QQ_{p}$ a hermitian form of rank at
+least three over a quadratic extension is isotropic; and hermitian forms over
+an imaginary quadratic field satisfy the Hasse principle
+\cite[Ch.~10, \S 6]{Sch85}. So $H$ is isotropic over $\QQ$ and $G$ is
+$\QQ$-isotropic. The group $G=\SU(V,H)$ is simply connected and almost
+$\QQ$-simple, so by Platonov's theorem $G(\QQ)$ is generated by the rational
+points of the unipotent radicals of its proper parabolic $\QQ$-subgroups
+\cite[Thm.~7.6 and \S 7.2]{PR94}. For a unipotent group $U$ over $\QQ$ the
+exponential identifies $U(\QQ)$ with a $\QQ$-vector space inside the
+corresponding $\RR$-vector space $U(\RR)$, so $U(\QQ)$ is dense in $U(\RR)$.
+The closure of $G(\QQ)$ in $G(\RR)$ therefore contains $U(\RR)$ for every such
+$U$, and those generate the identity component $G(\RR)^{+}$, which acts
+transitively on $\cD_{n,n}$. Hence every $G(\QQ)$-orbit in $\cD_{n,n}$ is
+dense.
+
+By \Cref{thm:everyfamily} the set $\Sigma$ is nonempty, and by
+\Cref{lem:Ginvariance} it is $G(\QQ)$-stable, so it contains a dense orbit.
+The projection $p$ is continuous and surjective, so the image is dense.
+\end{proof}
+
+In particular, if case (b) of \Cref{cor:allornothing} occurs, then $\Sigma$
+and its complement are both dense, and the two sets are distinguished by
+Baire category and not by position.
+
+\begin{corollary}[A Baire category criterion]\label{cor:meagre}
+Let $n\ge2$. The Hodge conjecture holds for every abelian $2n$-fold of
+$(K,-1,n)$-Weil type with $\Hg(A)=\SU(V,H)$ in the family of
+\Cref{setup:family} if and only if $\Sigma$ is non-meagre in $\cD_{n,n}$, and
+if and only if $\Sigma$ has nonempty interior.
+\end{corollary}
+
+\begin{proof}
+If $\Sigma=\cD_{n,n}$, both conditions hold, and so does the conjecture, by
+\Cref{thm:residual}(a). Otherwise case (b) of \Cref{cor:allornothing} holds,
+so $\Sigma$ has empty interior; it is then the countable union of the closed
+sets $p^{-1}(\Sigma_{\underline{P},\underline{q}})$, each with empty interior,
+and so it is meagre. The points $s$ with $\Hg(A_{s})=\SU(V,H)$ form the
+complement of a countable union of proper closed analytic subsets of $\cD_{n,n}$, by
+Weil's theorem \cite{Weil77} recalled before \Cref{thm:hdgcount}, so by Baire
+they are not all contained in the meagre set $\Sigma$. At a point of this
+kind outside $\Sigma$ the Hodge conjecture fails for $A_{s}$.
+\end{proof}
+
+\subsection{The first criterion: a bound along one orbit}
+
+The proof of \Cref{prop:densealg} produces the dense algebraic locus by
+transporting one cycle along rational isogenies, and an isogeny multiplies
+degrees. The dense set so obtained is therefore stratified by unbounded data,
+and this is what prevents \Cref{cor:allornothing} from applying to it. A bound
+on the data along one orbit removes the difficulty.
+
+\begin{theorem}[A bound along the orbit closes the family]\label{thm:degreebound}
+Let $n\ge2$ and let $s_{0}\in\Sigma$ be one of the base points supplied by
+\Cref{thm:everyfamily}. Suppose that there is a finite set $\mathcal{T}$ of pairs
+$(\underline{P},\underline{q})$ such that for every $g\in G(\QQ)$ the class
+$\omega_{g\cdot s_{0}}$ is represented by some cycle whose Hilbert data lies
+in $\mathcal{T}$. Then $\Sigma=\cD_{n,n}$, and the Hodge conjecture holds in every
+degree for every abelian $2n$-fold of $(K,-1,n)$-Weil type with
+$\Hg(A)=\SU(V,H)$ in that family.
+\end{theorem}
+
+\begin{proof}
+The orbit $G(\QQ)\cdot s_{0}$ is dense by the proof of \Cref{prop:densealg},
+and by hypothesis it is the union of the finitely many sets
+$G(\QQ)\cdot s_{0}\cap p^{-1}(\Sigma_{\underline{P},\underline{q}})$ with
+$(\underline{P},\underline{q})\in\mathcal{T}$. The union of the finitely
+many closed sets $p^{-1}(\Sigma_{\underline{P},\underline{q}})$,
+$(\underline{P},\underline{q})\in\mathcal{T}$, therefore contains a dense set,
+and so it is all of $\cD_{n,n}$; in particular $\Sigma=\cD_{n,n}$. In fact one
+of these sets is already all of $\cS$: each
+$\Sigma_{\underline{P},\underline{q}}$ is Zariski closed in the irreducible
+variety $\cS$, hence either equal to $\cS$ or nowhere dense, and a finite
+union of nowhere dense sets is nowhere dense. The Hodge conjecture for the
+family follows by \Cref{thm:residual}(a).
+\end{proof}
+
+\begin{remark}[Choice of the representing cycle]\label{rem:chosencycle}
+We call the hypothesis of \Cref{thm:degreebound} the bounded criterion
+\textup{(P1)}; \Cref{rem:tworemain} lists it beside the rank criterion
+\textup{(P2)} of \Cref{thm:semiregclosure}. It quantifies over representing
+cycles at each point of the orbit and asks only that, at each point, one of
+them have bounded complexity. A stronger hypothesis would fix the cycle,
+taking at $g\cdot s_{0}$ the transport of the cycle at $s_{0}$ along the
+isogeny of \Cref{lem:Ginvariance}. \Cref{thm:p1forces} below shows that this
+stronger form is never satisfied by a base cycle with a component of finite
+stabiliser, since the transported data is then unbounded. The proof above
+uses only the weaker hypothesis, which is what the covering argument needs.
+\end{remark}
+
+The hypothesis of \Cref{thm:degreebound} can be sharpened by locating the
+part of the Hilbert data that is at issue. The leading coefficient is not.
+
+\begin{proposition}[The leading coefficient is constant on the orbit]
+\label{prop:leadingconstant}
+Let $s_{0}\in\Sigma$ and $g\in G(\QQ)$, and let $\omega_{s}$ denote the Weil
+class at $s$ and $\eta$ the polarisation class. Then
+\[
+  \int_{A_{g\cdot s_{0}}}\omega_{g\cdot s_{0}}\cdot\frac{\eta^{n}}{n!}
+  \;=\;\int_{A_{s_{0}}}\omega_{s_{0}}\cdot\frac{\eta^{n}}{n!},
+\]
+so the degree of the transported class with respect to the polarisation, which
+is the leading coefficient of the Hilbert polynomial of any cycle
+representing it, is the same at every point of the orbit.
+\end{proposition}
+
+\begin{proof}
+By \Cref{lem:Ginvariance} the correspondence transporting the class is induced
+by a $\QQ$-rational map $g\in\SU(V,H)$. It preserves the hermitian form and
+hence the polarisation class, it fixes the Weil line pointwise by
+\Cref{lem:omegadescends}, and its determinant over $\QQ$ is
+$\Nm_{K/\QQ}(\det_{K}g)=1$, so it acts trivially on the top exterior power of
+$V^{\vee}$, in which both integrals are evaluated. The two integrals are
+therefore equal. The identification of the number with the leading
+coefficient is Hirzebruch--Riemann--Roch on $A$, whose Todd class is $1$ (for
+the embedding by $3\eta$ of \Cref{setup:shimura} the leading coefficient is
+$3^{n}$ times the number); the remaining coefficients involve the structure
+sheaf of the cycle and not only its class.
+\end{proof}
+
+\begin{remark}[The source of unboundedness]
+\label{rem:whereunbounded}
+Write a representing cycle at a point of the orbit, the transported cycle or
+any other, as a difference $\xi^{+}-\xi^{-}$ of effective cycles. By
+\Cref{prop:leadingconstant} the difference of their degrees is constant along
+the orbit, and by the boundedness of effective cycles of bounded degree in
+the fibres of the polarised family $f\colon\cA\to\cS$, if $\deg\xi^{+}$ were
+bounded along the orbit then only finitely many tuples
+$(\underline{P},\underline{q})$ could occur and \Cref{thm:degreebound} would
+apply. So the hypothesis of that theorem is equivalent to a bound on the
+effective part alone.
+
+This bound is not automatic, and the mechanism that threatens it can be seen
+directly. The transport at $g$ is by the isogeny obtained from $g$ by
+clearing denominators; if $g$ has denominator $m$ on the reference lattice,
+which has rank $4n$, the isogeny has degree $m^{4n}$ (\Cref{lem:transport}
+below), and pushing a cycle forward along it multiplies its multiplicities
+and degrees by powers of $m$ (\Cref{lem:multiplicity}). Elements of $G(\QQ)$ of bounded denominator form a discrete subset of
+$G(\RR)$, so along a dense orbit the denominators, and with them the isogeny
+degrees, are unbounded. What \Cref{thm:degreebound} asks is that the cycles
+nevertheless simplify: that at each point of the orbit the class $\omega$,
+whose degree has not changed, admits an effective representation no more
+complicated than before. For the transported cycle itself the answer is
+negative as soon as a component of the base cycle has finite stabiliser
+(\Cref{thm:p1forces} below), and for a cycle chosen at each point the bound
+is equivalent to the conclusion (\Cref{thm:p1equivalent}). The present remark
+shows only that the question reduces from the whole Hilbert datum to the
+degree of the effective part, and that the part of the datum determined by
+cohomology is constant.
+\end{remark}
+
+\subsection{Transport along isogenies}
+
+The mechanism of \Cref{rem:whereunbounded} can be made explicit, and doing
+so settles one of the two readings of \textup{(P1)}: the reading in
+which the cycle at $s_{0}$ is transported along the orbit rather than chosen
+afresh at each point. Write $\Lambda$ for the reference lattice, of rank $4n$
+over $\ZZ$, and $E$ for the alternating form of the polarisation, so that a
+point $s$ of $\cD_{n,n}$ is a complex structure on $\Lambda\otimes\RR$ and
+$A_{s}=(\Lambda\otimes\RR)/\Lambda$. Throughout, $\dim A_{s}=2n$, and a
+component of a cycle representing $\omega_{s}$ has dimension $n$.
+
+\begin{lemma}[The transport in coordinates]\label{lem:transport}
+Let $g\in G(\QQ)$ and let $c=c(g)$ be the least positive integer with
+$cg\Lambda\subseteq\Lambda$. Then $\varphi_{g}:=cg$ induces an isogeny
+$A_{s_{0}}\to A_{g\cdot s_{0}}$ with
+\begin{enumerate}[label=\textup{(\roman*)},nosep,leftmargin=2.6em]
+\item $\deg\varphi_{g}=c^{4n}$;
+\item $\varphi_{g}^{*}\eta_{g\cdot s_{0}}=c^{2}\eta_{s_{0}}$ and
+  $\varphi_{g}^{*}\omega_{g\cdot s_{0}}=c^{2n}\omega_{s_{0}}$;
+\item the transported cycle representing $\omega_{g\cdot s_{0}}$ is
+  $c^{-2n}\,\varphi_{g*}(Z)$, where $Z$ represents $\omega_{s_{0}}$.
+\end{enumerate}
+Moreover $\sup_{g\in G(\QQ)}c(g)=\infty$.
+\end{lemma}
+
+\begin{proof}
+(i) The index of $cg\Lambda$ in $\Lambda$ is $|\det_{\QQ}(cg)|
+=c^{4n}|\det_{\QQ}g|$, and $\det_{\QQ}g=\Nm_{K/\QQ}(\det_{K}g)=1$ for
+$g\in\SU(V,H)$.
+
+(ii) $g$ preserves $E$, so $(cg)^{*}E=c^{2}E$, which is the first identity.
+On $H^{2n}=\bigwedge^{2n}(\Lambda^{\vee}\otimes\QQ)$ the map
+$\varphi_{g}^{*}$ is $c^{2n}\bigwedge^{2n}g^{\vee}$, and $g\in\SU(V,H)$ fixes
+the Weil line pointwise by \Cref{lem:omegadescends}.
+
+(iii) $\varphi_{g*}\varphi_{g}^{*}=\deg\varphi_{g}$, so
+$\omega_{g\cdot s_{0}}=(\deg\varphi_{g})^{-1}\varphi_{g*}
+\varphi_{g}^{*}\omega_{g\cdot s_{0}}
+=c^{-4n}\,c^{2n}\varphi_{g*}\omega_{s_{0}}=c^{-2n}\varphi_{g*}\omega_{s_{0}}$
+by (i) and (ii).
+
+For the last sentence, suppose that $c(g)\le C$ for every $g\in G(\QQ)$.
+Then $(C!)\,g\Lambda\subseteq\Lambda$ for every $g$, so $G(\QQ)$ lies in the
+discrete subset $(C!)^{-1}\End_{\ZZ}(\Lambda)$ of $\End(\Lambda\otimes\RR)$.
+But by the proof of \Cref{prop:densealg} the closure of $G(\QQ)$ in $G(\RR)$
+contains $G(\RR)^{+}$, a Lie group of positive dimension, which is a
+contradiction.
+\end{proof}
+
+\begin{lemma}[Push-forward along an isogeny]
+\label{lem:multiplicity}
+Let $\varphi\colon A\to A'$ be an isogeny of abelian varieties and $Z\subseteq A$
+an integral closed subvariety. Put
+$G(Z)=\{x\in A:Z+x=Z\}$, a closed algebraic subgroup. Then
+\[
+  \varphi_{*}[Z]=m\,[\varphi(Z)],\qquad
+  m=\bigl|\ker\varphi\cap G(Z)\bigr| .
+\]
+If moreover $\dim Z=n$ and $\varphi^{*}\eta'=c^{2}\eta$, then
+\[
+  \deg_{\eta'}\varphi(Z)=\frac{c^{2n}}{m}\,\deg_{\eta}Z .
+\]
+\end{lemma}
+
+\begin{proof}
+The map $\varphi|_{Z}\colon Z\to\varphi(Z)$ is finite and surjective, and its
+degree $m$ is the number of points of a general fibre. For $z\in Z$ the fibre
+through $z$ is $Z\cap(z+\ker\varphi)$, which as a set of translations is
+$\{t\in\ker\varphi:z+t\in Z\}$. For a fixed $t$ the locus
+$\{z\in Z:z+t\in Z\}=Z\cap(Z-t)$ is all of $Z$ when $t\in G(Z)$ and a proper
+closed subset otherwise; since $\ker\varphi$ is finite, a general $z$ avoids
+the finitely many proper subsets, and there
+$\{t\in\ker\varphi:z+t\in Z\}=\ker\varphi\cap G(Z)$. This is the first
+identity, and $\varphi_{*}[Z]=m[\varphi(Z)]$ by the definition of the
+push-forward of cycles.
+
+For the degree, the projection formula gives
+\[
+  m\deg_{\eta'}\varphi(Z)=\int\varphi_{*}[Z]\cdot\frac{\eta'^{n}}{n!}
+  =\int[Z]\cdot\frac{(\varphi^{*}\eta')^{n}}{n!}
+  =c^{2n}\int[Z]\cdot\frac{\eta^{n}}{n!}=c^{2n}\deg_{\eta}Z .
+\]
+\end{proof}
+
+For example, for multiplication by $c$ on an abelian variety of dimension $2n$,
+an abelian subvariety $Z$ of dimension $n$ has $G(Z)=Z$, so $m=|Z[c]|=c^{2n}$
+and $\deg\varphi(Z)=\deg Z$, while a $Z$ whose stabiliser meets $A[c]$
+trivially has $m=1$ and $\deg\varphi(Z)=c^{2n}\deg Z$.
+
+\begin{theorem}[The transported cycle]\label{thm:p1forces}
+Let $s_{0}\in\Sigma$ and let $Z=\sum_{i}q_{i}Z_{i}$, with $q_{i}\ne0$ and the
+$Z_{i}$ integral of dimension $n$, represent $\omega_{s_{0}}$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em,itemsep=2pt]
+\item For $g\in G(\QQ)$ the transported cycle is
+  $\sum_{i}c(g)^{-2n}m_{i}(g)\,q_{i}\,[\varphi_{g}(Z_{i})]$ with
+  $m_{i}(g)=|\ker\varphi_{g}\cap G(Z_{i})|$, and the $i$-th component has
+  degree $c(g)^{2n}\deg_{\eta}(Z_{i})/m_{i}(g)$.
+\item If some $Z_{i}$ has finite stabiliser $G(Z_{i})$, then
+  $\deg\varphi_{g}(Z_{i})\ge c(g)^{2n}\deg_{\eta}(Z_{i})/|G(Z_{i})|$, which is
+  unbounded on $G(\QQ)$. The Hilbert data of the transported cycle then takes
+  infinitely many values, and the hypothesis of \Cref{thm:degreebound} in the
+  form that fixes the transported cycle is not satisfied by $Z$.
+\item Consequently, a base cycle for which the transported data is bounded
+  must have every component of positive-dimensional stabiliser, that is, every
+  $Z_{i}$ must be stable under translation by a positive-dimensional abelian
+  subvariety of $A_{s_{0}}$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) is \Cref{lem:transport}(iii) and \Cref{lem:multiplicity}.
+
+(ii) $\ker\varphi_{g}\cap G(Z_{i})\subseteq G(Z_{i})$, so
+$m_{i}(g)\le|G(Z_{i})|$, a constant; the displayed bound is (i), and $c(g)$ is
+unbounded by \Cref{lem:transport}. Distinct degrees of the components give
+distinct Hilbert polynomials, so the data takes infinitely many values.
+
+(iii) is the contrapositive of (ii), together with the fact that an algebraic
+subgroup of positive dimension in an abelian variety has an abelian subvariety
+of positive dimension as its identity component.
+\end{proof}
+
+\begin{remark}[The two readings of \textup{(P1)}]\label{rem:p1meaning}
+Three points should be kept apart.
+
+First, \textup{(P1)} has two readings, and \Cref{thm:p1forces} settles one of
+them. Read with the cycle fixed at $s_{0}$ and transported, it fails for every
+base cycle written down in this paper: those cycles are intersections of
+divisors, and an intersection of $n$ divisors on an abelian $2n$-fold has
+finite stabiliser unless the divisors are pulled back from a quotient, which
+the ones here are not. Read with the cycle chosen afresh at each point of the
+orbit, which is the form of the hypothesis of \Cref{thm:degreebound}, it is
+not affected by \Cref{thm:p1forces}.
+
+Second, the difference between the two readings is the content of
+\Cref{lem:multiplicity}. The class $\omega_{g\cdot s_{0}}$ has constant degree
+along the orbit, by \Cref{prop:leadingconstant}; what grows is the complexity
+of the particular representative that the transport produces, because the
+isogeny spreads each component out by the factor $c^{2n}/m_{i}$. When a
+component of the base cycle has finite stabiliser, the transport does not
+produce a representative of bounded complexity, whether or not one exists.
+
+Third, an approach to \textup{(P1)} must either produce a base cycle supported
+on subvarieties with positive-dimensional stabiliser, a strong requirement for
+a Weil class, or abandon the transport and bound instead the minimal
+complexity of a representative, which is a statement about the Chow variety of
+the family and not about any one cycle. Neither is achieved here.
+\end{remark}
+
+The bound on the minimal complexity of a representative is the hypothesis of
+\Cref{thm:degreebound}, and it is the weakest hypothesis under which the
+covering argument runs. The next theorem shows that it is equivalent to the
+conclusion. Write $\mathbf{W}(K,n,\delta)$ for the statement that every
+abelian $2n$-fold of $(K,-1,n)$-Weil type with discriminant $\delta$
+(\Cref{def:disc}) has algebraic Weil classes, $\delta$ being the discriminant
+of the family of \Cref{setup:family}.
+
+\begin{theorem}[Equivalence of the bounded criterion]\label{thm:p1equivalent}
+Let $n\ge2$, let $s_{0}\in\Sigma$ and keep \Cref{setup:family}. The following
+are equivalent.
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.6em,itemsep=2pt]
+\item There is a finite set $\mathcal{T}$ of pairs
+  $(\underline{P},\underline{q})$ such that at every point of the orbit
+  $G(\QQ)\cdot s_{0}$ the class $\omega$ is represented by a cycle whose
+  Hilbert data lies in $\mathcal{T}$; that is, \textup{(P1)} holds at
+  $s_{0}$.
+\item There is a single pair $(\underline{P},\underline{q})$ such that at
+  every point of $\cD_{n,n}$, not merely of the orbit, the class $\omega$ is
+  represented by a cycle with that datum.
+\item $\Sigma=\cD_{n,n}$.
+\item $\mathbf{W}(K,n,\delta)$ holds, that is, the Weil classes are algebraic
+  on every member of the family.
+\end{enumerate}
+In particular \Cref{thm:degreebound} is an equivalence, and \textup{(P1)} is a
+reformulation of the conjecture for the family and not a reduction of it. The
+same holds for every CM field, with \Cref{thm:cmpropagation}(iv) in place of
+\Cref{thm:degreebound}.
+\end{theorem}
+
+\begin{proof}
+(a) implies (c) is \Cref{thm:degreebound}. (b) implies (a) is immediate, the
+orbit being contained in $\cD_{n,n}$ and $\mathcal{T}$ being the one pair.
+(d) implies (c) trivially, and (c) implies (d) because the algebraicity of
+$\omega_{s}$ makes the whole Weil line of $A_{s}$ algebraic, by the argument
+of \Cref{cor:whatisleft}, written out in \Cref{lem:onecomponent}.
+
+It remains to deduce (b) from (c). If $\Sigma=\cD_{n,n}$ then $\Sigma$ has
+nonempty interior, and the proof of \Cref{cor:allornothing} shows that some
+$\Sigma_{\underline{P},\underline{q}}$ is then all of $\cS$: the countably
+many sets $\Sigma_{\underline{P},\underline{q}}\cap U$ are closed in a
+nonempty connected open $U\subseteq\cS$ and cover it, so by Baire one of them
+has nonempty interior in $U$, and a proper Zariski closed subvariety of the
+irreducible variety $\cS$ has empty interior. By the definition of
+$\Sigma_{\underline{P},\underline{q}}$ in \Cref{thm:closedlocus} as the image of a proper morphism, every $s\in\cS$
+then carries a tuple $\underline{Z}$ of subschemes with Hilbert polynomials
+$\underline{P}$ and $\sum_{i}q_{i}[Z_{i}]=\omega$, which is (b).
+
+For a CM field the same argument applies without change, using
+\Cref{thm:cmpropagation}(iii) in place of \Cref{thm:closedlocus} and
+\Cref{cor:allornothing}.
+\end{proof}
+
+\begin{remark}[Status of the first criterion]\label{rem:p1collapse}
+By \Cref{thm:p1equivalent}, \textup{(P1)} is a restatement of the conjecture
+for the family and not a route to it. \Cref{thm:degreebound} is a valid
+implication, and its covering argument is the only place in the paper where
+density of the rational orbit is converted into a global statement; but the
+implication has a converse, so verifying its hypothesis for a family is as
+hard as proving the conclusion for that family. The boundedness is
+nevertheless a concrete finiteness statement about the Chow variety of the
+universal family, and a reformulation of $\mathbf{W}(K,n,\delta)$ that
+mentions neither Hodge theory nor deformation theory.
+
+The two propagation criteria are therefore not on the same footing. The rank
+criterion \textup{(P2)} of \Cref{thm:semiregclosure} is a sufficient
+condition with no evident converse: injectivity of one semiregularity map at
+one point implies the conjecture for the whole family, while
+$\Sigma=\cD_{n,n}$ carries no information about the deformation theory of any
+particular perfect complex. In its pure form, with Chern character a Weil
+class, it is never satisfied (\Cref{thm:p2false}); the polarised criterion
+\textup{(P2$'$)} of \Cref{rem:p2prime}, in which the Chern character may also
+carry powers of the polarisation, is the form studied in
+\Cref{sec:polarised}.
+\end{remark}
+
+\subsection{Products of divisors}
+
+The intersection numbers needed below are Pfaffians. Let $E$ be a
+nondegenerate alternating form on a real vector space $V$ of dimension $2g$,
+let $\eta$ be its class, with the orientation for which
+$e=\int\eta^{g}>0$, and for an $E$-self-adjoint endomorphism $\phi$ write
+$x_{\phi}(u,v)=E(\phi u,v)$, an alternating form.
+
+\begin{lemma}[Pfaffians of self-adjoint classes]\label{lem:pfaffian}
+For real $s$, $\int(s\eta+x_{\phi})^{g}=e\,p_{\phi}(s)$, where $p_{\phi}$ is
+the monic polynomial of degree $g$ with $p_{\phi}^{2}=\det(s+\phi)$. In
+particular:
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item $2g\int x_{\phi}\eta^{g-1}=e\,\mathrm{tr}\,\phi$, and if
+  $\mathrm{tr}\,\phi=0$ then
+  $2g(g-1)\int x_{\phi}^{2}\eta^{g-2}=-e\,\mathrm{tr}(\phi^{2})$;
+\item if $\mathrm{tr}\,\phi=0$ and $\phi^{2}=\beta$ is a nonzero real
+  scalar, then $g$ is even and $\int x_{\phi}^{g}=e\,(-\beta)^{g/2}$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+In a basis with Gram matrix $G$ for $E$, the class $s\eta+x_{\phi}$ has Gram
+matrix $(s+\phi)^{T}G$, of determinant $\det G\det(s+\phi)$. Its Pfaffian
+divided by $\mathrm{Pf}(G)$ is therefore a polynomial in $s$, monic of degree
+$g$, whose square is $\det(s+\phi)$; and $\int\omega^{g}/e$ is
+$\mathrm{Pf}(\omega)/\mathrm{Pf}(G)$ for every alternating form $\omega$.
+This is the identity. Write $p_{\phi}(s)=s^{g}+p_{1}s^{g-1}+p_{2}s^{g-2}+\cdots$
+and compare with
+$\det(s+\phi)=s^{2g}+\mathrm{tr}(\phi)\,s^{2g-1}
++\tfrac12\bigl((\mathrm{tr}\,\phi)^{2}-\mathrm{tr}(\phi^{2})\bigr)s^{2g-2}+\cdots$:
+then $2p_{1}=\mathrm{tr}\,\phi$ and
+$2p_{2}+p_{1}^{2}=\tfrac12\bigl((\mathrm{tr}\,\phi)^{2}-\mathrm{tr}(\phi^{2})\bigr)$,
+while the binomial expansion of $\int(s\eta+x_{\phi})^{g}$ gives
+$g\int x_{\phi}\eta^{g-1}=e\,p_{1}$ and
+$\binom{g}{2}\int x_{\phi}^{2}\eta^{g-2}=e\,p_{2}$; this is (i). Under the
+hypothesis of (ii) the eigenvalues of $\phi$ are $\pm\sqrt{\beta}$, each with
+multiplicity $g$ because the trace vanishes, so
+$\det(s+\phi)=(s^{2}-\beta)^{g}$; this is the square of a polynomial only
+for $g$ even, and then $p_{\phi}(s)=(s^{2}-\beta)^{g/2}$ and
+$\int x_{\phi}^{g}=e\,p_{\phi}(0)$.
+\end{proof}
+
+At the quaternionic points of \Cref{setup:quat} the mechanism of
+\Cref{rem:whereunbounded} can be seen explicitly. Take $n=2$ and the integral
+lattice
+$\Lambda_{b}=\cO_{b}^{2}$, $\cO_{b}=\ZZ\langle 1,i,j,ij\rangle$, for
+$b\in\ZZ_{>0}$. Put
+\[
+  g_{b}(x,y)=E_{b}(jx,y),\qquad
+  \lambda_{b}(x,y)=-\tfrac{1}{d}\,g_{b}(ix,y),\qquad
+  Z_{b}=g_{b}^{2}-d\lambda_{b}^{2},\qquad Z'_{b}=2g_{b}\lambda_{b},
+\]
+so that $Z_{b}+\sqrt{-d}\,Z'_{b}=(g_{b}+\sqrt{-d}\,\lambda_{b})^{2}$ and
+$Z_{b},Z'_{b}$ span the Weil plane. Write $x\in\cO_{b}$ as $x=u+vj$ with
+$u,v\in\ZZ[i]$, where $i^{2}=-d$ as in \Cref{setup:quat}, so that
+$\ZZ[i]=\ZZ[\sqrt{-d}]$; the pair $(\Lambda_{b},i)$ is then the same $\ZZ[i]$-module
+$\ZZ[i]^{4}$ for every $b$, and we use this identification throughout.
+
+\begin{proposition}[Divisibility of the quaternionic Weil cycle]
+\label{prop:quatdivisible}
+With these data, for every $b\in\ZZ_{>0}$:
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item $E_{b}=E_{u}+b\,E_{v}$, $g_{b}=b\,g_{1}$ and $\lambda_{b}=b\,\lambda_{1}$,
+  where $E_{u},E_{v},g_{1},\lambda_{1}$ are integral on $\ZZ[i]^{4}$ and do not
+  depend on $b$; in particular $g_{1},\lambda_{1}\in\mathrm{NS}(A_{b})$;
+\item $Z_{b}=b^{2}Z_{1}$ and $Z'_{b}=b^{2}Z'_{1}$ in $\mathrm{CH}^{2}(A_{b})$
+  modulo algebraically trivial cycles, for every choice of line bundles
+  representing $g_{b},\lambda_{b}$; in cohomology the equalities hold in
+  $\wedge^{4}\Lambda^{*}$;
+\item $\int\eta_{b}^{4}=b^{2}\int\eta_{1}^{4}$,
+  $\int g_{b}^{2}\eta_{b}^{2}=-\tfrac{b}{3}\int\eta_{b}^{4}$ and
+  $\int Z_{b}^{2}=\tfrac{4b^{2}}{3}\int\eta_{b}^{4}$, so that
+  $(\int g_{b}^{2}\eta_{b}^{2})^{2}=\tfrac{1}{12}\int Z_{b}^{2}\int\eta_{b}^{4}$;
+\item for $\alpha\in K^{\times}$ the element $\alpha j$ generates the same
+  algebra at the same point, and replacing $j$ by $\alpha j$ multiplies the
+  two ratios in \textup{(iii)} by $N(\alpha)$ and $N(\alpha)^{2}$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+For $x=u+vj$ one has $\bbar{x}=\bbar{u}-vj$, and the relations $ju=\bbar{u}j$,
+$j^{2}=b$ give
+$\bbar{x}\,i\,y\equiv\bbar{u}\,i\,u'+b\,v\,i\,\bbar{v'}$ modulo $Kj$. Since
+$\mathrm{trd}$ vanishes on $Kj$ and restricts to $\mathrm{tr}_{K/\QQ}$ on $K$,
+\[
+  E_{b}(x,y)=\textstyle\sum_{k}a_{k}\bigl(\mathrm{tr}(i\,\bbar{u_{k}}u'_{k})
+  +b\,\mathrm{tr}(i\,v_{k}\bbar{v'_{k}})\bigr).
+\]
+From $jx=b\bbar{v}+\bbar{u}j$ one reads off
+$g_{b}(x,y)=b\sum_{k}a_{k}\bigl(\mathrm{tr}(i\,v_{k}u'_{k})
++\mathrm{tr}(i\,\bbar{u_{k}}\bbar{v'_{k}})\bigr)$, which is $b\,g_{1}$, and
+$\lambda_{b}=b\lambda_{1}$ follows. The traces take integral values on
+$\ZZ[i]$, and $g_{1}=b^{-1}g_{b}$ and $\lambda_{1}=b^{-1}\lambda_{b}$ are
+rational multiples of Hodge classes, so they are integral Hodge classes and
+lie in $\mathrm{NS}(A_{b})$ by the Lefschetz theorem on $(1,1)$-classes; this
+proves (i). Then
+$g_{b}+\sqrt{-d}\,\lambda_{b}=b(g_{1}+\sqrt{-d}\,\lambda_{1})$ and (ii) holds
+in cohomology. Choose $L,M$ with $c_{1}(L)=g_{1}$ and
+$c_{1}(M)=\lambda_{1}$. The cycle $c_{1}(L^{b})^{2}-d\,c_{1}(M^{b})^{2}$ equals
+$b^{2}(c_{1}(L)^{2}-d\,c_{1}(M)^{2})$ in $\mathrm{CH}^{2}(A_{b})$, and another
+choice changes both sides by algebraically trivial cycles.
+
+For (iii), $E_{u}$ and $E_{v}$ live on complementary halves $U,V'$ of
+$\Lambda\otimes\QQ$ of rank four, so $\eta_{u}^{3}=\eta_{v}^{3}=0$ and
+$\int\eta_{b}^{4}=6b^{2}\int\eta_{u}^{2}\eta_{v}^{2}$. The form $g_{b}$ is
+$x_{\phi}$ for $\phi=j$, which is $E_{b}$-self-adjoint by
+\Cref{thm:quatweil}(i), anticommutes with $i$, so has trace $0$, and has
+$j^{2}=b$; hence \Cref{lem:pfaffian}(i), with $g=4$, gives
+$\int g_{b}^{2}\eta_{b}^{2}=-\tfrac{1}{24}\,\mathrm{tr}(j^{2})\int\eta_{b}^{4}
+=-\tfrac{8b}{24}\int\eta_{b}^{4}$. For real $a,c$ the class
+$ag_{b}+c\lambda_{b}$ is $x_{\phi}$ for $\phi=j(a-\tfrac{c}{d}\,i)$, again
+self-adjoint of trace $0$, and
+$\phi^{2}=(a+\tfrac{c}{d}i)\,j^{2}\,(a-\tfrac{c}{d}i)=b\,(a^{2}+c^{2}/d)$.
+So \Cref{lem:pfaffian}(ii) gives
+$\int(ag_{b}+c\lambda_{b})^{4}=b^{2}(a^{2}+c^{2}/d)^{2}\int\eta_{b}^{4}$, and
+comparing coefficients, $\int g_{b}^{4}=b^{2}\int\eta_{b}^{4}$,
+$\int g_{b}^{2}\lambda_{b}^{2}=\tfrac{b^{2}}{3d}\int\eta_{b}^{4}$ and
+$\int\lambda_{b}^{4}=\tfrac{b^{2}}{d^{2}}\int\eta_{b}^{4}$. Hence
+$\int Z_{b}^{2}=\int g_{b}^{4}-2d\int g_{b}^{2}\lambda_{b}^{2}
++d^{2}\int\lambda_{b}^{4}=\tfrac{4b^{2}}{3}\int\eta_{b}^{4}$.
+
+For (iv), $(\alpha j)^{2}=N(\alpha)b$, and
+$g_{\alpha j}+\sqrt{-d}\,\lambda_{\alpha j}$ is $\alpha$ or $\bbar{\alpha}$
+times $g_{j}+\sqrt{-d}\,\lambda_{j}$.
+\end{proof}
+
+\begin{remark}[Growth of the polarisation]\label{rem:quatdivisible}
+At these points no multiple growing with $b$ enters when the Weil class is
+written in integral terms: by \Cref{prop:quatdivisible}(ii) the cycle $Z_{b}$
+is $b^{2}Z_{1}$, with $Z_{1}$ one integral algebraic cycle built from the two
+fixed divisor classes $g_{1},\lambda_{1}$. The factor that the orbit argument
+would otherwise have to absorb into the coefficients $\underline{q}$ of
+\Cref{thm:degreebound} is therefore absent. What grows is the polarisation:
+$\int\eta_{b}^{4}=b^{2}\int\eta_{1}^{4}$, so the points $A_{b}$ carry
+polarisations of unbounded degree, and an isogeny carrying $\eta_{b}$ to the
+polarisation of one fixed family has degree $\int\eta_{b}^{4}/\int\eta^{4}$,
+which grows like $b^{2}$. This is the unbounded isogeny degree of
+\Cref{rem:whereunbounded}, located at an explicit family of points, and the
+integrality of $Z_{1}$ does not affect it.
+\end{remark}
+
+The base points of \Cref{thm:everyfamily}, and every algebraicity statement
+for Weil classes proved in this paper, represent $\omega$ through products of
+divisor classes. The next result shows that a representation of that kind
+can hold with bounded degrees only on a nowhere dense set, so the bound asked
+for in \Cref{thm:degreebound} has to come from cycles that are not products of
+divisors. For a class $x\in H^{2}(A_{s},\RR)$ put
+\[
+  t(x)=\frac{\int x\,\eta^{2n-1}}{\int\eta^{2n}},\qquad
+  I(x)=t(x)^{2}\!\int\eta^{2n}-\int\bigl(x-t(x)\eta\bigr)^{2}\eta^{2n-2}.
+\]
+Since $\cD_{n,n}$ is contractible, the local system $R^{2}\pi_{*}\ZZ$ is
+trivial; write $H^{2}_{\ZZ}$ for its fibre, identified with $H^{2}(A_{s},\ZZ)$
+at every $s$. Both $t$ and $I$ are polynomial functions on $H^{2}_{\ZZ}$ and
+do not depend on $s$.
+
+\begin{lemma}[The Hodge norm of a divisor]\label{lem:nefnorm}
+Let $h_{s}$ be the Hodge norm on $H^{2}(A_{s},\RR)$ defined by the
+polarisation, normalised by $h_{s}(\eta)=\int\eta^{2n}$. Then
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item $h_{s}(x)=I(x)$ for every real class $x$ of type $(1,1)$ at $s$;
+\item if $D$ is an effective divisor on $A_{s}$ then
+  $I([D])\le 2\bigl(\int[D]\eta^{2n-1}\bigr)^{2}\big/\!\int\eta^{2n}$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Write $x=t\eta+x_{0}$ with $t=t(x)$, so that $x_{0}$ is primitive. The
+Lefschetz decomposition is orthogonal for $h_{s}$, and on primitive classes
+$h_{s}(x_{0})=-\int x_{0}\wedge C_{s}x_{0}\wedge\eta^{2n-2}$, where $C_{s}$ is
+the Weil operator, positive by the Hodge--Riemann relations. For $x_{0}$ of type
+$(1,1)$, $C_{s}x_{0}=x_{0}$, which gives (i). An effective divisor on an
+abelian variety is nef, since a translate of it meets any given curve
+properly, so $\int[D]^{2}\eta^{2n-2}\ge0$. Expanding,
+$\int[D]^{2}\eta^{2n-2}=t^{2}\int\eta^{2n}+\int x_{0}^{2}\eta^{2n-2}$, hence
+$-\int x_{0}^{2}\eta^{2n-2}\le t^{2}\int\eta^{2n}$ and
+$I([D])\le2t^{2}\int\eta^{2n}$, which is (ii).
+\end{proof}
+
+\begin{proposition}[Divisor products of bounded degree]\label{prop:divroute}
+In \Cref{setup:family}, fix $C>0$ and let $\Sigma_{C}\subset\cD_{n,n}$ be the
+set of points $s$ at which $\omega_{s}$ is a $\QQ$-linear combination of
+classes $[D_{1}]\cdots[D_{n}]$ with every $D_{i}$ an effective divisor on
+$A_{s}$ of degree $\int[D_{i}]\eta^{2n-1}\le C$. Then $\Sigma_{C}$ is
+contained in a locally finite union of proper closed analytic subsets of
+$\cD_{n,n}$. In particular $\Sigma_{C}$ is nowhere dense, and on any dense
+subset of $\cD_{n,n}$ at which $\omega$ is a combination of products of
+effective divisors the degrees of those divisors are unbounded on every
+nonempty open set.
+\end{proposition}
+
+\begin{proof}
+For $x\in H^{2}_{\ZZ}$ let $\mathrm{Hdg}(x)\subset\cD_{n,n}$ be the
+closed analytic set where $x$ is of type $(1,1)$. If $x\notin\QQ\eta$ it is
+proper, because $\NS(A_{s})\otimes\QQ=\QQ\eta$ at a very general point by
+\Cref{lem:genericNS}. Let $s\in\Sigma_{C}$. Not every $[D_{i}]$ in the
+representation lies in $\QQ\eta$, since $\QQ\eta^{n}$ and the Weil line carry
+different characters by \Cref{lem:charsdiffer}. So $s\in\mathrm{Hdg}(x)$ for
+some $x$ in
+\[
+  X_{C}=\bigl\{x\in H^{2}_{\ZZ}\setminus\QQ\eta\;:\;
+  I(x)\le 2C^{2}/\textstyle\int\eta^{2n}\bigr\},
+\]
+by \Cref{lem:nefnorm}(ii). Now let $U\subset\cD_{n,n}$ be open with compact
+closure and $s_{0}\in U$. The Hodge norm depends continuously on the point, so
+$h_{s_{0}}\le c_{U}\,h_{s}$ for some $c_{U}$ and all $s\in U$. If
+$\mathrm{Hdg}(x)$ meets $U$ at $s$ and $x\in X_{C}$, then by
+\Cref{lem:nefnorm}(i)
+$h_{s_{0}}(x)\le c_{U}h_{s}(x)=c_{U}I(x)\le 2c_{U}C^{2}/\int\eta^{2n}$, and
+only finitely many integral classes satisfy this. So the sets
+$\mathrm{Hdg}(x)$, $x\in X_{C}$, form a locally finite family of proper closed
+analytic subsets. Their union is closed with empty interior in the connected
+manifold $\cD_{n,n}$, and it contains $\Sigma_{C}$.
+\end{proof}
+
+\begin{remark}[Divisorial representatives]\label{rem:divroute}
+The loci on which this paper proves $\omega$ algebraic are the split,
+quaternionic and product loci and their translates under $G(\QQ)$, and on
+each of them $\omega$ is a rational polynomial in divisor classes, since an
+isogeny carries $\NS\otimes\QQ$ isomorphically. \Cref{prop:divroute} shows
+that no bounded family of such cycles covers a dense set, so the finiteness
+in \Cref{thm:degreebound} cannot be obtained by bounding the divisors that
+produce $\omega$ at the points where it is known to be algebraic. It would
+have to come from representatives of another kind, such as the transported
+cycles of \Cref{lem:Ginvariance}, which are push-forwards along isogenies
+rather than products of divisors on the target; and by \Cref{thm:p1forces}
+their data is unbounded as soon as a component of the base cycle has finite
+stabiliser. The unbounded isogeny degree of \Cref{rem:whereunbounded} and
+\Cref{rem:quatdivisible} is thus unavoidable for divisorial constructions.
+The argument uses nothing about $\omega$ beyond the fact that it is not a
+multiple of $\eta^{n}$, and nothing about the family beyond the generic
+Picard number, so it applies equally to any variational argument that rests
+on products of divisors.
+\end{remark}
+
+At $n=2$ the phenomenon can be exhibited on one fixed polarised lattice. Take
+$\Lambda=\cO^{2}$ with $\cO=\ZZ\langle1,i,j,ij\rangle$, $i^{2}=-d$, $j^{2}=1$,
+and $E$ as in \eqref{eq:quatE} with $a_{1}=a_{2}=1$. The lattice and the
+polarisation are fixed, and all the loci below lie in the one family
+$\cD_{2,2}$ that they define. Let
+$R=\{x:\ x(iu,v)=x(u,iv)\}\subset H^{2}(\Lambda,\QQ)$ be the space of
+$K$-bilinear classes, where the divisor classes of the quaternionic points
+live, and for $x\in R$ let $\phi_{x}=E^{-1}x$, so that $x(u,v)=E(\phi_{x}u,v)$.
+Put $e=\int\eta^{4}$ and, for $k\in\ZZ$,
+\[
+  C_{k}=\begin{pmatrix}1&k\\k&-1\end{pmatrix},\qquad
+  \phi_{k}(u_{1},u_{2})=\tfrac{1}{2d}\bigl(j(u_{1}+ku_{2}),\,j(ku_{1}-u_{2})\bigr),
+  \qquad x_{k}(u,v)=E(\phi_{k}u,v),
+\]
+so that $\phi_{k}$ is left multiplication by the matrix $(2d)^{-1}C_{k}\,j$
+and $x_{k}=x_{0}+k(x_{1}-x_{0})$ is a pencil.
+
+\begin{proposition}[A pencil of quaternionic loci]\label{prop:pencil}
+In this setting, for every $d$ and every $k\in\ZZ$:
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item $e=384\,d^{4}$; $R$ has dimension $12$, every $x\in R$ has $t(x)=0$
+  and $I(x)=\tfrac{1}{24}\,\mathrm{tr}(\phi_{x}^{2})\,e$, and the form $I$ has
+  signature $(8,4)$ on $R$;
+\item $x_{k}$ is a primitive integral class in $R$, and
+  $\phi_{x_{k}}^{2}=\beta(k)$ with $\beta(k)=(1+k^{2})/(4d^{2})$;
+\item the set $\mathrm{Hdg}(x_{k})$ is a quaternionic locus with algebra
+  $(-d,\beta(k))\cong(-d,1+k^{2})$, nonempty of dimension $3$, and loci with
+  different values of $\beta$ are not related by any automorphism of
+  $(\Lambda,E,i)$;
+\item at a very general point of $\mathrm{Hdg}(x_{k})$ one has
+  $\NS=\ZZ\,\tfrac{1}{2d}\eta\oplus\ZZ x_{k}\oplus\ZZ\,\iota x_{k}$, where
+  $\iota x=x(i\cdot,\cdot)$, and the minimum of $I$ on $\NS\setminus\QQ\eta$
+  is $\mu_{k}=32\,d^{2}(1+k^{2})$.
+\end{enumerate}
+Consequently, at a very general point of $\mathrm{Hdg}(x_{k})$ every effective
+divisor $D$ whose class is not a multiple of $\eta$ has
+$\int[D]\eta^{3}\ge32\sqrt{6}\,d^{3}\sqrt{1+k^{2}}$, which grows linearly in
+$|k|$.
+\end{proposition}
+
+\begin{proof}
+Two facts about $\cO$ are used throughout. The reduced trace form
+$\mathrm{trd}(wz)$ is diagonal on $1,i,j,ij$ with entries $2,-2d,2,2d$, so
+the dual lattice $\cO^{\sharp}=\{w\in B:\mathrm{trd}(w\cO)\subseteq\ZZ\}$ is
+$\ZZ\tfrac12\oplus\ZZ\tfrac{i}{2d}\oplus\ZZ\tfrac{j}{2}\oplus\ZZ\tfrac{ij}{2d}$.
+And a form $y(u,v)=\sum_{k,l}\mathrm{trd}(\bbar{u_{l}}\,w_{lk}\,v_{k})$ on
+$\cO^{2}$ with $w_{lk}\in B$ is integral if and only if every $w_{lk}$ lies
+in $\cO^{\sharp}$, because $\mathrm{trd}(\bbar{u}wv)=\mathrm{trd}(wv\bbar{u})$
+and the products $v\bbar{u}$ with $u,v\in\cO$ span $\cO$.
+
+(i) The Gram matrix of $\mathrm{trd}(\bbar{u}iv)$ on $1,i,j,ij$ pairs $1$
+with $i$ and $j$ with $ij$, with entries $\mp2d$ and $\pm2d$ and zeros
+elsewhere, so $E$ has elementary divisors $2d$ four times on $\Lambda$ and
+$e=4!\cdot(2d)^{4}=384\,d^{4}$. The involution $\sigma(x)=d^{-1}x(i\cdot,i\cdot)$
+of $\bigwedge^{2}V^{*}$ has $R$ as its $(-1)$-eigenspace, since
+$x(iu,v)=x(u,iv)$ is equivalent to $x(iu,iv)=-d\,x(u,v)$. Over $\CC$,
+$V_{\CC}=W\oplus\bbar{W}$ with $W,\bbar{W}$ the eigenspaces of $i$ for
+$\pm\sqrt{-d}$, each of dimension $4$, and $\sigma$ is $-1$ on
+$\bigwedge^{2}W^{*}\oplus\bigwedge^{2}\bbar{W}^{*}$ and $+1$ on
+$W^{*}\otimes\bbar{W}^{*}$; so $\dim R=6+6=12$. For $x\in R$ the map
+$\phi_{x}$ is $E$-self-adjoint, as $x$ and $E$ are alternating, and
+anticommutes with $i$, as $i$ is $E$-skew-adjoint by
+\Cref{thm:quatweil}(i): $E(\phi_{x}iu,v)=x(u,iv)=E(\phi_{x}u,iv)=-E(i\phi_{x}u,v)$.
+Hence $\mathrm{tr}\,\phi_{x}=-\mathrm{tr}(i\phi_{x}i^{-1})=-\mathrm{tr}\,\phi_{x}=0$,
+and \Cref{lem:pfaffian}(i), with $g=4$, gives $t(x)=0$ and
+$I(x)=-\int x^{2}\eta^{2}=\tfrac{1}{24}\mathrm{tr}(\phi_{x}^{2})e$.
+
+For the signature regard $V_{\RR}$ as a complex vector space through
+$i/\sqrt{d}$, with the hermitian form $H$ of \Cref{lem:hermform}, which has
+signature $(2,2)$ by \Cref{thm:quatweil}(ii), and an $H$-orthogonal basis in
+which $H=\mathrm{diag}(h_{1},\dots,h_{4})$. The maps $\phi_{x}$, $x\in R\otimes\RR$,
+are the $E$-self-adjoint antilinear maps. Writing $\phi(v)=A\bbar{v}$,
+self-adjointness for $E=d^{-1/2}\,\mathrm{Im}\,H$ says exactly that
+$S=h\bbar{A}$ is antisymmetric, and then
+$\mathrm{tr}_{\RR}(\phi^{2})=2\,\mathrm{Re}\,\mathrm{tr}(A\bbar{A})
+=-4\sum_{k<l}|S_{kl}|^{2}/(h_{k}h_{l})$. Four of the six pairs $k<l$ have
+$h_{k}h_{l}<0$ and two have $h_{k}h_{l}>0$, and each $S_{kl}$ is a complex
+coordinate, so $I$ has signature $(8,4)$.
+
+(ii) $\phi_{k}$ anticommutes with $i$ because $ji=-ij$ and the entries of
+$C_{k}$ are rational. It is $E$-self-adjoint because $C_{k}$ is symmetric and
+left multiplication by $j$ is self-adjoint for $\mathrm{trd}(\bbar{u}iv)$ on
+each factor, by \Cref{thm:quatweil}(i); so $x_{k}\in R$. Since the entries of
+$C_{k}$ commute with $j$, $\phi_{k}^{2}=(2d)^{-2}C_{k}^{2}j^{2}=(1+k^{2})/(4d^{2})$.
+In the form of the first paragraph $x_{k}$ has
+$w_{lk}=-(2d)^{-1}c_{kl}\,j\,i=(2d)^{-1}c_{kl}\,ij$, with $c_{kl}$ the entries of
+$C_{k}$, which lie in $\cO^{\sharp}$; so $x_{k}$ is integral, and
+$x_{k}\bigl((1,0),(ij,0)\bigr)=(2d)^{-1}\mathrm{trd}(ij\cdot ij)=1$, so it is
+primitive.
+
+(iii) Write $\phi=\phi_{k}$ and $\beta=\beta(k)$. The map $\phi$ is
+$E$-self-adjoint, anticommutes with $i$, and $\phi^{2}=\beta>0$, so
+$V_{\RR}=V_{+}\oplus V_{-}$ with $V_{\pm}$ the $\pm\sqrt{\beta}$ eigenspaces,
+$E$-orthogonal to each other, and $i$ exchanges them. A complex structure $J$
+on $V_{+}$ compatible with $E|_{V_{+}}$, extended to $V_{-}=iV_{+}$ by
+$J(iw)=iJw$, commutes with $i$ and $\phi$ and is compatible with $E$, and $i$
+has eigenvalues $\pm\sqrt{-d}$ each with multiplicity $2$ on $V^{1,0}$; so
+these $J$ are points of $\cD_{2,2}$ at which $x_{k}$ is of type $(1,1)$, and
+they form a copy of the Siegel space of $V_{+}$, of dimension $3$, in
+agreement with \Cref{prop:lagrangian}. The algebra generated by $i$ and $\phi$
+is $(-d,\beta)$, and $(-d,\beta)\cong(-d,1+k^{2})$ because the two differ by
+the square $(2d)^{2}$. An automorphism $\gamma$ of $(\Lambda,E,i)$ sends
+$\phi_{x}$ to $\gamma\phi_{x}\gamma^{-1}$ and so preserves
+$\mathrm{tr}(\phi_{x}^{2})=8\beta$.
+
+For the first half of (iv), let $S_{k}\subset\cD_{2,2}$ be the Siegel space
+just described and $\mathcal{C}_{k}\subset\Sp(V_{\RR},E)$ the centraliser of
+$i$ and $\phi$. An element of $\mathcal{C}_{k}$ preserves $V_{+}$ and is
+determined by its restriction there, because it commutes with $i$, so
+$\mathcal{C}_{k}\cong\Sp(V_{+})$, acting on $V_{\RR}=V_{+}\oplus iV_{+}$ as
+$g\oplus igi^{-1}$. A real class is of type $(1,1)$ at $J$ exactly when it is
+invariant under $J$. The points of $S_{k}$ form one orbit
+$\{gJ_{0}g^{-1}:g\in\mathcal{C}_{k}\}$ of a fixed point $J_{0}$. Let $z$ be a
+real $2$-form invariant under every point of $S_{k}$, and write
+$\mathfrak{c}=\mathrm{Lie}(\mathcal{C}_{k})\cong\mathfrak{sp}(V_{+})$,
+$\mathfrak{k}$ for the centraliser of $J_{0}$ in $\mathfrak{c}$ and
+$\mathfrak{p}=[\mathfrak{c},J_{0}]$. For $X\in\mathfrak{c}$ the curve
+$g_{t}=\exp(tX)$ gives $(g_{t}J_{0}g_{t}^{-1})^{*}z=z$ for all $t$, and the
+derivative at $t=0$ says that $[X,J_{0}]$ annihilates $z$, so $\mathfrak{p}$
+annihilates $z$. The annihilator of $z$ in $\mathfrak{c}$ is a Lie
+subalgebra, so it contains $\mathfrak{p}+[\mathfrak{p},\mathfrak{p}]$. Now
+$\mathfrak{c}=\mathfrak{k}\oplus\mathfrak{p}$ with
+$[\mathfrak{k},\mathfrak{p}]\subseteq\mathfrak{p}$ and
+$[\mathfrak{p},\mathfrak{p}]\subseteq\mathfrak{k}$, so
+$\mathfrak{p}+[\mathfrak{p},\mathfrak{p}]$ is an ideal of $\mathfrak{c}$;
+it is nonzero, and it is therefore all of $\mathfrak{c}$, because
+$\mathfrak{c}\cong\mathfrak{sp}_{4}(\RR)$ is simple: its complexification
+$\mathfrak{sp}_{4}(\CC)$ is simple, with irreducible root system $C_{2}$, and
+an ideal of a real form complexifies to an ideal. Hence $z$ is annihilated by
+$\mathfrak{c}$ and, since $\Sp(V_{+})$ is connected, invariant under all of
+$\mathcal{C}_{k}$. So the classes of type $(1,1)$ at every point of $S_{k}$
+are the invariants of $\Sp(V_{+})$ in $\bigwedge^{2}(V_{+}\otimes\RR^{2})
+=\bigl(\bigwedge^{2}V_{+}\otimes S^{2}\RR^{2}\bigr)
+\oplus\bigl(S^{2}V_{+}\otimes\bigwedge^{2}\RR^{2}\bigr)$, a space of dimension
+$3$ spanned by $\eta$, $x_{k}$ and $\iota x_{k}$. Every other rational
+class $z$ is of type $(1,1)$ only on a proper closed analytic subset of the
+connected manifold $S_{k}$, and a very general point avoids these countably
+many subsets.
+
+For the lattice, $\iota x_{k}$ is the form of $\phi_{k}i=-i\phi_{k}$, so every
+class in $\QQ\eta+\QQ x_{k}+\QQ\iota x_{k}$ is
+$y=s\eta+E(\phi_{k}\lambda\,\cdot,\cdot)$ with $s\in\QQ$ and $\lambda\in K$
+acting by left multiplication. In the form of the first paragraph, $y$ has
+$w_{lk}=\delta_{lk}\,s\,i+(2d)^{-1}c_{kl}\bbar{\lambda}\,ij$. The first
+summand lies in $K$ and the second in $Kj$, and $\cO^{\sharp}$ is the direct
+sum of its parts in $K$ and in $Kj$, so $y$ is integral if and only if
+$s\in(2d)^{-1}\ZZ$ and $(2d)^{-1}c_{kl}\bbar{\lambda}\,ij\in\cO^{\sharp}$
+for all $k,l$. Writing $\bbar{\lambda}=p-q\,i$, one has
+$\bbar{\lambda}\,ij=p\,ij+qd\,j$, and since $c_{11}=1$ and all $c_{kl}$ are
+integers this holds exactly when $p,q\in\ZZ$, that is $\lambda\in\ZZ[i]$.
+This is the stated description of $\NS$. Now $t(\eta)=1$ and $t$ vanishes
+on $R$, so $I(s\eta+z)=s^{2}e+I(z)$ for $z\in R$, and
+$(\phi_{k}\lambda)^{2}=\phi_{k}^{2}\bbar{\lambda}\lambda=N(\lambda)\beta(k)$,
+so by (i)
+\[
+  I\bigl(s\eta+E(\phi_{k}\lambda\,\cdot,\cdot)\bigr)
+  =s^{2}e+\tfrac{8}{24}N(\lambda)\beta(k)e
+  =s^{2}e+32\,d^{2}(1+k^{2})N(\lambda).
+\]
+A class off $\QQ\eta$ has $\lambda\ne0$, hence $N(\lambda)\ge1$, and
+$\lambda=1$, $s=0$ gives $x_{k}$; so $\mu_{k}=32\,d^{2}(1+k^{2})$. The final
+assertion follows from \Cref{lem:nefnorm}(ii): an effective $D$ with
+$[D]\notin\QQ\eta$ has
+$(\int[D]\eta^{3})^{2}\ge e\,\mu_{k}/2=6144\,d^{6}(1+k^{2})$.
+\end{proof}
+
+Each locus of the pencil carries algebraic Weil classes, by the divisorial
+criterion, since $x_{k}$ is nondegenerate, and on the $k$-th of them the
+divisors that produce those classes have degree at least of order $|k|$.
+This is \Cref{prop:divroute} seen on explicit quaternionic loci in one fixed
+polarised lattice, and \Cref{fig:pencil} illustrates it.
+
+\begin{figure}[t]
+\centering
+  \includegraphics[width=\textwidth]{fig_pencil}
+\caption{\Cref{prop:pencil} at $d=3$. Left: the members $S_{k}$ of the
+pencil, each a Siegel threefold inside the four-dimensional family, with the
+member $k=0$, where $\beta=\tfrac{1}{36}$ is a square and a rational point
+$J_{0}$ can be written down, drawn apart. Right: along the pencil the ratio
+$\mu_{k}/\beta(k)$ is the constant $10368=\int\eta^{4}/3$, so $\mu_{k}$
+grows like $k^{2}$ and the least degree of a divisor not proportional to
+$\eta$ grows linearly in $k$. The Weil class is a flat class of the one fixed
+lattice and does not change; the divisors that produce it must.}
+\label{fig:pencil}
+\end{figure}
+
+\begin{remark}[The case $n=2$]\label{rem:ntwo}
+Let $n=2$, so $\dim\cS=n^{2}=4$. For every $n$ the quaternionic locus of
+\Cref{setup:quat} has dimension $n(n+1)/2$, by a Morita argument. The
+quaternion algebra $B=(-d,b)$ contains $K$ and acts on $V$, and
+$B\otimes\RR\cong M_{2}(\RR)$ because $b>0$, so Morita equivalence writes
+$V_{\RR}$ as $W\otimes_{\RR}\RR^{2}$ with $W$ symplectic of dimension $2n$.
+The complex structures commuting with $B$ and compatible with $E$ are then
+the complex structures on $W$ compatible with its symplectic form, that is the
+points of the Siegel
+space $\mathfrak{H}_{n}$, of dimension $n(n+1)/2$, and the codimension in
+$\cD_{n,n}$ is $n^{2}-n(n+1)/2=n(n-1)/2$. At
+$n=2$ the quaternionic locus is therefore the symmetric space of
+$\Sp(4,\RR)$ inside $\cD_{2,2}$, of dimension $3$, so it is a divisor. Its
+$G(\QQ)$-translates are infinitely many
+pairwise distinct irreducible closed subvarieties of $\cS$ of dimension $3$,
+since a finite union of proper closed analytic subsets cannot be dense. If
+infinitely many of them carry cycles with one and the same data
+$(\underline{P},\underline{q})$, then the closed set
+$\Sigma_{\underline{P},\underline{q}}$ has an irreducible component containing
+infinitely many distinct irreducible threefolds, so that component has
+dimension at least $4$ and therefore equals $\cS$. No density is needed at
+$n=2$, only infinitude. Combined with the theorem of Moonen and Zarhin
+\cite{MZ99} that every Hodge class on an abelian fourfold lies in the
+subalgebra generated by divisor classes and Weil classes, the conclusion would
+be the Hodge conjecture for all abelian fourfolds of Weil type, hence for all
+abelian fourfolds. That conclusion is a theorem of Markman
+\cite[Corollary~1.6.1]{Mar25a}, proved by a different route, so at $n=2$ the
+argument above would give a second proof; its interest lies in $n\ge3$.
+\end{remark}

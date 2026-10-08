@@ -1,0 +1,23 @@
+n=2 d=1: 24 slopes; [Z]=+-wedge=D^n/n! integral, [Z]^2=0, deg>0: True; type(n,n): True; int Z_s Z_t = det^{2n}: True; rank span = 5 (2n+1=5); Weil plane in span: True; eta^n in span: False  (0.0s)
+    least N with N*omega1(track) in Z-span of the [Z]'s (|p|,|q|<=4): 1
+    least N with N*omega2(track) in Z-span of the [Z]'s (|p|,|q|<=4): 3
+    least N with N*Re omega_+ (paper norm.) in Z-span of the [Z]'s (|p|,|q|<=4): 2
+    4[0xX^]+4[Xx0]-[Z_1:1]-[Z_1:-1] == omega1(track): True ; == -omega1(track): False ; paper omega1 = d l^2 - gamma^2 = -omega1(track)
+    dim T = 4, dim T cap Ann[Z] for 3 slopes = [3, 3, 3] (n(n+1)/2 = 3)
+    rank HT^2 _| [Z] per slope: [6, 6, 6, 6] ; rank of sum over 4 slopes: 18 ; r(omega1) = 12
+n=2 d=2: 24 slopes; [Z]=+-wedge=D^n/n! integral, [Z]^2=0, deg>0: True; type(n,n): True; int Z_s Z_t = det^{2n}: True; rank span = 5 (2n+1=5); Weil plane in span: True; eta^n in span: False  (0.2s)
+    least N with N*omega1(track) in Z-span of the [Z]'s (|p|,|q|<=4): 1
+    least N with N*omega2(track) in Z-span of the [Z]'s (|p|,|q|<=4): 1
+    least N with N*Re omega_+ (paper norm.) in Z-span of the [Z]'s (|p|,|q|<=4): 4
+    12[Z_0:1]+6[Z_1:0]-2[Z_1:1]-2[Z_1:-1] == omega1(track): True
+    dim T = 4, dim T cap Ann[Z] for 3 slopes = [3, 3, 3] (n(n+1)/2 = 3)
+n=2 d=3: 24 slopes; [Z]=+-wedge=D^n/n! integral, [Z]^2=0, deg>0: True; type(n,n): True; int Z_s Z_t = det^{2n}: True; rank span = 5 (2n+1=5); Weil plane in span: True; eta^n in span: False  (0.3s)
+    least N with N*omega1(track) in Z-span of the [Z]'s (|p|,|q|<=4): 1
+    least N with N*omega2(track) in Z-span of the [Z]'s (|p|,|q|<=4): 3
+    least N with N*Re omega_+ (paper norm.) in Z-span of the [Z]'s (|p|,|q|<=4): 18
+    dim T = 4, dim T cap Ann[Z] for 3 slopes = [3, 3, 3] (n(n+1)/2 = 3)
+n=3 d=1: 24 slopes; [Z]=+-wedge=D^n/n! integral, [Z]^2=0, deg>0: True; type(n,n): True; int Z_s Z_t = det^{2n}: True; rank span = 7 (2n+1=7); Weil plane in span: True; eta^n in span: False  (0.8s)
+    least N with N*omega1(track) in Z-span of the [Z]'s (|p|,|q|<=4): 2
+    least N with N*omega2(track) in Z-span of the [Z]'s (|p|,|q|<=4): 1
+    least N with N*Re omega_+ (paper norm.) in Z-span of the [Z]'s (|p|,|q|<=4): 12
+    dim T = 9, dim T cap Ann[Z] for 3 slopes = [6, 6, 6] (n(n+1)/2 = 6)

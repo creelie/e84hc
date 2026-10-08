@@ -1,0 +1,17 @@
+PASS (a) no T_i = V(2e_i) summand in any wedge^k V, k=0..8
+PASS sanity: wedge^2 V multiplicities
+PASS sanity: the alternating formula reproduces dim wedge^k V for all k
+(b) multiplicity of V(2,0,0) in H^n(X x X), n = 0..16: [0, 0, 1, 0, 6, 0, 16, 0, 24, 0, 16, 0, 6, 0, 1, 0, 0]
+PASS (b) = [0,0,1,0,6,0,16,0,24,0,16,0,6,0,1,0,0]
+PASS (b) the copy in H^2 is in H^1 (x) H^1
+(d) Hodge numbers (p=2,1,0) of T in H^1 (x) H^1: 1 7 1
+PASS (d) T in H^2(X x X) has Hodge numbers (1,7,1)
+PASS (c) dim 12, h^{1,0} = 6
+PASS (c) Hodge types are compatible with complex conjugation (chi -> chi^{-1}, p -> 1-p)
+(c) torus-invariant part of wedge^2: multiplicities {(2, 0, 0): 1, (0, 2, 0): 1, (0, 0, 2): 1, (0, 0, 0): 3} dim 12
+PASS (c) torus-invariant part of wedge^2 H^1 = T_1+T_2+T_3 + 3.1
+(c) Hodge numbers of the torus-invariant part (p=2,1,0): 1 10 1
+PASS (c) T-part has Hodge numbers (1,7,1)
+PASS (c) only the pairs (V_i chi_i, V_i chi_i^{-1}) contribute torus-invariants
+
+11 checks passed, 0 failed

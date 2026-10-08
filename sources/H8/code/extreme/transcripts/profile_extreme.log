@@ -1,0 +1,86 @@
+(LIII) the Hochschild profile of a (P2') Chern character
+  (A) the closed formula, n = 2, 3, every degree
+    [PASS] n=2, pure: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 8, 12, 8, 1]
+    [PASS] n=2, c_0 only: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 8, 16, 8, 1]
+    [PASS] n=2, c_1 only: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 8, 20, 8, 1]
+    [PASS] n=2, c_n only: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 8, 24, 8, 1]
+    [PASS] n=2, c_2n only: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 8, 16, 8, 1]
+    [PASS] n=2, e^theta: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 8, 16, 8, 1]
+    [PASS] n=2, two exponentials: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 8, 20, 8, 1]
+    [PASS] n=2, generic: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 8, 24, 8, 1]
+    [PASS] n=3, pure: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 12, 30, 40, 30, 12, 1]
+    [PASS] n=3, c_0 only: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 12, 39, 58, 39, 12, 1]
+    [PASS] n=3, c_1 only: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 12, 48, 76, 48, 12, 1]
+    [PASS] n=3, c_n only: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 12, 57, 112, 57, 12, 1]
+    [PASS] n=3, c_2n only: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 12, 39, 58, 39, 12, 1]
+    [PASS] n=3, e^theta: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 12, 39, 58, 39, 12, 1]
+    [PASS] n=3, two exponentials: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 12, 48, 76, 48, 12, 1]
+    [PASS] n=3, generic: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 12, 57, 112, 57, 12, 1]
+  (B) the symmetry
+    [PASS] n=2: rho_k = rho_(2n-k), and rho_k = 0 for k > 2n, on every shape
+    [PASS] n=3: rho_k = rho_(2n-k), and rho_k = 0 for k > 2n, on every shape
+  (C) the middle degeneracy
+    [PASS] n=2, c_n theta^n: rho_n drops by d exactly at |u| = binom(n,a) n! |c_n|, and only in degree n
+           |u| = 2: rho = [1, 8, 22, 8, 1], d = 2
+           |u| = 4: rho = [1, 8, 23, 8, 1], d = 1
+    [PASS] n=3, c_n theta^n: rho_n drops by d exactly at |u| = binom(n,a) n! |c_n|, and only in degree n
+           |u| = 6: rho = [1, 12, 57, 110, 57, 12, 1], d = 2
+           |u| = 18: rho = [1, 12, 57, 110, 57, 12, 1], d = 2
+  (D) parity
+    [PASS] int x^2 is even on wedge^(2n) H^1(A,Z), so chi(E,E) is even
+           n=1: 6 monomials, each paired with its complement only, no monomial paired with itself
+           n=2: 70 monomials, each paired with its complement only, no monomial paired with itself
+           n=3: 924 monomials, each paired with its complement only, no monomial paired with itself
+    [PASS] n=2, theta^2 + omega at |u| = 4: rho_2 = 23, odd, so the numerical criterion dim Ext^2 = rho_2 cannot hold there
+           rho_0..rho_2 = [1, 8, 23]
+  (X) extreme: n = 4 in every degree, n = 5 up to degree 3
+    [PASS] n=4, pure: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 16, 56, 112, 140, 112, 56, 16, 1]
+    [PASS] n=4, c_0 only: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 16, 72, 160, 208, 160, 72, 16, 1]
+    [PASS] n=4, c_1 only: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 16, 88, 208, 276, 208, 88, 16, 1]
+    [PASS] n=4, c_n only: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 16, 104, 304, 480, 304, 104, 16, 1]
+    [PASS] n=4, c_2n only: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 16, 72, 160, 208, 160, 72, 16, 1]
+    [PASS] n=4, e^theta: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 16, 72, 160, 208, 160, 72, 16, 1]
+    [PASS] n=4, two exponentials: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 16, 88, 208, 276, 208, 88, 16, 1]
+    [PASS] n=4, generic: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 16, 104, 304, 480, 304, 104, 16, 1]
+    [PASS] n=5, pure: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 20, 90, 240]
+    [PASS] n=5, c_0 only: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 20, 115, 340]
+    [PASS] n=5, c_1 only: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 20, 140, 440]
+    [PASS] n=5, c_n only: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 20, 165, 640]
+    [PASS] n=5, c_2n only: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 20, 115, 340]
+    [PASS] n=5, e^theta: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 20, 115, 340]
+    [PASS] n=5, two exponentials: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 20, 140, 440]
+    [PASS] n=5, generic: rho_k = 2 binom(2n,k) + M_k min(k+1,2n+1-k,r) - [k=n]d
+           profile [1, 20, 165, 640]
+
+  38 checks passed, 0 failed

@@ -1,0 +1,30 @@
+  [PASS] B n=5, d=1, k=1: diagonal members [(0, 1, 2, 3, 4), (1, 3, 5, 6, 9), (0, 1, 6, 7, 8), (1, 3, 4, 7, 9), (1, 2, 3, 8, 9)] give 12 monomial columns; with 2 random members the kernel mod q is 0 (lower bound 0)
+         268 condition rows compressed to 52; q = 2147483629; 0.3s
+  [PASS] B n=5, d=1, k=2: diagonal members [(0, 1, 2, 3, 4), (0, 1, 2, 6, 9), (1, 3, 4, 6, 7), (2, 3, 5, 7, 8), (0, 1, 3, 4, 8)] give 123 monomial columns; with 2 random members the kernel mod q is 0 (lower bound 0)
+         4662 condition rows compressed to 163; q = 2147483629; 0.4s
+  [PASS] B n=5, d=1, k=3: diagonal members [(0, 1, 2, 3, 4), (0, 2, 3, 7, 8), (1, 2, 3, 5, 6), (2, 3, 4, 6, 9), (0, 4, 5, 7, 8)] give 440 monomial columns; with 2 random members the kernel mod q is 0 (lower bound 0)
+         16680 condition rows compressed to 480; q = 2147483629; 2.6s
+  [PASS] B n=5, d=1, k=4: diagonal members [(0, 1, 2, 3, 4), (0, 1, 4, 6, 8), (0, 2, 3, 5, 6), (0, 3, 4, 7, 8), (1, 4, 5, 6, 8)] give 848 monomial columns; with 2 random members the kernel mod q is 0 (lower bound 0)
+         50028 condition rows compressed to 888; q = 2147483629; 14.6s
+  [PASS] B n=5, d=1, k=5: diagonal members [(0, 1, 2, 3, 4), (0, 3, 4, 6, 8), (0, 5, 6, 7, 8), (2, 4, 5, 6, 7), (0, 1, 2, 3, 5)] give 1656 monomial columns; with 2 random members the kernel mod q is 2 (lower bound 2)
+         95820 condition rows compressed to 1696; q = 2147483629; 71.2s
+  [PASS] B n=5, d=1, k=6: diagonal members [(0, 1, 2, 3, 4), (2, 3, 5, 7, 9), (1, 2, 5, 6, 8), (1, 3, 4, 5, 6), (1, 3, 4, 6, 8)] give 906 monomial columns; with 2 random members the kernel mod q is 0 (lower bound 0)
+         48680 condition rows compressed to 946; q = 2147483629; 13.5s
+  [PASS] B n=5, d=1, k=7: diagonal members [(0, 1, 2, 3, 4), (1, 3, 5, 8, 9), (1, 2, 5, 6, 9), (3, 4, 5, 6, 7), (0, 3, 4, 5, 6)] give 340 monomial columns; with 2 random members the kernel mod q is 0 (lower bound 0)
+         18192 condition rows compressed to 380; q = 2147483629; 1.8s
+  [PASS] B n=5, d=1, k=8: diagonal members [(0, 1, 2, 3, 4), (0, 1, 3, 6, 9), (1, 3, 7, 8, 9), (0, 1, 5, 7, 8), (0, 2, 4, 6, 7)] give 81 monomial columns; with 2 random members the kernel mod q is 0 (lower bound 0)
+         2714 condition rows compressed to 121; q = 2147483629; 0.4s
+  [PASS] B n=5, d=1, k=9: diagonal members [(0, 1, 2, 3, 4), (0, 1, 5, 8, 9), (1, 2, 4, 5, 9), (0, 1, 2, 3, 9), (3, 5, 6, 8, 9)] give 14 monomial columns; with 2 random members the kernel mod q is 0 (lower bound 0)
+         320 condition rows compressed to 54; q = 2147483629; 0.2s
+  [PASS] B n=5, d=3, k=4: diagonal members [(0, 1, 2, 3, 4), (2, 3, 6, 7, 9), (0, 4, 6, 8, 9), (1, 5, 7, 8, 9), (2, 3, 5, 6, 9)] give 1328 monomial columns; with 2 random members the kernel mod q is 0 (lower bound 0)
+         54000 condition rows compressed to 1368; q = 2147483647; 39.3s
+  [PASS] B n=5, d=3, k=5: diagonal members [(0, 1, 2, 3, 4), (0, 1, 3, 5, 6), (0, 2, 4, 6, 9), (0, 1, 2, 3, 8), (0, 3, 6, 7, 9)] give 1096 monomial columns; with 2 random members the kernel mod q is 2 (lower bound 2)
+         71620 condition rows compressed to 1136; q = 2147483647; 21.7s
+  [PASS] B n=5, d=3, k=6: diagonal members [(0, 1, 2, 3, 4), (1, 3, 4, 5, 7), (0, 1, 2, 6, 7), (0, 1, 3, 7, 8), (0, 1, 3, 5, 8)] give 846 monomial columns; with 2 random members the kernel mod q is 0 (lower bound 0)
+         49508 condition rows compressed to 886; q = 2147483647; 9.5s
+
+  12 checks passed, 0 failed  (175.7s)
+
+real	2m56.103s
+user	1m23.945s
+sys	0m5.664s

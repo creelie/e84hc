@@ -1,0 +1,6 @@
+general flat gamma: r = 112, dim Ann = 8, {'z': 0, 'v': 8, 'pi': 0}
+general flat gamma: r = 112, dim Ann = 8, {'z': 0, 'v': 8, 'pi': 0}
+general flat gamma: r = 112, dim Ann = 8, {'z': 0, 'v': 8, 'pi': 0}
+  [PASS] general flat Hodge gamma with nonzero Weil part: r = 112
+
+1 checks passed, 0 failed

@@ -1,0 +1,17 @@
+  [PASS] Z[sqrt D]: N(x + 4w) - N(x) has all coefficients divisible by 4 (D a symbol)
+  [PASS] Z[sqrt D]: N(x^2) = N(x)^2
+  [PASS] Z[(1 + sqrt D)/2]: N(x + 4w) - N(x) has all coefficients divisible by 4 (D a symbol)
+  [PASS] Z[(1 + sqrt D)/2]: N(x^2) = N(x)^2
+  [PASS] a square is 0 or 1 modulo 4
+  [PASS] D = 2: a + b sqrt D is a unit at the prime above 2 iff a is odd iff its norm is odd
+  [PASS] D = 6: a + b sqrt D is a unit at the prime above 2 iff a is odd iff its norm is odd
+  [PASS] D = 10: a + b sqrt D is a unit at the prime above 2 iff a is odd iff its norm is odd
+  [PASS] D = 14: a + b sqrt D is a unit at the prime above 2 iff a is odd iff its norm is odd
+  [PASS] D = 22: a + b sqrt D is a unit at the prime above 2 iff a is odd iff its norm is odd
+  [PASS] D = 26: a + b sqrt D is a unit at the prime above 2 iff a is odd iff its norm is odd
+  [PASS] D = 30: a + b sqrt D is a unit at the prime above 2 iff a is odd iff its norm is odd
+  [PASS] the congruence 4m = 36 mod (d cap Z) is m = 9 modulo the odd part of D, for all 121580 squarefree D < 200000
+  [PASS] for squarefree D < 200000 the conditions (a), (b), (c) have a solution in [1,8] only for D = 2 (m = 1, 5) and D = 5 (m = 4): {2: [1, 5], 5: [4]}
+  [PASS] without (b) and (c) the survivors would be {2: [1, 2, 3, 4, 5, 6, 7, 8], 3: [3, 6], 5: [4], 6: [3, 6], 7: [2], 10: [4], 14: [2]}
+
+15 checks passed, 0 failed

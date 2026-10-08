@@ -1,0 +1,12 @@
+  [PASS] sqrt5: R_Z (saturation) lies in the congruence lattice (V_11 = V_20 mod (01*sqrt5))
+  [PASS] sqrt5: the spanning set of the congruence lattice lies in H^ev(X,Z) (so R_Z = congruence lattice); det chi|R_Z = 200000
+  [PASS] sqrt2: R_Z (saturation) lies in the congruence lattice (V_11 = V_20 mod (01*sqrt8))
+  [PASS] sqrt2: the spanning set of the congruence lattice lies in H^ev(X,Z) (so R_Z = congruence lattice); det chi|R_Z = 2097152
+  [PASS] sqrt13: R_Z (saturation) lies in the congruence lattice (V_11 = V_20 mod (01*sqrt13))
+  [PASS] sqrt13: the spanning set of the congruence lattice lies in H^ev(X,Z) (so R_Z = congruence lattice); det chi|R_Z = 23762752
+  [PASS] sqrt17: R_Z (saturation) lies in the congruence lattice (V_11 = V_20 mod (01*sqrt17))
+  [PASS] sqrt17: the spanning set of the congruence lattice lies in H^ev(X,Z) (so R_Z = congruence lattice); det chi|R_Z = 90870848
+  [PASS] sqrt10: R_Z (saturation) lies in the congruence lattice (V_11 = V_20 mod (01*sqrt40))
+  [PASS] sqrt10: the spanning set of the congruence lattice lies in H^ev(X,Z) (so R_Z = congruence lattice); det chi|R_Z = 6553600000
+
+10 checks passed, 0 failed

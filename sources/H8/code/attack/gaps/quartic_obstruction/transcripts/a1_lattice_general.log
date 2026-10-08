@@ -1,0 +1,17 @@
+  [PASS] D = 3: R_Z has rank 9
+  [PASS] D = 3: R_Z (saturation) lies in the congruence lattice (V_11 = V_20 mod 2 sqrt D)
+  [PASS] D = 3: the congruence lattice lies in H^ev(X,Z), so R_Z is the congruence lattice; det chi|R_Z = 15925248
+  [PASS] D = 6: R_Z has rank 9
+  [PASS] D = 6: R_Z (saturation) lies in the congruence lattice (V_11 = V_20 mod 2 sqrt D)
+  [PASS] D = 6: the congruence lattice lies in H^ev(X,Z), so R_Z is the congruence lattice; det chi|R_Z = 509607936
+  [PASS] D = 7: R_Z has rank 9
+  [PASS] D = 7: R_Z (saturation) lies in the congruence lattice (V_11 = V_20 mod 2 sqrt D)
+  [PASS] D = 7: the congruence lattice lies in H^ev(X,Z), so R_Z is the congruence lattice; det chi|R_Z = 1101463552
+  [PASS] D = 10: R_Z has rank 9
+  [PASS] D = 10: R_Z (saturation) lies in the congruence lattice (V_11 = V_20 mod 2 sqrt D)
+  [PASS] D = 10: the congruence lattice lies in H^ev(X,Z), so R_Z is the congruence lattice; det chi|R_Z = 6553600000
+  [PASS] D = 14: R_Z has rank 9
+  [PASS] D = 14: R_Z (saturation) lies in the congruence lattice (V_11 = V_20 mod 2 sqrt D)
+  [PASS] D = 14: the congruence lattice lies in H^ev(X,Z), so R_Z is the congruence lattice; det chi|R_Z = 35246833664
+
+15 checks passed, 0 failed

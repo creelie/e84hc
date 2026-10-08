@@ -1,0 +1,21 @@
+HT^2 dimension: 120
+  [PASS] dim HT^2 = 120 (28 + 64 + 28)
+  [PASS] pure omega: Ann = 0 + 16 + 24 = 40, r = 80
+         r = 80, dim Ann = 40, by summand {'z': 0, 'v': 16, 'pi': 24}
+  [PASS] pure omega: the H^1(T)-part of Ann is exactly the F-linear maps
+    (omega with one component zero: r = 67, Ann {'z': 0, 'v': 28, 'pi': 25} -- not a rational class)
+  [PASS] generic gamma = omega + p(theta_1,theta_2): r = 112, Ann = tangent space (dim 8), all in H^1(T)
+         r = 112, dim Ann = 8, {'z': 0, 'v': 8, 'pi': 0}
+         r = 112, dim Ann = 8, {'z': 0, 'v': 8, 'pi': 0}
+         r = 112, dim Ann = 8, {'z': 0, 'v': 8, 'pi': 0}
+    p(theta) in the single polarisation theta_1+theta_2, generic coefficients:
+      r = 112, dim Ann = 8, {'z': 0, 'v': 8, 'pi': 0}
+      r = 112, dim Ann = 8, {'z': 0, 'v': 8, 'pi': 0}
+      r = 112, dim Ann = 8, {'z': 0, 'v': 8, 'pi': 0}
+  [PASS] p in C[theta] only (generic): r = 112 as well
+    shape c e^{t1 th1 + t2 th2}         : r = 104, dim Ann = 16, {'z': 0, 'v': 8, 'pi': 0}
+    shape c e^{t (th1+th2)}             : r = 104, dim Ann = 16, {'z': 0, 'v': 8, 'pi': 0}
+    shape c th1^4 th2^4 (point class)   : r = 104, dim Ann = 16, {'z': 0, 'v': 16, 'pi': 0}
+    shape c (sum) 1 + point             : r = 104, dim Ann = 16, {'z': 0, 'v': 16, 'pi': 0}
+
+5 checks passed, 0 failed

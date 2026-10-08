@@ -1,0 +1,291 @@
+\section{Reductions that hold for every variety}\label{sec:reductions}
+
+\subsection{Correspondences}
+Let $B$ and $X$ be varieties, possibly disconnected, with $B$ of pure
+dimension $b$. For an algebraic cycle $\Gamma$ of codimension $c$ on
+$B\times X$ with rational coefficients, the map
+\[
+  \Gamma_{*}\colon H^{k}(B,\QQ)\to H^{k+2c-2b}(X,\QQ),\qquad
+  y\mapsto\pr_{X*}\bigl(\cl(\Gamma)\cup\pr_{B}^{*}y\bigr),
+\]
+is a morphism of Hodge structures $H^{k}(B)(b-c)\to H^{k+2c-2b}(X)$. It
+carries algebraic classes to algebraic classes, the composite of two such
+maps is the map of the composite correspondence, and for a morphism
+$f\colon B\to X$ the graph $\Gamma_{f}$ and its transpose give $f_{*}$ and
+$f^{*}$ \cite[Chapter~16]{Ful98}. For a cycle with components of several
+codimensions we add the maps of the components.
+
+A pure rational Hodge structure $V$ of weight $w$ is \emph{polarizable} if
+it carries a bilinear form $Q$ such that $Q(Cx,\bar x)>0$ for $x\ne0$, where
+$C$ acts on $V^{a,b}$ by $i^{a-b}$. The cohomology of a variety and its Tate
+twists are polarizable, by the Hodge--Riemann relations
+\cite[Chapter~6]{Voi02b}. Polarizable Hodge structures are
+semisimple.\footnote{If $W\subseteq V$ is a sub-Hodge structure, the
+restriction of $Q$ to $W$ is again a polarization, hence nondegenerate, so
+$V=W\oplus W^{\perp}$. The orthogonal $W^{\perp}$ is a sub-Hodge structure,
+because the decomposition $V_{\CC}=\bigoplus V^{a,b}$ is orthogonal for the
+hermitian form $Q(Cx,\bar y)$ and $W_{\CC}$ is the sum of its intersections
+with the $V^{a,b}$.}
+
+\begin{lemma}\label{lem:lift}
+Let $\varphi\colon V\to W$ be a surjective morphism of polarizable Hodge
+structures of weight $2p$. Then $\varphi$ maps the Hodge classes of $V$, the
+rational classes of type $(p,p)$, onto those of $W$.
+\end{lemma}
+
+\begin{proof}
+By semisimplicity the kernel of $\varphi$ has a complement $V'$ that is a
+sub-Hodge structure, and $\varphi$ restricts to an isomorphism of Hodge
+structures $V'\to W$. Its inverse carries a Hodge class of $W$ to a Hodge
+class of $V'\subseteq V$.
+\end{proof}
+
+\begin{lemma}[Dominated cohomology]\label{lem:dominated}
+Let $X$ be a variety, and let $B_{1},\dots,B_{r}$ be varieties with
+algebraic cycles $\Gamma_{j}$ on $B_{j}\times X$, such that the images of
+the maps $\Gamma_{j*}$ span $H^{2p}(X,\QQ)$. Then every Hodge class of degree
+$2p$ on $X$ is a sum $\sum_{j}\Gamma_{j*}\gamma_{j}$ with $\gamma_{j}$ Hodge
+classes on $B_{j}$. In particular, if the Hodge conjecture holds for every
+$B_{j}$, it holds for $X$ in degree $2p$.
+\end{lemma}
+
+\begin{proof}
+Write $\Gamma_{j}=\sum_{c}\Gamma_{j,c}$ with $\Gamma_{j,c}$ of pure
+codimension $c$, and $b_{j}=\dim B_{j}$ (if $B_{j}$ is not equidimensional,
+treat its components separately). The component $\Gamma_{j,c}$ maps into
+degree $2p$ exactly from $H^{k}(B_{j})$ with $k=2p+2b_{j}-2c$, which is
+even. The sum of the maps
+\[
+  \bigoplus_{j,c}H^{2p+2b_{j}-2c}(B_{j},\QQ)(b_{j}-c)\longrightarrow
+  H^{2p}(X,\QQ)
+\]
+is a surjective morphism of polarizable Hodge structures of weight $2p$.
+A Hodge class in $H^{2p+2b_{j}-2c}(B_{j})(b_{j}-c)$ is a Hodge class of
+$B_{j}$. Apply \Cref{lem:lift}. Algebraic classes go to algebraic classes
+under correspondences, which gives the last assertion.
+\end{proof}
+
+\subsection{Degree two and hard Lefschetz}
+
+\begin{theorem}[Lefschetz \cite{Lef24}, Kodaira--Spencer \cite{KS53}]\label{thm:lef11}
+Every Hodge class of degree two is algebraic.
+\end{theorem}
+
+\begin{proof}
+The exponential sequence gives an exact sequence
+\[
+  H^{1}(X,\cO_{X}^{\times})\to H^{2}(X,\ZZ)\to H^{2}(X,\cO_{X}),
+\]
+whose second
+map is the composite of $H^{2}(X,\ZZ)\to H^{2}(X,\CC)$ with the projection
+to $H^{0,2}(X)$. An integral class of type $(1,1)$ therefore is the first
+Chern class of a holomorphic line bundle, which is algebraic by GAGA, and
+its first Chern class is the class of a divisor. A rational Hodge class has
+an integral multiple.
+\end{proof}
+
+Let $h$ be the class of a hyperplane section of $X$, of dimension $n$, and
+$L$ the cup product with $h$. By the hard Lefschetz theorem
+$L^{n-k}\colon H^{k}(X,\QQ)\to H^{2n-k}(X,\QQ)$ is an isomorphism for
+$k\le n$ \cite[Theorem~6.25]{Voi02b}.
+
+\begin{proposition}\label{prop:hardlef}
+For $2p<n$, if every Hodge class of degree $2p$ on $X$ is algebraic, so is
+every Hodge class of degree $2n-2p$. Every Hodge class of degree $0$, $2$,
+$2n-2$ or $2n$ is algebraic, and \HC{} holds for every variety of dimension
+at most three.
+\end{proposition}
+
+\begin{proof}
+$L^{n-2p}$ maps $H^{p,p}$ onto $H^{n-p,n-p}$ and rational classes to rational
+classes, so it maps $\Hdg^{p}(X)$ onto $\Hdg^{n-p}(X)$; and it maps the class
+of a subvariety $Z$ to the class of $Z\cap H_{1}\cap\dots\cap H_{n-2p}$ for
+general hyperplanes $H_{i}$. Hence
+$\Hdg^{n-p}(X)=L^{n-2p}\Alg^{p}(X)\subseteq\Alg^{n-p}(X)$. Degrees $0$ and
+$2n$ are spanned by the fundamental class and the class of a point; degree
+$2$ is \Cref{thm:lef11}, and degree $2n-2$ follows from it. For $n\le3$
+every even degree is one of these.
+\end{proof}
+
+\subsection{Surjective morphisms and blow-ups}
+
+\begin{proposition}\label{prop:descent}
+Let $f\colon Z\to X$ be a surjective morphism, with $X$ connected, and let
+$r=\dim Z-\dim X$. Let $h_{Z}$ be an ample class on $Z$, and $d>0$ the degree
+of $h_{Z}^{r}$ on a general fibre. Then $\alpha=d^{-1}f_{*}(h_{Z}^{r}\cup
+f^{*}\alpha)$ for every $\alpha\in H^{*}(X,\QQ)$. In particular the
+correspondence $\Gamma=d^{-1}(h_{Z}^{r}\times1)\cdot\Gamma_{f}$ from $Z$ to
+$X$ satisfies $\Gamma_{*}f^{*}=\mathrm{id}$, so $\Gamma_{*}$ is surjective,
+and \HC{} for $Z$ implies \HC{} for $X$.
+\end{proposition}
+
+\begin{proof}
+By the projection formula
+$f_{*}(h_{Z}^{r}\cup f^{*}\alpha)=f_{*}(h_{Z}^{r})\cup\alpha$, and
+$f_{*}(h_{Z}^{r})\in H^{0}(X,\QQ)=\QQ$ is the degree $d$, which is positive
+because $h_{Z}$ is ample on the fibres. The last claim follows from
+\Cref{lem:dominated}.
+\end{proof}
+
+\begin{proposition}\label{prop:blowup}
+Let $Y\subseteq X$ be a smooth closed subvariety, possibly disconnected, of
+codimension $c\ge2$ in every component, let $\pi\colon\tilde X\to X$ be the
+blow-up along $Y$, let $j\colon E\to\tilde X$ be the exceptional divisor and
+$q\colon E\to Y$ the projective bundle, and let $\xi=c_{1}(\cO_{E}(1))$. Then
+\[
+  H^{k}(\tilde X,\QQ)=\pi^{*}H^{k}(X,\QQ)\;\oplus\;
+  \bigoplus_{i=0}^{c-2}j_{*}\bigl(\xi^{i}\cup q^{*}H^{k-2i-2}(Y,\QQ)\bigr),
+\]
+and each summand is the image of a correspondence: $\pi^{*}$ from $X$, and
+$y\mapsto j_{*}(\xi^{i}\cup q^{*}y)$ from $Y$.
+\end{proposition}
+
+\begin{proof}
+The decomposition is the blow-up formula \cite[Theorem~7.31]{Voi02b}. The
+map $y\mapsto j_{*}(\xi^{i}\cup q^{*}y)$ is the correspondence given by the
+image in $Y\times\tilde X$ of a cycle on $E$ representing $\xi^{i}$, pushed
+forward along $(q,j)\colon E\to Y\times\tilde X$.
+\end{proof}
+
+\subsection{The statements}
+
+\begin{definition}\label{def:statements}
+Let $X$ range over all varieties and $p$ over all integers.
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item \st{F2}: the Hodge conjecture for every complex abelian
+variety.\footnote{In \cite{BhH8} the name \st{F2} denotes a statement about
+the Hodge classes not generated by divisors and Weil classes, and it is
+proved there to be equivalent to the Hodge conjecture for abelian varieties.
+We use the simpler form.}
+\item \st{F3$'$}: $\Hdg^{p}(X)=\Ab^{p}(X)$, where $\Ab^{p}(X)$ is the span of
+the classes $\Gamma_{*}\gamma$ of degree $2p$ with $B$ an abelian variety
+(the point included), $\gamma$ a Hodge class on $B$ and $\Gamma$ an
+algebraic cycle on $B\times X$ \cite[Definition~20.34]{BhH8}.
+\item \st{L}: for every $X$ and every ample class on $X$, the Lefschetz
+involution $*_{L}$ defined below is induced by an algebraic cycle on
+$X\times X$. This is Grothendieck's standard conjecture $B(X)$ for every $X$
+\cite{Gro69}: by \cite[1.4.4]{Kle68} and \cite[Proposition~1.2]{And96}, the
+$\QQ$-algebra of operators generated by $L$ and $*_{L}$ is the one generated by
+$L$ and the operator $\Lambda$ of $B(X)$.
+\item \st{M}: every Hodge class is motivated in the sense of
+\cite[\S1]{And96}.
+\item \st{V}: for every smooth projective morphism $f\colon\cX\to S$ over a
+smooth connected quasi-projective variety, and every global section $\xi$ of
+$R^{2p}f_{*}\QQ$ over $S^{\mathrm{an}}$, if $\xi_{s}$ is algebraic for one
+$s\in S$ then $\xi_{t}$ is algebraic for every $t\in S$.
+\item \st{CM}: the Hodge conjecture for every abelian variety of CM type.
+\item \st{IP}: the case of \st{V} in which $f$ is a polarized abelian scheme
+and $\cX_{s}$ is of CM type.
+\end{enumerate}
+\end{definition}
+
+An abelian variety $A$ is \emph{of CM type} if $\End(A)\otimes\QQ$ contains a
+commutative semisimple $\QQ$-algebra of dimension $2\dim A$; the point is of
+CM type, and products of abelian varieties of CM type are of CM type.
+
+Each $\Gamma_{*}\gamma$ in \st{F3$'$} is a Hodge class, so
+$\Ab^{p}(X)\subseteq\Hdg^{p}(X)$; taking $B$ a point shows that $\Ab^{p}(X)$
+contains $\Alg^{p}(X)$. Thus \st{F3$'$} asks only that Hodge classes be
+algebraic \emph{modulo} what abelian varieties supply. By
+\Cref{prop:descent}, applied to $A\times\PP^{1}\to A$, the conjecture for
+varieties that are not abelian already contains the conjecture for abelian
+varieties; this is why the half of the conjecture that concerns other
+varieties has to be stated modulo abelian varieties to be a separate
+problem.
+
+\subsection{The Lefschetz standard conjecture and motivated classes}
+
+Let $X$ have dimension $n$ and ample class $h$. Every class in $H^{k}(X)$ is
+uniquely $\sum_{j}L^{j}x_{j}$ with $x_{j}$ primitive of degree $k-2j$, and the
+\emph{Lefschetz involution} is defined by $*_{L}(L^{j}x_{j})=L^{n-k+j}x_{j}$
+\cite[\S1.1]{And96}. On $H^{k}$ with $k\le n$ it is $L^{n-k}$, and on
+$H^{2n-k}$ it is the inverse of $L^{n-k}$. A class $\alpha\in H^{2p}(X,\QQ)$
+is \emph{motivated} \cite[D\'efinition~1]{And96} if there are a variety $Y$,
+ample classes $h_{X}$ on $X$ and $h_{Y}$ on $Y$, and algebraic classes
+$\beta,\gamma$ on $X\times Y$ with
+\[
+  \alpha=\pr_{X*}\bigl(\beta\cup *_{L}\gamma\bigr),
+\]
+where $*_{L}$ is the Lefschetz involution of $X\times Y$ for the ample class
+$\pr_{X}^{*}h_{X}+\pr_{Y}^{*}h_{Y}$.
+We use three facts from \cite{And96}. (a) Motivated classes are Hodge
+classes, they contain the algebraic classes, and they form a graded
+$\QQ$-algebra that is stable under pull-back and push-forward along
+projections \cite[Proposition~2.1 and \S2.5]{And96}; hence a correspondence
+given by an algebraic cycle maps motivated classes to motivated
+classes.\footnote{For a correspondence, $\Gamma_{*}\gamma=\pr_{X*}(\cl
+(\Gamma)\cup\pr_{B}^{*}\gamma)$ is built from $\gamma$ by a pull-back along a
+projection, a product with an algebraic class and a push-forward along a
+projection.} (b) Every Hodge class on an abelian variety is motivated
+\cite[Th\'eor\`eme~0.6.2]{And96}. (c) If the Lefschetz involution of every
+variety, for every ample class, is induced by an algebraic cycle, then every
+motivated class is algebraic \cite[\S2, after D\'efinition~1]{And96}. Fact
+(c) is immediate from the definition: $*_{L}\gamma$ is then the image of an
+algebraic class under an algebraic correspondence.
+
+\begin{proposition}\label{prop:LM}
+\st{L} and \st{M} together imply \HC.
+\end{proposition}
+
+\begin{proof}
+By \st{M} every Hodge class is motivated, and by \st{L} and fact~(c) every
+motivated class is algebraic.
+\end{proof}
+
+\begin{proposition}\label{prop:f3m}
+\st{F3$'$} implies \st{M}.
+\end{proposition}
+
+\begin{proof}
+Under \st{F3$'$} every Hodge class is a sum of classes $\Gamma_{*}\gamma$ with
+$\gamma$ a Hodge class on an abelian variety. Such a $\gamma$ is motivated by
+fact~(b), and $\Gamma_{*}\gamma$ is motivated by fact~(a).
+\end{proof}
+
+\subsection{Families}
+
+\begin{lemma}[Theorem of the fixed part]\label{lem:fixed}
+Let $f\colon\cX\to S$ be a smooth projective morphism over a smooth connected
+quasi-projective variety, and $\xi$ a global section of $R^{k}f_{*}\QQ$. If
+$\xi_{s}$ is a Hodge class for one $s\in S$, then $\xi_{t}$ is a Hodge class
+for every $t\in S$.
+\end{lemma}
+
+\begin{proof}
+By Deligne's theorem of the fixed part \cite[Corollaire~4.1.2]{Del71} the
+space $H^{0}(S,R^{k}f_{*}\QQ)$ carries a Hodge structure for which each
+restriction $r_{t}\colon H^{0}(S,R^{k}f_{*}\QQ)\to H^{k}(\cX_{t},\QQ)$ is an
+injective morphism of Hodge structures.\footnote{Injective because a section
+of a local system over a connected base is determined by its value at one
+point. The Hodge structure is the image of $H^{k}(\bar\cX,\QQ)\to
+H^{k}(\cX_{t},\QQ)$ for a smooth compactification $\bar\cX$ of $\cX$, which
+by \cite[4.1.1]{Del71} is the whole invariant part. A global section that is
+of type $(p,q)$ at one point is of type $(p,q)$ everywhere
+\cite[4.1.3.1]{Del71}.} An injective morphism
+of Hodge structures that sends a class $x$ to a class of type $(p,p)$
+forces $x$ to be of type $(p,p)$, because it respects the Hodge
+decompositions. So $\xi$ is a Hodge class of $H^{0}(S,R^{k}f_{*}\QQ)$, and
+$\xi_{t}=r_{t}(\xi)$ is a Hodge class for every $t$.
+\end{proof}
+
+\begin{lemma}\label{lem:hcimplies}
+\HC{} implies each of \st{F2}, \st{F3$'$}, \st{L}, \st{M}, \st{V}, \st{CM}
+and \st{IP}.
+\end{lemma}
+
+\begin{proof}
+\st{F2} and \st{CM} are special cases, and \st{F3$'$} holds because
+$\Ab^{p}(X)$ contains $\Alg^{p}(X)$. For \st{L}: on each $H^{k}(X)$ the involution $*_{L}$ is
+a morphism of Hodge structures $H^{k}(X)\to H^{2n-k}(X)(n-k)$, so under the
+K\"unneth decomposition and Poincar\'e duality each of its components is a
+Hodge class on $X\times X$,\footnote{A $\QQ$-linear map $u\colon H^{a}(X)\to H^{b}(X)$
+corresponds to an element of $H^{a}(X)^{\vee}\otimes H^{b}(X)\cong
+H^{2n-a}(X)(n)\otimes H^{b}(X)$, a summand of $H^{2n-a+b}(X\times X)(n)$,
+and the correspondence it defines acts as $u$. The map $u$ is a morphism of
+Hodge structures $H^{a}(X)\to H^{b}(X)(r)$ exactly when this element is a
+Hodge class of the appropriate weight.} and \HC{} makes it algebraic.
+Algebraic classes are motivated, which gives \st{M}. For \st{V}: if $\xi_{s}$
+is algebraic, it is a Hodge class, so $\xi_{t}$ is a Hodge class for every
+$t$ by \Cref{lem:fixed}, and \HC{} makes it algebraic. \st{IP} is a case of
+\st{V}.
+\end{proof}

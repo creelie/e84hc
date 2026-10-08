@@ -1,0 +1,41 @@
+  ok: psi = eps(x)eps(x)eps is alternating
+  ok: psi nondegenerate (psi^2 = -1)
+  ok: g = sl2^3 lies in sp(V,psi)
+  ok: dim g = 9
+  ok: psi^{-1} integral
+  ok: constructed sp basis lies in sp
+  ok: dim sp(V,psi) = 36
+  S^2 V = sp(V,psi) under SL2^3: {(2, 2, 2): 1, (2, 0, 0): 1, (0, 2, 0): 1, (0, 0, 2): 1}
+  ok: sp(V,psi) = T1+T2+T3+L(2,2,2), L(2,2,2) irreducible of dim 27
+  ok: End_g(sp(V,psi)) has dim 4, so every g-submodule containing g is g or sp: g is a maximal subalgebra of sp(V,psi)
+  ok: the six factor permutations preserve psi (lie in Sp(V,psi))
+  ok: each factor permutation normalises g
+  ok: conjugation by P_sigma carries T_k to T_sigma(k)
+  ok: subgroups of S_3 stable under conjugation by the Galois image A_3: exactly 1, A_3, S_3
+  ok: subgroups of S_3 stable under conjugation by the Galois image S_3: exactly 1, A_3, S_3
+  Racah-Speiser: dim (V^{(x)2m})^G = {1: 1, 2: 8, 3: 125}  dim (V^{(x)2m})^Sp(8) = {1: 1, 2: 3, 3: 15}
+  ok: dim (V^{(x)2m})^G = 1, 8, 125 and dim (V^{(x)2m})^Sp = 1, 3, 15 (m = 1, 2, 3)
+  m = 1: dim End_H(V^{(x)1}) for H = G, G.A3, G.S3, Sp : (1, 1, 1, 1) (|S_m^3| = 1; Brauer generators commute with sp: True)
+  m = 2: dim End_H(V^{(x)2}) for H = G, G.A3, G.S3, Sp : (8, 4, 4, 3) (|S_m^3| = 8; Brauer generators commute with sp: True)
+  m = 3: dim End_H(V^{(x)3}) for H = G, G.A3, G.S3, Sp : (125, 45, 35, 15) (|S_m^3| = 216; Brauer generators commute with sp: True)
+  ok: m = 1: 1, 1, 1, 1
+  ok: m = 2 (classes on X^4 in V^{(x)4}): 8, 4, 4, 3
+  ok: m = 3 (classes on X^6 in V^{(x)6}): 125, 45, 35, 15
+  ok: explicit spanning sets attain the Racah-Speiser values (so they span the invariant spaces)
+  ok: r_1 = s_1+s_2+s_3 commutes with the S_3 factor permutations
+  ok: r_1 is G-invariant
+  ok: r_1 is not Sp(V,psi)-invariant (not in the divisor subring)
+  ok: pi_12 is supported in /\^2 V
+  ok: pi_13 is supported in /\^2 V
+  ok: pi_23 is supported in /\^2 V
+  ok: pi_0 is supported in /\^2 V
+  ranks of pi_12, pi_13, pi_23, pi_0: {'12': 9, '13': 9, '23': 9, '0': 1}
+  ok: U_12, U_13, U_23 have dim 9, Q theta dim 1
+  ok: the 3-cycle (0->1->2->0) carries pi_12 to pi_23
+  ok: the 3-cycle (0->1->2->0) carries pi_13 to pi_12
+  ok: the 3-cycle (0->1->2->0) carries pi_23 to pi_13
+  ok: the 3-cycle fixes pi_0
+  ok: Det is sl2^3-invariant
+  ok: Det is invariant under the six factor permutations (N(G)-invariant)
+  ok: Det is not sp(V,psi)-invariant (so not in the divisor subring)
+ALL CHECKS PASSED

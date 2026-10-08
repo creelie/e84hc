@@ -1,0 +1,14 @@
+  [PASS] q=(2, 1) F=w (rank-1 V): r(kappa) mod p = 100 (lower bound), prediction 100  [906 terms in C-coords, 6168 rows]
+  [PASS] q=(2, 1) F=w (rank-1 V): exact annihilator over Q(i) of dimension 20 (each vector verified on all of kappa)
+     => r(kappa) = 100 exactly  (2.3s)
+  [PASS] q=(2, 1) F=w (rank-1 V) [untwisted ch(E)]: r(kappa) mod p = 100 (lower bound), prediction 100  [777 terms in C-coords, 4484 rows]
+  [PASS] q=(2, 1) F=w (rank-1 V) [untwisted ch(E)]: exact annihilator over Q(i) of dimension 20 (each vector verified on all of kappa)
+     => r(kappa) = 100 exactly  (2.1s)
+  [PASS] q=(2, 1) F=v_1 (rank-2 V): r(kappa) mod p = 104 (lower bound), prediction 104  [700 terms in C-coords, 6376 rows]
+  [PASS] q=(2, 1) F=v_1 (rank-2 V): exact annihilator over Q(i) of dimension 16 (each vector verified on all of kappa)
+     => r(kappa) = 104 exactly  (1.8s)
+  [PASS] q=(2, 1) F=u (rank-1 V): r(kappa) mod p = 100 (lower bound), prediction 100  [798 terms in C-coords, 6040 rows]
+  [PASS] q=(2, 1) F=u (rank-1 V): exact annihilator over Q(i) of dimension 20 (each vector verified on all of kappa)
+     => r(kappa) = 100 exactly  (2.2s)
+
+8 checks passed, 0 failed

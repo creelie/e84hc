@@ -1,0 +1,17 @@
+# build products of the paper and of its figures
+/paper/*.aux
+/paper/*.log
+/paper/*.out
+/paper/*.blg
+/paper/*.bbl
+/paper/*.synctex.gz
+/paper/figures/src/*.aux
+/paper/figures/src/*.log
+/paper/figures/src/*.pdf
+/dist/
+
+# Lean, Python and C build products
+.lake/
+__pycache__/
+*.pyc
+/verification/c/closure_checks

@@ -1,0 +1,69 @@
+\section{The exterior algebra model in coordinates}\label{app:exterior}
+
+We record in coordinates the computation behind \Cref{thm:fmtheta}, both to
+pin down the sign in \eqref{eq:fmtheta} and because the programs of the
+archive \cite{BMB26} use this model.
+
+Let $g\ge1$ and let $W$ be the $\QQ$-vector space with basis
+$e_{1},\dots,e_{2g},f_{1},\dots,f_{2g}$. We identify
+$V=\langle e_{1},\dots,e_{2g}\rangle$ with $H^{1}(A,\QQ)$ and
+$V^{\vee}=\langle f_{1},\dots,f_{2g}\rangle$ with $H^{1}(\Av,\QQ)$, so that
+$\bigwedge^{*}W=H^{*}(A\times\Av,\QQ)$.
+
+Number the generators so that the generator numbered $i$ is $e_{i}$ for
+$i\le2g$ and $f_{i-2g}$ for $i>2g$. A basis of $\bigwedge^{*}W$ is then
+indexed by the subsets $S$ of $\{1,\dots,4g\}$, the basis element $w_{S}$
+being the wedge of the generators in $S$ in increasing order. The product
+is $w_{S}w_{T}=\varepsilon(S,T)\,w_{S\cup T}$ when $S\cap T=\emptyset$ and zero
+otherwise, where
+\begin{equation}\label{eq:shufflesign}
+  \varepsilon(S,T)=(-1)^{\#\{(s,t)\in S\times T\,:\,s>t\}} .
+\end{equation}
+
+The three distinguished elements are
+\[
+  \ell=\sum_{i=1}^{2g}e_{i}\wedge f_{i},
+  \qquad
+  \theta=\sum_{j=1}^{g}e_{j}\wedge e_{g+j},
+  \qquad
+  \theta'=\sum_{j=1}^{g}f_{j}\wedge f_{g+j},
+\]
+and $p_{*}$ is the linear map $\bigwedge^{*}W\to\bigwedge^{*}V$ that sends
+$w_{S}$ to $\varepsilon(S\cap[1,2g],\,S\setminus[1,2g])\,w_{S\cap[1,2g]}$ when
+$S\supseteq\{2g+1,\dots,4g\}$ and to zero otherwise.
+
+\begin{lemma}\label{lem:appsign}
+Let $0\le k\le g$, let $T\subseteq\{1,\dots,g\}$ with $|T|=k$, let
+$U=\{1,\dots,g\}\setminus T$ and $S=U\cup(g+U)$. In the product
+$\theta'^{\,k}\cdot e^{\ell}$ the unique term contributing $w_{S}$ after
+$p_{*}$ is
+\[
+  k!\;\Bigl(\prod_{j\in T}f_{j}f_{g+j}\Bigr)\cdot\Bigl(\prod_{i\in S}e_{i}f_{i}\Bigr),
+\]
+and its image under $p_{*}$ is
+$k!\,\sigma(g,k)\,\prod_{j\in U}e_{j}\wedge e_{g+j}$ with
+$\sigma(g,k)=(-1)^{g(g+1)/2+k}$, independent of $T$.
+\end{lemma}
+
+\begin{proof}
+The uniqueness of the term and the identification of $S$ are established in
+the proof of \Cref{thm:fmtheta}. The sign is the product of the two shuffle
+signs \eqref{eq:shufflesign} relating the displayed word to the target word
+$\bigl(\prod_{j\in U}e_{j}e_{g+j}\bigr)\bigl(f_{1}\cdots f_{2g}\bigr)$.
+Relabelling the symplectic pairs by a permutation $\pi$ of $\{1,\dots,g\}$
+carries the word for $T$ to the word for $\pi(T)$ and multiplies both the
+displayed and the target word by the sign of the induced permutation of
+generators, so the quotient is unchanged. Since the permutations of
+$\{1,\dots,g\}$ act transitively on its $k$-subsets, $\sigma$ depends only on
+$(g,k)$. Evaluating at $T=\{1,\dots,k\}$, as in the proof of
+\Cref{thm:fmtheta}, gives the stated value.
+\end{proof}
+
+\begin{remark}
+At $g=2$ the computation can be done by hand. There
+$\ell=e_{1}f_{1}+e_{2}f_{2}+e_{3}f_{3}+e_{4}f_{4}$,
+$\theta=e_{1}e_{3}+e_{2}e_{4}$ and $\theta'=f_{1}f_{3}+f_{2}f_{4}$, and one
+finds $\Phi_{\cP}(1)=-\tfrac12\theta^{2}$, $\Phi_{\cP}(\theta')=\theta$ and
+$\Phi_{\cP}(\theta'^{2})=-2$, in agreement with \eqref{eq:fmtheta} for $g=2$,
+where $(-1)^{g(g+1)/2}=(-1)^{3}=-1$.
+\end{remark}

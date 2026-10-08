@@ -1,0 +1,1182 @@
+\section{Hodge classes beyond the Weil lines}\label{sec:beyond}
+
+\subsection{The first classes beyond the Weil lines}\label{ssec:mumford}
+
+Statement (F2) is the Hodge conjecture for the Hodge classes on abelian
+varieties that no Weil line reaches, and \Cref{prop:mumfordproduct} exhibits
+the first of them: two classes in $H^{4}(X\times X,\QQ)$ for an abelian
+fourfold $X$ of Mumford type. None of the constructions of the preceding
+sections acts on them. In this subsection we identify them as a real
+multiplication on the primitive part of $H^{2}(X)$, and we prove that they
+are algebraic as soon as the Kuga--Satake class of one K3 surface of Picard
+number thirteen attached to $X$ is algebraic. We do not prove that the
+Kuga--Satake class is algebraic, and we know of no proof. The reduction
+changes the kind of question: two classes on an eightfold are traded for one
+correspondence of a well-studied type, between a surface and its Kuga--Satake
+variety. The cubic field of the real multiplication enters through the
+Clifford relations, which force the blocks of the Kuga--Satake embedding to
+span it.
+
+\begin{setupenv}[Mumford type]\label{setup:mumford}
+Let $X$ be as in \Cref{prop:mumfordproduct}, with $V=H^{1}(X,\QQ)$,
+polarisation $\psi$ and polarisation class $\theta\in H^{2}(X,\QQ)$, and let
+$G=\Hg(X)$. Over $\bar{\QQ}$ the Hodge cocharacter is nontrivial on exactly
+one of the three factors of $G$: on $V_{i}$ it has weights $\pm a_{i}/2$ with
+$a_{i}\ge0$, and $V$ has only the two weights $\pm\frac12$, so exactly one
+$a_{i}$ is nonzero. Since $\End^{0}(X)=\QQ$, it follows that $G$ is
+$\QQ$-simple: the Lie algebra of a $\QQ$-factor not containing that geometric
+factor would consist of Hodge classes in $\End(V)$, that is, of endomorphisms
+of $X$. So $G$ is the image in
+$\GL(V)$ of $\Res_{F/\QQ}D^{1}$, where $F$ is a totally real cubic field, $D$
+is a quaternion algebra over $F$ split at one real place $\sigma_{3}$ and
+definite at the other two, $\sigma_{1}$ and $\sigma_{2}$, with
+$\operatorname{Cor}_{F/\QQ}D\cong M_{8}(\QQ)$, and $D^{1}$ is the group of
+elements of reduced norm one \cite{Mum69,Gal00}; the kernel is the central
+subgroup of triples of signs with product one. Over $\bar{\QQ}$,
+$V=V_{1}\otimes V_{2}\otimes V_{3}$, where $V_{i}$ is the standard
+representation of $D\otimes_{F,\sigma_{i}}\bar{\QQ}=M_{2}(\bar{\QQ})$; the
+Galois group permutes the three factors as it permutes the three embeddings,
+and $H^{1,0}(X)=V_{1}\otimes V_{2}\otimes V_{3}^{1,0}$. Put
+\[
+  T=\operatorname{Lie}G=D^{0},
+  \qquad
+  q_{\lambda}(x,y)=\Tr_{F/\QQ}\bigl(\lambda\operatorname{trd}(xy)\bigr)
+  \quad(\lambda\in F^{\times}),
+\]
+where $D^{0}$ is the space of quaternions of reduced trace zero, regarded as
+a $\QQ$-vector space of dimension nine, and $\operatorname{trd}$ is the
+reduced trace. Over $\bar{\QQ}$, $T=T_{1}\oplus T_{2}\oplus T_{3}$ with
+$T_{i}=\mathfrak{sl}(V_{i})$, and $a\in F$ acts on $T_{i}$ by $\sigma_{i}(a)$.
+Write $m_{a}$ for multiplication by $a$. The space $T\subset\End(V)$ is a
+sub-Hodge structure of weight zero.
+\end{setupenv}
+
+\begin{proposition}[The two classes are a real multiplication]%
+\label{prop:mumfordrm}
+In \Cref{setup:mumford}:
+\begin{enumerate}[label=\textup{(\roman*)},nosep,leftmargin=2.6em]
+\item $H^{2}(X,\QQ)=\QQ\theta\oplus U$, where $U$ is the primitive part, of
+  dimension $27$, and over $\bar{\QQ}$
+  \[
+    U=U_{12}\oplus U_{13}\oplus U_{23},\qquad
+    U_{ij}=S^{2}V_{i}\otimes S^{2}V_{j}\otimes{\textstyle\bigwedge^{2}}V_{k},
+    \quad \{i,j,k\}=\{1,2,3\},
+  \]
+  each of dimension nine. The summand $U_{12}$ is of type $(1,1)$, and
+  $U_{13}$ and $U_{23}$ have Hodge numbers $(3,3,3)$.
+\item The algebra of Hodge endomorphisms of $H^{2}(X,\QQ)$ is $\QQ\times F$,
+  acting by scalars on $\QQ\theta$, with $a\in F$ acting on $U_{ij}$ by
+  $\sigma_{k}(a)$. Through Poincar\'e duality and the Lefschetz isomorphism
+  $\theta^{2}\colon H^{2}\to H^{6}$ this algebra is the space of Hodge classes
+  in the K\"unneth component $H^{2}(X)\otimes H^{2}(X)$ of
+  $H^{4}(X\times X,\QQ)$; the subalgebra $\QQ\times\QQ$ is spanned by the
+  products of divisor classes that lie there, and the two classes of
+  \Cref{prop:mumfordproduct}(ii) may be taken to be the elements of $F$ of
+  trace zero.
+\item $T(-1)$ is a Hodge structure of K3 type with Hodge numbers $(1,7,1)$,
+  and its Hodge endomorphisms are the $m_{a}$, $a\in F$. The $G$-invariant
+  symmetric forms on $T$ are the $q_{\lambda}$, and $q_{\lambda}$ polarises
+  $T(-1)$ if and only if $\lambda$ is totally positive.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) is the decomposition of $\bigwedge^{2}(V_{1}\otimes V_{2}\otimes V_{3})$
+in the proof of \Cref{prop:mumfordproduct}, where $U_{ij}$ appears as the
+summand of highest weight $2$ on the $i$-th and $j$-th factors. The Hodge
+cocharacter acts trivially on $V_{1}$ and $V_{2}$ and splits
+$V_{3}=V_{3}^{1,0}\oplus V_{3}^{0,1}$, so $\bigwedge^{2}V_{3}$ has type
+$(1,1)$ and $S^{2}V_{3}$ has one dimension of each of the types $(2,0)$,
+$(1,1)$, $(0,2)$.
+
+(ii) A Hodge endomorphism commutes with the Mumford--Tate group
+$G\cdot\mathbb{G}_{m}$, and $\mathbb{G}_{m}$ acts on $H^{2}$ by scalars, so
+the Hodge endomorphisms are the $G$-endomorphisms. Over $\bar{\QQ}$ the four
+summands $\QQ\theta$, $U_{12}$, $U_{13}$, $U_{23}$ are irreducible and
+pairwise non-isomorphic, so the $G$-endomorphisms are the combinations of the
+four projections. The Galois group fixes the projection onto $\QQ\theta$ and
+permutes the other three as it permutes the indices $k$, that is, as it
+permutes the embeddings of $F$. For $a\in F$ an endomorphism acting on
+$U_{ij}$ by $\sigma_{k}(a)$ is therefore Galois invariant, hence rational, and
+with the scalars on $\QQ\theta$ these exhaust the rational points, which form
+$\QQ\times F$. Poincar\'e duality identifies $\End H^{2}(X,\QQ)$ with
+$H^{6}(X)\otimes H^{2}(X)$, and $\theta^{2}\otimes1$ carries
+$H^{2}\otimes H^{2}$ onto it; both are given by algebraic classes, and on an
+abelian variety so is the inverse of the Lefschetz isomorphism
+\cite[\S2]{Kle68}. The products of divisor classes in $H^{2}\otimes H^{2}$
+are $\psi_{11}\psi_{22}$ and $\psi_{12}^{2}$ in the notation of the proof of
+\Cref{prop:mumfordproduct}. They are invariant under the whole of
+$\Sp(V,\psi)$, whose endomorphisms of $H^{2}=\QQ\theta\oplus U$ are spanned
+by the identity and the projection onto $\QQ\theta$, and they are linearly
+independent, being a multiple of the projection and a multiple of the
+identity (proof of \Cref{prop:mumfordproduct}); so they span $\QQ\times\QQ$, and any complement of
+$\QQ\times\QQ$ in $\QQ\times F$ may serve as the two remaining classes.
+
+(iii) The adjoint action of the Hodge cocharacter is trivial on $T_{1}$ and
+$T_{2}$ and has weights $-1$, $0$, $1$ on $T_{3}$, so $T$ has Hodge numbers
+$(1,7,1)$ in the types $(-1,1)$, $(0,0)$, $(1,-1)$, and $T(-1)$ is of K3
+type. Its Hodge endomorphisms are again the $G$-endomorphisms, and the
+argument of (ii), applied to the three pairwise non-isomorphic summands
+$T_{i}$, gives $F$ acting by multiplication. On each $T_{i}$ the invariant
+symmetric forms are the multiples of $\operatorname{tr}(xy)$, and
+$\operatorname{tr}(x_{i}y_{i})=\sigma_{i}(\operatorname{trd}(xy))$ for
+$x,y\in D^{0}$, so the Galois-invariant ones are the $q_{\lambda}$. At
+$\sigma_{1}$ and $\sigma_{2}$ the algebra $D\otimes\RR$ is Hamilton's
+quaternions, $T_{i}$ is of type $(1,1)$, and
+$\operatorname{trd}(x^{2})=-2\operatorname{nrd}(x)$ is negative on nonzero
+pure quaternions. At $\sigma_{3}$ the form
+$\operatorname{tr}(xy)$ on $\mathfrak{sl}_{2}(\RR)$ is negative on the line of
+type $(1,1)$, the Lie algebra of the rotations fixed by the Hodge
+cocharacter, and positive on its orthogonal complement, the real points of
+the types $(2,0)$ and $(0,2)$. The Hodge--Riemann relations for a structure
+of K3 type ask for exactly these signs after multiplication by
+$\sigma_{i}(\lambda)$, so $q_{\lambda}$ polarises $T(-1)$ precisely when every
+$\sigma_{i}(\lambda)$ is positive.
+\end{proof}
+
+The two classes are thus the endomorphisms of $U$ given by the elements of
+$F$ of trace zero. A Hodge structure of K3 type with the same field sits
+beside them, and the next lemma connects the two.
+
+\begin{lemma}[The product map]\label{lem:mumfordmu}
+For $x,y\in T$ let $\mu(x\otimes y)\in H^{2}(X,\QQ)$ be the class that
+corresponds under $\psi$ to the alternating form
+$(v,w)\mapsto\psi(xv,yw)+\psi(yv,xw)$ on $V$. Then $\mu$ is a $G$-equivariant
+map $T\otimes T\to H^{2}(X,\QQ)$, and:
+\begin{enumerate}[label=\textup{(\roman*)},nosep,leftmargin=2.6em]
+\item for $i\ne j$ it restricts to an isomorphism $T_{i}\otimes T_{j}\to
+  U_{ij}$, and it carries $T_{i}\otimes T_{i}$ onto $\QQ\theta$;
+\item for $e,\lambda\in F^{\times}$ put $\mu_{e}=\mu\circ(m_{e}\otimes m_{e})$
+  and let $\mu_{e}^{\dagger}$ be its adjoint for the form
+  $q_{\lambda}\otimes q_{\lambda}$ on $T\otimes T$ and the Lefschetz pairing
+  $B(\alpha,\beta)=\int_{X}\alpha\beta\,\theta^{2}$ on $H^{2}(X,\QQ)$. Then
+  $\mu_{e}\mu_{e}^{\dagger}$ preserves $\QQ\theta$ and acts on $U$ as the
+  element
+  \[
+    \nu\,\Nm_{F/\QQ}(g)\,g^{-1}\in F,\qquad g=e^{2}/\lambda,
+  \]
+  where $\nu$ is a nonzero rational number independent of $e$ and $\lambda$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Equivariance is clear, since $\mu$ is built from $\psi$ and the action of
+$\End(V)$ on $V$. An element $x\in T_{i}$ acts on $V$ through the $i$-th factor
+and lies in the symplectic Lie algebra of $\psi=\epsilon_{1}\otimes
+\epsilon_{2}\otimes\epsilon_{3}$, so $\psi(xv,yw)=-\psi(v,xyw)$ and
+$\mu(x\otimes y)$ is the form $-\psi(v,(xy+yx)w)$. If $x\in T_{i}$ and
+$y\in T_{j}$ with $i\ne j$, then $xy=yx$ acts as $x\otimes y$ on
+$V_{i}\otimes V_{j}$, and the form is $-2$ times the product of
+$\epsilon_{i}(\cdot,x\,\cdot)$, $\epsilon_{j}(\cdot,y\,\cdot)$ and
+$\epsilon_{k}$; the first two are symmetric because $x$ and $y$ lie in
+$\mathfrak{sp}(\epsilon)=\mathfrak{sl}_{2}$, and $x\mapsto\epsilon(\cdot,x\,\cdot)$
+is an isomorphism $\mathfrak{sl}_{2}\to S^{2}V^{\vee}$, so $\mu$ maps
+$T_{i}\otimes T_{j}$ isomorphically onto $U_{ij}$. If $i=j$, then
+$xy+yx=\operatorname{tr}(xy)$ on $V_{i}$, because $x$ and $y$ are trace-free
+$2\times2$ matrices, and $\mu(x\otimes y)=-\operatorname{tr}(xy)\,\theta$.
+
+For (ii), $m_{e}$ is self-adjoint for $q_{\lambda}$, and the adjoint of a
+map out of $(T\otimes T,q_{\lambda}\otimes q_{\lambda})$ is
+$(m_{\lambda}\otimes m_{\lambda})^{-1}$ times its adjoint for
+$q_{1}\otimes q_{1}$, so
+$\mu_{e}\mu_{e}^{\dagger}=\mu\,(m_{g}\otimes m_{g})\,\mu^{\dagger_{1}}$ with
+$\mu^{\dagger_{1}}$ the adjoint for $q_{1}\otimes q_{1}$. This map is
+$G$-equivariant, so it preserves $\QQ\theta$ and each $U_{ij}$, and
+$\mu^{\dagger_{1}}$ carries $U_{ij}$ into
+$(T_{i}\otimes T_{j})\oplus(T_{j}\otimes T_{i})$, on which $m_{g}\otimes m_{g}$
+is multiplication by $\sigma_{i}(g)\sigma_{j}(g)=\Nm(g)/\sigma_{k}(g)$. Hence
+$\mu_{e}\mu_{e}^{\dagger}$ is $\Nm(g)\sigma_{k}(g)^{-1}$ times
+$\mu\mu^{\dagger_{1}}$ on $U_{ij}$. The summands of $H^{2}(X,\bar{\QQ})$ are
+pairwise non-isomorphic and self-dual, so $B$ is nondegenerate on $U_{ij}$,
+and by Schur's lemma the pull-back of $B$ along the isomorphism
+$\mu_{0}=\mu|_{T_{i}\otimes T_{j}}$ is $c_{k}\,q_{1}\otimes q_{1}$ with
+$c_{k}\ne0$; then $\mu_{0}\mu_{0}^{\dagger_{1}}=c_{k}$ on $U_{ij}$. As $\mu$
+is symmetric in its two arguments and the exchange of the factors is an
+isometry of $q_{1}\otimes q_{1}$, $\mu^{\dagger_{1}}u=\mu_{0}^{\dagger_{1}}u+
+s\,\mu_{0}^{\dagger_{1}}u$ with $s$ that exchange, and $\mu\mu^{\dagger_{1}}=2c_{k}$
+on $U_{ij}$. On the split model $V=\bar{\QQ}^{2}\otimes\bar{\QQ}^{2}\otimes
+\bar{\QQ}^{2}$, $\psi=\epsilon\otimes\epsilon\otimes\epsilon$, the
+permutations of the three factors preserve $\psi$, hence $\theta$, $B$ and
+$\mu$, and also $q_{1}=\sum_{i}\operatorname{tr}(x_{i}y_{i})$, while they
+permute the $U_{ij}$; so $c_{1}=c_{2}=c_{3}$, and $\mu\mu^{\dagger_{1}}$ is one
+and the same nonzero number $\nu$ on the three summands $U_{ij}$, rational
+because $\mu\mu^{\dagger_{1}}$ is defined over $\QQ$. By \Cref{prop:mumfordrm}(ii) an endomorphism of $U$ acting
+on $U_{ij}$ by $\nu\Nm(g)/\sigma_{k}(g)$ is the element $\nu\Nm(g)g^{-1}$ of
+$F$.
+\end{proof}
+
+\Cref{fig:mumford} draws \Cref{prop:mumfordrm} and \Cref{lem:mumfordmu} over
+the three factors of the Hodge group.
+
+By the Kuga--Satake class of a projective K3 surface $S$ we mean the Hodge
+class on $S\times\mathrm{KS}(S)\times\mathrm{KS}(S)$ that induces the embedding
+of \Cref{prop:ksembed} for $T(S)_{\QQ}$; its algebraicity is the Kuga--Satake
+Hodge conjecture for $S$ (\Cref{rem:kstransport}).
+
+\begin{theorem}[One K3 surface for the two classes]\label{thm:mumfordks}
+In \Cref{setup:mumford}, let $\lambda\in F$ be totally positive.
+\begin{enumerate}[label=\textup{(\roman*)},nosep,leftmargin=2.6em]
+\item There is a projective K3 surface $S_{\lambda}$ of Picard number
+  thirteen and an isomorphism of Hodge structures
+  $T(S_{\lambda})_{\QQ}\cong T(-1)$ carrying the intersection form to
+  $q_{\lambda}$. Its Kuga--Satake variety is isogenous to $X^{32}$.
+\item If the Kuga--Satake class of $S_{\lambda}$ is algebraic, then the real
+  multiplication by $F$ on $T(S_{\lambda})$ is induced by algebraic cycles on
+  $S_{\lambda}\times S_{\lambda}$, and every Hodge class in
+  $H^{4}(X\times X,\QQ)$ is algebraic; in particular the two classes of
+  \Cref{prop:mumfordproduct}(ii) are algebraic.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) The quadratic space $(T,q_{\lambda})$ has dimension nine and signature
+$(2,7)$ by \Cref{prop:mumfordrm}(iii), and $H^{2}$ of a K3 surface with its
+intersection form has dimension $22$ and signature $(3,19)$. Over $\QQ_{p}$
+a nondegenerate quadratic space embeds isometrically in every nondegenerate
+space of dimension at least three larger, and over $\RR$ the signatures
+allow it, so by the Hasse--Minkowski theorem for representations of forms by
+forms \cite[\S\S63, 66]{OMe00} there is an isometric embedding of
+$(T,q_{\lambda})$ into $\Lambda_{\QQ}$, where $\Lambda$ is the K3 lattice.
+The line $\ell=T(-1)^{2,0}\subset T_{\CC}\subset\Lambda_{\CC}$ satisfies
+$(\ell,\ell)=0$ and $(\sigma,\bar{\sigma})>0$ for $0\ne\sigma\in\ell$, so by the
+surjectivity of the period map there is a K3 surface $S_{\lambda}$ with a
+marking $H^{2}(S_{\lambda},\ZZ)\cong\Lambda$ that carries
+$H^{2,0}(S_{\lambda})$ to $\ell$ \cite[Chs.~6--7]{Huy16}. A rational class
+is of type $(1,1)$ exactly when it is orthogonal to $\ell$, and its component
+in $T$ is then a rational class of type $(1,1)$ in $T(-1)$, that is a
+$G$-invariant vector of $T=\operatorname{Lie}G$; there is none, since $G$ is
+semisimple. So $\NS(S_{\lambda})_{\QQ}=T^{\perp}$, of dimension $13$ and
+signature $(1,12)$, and $T(S_{\lambda})_{\QQ}=T$ with the form $q_{\lambda}$.
+A class of positive square in $\NS(S_{\lambda})$ makes $S_{\lambda}$
+projective \cite[Ch.~8]{Huy16}.
+
+For the Kuga--Satake variety, note first that over $\bar{\QQ}$ the space $T$
+is the orthogonal sum of the three ternary spaces $T_{i}$, so $C(T)$ is the
+graded tensor product of the $C(T_{i})$. Scaling a ternary form does not
+change its even Clifford algebra, so $D^{1}$ is the spin group of
+$(D^{0},\lambda\operatorname{trd})$ for every $\lambda$, and
+$\Res_{F/\QQ}D^{1}$ maps to $\mathrm{Spin}(T,q_{\lambda})$ by multiplication
+in the Clifford algebra, with the same kernel as its map to $\GL(V)$, so that
+$G$ is a subgroup of $\mathrm{Spin}(T,q_{\lambda})$; as a representation of
+the $i$-th factor, $C(T_{i})$ is four copies of $V_{i}$. Hence $C^{+}(T)$ is
+$V^{\oplus32}$ as a representation of $G$ over $\bar{\QQ}$, and over $\QQ$ as
+well, because $V$ is absolutely irreducible. The Hodge structures on
+$C^{+}(T)=H^{1}(\mathrm{KS}(S_{\lambda}),\QQ)$ and on
+$V^{\oplus32}=H^{1}(X^{32},\QQ)$ are both given by lifts of weight one of the
+same homomorphism $\mathbb{S}\to\MT(T)_{\RR}$ through $G\cdot\mathbb{G}_{m}$,
+and two such lifts coincide.\footnote{They differ by a homomorphism from the
+anisotropic torus $\mathbb{S}/\mathbb{G}_{m}$ to the centre of
+$G\cdot\mathbb{G}_{m}$, whose identity component is $\mathbb{G}_{m}$, and
+such a homomorphism is trivial.} So
+$H^{1}(\mathrm{KS}(S_{\lambda}),\QQ)\cong H^{1}(X^{32},\QQ)$ as Hodge
+structures, and $\mathrm{KS}(S_{\lambda})$ is isogenous to $X^{32}$. For the
+form used by Galluzzi this is her theorem \cite{Gal00}; van Geemen proves the
+corresponding splitting for every K3 surface with real multiplication
+\cite{vG08}.
+
+(ii) Write $S=S_{\lambda}$ and $A=\mathrm{KS}(S)$, and let $Z_{S}$ be an
+algebraic cycle on $S\times A\times A$ inducing the Kuga--Satake embedding
+$T(S)\to\End H^{1}(A)$. Composing $Z_{S}$ with the graph of an isogeny
+$A\to X^{32}$ and with the graphs of the inclusions and projections of the
+factors of $X^{32}$ gives algebraic cycles on $S\times X\times X$ inducing the
+$32^{2}$ block components of the embedding, which are morphisms of Hodge
+structures $T(S)\to\End(V)$, up to a Tate twist; both lie in the tensor
+category generated by $H^{1}(X)$, so the blocks are equivariant for
+$\MT(X)=G\cdot\mathbb{G}_{m}$. Over $\bar{\QQ}$,
+$\End(V)=S^{2}V\oplus\bigwedge^{2}V$, and $T_{i}\cong S^{2}V_{i}$ occurs once
+in $S^{2}V$, as $S^{2}V_{i}\otimes\bigwedge^{2}V_{j}\otimes\bigwedge^{2}V_{k}$,
+and not at all in $\bigwedge^{2}V$. So each block takes values in $T$, and
+through the identification of (i) it is a $G$-endomorphism of $T$, that is
+$m_{e_{ab}}$ for some $e_{ab}\in F$ by \Cref{prop:mumfordrm}(iii). Over
+$\bar{\QQ}$ the embedding is therefore $v\mapsto v\otimes N_{i}$ on $T_{i}$,
+acting on $H^{1}(A)=V\otimes\QQ^{32}$, with
+$N_{i}=(\sigma_{i}(e_{ab}))_{a,b}$. The embedding $\Psi$ of
+\Cref{prop:ksembed} satisfies the Clifford relation
+$\Psi(v)\Psi(w)+\Psi(w)\Psi(v)=2q_{\lambda}(v_{0},v_{0})\,q_{\lambda}(v,w)$,
+because
+$\Psi(v)\Psi(w)x=vwx\,v_{0}^{2}$. Take nonzero $v\in T_{i}$ and
+$w\in T_{j}$ with $i\ne j$. As endomorphisms of $V$ they commute and $vw\ne0$,
+so the left side is $vw\otimes(N_{i}N_{j}+N_{j}N_{i})$, while the right side
+is zero because $T_{i}$ and $T_{j}$ are orthogonal; hence $N_{i}$ and $N_{j}$
+anticommute. For $v\in T_{i}$ with $q_{\lambda}(v,v)\ne0$ the relation reads
+$v^{2}\otimes N_{i}^{2}=q_{\lambda}(v_{0},v_{0})\,q_{\lambda}(v,v)$, and $v^{2}$
+is a nonzero scalar on $V_{i}$, so $N_{i}^{2}$ is a nonzero scalar. Three pairwise
+anticommuting invertible matrices are linearly independent: multiplying a
+relation $\sum_{i}c_{i}N_{i}=0$ by $N_{j}$ on either side and adding gives
+$2c_{j}N_{j}^{2}=0$. If the $e_{ab}$ spanned a subspace of $F$ of dimension at
+most two, the three $N_{i}$ would lie in the span of at most two rational
+matrices, which is impossible; so the $e_{ab}$ span $F$, and two of them, $e$
+and $e'$, are not rational multiples of each other. Then $(e/e')^{2}$ is irrational, since a cubic field
+contains no irrational element with rational square, so $e^{2}/\lambda$ and
+$e'^{2}/\lambda$ are not both rational. Fix a block $\kappa=m_{e}$ with
+$e^{2}/\lambda\notin\QQ$, induced by a cycle $\Gamma$.
+
+Consider first the real multiplication. The trace form
+$(a,b)\mapsto\operatorname{tr}(ab)$ on $\End(V)$ is induced by an algebraic
+class: for correspondences $a,b$ on $X$
+the Lefschetz trace formula gives
+$\operatorname{tr}(a_{*}b_{*}\mid H^{1})=-\deg\bigl((a\circ b\circ\pi_{1})\cdot\Delta_{X}\bigr)$,
+where $\pi_{1}$ is the K\"unneth projector onto $H^{1}$, algebraic on an
+abelian variety \cite[\S2]{Kle68}. So the adjoint $\kappa^{\dagger}$ of
+$\kappa$, for this form and the intersection form on $S$, is induced by a
+cycle built from the transpose of $\Gamma$, $\pi_{1}$ and $\Delta_{X}$, and
+$\kappa^{\dagger}\kappa$ is an algebraic endomorphism of $T(S)$. An element
+$x$ of $T_{i}$ acts on the eight-dimensional space $V$ through a
+two-dimensional factor, with multiplicity four, so
+$\operatorname{tr}_{V}(xy)=4\Tr_{F/\QQ}\operatorname{trd}(xy)$, and
+\[
+  q_{\lambda}(\kappa^{\dagger}\kappa x,y)
+  =\operatorname{tr}_{V}(ex\cdot ey)
+  =4\Tr_{F/\QQ}\bigl(e^{2}\operatorname{trd}(xy)\bigr)
+  =q_{\lambda}\bigl(4e^{2}\lambda^{-1}x,y\bigr),
+\]
+that is $\kappa^{\dagger}\kappa=m_{4e^{2}/\lambda}$. By the choice of $e$ this
+element is irrational, so it generates the cubic field $F$ and every $m_{a}$
+is a polynomial in $\kappa^{\dagger}\kappa$. Composing with the projector of
+$H^{2}(S)$ onto $T(S)$, which is algebraic because it is the diagonal minus
+$[\mathrm{pt}\times S]$, $[S\times\mathrm{pt}]$ and $\sum_{r}d_{r}\times d_{r}^{\vee}$
+over dual bases of $\NS(S)_{\QQ}$, gives algebraic cycles on $S\times S$
+inducing the real multiplication.
+
+Consider next the classes on $X\times X$. The map
+$\mu_{\kappa}=\mu\circ(\kappa\otimes\kappa)$ from $T(S)\otimes T(S)$ to
+$H^{2}(X,\QQ)$ is induced by an algebraic cycle on $S\times S\times X$,
+obtained from $\Gamma\times\Gamma$, the divisor
+$m^{*}\theta-p_{1}^{*}\theta-p_{2}^{*}\theta$ on $X\times X$, whose class is
+$\psi$ in $H^{1}\otimes H^{1}$, and the diagonal of $X$ by pull-back,
+push-forward and intersection, because $\mu$ uses nothing but $\psi$ and the
+composition of endomorphisms of $V$. The form $q_{\lambda}\otimes q_{\lambda}$ is the intersection form of
+$S\times S$ on $T(S)\otimes T(S)$ and $B$ is the intersection form of $X$
+twisted by $\theta^{2}$, so the adjoint $\mu_{\kappa}^{\dagger}$ is induced by
+cup product with $\theta^{2}$ followed by the transposed cycle, and
+$E=\mu_{\kappa}\mu_{\kappa}^{\dagger}$ is an algebraic endomorphism of
+$H^{2}(X,\QQ)$. Since $\kappa=m_{e}$, \Cref{lem:mumfordmu}(ii) says that $E$
+preserves $\QQ\theta$ and acts on $U$ as $\nu\Nm(g)g^{-1}$ with
+$g=e^{2}/\lambda$, and this element of $F$ is not rational, since $g$ is
+not. The projection $\pi_{\theta}$ onto $\QQ\theta$ is algebraic, being
+given by the class $\theta\times\theta$ suitably normalised, so the algebraic
+Hodge endomorphisms of $H^{2}(X,\QQ)$ contain $1$, $\pi_{\theta}$ and
+$E(1-\pi_{\theta})$, which generate $\QQ\times F$, that is all of them by
+\Cref{prop:mumfordrm}(ii). By the same part every Hodge class in
+$H^{2}(X)\otimes H^{2}(X)$ is then algebraic. The Hodge classes of
+$H^{4}(X\times X,\QQ)$ in the other K\"unneth components number one in each
+of $H^{a}\otimes H^{4-a}$, $a\ne2$, by the count in the proof of
+\Cref{prop:mumfordproduct}, and are products of divisor classes.
+\end{proof}
+
+\begin{figure}[tbp]
+\centering
+  \includegraphics[width=\textwidth]{fig_mumford}
+\caption{\Cref{prop:mumfordrm} and \Cref{lem:mumfordmu}, drawn over the
+triangle of the three factors of the Hodge group; every height is a
+dimension. At the corners stand the summands $T_{i}=\mathfrak{sl}(V_{i})$ of
+$T=\operatorname{Lie}G$, banded by Hodge type after the Tate twist $T(-1)$: blue for
+$(1,1)$, clay for $(2,0)$ and amber for $(0,2)$, so that only $T_{3}$ carries
+the K3 type. On the edges stand the three summands $U_{ij}$ of the primitive
+part of $H^{2}(X)$, of dimension nine, $U_{12}$ of pure type $(1,1)$ and the
+other two in three bands of three; in the middle is the line of $\theta$. The
+solid arcs are the product map $\mu$, which carries $T_{i}\otimes T_{j}$ onto
+$U_{ij}$, and the dashed ones carry $T_{i}\otimes T_{i}$ to $\QQ\theta$. The
+violet arcs are the Galois group permuting the $U_{ij}$ as it permutes the
+embeddings of $F$, which is why the two exceptional classes may be taken to be
+the trace-zero part of a cubic field. Above, the K3 surface $S_{\lambda}$ of
+\Cref{thm:mumfordks}, whose Kuga--Satake class, if algebraic, comes down to
+$T$ as the map $\kappa=m_{e}$.}
+\label{fig:mumford}
+\end{figure}
+
+\begin{remark}[The Kuga--Satake class in the literature]
+\label{rem:mumfordks}
+\Cref{thm:mumfordks} takes the algebraicity of the Kuga--Satake class of
+$S_{\lambda}$ as its input. The cases of the Kuga--Satake Hodge conjecture
+proved in the literature are these. They include the projective K3 surfaces with
+a Shioda--Inose structure, which relates the surface to an abelian surface;
+by Morrison these are the surfaces of Picard number $19$ or $20$, those of
+Picard number $18$ with $T(S)\cong U\oplus T'$ and those of Picard number
+$17$ with $T(S)\cong U^{2}\oplus T'$
+\cite[Theorem~6.3 and Corollary~6.4]{Mor84}, and for these the proof uses in
+addition the Hodge conjecture for the powers of an abelian surface, whose
+Hodge classes are generated by divisor classes (see \cite{MZ99}), and the
+fact that the Kuga--Satake variety of an abelian surface is isogenous to a
+power of it \cite{Mor85}. With Buskin's theorem that rational Hodge
+isometries between K3 surfaces are algebraic \cite{Bus19}, this reaches the
+surfaces of Picard number at least $19$, those of Picard number $18$ with
+$T(S)_{\QQ}$ isotropic, and those of Picard number $17$ with $T(S)_{\QQ}$ of
+Witt index two (\Cref{rem:mumfordpowersopen}). It does not reach every
+surface of Picard number seventeen, as Morrison notes
+\cite[Remark~7.2]{Mor84}: for
+$T(S)=U\oplus\langle6\rangle\oplus\langle-2\rangle\oplus\langle-2\rangle$,
+the transcendental lattice of the very general K3 surface of a family of
+dimension three \cite[Corollary~2.10]{Mor84}, $T(S)_{\QQ}$ has Witt index one,
+since $\langle6,-2,-2\rangle$ is anisotropic over $\QQ_{3}$: a primitive
+solution of $3x^{2}=y^{2}+z^{2}$ in $\ZZ_{3}$ would have $3\mid y$ and
+$3\mid z$, as $-1$ is not a square modulo $3$, and then $3\mid x$. The double planes branched along six lines, of Picard
+number at least sixteen, are settled by Paranjape's cycle; see \cite{vG00}.
+Floccari proves the conjecture for the K3 surfaces attached to projective
+sixfolds of generalised Kummer type \cite{Flo24}, and then, for the K3
+surfaces attached to all projective varieties of generalised Kummer type and
+for every projective K3 surface $S$ with $T(S)_{\QQ}$ embedding isometrically
+in $(U^{3}\oplus\langle-m\rangle)_{\QQ}$ for some $m>0$, both the conjecture
+and the Hodge conjecture for all powers \cite[Theorems~1.2 and~5.11]{Flo25};
+their transcendental lattices embed, after scaling in the first case, in a
+rational quadratic space of rank seven and signature $(3,4)$, so their
+transcendental rank is at most six. Ingalls, Logan and Patashnick prove the
+conjecture, with the Hodge conjecture for the square, for a general K3
+surface in $\PP^{4}$ with fifteen ordinary double points and for the K3
+surfaces joined to it by chains of rational maps of finite degree
+\cite[Theorems~1.5, 4.8 and~6.4]{ILP22}. Bolognesi and Laterveer prove it for
+the triple covers of a quadric branched along a curve of genus four, which
+form two families of dimension nine; these carry a non-symplectic
+automorphism of order three, so their fields of Hodge endomorphisms are CM
+fields \cite{BL24}. The surfaces $S_{\lambda}$, by contrast, have
+transcendental rank nine and real multiplication by a cubic field, and none
+of these cases contains them: a Shioda--Inose structure needs
+$T(S)\cong T(A)$ for an abelian surface $A$, hence a transcendental rank of at
+most five; the surfaces of Floccari, of Paranjape and of Ingalls, Logan and
+Patashnick have transcendental rank at most six; and the field of Hodge
+endomorphisms of $S_{\lambda}$ is totally real, not CM.
+
+Schlickewei made the real multiplication algebraic on those double planes
+that have it, necessarily by a field of degree at most two, from Paranjape's
+cycle and van Geemen's description of their Kuga--Satake varieties
+\cite{Sch10,vG08}, and Varesco showed that when the Kuga--Satake Hodge
+conjecture holds for two hyperk\"ahler varieties, every Hodge similarity
+between their transcendental lattices is algebraic up to the Lefschetz
+isomorphism \cite{Var23}, which reaches a quadratic field through its square
+root. More generally, if the Hodge endomorphisms of $T(S)$ form a totally
+real field $E$, then $E$ acts by self-adjoint maps \cite{Zar83}, so $g\in E$
+is a similarity, with multiplier $\mu$, exactly when $g^{2}=\mu\in\QQ$; the
+Hodge similarities of $T(S)$ to itself, and with them all composites of Hodge
+similarities between transcendental lattices of K3 surfaces that start and
+end at $T(S)$, therefore span exactly the maximal multiquadratic subfield
+$E_{\mathrm{mq}}$ of $E$, the compositum of its quadratic subfields. For a
+cubic field $E_{\mathrm{mq}}=\QQ$: a cubic field contains no irrational
+element with rational square, so no irrational element of it acts as a
+similarity. In the proof of \Cref{thm:mumfordks} the element
+$\kappa^{\dagger}\kappa=m_{4e^{2}/\lambda}$ plays the role that the
+similarities play for quadratic fields, and the Clifford relations are what
+make it irrational. Buskin's theorem \cite{Bus19} does not give the real
+multiplication either. A Hodge isometry of $T(S_{\lambda})$ is a Hodge
+endomorphism, hence some $m_{a}$ by \Cref{prop:mumfordrm}(iii), and it is an
+isometry only when $a^{2}=1$. For $b\in F^{\times}$ Buskin's theorem does give
+algebraic cycles between $S_{\lambda}$ and $S_{\lambda b^{-2}}$ that realise
+$m_{b}$, but every composite of them that returns to $S_{\lambda}$ is again a
+Hodge isometry of $T(S_{\lambda})$, so it multiplies by an element of square
+one.
+
+The surfaces $S_{\lambda}$ include those of Zhu, who computes the integral
+structure that the fourfold induces on $T$ and studies the K3 surfaces of
+Picard number thirteen that carry it \cite{Zhu18}; the form of that structure
+is the corestriction of the reduced norm of $D^{0}$, which up to sign is
+$\frac12q_{1}$. \Cref{thm:mumfordks} applies to them as it stands, because the
+irrationality of $e^{2}/\lambda$ comes from the anticommuting blocks and not
+from $\lambda$. The explicit families closest to these are those of van
+Geemen and Sch\"utt, with
+real multiplication by the cyclic cubic fields $\QQ(\zeta_{7}+\zeta_{7}^{-1})$
+and $\QQ(\zeta_{9}+\zeta_{9}^{-1})$ and Picard numbers four and ten, on which
+the real multiplication is induced by explicit algebraic cycles
+\cite[Theorem~1.2 and Section~4.8]{vGS25}; their Picard numbers are not
+thirteen, and the Kuga--Satake class, which \Cref{thm:mumfordks} needs and
+algebraic real multiplication does not supply, is not treated there.
+
+By \Cref{thm:mumfordks}, then, the first case of (F2) is implied by one
+instance of the Kuga--Satake Hodge conjecture, for one K3 surface of Picard
+number thirteen; by \Cref{prop:mumfordkslink} below that instance is
+equivalent to the first case of (F2) at $X$ together with a link, and it is
+not a reduction of it. The preprint \cite{OAI26c} announces that instance
+for every K3 surface; its consequences are drawn in \Cref{sec:preprints}
+(\Cref{cor:mumfordall}).
+\end{remark}
+
+\Cref{thm:mumfordks} trades the two exceptional classes for one Kuga--Satake
+class. The next results make this exchange precise. If the
+exceptional classes are algebraic, so is every Hodge class on every power of
+$X$ (\Cref{thm:mumfordpowers}); if the Kuga--Satake class is algebraic, so is
+every Hodge class on every product $S_{\lambda}^{a}\times X^{b}$
+(\Cref{cor:mumfordksproducts}). The Kuga--Satake class is algebraic exactly
+when the exceptional classes are and, in addition, some algebraic cycle links
+$S_{\lambda}$ to a power of $X$ (\Cref{prop:mumfordkslink}), and no such link
+can pass through an abelian variety of dimension at most five
+(\Cref{prop:mumfordcarrier}). The theorem and the corollary are
+implications, and \Cref{rem:mumfordpowersopen} collects the forms they give
+to the first case of (F2).
+
+\begin{proposition}[Where $T$ occurs]\label{prop:mumfordwhere}
+In \Cref{setup:mumford}, write $\Hom_{\mathrm{Hdg}}$ for morphisms of rational
+Hodge structures.
+\begin{enumerate}[label=\textup{(\roman*)},nosep,leftmargin=2.6em]
+\item $T$ is isomorphic to no subquotient of $H^{k}(X,\QQ)(j)$, for any $k$
+  and $j$.
+\item The $F$-vector space
+  $\Hom_{\mathrm{Hdg}}\bigl(T,H^{2}(X\times X,\QQ)(1)\bigr)$ is
+  one-dimensional, and the copy of $T$ in $H^{2}(X\times X,\QQ)(1)$ lies in
+  $H^{1}(X)\otimes H^{1}(X)$. For $n$ odd and for $n\in\{0,16\}$ the Hodge
+  structure $T$ is isomorphic to no subquotient of any
+  $H^{n}(X\times X,\QQ)(j)$.
+\item $\Hom_{\mathrm{Hdg}}(T,\End V)$ is a one-dimensional $F$-vector space,
+  spanned by the inclusion. For $\lambda\in F$ totally positive, after an
+  isogeny $\mathrm{KS}(S_{\lambda})\to X^{32}$ the Kuga--Satake embedding of
+  $T(S_{\lambda})$ is a $32\times32$ matrix of maps $m_{e_{ab}}$ with
+  $e_{ab}\in F$, and $\mathrm{KS}(S_{\lambda})$ is isogenous to $B^{4}$, where
+  $B$ is isogenous to $X^{8}$ and $\End^{0}(B)=M_{8}(\QQ)$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+After the twists all the Hodge structures involved have weight zero and lie in
+the tensor category generated by $V$, whose Mumford--Tate group is
+$G\cdot\mathbb{G}_{m}$ with $\mathbb{G}_{m}$ acting trivially in weight zero;
+so their morphisms and subquotients are those of representations of $G$.
+Over $\bar{\QQ}$, $T=T_{1}\oplus T_{2}\oplus T_{3}$ with $T_{i}\cong S^{2}V_{i}$,
+and the Galois group permutes the three summands transitively. Hence $T$ is
+irreducible, a representation of $G$ defined over $\QQ$ contains
+$T_{1}$, $T_{2}$ and $T_{3}$ with one and the same multiplicity $m$, and its
+space of $G$-maps from $T$, of $\QQ$-dimension $3m$, is a vector space over
+$\End_{G}(T)=F$ (\Cref{prop:mumfordrm}(iii)) of dimension $m$.
+
+For (i), write $V=V_{1}\otimes W$ with $W=V_{2}\otimes V_{3}$, on which
+$\SL(V_{2})\times\SL(V_{3})$ acts through $\SO(W,q)$, $q$ the product of the
+two symplectic forms. By the skew Cauchy formula
+$\bigwedge^{k}V=\bigoplus_{\lambda}S_{\lambda}V_{1}\otimes S_{\lambda'}W$,
+over the partitions $\lambda$ of $k$ with at most two rows and at most four
+columns, and $S_{\lambda}V_{1}\cong S^{\lambda_{1}-\lambda_{2}}V_{1}$ as a
+representation of $\SL(V_{1})$. So $T_{1}$ occurs in $\bigwedge^{k}V$ only
+through $\lambda=(2,0)$, $(3,1)$ or $(4,2)$, and only if $S_{\lambda'}W$ has a
+nonzero invariant under $\SL(V_{2})\times\SL(V_{3})$. As representations of
+$\SL(W)$, $S_{(1,1)}W=\bigwedge^{2}W$, $S_{(2,2,1,1)}W\cong\bigwedge^{2}W$, and
+$S_{(2,1,1)}W\cong\mathfrak{sl}(W)$, the kernel of the contraction
+$\bigwedge^{3}W\otimes W\to\bigwedge^{4}W$ with $\bigwedge^{3}W\cong W^{*}$.
+Restricted to $\SO(W,q)$, $\bigwedge^{2}W=\mathfrak{so}(W)=
+\mathfrak{sl}(V_{2})\oplus\mathfrak{sl}(V_{3})$ and
+$\mathfrak{sl}(W)=\mathfrak{so}(W)\oplus S^{2}V_{2}\otimes S^{2}V_{3}$, the
+second summand being the trace-free part of $S^{2}W$; none of these has a
+nonzero invariant. So $T_{1}$ occurs in no $\bigwedge^{k}V$, and by the same
+argument with the factors exchanged neither do $T_{2}$ and $T_{3}$. As $G$ is
+reductive, the subquotients of $\bigwedge^{k}V$ are its summands; that is (i).
+
+For (ii),
+$H^{n}(X\times X)=\bigoplus_{a+b=n}\bigwedge^{a}V\otimes\bigwedge^{b}V$. The
+element of $G$ that is $-1$ on the first factor $\SL(V_{1})$ and $1$ on the
+other two acts on $V$ by $-1$, hence on $H^{n}(X\times X)$ by $(-1)^{n}$, and
+trivially on $T$; and $H^{0}$, $H^{16}$ are trivial representations. In
+$H^{2}(X\times X)=\bigwedge^{2}V\oplus(V\otimes V)\oplus\bigwedge^{2}V$ the
+summands $\bigwedge^{2}V$ contain no $T_{i}$ by (i), and
+$V\otimes V=S^{2}V\oplus\bigwedge^{2}V$ with
+\[
+  S^{2}(V_{1}\otimes V_{2}\otimes V_{3})
+  =S^{2}V_{1}\otimes S^{2}V_{2}\otimes S^{2}V_{3}
+  \oplus\bigoplus_{i=1}^{3}S^{2}V_{i}\otimes
+  \textstyle\bigwedge^{2}V_{j}\otimes\bigwedge^{2}V_{k},
+\]
+$\{i,j,k\}=\{1,2,3\}$, where $\bigwedge^{2}V_{j}$ is trivial. So each $T_{i}$
+occurs exactly once in $H^{2}(X\times X)$, inside $V\otimes V$, and $m=1$.
+For (iii), $\End V=S^{2}V\oplus
+\bigwedge^{2}V$ contains each $T_{i}$ once, and the proof of
+\Cref{thm:mumfordks}(ii) shows that the blocks of the Kuga--Satake embedding
+are maps $m_{e_{ab}}$. Finally $\mathrm{KS}(S_{\lambda})$ is isogenous to
+$X^{32}=(X^{8})^{4}$ by \Cref{thm:mumfordks}(i), and
+$\End^{0}(X^{8})=M_{8}(\End^{0}X)=M_{8}(\QQ)$. This is the splitting
+$\mathrm{KS}\sim B^{2^{d-1}}$, $d=[F:\QQ]$, which van Geemen proves for K3
+surfaces with real multiplication \cite{vG08}; there $H^{1}(B,\QQ)$ is the
+corestriction to $\QQ$ of the even Clifford algebra of $T$ over $F$, here
+$D$, and over $\bar{\QQ}$ one has $\operatorname{Cor}_{F/\QQ}(D)=
+\bigotimes_{k}D\otimes_{F,\sigma_{k}}\bar{\QQ}=\bigotimes_{k}\End(V_{k})=
+\End(V)$, which is $V^{\oplus8}$ under left multiplication by $G$.
+\end{proof}
+
+\begin{theorem}[Every power of a Mumford fourfold]\label{thm:mumfordpowers}
+In \Cref{setup:mumford}, suppose that the two exceptional classes of
+\Cref{prop:mumfordproduct}(ii) are algebraic on $X\times X$. Then every Hodge
+class on $X^{n}$ is algebraic, for every $n\ge1$.
+\end{theorem}
+
+\begin{proof}
+Over $\bar{\QQ}$ keep $V=V_{1}\otimes V_{2}\otimes V_{3}$ and
+$\psi=\epsilon_{1}\otimes\epsilon_{2}\otimes\epsilon_{3}$, as in the proof of
+\Cref{lem:mumfordmu}. For $m\ge1$ regard $V^{\otimes m}=H^{1}(X)^{\otimes m}$
+as the K\"unneth component of $H^{m}(X^{m},\QQ)$ of multidegree
+$(1,\dots,1)$, whose projector is algebraic \cite[\S2]{Kle68}. Call an
+endomorphism of $V^{\otimes m}$ algebraic if it is the action on
+$V^{\otimes m}$ of an algebraic cycle on $X^{m}\times X^{m}$ that preserves
+$V^{\otimes m}$. Composing with the K\"unneth projector, the algebraic
+endomorphisms form a $\QQ$-algebra, and they carry algebraic classes in
+$V^{\otimes m}$ to algebraic classes.
+
+\emph{Step 1: reduction to multilinear invariants.} Let $n\ge1$ and $p\ge0$.
+The map $V^{\otimes2p}\otimes(\QQ^{n})^{\otimes2p}\to
+\bigwedge^{2p}(V\otimes\QQ^{n})=H^{2p}(X^{n},\QQ)$ sending
+$(v_{1}\otimes\dots\otimes v_{2p})\otimes(a_{1}\otimes\dots\otimes a_{2p})$ to
+$(v_{1}\otimes a_{1})\wedge\dots\wedge(v_{2p}\otimes a_{2p})$ is surjective
+and $G$-equivariant for the trivial action on $\QQ^{n}$, so it is surjective
+on $G$-invariants, $G$ being reductive. For $a_{1},\dots,a_{2p}\in\ZZ^{n}$
+the image of $t\otimes(a_{1}\otimes\dots\otimes a_{2p})$ is $f^{*}t$, where
+$f\colon X^{n}\to X^{2p}$ is the homomorphism with rows $a_{1},\dots,a_{2p}$,
+and such tensors span $(\QQ^{n})^{\otimes2p}$. So $\Hdg^{p}(X^{n})$ is
+spanned by the classes $f^{*}t$ with $f$ a homomorphism and
+$t\in(V^{\otimes2p})^{G}$, and it suffices to show that every element of
+$(V^{\otimes2p})^{G}$ is algebraic.
+
+\emph{Step 2: degree four.} The space $(V^{\otimes4})^{G}$ has dimension
+eight, the product of the dimensions of the three spaces of
+$\SL_{2}$-invariants in $V_{k}^{\otimes4}$. Let $\cP_{0}\subset
+(V^{\otimes4})^{G}$ be the span of the multilinear components of the classes
+$f^{*}\xi$, for $\xi\in\Hdg^{2}(X\times X)$ and $f\colon X^{4}\to X^{2}$ a
+homomorphism, and of the products of two divisor classes of $X^{4}$. By
+\Cref{prop:mumfordproduct}(ii) $\Hdg^{2}(X\times X)$ is spanned by the six
+products of divisor classes and the two exceptional classes, so under the
+hypothesis every element of $\cP_{0}$ is algebraic. For
+$t\in V^{\otimes4}$, read as a correspondence from the first two factors of
+$X^{4}$ to the last two, let $\hat{t}$ be the endomorphism
+$v\mapsto t_{*}\bigl((\theta^{3}\times\theta^{3})\cup v\bigr)$ of
+$V\otimes V$. The pairing $(v,w)\mapsto\int_{X}v\cup w\cup\theta^{3}$ on $V$
+is nondegenerate by hard Lefschetz and $G$-invariant, so $t\mapsto\hat{t}$
+is an isomorphism $(V^{\otimes4})^{G}\to\End_{G}(V\otimes V)$, and $\hat{t}$
+is algebraic when $t$ is. We show that the $\hat{t}$ and the composites
+$\hat{u}\hat{t}$, for $t,u\in\cP_{0}$, span $\End_{G}(V\otimes V)$. Over
+$\bar{\QQ}$, $\End_{G}(V\otimes V)=\bigotimes_{k}\End_{\SL_{2}}(V_{k}\otimes
+V_{k})$ is the algebra of functions on the eight sign patterns
+$\varepsilon\in\{\pm1\}^{3}$, where $\varepsilon_{k}$ is the eigenvalue of the
+exchange $s_{k}$ of the two copies of $V_{k}$; the patterns with
+$\varepsilon_{1}\varepsilon_{2}\varepsilon_{3}=-1$, the odd ones, make up
+$\bigwedge^{2}V$.
+
+(a) Let $f=(x_{1}+x_{2},x_{3}+x_{4})\colon X^{4}\to X^{2}$. The multilinear
+component of $f^{*}\xi$ depends only on the K\"unneth component of $\xi$ in
+$H^{2}(X)\otimes H^{2}(X)$, and it is that component read as a tensor
+$t\in\bigwedge^{2}V\otimes\bigwedge^{2}V$, so $\hat{t}$ vanishes on $S^{2}V$
+and takes values in $\bigwedge^{2}V$. These components fill
+$(H^{2}\otimes H^{2})^{G}=\End_{G}(H^{2})$, of dimension $4$ by
+\Cref{prop:mumfordrm}(ii); so the $\hat{t}$ span the functions supported on
+the four odd patterns.
+
+(b) The map $g=(x_{1}+x_{3},x_{2}+x_{4})$ is $f$ composed with the exchange
+of the factors $2$ and $3$ of $X^{4}$, which permutes the factors of
+$V^{\otimes4}$ up to sign. On $V_{k}^{\otimes4}$ the $\SL_{2}$-invariants are
+spanned by $\epsilon_{13}\epsilon_{24}$, $\epsilon_{14}\epsilon_{23}$ and
+$\epsilon_{12}\epsilon_{34}=\epsilon_{13}\epsilon_{24}-\epsilon_{14}
+\epsilon_{23}$, where $\epsilon_{ab}$ is $\epsilon_{k}$ on the factors $a$ and
+$b$; up to a common sign their hats are $1$, $s_{k}$ and $1-s_{k}$. The
+exchange of the factors $2$ and $3$ swaps the first and the third and changes
+the sign of the second, so on functions of $\varepsilon_{k}$ it carries
+$\frac12(1-s_{k})$ to $\frac12$ and $\frac12(1+s_{k})$ to $\frac12-s_{k}$.
+Applied to the indicator of the odd pattern $(1,1,-1)$ it gives
+$\frac12(\frac12-s_{1})(\frac12-s_{2})$. The identity is $\hat{t}$ for the
+multilinear component of a product of two divisor classes, the pull-backs of
+the class $\psi$ on $X\times X$ along the projections of $X^{4}$ to the
+factors $(1,3)$ and $(2,4)$, so $h=(1-2s_{1})(1-2s_{2})-1$ lies in the span of the
+$\hat{t}$, $t\in\cP_{0}\otimes\bar{\QQ}$. As $(\varepsilon_{1},\varepsilon_{2})$
+runs through $(1,1)$, $(1,-1)$, $(-1,1)$, $(-1,-1)$, $h$ takes the values
+$0,-4,-4,8$, so $h(h+4)/96$ is the indicator of
+$\varepsilon_{1}=\varepsilon_{2}=-1$; subtracting the indicator of
+$(-1,-1,-1)$, from (a), leaves that of $(-1,-1,1)$. The same argument with the
+factors $V_{k}$ permuted gives the other two even patterns with two minus
+signs, and the indicator of $(1,1,1)$ is $1$ minus the other seven.
+
+So the $\hat{t}$ and $\hat{u}\hat{t}$ span $\End_{G}(V\otimes V)\otimes
+\bar{\QQ}$. Since composition is bilinear and $\cP_{0}\otimes
+\bar{\QQ}$ is spanned by the same pull-backs and products of a basis of
+Hodge classes, the $\QQ$-algebra of algebraic $G$-endomorphisms of
+$V\otimes V$ has dimension $8$: every $G$-endomorphism of $V\otimes V$ is
+algebraic.
+
+\emph{Step 3: the partial swaps.} Over $\bar{\QQ}$,
+$\End_{G}(V\otimes V)=\bigotimes_{k}\End_{\SL_{2}}(V_{k}\otimes V_{k})$, and
+$\End_{\SL_{2}}(V_{k}\otimes V_{k})$ is spanned by $1$ and the exchange $s_{k}$
+of the two copies of $V_{k}$. In a basis of $V_{k}$ the matrix units
+$E_{ab}$ and $E_{ba}$ are dual for the trace form of $\mathfrak{gl}(V_{k})$,
+and $\sum_{a,b}E_{ab}\otimes E_{ba}=s_{k}$; removing the centre, spanned by the
+identity $1$ with $\operatorname{tr}(1\cdot1)=2$, gives
+$s_{k}=\mathrm{Cas}_{k}+\frac12$, with $\mathrm{Cas}_{k}=\sum_{c}x_{c}\otimes
+x^{c}$ for dual bases $(x_{c})$, $(x^{c})$ of $\mathfrak{sl}(V_{k})$ under the
+trace form. So the $s_{k}$ come from the three summands $T_{k}$ of $T$. The Galois group permutes the $s_{k}$ as it
+permutes the embeddings $\sigma_{k}$, so for $a\in F$ the endomorphism
+$r_{a}=\sum_{k}\sigma_{k}(a)s_{k}$ is rational, hence algebraic by Step 2. For
+$m\ge2$ and $1\le i<m$ let $r_{a}^{(i)}$ and $s_{k}^{(i)}$ act as $r_{a}$ and
+$s_{k}$ on the factors $i$ and $i+1$ of $V^{\otimes m}$ and as the identity on
+the others; $r_{a}^{(i)}$ is algebraic, being induced by the product of a cycle
+inducing $r_{a}$ with the diagonals of the other factors. By Schur--Weyl
+duality $\End_{\SL_{2}}(V_{k}^{\otimes m})$ is the image of
+$\bar{\QQ}[S_{m}]$, generated by the adjacent transpositions, and the
+commutant of $\SL_{2}^{3}$ in $\bigotimes_{k}V_{k}^{\otimes m}$ is the tensor
+product of the three commutants; so $\End_{G}(V^{\otimes m})\otimes\bar{\QQ}$
+is generated by the $s_{k}^{(i)}$. For a basis $a_{1},a_{2},a_{3}$ of $F$ the
+matrix $(\sigma_{k}(a_{j}))$ is invertible, the square of its determinant being
+the discriminant of $F$, so each $s_{k}^{(i)}$ is a $\bar{\QQ}$-linear
+combination of the $r_{a_{j}}^{(i)}$. The $\QQ$-algebra generated by the
+$r_{a}^{(i)}$ therefore lies in $\End_{G}(V^{\otimes m})$ and spans it over
+$\bar{\QQ}$, so it is $\End_{G}(V^{\otimes m})$: every $G$-endomorphism of
+$V^{\otimes m}$ is algebraic. Its dimension is the cube of
+$\dim\End_{\SL_{2}}(V_{k}^{\otimes m})$, the sum of the squares of the
+multiplicities in $V_{k}^{\otimes m}$: $8=2^{3}$ for $m=2$ and $125=5^{3}$ for
+$m=3$, where $V_{k}^{\otimes3}=S^{3}V_{k}\oplus V_{k}^{\oplus2}$.
+
+\emph{Step 4: all multilinear invariants.} By the first fundamental theorem
+for $\SL_{2}$ the invariants in $V_{k}^{\otimes2m}$ are spanned by the images
+of $\epsilon_{k}^{\otimes m}$ under the permutations of the $2m$ factors. So
+$(V^{\otimes2m})^{G}\otimes\bar{\QQ}$ is spanned by the images of
+$\psi^{\otimes m}=\bigotimes_{k}\epsilon_{k}^{\otimes m}$ under the operators
+that permute the factors of the three $V_{k}^{\otimes2m}$ separately, which
+lie in $\End_{G}(V^{\otimes2m})\otimes\bar{\QQ}$, and the map
+$\End_{G}(V^{\otimes2m})\to(V^{\otimes2m})^{G}$, $e\mapsto e(\psi^{\otimes m})$,
+is surjective. The class $\psi$ in $V\otimes V$ is that of the divisor
+$m^{*}\theta-p_{1}^{*}\theta-p_{2}^{*}\theta$ on $X\times X$ (proof of
+\Cref{thm:mumfordks}(ii)), up to a nonzero factor, and $\psi^{\otimes m}$ is,
+up to sign, the product of its pull-backs along the projections of $X^{2m}$
+to the pairs of factors $(2j-1,2j)$; so it is algebraic, and by Step 3 so is
+every element of $(V^{\otimes2m})^{G}$. Step 1 concludes.
+\end{proof}
+
+\begin{remark}[Why a composite is needed]\label{rem:mumforddet}
+Step 2 cannot be carried out with pull-backs and products alone. The skew
+Cauchy decomposition $\bigwedge^{4}(V\otimes\QQ^{4})=\bigoplus_{\lambda}
+S_{\lambda}V\otimes S_{\lambda'}\QQ^{4}$, over the partitions $\lambda$ of $4$
+with conjugates $\lambda'$, is functorial in $\QQ^{4}$, and its summand
+$S^{4}V\otimes\bigwedge^{4}\QQ^{4}$ contains exactly one line of Hodge classes
+of $X^{4}$: $S_{4}$ acts on the two-dimensional space of $\SL_{2}$-invariants
+in $V_{k}^{\otimes4}$ through its two-dimensional irreducible representation
+$\sigma$, and the trivial representation occurs once in $\sigma^{\otimes3}$.
+That line is spanned by a class $\mathrm{Det}\in(V^{\otimes4})^{G}$ on which
+the permutations of the factors of $X^{4}$ act by the sign, and whose
+restriction to the diagonal, on the split model
+$V=\bar{\QQ}^{2}\otimes\bar{\QQ}^{2}\otimes\bar{\QQ}^{2}$, is an invariant
+quartic form of $\SL_{2}^{3}$, hence a nonzero multiple of Cayley's
+hyperdeterminant. Pull-backs along homomorphisms
+$X^{4}\to X^{2}$ have no component in that summand, because
+$\bigwedge^{4}\QQ^{2}=0$, and products of divisor classes have none, because
+they are invariant under $\Sp(V,\psi)$ and $S^{4}V$ has no
+$\Sp(V,\psi)$-invariant. In the notation of Step 2 the hats of the elements
+of $\cP_{0}$ therefore satisfy one linear condition, which is
+$v_{(1,-1,-1)}+v_{(-1,1,-1)}+v_{(-1,-1,1)}=3v_{(1,1,1)}$ for the values $v$ on
+the even patterns, since the functions found in (a) and (b), those supported
+on the odd patterns, the constant, $h$ and its two images under the
+permutations of the factors $V_{k}$, satisfy it and
+span a space of dimension $7$. So $\cP_{0}$ has dimension $7$ and is the space
+of Hodge classes of $X^{4}$ in the multilinear parts of the other summands,
+and $\mathrm{Det}$ is reached only through a composite of correspondences,
+which involves a push-forward. The composite $h^{2}$ of Step 2 is one: the
+indicator of $(-1,-1,1)$ violates the condition. This is where
+\Cref{thm:mumfordpowers} differs from \Cref{prop:powers}, in which the first
+fundamental theorem for $\SL(W)$ lets pull-backs and products suffice. We have
+not found \Cref{thm:mumfordpowers} in the literature; it is an implication
+between two cases of the Hodge conjecture.
+\end{remark}
+
+At the CM points of a Mumford family the conclusion holds without any
+hypothesis.
+
+\begin{proposition}[Powers at a CM point]\label{prop:mumfordcmpowers}
+Let $W\to C$ be a family as in \Cref{cor:mumfordlefschetz} and $c\in C$ a CM
+point. Then the Hodge conjecture holds for $X_{c}^{n}$ for every $n\ge1$.
+\end{proposition}
+
+\begin{proof}
+The proof of \Cref{thm:mumfordcm} shows that for every $n\ge1$ the ring
+$\Hdg^{*}(X_{c}^{n})$ is generated by pull-backs of Hodge classes of the
+fourfold $X_{c}$ along homomorphisms $X_{c}^{n}\to X_{c}$, and these are
+algebraic \cite{Mar25a}.
+\end{proof}
+
+The statement is also contained in the theorem of \cite{Li26} on the
+powers of CM fourfolds.
+
+\begin{corollary}[Powers and fibre powers of a Mumford family]
+\label{cor:mumfordpowersequiv}
+Let $W\to C$ be as in \Cref{cor:mumfordlefschetz} and, for $n\ge1$, let
+$W^{(n)}=W\times_{C}\dots\times_{C}W$, with $n$ factors. The conditions of
+\Cref{cor:mumfordequiv} are equivalent to each of the following.
+\begin{enumerate}[label=\textup{(\alph*)},start=5,leftmargin=2.6em,itemsep=2pt]
+\item The Hodge conjecture holds for $X_{t}^{n}$ for every $t\in C$ and
+  every $n\ge1$.
+\item $B(W^{(n)})$ holds for $L_{W^{(n)}}$ for every $n\ge1$.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+(b) implies (e): by \Cref{cor:mumfordequiv}, (b) gives (c), so the
+exceptional classes of $X_{t}\times X_{t}$ are algebraic for every $t$. At a
+point $t$ that is not a CM point the Hodge group of $X_{t}$ is $G$, as shown
+in the proof of \Cref{cor:mumfordequiv}, and \Cref{thm:mumfordpowers}
+applies; at a CM point \Cref{prop:mumfordcmpowers} does. (e) implies (f):
+$W^{(n)}$ is an abelian scheme over $C$ with projective total space, and, as
+in the proof of \Cref{cor:lefschetzsmall}, its monodromy invariant classes are
+Hodge classes on every fibre; by (e) they are algebraic on every fibre, hence
+restrictions of algebraic classes on $W^{(n)}$ by \Cref{lem:spreading}, and
+\Cref{thm:lefschetzfamily} gives $B(W^{(n)})$. (f) implies (a): take $n=2$.
+\end{proof}
+
+\begin{corollary}[Products with the K3 surface]\label{cor:mumfordksproducts}
+In \Cref{setup:mumford}, let $\lambda\in F$ be totally positive and
+$S=S_{\lambda}$ as in \Cref{thm:mumfordks}. If the Kuga--Satake class of $S$
+is algebraic, then the Hodge conjecture holds for $S^{a}\times X^{b}$ for all
+$a,b\ge0$.
+\end{corollary}
+
+\begin{proof}
+By \Cref{thm:mumfordks}(ii) the exceptional classes are algebraic, so by
+\Cref{thm:mumfordpowers} the Hodge conjecture holds for every power of $X$.
+In the proof of \Cref{thm:mumfordks}(ii) a block $\kappa=m_{e}$, $e\ne0$, of
+the Kuga--Satake embedding is induced by a cycle on $S\times X\times X$; it
+is a map from $T(S)$ to $\End V$, which up to a twist is a K\"unneth
+component of $H^{*}(X\times X,\QQ)$. Its adjoint $\kappa^{\dagger}$ is
+algebraic, $\kappa^{\dagger}\kappa=m_{4e^{2}/\lambda}$, and every $m_{a}$,
+$a\in F$, is induced by a cycle on $S\times S$. So
+$L=m_{\lambda/(4e^{2})}\kappa^{\dagger}$ is algebraic and $L\kappa$ is the
+identity of $T(S)$. The decomposition
+$H^{*}(S,\QQ)=\QQ\oplus\NS(S)_{\QQ}\oplus T(S)\oplus H^{4}(S,\QQ)$ has
+algebraic projectors, as in that proof, so $H^{*}(S^{a}\times X^{b},\QQ)$ is
+the sum of the summands $N\otimes T(S)^{\otimes r}\otimes H^{*}(X^{b},\QQ)$,
+$N$ a tensor product of $a-r$ of the three other pieces, each cut out by an
+algebraic projector. Each such $N$ is spanned by products of algebraic classes
+and is of Tate type, so a Hodge class in the summand is a sum of products
+$p^{*}\eta\cup q^{*}\xi$ with $\eta$ algebraic on $S^{a-r}$ and $\xi$ a Hodge
+class in $T(S)^{\otimes r}\otimes H^{*}(X^{b},\QQ)\subset H^{*}(S^{r}\times
+X^{b},\QQ)$. For such $\xi$ the class $(\kappa^{\otimes r}\otimes1)\xi$ is a
+Hodge class on $X^{2r+b}$, hence algebraic, and
+$\xi=(L^{\otimes r}\otimes1)(\kappa^{\otimes r}\otimes1)\xi$ is algebraic.
+\end{proof}
+
+\Cref{cor:mumfordksproducts} strengthens \Cref{thm:mumfordks}(ii), which gives
+$X\times X$ only. Varesco proves an implication of the same kind, from the
+algebraicity of the Kuga--Satake correspondence to the Hodge conjecture for
+all powers, for families of K3 surfaces of generic Picard number sixteen
+\cite{Var22}. The converse question, what the Kuga--Satake class asks for
+beyond the target, has a precise answer.
+
+\begin{proposition}[What the Kuga--Satake route asks]\label{prop:mumfordkslink}
+In the situation of \Cref{cor:mumfordksproducts}, the Kuga--Satake class of
+$S$ is algebraic if and only if
+\begin{enumerate}[label=\textup{(\roman*)},nosep,leftmargin=2.6em]
+\item the two exceptional classes of $X\times X$ are algebraic, and
+\item \textup{(}a link\textup{)} for some $n\ge1$ there is an algebraic cycle
+  $Z$ on $S\times X^{n}$ whose action $Z_{*}$ is nonzero on $T(S)$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+If the Kuga--Satake class is algebraic, (i) is \Cref{thm:mumfordks}(ii), and a
+nonzero block of the embedding, induced by a cycle on $S\times X\times X$, is
+a link with $n=2$. Conversely assume (i) and (ii). By
+\Cref{thm:mumfordpowers} the Hodge conjecture holds for every power of $X$.
+Since $T(S)\cong T(-1)$ is irreducible (proof of \Cref{prop:mumfordwhere}),
+$Z_{*}$ maps $T(S)$ isomorphically onto a sub-Hodge structure of some
+$H^{2k}(X^{n},\QQ)(k-1)$, which is a direct summand, polarisable Hodge
+structures being semisimple. Projecting onto it and composing with an
+isomorphism onto the copy of $T(-1)$ in $H^{2}(X\times X,\QQ)$
+(\Cref{prop:mumfordwhere}(ii)) gives a morphism of Hodge structures
+$H^{2k}(X^{n},\QQ)(k-1)\to H^{2}(X\times X,\QQ)$, that is a Hodge class on
+$X^{n+2}$, which is algebraic. Its composite with $Z_{*}$ is an algebraic
+nonzero morphism $T(S)\to T(-1)\subset H^{2}(X\times X,\QQ)$, which is some
+$m_{e}$, $e\ne0$, by \Cref{prop:mumfordrm}(iii). The endomorphisms of
+$H^{2}(X\times X,\QQ)$ that act by $m_{a}$ on this copy of $T(-1)$ and by zero
+on a Hodge complement are Hodge classes on $X^{4}$, hence algebraic, so every
+$m_{a}\colon T(S)\to H^{1}(X)\otimes H^{1}(X)$, $a\in F$, is algebraic, and so is
+its composite with cup product with $\theta^{3}$ on one factor, which carries
+$H^{1}(X)\otimes H^{1}(X)$ onto the K\"unneth component of $H^{8}(X\times X,\QQ)$
+that represents $\End V$. By \Cref{prop:mumfordwhere}(iii), after an isogeny
+$\mathrm{KS}(S)\to X^{32}$ the Kuga--Satake embedding is a matrix of such
+maps, and the Kuga--Satake class is recovered from its blocks through the
+graphs of the isogeny and of the inclusions and projections of the factors of
+$X^{32}$; so it is algebraic.
+\end{proof}
+
+So the Kuga--Satake route is at least as strong as the first case of (F2) and
+is not a reduction of it: at the point $X$ it asks for (i), which is the first
+case of (F2) there, and in addition for a link. The Hodge conjecture
+implies both (i) and (ii). The route helps only if the
+Kuga--Satake class of $S_{\lambda}$ can be made algebraic by arguments proper
+to K3 surfaces. A link has to be a correspondence of a new kind: $T$ occurs
+in no $H^{k}(X)$ (\Cref{prop:mumfordwhere}(i)), and the next proposition
+shows that it occurs in the cohomology of no abelian variety of dimension
+below six.
+
+\begin{proposition}[No small abelian carrier of $T$]\label{prop:mumfordcarrier}
+In \Cref{setup:mumford}, let $Y$ be an abelian variety such that $T(-1)$ is
+isomorphic to a subquotient of $H^{k}(Y,\QQ)(j)$ for some $k$ and $j$. Then
+$\dim Y\ge6$. Consequently, if $\dim Y\le5$ and $S=S_{\lambda}$ is as in
+\Cref{thm:mumfordks}, every Hodge class on $S\times Y$, algebraic or not, acts
+by zero on $T(S)$, and no link as in \Cref{prop:mumfordkslink}(ii) is a
+composite $Z_{2}\circ Z_{1}$ of algebraic cycles on $S\times Y$ and on
+$Y\times X^{n}$.
+\end{proposition}
+
+\begin{proof}
+Write $W=T(-1)$. As $W$ is a subquotient of a tensor construction on
+$H^{1}(Y)$, $\MT(Y)$ maps onto $\MT(W)$, whose derived group is the adjoint
+group $G^{\mathrm{ad}}$ of $G$, acting on $W$ through the adjoint
+representation. So the derived group of $\Hg(Y)$, an almost direct product of
+$\QQ$-simple groups, maps onto $G^{\mathrm{ad}}$. The image of each factor is
+a normal subgroup of the $\QQ$-simple group $G^{\mathrm{ad}}$, the images
+commute, and $G^{\mathrm{ad}}$ is not commutative, so exactly one factor $M$
+maps onto $G^{\mathrm{ad}}$, with finite kernel. Over $\bar{\QQ}$, $M$ is
+isogenous to $\SL_{2}^{3}$, with factors indexed by the embeddings
+$\sigma_{1},\sigma_{2},\sigma_{3}$ and permuted transitively by the Galois
+group, and the irreducible constituents of $H^{1}(Y,\bar{\QQ})$ under $M$ are
+products $R_{1}\otimes R_{2}\otimes R_{3}$ of irreducible representations of
+the three factors.
+
+Let $\mu_{Y}$ be the Hodge cocharacter of $Y$, with the two weights $0$ and
+$1$ on $H^{1}(Y)$, and write $\mu_{Y}=\mu'\mu''$ with fractional cocharacters
+$\mu'$ of $M$ and $\mu''$ commuting with $M$. The image of $\mu''$ in
+$\MT(W)$ commutes with $G^{\mathrm{ad}}$, so it is central, and the image of
+$\mu'$ in $G^{\mathrm{ad}}$ is the component there of the Hodge cocharacter of
+$W$, which by \Cref{prop:mumfordrm}(iii) is trivial on the factors at
+$\sigma_{1}$ and $\sigma_{2}$ and has weights $-1,0,1$ on $T_{3}$. So $\mu'$
+is trivial on the first two factors of $M$ and has weights $\pm\frac12$ on
+the standard representation of the third. On
+$R_{1}\otimes R_{2}\otimes R_{3}$, tensored with an eigenvector of $\mu''$
+in its multiplicity space, the weights of $\mu_{Y}$ therefore fill an
+interval of length $\dim R_{3}-1$, so
+$\dim R_{3}\le2$. The constituents form a Galois-stable multiset and the
+Galois group carries the third factor to each of the others, so every
+constituent is $V_{I}=\bigotimes_{i\in I}V_{i}$ for a subset
+$I\subseteq\{1,2,3\}$, with a multiplicity $m_{I}$ that depends only on $|I|$,
+and $m_{I}\ne0$ for some nonempty $I$, since $M$ acts nontrivially.
+
+If $m_{I}\ne0$ for some $I$ with $|I|=2$, then $\dim H^{1}(Y)\ge3\cdot4=12$.
+If $m_{\{1\}}\ne0$, let $U=V_{1}\otimes N$, $\dim N=m_{\{1\}}$, be the
+$V_{1}$-isotypic summand of $H^{1}(Y,\CC)$. The embedding $\sigma_{1}$ is
+real, so complex conjugation preserves the first factor of $M$ and $U$ is
+defined over $\RR$. The connected group $\MT(Y)$ acts on $M$ preserving each
+factor, and $\SL_{2}$ has a single irreducible representation of dimension
+two, so $U$ is stable under $\MT(Y)(\RR)$ and is a real sub-Hodge structure
+of $H^{1}(Y,\RR)$, and $U^{1,0}$ and $U^{0,1}$ are complex conjugate and
+both nonzero. Since $\mu'$ acts trivially on $U$, $\mu_{Y}$ acts on
+$V_{1}\otimes N$ through $N$, so $N$ carries both weights, $m_{\{1\}}\ge2$, and
+$\dim H^{1}(Y)\ge3\cdot2\cdot2=12$. Otherwise $H^{1}(Y,\bar{\QQ})$ is
+$V^{\oplus m}$, $m\ge1$, plus a trivial representation of $M$. If $m=1$,
+every $H^{k}(Y)$ is, as a representation of $M$, a sum of copies of the
+$\bigwedge^{a}V$, none of which contains an $S^{2}V_{i}$
+(\Cref{prop:mumfordwhere}(i)), while $W$ contains all three; so $m\ge2$ and
+$\dim H^{1}(Y)\ge16$. In every case $\dim Y=\frac12\dim H^{1}(Y)\ge6$.
+
+For the rest, a Hodge class on $S\times Y$ acting nontrivially on the
+irreducible $T(S)\cong W$ carries it isomorphically onto a sub-Hodge structure
+of some $H^{k}(Y,\QQ)(j)$, and if $Z_{2}\circ Z_{1}$ acts nontrivially on
+$T(S)$, so does $Z_{1}$.
+\end{proof}
+
+Among the powers of $X$ the smallest carrier of $T$ is $X\times X$, of
+dimension eight, where $T(-1)$ sits in $H^{2}$
+(\Cref{prop:mumfordwhere}(ii)). Whatever is known about abelian varieties of
+dimension at most five, in particular Markman's theorem in dimension four
+\cite{Mar25a}, no link passes through one.
+
+\begin{remark}[The bound six as a statement about Hodge structures]
+\label{rem:mumfordunitary}
+The bound of \Cref{prop:mumfordcarrier} is, as far as we know, the best that
+Hodge theory gives. Let $K\subset D$ be a CM quadratic extension of $F$,
+$\chi_{i}$ the character of the $i$-th factor of the torus
+$\Res_{F/\QQ}K^{1}$ over $\bar{\QQ}$, and
+$H=\bigoplus_{i}(V_{i}\chi_{i}\oplus V_{i}\chi_{i}^{-1})$, of dimension twelve,
+with types $(1,0)$ on $V_{i}\chi_{i}$ and $(0,1)$ on $V_{i}\chi_{i}^{-1}$ for
+$i=1,2$, and with the Hodge cocharacter of $V_{3}$ on the two summands with
+$i=3$: the signature $(2,0)$, $(2,0)$, $(1,1)$. The characters
+$\chi_{i}^{\pm1}\chi_{j}^{\pm1}$ with $i\ne j$ and $\chi_{i}^{\pm2}$ are
+nontrivial, so the part of $\bigwedge^{2}H$ on which the torus acts trivially
+is $\bigoplus_{i}V_{i}\chi_{i}\otimes V_{i}\chi_{i}^{-1}=\bigoplus_{i}
+(S^{2}V_{i}\oplus\bigwedge^{2}V_{i})$, that is, $T_{1}\oplus T_{2}\oplus T_{3}$
+plus three trivial summands. For $i=1,2$ the summand $T_{i}$ is of type
+$(1,1)$, and $S^{2}V_{3}$ has one dimension in each of the types $(2,0)$,
+$(1,1)$, $(0,2)$, so this copy of $T$ has Hodge numbers $(1,7,1)$, those of
+$T(S_{\lambda})$. We recall
+without proof that these are the Hodge structures on $H^{1}(Z,\QQ)\cong D$ of
+the abelian sixfolds $Z$ with multiplication by $K$ over the Shimura curves of
+PEL type attached to $K$ and $D$, which go back to Shimura, and that at a
+suitable member the copy of $T$ is isomorphic to $T(S_{\lambda})$, the Hodge
+structure on it depending only on the image of the Hodge cocharacter in
+$G^{\mathrm{ad}}$. Nothing in the paper uses this, and it would not give a
+link: that would still need an algebraic cycle on $S_{\lambda}\times Z$ acting
+nontrivially on $T(S_{\lambda})$.
+\end{remark}
+
+\begin{remark}[The K3 surfaces at the CM points]\label{rem:mumfordkscm}
+Apply the construction of \Cref{thm:mumfordks}(i) at a CM point $c$ of a
+family as in \Cref{cor:mumfordlefschetz}, with the Hodge structure that
+$X_{c}$ induces on $T$, and call the surface $S_{c}$. By the proof of
+\Cref{thm:mumfordcm} the Hodge group of $X_{c}$ is $\Res_{F/\QQ}L^{1}$ for a
+quadratic extension $L$ of $F$ contained in $D$; $L$ is a CM field, since the
+torus is compact at $\sigma_{1}$ and $\sigma_{2}$, where $D$ is definite, and
+at $\sigma_{3}$, where it contains the nontrivial image of the circle of the
+Hodge structure. The torus acts on $T=D^{0}$ by conjugation, with invariants
+$D^{0}\cap L$, the three-dimensional space $L^{0}$ of elements of $L$ of
+reduced trace zero. So $\NS(S_{c})_{\QQ}=T^{\perp}\oplus L^{0}$ has rank
+sixteen. Write $D=L\oplus Lj$ with $jx=\bar{x}j$ for $x\in L$. Then $Lj$ is
+the $q_{\lambda}$-orthogonal complement of $L^{0}$ in $D^{0}$, because
+$\operatorname{trd}(yj)=0$ for $y\in L$, so $T(S_{c})_{\QQ}=Lj$ has rank six;
+$t\in L^{1}$ acts on it by multiplication by $t^{2}$, so left multiplication
+by $L$ consists of Hodge endomorphisms and $T(S_{c})$ has complex
+multiplication by the sextic CM field $L$. At the CM points the Kuga--Satake
+question therefore lies among K3 surfaces of Picard number sixteen, among
+which the known cases recalled in \Cref{rem:mumfordks} are particular
+families. Membership of some $S_{c}$ in one of them would not help: at $c$ the exceptional classes are already algebraic
+(\Cref{thm:mumfordcm}), and what is missing is the propagation along $C$.
+\end{remark}
+
+The last reduction replaces the eightfold $X\times X$ by a fourfold.
+
+\begin{proposition}[A surface in $X$]\label{prop:mumfordsurface}
+In \Cref{setup:mumford}, let $i\colon\Sigma\to X$ be a smooth surface that is
+the intersection of two ample divisors, and $L$ the cup product with
+$\theta$. Then $i_{*}i^{*}=cL^{2}$ on $H^{2}(X,\QQ)$ for a rational number
+$c>0$. For $a\in F$ let $\rho_{a}$ be the Hodge endomorphism of
+$H^{2}(X,\QQ)$ that is zero on $\QQ\theta$ and acts on $U$ as $a$
+(\Cref{prop:mumfordrm}(ii)), and put
+$\rho'_{a}=c^{-1}i^{*}\rho_{a}L^{-2}i_{*}$, a Hodge endomorphism of
+$H^{2}(\Sigma,\QQ)$, where $L^{-2}$ inverts $L^{2}\colon H^{2}(X)\to
+H^{6}(X)$. Then $\rho_{a}$ is induced by an algebraic cycle on $X\times X$ if
+and only if $\rho'_{a}$ is induced by an algebraic cycle on $\Sigma\times
+\Sigma$. So the two exceptional classes of $X\times X$ are algebraic if and
+only if the Hodge classes in $H^{2}(\Sigma)\otimes H^{2}(\Sigma)\subset
+H^{4}(\Sigma\times\Sigma,\QQ)$ that correspond to the $\rho'_{a}$, $a\in F$,
+are algebraic on the fourfold $\Sigma\times\Sigma$.
+\end{proposition}
+
+\begin{proof}
+By \Cref{prop:mumfordproduct}(i) the two divisors have classes $d_{1}\theta$
+and $d_{2}\theta$ with $d_{1},d_{2}>0$, so $i_{*}i^{*}\alpha=\alpha\cup
+[\Sigma]=d_{1}d_{2}\theta^{2}\alpha$ and $c=d_{1}d_{2}$. By hard Lefschetz
+$L^{2}\colon H^{2}(X)\to H^{6}(X)$ is an isomorphism, so $i^{*}$ is injective
+on $H^{2}(X)$, and $L^{-2}$ is induced by an algebraic cycle, $X$ being an
+abelian variety \cite[\S2]{Kle68}. For $\alpha\in H^{2}(X)$,
+$\rho'_{a}(i^{*}\alpha)=c^{-1}i^{*}\rho_{a}L^{-2}(cL^{2}\alpha)=
+i^{*}\rho_{a}\alpha$. If $\beta\in H^{2}(\Sigma)$ is orthogonal to
+$i^{*}H^{2}(X)$, then $\int_{X}i_{*}\beta\cup\gamma=\int_{\Sigma}\beta\cup
+i^{*}\gamma=0$ for every $\gamma\in H^{2}(X)$, so $i_{*}\beta=0$ and
+$\rho'_{a}\beta=0$. Hence $\rho'_{a}$ is $i^{*}\rho_{a}(i^{*})^{-1}$ on
+$i^{*}H^{2}(X)$ and zero on its orthogonal complement, and
+$\rho_{a}=c^{-1}L^{-2}i_{*}\rho'_{a}i^{*}$. Both formulas are composites of
+correspondences with the graph of $i$, its transpose and $L^{-2}$, so
+$\rho_{a}$ is algebraic if and only if $\rho'_{a}$ is. The exceptional classes
+are algebraic if and only if every $\rho_{a}$ is, by
+\Cref{prop:mumfordrm}(ii), since $1$ and the projection onto $\QQ\theta$ are
+algebraic. The last statement uses Poincar\'e duality on $\Sigma$ and the
+algebraicity of the K\"unneth projectors of a surface \cite{Mur90}.
+\end{proof}
+
+This is the usual reduction to a complete intersection surface, and it does
+not make the problem easier. By adjunction $K_{\Sigma}$ is the restriction of
+the sum of the two ample divisors, so $\Sigma$ is a surface of general type,
+and the $\rho'_{a}$ are Hodge classes of degree four on the self-product of
+a surface of general type.
+
+\begin{remark}[The forms of the first case of (F2)]\label{rem:mumfordpowersopen}
+\Cref{thm:mumfordpowers}, \Cref{cor:mumfordksproducts} and one direction of
+\Cref{prop:mumfordkslink} are implications between cases of the Hodge
+conjecture; \Cref{prop:mumfordcmpowers} follows from Markman's theorem and
+is also contained in \cite{Li26}; the rest of the results from
+\Cref{prop:mumfordwhere} to \Cref{prop:mumfordsurface} are statements about
+Hodge structures and correspondences. Together they give the first case of
+(F2) many equivalent forms. By \Cref{cor:mumfordequiv}, \Cref{cor:mumfordpowersequiv} and
+\Cref{prop:mumfordsurface} it is equivalent to each of the following: the
+algebraicity of the exceptional classes of $X_{t}\times X_{t}$ for uncountably
+many $t\in C$; the Hodge conjecture for every power of every fibre $X_{t}$;
+$B(W\times_{C}W)$; $B$ for every fibre power of $W$; the Hodge conjecture for
+$W\times_{C}W$, for the curves of \Cref{cor:mumfordequiv}(d); and, for
+uncountably many $t$, the algebraicity of the classes $\rho'_{a}$ on
+$\Sigma_{t}\times\Sigma_{t}$ for one complete intersection surface
+$\Sigma_{t}\subset X_{t}$. For a family defined over a number field it is
+also equivalent to the algebraicity, at one point $t\in C(\CC)\setminus
+C(\bar{\QQ})$, of one cycle on one power of $X_{t}$ whose class is not fixed
+by the cyclic permutation of the three tensor factors of $V$
+(\Cref{prop:mumfordmotivic}). It is implied by the Kuga--Satake Hodge
+conjecture for the surfaces $S_{\lambda}$ attached to uncountably many fibres
+(\Cref{cor:mumfordone}(ii)), which by \Cref{prop:mumfordkslink} is equivalent
+to it together with a link; the cases of the Kuga--Satake Hodge conjecture
+recalled in \Cref{rem:mumfordks} are of other shapes, and none has
+transcendental rank nine with real multiplication by a cubic field.
+
+Two limits govern the constructions at hand.
+First, the Kuga--Satake class has a nonzero component in $T(S)\otimes
+H^{*}(A)$, $A$ a power of $X$, whereas a product $p^{*}\alpha\cup q^{*}\beta$
+of pull-backs of algebraic classes of $S$ and of $A$ has none, the algebraic
+classes of $S$ lying in $H^{0}\oplus\NS(S)_{\QQ}\oplus H^{4}$; so no product
+of pull-backs gives it, whatever is known on $A$, and a new correspondence
+between $S$ and an abelian variety is needed. Second, $\Sp(V,\psi)$ acts on
+$H^{*}(X^{m},\QQ)=\bigwedge^{*}(V\otimes\QQ^{m})$ through $V$, compatibly with
+products, with pull-back and push-forward along homomorphisms and with
+integration, hence with the composition of correspondences. The divisor
+classes of $X^{m}$, the Hodge classes of $X$ and the Weil classes of every
+abelian variety isogenous to a power of $X$ are invariant under it: for a CM
+field $E\subset M_{m}(\QQ)=\End^{0}(X^{m})$, each component over $\CC$ of
+the top exterior power over $E$ of $V\otimes\QQ^{m}$ is the top exterior power
+of $V\otimes U$ for a complex vector space $U$ on which $V$ plays no part,
+that is $(\det V)^{\otimes\dim U}\otimes(\det U)^{\otimes8}$, and $\SL(V)$ acts
+trivially on it. So every class obtained from these by the operations
+above is $\Sp(V,\psi)$-invariant, while the exceptional classes are not, the
+$\Sp(V,\psi)$-invariants of $H^{4}(X\times X,\QQ)$ being the six products of
+divisor classes (proof of \Cref{prop:mumfordproduct}).
+\Cref{prop:mumfordformal} extends this to every abelian variety, with the
+Hodge classes of the abelian varieties without isogeny factor $X$ and the
+Hodge classes of the powers of $X$ fixed by the cyclic permutation of the
+three tensor factors among the generators, and with a subgroup $G\cdot A_{3}$
+of $\Sp(V,\psi)$ in place of $\Sp(V,\psi)$. What escapes it are classes on
+products $X^{m}\times Z$ that are not invariant under $G\cdot A_{3}$ acting
+through $V$, for instance, with $T(-1)$ in $H^{2}(Z)$ as in
+\Cref{rem:mumfordunitary}, the Hodge classes of $X\times X\times Z$ that pair
+the two copies of $T(-1)$.
+
+The statement needed can be taken in either of two forms. One is \textup{(V)} along $C$ for the exceptional classes, from a
+CM point, where they are algebraic (\Cref{thm:mumfordcm}), and
+\Cref{ssec:mumfordrigid} studies it. The other
+is \textup{(V)} for the Kuga--Satake class along the seven-dimensional family
+of K3 surfaces whose N\'eron--Severi group contains $\NS(S_{\lambda})$, on
+which it stays a Hodge class, from a member at which it is algebraic; it
+implies the Kuga--Satake Hodge conjecture for $S_{\lambda}$ and with it
+everything above.
+
+The Kuga--Satake class is algebraic at some members of this family. Call the
+family $\cK$, keep the embedding $T\subset\Lambda_{\QQ}$ of the proof of
+\Cref{thm:mumfordks}(i), and
+for $S\in\cK$ let $\kappa_{S}$ be the Kuga--Satake class of $T$ with the Hodge
+structure that $S$ induces on it, a Hodge class on $S\times A_{S}\times A_{S}$
+with $H^{1}(A_{S},\QQ)=C^{+}(T)$; at $S_{\lambda}$ it is the class of
+\Cref{thm:mumfordks}. If $P=T(S)_{\QQ}$ is smaller than $T$, then
+$N=P^{\perp}\cap T$ lies in $\NS(S)_{\QQ}$. The complex structure on
+$C^{+}(T)$ is left multiplication by an element of $C^{+}(P\otimes\RR)$, which
+commutes with right multiplications; so
+$C^{+}(T)=C^{+}(P)\otimes C^{+}(N)\oplus C^{-}(P)\otimes C^{-}(N)$ is, as a
+Hodge structure, a sum of copies of $C^{+}(P)$, right multiplication by an
+anisotropic vector of $P$ carrying $C^{-}(P)$ onto $C^{+}(P)$, and the map
+$\Psi$ of \Cref{prop:ksembed}, with $v_{0}\in P$, carries $N$ to Hodge
+endomorphisms of $A_{S}$, left multiplication by $N$ commuting with that of
+$C^{+}(P\otimes\RR)$. So $\kappa_{S}$ is algebraic if and only if the
+Kuga--Satake class of $P$ is. By the argument recalled in
+\Cref{rem:mumfordks}, $\kappa_{S}$ is therefore algebraic at the members of
+Picard number at least $19$, which are dense in $\cK$, at those of Picard
+number $18$ with $T(S)_{\QQ}$ isotropic and at those of Picard number $17$
+with $T(S)_{\QQ}$ of Witt index two. In the last two cases
+$T(S)_{\QQ}\cong L_{\QQ}$ for an even lattice
+$L=U\oplus\langle2a\rangle\oplus\langle-2b\rangle$ or
+$U^{2}\oplus\langle-2b\rangle$, which embeds primitively in
+$U^{3}\subset\Lambda$. The surjectivity of the period map gives a K3 surface
+$S'$ with $T(S')=L$, which has a Shioda--Inose structure
+\cite[Corollary~6.4]{Mor84}, and a Hodge isometry
+$T(S)_{\QQ}\cong T(S')_{\QQ}$; by Witt's theorem it extends to a rational
+Hodge isometry $H^{2}(S,\QQ)\cong H^{2}(S',\QQ)$, which is algebraic by
+\cite{Bus19}. The case of Picard number $17$
+fills subfamilies of dimension three. The space $T$ has Witt index two: its
+signature $(2,7)$ allows no totally isotropic subspace of dimension three, and
+an anisotropic kernel of dimension at least seven would be indefinite, hence
+isotropic by the Hasse--Minkowski theorem \cite{OMe00}. So $T=H\oplus H\oplus
+K$ with $H$ a hyperbolic plane and $K$ negative definite, and each of the
+countably many rational subspaces $W\subset T$ of signature $(2,3)$ and Witt
+index two, for instance $H\oplus H\oplus\QQ k$ with $k\in K$, defines a
+subfamily $\cK_{W}=\{S:T(S)_{\QQ}\subseteq W\}$ of dimension three. At a very general point of a component of $\cK_{W}$
+one has $T(S)_{\QQ}=W$, so $\kappa$ is algebraic there. After a finite cover
+with level structure the component carries a family of K3 surfaces and of
+Kuga--Satake abelian varieties, on which $\kappa$ is a flat section of Hodge
+classes, and, as in the proof of \Cref{lem:spreading}, the points at which it
+is algebraic form a countable union of images of components of relative
+Hilbert schemes, closed by properness; by the Baire category theorem one of
+them is the whole component, so $\kappa$ is algebraic at every point of
+$\cK_{W}$. The Mumford curve meets none of these loci: its surfaces have
+Picard number thirteen, and sixteen at the CM points
+(\Cref{thm:mumfordks}(i), \Cref{rem:mumfordkscm}). What is missing is
+\textup{(V)} for $\kappa$ along $\cK$ from them, or a bound on the Hilbert data
+of cycles representing $\kappa$ over a Zariski dense union of the $\cK_{W}$,
+which would give $\kappa$ on the whole of $\cK$ by the same argument; neither
+is known unconditionally. With the theorem of \cite{OAI26c} as hypothesis,
+$\kappa$ is algebraic on the whole of $\cK$, and with that of
+\cite{OAI26f} as well, \Cref{thm:kspowers} gives the Hodge conjecture on
+every power of the Kuga--Satake variety of every K3 surface.
+\end{remark}

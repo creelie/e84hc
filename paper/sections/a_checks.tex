@@ -1,0 +1,78 @@
+\section{Machine checks}\label{app:checks}
+
+No proof in this paper depends on a computer. The finite steps have been
+repeated by machine, in several independent implementations, and the files
+are in the author's repository \url{https://github.com/creelie/e84hc} under
+\texttt{verification/}. One script, \texttt{shell/run\_all.sh}, runs them
+all and compares their outputs.
+
+\subsection*{Exact computations in three languages}
+The program \texttt{closure\_checks} exists in Python, Julia and C, all in
+exact integer or rational arithmetic, and the three versions print the same
+$196$ lines; the shell script compares them line by line and against a
+stored copy. The lines fall into six groups.
+\begin{itemize}[leftmargin=2.3em]
+\item[F] Fermat varieties $X^{n}_{m}$ for $n=2$, $m\le12$ and for $n=4$,
+$m\le8$: the characters of \Cref{prop:fermatchars}, the primitive Betti
+number against $((m-1)^{n+2}+(-1)^{n}(m-1))/m$, the middle Hodge number, the
+Hodge characters and those of pair type; for surfaces,
+$h^{1,1}=(2m^{3}-6m^{2}+7m)/3$, the Picard number $\rho$, and Aoki and
+Shioda's formula $\rho=3(m-1)(m-2)+1$ for $(m,6)=1$ \cite{AS83}. The values
+$\rho=20,37,86$ for $m=4,5,6$ appear among them.
+\item[J] Fermat curves of degree $m\le30$: every orbit of characters under
+$(\ZZ/m)^{\times}$ has an odd type function, as in the proof of
+\Cref{lem:fermatcurve}.
+\item[S] The switch lemma (\Cref{lem:switch}) for all pairs of lists with
+$p\le4$ rows and $s\le3$ columns: the column correction reaches the target
+by two-row switches, each preserving the column sums, in at most
+$s\lfloor p/2\rfloor$ steps.
+\item[G] The signs $(-1)^{p(p-1)/2}$ of the permutations that regroup a
+product of $2p$ classes of degree one between interleaved and blocked
+order, for $p\le10$.
+\item[W] The dimensions $3n$ and $n^{2}$ of the Prym locus and the Weil
+family, and the count of \Cref{rem:count}: the pairs $(m,k)$ with
+$3(m+k)+3k\ge(m+k)^{2}$, which are $k\le2$ for $m=2$, $k=0$ for $m=3$, and
+none for $4\le m<60$, $k<200$.
+\item[L] The rules of \Cref{tab:rules}: the closed sets of
+\Cref{lem:closedsets}; the valuation in which \st{CM} holds and \HC{}
+fails; the five minimal sets of \Cref{thm:B}, found by enumerating all sets
+of statements; and the fact that \st{L} and \st{M} form the only minimal
+set avoiding \st{F2}, \st{F3$'$}, \st{IP}, \st{CM} and \st{SR}.
+\end{itemize}
+
+\subsection*{Lean}
+The file \texttt{lean/Closure.lean} is checked by the kernel of Lean~4 with
+the core library only, without \texttt{sorry} and without
+\texttt{native\_decide}; every theorem in it depends only on the standard
+axioms. It states the rules of \Cref{tab:rules} as an inductive derivability
+relation and proves: that the four sets of \Cref{lem:closedsets} and the set
+$\{\st{CM},\st{Fer}\}$ are closed; \Cref{thm:B} itself, for an arbitrary set
+of statements; \Cref{cor:bypass}(i); and the derivations of \HC{} from each of
+the five minimal sets. It also proves, for all sizes at once, the counting
+identity behind the switch lemma, the equivalence $3n<n^{2}\iff n\ge4$, and
+the inequality of \Cref{rem:count} for every $m\ge4$ and $k\ge0$; and it
+computes the Picard numbers $20$, $37$ and $86$ of the Fermat quartic,
+quintic and sextic surfaces from the characters, by evaluation in the
+kernel.
+
+\subsection*{Macaulay2}
+Two scripts use Macaulay2. The first computes the primitive Hodge numbers of
+the Fermat surfaces and fourfolds from the Jacobian ring,
+$h^{n-q,q}_{\mathrm{prim}}=\dim R_{(q+1)m-(n+2)}$ with
+$R=\QQ[x_{0},\dots,x_{n+1}]/(x_{0}^{m-1},\dots,x_{n+1}^{m-1})$
+\cite{Gri69}, and checks that they agree with the character counts of
+item~F. The second takes random smooth plane curves of degree $4\le d\le8$
+modulo the prime $32003$ and checks Max Noether's theorem in the form used in
+\Cref{ssec:whereitstops}: the multiplication map
+$\operatorname{Sym}^{2}H^{0}(K)\to H^{0}(2K)$ has rank $3g-3$, so
+$\dim I_{2}=(g-2)(g-3)/2$. A smooth curve of full rank modulo $p$ is smooth
+and of full rank over $\QQ$, so these are checks over $\QQ$.
+
+\subsection*{References}
+The script \texttt{references/check\_references.py} looks up every entry of
+the bibliography online, through its DOI where it has one and through
+Crossref, DataCite, arXiv or the publisher's page otherwise, and compares
+title, year, volume and pages; its report is stored next to it.
+
+None of these checks touches the geometry the paper relies on, and none of
+them bears on \Cref{q:schoen}.

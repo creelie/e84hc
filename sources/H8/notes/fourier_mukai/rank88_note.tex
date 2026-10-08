@@ -1,0 +1,780 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{setup}[theorem]{Setup}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\Av}{\widehat{A}}
+\newcommand{\ch}{\operatorname{ch}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\NS}{\operatorname{NS}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\Nm}{\operatorname{Nm}}
+\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\bbar}{\overline}
+\newcommand{\lrc}{\lrcorner}
+
+\title{Fourier--Mukai Exclusion of Exponential Characters at Quartic CM Fields}
+\date{Working note, 29 September 2026}
+
+\begin{document}
+
+\begin{abstract}
+We prove that on an abelian eightfold of Weil type for a quartic CM field, no
+perfect complex whose Chern character is a Weil class plus an exponential in
+the polarisation, with inverse exponent in an explicit lattice, meets the
+corrected propagation criterion.
+\end{abstract}
+
+\maketitle
+
+\section{What this note proves}\label{sec:status}
+
+The manuscript \cite{BMB} reduces the propagation statement for the split
+families of a quartic CM field to one object: a perfect complex $E$ on a
+member $A$ with $\ch(E)=N\omega+P$ and $\dim\Ext^{2}(E,E)=r(\ch E)$, where
+$\omega$ is a Weil class, $P$ a polynomial in the classes $\eta_{s}$, and
+$r$ the rank of a contraction (\cite[Theorem~19.21(v)]{BMB}; the notation is
+recalled in \S\ref{sec:setup}). The least value a complex meeting this can
+have is $88$ \cite[Corollary~19.23]{BMB}, and after the Weil tori
+\cite[Proposition~19.24, Corollary~19.26]{BMB} two shapes remain at $88$:
+\begin{align*}
+  &\textup{(Exp)}\quad \ch(E)=N\omega+c+\Tr\bigl(a\,(e^{\lambda\Theta}-1)\bigr),
+    \qquad a,\lambda\in F_{0}^{\times},\\
+  &\textup{(Lin)}\quad \ch(E)=N\omega+c+\eta_{s},
+    \qquad s\in F_{0}^{\times}.
+\end{align*}
+The manuscript notes that an autoequivalence of $D^{b}(A)$ changes the
+character. This note builds the autoequivalences that act on the two real
+places separately and uses them.
+
+\begin{enumerate}[label=(\arabic*),leftmargin=2.2em,itemsep=2pt]
+\item \emph{A place-wise Mukai group} (\S\ref{sec:group}). Tensoring by line
+  bundles $L_{b}$ with $c_{1}=\eta_{b}$, and the conjugates by the
+  Fourier--Mukai transform of tensoring by line bundles $M_{\beta}$ on
+  $\Av$, act on $H^{*}(A)$ through two commuting copies of
+  $\mathfrak{sl}_{2}$, one at each real place of $F_{0}$, with parameters in
+  two explicit lattices $\cO'$ and $\fa$ of $F_{0}$. The transforms by the
+  $M_{\beta}$ fix every Weil class, and all of them preserve $\dim\Ext^{2}$
+  and $r$.
+\item \emph{Exclusion} (Theorem~\ref{thm:main}). If $\lambda^{-1}\in\fa$,
+  equivalently if the inverse of the $\QQ$-homomorphism $\varphi_{\eta_{\lambda}}$
+  is a homomorphism $\Av\to A$, the shape (Exp) is carried to a character that
+  stays of Hodge type on every Weil torus, and the argument of
+  \cite[Theorem~19.12]{BMB} excludes it. The same holds at rank $104$ with
+  the mixed exponential $e^{\eta_{\lambda}}$ added. The exponential shapes
+  fall into classes indexed by $\lambda^{-1}$ modulo $\fa$, and the theorem
+  removes the class $0$.
+\item \emph{The linear shape} (\S\ref{sec:linear}). No element of
+  $\SL_{2}(\CC)\times\SL_{2}(\CC)$ carries (Lin) to a Weil tori character,
+  because it corresponds to $x^{3}y$ and not to a sum of two fourth powers.
+  Its rank can be shifted by $4\Tr(s\fa)$; its transform by the Weyl element
+  is never a shifted sheaf; on a product member it needs at least four
+  exterior products; and a direct sum reaching $88$ has one summand
+  carrying the whole character.
+\end{enumerate}
+
+What is not proved: the shape (Exp) with $\lambda^{-1}\notin\fa$ (in
+particular every $\lambda$ with $\lambda^{-1}\notin\cO_{F_{0}}$, since
+$\fa\subseteq\cO_{F_{0}}$), and the shape (Lin). So the propagation statement
+$\mathrm{P2}_{\mathrm{split}}$ is not closed, and nothing here bears on (F2)
+or (F3$'$) (\S\ref{sec:remains}). Section~\ref{sec:prior} checks and folds in
+two earlier working notes, and \S\ref{sec:computations} lists the
+computations.
+
+\section{Setup}\label{sec:setup}
+
+\begin{setup}\label{setup:quartic}
+We use the notation of \cite[\S19]{BMB}. $F$ is a quartic CM field with
+totally real subfield $F_{0}$, real places $\tau_{1},\tau_{2}$ and nontrivial
+automorphism $\iota$ of $F_{0}$; for $x\in F_{0}$ write $x_{t}=\tau_{t}(x)$.
+$A$ is a member of an $(F,2,\delta)$-family: an abelian eightfold with an
+order of $F$ in $\End(A)$ and a polarisation $L$ with class $\theta$. Over
+$\RR$, $H^{1}(A,\RR)=H_{1}\oplus H_{2}$ with $F_{0}$ acting on $H_{t}$ through
+$\tau_{t}$, and $H_{t}\otimes\CC=V_{\sigma}\oplus V_{\bbar\sigma}$ for the
+two embeddings $\sigma,\bbar\sigma$ of $F$ over $\tau_{t}$; each $V_{\sigma}$
+has dimension $4$, with $V_{\sigma}^{1,0}$ and $V_{\sigma}^{0,1}$ of
+dimension $2$. Since $F_{0}$ is fixed by the Rosati involution,
+$\theta=\theta_{1}+\theta_{2}$ with $\theta_{t}\in\bigwedge^{2}H_{t}$
+symplectic on $H_{t}$, and $\theta_{t}$ pairs $V_{\sigma}$ with
+$V_{\bbar\sigma}$. For $g\in F_{0}[[T]]$ put
+$\Tr(g(\Theta))=g^{\tau_{1}}(\theta_{1})+g^{\tau_{2}}(\theta_{2})$, with
+$g^{\tau_{t}}$ obtained by applying $\tau_{t}$ to the coefficients; so
+$\eta_{s}=\Tr(s\Theta)=s_{1}\theta_{1}+s_{2}\theta_{2}$, and
+$\Tr(g(\Theta))$ is a rational class when $g$ has coefficients in $F_{0}$.
+The line $\bigwedge^{4}V_{\sigma}$ is spanned by $\alpha_{\sigma}$, and
+$\alpha_{\Sigma}=\prod_{\sigma\in\Sigma}\alpha_{\sigma}$. A nonzero rational
+Weil class is $\omega=\sum_{\sigma}u_{\sigma}\alpha_{\sigma}$ with every
+$u_{\sigma}\neq0$; its place parts are
+$\omega^{(t)}=u_{\sigma}\alpha_{\sigma}+u_{\bbar\sigma}\alpha_{\bbar\sigma}$.
+\end{setup}
+
+For $\gamma\in H^{*}(A,\CC)$, $r(\gamma)$ is the rank of
+$HT^{2}(A)\to H^{*}(A,\CC)$, $\xi\mapsto\xi\lrc\gamma$, where
+$HT^{2}(A)=\bigwedge^{2}H^{0,1}\oplus H^{0,1}\otimes T\oplus\bigwedge^{2}T$
+and $T=H^{0}(T_{A})$. For a perfect complex $E$ with $\ch(E)=N\omega+P$,
+$N\neq0$ and $P$ a rational polynomial in the $\eta_{s}$,
+\cite[Theorem~19.21(v)]{BMB} gives
+\begin{equation}\label{eq:criterion}
+  \dim\Ext^{2}(E,E)\ \ge\ r(\ch E)\ \ge\ 80,
+\end{equation}
+and equality in the first inequality, which we call \emph{the criterion},
+implies $\mathbf{W}(F,2,\delta)$: the Weil classes are algebraic on every
+abelian variety of $(F,2,\delta)$-Weil type. The rank is computed in closed form in
+\cite[Theorem~19.22]{BMB}; the pure shape $c+N\omega$, of rank $80$, is
+excluded by \cite[Theorem~19.12]{BMB}, so the least rank of a complex meeting
+the criterion is $88$, and at $88$ the two shapes of \S\ref{sec:status} are
+all that remain \cite[Proposition~19.24, Corollary~19.26]{BMB}.
+
+The Weil tori are the complex tori $S_{F}$ of \cite[Setup~19.9]{BMB}: the
+complex structures on $H^{1}(A,\RR)$ commuting with $F$ with each
+$V_{\sigma}^{1,0}$ of dimension $2$. The classes $\alpha_{\Sigma}$ are of Hodge
+type on every member of $S_{F}$, and \cite[Theorem~19.12]{BMB} states:
+\emph{if $\ch(E)$ stays of Hodge type on every member of $S_{F}$ and
+$\ch_{2}(E)\neq0$, then $\dim\Ext^{2}(E,E)>r(\ch E)$.}
+
+\section{The place-wise Mukai group}\label{sec:group}
+
+\begin{definition}\label{def:ops}
+For $t=1,2$ let $L_{t}$ be the product with $\theta_{t}$ on
+$H^{*}(A,\RR)=\bigwedge^{*}H_{1}\otimes\bigwedge^{*}H_{2}$, let
+$\pi_{t}\in\bigwedge^{2}H_{t}^{\vee}$ be the bivector inverse to
+$\theta_{t}$, let $\Lambda_{t}=-\iota_{\pi_{t}}$ be minus the contraction with
+it, normalised so that $\Lambda_{t}\theta_{t}=4$, and let $H_{t}$ act on
+$\bigwedge^{k}H_{t}$ by $k-4$.
+\end{definition}
+
+\begin{lemma}\label{lem:sl2}
+Each $(L_{t},H_{t},\Lambda_{t})$ is an $\mathfrak{sl}_{2}$-triple, and the
+operators of the two places commute. On the span of the powers of
+$\theta_{t}$ the assignment
+$\theta_{t}^{k}/k!\mapsto\binom{4}{k}x^{4-k}y^{k}$ identifies the action with
+that on binary quartics, $L_{t}=y\,\partial_{x}$ and
+$\Lambda_{t}=x\,\partial_{y}$; in particular $e^{\lambda\theta_{t}}\mapsto
+(x+\lambda y)^{4}$, and $1$ and $\theta_{t}^{4}/24$ go to $x^{4}$ and
+$y^{4}$.
+\end{lemma}
+
+\begin{proof}
+The first statement is the Lefschetz $\mathfrak{sl}_{2}$ of the symplectic
+space $(H_{t},\theta_{t})$ of dimension $8$, acting on the factor
+$\bigwedge^{*}H_{t}$; operators on different tensor factors commute, being
+even. The span of the powers of $\theta_{t}$ is the irreducible
+representation generated by $1$, of highest weight $4$, and
+$\Lambda_{t}\theta_{t}^{k}/k!=(5-k)\,\theta_{t}^{k-1}/(k-1)!$ matches
+$x\partial_{y}\binom{4}{k}x^{4-k}y^{k}=(5-k)\binom{4}{k-1}x^{5-k}y^{k-1}$.
+Items (A) of \S\ref{sec:computations} check the relations.
+\end{proof}
+
+\begin{lemma}\label{lem:weil}
+$\Lambda_{t}\alpha_{\sigma}=0$ for every $\sigma$ and $t$, and
+$L_{t}\alpha_{\sigma}=0$ for $\sigma$ over $\tau_{t}$. So $\omega^{(t)}$ is
+invariant under the $\mathfrak{sl}_{2}$ of its own place and is a lowest
+weight vector, of weight $-4$, for the other.
+\end{lemma}
+
+\begin{proof}
+For $\sigma$ over $\tau_{t}$, $V_{\sigma}$ is a Lagrangian subspace of
+$(H_{t}\otimes\CC,\theta_{t})$, since $\theta_{t}$ pairs it with
+$V_{\bbar\sigma}$ and it has half the dimension. Every term of $\theta_{t}$
+has a factor in $V_{\sigma}$, which repeats one of $\alpha_{\sigma}$, so
+$\theta_{t}\alpha_{\sigma}=0$; and $\pi_{t}$ contracts a factor from
+$V_{\sigma}$ with one from $V_{\bbar\sigma}$, of which $\alpha_{\sigma}$ has
+none. At the other place $\alpha_{\sigma}$ has degree $0$, hence weight $-4$,
+and $\Lambda_{t'}$ lowers the degree. Item (B) checks this.
+\end{proof}
+
+\begin{definition}\label{def:lattices}
+Let $\varphi_{L}\colon A\to\Av$ be the polarisation. Put
+\[
+  \cO'=\{b\in F_{0}:\varphi_{L}\circ b\in\Hom(A,\Av)\},\qquad
+  \fa=\{\beta\in F_{0}:\beta\circ\varphi_{L}^{-1}\in\Hom(\Av,A)\}.
+\]
+Both are subgroups of $F_{0}$. If $e$ is the exponent of $\ker\varphi_{L}$
+and $R=F_{0}\cap\End(A)$, then $R\subseteq\cO'\subseteq e^{-1}R$ and
+$eR\subseteq\fa\subseteq R\subseteq\cO_{F_{0}}$; so both are lattices of rank
+$2$, and both are $R$-modules. If $L$ is principal, $\fa=\cO'=R$.
+\end{definition}
+
+The inclusions: $e=\psi\circ\varphi_{L}$ for a homomorphism $\psi$, which is
+$e\varphi_{L}^{-1}$; $\beta\circ\varphi_{L}^{-1}\in\Hom(\Av,A)$ gives
+$\beta=(\beta\circ\varphi_{L}^{-1})\circ\varphi_{L}\in\End(A)$; and
+$\varphi_{L}\circ b\in\Hom(A,\Av)$ gives $eb=\psi\circ(\varphi_{L}\circ b)
+\in\End(A)$. Composing with elements of $R$ preserves both conditions.
+
+\begin{proposition}\label{prop:autoeq}
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em,itemsep=2pt]
+\item For $b\in\cO'$ there is a line bundle $L_{b}$ on $A$ with
+  $c_{1}(L_{b})=\eta_{b}$, and $T_{b}=L_{b}\otimes(-)$ acts on $H^{*}(A,\QQ)$
+  by $\exp(b_{1}L_{1}+b_{2}L_{2})$.
+\item For $\beta\in\fa$ there is a line bundle $M_{\beta}$ on $\Av$ with
+  $\varphi_{M_{\beta}}=\beta\circ\varphi_{L}^{-1}$, and
+  $S_{\beta}=\Phi_{\mathcal{P}}^{-1}\circ(M_{\beta}\otimes-)\circ
+  \Phi_{\mathcal{P}}$, with $\Phi_{\mathcal{P}}$ the Fourier--Mukai transform
+  of the Poincar\'e bundle, is an autoequivalence of $D^{b}(A)$ acting by
+  $\exp\bigl(\epsilon(\beta_{1}\Lambda_{1}+\beta_{2}\Lambda_{2})\bigr)$ for
+  a sign $\epsilon=\pm1$ that does not depend on $A$ or $\beta$.
+\end{enumerate}
+Write $G(A)$ for the group generated by the $T_{b}$ and the $S_{\beta}$.
+\end{proposition}
+
+\begin{proof}
+On a complex abelian variety the N\'eron--Severi group is the group of
+symmetric homomorphisms to the dual \cite[\S2.5]{BL04}. Elements of $F_{0}$
+are fixed by the Rosati involution, so $\varphi_{L}\circ b$ and
+$\beta\circ\varphi_{L}^{-1}$ are symmetric; when they are homomorphisms they
+are $\varphi$ of line bundles. The class of $L_{b}$ is the form
+$\theta(b\,\cdot,\cdot)$, which is $b_{t}\theta_{t}$ on $H_{t}$, so
+$\ch(L_{b})=e^{\eta_{b}}$ and (i) follows, $L_{1}$ and $L_{2}$ commuting.
+
+For (ii), $\Phi_{\mathcal{P}}$ is an equivalence by Mukai \cite{Muk81}, and
+on cohomology it is $x\mapsto p_{*}(q^{*}x\cdot e^{\ell})$ with $\ell$ the
+Poincar\'e class, the Todd classes being trivial \cite[Proposition~6.1]{BMB}.
+In a basis $e_{i}$ of $H^{1}(A)$ with dual basis $f_{i}$ of $H^{1}(\Av)$,
+$\ell=\sum e_{i}f_{i}$ and $f_{i}e^{\ell}=\partial_{e_{i}}e^{\ell}$; since
+$p_{*}$ extracts the top coefficient in the $e_{i}$ and kills derivatives,
+integration by parts gives $f_{i}\cdot\Phi(x)=\pm\Phi(\iota_{e_{i}^{\vee}}x)$,
+and for a class $y\in\bigwedge^{2}H^{1}(\Av)$,
+\[
+  y\cdot\Phi_{\mathcal{P}}(x)=\Phi_{\mathcal{P}}(\iota_{y}x),\qquad\text{so}\qquad
+  \Phi_{\mathcal{P}}^{-1}\bigl(e^{y}\,\Phi_{\mathcal{P}}(x)\bigr)=\exp(\iota_{y})\,x ,
+\]
+with $y$ read as a bivector on $H^{1}(A)$ through $\ell$ (item (K) checks the
+identity for abelian varieties of dimension at most three, signs included).
+The class $c_{1}(M_{\beta})$, read in this way, is the bivector of the
+alternating form of $\beta\circ\varphi_{L}^{-1}$, which is
+$\beta_{1}\pi_{1}+\beta_{2}\pi_{2}$ up to one universal sign, because
+$\varphi_{L}^{-1}$ has bivector $\pi_{1}+\pi_{2}$ up to that sign and $F_{0}$
+acts on $H_{t}$ through $\tau_{t}$. For $L$ principal and $\beta=1$ this is the
+dual principal polarisation, and $\iota_{\pi}\theta=\pm8=\pm(4+4)$, which is
+the normalisation of Definition~\ref{def:ops}.
+\end{proof}
+
+\begin{proposition}\label{prop:invariance}
+For $g$ in the group generated by the $\exp(xL_{t})$ and $\exp(x\Lambda_{t})$,
+$x\in\CC$, $r(g\gamma)=r(\gamma)$ for every $\gamma$. Hence for every
+$\Phi\in G(A)$ and every perfect complex $E$,
+\[
+  \dim\Ext^{2}(\Phi E,\Phi E)=\dim\Ext^{2}(E,E),\qquad
+  r(\ch\Phi E)=r(\ch E),
+\]
+and $E$ meets the criterion if and only if $\Phi(E)$ does.
+\end{proposition}
+
+\begin{proof}
+Let $U\subset\End H^{*}(A,\CC)$ be the span of the products with elements of
+$H^{0,1}$ and of the contractions with elements of $T=T^{1,0}$. The operators
+$\xi\lrc(\cdot)$, $\xi\in HT^{2}(A)$, span exactly the products of two
+elements of $U$. Now $[L_{t},\iota_{v}]=-(\iota_{v}\theta_{t})\wedge$, and
+$\iota_{v}\theta_{t}\in H^{0,1}$ for $v\in T^{1,0}$ because $\theta_{t}$ is of
+type $(1,1)$; $[L_{t},y\wedge]=0$; $[\Lambda_{t},y\wedge]$ is, up to sign, the
+contraction with $\pi_{t}(y)\in T^{1,0}$ for $y\in H^{0,1}$, since $\pi_{t}$ is
+of type $(1,1)$; and $[\Lambda_{t},\iota_{v}]=0$. So $\operatorname{ad}L_{t}$
+and $\operatorname{ad}\Lambda_{t}$ preserve $U$, conjugation by $g$ preserves
+$U$ and $U\cdot U$, and $\dim(U\cdot U)\,g\gamma=\dim g^{-1}(U\cdot U)g\,
+\gamma=\dim(U\cdot U)\,\gamma$. An equivalence preserves $\Ext^{2}$, and it
+acts on Chern characters by its cohomological action. Item (E) checks the
+invariance on the fifteen values of \cite[Theorem~19.22]{BMB} and on random
+words.
+\end{proof}
+
+\section{Exclusion of the exponential shapes}\label{sec:main}
+
+\begin{lemma}\label{lem:cusp}
+For $\lambda,\beta\in\CC$ and each $t$,
+\[
+  \exp(\beta\Lambda_{t})\,e^{\lambda\theta_{t}}=
+  \begin{cases}
+    (1+\lambda\beta)^{4}\,e^{\lambda'\theta_{t}},\quad
+    \frac{1}{\lambda'}=\frac{1}{\lambda}+\beta, & 1+\lambda\beta\neq0,\\[2pt]
+    \lambda^{4}\,\theta_{t}^{4}/24, & 1+\lambda\beta=0 .
+  \end{cases}
+\]
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:sl2}, $\exp(\beta x\partial_{y})$ substitutes $y+\beta x$
+for $y$, and $(x+\lambda(y+\beta x))^{4}=((1+\lambda\beta)x+\lambda y)^{4}$.
+Item (C) checks both cases.
+\end{proof}
+
+\begin{theorem}\label{thm:exclusion}
+Let $E$ be a perfect complex on $A$ and $\beta\in\fa$. If
+$\exp(\beta_{1}\Lambda_{1}+\beta_{2}\Lambda_{2})\ch(E)$ stays of Hodge type on
+every member of $S_{F}$ and has nonzero component in $H^{4}$, then
+$\dim\Ext^{2}(E,E)>r(\ch E)$.
+\end{theorem}
+
+\begin{proof}
+$\fa=-\fa$, so with $\epsilon$ as in Proposition~\ref{prop:autoeq} the
+autoequivalence $\Phi=S_{\epsilon\beta}$ has $\ch(\Phi E)=
+\exp(\beta_{1}\Lambda_{1}+\beta_{2}\Lambda_{2})\ch(E)$. By
+\cite[Theorem~19.12]{BMB}, $\dim\Ext^{2}(\Phi E,\Phi E)>r(\ch\Phi E)$, and
+both sides are those of $E$ by Proposition~\ref{prop:invariance}.
+\end{proof}
+
+\begin{theorem}\label{thm:main}
+Let $A$ be a member of an $(F,2,\delta)$-family, $\omega$ a nonzero rational
+Weil class, $N\neq0$, $c,b\in\QQ$, $a\in F_{0}$ and $\lambda\in F_{0}^{\times}$,
+and let $E$ be a perfect complex on $A$ with
+\[
+  \ch(E)=N\omega+c+\Tr\bigl(a\,(e^{\lambda\Theta}-1)\bigr)
+  +b\,(e^{\eta_{\lambda}}-1).
+\]
+If $\lambda^{-1}\in\fa$, equivalently if $\varphi_{\eta_{\lambda}}^{-1}
+=\lambda^{-1}\circ\varphi_{L}^{-1}$ is a homomorphism $\Av\to A$, then $E$
+does not meet the criterion: $\dim\Ext^{2}(E,E)>r(\ch E)$. Here
+$r(\ch E)=88$ when $b=0\neq a$, and $r(\ch E)=104$ when $b\neq0$.
+\end{theorem}
+
+\begin{proof}
+Take $\beta=-\lambda^{-1}\in\fa$. By Lemma~\ref{lem:weil} the operators
+$\Lambda_{t}$ kill $\omega$ and $1$; by Lemma~\ref{lem:cusp} at both places,
+the operators of the two places acting on separate tensor factors,
+\[
+  \exp(\beta_{1}\Lambda_{1}+\beta_{2}\Lambda_{2})\ch(E)
+  =N\omega+(c-\Tr a-b)+\tfrac{1}{24}\Tr\bigl(a\lambda^{4}\Theta^{4}\bigr)
+  +\tfrac{b}{576}\Nm(\lambda)^{4}\,\theta_{1}^{4}\theta_{2}^{4}.
+\]
+As in the proof of \cite[Proposition~19.24]{BMB}, $\theta_{t}^{4}$ is a
+nonzero multiple of $\alpha_{\sigma}\alpha_{\bbar\sigma}$ for the embeddings
+over $\tau_{t}$, so this class lies in the span of the $\alpha_{\Sigma}$, is
+rational, stays of Hodge type on $S_{F}$, and has component $N\omega\neq0$ in
+$H^{4}$. Theorem~\ref{thm:exclusion} applies. For the ranks, in the notation
+of \cite[Theorem~19.22]{BMB} the Hankel matrices of $(a_{t}\lambda_{t}^{k})$
+have rank $\rho_{t}=1$, so $R_{t}=8$, and $\mu=0$ exactly when $b=0$; the
+formula gives $64+4+4+8+8=88$ and $88+16=104$. Items (D) and (F) check the
+transform and the ranks.
+\end{proof}
+
+\begin{corollary}\label{cor:cusps}
+Let $\beta\in\fa$ with $1+\lambda\beta\neq0$. Then $S_{\pm\beta}$ carries a
+character of shape \textup{(Exp)} with parameters $(c,a,\lambda)$ to one with
+\[
+  a'=a(1+\lambda\beta)^{4},\qquad \frac{1}{\lambda'}=\frac{1}{\lambda}+\beta,
+  \qquad c'=c+\Tr(a'-a).
+\]
+So the orbits of the shapes \textup{(Exp)} under the $S_{\beta}$ are indexed
+by $\lambda^{-1}$ in $F_{0}/\fa$, an infinite group, and
+Theorem~\ref{thm:main} removes exactly the class of $0$: a transform
+$S_{\beta}$ puts \textup{(Exp)} in the span of the $\alpha_{\Sigma}$ only when
+$1+\lambda\beta=0$.
+\end{corollary}
+
+\begin{proof}
+Lemma~\ref{lem:cusp}. For $1+\lambda\beta\neq0$ the transform still has a
+nonzero component $a'\lambda'\theta$ in the span of $\theta_{1},\theta_{2}$,
+which is not in the span of the $\alpha_{\Sigma}$.
+\end{proof}
+
+\begin{corollary}\label{cor:principal}
+If $L$ is principal and $\cO_{F_{0}}\subseteq\End(A)$, then $\fa=\cO_{F_{0}}$,
+and Theorem~\ref{thm:main} excludes \textup{(Exp)} exactly for
+$\lambda^{-1}\in\cO_{F_{0}}$: for instance $\lambda=1$, that is
+$\ch(E)=N\omega+c+\Tr(a(e^{\Theta}-1))$, and $\lambda=1/m$, $m\in\ZZ\smallsetminus\{0\}$; not
+$\lambda=2$. At any member, $\fa\subseteq\cO_{F_{0}}$, so no $\lambda$ with
+$\lambda^{-1}\notin\cO_{F_{0}}$ is excluded by this argument.
+\end{corollary}
+
+\begin{remark}[Where the argument stops]\label{rem:swap}
+The transforms in $G(A)$ act through the group $M$ of matrices
+$\left(\begin{smallmatrix}u&b\\c&v\end{smallmatrix}\right)\in\SL_{2}(F_{0})$
+with $u,v\in R$, $b\in\cO'$ and $c\in\fa$, embedded by
+$(\tau_{1},\tau_{2})$; it is a group because $\cO'$ and $\fa$ are
+$R$-modules and $\cO'\fa\subseteq R$. At each place the Weil part
+of the other place, a lowest weight vector, pins the line of $x$, so a
+transform that puts \textup{(Exp)} into the span of the $\alpha_{\Sigma}$
+must send the pair of lines $\{x,\,x+\lambda y\}$ to $\{x,\,y\}$ at both
+places. If it fixes the line of $x$, it is lower triangular with a unit on
+the diagonal and an entry of $\fa$ below it, and it sends $x+\lambda y$ to the
+line of $y$ exactly when $\lambda^{-1}\in\fa$: that is
+Theorem~\ref{thm:main}. If it exchanges the two lines, it moves
+$\omega^{(t)}\otimes x^{4}$ to $\omega^{(t)}\theta_{t'}^{4}/24$, so the
+transformed character has no component in $H^{4}$ and a nonzero one in
+$H^{12}$; \cite[Theorem~19.12]{BMB} does not apply, since the vanishing on a
+very general Weil torus \cite[Proposition~19.11]{BMB} covers $\ch_{k}$ for
+$1\le k\le3$ only. When $L$ is principal, the Weyl element lies in $M$, such an
+exchange is the Weyl element times a transform of the first kind, and it
+reaches no further $\lambda$. So Theorem~\ref{thm:main} is all this group
+gives on \textup{(Exp)}, and $\lambda^{-1}\notin\fa$ needs another idea.
+\end{remark}
+
+\section{The linear shape}\label{sec:linear}
+
+Throughout, $\gamma=N\omega+c+\eta_{s}$ with $N\neq0$, $c\in\QQ$ and
+$s\in F_{0}^{\times}$, so $s_{1}s_{2}\neq0$.
+
+\begin{proposition}\label{prop:nolift}
+No element of $\SL_{2}(\CC)\times\SL_{2}(\CC)$, acting through the two
+$\mathfrak{sl}_{2}$ of Lemma~\ref{lem:sl2}, carries $\gamma$ into the span of
+the $\alpha_{\Sigma}$. In particular no $\Phi\in G(A)$ does, and
+Theorem~\ref{thm:exclusion} does not apply to \textup{(Lin)}.
+\end{proposition}
+
+\begin{proof}
+The group preserves the isotypic components of $H^{*}(A)$ for
+$\mathfrak{sl}_{2}\times\mathfrak{sl}_{2}$. The component of
+$\mathrm{Sym}^{4}\otimes\mathrm{Sym}^{4}$ is the span of the monomials
+$\theta_{1}^{i}\theta_{2}^{j}$, because the only class of weight $(-4,-4)$ is
+the constant; its intersection with the span of the $\alpha_{\Sigma}$ is
+spanned by $x^{4}$ and $y^{4}$ at each place, that is by $1$,
+$\theta_{1}^{4}$, $\theta_{2}^{4}$ and $\theta_{1}^{4}\theta_{2}^{4}$,
+while the other $\alpha_{\Sigma}$ lie in other components
+(Lemma~\ref{lem:weil}). The component of $\gamma$ there is
+\[
+  p=c\,x_{1}^{4}x_{2}^{4}+4s_{1}\,x_{1}^{3}y_{1}\,x_{2}^{4}
+   +4s_{2}\,x_{1}^{4}\,x_{2}^{3}y_{2}.
+\]
+Read $p$ as a map from the dual of the quartics of the second place to those
+of the first; its image contains $x_{1}^{3}y_{1}$ because $s_{1}s_{2}\neq0$.
+If $(g_{1},g_{2})\,p$ lay in $\langle x^{4},y^{4}\rangle^{\otimes2}$, the
+image would lie in $\langle m^{4},n^{4}\rangle$ with $m=g_{1}^{-1}x$,
+$n=g_{1}^{-1}y$ independent. But a nonzero $um^{4}+vn^{4}$ is a fourth power
+when $uv=0$ and has four distinct roots otherwise, its discriminant being
+$256u^{3}v^{3}\det(m,n)^{12}$, while $x^{3}y$ has a triple root. Item (H)
+checks the discriminant and the image.
+\end{proof}
+
+The exponential shape corresponds to the fourth power $(x+\lambda y)^{4}$,
+which the group can move to $y^{4}$; the linear shape corresponds to its
+derivative at $\lambda=0$, which it cannot.
+
+\begin{proposition}\label{prop:rankshift}
+For $\beta\in\fa$, $S_{\pm\beta}(E)$ has character
+$N\omega+\bigl(c+4\Tr(s\beta)\bigr)+\eta_{s}$. So the rank of a complex of
+shape \textup{(Lin)} meeting the criterion can be moved by any element of
+$4\Tr(s\fa)\subseteq\ZZ$ without leaving the shape or the criterion; rank
+$0$ is reached exactly when $c\in4\Tr(s\fa)$. The $\beta$ with
+$\Tr(s\beta)=0$ form a subgroup of rank one of $\fa$, which fixes the
+character.
+\end{proposition}
+
+\begin{proof}
+$\exp(\beta\Lambda_{t})\theta_{t}=\theta_{t}+4\beta$ and $\Lambda_{t}$ kills
+$1$ and $\omega$; Proposition~\ref{prop:invariance}. Item (G).
+\end{proof}
+
+\begin{proposition}\label{prop:notsheaf}
+Let $L$ be principal, so that $1\in\cO'\cap\fa$, and let
+$W=T_{1}\,S_{-\epsilon}\,T_{1}$, which acts by
+$w=\exp(L)\exp(-\Lambda)\exp(L)$ at both places. For every $\beta\in\fa$
+and every $E$ with $\ch(E)=\gamma$, the object $W S_{\beta}(E)$ is not
+isomorphic to a shift of a coherent sheaf.
+\end{proposition}
+
+\begin{proof}
+At each place $w$ sends $x\mapsto y$ and $y\mapsto-x$; so $w(1)$ is the
+class $\theta_{1}^{4}\theta_{2}^{4}/576$ of a point, $w(\theta_{t})$ has
+degree $14$, and $w(\omega)=\bigl(\omega^{(1)}\theta_{2}^{4}+
+\theta_{1}^{4}\omega^{(2)}\bigr)/24$. By Proposition~\ref{prop:rankshift}
+the character of $W S_{\beta}(E)$ therefore vanishes below degree $12$ and
+has
+\[
+  \ch_{6}=\tfrac{N}{24}\bigl(\omega^{(1)}\theta_{2}^{4}+\theta_{1}^{4}\omega^{(2)}\bigr)
+  \neq0,\qquad \int_{A}\ch_{6}\cdot\theta_{i}\theta_{j}=0\ \text{ for all }i,j,
+\]
+the integrals vanishing because $\theta_{t}\,\omega^{(t)}=0$
+(Lemma~\ref{lem:weil}) and $\theta_{t}^{5}=0$. If $W S_{\beta}(E)\cong
+\mathcal{F}[k]$ for a sheaf $\mathcal{F}$, then $\ch(\mathcal{F})$ vanishes
+below degree $12$; the lowest nonzero Chern character of a sheaf is the
+class of the cycle of its support in that codimension
+\cite[\S15.1, Ex.~15.1.5 and Cor.~18.3.2]{Ful98}, which is effective, so $\mathcal{F}$ is
+supported in dimension at most two and $\ch_{6}(\mathcal{F})$ is a nonzero
+effective cycle, whose integral against $\theta^{2}$ is positive. This
+contradicts the vanishing. Item (I) checks $w$ and the integrals.
+\end{proof}
+
+So a complex of shape (Lin) meeting the criterion cannot be produced as the
+inverse transform, by $WS_{\beta}$, of a sheaf on a surface: the object must
+be built as a genuine complex on that side as well.
+
+\begin{proposition}\label{prop:product}
+Suppose $A=B\times B'$ with $B,B'$ abelian fourfolds of $(F,1)$-Weil type and
+the product structure. Then the component of $\ch_{2}(E)=N\omega$ in
+$H^{2}(B)\otimes H^{2}(B')$ has tensor rank $4$. Hence if
+$[E]=\sum_{i=1}^{k}\pm[E_{i}\boxtimes E'_{i}]$ in $K_{0}(A)_{\QQ}$, then
+$k\ge4$; in particular $E$ is not an exterior product, nor a cone of two.
+\end{proposition}
+
+\begin{proof}
+$\bigwedge^{4}V_{\sigma}=\bigwedge^{2}V_{\sigma}(B)\otimes
+\bigwedge^{2}V_{\sigma}(B')$, so each $\alpha_{\sigma}$ is a pure tensor, and
+the four lie in different eigenspaces of $F$ on both sides; the
+$\theta_{t}$ have no component there. The component of
+$\ch(E_{i}\boxtimes E'_{i})$ is $c_{1}(E_{i})\otimes c_{1}(E'_{i})$. Item
+(J).
+\end{proof}
+
+\begin{proposition}\label{prop:sums}
+Let $E=\bigoplus_{i}E_{i}$ meet the criterion, with each $\ch(E_{i})$ of the
+form $N_{i}\omega+P_{i}$, $P_{i}$ a rational polynomial in the $\eta_{s}$.
+Then each $E_{i}$ meets its own criterion, $\Ext^{2}(E_{i},E_{j})=0$ for
+$i\neq j$, and $r(\ch E)=\sum_{i}r(\ch E_{i})$. If $r(\ch E)<108$, exactly one
+summand has nonzero Chern character.
+\end{proposition}
+
+\begin{proof}
+$\dim\Ext^{2}(E,E)\ge\sum_{i}\dim\Ext^{2}(E_{i},E_{i})\ge\sum_{i}
+r(\ch E_{i})\ge r(\ch E)$, the last because a rank is subadditive; equality
+throughout gives the first three statements. By
+\cite[Theorem~19.21(iii)]{BMB}, $r(N_{i}\omega+P_{i})\ge80$ when
+$N_{i}\neq0$. When $N_{i}=0\neq P_{i}$, $r(P_{i})\ge28$: the torus scaling
+the classes of type $(1,0)$ at one place multiplies $\theta_{t}$ alone and
+normalises $U$, so it keeps $r$, and degenerating $P_{i}$ to a vertex of its
+Newton polygon, $r$ being lower semicontinuous, gives
+$r(P_{i})\ge\min_{i,j}r(\theta_{1}^{i}\theta_{2}^{j})=28$ (item (L)).
+Since $\sum N_{i}=N\neq0$, a second summand with nonzero character would give
+$r\ge80+28$.
+\end{proof}
+
+\section{What remains}\label{sec:remains}
+
+\begin{enumerate}[label=(\alph*),leftmargin=2.2em,itemsep=2pt]
+\item \emph{$\mathrm{P2}_{\mathrm{split}}$ at a quartic field.} At rank $88$:
+  the shape (Exp) with $\lambda^{-1}\notin\fa$, which includes every
+  $\lambda$ with $\lambda^{-1}\notin\cO_{F_{0}}$, and the shape (Lin),
+  subject to Propositions~\ref{prop:nolift}--\ref{prop:sums}. Above $88$,
+  only the mixed exponential of rank $104$ with $\lambda^{-1}\in\fa$ is removed
+  here. Within $G(A)$ the only further gain would come from the vanishing of
+  $\ch_{6}$ on a very general Weil torus
+  (Remark~\ref{rem:swap}) together with a transform exchanging the two lines,
+  which exists only for non-principal $L$. What (Lin) needs is an object: a complex, not a
+  shifted sheaf after $WS_{\beta}$, not a single summand of lower rank, and on
+  a product member not fewer than four exterior products in $K$-theory.
+\item \emph{(F2).} The mechanism of \S\ref{sec:group} needs a totally real
+  field in $\End(A)$ to split the Lefschetz $\mathfrak{sl}_{2}$ into places. A
+  Mumford fourfold has $\End=\ZZ$, its exceptional classes are rigid
+  \cite[Theorem~21.21]{BMB}, and every object built from line bundles by
+  cones, tensor products, duals, pull-backs, push-forwards and Fourier--Mukai
+  functors with such kernels has a Chern character invariant under the
+  Lefschetz group, which no exceptional class is
+  \cite[Theorem~21.36]{BMB}. So no transform of the kind used here reaches
+  (F2), and we have no construction for it.
+\item \emph{(F3$'$).} Nothing here bears on it.
+\end{enumerate}
+
+\section{Earlier working notes}\label{sec:prior}
+
+\subsection{The smooth-support note}\label{ssec:smooth}
+A working note of the same date, \emph{Record of an attempt on the
+smooth-support case at $n=4$}, concerns an imaginary quadratic field
+$K=\QQ(\sqrt{-d})$ and a secant object $\mathcal{I}_{S}(3\Theta)$ with smooth
+support on a principally polarised abelian fourfold $(X,\Theta)$, the shape
+isolated in \cite[Corollary~18.68, Remark~18.69]{BMB} for Markman's
+construction \cite{Mar25a,Mar25b}. That route is not needed by any minimal
+sufficient set of the closure graph, since (P2) for the imaginary quadratic
+fields follows from $\mathrm{P2}_{\mathrm{split}}$ by \cite[Proposition~20.13]{BMB}
+and \cite[Theorem~20.58]{BMB}; it is recorded because what it proves is
+correct, and it is now part of the manuscript. We checked its numerical
+claims in exact arithmetic (the second program of \S\ref{sec:computations},
+twenty-five checks) and read its proofs; the one claim not checked, that the
+degree of the Gauss map divides $\gcd([S]^{2},e(S))$, is used neither here
+nor in the manuscript. Write $u_{\Theta}=\sum_{k}(-d)^{k}\Theta^{2k}/(2k)!$ and
+$v_{\Theta}=\sum_{k}(-d)^{k}\Theta^{2k+1}/(2k+1)!$, let
+$\Lambda_{\Theta}\subset\QQ[\Theta]/(\Theta^{5})$ be the group generated by the
+$e^{j\Theta}$, and for $\xi=\sum_{i}a_{i}\Theta^{i}/i!$ define the binomial
+moments $m_{k}(\xi)$ by $a_{i}=\sum_{k}S(i,k)\,k!\,m_{k}$.
+
+\begin{theorem}[{\cite[Lemma~18.56, Theorem~18.57]{BMB}}]\label{thm:lattice}
+$\xi\in\Lambda_{\Theta}$ if and only if $m_{0},\dots,m_{4}\in\ZZ$, and
+\[
+  m\bigl(a\,u_{\Theta}+b\,v_{\Theta}\bigr)=\Bigl(a,\ b,\ -\tfrac{ad+b}{2},\
+  \tfrac{3ad+2b-bd}{6},\ \tfrac{ad^{2}-11ad+6bd-6b}{24}\Bigr).
+\]
+In particular $u_{\Theta}+3v_{\Theta}\in\Lambda_{\Theta}$ if and only if
+$d\equiv15$ or $23\pmod{24}$.
+\end{theorem}
+
+The proof is that $e^{j\Theta}\mapsto(1+y)^{j}$ identifies $\Lambda_{\Theta}$
+with $\ZZ[y]/(y^{5})$ and the moments with the coefficients. It explains
+\cite[Table~4]{BMB}: a split Hilbert--Burch resolution has its character in
+$\Lambda_{\Theta}$, so only $d\equiv15,23\pmod{24}$ can occur, at any rank and
+with any twists, which is what the search found below $24$. For the four
+discriminants $d\in\{1,3,5,7\}$ of a smooth support
+\cite[Corollary~18.41]{BMB} it excludes every resolution
+$0\to E_{1}\to E_{0}\to\mathcal{I}_{S}\to0$ with $\ch E_{0},\ch E_{1}\in
+\Lambda_{\Theta}$ \cite[Corollary~18.58]{BMB}, for instance by bundles built
+from line bundles algebraically equivalent to multiples of $\Theta$ by sums,
+tensor products, duals, exterior and symmetric powers, extensions, kernels of
+surjections and cokernels of injections. These need not be projectively flat,
+so for the smooth shape this goes beyond \cite[Theorems~18.63 and~18.66]{BMB}.
+The original listed kernels and cokernels of arbitrary maps; every bundle is
+the image of a map of constant rank between sums of line bundles, so those
+can have any class, and the manuscript states the exact cases above.
+
+The note also computes $m(\cO_{S})=(0,0,N,-3N,N(47-2N)/12+3N)$, whose last
+entry is not an integer for $N\in\{5,6,7,8\}$, and reproduces
+\cite[Table~3]{BMB} from Grothendieck--Riemann--Roch: $K_{S}^{2}=12N(36-N)$,
+$e(S)=12N(36-3N)$, $\chi(\cO_{S})=4N(18-N)$.
+
+\begin{lemma}[{\cite[Lemma~18.43]{BMB}}]\label{lem:inj}
+Let $X$ be a simple abelian fourfold and $S\subset X$ a smooth surface with
+$e(S)\neq[S]^{2}$. Then $H^{2}(\cO_{X})\to H^{2}(\cO_{S})$ is injective. For a
+smooth secant support $[S]^{2}=24N^{2}\neq12N(36-3N)=e(S)$ for every integer
+$N\ge1$, so on a simple $X$ the injectivity required in
+\cite[Corollary~18.68(ii)]{BMB} holds automatically.
+\end{lemma}
+
+The proof: by conjugation the kernel is that of the restriction of invariant
+$2$-forms; a form of rank two vanishing on $S$ gives, by Castelnuovo--de
+Franchis, a fibration whose fibres generate an abelian subvariety of
+dimension at most two, against simplicity; a form of rank four vanishing on
+$S$ makes $S$ Lagrangian, so $N_{S/X}\cong\Omega^{1}_{S}$ and
+$[S]^{2}=c_{2}(N_{S/X})=e(S)$. Simplicity is needed only in the rank-two
+case, and the manuscript states it wherever the injectivity is called
+automatic.
+
+The note further shows that $\delta=K_{S}-4\lambda$, $\lambda=\Theta|_{S}$, is
+a nonzero algebraic class with $\iota_{*}\delta=0$ and
+$\delta^{2}=-12N(N-4)$ \cite[Remark~18.44]{BMB}, and, through Bloch's
+semiregularity map \cite{Blo72}, that $S$ extends to first order along every
+polarised deformation of $X$ if and only if that map has rank $6$, with
+$h^{1}(N_{S/X})\ge88,296,568,904$ for $N=5,6,7,8$
+\cite[Proposition~18.46]{BMB}. In the lower bound $h^{0}(N_{S/X})\ge4$ a
+translation field tangent to $S$ everywhere would be a nowhere vanishing
+vector field on $S$, against $e(S)=12N(36-3N)\ne0$; this is the argument the
+manuscript uses, and it needs neither simplicity nor that $S$ be of general
+type. The existence of $S$ and the first-order condition stay open.
+
+Its last section, on the Kuga--Satake class of the Mumford square, proves
+that for real multiplication of odd degree every Hodge similarity is a
+rational scalar; as that note says, this is already in the manuscript. Of the
+works it cites there, those of Morrison \cite{Mor84}, Buskin \cite{Bus19} and
+Varesco \cite{Var23} are in the manuscript's bibliography; the others are not
+repeated here.
+
+\subsection{The status note}\label{ssec:statusnote}
+A second note searched, by simulated annealing, unions of coordinate abelian
+surfaces in $E_{1}\times\dots\times E_{4}$ for configurations with the
+numerical invariants of a secant object at $b=1$. It reports exact matches at
+$d=1$ and none at $d=2,3$. Its own caveats stand: $E_{1}\times\dots\times
+E_{4}$ is not a member of a Weil family with the required action, and the
+search does not touch the second condition of \cite[Theorem~18.29]{BMB}. It is
+a data point about the imaginary quadratic route, which, as above, the closure
+graph does not need.
+
+\section{Computations}\label{sec:computations}
+
+Two programs in exact rational arithmetic accompany this note. They are
+kept with its source in the repository \url{https://github.com/creelie/H8},
+in the directory \texttt{notes/fourier\_mukai}. The first reuses the exterior-algebra
+model of \cite[item (LXV)]{BMB} and checks: (A) the two
+$\mathfrak{sl}_{2}$-triples and their commutation; (B)
+Lemma~\ref{lem:weil}; (C) Lemma~\ref{lem:cusp}; (D) the transform in the
+proof of Theorem~\ref{thm:main} on five characters, and that it lands in the
+span of the $\alpha_{\Sigma}$; (E) Proposition~\ref{prop:invariance} on the
+fifteen values of \cite[Theorem~19.22]{BMB} and on random words; (F) the ranks
+$88$ and $104$; (G) Proposition~\ref{prop:rankshift}; (H) the discriminant and
+the image in Proposition~\ref{prop:nolift}; (I) the Weyl element and the
+integrals of Proposition~\ref{prop:notsheaf}; (J)
+Proposition~\ref{prop:product}; (K) the Fourier identity of
+Proposition~\ref{prop:autoeq}; (L) the least rank $28$ over the monomials. It
+prints \texttt{30 checks passed, 0 failed}. The second checks the numerical
+statements of \S\ref{ssec:smooth}, among them the moment formula, the
+congruence for every $d<2400$, the four rows of \cite[Table~3]{BMB}, the first
+candidates of \cite[Table~4]{BMB}, and the bounds on $h^{1}(N_{S/X})$; it
+prints \texttt{25 checks passed, 0 failed}.
+
+\subsection*{Data availability}
+The two programs and the sources of this note are in the repository above;
+the manuscript's code is archived on Zenodo under
+\href{https://doi.org/10.5281/zenodo.23038895}{\texttt{10.5281/zenodo.23038895}}
+(release v2.0.0; all versions
+\href{https://doi.org/10.5281/zenodo.22950275}{\texttt{10.5281/zenodo.22950275}}).
+The programs were written and run with the assistance of Claude Code
+(Anthropic).
+
+\begingroup\raggedright
+\begin{thebibliography}{Mar25b}
+
+\bibitem[BMB]{BMB}
+D. Bhattacharjee, P. Mandal and U. Bhattacharya,
+\emph{Density of the Algebraic Locus of Weil Classes on Abelian Varieties},
+manuscript, 2026; code and sources:
+\href{https://doi.org/10.5281/zenodo.23038895}{\texttt{doi:10.5281/zenodo.23038895}}.
+Theorem numbers refer to the version of 29 September 2026.
+
+\bibitem[BL04]{BL04}
+C. Birkenhake and H. Lange,
+\emph{Complex Abelian Varieties}, 2nd ed.,
+Grundlehren der mathematischen Wissenschaften \textbf{302},
+Springer, Berlin, 2004.
+\href{https://doi.org/10.1007/978-3-662-06307-1}{\texttt{doi:10.1007/978-3-662-06307-1}}.
+
+\bibitem[Blo72]{Blo72}
+S. Bloch,
+\emph{Semi-regularity and de Rham cohomology},
+Invent. Math. \textbf{17} (1972), 51--66.
+\href{https://doi.org/10.1007/BF01390023}{\texttt{doi:10.1007/BF01390023}}.
+
+\bibitem[Bus19]{Bus19}
+N. Buskin,
+\emph{Every rational Hodge isometry between two K3 surfaces is algebraic},
+J. Reine Angew. Math. \textbf{755} (2019), 127--150.
+\href{https://doi.org/10.1515/crelle-2017-0027}{\texttt{doi:10.1515/crelle-2017-0027}}.
+
+\bibitem[Ful98]{Ful98}
+W. Fulton,
+\emph{Intersection Theory}, 2nd ed.,
+Ergebnisse der Mathematik und ihrer Grenzgebiete (3) \textbf{2},
+Springer, New York, 1998.
+\href{https://doi.org/10.1007/978-1-4612-1700-8}{\texttt{doi:10.1007/978-1-4612-1700-8}}.
+
+\bibitem[Mar25a]{Mar25a}
+E. Markman,
+\emph{Cycles on abelian $2n$-folds of Weil type from secant sheaves on
+abelian $n$-folds}, preprint, arXiv:2502.03415 (2025).
+\href{https://doi.org/10.48550/arXiv.2502.03415}{\texttt{doi:10.48550/arXiv.2502.03415}}.
+
+\bibitem[Mar25b]{Mar25b}
+E. Markman,
+\emph{Secant sheaves and Weil classes on abelian varieties},
+preprint, arXiv:2509.23403 (2025).
+\href{https://doi.org/10.48550/arXiv.2509.23403}{\texttt{doi:10.48550/arXiv.2509.23403}}.
+
+\bibitem[Mor84]{Mor84}
+D. R. Morrison,
+\emph{On K3 surfaces with large Picard number},
+Invent. Math. \textbf{75} (1984), no.~1, 105--121.
+\href{https://doi.org/10.1007/BF01403093}{\texttt{doi:10.1007/BF01403093}}.
+
+\bibitem[Muk81]{Muk81}
+S. Mukai,
+\emph{Duality between $D(X)$ and $D(\hat{X})$ with its application to
+Picard sheaves},
+Nagoya Math. J. \textbf{81} (1981), 153--175.
+\href{https://doi.org/10.1017/S002776300001922X}{\texttt{doi:10.1017/S002776300001922X}}.
+
+\bibitem[Var23]{Var23}
+M. Varesco,
+\emph{Hodge similarities, algebraic classes, and Kuga--Satake varieties},
+Math. Z. \textbf{305} (2023), paper no.~69.
+\href{https://doi.org/10.1007/s00209-023-03390-8}{\texttt{doi:10.1007/s00209-023-03390-8}}.
+
+\end{thebibliography}
+\endgroup
+
+\end{document}

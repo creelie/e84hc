@@ -1,0 +1,10 @@
+n=4 pair (1, 0),(1, 0): ch(E) flat over Q(d): False; ch(E)e^{ell/2} flat over Q(d): True; weil coords (re,im) = (d**4/2, 0); mu_{m+2} = -mu_m/(4d): True  (1.8s)
+n=4 pair (1, 0),(0, 1): ch(E) flat over Q(d): False; ch(E)e^{ell/2} flat over Q(d): True; weil coords (re,im) = (0, d**4/2); mu_{m+2} = -mu_m/(4d): True  (2.8s)
+n=4 pair (0, 1),(1, 0): ch(E) flat over Q(d): False; ch(E)e^{ell/2} flat over Q(d): True; weil coords (re,im) = (0, d**4/2); mu_{m+2} = -mu_m/(4d): True  (3.7s)
+n=4 pair (0, 1),(0, 1): ch(E) flat over Q(d): False; ch(E)e^{ell/2} flat over Q(d): True; weil coords (re,im) = (-d**3/2, 0); mu_{m+2} = -mu_m/(4d): True  (4.8s)
+n=4: all four basis pairs flat after e^{ell/2}, not before, rho<=2 recursion, for d symbolic: True
+n=5 pair (1, 0),(1, 0): ch(E) flat over Q(d): False; ch(E)e^{ell/2} flat over Q(d): True; weil coords (re,im) = (d**5/2, 0); mu_{m+2} = -mu_m/(4d): True  (18.1s)
+n=5 pair (1, 0),(0, 1): ch(E) flat over Q(d): False; ch(E)e^{ell/2} flat over Q(d): True; weil coords (re,im) = (0, d**5/2); mu_{m+2} = -mu_m/(4d): True  (29.7s)
+n=5 pair (0, 1),(1, 0): ch(E) flat over Q(d): False; ch(E)e^{ell/2} flat over Q(d): True; weil coords (re,im) = (0, d**5/2); mu_{m+2} = -mu_m/(4d): True  (42.0s)
+n=5 pair (0, 1),(0, 1): ch(E) flat over Q(d): False; ch(E)e^{ell/2} flat over Q(d): True; weil coords (re,im) = (-d**4/2, 0); mu_{m+2} = -mu_m/(4d): True  (52.9s)
+n=5: all four basis pairs flat after e^{ell/2}, not before, rho<=2 recursion, for d symbolic: True

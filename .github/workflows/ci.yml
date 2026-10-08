@@ -1,0 +1,45 @@
+name: checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verification:
+    name: Python, Julia, C, Lean and Macaulay2
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: julia-actions/setup-julia@v2
+        with:
+          version: "1.10"
+      - name: Install Macaulay2
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends macaulay2
+      - name: Install Lean (elan)
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
+            | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Run every check
+        run: STRICT=1 bash verification/shell/run_all.sh
+
+  paper:
+    name: Paper, tex.zip and arXiv tarball
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            texlive-latex-base texlive-latex-recommended texlive-latex-extra \
+            texlive-fonts-recommended lmodern poppler-utils zip
+      - name: Build
+        run: bash scripts/build_paper.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paper
+          path: dist/

@@ -1,0 +1,51 @@
+(A) Mumford datum F = Q(2cos(2pi/7)), D = (-1, c)_F
+  ok: Tr c = -1, Tr c^2 = 5 (minimal polynomial x^3 + x^2 - 2x - 1)
+  ok: N_{F/Q}(c) = 1, so Cor_{F/Q}(-1, c)_F = (-1, 1)_Q is split and Cor D = M_8(Q)
+  x^3 + x^2 - 2x - 1 at -2, -1, 0, 1, 2: [-1, 1, -1, -1, 7]
+  ok: the conjugates of c lie in (-2,-1), (-1,0), (1,2): c < 0 at exactly two real places: D = (-1, c)_F is definite there and split at the third
+  Gram matrix of q_1 on D^0 (blocks i, j, k; basis 1, c, c^2):
+    [-6, 2, -10, 0, 0, 0, 0, 0, 0]
+    [2, -10, 8, 0, 0, 0, 0, 0, 0]
+    [-10, 8, -26, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, -2, 10, -8, 0, 0, 0]
+    [0, 0, 0, 10, -8, 26, 0, 0, 0]
+    [0, 0, 0, -8, 26, -32, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, -2, 10, -8]
+    [0, 0, 0, 0, 0, 0, 10, -8, 26]
+    [0, 0, 0, 0, 0, 0, -8, 26, -32]
+  signature of (T, q_1): (2, 7, 0)
+  ok: (T, q_1) is nondegenerate of signature (2, 7), as in prop:mumfordrm(iii)
+  isotropic vectors found in the search box: 200
+  ok: T is isotropic (as Meyer's theorem predicts in dimension >= 5)
+  ok: found a totally isotropic plane in T: Witt index >= 2
+  v1 = [-1, -1, 0, -1, -1, -1, -1, 0, 0]  v2 = [-1, 0, 0, -1, -1, -1, 0, 1, 0]
+  ok: v1, v2 span a totally isotropic plane (exact integer check)
+  ok: Witt index of T is exactly 2: a totally isotropic subspace has dimension <= min(2, 7)
+  Gram matrix of span(v1, w1, v2, w2): [[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]
+  ok: span(v1, w1, v2, w2) is H + H (two orthogonal hyperbolic planes)
+  signature of K = (H + H)^perp: (0, 5, 0)
+  ok: T = H + H + K with K negative definite of rank 5
+  ok: W = H + H + <k> has signature (2, 3) and Witt index 2
+  ok: the orthogonal complement N' of W in T is negative definite of rank 4
+(B) abelian surfaces: H^2(B, Z) = /\^2 Z^4
+  ok: /\^2 Z^4 with the wedge pairing is even unimodular of signature (3, 3), i.e. U^3
+  ok: d = 1: h = e12 + d e34 has square 2d and is orthogonal to e13, e24, e14, e23, e12 - d e34
+  ok: d = 1: h^perp contains U(-1) + U + <-2d>, so T(B)_Q = U^2 + <-2d> has Witt index 2
+  ok: d = 2: h = e12 + d e34 has square 2d and is orthogonal to e13, e24, e14, e23, e12 - d e34
+  ok: d = 2: h^perp contains U(-1) + U + <-2d>, so T(B)_Q = U^2 + <-2d> has Witt index 2
+  ok: d = 3: h = e12 + d e34 has square 2d and is orthogonal to e13, e24, e14, e23, e12 - d e34
+  ok: d = 3: h^perp contains U(-1) + U + <-2d>, so T(B)_Q = U^2 + <-2d> has Witt index 2
+  ok: d = 5: h = e12 + d e34 has square 2d and is orthogonal to e13, e24, e14, e23, e12 - d e34
+  ok: d = 5: h^perp contains U(-1) + U + <-2d>, so T(B)_Q = U^2 + <-2d> has Witt index 2
+  ok: rho(B) = 2: T(B)_Q = N^perp in U^3 with N a plane of signature (1,1), and N + (-N) is hyperbolic, so T(B)_Q = U + (-N) is isotropic
+(C) a Picard number 17 K3 lattice with Witt index 1
+  <6, -2, -2> isotropic over Q_3: False ; over Q_2: False ; over R: True
+  ok: <6, -2, -2> is anisotropic over Q_3 (Hilbert symbol (12, -4)_3 = (3, -1)_3 = -1), hence over Q
+  ok: product formula sanity check for (3, -1): -1 at 2 and 3, +1 at infinity
+  ok: L_Q = U + <6, -2, -2> has Witt index exactly 1 (Witt cancellation), unlike every rank-5 T(B)_Q
+  ok: E8 Cartan matrix is even unimodular positive definite
+  ok: K3 lattice U^3 + E8(-1)^2: unimodular of signature (3, 19)
+  ok: the five vectors span U + <6> + <-2> + <-2>
+  ok: the embedding is primitive (Smith invariants all 1)
+  ok: L has signature (2, 3): a very general K3 surface with T(S) = L has Picard number 17
+ALL CHECKS PASSED

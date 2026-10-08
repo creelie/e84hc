@@ -1,0 +1,8 @@
+(M1) 8 subtori: relation True, pure (without C_theta) True
+     any 7 of them: relation False
+(M2) rational points found on the conic <l_W, w> cap Q^3: 15
+     8 of them: relation True, pure True
+     cells of the 8 points: ['line bundle/semi-hom.', 'line bundle/semi-hom.', 'line bundle/semi-hom.', 'line bundle/semi-hom.', 'line bundle/semi-hom.', 'line bundle/semi-hom.', 'line bundle/semi-hom.', 'line bundle/semi-hom.']
+(M3) 7 conic points + 1 other point: relations found: 0 (expect 0)
+(M4) random natural 7-sets with a Weil relation: 0/200; 8-sets: 0/200
+(M5) quadratic form on <l_W, q>, q in C_theta: q(ReL)=1 q(ImL)=1 q(q)=0, B(ReL,q)=0 B(ImL,q)=0 -> conic = {d a^2 + b^2 = 0}: two conjugate lines through q

@@ -1,0 +1,5 @@
+rank-one V, chi = 4: tried 4382 candidates with O_0-integral (h, g, k); integral in R_Z: 0  (32.9s)
+  [PASS] r = 0: chi = 4 c^2 with 5 | c has no solution chi = 4
+  [PASS] no integral product-type character with chi = 4 and 0 < |rank| <= 12, |h| <= 3|r|
+
+2 checks passed, 0 failed

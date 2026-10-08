@@ -1,0 +1,5 @@
+[PASS] SO(3), V^(x)5: 6 invariants; 10 block products (pairs + <=1 det), all invariant, rank 6
+[PASS] SO(3), V^(x)6: 15 invariants; 15 block products (pairs + <=1 det), all invariant, rank 15
+[PASS] SO(4), V^(x)6: 25 invariants; 30 block products (pairs + <=1 det), all invariant, rank 25
+[PASS] SO(5), V^(x)7: 15 invariants; 21 block products (pairs + <=1 det), all invariant, rank 15
+4 checks passed, 0 failed

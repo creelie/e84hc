@@ -1,0 +1,124 @@
+\section{The routes}\label{sec:routes}
+
+We now treat the statements as propositional letters and the results of
+the paper as rules between them. Besides the seven statements of
+\Cref{def:statements} and \HC{} there are three more: \st{SR}, that the
+subvariety $Y$ of \Cref{thm:E} is semiregular for some $(X,L)$ of each genus
+$n+1\ge5$ with maximal Hodge group; \st{W3}, that the Weil classes are
+algebraic on every abelian variety of split Weil type for $\QQ(\sqrt{-3})$;
+and \st{Fer}, the Hodge conjecture for every Fermat variety. The rules are
+listed in \Cref{tab:rules}.
+
+\begin{table}[ht]
+\centering
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{@{}l>{\raggedright\arraybackslash}p{0.56\textwidth}@{}}
+\toprule
+Implication & Source\\
+\midrule
+$\st{F2}\wedge\st{F3$'$}\Rightarrow\HC$ & \Cref{ssec:proofA}: if
+\st{F2} holds then $\Ab^{p}(X)=\Alg^{p}(X)$\\
+$\HC\Rightarrow\st{F2},\st{F3$'$},\st{L},\st{M},\st{V}$ &
+\Cref{lem:hcimplies}\\
+$\st{L}\wedge\st{M}\Rightarrow\HC$ & \Cref{prop:LM}, after Andr\'e
+\cite{And96}\\
+$\st{L}\Rightarrow\st{F2}$ & Abdulali, Andr\'e \cite[Theorem~4]{Mil20}\\
+$\st{V}\Rightarrow\st{F2}$ & \cite[Theorem~3 and Remark~2]{Mil20}\\
+$\st{V}\Rightarrow\st{IP}$ & \st{IP} is a case of \st{V}\\
+$\st{F3$'$}\Rightarrow\st{M}$ & \Cref{prop:f3m}\\
+$\st{CM}\wedge\st{IP}\Rightarrow\st{F2}$ & \Cref{prop:cmip}\\
+$\st{F2}\Rightarrow\st{CM},\st{IP}$ & \Cref{prop:cmip}\\
+$\st{CM}\Rightarrow\st{Fer}$, $\HC\Rightarrow\st{Fer}$ & \Cref{thm:C}\\
+$\st{SR}\Rightarrow\st{W3}$ & \Cref{cor:schoensemireg} for $2n\ge8$;
+\Cref{thm:lef11} and \cite{Sch88,Sch98} for $2n\le6$\\
+$\st{F2}\Rightarrow\st{W3}$ & \st{W3} is a case of \st{F2}\\
+\bottomrule
+\end{tabular}
+\caption{The implications between the statements. A set of statements
+\emph{implies} a statement if the statement is reached from the set by
+repeated use of these rules.}
+\label{tab:rules}
+\end{table}
+
+For $2n\le6$ the conclusion of \st{SR} is already known, which is why
+\st{SR} only concerns the genera $n+1\ge5$. A set of
+statements is \emph{closed} if it contains the conclusion of every rule whose
+premises it contains. The statements implied by a set $S$ form the smallest
+closed set containing $S$, so a closed set that contains $S$ and not \HC{}
+shows that \HC{} does not follow from $S$.
+
+\begin{lemma}\label{lem:closedsets}
+Let $\mathcal{U}$ be the set of all eleven statements. The four sets
+\[
+\begin{aligned}
+  T_{1}&=\mathcal{U}\setminus\{\HC,\st{M},\st{F3$'$}\},&
+  T_{2}&=\mathcal{U}\setminus\{\HC,\st{L},\st{F3$'$}\},\\
+  T_{3}&=\mathcal{U}\setminus\{\HC,\st{F2},\st{L},\st{V},\st{IP}\},&
+  T_{4}&=\mathcal{U}\setminus\{\HC,\st{F2},\st{L},\st{V},\st{CM}\}
+\end{aligned}
+\]
+are closed, and so is $\{\st{CM},\st{Fer}\}$.
+\end{lemma}
+
+\begin{proof}
+A rule can fail to be respected by a set only if its conclusion is missing
+from the set while all its premises are present. We check the rules whose
+conclusions are missing. In $T_{1}$ the missing conclusions are \HC, \st{M}
+and \st{F3$'$}; every rule concluding one of them has a premise among \HC,
+\st{F3$'$} and \st{M}, which are missing. In $T_{2}$ the rules concluding
+\HC, \st{L} or \st{F3$'$} need one of \st{F3$'$}, \HC{} or \st{L}. In
+$T_{3}$ every rule concluding \HC, \st{F2}, \st{L}, \st{V} or \st{IP} has a
+premise among \st{F2}, \HC, \st{L}, \st{V} and \st{IP}; the rule
+$\st{CM}\wedge\st{IP}\Rightarrow\st{F2}$ is blocked by \st{IP}. $T_{4}$ is
+the same with \st{CM} in place of \st{IP}. In $\{\st{CM},\st{Fer}\}$ the
+only rule with all premises present is $\st{CM}\Rightarrow\st{Fer}$.
+\end{proof}
+
+\begin{proof}[Proof of \Cref{thm:B}]
+Let $S$ be a set of statements, not containing \HC, that implies \HC. Then
+$S$ is contained in none of $T_{1},\dots,T_{4}$, so it meets each of
+\[
+  \{\st{M},\st{F3$'$}\},\quad\{\st{L},\st{F3$'$}\},\quad
+  \{\st{F2},\st{L},\st{V},\st{IP}\},\quad\{\st{F2},\st{L},\st{V},\st{CM}\}.
+\]
+If $\st{F3$'$}\notin S$, the first two give $\st{M},\st{L}\in S$, which is
+(b). If $\st{F3$'$}\in S$ and $S$ contains none of \st{F2}, \st{L}, \st{V},
+the last two give $\st{IP},\st{CM}\in S$. This is (a).
+
+Conversely, $\{\st{F2},\st{F3$'$}\}$ and $\{\st{L},\st{M}\}$ imply \HC{}
+directly, and $\{\st{L},\st{F3$'$}\}$, $\{\st{V},\st{F3$'$}\}$ and
+$\{\st{CM},\st{IP},\st{F3$'$}\}$ imply \st{F2} and then \HC. From \HC{} the
+rules give \st{F2}, \st{F3$'$}, \st{L}, \st{M}, \st{V}, then \st{CM},
+\st{IP}, \st{W3} and \st{Fer}: every statement except \st{SR}. No minimal set
+contains \st{SR}, because \st{SR} is a premise only of the rule that
+concludes \st{W3}, and \st{W3} is a premise of no rule.
+\end{proof}
+
+\begin{corollary}\label{cor:bypass}
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item A set of statements that implies \HC{} and contains neither \st{F2}
+nor \st{F3$'$} contains \st{L} and \st{M}; by \Cref{thm:A} this pair is
+equivalent to \HC.
+\item Every set that implies \HC{} also implies \st{F2} and \st{F3$'$}.
+\item A set that implies \HC{} still implies it when \st{SR} is removed.
+\item \st{CM} implies \st{Fer} and nothing else; neither
+$\{\st{CM},\st{F3$'$}\}$ nor $\{\st{CM},\st{SR}\}$ implies \HC.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+(i) is \Cref{thm:B}(b), since (a) requires \st{F3$'$}. (ii) holds because
+\HC{} implies \st{F2} and \st{F3$'$}. (iii) is the last sentence of the proof
+of \Cref{thm:B}. For (iv), $\{\st{CM},\st{Fer}\}$ is closed by
+\Cref{lem:closedsets}, and $\{\st{CM},\st{F3$'$}\}$ and $\{\st{CM},\st{SR}\}$
+lie in the closed set $T_{3}$, which does not contain \HC.
+\end{proof}
+
+So the conjecture can be reached without assuming \st{F2} or \st{F3$'$},
+but only through \st{L} and \st{M}, which carry the whole conjecture between
+them; and it cannot be reached without proving \st{F2} and \st{F3$'$} along
+the way. Schoen's subvariety, if it is semiregular, settles a family of Weil
+classes in every dimension, but it lies on no route to \HC. The closed set
+$\{\st{CM},\st{Fer}\}$ is a valuation of the eleven statements in which
+every rule of \Cref{tab:rules} holds, \st{CM} holds, and \HC{} fails: the
+rules alone cannot derive the conjecture from the preprint \cite{OAI26}.

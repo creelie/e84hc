@@ -1,0 +1,24 @@
+  [PASS] B n=4, d=1, k=2: diagonal members [(0, 1, 2, 3), (0, 2, 5, 6), (1, 2, 4, 5)] give 132 monomial columns; with 2 random members the kernel mod q is 0 (lower bound 0)
+         2824 condition rows compressed to 172; q = 2147483629; 0.4s
+  [PASS] B n=4, d=1, k=3: diagonal members [(0, 1, 2, 3), (0, 1, 3, 4), (1, 3, 5, 6)] give 488 monomial columns; with 2 random members the kernel mod q is 0 (lower bound 0)
+         10448 condition rows compressed to 528; q = 2147483629; 3.1s
+  [PASS] B n=4, d=1, k=4: diagonal members [(0, 1, 2, 3), (1, 4, 5, 6), (0, 2, 3, 6)] give 850 monomial columns; with 2 random members the kernel mod q is 2 (lower bound 2)
+         16408 condition rows compressed to 890; q = 2147483629; 11.6s
+  [PASS] B n=4, d=1, k=5: diagonal members [(0, 1, 2, 3), (2, 3, 5, 7), (1, 2, 4, 6)] give 488 monomial columns; with 2 random members the kernel mod q is 0 (lower bound 0)
+         10448 condition rows compressed to 528; q = 2147483629; 2.6s
+  [PASS] B n=4, d=1, k=6: diagonal members [(0, 1, 2, 3), (0, 3, 5, 7), (1, 2, 4, 7)] give 154 monomial columns; with 2 random members the kernel mod q is 0 (lower bound 0)
+         2788 condition rows compressed to 194; q = 2147483629; 0.3s
+  [PASS] B n=4, d=3, k=3: diagonal members [(0, 1, 2, 3), (1, 3, 4, 5), (0, 1, 5, 7)] give 432 monomial columns; with 2 random members the kernel mod q is 0 (lower bound 0)
+         10672 condition rows compressed to 472; q = 2147483647; 1.7s
+  [PASS] B n=4, d=3, k=4: diagonal members [(0, 1, 2, 3), (1, 2, 5, 6), (0, 1, 3, 5)] give 724 monomial columns; with 2 random members the kernel mod q is 2 (lower bound 2)
+         15956 condition rows compressed to 764; q = 2147483647; 6.4s
+  [PASS] B n=4, d=3, k=5: diagonal members [(0, 1, 2, 3), (1, 2, 4, 6), (0, 2, 4, 5)] give 432 monomial columns; with 2 random members the kernel mod q is 0 (lower bound 0)
+         10672 condition rows compressed to 472; q = 2147483647; 1.8s
+  [PASS] B n=4, d=7, k=4: diagonal members [(0, 1, 2, 3), (0, 1, 5, 6), (1, 5, 6, 7)] give 906 monomial columns; with 2 random members the kernel mod q is 2 (lower bound 2)
+         16016 condition rows compressed to 946; q = 2147483647; 15.1s
+
+  9 checks passed, 0 failed  (43.0s)
+
+real	0m43.511s
+user	0m17.548s
+sys	0m1.960s

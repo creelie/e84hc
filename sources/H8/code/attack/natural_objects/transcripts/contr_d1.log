@@ -1,0 +1,20 @@
+(K1) (2,0)-part of beta, betahat, ell, eta vanishes: [True, True, True, True]
+     M preserves H^{1,0}: True
+(K2) dim T (mod p) = 16 (expect n^2 = 16)
+     T kills W1: True
+     T kills W2: True
+     T kills eta: True
+     T kills eta^3: True
+(K3/K5) O(beta)                rank HT^2_|ch =  28   rank T_|ch =  6  => dim Ann_T(ch) <= 10
+(K3/K5) O(beta+betahat-ell)    rank HT^2_|ch =  28   rank T_|ch =  6  => dim Ann_T(ch) <= 10
+(K3/K5) O(2beta-betahat+3ell)  rank HT^2_|ch =  28   rank T_|ch =  6  => dim Ann_T(ch) <= 10
+(K3/K5) [B_(1,0)]              rank HT^2_|ch =  28   rank T_|ch =  6  => dim Ann_T(ch) <= 10
+(K3/K5) [B_(2,1)]              rank HT^2_|ch =  28   rank T_|ch =  6  => dim Ann_T(ch) <= 10
+(K3/K5) [B_(1,1)]e^{beta}      rank HT^2_|ch =  28   rank T_|ch =  6  => dim Ann_T(ch) <= 10
+(K3/K5) O(eta)                 rank HT^2_|ch =  28   rank T_|ch =  0  => dim Ann_T(ch) <= 16
+(K4) pure (rho=0)               rho = 0   r(gamma) mod p =  56   formula (4+rho)16-8 = 56
+(K4) e^{eta} (rho=1)            rho = 1   r(gamma) mod p =  72   formula (4+rho)16-8 = 72
+(K4) e^{eta}+e^{2eta} (rho=2)   rho = 2   r(gamma) mod p =  88   formula (4+rho)16-8 = 88
+(K4) theta^4 (rho=3)            rho = 3   r(gamma) mod p = 104   formula (4+rho)16-8 = 104
+(K4) 1+eta+eta^2 (rho=3)        rho = 3   r(gamma) mod p = 104   formula (4+rho)16-8 = 104
+time 7.8s

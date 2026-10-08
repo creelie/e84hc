@@ -1,0 +1,11 @@
+BB lattice: rank 23, det 2, signature (3,20)
+Poincare polynomial of S^[2] (K3): [1, 0, 23, 0, 276, 0, 23, 0, 1]
+(1) b_4 = 276 = dim Sym^2 H^2: OK
+(2) det of the Fujiki pairing on Sym^2 H^2 (276x276) = 1759218604441600
+(3) int q^vee x y = 25 q(x,y) on all basis pairs: True
+(4) int c_2 x y = 30 q(x,y): True ; int c_2^2 = 828
+    Todd_4 = (3*828-324)/720 = 3 ; chi(L) = qq**2/8 + 5*qq/4 + 3 = binom(q/2+3,2): OK
+(5) q^vee = q_NS^vee + q_T^vee with q_T^vee in Sym^2 T: OK
+(6) m(Z') - (1/q(h)) Sym[(u+u*)/2 on T] lies in Sym^2 NS: True {k0: 1/12, k1: 0, k2: 0, k3: -1/4}
+(7) Lambda(c cup x) = (tr C + 2C)x/q(h) on T: OK
+ALL CHECKS PASSED

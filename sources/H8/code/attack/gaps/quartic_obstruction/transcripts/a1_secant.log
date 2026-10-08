@@ -1,0 +1,63 @@
+A1 secant profile.  F0 = Q(sqrt 5), R = [[Fraction(0, 1), Fraction(1, 1)], [Fraction(1, 1), Fraction(1, 1)]]
+  [info] biquadratic q=(1, 1) w=theta1theta2: rho=1 profile [1, 8, 18, 8, 1, 0, 0, 0, 0]
+  [PASS] q=(1, 1) w=theta1theta2: chi exact 4 == formula 4
+  [info] biquadratic q=(1, 1) u: rho=1 profile [1, 8, 18, 8, 1, 0, 0, 0, 0]
+  [PASS] q=(1, 1) u: chi exact 4 == formula 4
+  [info] biquadratic q=(1, 1) v_1: rho=2 profile [1, 8, 20, 8, 1, 0, 0, 0, 0]
+  [PASS] q=(1, 1) v_1: chi exact 12 == formula 12
+  [info] biquadratic q=(1, 1) v_R: rho=2 profile [1, 8, 12, 8, 1, 0, 0, 0, 0]
+  [PASS] q=(1, 1) v_R: chi exact 8 == formula 8
+  [info] biquadratic q=(1, 1) u+v_1+w (rank2): rho=1 profile [1, 8, 18, 8, 1, 0, 0, 0, 0]
+  [PASS] q=(1, 1) u+v_1+w (rank2): chi exact 20 == formula 20
+  [PASS] q=(2, 1) w=theta1theta2: rho=1 profile [1, 8, 18, 8, 1, 0, 0, 0, 0] == (1,8,18,8,1)
+  [PASS] q=(2, 1) w=theta1theta2: chi exact 4 == formula 4
+  [PASS] q=(2, 1) u: rho=1 profile [1, 8, 18, 8, 1, 0, 0, 0, 0] == (1,8,18,8,1)
+  [PASS] q=(2, 1) u: chi exact 20 == formula 20
+  [PASS] q=(2, 1) v_1: rho=2 profile [1, 8, 20, 8, 1, 0, 0, 0, 0] == (1,8,20,8,1)
+  [PASS] q=(2, 1) v_1: chi exact 20 == formula 20
+  [PASS] q=(2, 1) v_R: rho=2 profile [1, 8, 20, 8, 1, 0, 0, 0, 0] == (1,8,20,8,1)
+  [PASS] q=(2, 1) v_R: chi exact 20 == formula 20
+  [PASS] q=(2, 1) u+v_1+w (rank2): rho=1 profile [1, 8, 18, 8, 1, 0, 0, 0, 0] == (1,8,18,8,1)
+  [PASS] q=(2, 1) u+v_1+w (rank2): chi exact 44 == formula 44
+  [PASS] q=(3, -1) w=theta1theta2: rho=1 profile [1, 8, 18, 8, 1, 0, 0, 0, 0] == (1,8,18,8,1)
+  [PASS] q=(3, -1) w=theta1theta2: chi exact 4 == formula 4
+  [PASS] q=(3, -1) u: rho=1 profile [1, 8, 18, 8, 1, 0, 0, 0, 0] == (1,8,18,8,1)
+  [PASS] q=(3, -1) u: chi exact 20 == formula 20
+  [PASS] q=(3, -1) v_1: rho=2 profile [1, 8, 20, 8, 1, 0, 0, 0, 0] == (1,8,20,8,1)
+  [PASS] q=(3, -1) v_1: chi exact 20 == formula 20
+  [PASS] q=(3, -1) v_R: rho=2 profile [1, 8, 20, 8, 1, 0, 0, 0, 0] == (1,8,20,8,1)
+  [PASS] q=(3, -1) v_R: chi exact 40 == formula 40
+  [PASS] q=(3, -1) u+v_1+w (rank2): rho=1 profile [1, 8, 18, 8, 1, 0, 0, 0, 0] == (1,8,18,8,1)
+  [PASS] q=(3, -1) u+v_1+w (rank2): chi exact 44 == formula 44
+  [info] biquadratic q=(1, 0) w=theta1theta2: rho=1 profile [1, 8, 18, 8, 1, 0, 0, 0, 0]
+  [PASS] q=(1, 0) w=theta1theta2: chi exact 4 == formula 4
+  [info] biquadratic q=(1, 0) u: rho=1 profile [1, 8, 18, 8, 1, 0, 0, 0, 0]
+  [PASS] q=(1, 0) u: chi exact 4 == formula 4
+  [info] biquadratic q=(1, 0) v_1: rho=2 profile [1, 8, 12, 8, 1, 0, 0, 0, 0]
+  [PASS] q=(1, 0) v_1: chi exact 8 == formula 8
+  [info] biquadratic q=(1, 0) v_R: rho=2 profile [1, 8, 20, 8, 1, 0, 0, 0, 0]
+  [PASS] q=(1, 0) v_R: chi exact 12 == formula 12
+  [info] biquadratic q=(1, 0) u+v_1+w (rank2): rho=1 profile [1, 8, 18, 8, 1, 0, 0, 0, 0]
+  [PASS] q=(1, 0) u+v_1+w (rank2): chi exact 16 == formula 16
+  [PASS] q=(5, 2) w=theta1theta2: rho=1 profile [1, 8, 18, 8, 1, 0, 0, 0, 0] == (1,8,18,8,1)
+  [PASS] q=(5, 2) w=theta1theta2: chi exact 4 == formula 4
+  [PASS] q=(5, 2) u: rho=1 profile [1, 8, 18, 8, 1, 0, 0, 0, 0] == (1,8,18,8,1)
+  [PASS] q=(5, 2) u: chi exact 124 == formula 124
+  [PASS] q=(5, 2) v_1: rho=2 profile [1, 8, 20, 8, 1, 0, 0, 0, 0] == (1,8,20,8,1)
+  [PASS] q=(5, 2) v_1: chi exact 48 == formula 48
+  [PASS] q=(5, 2) v_R: rho=2 profile [1, 8, 20, 8, 1, 0, 0, 0, 0] == (1,8,20,8,1)
+  [PASS] q=(5, 2) v_R: chi exact 52 == formula 52
+  [PASS] q=(5, 2) u+v_1+w (rank2): rho=1 profile [1, 8, 18, 8, 1, 0, 0, 0, 0] == (1,8,18,8,1)
+  [PASS] q=(5, 2) u+v_1+w (rank2): chi exact 176 == formula 176
+  [PASS] random q=(1, 1) a=0 f=(2, 1) c=-1: rho=2, profile [1, 8, 20, 8, 1, 0, 0, 0, 0]
+  [PASS] random q=(2, 1) a=2 f=(-2, 0) c=-1: rho=2, profile [1, 8, 20, 8, 1, 0, 0, 0, 0]
+  [PASS] random q=(3, -1) a=-3 f=(0, -1) c=-1: rho=2, profile [1, 8, 20, 8, 1, 0, 0, 0, 0]
+  [PASS] random q=(1, 1) a=2 f=(0, 2) c=3: rho=2, profile [1, 8, 20, 8, 1, 0, 0, 0, 0]
+  [PASS] random q=(2, 1) a=3 f=(-2, 1) c=1: rho=2, profile [1, 8, 20, 8, 1, 0, 0, 0, 0]
+  [PASS] random q=(3, -1) a=-3 f=(1, -2) c=2: rho=2, profile [1, 8, 20, 8, 1, 0, 0, 0, 0]
+  [PASS] K-secant (d=1) a=1 b=0: profile [1, 8, 12, 8, 1, 0, 0, 0, 0] == (1,8,12,8,1)
+  [PASS] K-secant (d=1) a=0 b=1: profile [1, 8, 12, 8, 1, 0, 0, 0, 0] == (1,8,12,8,1)
+  [PASS] K-secant (d=1) a=1 b=3: profile [1, 8, 12, 8, 1, 0, 0, 0, 0] == (1,8,12,8,1)
+time 2.0s
+
+49 checks passed, 0 failed

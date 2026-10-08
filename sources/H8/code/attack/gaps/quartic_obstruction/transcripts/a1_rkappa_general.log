@@ -1,0 +1,19 @@
+  [PASS] F0 = Q(sqrt 5), q = (2, 1): the secant profiles of w and v_1 are (1, 8, 18) and (1, 8, 20)
+  [PASS] Q(sqrt 5), q=(2, 1), pair (w, v_1): r(kappa) mod p = 102 (lower bound), prediction 102  [1904 terms in C-coords, 6976 rows]
+  [PASS] Q(sqrt 5), q=(2, 1), pair (w, v_1): exact annihilator over Q(i) of dimension 18 (each vector verified on all of kappa)
+     => r(kappa) = 102 exactly  (3.0s)
+  [PASS] F = Q(sqrt 5, i): v_theta has profile (1, 8, 12) and w has (1, 8, 18)
+  [PASS] Q(sqrt 5, i), pair (v_theta, v_theta): r(kappa) mod p = 88 (lower bound), prediction 88  [232 terms in C-coords, 3168 rows]
+  [PASS] Q(sqrt 5, i), pair (v_theta, v_theta): exact annihilator over Q(i) of dimension 32 (each vector verified on all of kappa)
+     => r(kappa) = 88 exactly  (1.0s)
+  [PASS] Q(sqrt 5, i), pair (v_theta, w): r(kappa) mod p = 94 (lower bound), prediction 94  [1824 terms in C-coords, 6824 rows]
+  [PASS] Q(sqrt 5, i), pair (v_theta, w): exact annihilator over Q(i) of dimension 26 (each vector verified on all of kappa)
+     => r(kappa) = 94 exactly  (3.3s)
+  [PASS] Q(sqrt 2), q=(2, 1), pair (w, w): r(kappa) mod p = 100 (lower bound), prediction 100  [794 terms in C-coords, 6168 rows]
+  [PASS] Q(sqrt 2), q=(2, 1), pair (w, w): exact annihilator over Q(i) of dimension 20 (each vector verified on all of kappa)
+     => r(kappa) = 100 exactly  (1.4s)
+  [PASS] Q(sqrt 2), q=(2, 1), pair (v_1, v_1): r(kappa) mod p = 104 (lower bound), prediction 104  [700 terms in C-coords, 6376 rows]
+  [PASS] Q(sqrt 2), q=(2, 1), pair (v_1, v_1): exact annihilator over Q(i) of dimension 16 (each vector verified on all of kappa)
+     => r(kappa) = 104 exactly  (1.2s)
+
+12 checks passed, 0 failed

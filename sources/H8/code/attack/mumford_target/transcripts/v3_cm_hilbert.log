@@ -1,0 +1,14 @@
+nonzero zero-sum vectors with entries <= 5 : 3253
+irreducible elements: 6
+   (0, 0, 0, 1, 1, 0, 0, 0) support [(1, -1, -1), (-1, 1, 1)]
+   (0, 0, 1, 0, 0, 1, 0, 0) support [(1, -1, 1), (-1, 1, -1)]
+   (0, 1, 0, 0, 0, 0, 1, 0) support [(1, 1, -1), (-1, -1, 1)]
+   (0, 1, 1, 0, 1, 0, 0, 1) support [(1, 1, -1), (1, -1, 1), (-1, 1, 1), (-1, -1, -1)]
+   (1, 0, 0, 0, 0, 0, 0, 1) support [(1, 1, 1), (-1, -1, -1)]
+   (1, 0, 0, 1, 0, 1, 1, 0) support [(1, 1, 1), (1, -1, -1), (-1, 1, -1), (-1, -1, 1)]
+PASS every irreducible zero-sum multiset (entries <= 5) is a set (0/1 vector)
+PASS no irreducible element has an entry >= 2 within the box
+PASS e1+e2+e3+e4 = 0 and any three of e1..e4 are independent (so the relation lattice is Z(1,1,1,1))
+PASS the odd weights are exactly -E
+
+4 checks passed, 0 failed

@@ -1,0 +1,14 @@
+PASS (a) E(x)F + F(x)E + H(x)H/2 = P - I/2
+(b) dim image of Q[S_2] on (Q^2)^(x)2: 2
+PASS (b) = 2
+(b) dim image of Q[S_3] on (Q^2)^(x)3: 5
+PASS (b) = 5
+(b) dim image of Q[S_4] on (Q^2)^(x)4: 14
+PASS (b) = 14
+    => dim End_G(V(x)V) = 2^3 = 8, dim End_G(V^(x)3) = 5^3 = 125
+PASS (c) dim (Q^2)^{(x)6} SL2-invariants = 5
+PASS (c) the S_6-orbit of eps^(x)3 spans the 5-dim invariant space
+(d) disc of x^3+x^2-2x-1: 49
+PASS (d) Vandermonde det(sigma_k(a_j)) is nonzero (disc = 49)
+
+7 checks passed, 0 failed

@@ -1,0 +1,11 @@
+n=4 d=5: flat + rho<=2 for all secant pairs: True
+n=4 d=6: flat + rho<=2 for all secant pairs: True
+n=4 d=7: flat + rho<=2 for all secant pairs: True
+n=4 d=10: flat + rho<=2 for all secant pairs: True
+n=4 d=11: flat + rho<=2 for all secant pairs: True
+n=4 d=13: flat + rho<=2 for all secant pairs: True
+n=4 d=14: flat + rho<=2 for all secant pairs: True
+n=4 d=15: flat + rho<=2 for all secant pairs: True
+n=4 d=17: flat + rho<=2 for all secant pairs: True
+n=4 d=19: flat + rho<=2 for all secant pairs: True
+ALL True

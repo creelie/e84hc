@@ -1,0 +1,11 @@
+Q(sqrt(-5))                                   [E:Q]=2  [E0:Q]=1  totally imaginary=True  dim span(u)=2  dim span(u+ubar)=1  OK
+Q(zeta_5)                                     [E:Q]=4  [E0:Q]=2  totally imaginary=True  dim span(u)=4  dim span(u+ubar)=2  OK
+Q(zeta_8)=Q(i,sqrt2)                          [E:Q]=4  [E0:Q]=2  totally imaginary=True  dim span(u)=4  dim span(u+ubar)=2  OK
+Q(zeta_12)=Q(i,sqrt3)                         [E:Q]=4  [E0:Q]=2  totally imaginary=True  dim span(u)=4  dim span(u+ubar)=2  OK
+quartic CM, a^2=-(2+sqrt2)                    [E:Q]=4  [E0:Q]=2  totally imaginary=True  dim span(u)=4  dim span(u+ubar)=2  OK
+quartic non-Galois (D4) CM, a^2=-(3+sqrt3)    [E:Q]=4  [E0:Q]=2  totally imaginary=True  dim span(u)=4  dim span(u+ubar)=2  OK
+Q(zeta_7)                                     [E:Q]=6  [E0:Q]=3  totally imaginary=True  dim span(u)=6  dim span(u+ubar)=3  OK
+Q(zeta_9)                                     [E:Q]=6  [E0:Q]=3  totally imaginary=True  dim span(u)=6  dim span(u+ubar)=3  OK
+Q(zeta_15)                                    [E:Q]=8  [E0:Q]=4  totally imaginary=True  dim span(u)=8  dim span(u+ubar)=4  OK
+Q(zeta_11)                                    [E:Q]=10  [E0:Q]=5  totally imaginary=True  dim span(u)=10  dim span(u+ubar)=5  OK
+ALL OK

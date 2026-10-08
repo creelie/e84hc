@@ -1,0 +1,21 @@
+.lake/
+__pycache__/
+*.pyc
+# LaTeX build products
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+
+# unedited transcripts of the long runs
+!code/extreme/transcripts/*.log
+!code/attack/*/transcripts/*.log
+!code/attack/gaps/*/transcripts/*.log
+
+# output of the Q(sqrt 10) scan run by item (LV)
+code/attack/gaps/quartic_obstruction/a1_general_*.pkl

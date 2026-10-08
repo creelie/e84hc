@@ -1,0 +1,631 @@
+\section{An explicit secant plane in every dimension}\label{sec:construction}
+
+\Cref{q:higher} asks for four things: an abelian $n$-fold $X$, a plane
+$P\subset H^{\mathrm{ev}}(X,\QQ)$ of Hodge classes meeting the spinor variety
+in two points conjugate over $K$, a pair of secant sheaves realising the
+plane, and a deformation argument. This section supplies the first three, for
+every $n\ge2$ and every imaginary quadratic field $K$. The first two are
+written in closed form (\Cref{thm:explicitweil,thm:plane}). The third is first
+reduced to an explicit equation on a Chern character
+(\Cref{thm:secantinvariants}) and then solved, in every dimension, by sheaves
+of positive rank whose classes are combinations of the powers of a single line
+bundle (\Cref{thm:secantexists}). The fourth ingredient is the deformation
+argument, and \Cref{rem:deformation} says exactly what it requires.
+
+The framework is Markman's \cite{Mar25a,Mar25b}: the Weil structure on
+$X\times\widehat{X}$ obtained by embedding $K$ into
+$\End^{0}(X\times\widehat{X})$, the notion of a $K$-secant sheaf, whose Chern
+character lies in a plane meeting the spinor variety at two conjugate points,
+and the deformation step that completes the argument at $n=3$ are all his.
+What we add is the explicit form of the first three ingredients, uniformly in
+$n$ and $K$. The closed form rests on two facts: the two conjugate isotropic
+subspaces demanded by \Cref{cor:orbitcriterion} are the graphs of multiples of
+a single element of the N\'eron--Severi group, and the pure spinor of the graph
+of a two-form is the exponential of that form.
+
+\subsection{The Weil structure}
+
+\begin{setupenv}\label{setup:construction}
+Let $X$ be a complex abelian variety of dimension $n$ with
+$H_{1}(X,\QQ)=U$ of dimension $2n$ and complex structure $J$ on
+$U\otimes\RR$. Let $d$ be a squarefree positive integer, $s=\sqrt{-d}$ and
+$K=\QQ(s)$. Let $\beta\in\NS(X)\otimes\QQ$ be nondegenerate, regarded as an
+alternating form on $U$, so that the Riemann relation $J^{\top}\beta J=\beta$
+holds, and write $\phi_{\beta}\colon X\to\widehat{X}$ for the associated
+isogeny. Put
+\[
+  A=X\times\widehat{X},\qquad \dim A=2n,\qquad
+  H_{1}(A,\QQ)=U\oplus U^{\vee},
+\]
+and let
+\begin{equation}\label{eq:Mdef}
+  M=\begin{pmatrix}0 & -\beta^{-1}\\[2pt] d\,\beta & 0\end{pmatrix}
+  \in\End^{0}(A),
+\end{equation}
+acting on $H_{1}(A,\QQ)=U\oplus U^{\vee}$ by
+$(u,\phi)\mapsto(-\beta^{-1}\phi,\;d\,\beta u)$.
+\end{setupenv}
+
+\begin{theorem}[An explicit Weil structure]\label{thm:explicitweil}
+In \Cref{setup:construction}:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $M^{2}=-d$, so $\iota(s)=M$ defines an embedding
+  $\iota\colon K\hookrightarrow\End^{0}(A)$;
+\item $M$ commutes with the complex structure of $A$, and for an
+  alternating form $\beta$ on $U$ this is equivalent to the Riemann relation,
+  that is to $\beta\in\NS(X)\otimes\QQ$;
+\item $M$ acts on $H^{1,0}(A)$ with eigenvalues $s$ and $-s$, each of
+  multiplicity $n$, so $(A,\iota,\eta)$ is of $(K,-1,n)$-Weil type for a
+  suitable polarisation $\eta$;
+\item the eigenspaces $W_{\pm}\subset H_{1}(A,\CC)$ of $M$ for $\pm s$ are
+  maximal isotropic for the canonical pairing on $U\oplus U^{\vee}$, are
+  interchanged by complex conjugation, and are the graphs of the two-forms
+  $\mp s\beta$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) Block multiplication gives
+$M^{2}=\mathrm{diag}(-\beta^{-1}\,d\beta,\;-d\beta\,\beta^{-1})=-d\cdot\mathrm{id}$.
+
+(ii) The complex structure of $A=X\times\widehat{X}$ is
+$J_{A}=\mathrm{diag}(J,-J^{\top})$. The relation $MJ_{A}=J_{A}M$ amounts to
+the two identities $d\beta J=-dJ^{\top}\beta$ and
+$-\beta^{-1}(-J^{\top})=J(-\beta^{-1})$, and each is equivalent to
+$\beta J=-J^{\top}\beta$. This is the Riemann relation: from
+$J^{\top}\beta J=\beta$ and $J^{2}=-1$ one gets
+$J^{\top}\beta=\beta J^{-1}=-\beta J$, as required. Conversely
+$\beta J=-J^{\top}\beta$ gives $J^{\top}\beta J=-\beta J J=\beta$.
+
+(iii) $M$ is block anti-diagonal and $H^{1,0}(A)=H^{1,0}(X)\oplus
+H^{1,0}(\widehat{X})$ with both summands of dimension $n$, and $M$ exchanges
+them. If $M(x,y)=\lambda(x,y)$ then $-\beta^{-1}y=\lambda x$ and
+$d\beta x=\lambda y$, so $y=d\beta x/\lambda$ and, substituting,
+$-dx/\lambda=\lambda x$, that is $\lambda^{2}=-d$. For each of
+the two values of $\lambda$ the assignment $x\mapsto(x,d\beta x/\lambda)$ is an
+isomorphism from $H^{1,0}(X)$ onto the $\lambda$-eigenspace, which is
+therefore of dimension $n$. That is the balanced signature of
+\Cref{def:weiltype}(ii). For (iii) of that definition, let $\eta_{0}$ be any
+polarisation of $A$ and put
+$\eta(x,y)=\eta_{0}(x,y)+d^{-1}\eta_{0}(Mx,My)$. A positive integer multiple
+$mM$ of $M$ is an isogeny, so the second term is the positive multiple
+$(dm^{2})^{-1}(mM)^{*}\eta_{0}$ of a polarisation, and $\eta$ is a
+polarisation. Since $M^{2}=-d$,
+$\eta(Mx,My)=\eta_{0}(Mx,My)+d\,\eta_{0}(x,y)=d\,\eta(x,y)$, and as
+$M^{-1}=-M/d$ this gives $\eta(Mx,y)=-\eta(x,My)$: the Rosati involution of
+$\eta$ sends $M$ to $-M$, that is $\iota(\tau)^{\dagger}=\iota(\bbar{\tau})$.
+When $\beta$ is a polarisation an explicit choice of $\eta$ is recorded in
+\Cref{prop:splitgeom}(i).
+
+(iv) The same computation identifies $W_{\lambda}=\{(x,d\beta x/\lambda)\}$,
+the graph of the form $d\beta/\lambda$, and
+$d\beta/\lambda=d\beta/(\pm s)=\mp s\beta$ since $d/s=-s$. The canonical
+pairing on $U\oplus U^{\vee}$ is
+$\langle(x,\xi),(x',\xi')\rangle=\xi'(x)+\xi(x')$, and on the graph it gives
+$d\beta(x',x)/\lambda+d\beta(x,x')/\lambda=0$ because $\beta$ is alternating; so
+$W_{\lambda}$ is isotropic, and it has dimension $2n$, half of
+$\dim(U\oplus U^{\vee})=4n$, hence is maximal. Conjugation sends $s$ to $-s$
+and so interchanges the two.
+\end{proof}
+
+The placement of the factor $d$ in \eqref{eq:Mdef} is a convention, fixed once
+and for all. The endomorphism $\begin{psmallmatrix}0&-d\beta^{-1}\\
+\beta&0\end{psmallmatrix}$ also squares to $-d$, commutes with the complex
+structure and defines a Weil structure on the same $A$, but it is a different
+embedding of $K$: its eigenspaces are the graphs of $\mp s\beta/d$ rather
+than of $\mp s\beta$, its polarisation is $\beta+d\widehat\beta$ rather than
+$d\beta+\widehat\beta$, and the class in
+$\bigwedge^{2}V_{+}\oplus\bigwedge^{2}V_{-}$ it produces is
+$\beta-d\widehat\beta$ rather than $\gamma=d\beta-\widehat\beta$. The
+convention of \eqref{eq:Mdef} is the one whose action on cohomology is
+$x\mapsto-Bx$, $\xi\mapsto dB^{-1}\xi$ in the proof of
+\Cref{thm:splitclosed}, and every formula below refers to it. For $d=1$ the
+two conventions coincide.
+
+\begin{remark}\label{rem:abundant}
+\Cref{thm:explicitweil} says that abelian $2n$-folds of Weil type of the split
+form $X\times\widehat{X}$ exist for every $n$, every imaginary quadratic $K$
+and every polarised abelian $n$-fold $X$, and that the Weil structure is
+written down by one element of $\NS(X)$. These are not general members of the
+moduli of Weil type. The Weil classes on them are of interest because
+Markman's deformation argument, where it can be carried out, propagates
+algebraicity from them to the general member; see \Cref{rem:deformation}.
+\end{remark}
+
+\subsection{The secant plane}
+
+Write $t=\beta\in\NS(X)\otimes\QQ$, so that by
+\Cref{thm:explicitweil}(iv) the two conjugate maximal isotropic subspaces are
+the graphs of $\mp s\,t$; we use a separate letter because everything below
+holds for any nondegenerate $t\in\NS(X)\otimes\QQ$. The pure spinor
+attached to the graph of a two-form $\omega$ is $e^{\omega}$, so the two
+conjugate points of the even spinor variety determined by the Weil structure
+are $[e^{-st}]$ and $[e^{st}]$.
+
+\begin{definition}[The secant plane]\label{def:secantplane}
+With $t$ and $d$ as above, put
+\begin{equation}\label{eq:uv}
+  u_{t}=\sum_{j\ge0}\frac{(-d)^{j}}{(2j)!}\,t^{2j},
+  \qquad
+  v_{t}=\sum_{j\ge0}\frac{(-d)^{j}}{(2j+1)!}\,t^{2j+1},
+\end{equation}
+both sums being finite because $t^{k}=0$ for $k>n$, and let
+$P_{t}=\QQ u_{t}\oplus\QQ v_{t}\subset H^{\mathrm{ev}}(X,\QQ)$.
+\end{definition}
+
+\begin{theorem}[The plane is an explicit rational secant]\label{thm:plane}
+With notation as above:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $u_{t}$ and $v_{t}$ are rational Hodge classes, and
+  $e^{\pm st}=u_{t}\pm s\,v_{t}$;
+\item $P_{t}$ is a two-dimensional $\QQ$-subspace of $H^{\mathrm{ev}}(X,\QQ)$
+  spanned by Hodge classes, and $\PP(P_{t})$ is a line defined over $\QQ$
+  passing through the two conjugate points $[e^{\pm st}]$ of the even spinor
+  variety;
+\item that line is not contained in the spinor variety, so it meets it in
+  exactly those two points.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) Each $t^{k}$ is a rational Hodge class because $t\in\NS(X)\otimes\QQ$ is
+of type $(1,1)$ and the algebraic classes form a subring. Separating
+$e^{st}=\sum_{k}s^{k}t^{k}/k!$ into even and odd powers of $s$ and using
+$s^{2j}=(-d)^{j}$, $s^{2j+1}=(-d)^{j}s$ gives $e^{st}=u_{t}+sv_{t}$, and
+conjugating gives $e^{-st}=u_{t}-sv_{t}$.
+
+(ii) The two elements are linearly independent over $\QQ$ because $u_{t}$ has
+nonzero component in $H^{0}$ and $v_{t}$ does not, while $v_{t}\ne0$ since
+$t\ne0$. From (i), both $e^{st}$ and $e^{-st}$ lie in $P_{t}\otimes K$, so
+$\PP(P_{t})$ passes through the two points.
+
+(iii) The even spinor variety is cut out by quadrics, by Cartan's description
+of pure spinors, so a line either lies inside it or meets it in a subscheme of
+length at most two. The point $[u_{t}]$ of $\PP(P_{t})$ is not a pure spinor:
+a pure spinor with nonzero component in $H^{0}$ is a scalar multiple of
+$e^{\omega}$ for a two-form $\omega$, and $u_{t}$ has zero component in
+$H^{2}$ while its component in $H^{4}$ is $-\tfrac{d}{2}t^{2}\ne0$, whereas
+$e^{\omega}$ with vanishing $H^{2}$ part is $1$. So the line is not contained
+in the spinor variety. The two points of (ii) are distinct, since
+$u_{t}+sv_{t}$ and $u_{t}-sv_{t}$ have the same component $1$ in $H^{0}$ and
+$v_{t}\ne0$; hence they exhaust the intersection.
+\end{proof}
+
+\Cref{fig:spinor} draws the case $n=2$, in which the line $\PP(P_{t})$
+meets the spinor quadric in the two conjugate points $[e^{\pm st}]$.
+
+\begin{example}\label{ex:planes}
+For $n=4$ and $d=1$,
+$u_{t}=1-\tfrac{1}{2}t^{2}+\tfrac{1}{24}t^{4}$ and
+$v_{t}=t-\tfrac{1}{6}t^{3}$. For $n=4$ and $d=3$,
+$u_{t}=1-\tfrac{3}{2}t^{2}+\tfrac{3}{8}t^{4}$ and
+$v_{t}=t-\tfrac{1}{2}t^{3}$. All four classes are rational and lie in the
+subring $\QQ[t]$.
+\end{example}
+
+\subsection{The Chern character equation}
+
+The next theorem computes the invariants that a sheaf with Chern character in
+the secant plane must have. On the side of sheaves, the demands of
+\Cref{q:higher} reduce to this one equation.
+
+\begin{theorem}[The invariants of a secant sheaf]\label{thm:secantinvariants}
+Let $X$, $t$, $d$ be as above and let $\cF$ be a coherent sheaf on $X$ with
+$\ch(\cF)\in P_{t}$, say $\ch(\cF)=a\,u_{t}+b\,v_{t}$ with $a,b\in\QQ$. Then
+\[
+  \rk\cF=a,\qquad
+  c_{1}(\cF)=b\,t,\qquad
+  \ch_{2}(\cF)=-\tfrac{ad}{2}\,t^{2},\qquad
+  c_{2}(\cF)=\tfrac{ad+b^{2}}{2}\,t^{2},
+\]
+and more generally $\ch_{k}(\cF)$ is the degree $k$ term of \eqref{eq:uv}
+scaled by $a$ or $b$ according to the parity of $k$. The Bogomolov
+discriminant is
+\begin{equation}\label{eq:discnorm}
+  \Delta(\cF)=2a\,c_{2}(\cF)-(a-1)c_{1}(\cF)^{2}
+  =\Nm_{K/\QQ}\bigl(b+a s\bigr)\cdot t^{2}.
+\end{equation}
+In particular, if $t$ is ample and $\cF\ne0$, then
+$\Delta(\cF)\cdot H^{n-2}>0$ for every ample $H$, so the Bogomolov inequality
+places no obstruction on the existence of $\cF$.
+\end{theorem}
+
+\begin{proof}
+The first four identities are read off from \eqref{eq:uv} degree by degree,
+using $\ch_{2}=\tfrac12(c_{1}^{2}-2c_{2})$ to convert $\ch_{2}$ into $c_{2}$.
+For \eqref{eq:discnorm},
+\[
+  2a\cdot\tfrac{ad+b^{2}}{2}t^{2}-(a-1)b^{2}t^{2}
+  =\bigl(a^{2}d+ab^{2}-ab^{2}+b^{2}\bigr)t^{2}
+  =\bigl(a^{2}d+b^{2}\bigr)t^{2},
+\]
+and $\Nm_{K/\QQ}(b+as)=(b+as)(b-as)=b^{2}+a^{2}d$. If $\cF\ne0$ then
+$\ch(\cF)\ne0$, so $(a,b)\ne(0,0)$ and the norm is positive; and
+$t^{2}H^{n-2}>0$ for $t$ and $H$ ample. This gives the last assertion.
+\end{proof}
+
+\begin{remark}[The norm form as the discriminant]\label{rem:normdisc}
+Identity \eqref{eq:discnorm} says that the discriminant of the sheaf is the
+norm form of $K$ evaluated at the coordinates $(a,b)$ of its Chern character
+in the plane. The two conjugate points of the spinor variety are the two
+isotropic directions of this norm form after extension of scalars to $K$, and
+no nonzero rational point of the plane is isotropic. The Chern character of a
+secant sheaf is a rational point of the line $\PP(P_{t})$, and so never an
+isotropic one, while the Weil structure is carried by the two isotropic points
+of that line, which are defined over $K$. In this sense the conjugate pair of
+\Cref{cor:orbitcriterion} is built into the invariants of the sheaf.
+\end{remark}
+
+\begin{corollary}[The case of an abelian surface]\label{cor:surfacecase}
+Let $n=2$, so $X$ is an abelian surface and $A=X\times\widehat{X}$ an abelian
+fourfold of Weil type, and let $t$ be ample. A nonzero sheaf with
+$\ch(\cF)\in P_{t}$ has Mukai vector
+$v(\cF)=(a,\,bt,\,-\tfrac{ad}{2}t^{2})$ and Mukai self-pairing
+\[
+  \langle v(\cF),v(\cF)\rangle=\Nm_{K/\QQ}(b+as)\cdot t^{2}>0 .
+\]
+\end{corollary}
+
+\begin{proof}
+On an abelian surface the Mukai pairing of $v=(r,c,e)$ with itself is
+$c^{2}-2re$, which here is $b^{2}t^{2}-2a(-\tfrac{ad}{2}t^{2})=(b^{2}+a^{2}d)t^{2}$.
+It is positive because $(a,b)\ne(0,0)$ and $t^{2}>0$.
+\end{proof}
+
+\Cref{cor:surfacecase} is consistent with the case $n=2$ being settled: on an
+abelian surface, positivity of the self-pairing of a primitive Mukai vector of
+positive rank is sufficient for the moduli spaces of stable sheaves with that
+vector to be non-empty.
+
+\subsection{The genus three Jacobian}
+
+At $n=3$ the equation of \Cref{thm:secantinvariants} determines a secant sheaf
+of rank one almost completely, and it reproduces the shape of the object
+Markman uses. The computation serves as a check on the framework of this
+section.
+
+\begin{proposition}[Rank one at $n=3$]\label{prop:genus3}
+Let $X$ be the Jacobian of a smooth curve of genus three, let $\Theta$ be the
+theta divisor and $C\subset X$ the Abel--Jacobi curve, so that
+$\Theta^{2}/2=[C]$. Take $t=\Theta$ and $a=1$ in
+\Cref{thm:secantinvariants}. Then a rank one torsion-free sheaf $\cF$ with
+$\ch(\cF)\in P_{\Theta}$ and $c_{1}(\cF)=b\Theta$ is of the form
+$\cF=\mathcal{I}_{Z}(b\Theta)$ with
+\[
+  [Z]=\frac{b^{2}+d}{2}\,\Theta^{2}=(b^{2}+d)\,[C].
+\]
+If $Z$ is a disjoint union of $m$ translates of $C$, then $b=1$ and
+\[
+  m=d+1 .
+\]
+\end{proposition}
+
+\begin{proof}
+A rank one torsion-free sheaf on a smooth projective variety is the tensor
+product of its double dual, which is a line bundle, with the ideal sheaf of a
+subscheme of codimension at least two. With $c_{1}=b\Theta$ this gives
+$\cF=\mathcal{I}_{Z}(b\Theta)$ for such a subscheme $Z\subset X$, and
+$\ch(\mathcal{I}_{Z}(b\Theta))=e^{b\Theta}\bigl(1-\ch(\cO_{Z})\bigr)$.
+Comparing the components in $H^{4}$ with \Cref{thm:secantinvariants} at $a=1$,
+which gives $\ch_{2}=-\tfrac{d}{2}\Theta^{2}$, yields
+$\tfrac{b^{2}}{2}\Theta^{2}-[Z]=-\tfrac{d}{2}\Theta^{2}$, that is
+$[Z]=\tfrac{b^{2}+d}{2}\Theta^{2}$. The Poincar\'e formula
+$\Theta^{g-1}/(g-1)!=[C]$ at $g=3$ reads $\Theta^{2}/2=[C]$, whence
+$[Z]=(b^{2}+d)[C]$.
+
+Suppose now that $Z$ is a disjoint union of $m$ translates of $C$. Translates
+of $C$ are homologous to $C$, so $m=b^{2}+d$. Each translate is a smooth curve
+of genus three and $X$ has trivial tangent bundle, so Grothendieck--Riemann--Roch
+gives $\ch(\cO_{Z})=m[C]-2m[\mathrm{pt}]$. Using $\Theta^{3}=6[\mathrm{pt}]$
+and $\Theta\cdot[C]=3[\mathrm{pt}]$, the component of
+$\ch(\mathcal{I}_{Z}(b\Theta))$ in $H^{6}$ is
+$(b^{3}-3bm+2m)[\mathrm{pt}]$, and \Cref{thm:secantinvariants} requires it to
+equal the degree three term $-bd\,\Theta^{3}/3!=-bd\,[\mathrm{pt}]$.
+Substituting $m=b^{2}+d$ gives $-2(b-1)(b^{2}+d)=0$, so $b=1$ and $m=d+1$.
+\end{proof}
+
+\begin{table}[htbp]
+\centering
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}rrrrrrr@{}}
+\toprule
+$d$ & $1$ & $2$ & $3$ & $5$ & $7$ & $11$ \\
+\midrule
+$m=d+1$ & $2$ & $3$ & $4$ & $6$ & $8$ & $12$ \\
+\bottomrule
+\end{tabular}
+\caption{The number $m=d+1$ of translates of the Abel--Jacobi curve in
+\Cref{prop:genus3}, as a function of the field $K=\QQ(\sqrt{-d})$.}
+\label{tab:translates}
+\end{table}
+
+\begin{remark}\label{rem:markmancheck}
+The sheaf used in \cite{Mar25b} on a genus three Jacobian is
+$\mathcal{I}_{\cup C_{i}}(\Theta)$, the twist by the theta bundle of the ideal
+sheaf of a union of translates of the Abel--Jacobi curve. This is the shape
+that \Cref{prop:genus3} forces, including the twist by $\Theta$ itself, with
+the number of translates determined by the field.
+\end{remark}
+
+\subsection{Existence of secant sheaves}\label{ssec:thirdexists}
+
+\Cref{thm:secantinvariants} describes a secant sheaf but does not produce one.
+We show that such sheaves exist on every polarised abelian variety, in
+every dimension and for every imaginary quadratic field, and that their
+classes can be assembled from the powers of a single line bundle.
+
+Two observations do the work. The first is that the Chern character wanted is
+a rational point of a plane, and a plane has no preferred scale: a positive
+integer multiple $Mp$ of a rational point $p$ of $P_{t}$ is again a rational
+point of $P_{t}$, and since the Hodge conjecture concerns classes with
+rational coefficients, replacing $p$ by $Mp$ costs nothing. The second is
+that, once denominators may be cleared, the Chern characters of the powers of
+one line bundle span the subring $\QQ[t]$ in which the secant plane lies,
+because the matrix expressing them in the basis $t^{k}/k!$ is a Vandermonde
+matrix on distinct nodes. What remains is the passage from a class in $K_{0}$
+to a sheaf, and for that the only hypothesis needed is that the rank be
+positive.
+
+\begin{lemma}[Positive rank is enough]\label{lem:posrank}
+Let $Y$ be a smooth projective variety over a field and let $\alpha\in
+K_{0}(Y)$ satisfy $\rk\alpha>0$. Then $\alpha=[\cF]$ for some coherent sheaf
+$\cF$ on $Y$.
+\end{lemma}
+
+\begin{proof}
+Write $m=\dim Y$ and $a=\rk\alpha\ge1$, and let $F^{c}K_{0}(Y)$ be the
+topological filtration, the subgroup generated by the classes $[\cO_{Z}]$ of
+closed integral subschemes $Z\subseteq Y$ of codimension at least $c$. Since
+$Y$ is smooth, every coherent sheaf has a finite locally free resolution, so
+$K_{0}(Y)=K_{0}'(Y)$ and the filtration is exhaustive with $F^{m+1}=0$.
+The class of a coherent sheaf supported in codimension at least $c$
+lies in $F^{c}$ and is congruent modulo $F^{c+1}$ to
+$\sum_{i}\ell_{i}[\cO_{Z_{i}}]$, where $\sum_{i}\ell_{i}Z_{i}$ is its cycle in
+codimension $c$; and $F^{1}$ is the kernel of the rank, while $F^{1}/F^{2}$ is
+$\Pic(Y)$ through the first Chern class \cite[\S 15.1 and
+Ex.~15.1.5]{Ful98}. We construct coherent
+sheaves $\cF_{c}$ of rank $a$ with $\alpha-[\cF_{c}]\in F^{c}$, by induction on
+$c$.
+
+Start at $c=2$. Let $L$ be a line bundle with $c_{1}(L)=c_{1}(\alpha)$ and set
+$\cF_{2}=L\oplus\cO_{Y}^{\oplus(a-1)}$. Then $\alpha-[\cF_{2}]$ has rank zero
+and first Chern class zero, hence lies in $F^{2}$.
+
+For the inductive step let $\delta=\alpha-[\cF_{c}]\in F^{c}$ with $c\ge2$.
+Modulo $F^{c+1}$ the class $\delta$ is a finite sum $\sum_{j}m_{j}
+[\cO_{Z_{j}}]$ with $m_{j}\in\ZZ$ and $\codim Z_{j}=c$. The terms with
+$m_{j}>0$ are removed by replacing $\cF_{c}$ with $\cF_{c}\oplus\bigoplus_{
+m_{j}>0}\cO_{Z_{j}}^{\oplus m_{j}}$, which changes neither the rank nor the
+codimension of the remaining difference. For a term with $m_{j}<0$ we must
+subtract, and here the rank is used. The restriction $\cF_{c}\otimes
+\cO_{Z_{j}}$ is a quotient of $\cF_{c}$ and has rank at least $a\ge1$ at the
+generic point of the integral scheme $Z_{j}$, by semicontinuity of the fibre
+dimension. Dividing $\cF_{c}\otimes\cO_{Z_{j}}$ by a subsheaf of generic
+corank one gives a surjection $\cF_{c}\twoheadrightarrow\cQ$ with $\cQ$ a
+coherent $\cO_{Z_{j}}$-module of rank one. Then $[\cQ]\in F^{c}$ with
+associated cycle $[Z_{j}]$, so $[\cQ]-[\cO_{Z_{j}}]\in F^{c+1}$. The kernel of
+that surjection is a coherent sheaf, still of rank $a$ because $\cQ$ is
+supported in positive codimension, and its class is $[\cF_{c}]-[\cQ]$.
+Performing this $|m_{j}|$ times for each $j$ with $m_{j}<0$ produces
+$\cF_{c+1}$ with $\alpha-[\cF_{c+1}]\in F^{c+1}$ and $\rk\cF_{c+1}=a$. At
+$c=m+1$ the difference lies in $F^{m+1}=0$, so $\alpha=[\cF_{m+1}]$.
+\end{proof}
+
+\begin{theorem}[Secant sheaves exist in every dimension]\label{thm:secantexists}
+Let $X$ be an abelian variety of dimension $n$, let $t\in\NS(X)\otimes\QQ$ be a
+polarisation and let $d>0$. Let $p$ be a rational point of the secant plane
+$P_{t}$ whose $u_{t}$ coordinate is positive. Then there are a positive
+integer $M$, an integer $D>0$ with $Dt\in\NS(X)$, integers $n_{0},\dots,n_{n}$
+and a coherent sheaf $\cF$ on $X$ such that, setting
+\begin{equation}\label{eq:lbwitness}
+  \alpha=\sum_{j=0}^{n}n_{j}\bigl[\cO_{X}(jDt)\bigr]\in K_{0}(X),
+\end{equation}
+one has $\alpha=[\cF]$ in $K_{0}(X)$, $\ch(\cF)=M\,p$ and
+$\rk\cF=M\,a>0$, where $a$ is the $u_{t}$ coordinate of $p$. The integers $M$
+and $n_{j}$ depend only on $n$, $d$, $D$ and the coordinates of $p$, and are
+obtained by inverting one Vandermonde matrix. Moreover $Mp$ is again a
+rational point of $P_{t}$; applying the statement to two linearly independent
+rational points of $P_{t}$ produces a pair of coherent sheaves whose Chern
+characters span $P_{t}$.
+\end{theorem}
+
+\begin{proof}
+If the conclusion holds for $Np$, where $N$ is a positive integer, with
+multiple $M'$, then it holds for $p$ with $M=NM'$, and the hypothesis on $p$
+is unchanged by the scaling. Clearing the denominators of the coordinates of
+$p$, we may therefore assume $p=au_{t}+bv_{t}$ with $a,b\in\ZZ$ and $a>0$.
+Choose $D>0$ with $Dt\in\NS(X)$, so that $\cO_{X}(jDt)$ is a line bundle for
+every $j\in\ZZ$.
+
+Since $t$ is a polarisation, $t^{n}\ne0$ and $t^{n+1}=0$ in
+$H^{\mathrm{ev}}(X,\QQ)$, so the $n+1$ classes $t^{k}/k!$ with $0\le k\le n$
+are a basis of the subring $\QQ[t]$. In that basis
+\[
+  p=\sum_{k=0}^{n}c_{k}\,\frac{t^{k}}{k!},\qquad
+  c_{k}=\begin{cases}a(-d)^{k/2}, & k\ \text{even},\\[2pt]
+                     b(-d)^{(k-1)/2}, & k\ \text{odd},\end{cases}
+\]
+by \eqref{eq:uv}, and all the $c_{k}$ are integers. On the other
+side,
+\[
+  \ch\bigl(\cO_{X}(jDt)\bigr)=e^{jDt}=\sum_{k=0}^{n}(jD)^{k}\,\frac{t^{k}}{k!},
+\]
+so in the same basis the $n+1$ vectors $\ch(\cO_{X}(jDt))$ for $j=0,\dots,n$
+are the columns of the Vandermonde matrix $\bigl((jD)^{k}\bigr)_{0\le j,k\le n}$
+on the $n+1$ distinct nodes $0,D,2D,\dots,nD$. Its determinant is
+$\prod_{0\le i<j\le n}(jD-iD)=D^{n(n+1)/2}\prod_{0\le i<j\le n}(j-i)\ne0$, so
+the system
+\[
+  \sum_{j=0}^{n}x_{j}\,(jD)^{k}=c_{k}\qquad(0\le k\le n)
+\]
+has a unique solution $x\in\QQ^{n+1}$. Let $M$ be the least common multiple of
+the denominators of the $x_{j}$ and put $n_{j}=Mx_{j}\in\ZZ$. With $\alpha$ as
+in \eqref{eq:lbwitness},
+\[
+  \ch(\alpha)=\sum_{j}n_{j}e^{jDt}
+  =\sum_{k=0}^{n}\Bigl(\sum_{j}Mx_{j}(jD)^{k}\Bigr)\frac{t^{k}}{k!}
+  =M\sum_{k=0}^{n}c_{k}\frac{t^{k}}{k!}=Mp .
+\]
+In particular $\rk\alpha=\ch_{0}(\alpha)=Mc_{0}=Ma>0$, so \Cref{lem:posrank}
+gives a coherent sheaf $\cF$ with $[\cF]=\alpha$. The Chern character is a
+function of the class in $K_{0}(X)$, whence $\ch(\cF)=Mp$ and $\rk\cF=Ma$.
+Finally $Mp=(Ma)u_{t}+(Mb)v_{t}$ is a rational point of $P_{t}$, and two
+linearly independent rational points stay linearly independent after scaling,
+which gives the last assertion.
+\end{proof}
+
+\Cref{fig:moment} draws the theorem at $n=2$ and $d=2$, with the points of
+the secant plane that integer combinations of line bundles reach.
+
+\begin{remark}[The factorials and the multiple $M$]%
+\label{rem:themultiple}
+The integer $M$ is not an artefact of the proof. The lattice spanned by the
+Chern characters of the powers of a single line bundle is spanned equally well
+by the classes $(e^{t}-1)^{k}$ for $0\le k\le n$, because the $(n+1)$st finite
+difference of a polynomial of degree $n$ vanishes; and $(e^{t}-1)^{k}=t^{k}+
+\cdots$ has leading term $t^{k}$, not $t^{k}/k!$. The secant plane, by
+contrast, is spanned by classes whose coordinates in the basis $t^{k}/k!$ are
+integers. The index between the two lattices can be computed exactly. Write
+$j^{k}=\sum_{i\le k}S(k,i)\,i!\binom{j}{i}$ with the Stirling numbers $S(k,i)$
+of the second kind. As $j$ runs over $0,\dots,n$, the vectors
+$\bigl(\binom{j}{i}\bigr)_{0\le i\le n}$ form a unitriangular basis of
+$\ZZ^{n+1}$, so the vectors $(j^{k})_{0\le k\le n}$, which are the coordinates
+of $\ch\cO_{X}(jt)$ in the basis $t^{k}/k!$, span the image of $\ZZ^{n+1}$
+under the lower triangular matrix $T=\bigl(S(k,i)\,i!\bigr)_{k,i}$, whose
+diagonal is $0!,1!,\dots,n!$. The index is therefore $\prod_{k\le n}k!$. The
+inverse of $T$ is $\bigl(s(k,i)/k!\bigr)_{k,i}$, with the Stirling numbers
+$s(k,i)$ of the first kind, because $\binom{j}{k}=\sum_{i}s(k,i)j^{i}/k!$;
+so $n!\,T^{-1}$ is integral, and for every integral point $p$ of the secant
+plane the least admissible $M$ divides $n!$. It is often larger than $1$. At $n=4$, $d=3$, $a=b=1$ the least multiple is $M=6$,
+a divisor of $4!$, and the witness is
+\[
+  \alpha=-23\,[\cO_{X}]+66\,[\cO_{X}(t)]-54\,[\cO_{X}(2t)]
+         +20\,[\cO_{X}(3t)]-3\,[\cO_{X}(4t)],
+\]
+of rank $-23+66-54+20-3=6=Ma$; in degree one its coefficient is
+$66-108+60-12=6=Mb$, and in degrees two to four the sums
+$\sum_{j}n_{j}j^{k}$ are $-18$, $-18$ and $54$, which are $6c_{2}$, $6c_{3}$ and
+$6c_{4}$. The solution of the Vandermonde system is unique and the $n_{j}$
+have no common factor, $23$ being prime to $6$, so $M=6$ is the least
+multiple, and the freedom to rescale is needed. \Cref{fig:multiple} shows
+the least multiple in further cases.
+
+For a principal polarisation $\theta$ the classes $\theta^{k}/k!$ are
+integral: in a symplectic basis $x_{1},\dots,x_{g},y_{1},\dots,y_{g}$ of
+$H^{1}(X,\ZZ)$, $\theta=\sum_{i}x_{i}y_{i}$, the products $x_{i}y_{i}$
+commute and square to zero, and so
+$\theta^{k}/k!=\sum_{|I|=k}\prod_{i\in I}x_{i}y_{i}$. This is Poincar\'e's
+formula in a form that does not need a curve, and it is why $t^{k}/k!$ is the
+natural integral basis in which to take the coordinates $c_{k}$.
+\end{remark}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{fig_multiple}
+\caption{\Cref{rem:themultiple}. The least multiple $M$ of
+\Cref{thm:secantexists} for $1\le n\le10$, over the seventy-two cases
+$d\in\{1,2,3,5,7,11\}$, $a\in\{1,2,3\}$, $b\in\{\pm1,\pm2\}$ for each
+$n$, read off from the solution of the Vandermonde system, on a logarithmic
+scale; the area of a disc counts the cases with that value. The solid line
+joins the largest values and the dashed one is $n!$, which every $M$ divides
+by the remark: the quotient of $\ZZ^{n+1}$ by the lattice of the
+characters $(1,j,\dots,j^{n})$ of the powers of a line bundle is dual to the
+integer-valued polynomials of degree at most $n$, spanned by the
+$\binom{x}{k}$, whose coefficients have denominators dividing $n!$.}
+\label{fig:multiple}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+  \includegraphics[width=0.86\textwidth]{fig_moment}
+\caption{\Cref{thm:secantexists} at $n=2$ and $d=2$. (a) The coordinates
+$(\ch_{0},\ch_{1},\ch_{2})$ in the basis $1$, $t$, $t^{2}/2$. The Chern
+characters of the powers of one line bundle lie on the moment curve
+$j\mapsto(1,j,j^{2})$, and the Vandermonde determinant says that any three of
+its points are affinely independent. The integral points of
+$P_{t}=\QQ u_{t}\oplus\QQ v_{t}$ split by the criterion
+$\ch_{2}\equiv\ch_{1}\bmod2$ into those reached by integer combinations of
+line bundles, drawn filled, and those missed, drawn open. The point
+$p=u_{t}+v_{t}$ is missed and $2p$ is reached, by the witness
+$-3[\cO_{X}]+8[\cO_{X}(t)]-3[\cO_{X}(2t)]$, whose three terms are joined to
+$2p$ by dashed segments. (b) The same points in the coordinates $(a,b)$ of
+$a\,u_{t}+b\,v_{t}$. Here $\ch_{1}=b$ and $\ch_{2}=-2a$, so the criterion reads
+$b\equiv0\bmod2$; the shaded half-plane $a>0$ is the range of
+\Cref{thm:secantexists}.}
+\label{fig:moment}
+\end{figure}
+
+\subsection{The three ingredients}
+
+\begin{theorem}[Three of the four ingredients]\label{thm:twoofthefour}
+For every $n\ge2$, every squarefree $d>0$ and every polarised abelian $n$-fold
+$X$ carrying a nondegenerate $\beta\in\NS(X)\otimes\QQ$, the first three of the
+four ingredients required by \Cref{q:higher} exist and are explicit:
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item the abelian $2n$-fold of Weil type is $A=X\times\widehat{X}$ with the
+  $K$-action \eqref{eq:Mdef}, by \Cref{thm:explicitweil};
+\item the plane is $P_{t}$ of \Cref{def:secantplane} with $t=\beta$, it is
+  spanned by Hodge classes and it meets the spinor variety in exactly the two
+  conjugate points $[e^{\pm st}]$, by \Cref{thm:plane};
+\item a pair of coherent sheaves $\cF_{1},\cF_{2}$ on $X$ whose Chern
+  characters are linearly independent rational points of $P_{t}$ exists, by
+  \Cref{thm:secantexists}, and each may be taken to have the class of an
+  explicit integer combination of powers of one line bundle.
+\end{enumerate}
+The invariants of any such sheaf are forced by the explicit system of
+\Cref{thm:secantinvariants}, which imposes $n-1$ linear conditions on a Chern
+character already constrained to $\QQ[t]$, and, when $\beta$ is ample, are
+unobstructed numerically by \eqref{eq:discnorm}.
+\end{theorem}
+
+\begin{proof}
+Items (a), (b) and (c) are the cited theorems. For (c), the proof of
+\Cref{thm:secantexists} uses of $t$ only that $t^{n}\ne0$ and that a positive
+multiple of $t$ is integral; both hold for $t=\beta$, the first because
+$\beta$ is nondegenerate. For the count in the last sentence, a Chern
+character in the subring $\QQ[t]\subset H^{\mathrm{ev}}(X,\QQ)$ is a
+polynomial of degree at most $n$ in $t$, so lies in a space of dimension
+$n+1$, while $P_{t}$ has dimension two, and $(n+1)-2=n-1$.
+\end{proof}
+
+\begin{remark}[The deformation step]\label{rem:deformation}
+The fourth ingredient of \Cref{q:higher} is untouched by this section, and it
+is the hardest. Given the pair of secant sheaves $\cF_{1},\cF_{2}$ on $X$
+supplied by \Cref{thm:secantexists}, one must still show that the
+characteristic class of $\Phi(\cF_{1}^{\vee}\boxtimes\cF_{2})$ remains of
+Hodge type under every deformation of $X\times\widehat{X}$ as a polarised
+abelian $2n$-fold of Weil type, and that the object deforms with the variety,
+as a twisted sheaf to first order. Markman carries out this step at $n=3$
+\cite{Mar25b}, through a semiregularity analysis. Our contribution to it is
+negative: \Cref{thm:factor} identifies the Hochschild classes that the
+weakened form of that analysis must kill for a secant object, and
+\Cref{thm:candidatefails} shows that the candidate Markman proposes for $n=4$
+does not kill them. Without the step one obtains algebraicity only on the
+split locus $X\times\widehat{X}$, where the Weil classes are of much less
+interest, since the general abelian $2n$-fold of Weil type is simple and is
+not of that form.
+
+Accordingly, nothing in this section proves the Hodge conjecture for abelian
+$2n$-folds of Weil type at any $n\ge4$. What is established is that three of
+the four ingredients are written down for every $n$, the third with an
+explicit witness in line bundles, and that the fourth is isolated.
+\end{remark}
+
+\begin{figure}[htbp]
+\centering
+  \includegraphics[width=0.88\textwidth]{fig_quadric}
+\caption{The geometry of \Cref{thm:plane} in the first case, $n=2$. The even
+spinor variety is then the smooth six-dimensional quadric of classes
+isotropic for the Mukai pairing in $\PP(H^{\mathrm{ev}}(X,\CC))\cong\PP^{7}$,
+and the figure shows a real two-dimensional section of it, a quadric surface
+with its two rulings. The line $\PP(P_{t})$ of \Cref{def:secantplane} is
+defined over $\QQ$ and meets the quadric only in the two points
+$[e^{\pm st}]$, which are conjugate over $K$ and not individually rational;
+they are drawn as real points. This is the configuration the Weil line
+demands: a class defined over $\QQ$ cannot single out one of the two points,
+so the construction must carry the pair, and the pair spans a plane rather
+than a line. \Cref{prop:orbitplane} is the same statement on the
+cohomological side, and \Cref{fig:escape} places it among the hypotheses a
+construction can satisfy.}
+\label{fig:spinor}
+\end{figure}

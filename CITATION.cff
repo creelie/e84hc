@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "When is every rational Hodge class algebraic?"
+abstract: >-
+  We determine which combinations of the standard statements around the
+  rational Hodge conjecture imply it. Every such combination contains the
+  conjecture modulo abelian varieties, unless it contains both the Lefschetz
+  standard conjecture and André's conjecture that every Hodge class is
+  motivated, a pair equivalent to the Hodge conjecture itself. Granting the
+  recently claimed Hodge conjecture for CM abelian varieties, we prove it for
+  every Fermat variety and reduce the abelian case to propagation from CM
+  points. For Weil classes we prove a criterion by bounded degree at CM
+  points, and we extract from Schoen's cycles one subvariety whose
+  semiregularity would settle the split Weil families over Q(sqrt(-3)) in
+  every dimension. The Hodge conjecture itself is not proved.
+type: software
+license: MIT
+authors:
+  - family-names: Bhattacharjee
+    given-names: Deep
+    orcid: "https://orcid.org/0000-0003-0466-750X"
+    email: d.bhattacharjee@erl-forschung.de
+    affiliation: "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
+contact:
+  - family-names: Bhattacharjee
+    given-names: Deep
+    email: itsdeep@live.com
+    orcid: "https://orcid.org/0000-0003-0466-750X"
+keywords:
+  - Hodge conjecture
+  - motivated cycles
+  - Lefschetz standard conjecture
+  - Fermat varieties
+  - CM abelian varieties
+  - Weil classes
+  - semiregularity
+  - Lean 4
+  - Macaulay2
+version: "1.0.0"
+date-released: "2026-10-08"
+repository-code: "https://github.com/creelie/e84hc"

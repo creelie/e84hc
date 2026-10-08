@@ -1,0 +1,409 @@
+'HodgeObstruction.qnorm_mul_check' does not depend on any axioms
+'HodgeObstruction.qmul_conj' does not depend on any axioms
+'HodgeObstruction.characters_differ' does not depend on any axioms
+'HodgeObstruction.characters_differ'' does not depend on any axioms
+'HodgeObstruction.bad_witness' does not depend on any axioms
+'HodgeObstruction.bad_witness_exceptions' does not depend on any axioms
+'HodgeObstruction.ratio_not_root_of_unity' does not depend on any axioms
+'HodgeObstruction.sign_uniform_and_closed' does not depend on any axioms
+'HodgeObstruction.subsets_count' does not depend on any axioms
+'HodgeObstruction.semiregularity_target' does not depend on any axioms
+'HodgeObstruction.secant_count_below_thresholds' does not depend on any axioms
+'HodgeObstruction.thresholds_not_necessary' does not depend on any axioms
+'HodgeObstruction.grading_positions_differ' does not depend on any axioms
+'HodgeObstruction.weil_delta_parity' does not depend on any axioms
+'HodgeObstruction.weil_delta_closed_even' does not depend on any axioms
+'HodgeObstruction.weil_delta_closed_odd' does not depend on any axioms
+'HodgeObstruction.weil_term_counts' does not depend on any axioms
+'HodgeObstruction.supports_disjoint' does not depend on any axioms
+'HodgeObstruction.hodge_dim_count' does not depend on any axioms
+'HodgeObstruction.weil_line_hodge_type' does not depend on any axioms
+'HodgeObstruction.clifford_dimensions' does not depend on any axioms
+'HodgeObstruction.k3_type_only_at_one' does not depend on any axioms
+'HodgeObstruction.moduli_codimension' does not depend on any axioms
+'HodgeObstruction.discriminant_is_a_norm' does not depend on any axioms
+'HodgeObstruction.split_codimension' does not depend on any axioms
+'HodgeObstruction.quat_class_odd' does not depend on any axioms
+'HodgeObstruction.quat_class_even' does not depend on any axioms
+'HodgeObstruction.quat_product_class' does not depend on any axioms
+'HodgeObstruction.quat_locus_codimension' does not depend on any axioms
+'HodgeObstruction.quat_locus_divisor_at_two' does not depend on any axioms
+'HodgeObstruction.irrational_witness_exists' does not depend on any axioms
+'HodgeObstruction.weil_line_spanned' does not depend on any axioms
+'HodgeObstruction.norm_form_positive' does not depend on any axioms
+'HodgeObstruction.norm_sum_forces_zero' does not depend on any axioms
+'HodgeObstruction.semiregularity_source_target' does not depend on any axioms
+'HodgeObstruction.tensor_rank_gap' does not depend on any axioms
+'HodgeObstruction.secant_witness_at_n_four' depends on axioms: [propext]
+'HodgeObstruction.secant_witness_rank' does not depend on any axioms
+'HodgeObstruction.vandermonde_nodes_distinct' does not depend on any axioms
+'HodgeObstruction.level_sums_forced' depends on axioms: [propext]
+'HodgeObstruction.level_sums_totals' does not depend on any axioms
+'HodgeObstruction.level_matrix_nonsingular' depends on axioms: [propext]
+'HodgeObstruction.gauss_norm_counts' does not depend on any axioms
+'HodgeObstruction.norm_supply_blocks_small_case' does not depend on any axioms
+'HodgeObstruction.pencil_volume' does not depend on any axioms
+'HodgeObstruction.pencil_square' does not depend on any axioms
+'HodgeObstruction.pencil_minimum' does not depend on any axioms
+'HodgeObstruction.pencil_degree_bound' does not depend on any axioms
+'HodgeObstruction.split_obstruction_rank' does not depend on any axioms
+'HodgeObstruction.split_obstruction_count' does not depend on any axioms
+'HodgeObstruction.evaluation_not_surjective' does not depend on any axioms
+'HodgeObstruction.markman_candidate_identities' does not depend on any axioms
+'HodgeObstruction.secant_kernel_arithmetic' does not depend on any axioms
+'HodgeObstruction.candidate_unnormalised_points' does not depend on any axioms
+'HodgeObstruction.smooth_invariants' does not depend on any axioms
+'HodgeObstruction.smooth_bmy_defect' does not depend on any axioms
+'HodgeObstruction.smooth_bmy_is_d_le_bsq' does not depend on any axioms
+'HodgeObstruction.smooth_index_vacuous' does not depend on any axioms
+'HodgeObstruction.smooth_four_discriminants' does not depend on any axioms
+'HodgeObstruction.smooth_table' does not depend on any axioms
+'HodgeObstruction.burch_weight_identities' does not depend on any axioms
+'HodgeObstruction.burch_rank_one_discriminant' does not depend on any axioms
+'HodgeObstruction.burch_rank_four_witness' does not depend on any axioms
+'HodgeObstruction.closure_omits_conjecture' does not depend on any axioms
+'HodgeObstruction.frontier_suffices' does not depend on any axioms
+'HodgeObstruction.frontier_minimal' does not depend on any axioms
+'HodgeObstruction.frontier_smallest' does not depend on any axioms
+'HodgeObstruction.variational_gives_abelian' does not depend on any axioms
+'HodgeObstruction.lefschetz_gives_abelian' does not depend on any axioms
+'HodgeObstruction.secant_route_descends' does not depend on any axioms
+'HodgeObstruction.propagation_closes' does not depend on any axioms
+'HodgeObstruction.p2_minimal_count' does not depend on any axioms
+'HodgeObstruction.weil_monomials_separated' depends on axioms: [propext]
+'HodgeObstruction.mumford_invariants' depends on axioms: [propext]
+'HodgeObstruction.two_branch_annihilator' depends on axioms: [propext]
+'HodgeObstruction.mumford_rigidity_sos' does not depend on any axioms
+'HodgeObstruction.mumford_ext_profile' depends on axioms: [propext]
+'HodgeObstruction.lefschetz_counts' depends on axioms: [propext]
+'HodgeObstruction.criterion_endomorphisms_n2' depends on axioms: [propext]
+'HodgeObstruction.criterion_endomorphisms_n3' depends on axioms: [propext]
+'HodgeObstruction.quartic_squares_mod4_phi' does not depend on any axioms
+'HodgeObstruction.quartic_no_square_phi' does not depend on any axioms
+'HodgeObstruction.quartic_squares_mod4_sqrt2' does not depend on any axioms
+'HodgeObstruction.quartic_no_square_sqrt2' does not depend on any axioms
+'HodgeObstruction.quartic_rank_two_congruences' does not depend on any axioms
+'HodgeObstruction.quartic_euler_minimal' does not depend on any axioms
+'HodgeObstruction.orlov_equality_count' does not depend on any axioms
+'HodgeObstruction.orlov_n4_euler' does not depend on any axioms
+'HodgeObstruction.quartic_squares_mod4_mod8' does not depend on any axioms
+'HodgeObstruction.quartic_rank_two_small_odd_parts' does not depend on any axioms
+'HodgeObstruction.quartic_rank_two_large_odd_part' depends on axioms: [propext]
+'HodgeObstruction.quartic_sqrt2_units_mod4' does not depend on any axioms
+'HodgeObstruction.sextic_thresholds' does not depend on any axioms
+'HodgeObstruction.cm_tetrahedra' does not depend on any axioms
+'HodgeObstruction.cm_square_monomials' does not depend on any axioms
+'HodgeObstruction.cm_tetrahedron_pairs' does not depend on any axioms
+'HodgeObstruction.cm_profile_forces_equal' does not depend on any axioms
+'HodgeObstruction.cm_pairs_three_cycle' depends on axioms: [propext]
+'HodgeObstruction.cm_abelian_semiregular_count' does not depend on any axioms
+'HodgeObstruction.quartic_rank_values' depends on axioms: [propext]
+'HodgeObstruction.delsarte_loop_sextic' depends on axioms: [propext]
+'HodgeObstruction.simplex_klein_quartic' depends on axioms: [propext]
+'HodgeObstruction.simplex_loop_sextic' depends on axioms: [propext]
+'HodgeObstruction.quartic_exceptional_pair' depends on axioms: [propext]
+'HodgeObstruction.quartic_locus_counts' does not depend on any axioms
+'HodgeObstruction.quartic_compensated_bivectors' depends on axioms: [propext]
+'HodgeObstruction.quartic_rank_certificates' depends on axioms: [propext]
+'HodgeObstruction.quartic_koszul_squares' depends on axioms: [propext]
+'HodgeObstruction.quartic_line_two_planes' depends on axioms: [propext]
+'HodgeObstruction.quartic_first_factor_character' depends on axioms: [propext]
+'HodgeObstruction.conv_pure_weil_identity' does not depend on any axioms
+'HodgeObstruction.conv_cup_kernel' depends on axioms: [propext]
+'HodgeObstruction.conv_run_excess' does not depend on any axioms
+'HodgeObstruction.conv_esix_thresholds' does not depend on any axioms
+'HodgeObstruction.ff_partner_counts' does not depend on any axioms
+'HodgeObstruction.ff_shift_table' does not depend on any axioms
+'HodgeObstruction.ff_noconvolution_counts' does not depend on any axioms
+'HodgeObstruction.efour_partner_counts' does not depend on any axioms
+'HodgeObstruction.efour_run_drop' does not depend on any axioms
+'HodgeObstruction.efour_two_level_degrees' does not depend on any axioms
+'HodgeObstruction.vandermonde_counts' does not depend on any axioms
+'HodgeObstruction.vg_chain_determinants' depends on axioms: [propext]
+'HodgeObstruction.vg_quadric_counts' does not depend on any axioms
+'HodgeObstruction.vg_cubic_counts' does not depend on any axioms
+'HodgeObstruction.vg_triple_signatures' does not depend on any axioms
+'HodgeObstruction.cyclic_base_count' depends on axioms: [propext]
+'HodgeObstruction.cyclic_merge_small' depends on axioms: [propext]
+'HodgeObstruction.cyclic_norms' does not depend on any axioms
+'HodgeObstruction.cyclic_vg_counts' depends on axioms: [propext]
+'HodgeObstruction.cyclic_nonsplit_example' depends on axioms: [propext]
+'HodgeObstruction.efour_three_targets' does not depend on any axioms
+'HodgeObstruction.efour_three_degrees' does not depend on any axioms
+'HodgeObstruction.efour_three_spectrum' depends on axioms: [propext]
+'HodgeObstruction.efour_spread_ratios' does not depend on any axioms
+'HodgeObstruction.efour_spread_parity' depends on axioms: [propext]
+'HodgeObstruction.efour_cut_bound' does not depend on any axioms
+'HodgeObstruction.efour_spread_three_counts' does not depend on any axioms
+'HodgeObstruction.efour_five_values' depends on axioms: [propext]
+'HodgeObstruction.efour_cup_kernel_counts' depends on axioms: [propext]
+'HodgeObstruction.efour_run_drops' does not depend on any axioms
+'HodgeObstruction.efour_lonely_degrees' does not depend on any axioms
+'HodgeObstruction.efour_lonely_residues' depends on axioms: [propext]
+'HodgeObstruction.efour_interleaved_cut' does not depend on any axioms
+'HodgeObstruction.efour_six_values' depends on axioms: [propext]
+'HodgeObstruction.divisor_profiles' does not depend on any axioms
+'HodgeObstruction.divisor_endo_positive' depends on axioms: [propext]
+'HodgeObstruction.divisor_rank_two_mod3' depends on axioms: [propext]
+'HodgeObstruction.hh_annihilator_small' depends on axioms: [propext]
+'HodgeObstruction.polarised_number_three' depends on axioms: [propext]
+'HodgeObstruction.polarised_number_four_rho0' depends on axioms: [propext]
+'HodgeObstruction.polarised_number_four_rho1' depends on axioms: [propext]
+'HodgeObstruction.polarised_number_four_rho2' depends on axioms: [propext]
+'HodgeObstruction.polarised_number_four_rho3' depends on axioms: [propext]
+'HodgeObstruction.weil_product_formula' does not depend on any axioms
+'HodgeObstruction.weil_multiplicative_coefficients' does not depend on any axioms
+'HodgeObstruction.weil_multiplicative_exterior' depends on axioms: [propext]
+'HodgeObstruction.split_member_closed_form' depends on axioms: [propext]
+'HodgeObstruction.secant_chern_recursion' depends on axioms: [propext]
+'HodgeObstruction.secant_discriminant' depends on axioms: [propext]
+'HodgeObstruction.secant_rank_one_chern' depends on axioms: [propext]
+'HodgeObstruction.weil_plane_gram' depends on axioms: [propext]
+'HodgeObstruction.lattice_secant_moments' depends on axioms: [propext]
+'HodgeObstruction.lattice_u3v_moments' does not depend on any axioms
+'HodgeObstruction.lattice_u3v_criterion' depends on axioms: [propext]
+'HodgeObstruction.lattice_moments_d3' does not depend on any axioms
+'HodgeObstruction.lattice_smooth_support' depends on axioms: [propext]
+'HodgeObstruction.burch_rank_one_c4' depends on axioms: [propext]
+'HodgeObstruction.burch_rank_two_c4' depends on axioms: [propext]
+'HodgeObstruction.burch_rank_two_parity' depends on axioms: [propext]
+'HodgeObstruction.jacobian_ring_counts' depends on axioms: [propext]
+'HodgeObstruction.sextic_fourfold_hodge' depends on axioms: [propext]
+'HodgeObstruction.blowup_sextic_hodge' depends on axioms: [propext]
+'HodgeObstruction.blowup_retrieval' depends on axioms: [propext]
+'HodgeObstruction.zero_cycle_degrees' does not depend on any axioms
+'HodgeObstruction.rigidity_polarisation' depends on axioms: [propext]
+'HodgeObstruction.rigidity_norm_kernels' does not depend on any axioms
+'HodgeObstruction.object_size_bound' depends on axioms: [propext]
+'HodgeObstruction.tangent_is_annihilator_two' depends on axioms: [propext]
+'HodgeObstruction.tangent_is_annihilator_three' depends on axioms: [propext]
+'HodgeObstruction.tangent_is_annihilator_three'' depends on axioms: [propext]
+'HodgeObstruction.tangent_is_annihilator_four' depends on axioms: [propext]
+'HodgeObstruction.tangent_deformations_four' depends on axioms: [propext]
+'HodgeObstruction.tangent_hodge_locus_four' depends on axioms: [propext]
+'HodgeObstruction.weil_tori_types_two' depends on axioms: [propext]
+'HodgeObstruction.weil_tori_types_three' depends on axioms: [propext]
+'HodgeObstruction.weil_tori_kappa_three' depends on axioms: [propext]
+'HodgeObstruction.weil_tori_hodge_two' depends on axioms: [propext]
+'HodgeObstruction.weil_tori_orbit' depends on axioms: [propext]
+'HodgeObstruction.hochschild_profile_two' depends on axioms: [propext]
+'HodgeObstruction.hochschild_profile_three_pure' depends on axioms: [propext]
+'HodgeObstruction.hochschild_profile_three_cn' depends on axioms: [propext]
+'HodgeObstruction.hochschild_profile_three_generic_low' depends on axioms: [propext]
+'HodgeObstruction.hochschild_profile_three_generic_middle' depends on axioms: [propext]
+'HodgeObstruction.hochschild_profile_three_generic_high' depends on axioms: [propext]
+'HodgeObstruction.hochschild_profile_special_two' depends on axioms: [propext]
+'HodgeObstruction.hochschild_profile_special_three' depends on axioms: [propext]
+'HodgeObstruction.hochschild_profile_special_three_second' depends on axioms: [propext]
+'HodgeObstruction.descent_weil_quadratic' depends on axioms: [propext]
+'HodgeObstruction.descent_weil_quartic' depends on axioms: [propext]
+'HodgeObstruction.descent_weil_sextic_one' depends on axioms: [propext]
+'HodgeObstruction.descent_weil_sextic_two' depends on axioms: [propext]
+'HodgeObstruction.descent_discriminant' does not depend on any axioms
+'HodgeObstruction.descent_scalar_extension' depends on axioms: [propext]
+'HodgeObstruction.wirtinger_volumes' depends on axioms: [propext]
+'HodgeObstruction.wirtinger_primitive' depends on axioms: [propext]
+'HodgeObstruction.wirtinger_pairings' depends on axioms: [propext]
+'HodgeObstruction.mumford_motivic_sp' depends on axioms: [propext]
+'HodgeObstruction.mumford_motivic_irreducible' depends on axioms: [propext]
+'HodgeObstruction.mumford_motivic_permutations' depends on axioms: [propext]
+'HodgeObstruction.mumford_motivic_commutant' depends on axioms: [propext]
+'HodgeObstruction.mumford_motivic_projectors' depends on axioms: [propext]
+'HodgeObstruction.mumford_motivic_cycle' depends on axioms: [propext]
+'HodgeObstruction.mumford_motivic_hyperdeterminant' depends on axioms: [propext]
+'HodgeObstruction.mumford_motivic_weyl' depends on axioms: [propext]
+'HodgeObstruction.mumford_motivic_invariants' depends on axioms: [propext]
+'HodgeObstruction.mumford_three_adic_anisotropic' does not depend on any axioms
+'HodgeObstruction.k3_hilbert_square_betti' depends on axioms: [propext]
+'HodgeObstruction.k3_fujiki_determinant' depends on axioms: [propext]
+'HodgeObstruction.k3_riemann_roch' does not depend on any axioms
+'HodgeObstruction.k3_partition_sizes' does not depend on any axioms
+'HodgeObstruction.sextic_lattice_fields' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_euler_even' does not depend on any axioms
+'HodgeObstruction.sextic_lattice_shapes' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_exp_classes' depends on axioms: [propext]
+'HodgeObstruction.sextic_weil_units' depends on axioms: [propext]
+'HodgeObstruction.sextic_weil_imaginary' depends on axioms: [propext]
+'HodgeObstruction.sextic_weil_shape_classes' depends on axioms: [propext]
+'HodgeObstruction.sextic_weil_least_values' does not depend on any axioms
+'HodgeObstruction.sextic_lattice_case_00' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_01' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_02' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_03' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_04' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_05' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_06' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_07' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_08' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_09' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_10' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_11' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_12' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_13' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_14' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_15' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_16' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_17' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_18' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_19' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_20' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_21' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_22' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_23' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_24' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_25' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_26' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_27' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_28' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_29' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_30' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_31' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_32' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_33' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_34' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_35' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_36' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_37' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_38' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_39' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_40' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_41' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_42' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_43' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_44' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_45' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_46' depends on axioms: [propext]
+'HodgeObstruction.sextic_lattice_case_47' depends on axioms: [propext]
+'HodgeObstruction.sextic_weil_scan_0' depends on axioms: [propext]
+'HodgeObstruction.sextic_weil_scan_1' depends on axioms: [propext]
+'HodgeObstruction.sextic_weil_scan_2' depends on axioms: [propext]
+'HodgeObstruction.sextic_weil_scan_3' depends on axioms: [propext]
+'HodgeObstruction.sextic_weil_scan_4' depends on axioms: [propext]
+'HodgeObstruction.sextic_weil_scan_5' depends on axioms: [propext]
+'HodgeObstruction.sextic_weil_scan_6' depends on axioms: [propext]
+'HodgeObstruction.sextic_weil_scan_7' depends on axioms: [propext]
+'HodgeObstruction.fm_powers_computed' depends on axioms: [propext]
+'HodgeObstruction.mumford_routes_target_open' does not depend on any axioms
+'HodgeObstruction.mumford_routes_equivalent' does not depend on any axioms
+'HodgeObstruction.mumford_routes_minimal' does not depend on any axioms
+'HodgeObstruction.mumford_routes_stronger' does not depend on any axioms
+'HodgeObstruction.mumford_routes_conjecture' does not depend on any axioms
+'HodgeObstruction.targets_invariant_dims' depends on axioms: [propext]
+'HodgeObstruction.targets_invariant_ring' depends on axioms: [propext]
+'HodgeObstruction.targets_cm_counts' depends on axioms: [propext]
+'HodgeObstruction.targets_cm_generation' depends on axioms: [propext]
+'HodgeObstruction.targets_two_branches' depends on axioms: [propext]
+'HodgeObstruction.lefschetz_pontryagin' depends on axioms: [propext]
+'HodgeObstruction.lefschetz_family_operator' depends on axioms: [propext]
+'HodgeObstruction.split_resolution_data' depends on axioms: [propext]
+'HodgeObstruction.transport_scaling' depends on axioms: [propext]
+'HodgeObstruction.transport_multiplicity' depends on axioms: [propext]
+'HodgeObstruction.quaternionic_ratios' depends on axioms: [propext]
+'HodgeObstruction.quaternionic_scaling' depends on axioms: [propext]
+'HodgeObstruction.quaternionic_presentation' depends on axioms: [propext]
+'HodgeObstruction.quaternionic_weil_lattice_0' depends on axioms: [propext]
+'HodgeObstruction.quaternionic_weil_lattice_1' depends on axioms: [propext]
+'HodgeObstruction.quaternionic_weil_lattice_2' depends on axioms: [propext]
+'HodgeObstruction.quaternionic_weil_lattice_3' depends on axioms: [propext]
+'HodgeObstruction.divisor_route_rank' depends on axioms: [propext]
+'HodgeObstruction.divisor_route_trace' depends on axioms: [propext]
+'HodgeObstruction.divisor_route_pencil' depends on axioms: [propext]
+'HodgeObstruction.divisor_route_index' depends on axioms: [propext]
+'HodgeObstruction.divisor_route_minimum_one' depends on axioms: [propext]
+'HodgeObstruction.divisor_route_minimum_three' depends on axioms: [propext]
+'HodgeObstruction.divisor_route_unitary_one' depends on axioms: [propext]
+'HodgeObstruction.divisor_route_unitary_three' depends on axioms: [propext]
+'HodgeObstruction.divisor_route_centraliser_one_0' depends on axioms: [propext]
+'HodgeObstruction.divisor_route_centraliser_one_1' depends on axioms: [propext]
+'HodgeObstruction.divisor_route_centraliser_one_2' depends on axioms: [propext]
+'HodgeObstruction.divisor_route_centraliser_one_3' depends on axioms: [propext]
+'HodgeObstruction.divisor_route_centraliser_one_4' depends on axioms: [propext]
+'HodgeObstruction.divisor_route_centraliser_three_0' depends on axioms: [propext]
+'HodgeObstruction.divisor_route_centraliser_three_1' depends on axioms: [propext]
+'HodgeObstruction.divisor_route_centraliser_three_2' depends on axioms: [propext]
+'HodgeObstruction.divisor_route_centraliser_three_3' depends on axioms: [propext]
+'HodgeObstruction.divisor_route_centraliser_three_4' depends on axioms: [propext]
+'HodgeObstruction.divisor_route_siegel_one' depends on axioms: [propext]
+'HodgeObstruction.divisor_route_siegel_three' depends on axioms: [propext]
+'HodgeObstruction.exceptional_mumford_square' depends on axioms: [propext]
+'HodgeObstruction.exceptional_quintic' depends on axioms: [propext]
+'HodgeObstruction.exceptional_annihilator' depends on axioms: [propext]
+'HodgeObstruction.cm_fields_quartic' depends on axioms: [propext]
+'HodgeObstruction.cm_fields_sextic_seven_two' depends on axioms: [propext]
+'HodgeObstruction.cm_fields_sextic_seven_one' depends on axioms: [propext]
+'HodgeObstruction.cm_fields_sextic_nine' depends on axioms: [propext]
+'HodgeObstruction.cm_fields_neron_severi' depends on axioms: [propext]
+'HodgeObstruction.cm_fields_composite' depends on axioms: [propext]
+'HodgeObstruction.mumford_rm_isotypic' depends on axioms: [propext]
+'HodgeObstruction.mumford_rm_isotypic_mixed' depends on axioms: [propext]
+'HodgeObstruction.mumford_rm_isotypic_diagonal' depends on axioms: [propext]
+'HodgeObstruction.mumford_rm_image' depends on axioms: [propext]
+'HodgeObstruction.mumford_rm_pairing' depends on axioms: [propext]
+'HodgeObstruction.mumford_rm_adjoint_one' depends on axioms: [propext]
+'HodgeObstruction.mumford_rm_adjoint_two' depends on axioms: [propext]
+'HodgeObstruction.mumford_rm_spin' depends on axioms: [propext]
+'HodgeObstruction.mumford_rm_kuga_satake' depends on axioms: [propext]
+'HodgeObstruction.twistor_real_structure' depends on axioms: [propext]
+'HodgeObstruction.twistor_quaternion' depends on axioms: [propext]
+'HodgeObstruction.twistor_pieces' depends on axioms: [propext]
+'HodgeObstruction.twistor_exchange' depends on axioms: [propext]
+'HodgeObstruction.twistor_invariant_one' depends on axioms: [propext]
+'HodgeObstruction.twistor_invariant_two' depends on axioms: [propext]
+'HodgeObstruction.twistor_annihilator_first' depends on axioms: [propext]
+'HodgeObstruction.twistor_annihilator_third' depends on axioms: [propext]
+'HodgeObstruction.hk_iota' depends on axioms: [propext]
+'HodgeObstruction.hk_isotypic' depends on axioms: [propext]
+'HodgeObstruction.hk_products' depends on axioms: [propext]
+'HodgeObstruction.hk_octic' depends on axioms: [propext]
+'HodgeObstruction.semireg_monomials' depends on axioms: [propext]
+'HodgeObstruction.semireg_block' depends on axioms: [propext]
+'HodgeObstruction.semireg_rank_two' depends on axioms: [propext]
+'HodgeObstruction.semireg_rank_three' depends on axioms: [propext]
+'HodgeObstruction.semireg_object_chern' depends on axioms: [propext]
+'HodgeObstruction.semireg_object_rank' depends on axioms: [propext]
+'HodgeObstruction.qk_model' depends on axioms: [propext]
+'HodgeObstruction.qk_closed_form' depends on axioms: [propext]
+'HodgeObstruction.qk_su_one' depends on axioms: [propext]
+'HodgeObstruction.qk_su_two' depends on axioms: [propext]
+'HodgeObstruction.qk_su_three' depends on axioms: [propext]
+'HodgeObstruction.qk_su_five_halves' depends on axioms: [propext]
+'HodgeObstruction.qk_su_two_fifths' depends on axioms: [propext]
+'HodgeObstruction.qk_flat' depends on axioms: [propext]
+'HodgeObstruction.qk_eigen_hodge' depends on axioms: [propext]
+'HodgeObstruction.qk_invariants_one_low' depends on axioms: [propext]
+'HodgeObstruction.qk_invariants_one_middle' depends on axioms: [propext]
+'HodgeObstruction.qk_invariants_one_high' depends on axioms: [propext]
+'HodgeObstruction.qk_commutant_one' depends on axioms: [propext]
+'HodgeObstruction.qk_invariants_three_low' depends on axioms: [propext]
+'HodgeObstruction.qk_invariants_three_middle' depends on axioms: [propext]
+'HodgeObstruction.qk_invariants_three_high' depends on axioms: [propext]
+'HodgeObstruction.qk_commutant_three' depends on axioms: [propext]
+'HodgeObstruction.qk_invariants_two_fifths_low' depends on axioms: [propext]
+'HodgeObstruction.qk_invariants_two_fifths_middle' depends on axioms: [propext]
+'HodgeObstruction.qk_invariants_two_fifths_high' depends on axioms: [propext]
+'HodgeObstruction.qk_commutant_two_fifths' depends on axioms: [propext]
+'HodgeObstruction.qk_contraction_one' depends on axioms: [propext]
+'HodgeObstruction.qk_contraction_one_general' depends on axioms: [propext]
+'HodgeObstruction.qk_contraction_three' depends on axioms: [propext]
+'HodgeObstruction.qk_contraction_three_general' depends on axioms: [propext]
+'HodgeObstruction.qk_graph_classes_one' depends on axioms: [propext]
+'HodgeObstruction.qk_graph_classes_two' depends on axioms: [propext]
+'HodgeObstruction.qk_graph_classes_three' depends on axioms: [propext]
+'HodgeObstruction.qk_graph_classes_four' depends on axioms: [propext]
+'HodgeObstruction.qk_graphs' depends on axioms: [propext]
+'HodgeObstruction.qk_graph_invariants' depends on axioms: [propext]
+'HodgeObstruction.qk_graph_twists' depends on axioms: [propext]
+'HodgeObstruction.qk_pure_spinors_one' depends on axioms: [propext]
+'HodgeObstruction.qk_pure_spinors_two' depends on axioms: [propext]
+'HodgeObstruction.qk_pure_spinors_three' depends on axioms: [propext]
+'HodgeObstruction.qk_pure_spinors_four' depends on axioms: [propext]
+'HodgeObstruction.qk_pure_spinors_five' depends on axioms: [propext]
+'HodgeObstruction.qk_pure_spinors_six' depends on axioms: [propext]
+'HodgeObstruction.qk_pure_spinors_seven' depends on axioms: [propext]
+'HodgeObstruction.qk_not_pure' depends on axioms: [propext]
+'HodgeObstruction.qk_parity_congruences' depends on axioms: [propext]
+'HodgeObstruction.qk_mod_small' depends on axioms: [propext]
+'HodgeObstruction.qk_congruences_large' depends on axioms: [propext]
+'HodgeObstruction.qk_nu_bounds' depends on axioms: [propext]
+'HodgeObstruction.qk_prym' depends on axioms: [propext]
+'HodgeObstruction.qk_prym_bound' depends on axioms: [propext]

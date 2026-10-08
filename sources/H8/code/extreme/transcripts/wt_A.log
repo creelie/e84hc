@@ -1,0 +1,100 @@
+========================================================================
+A: the paper's own code (weil_tori.py), extended
+  [PASS] A n=2, d=1: omega_1, omega_2 of type (n,n) at 3 members
+  [PASS] A n=2, d=1: eta of type (1,1) at the balanced member and at none of the members used
+      k=1: dim 0  (0.1s, q = 2147483629)
+      k=2: dim 2  (0.1s, q = 2147483629)
+      k=3: dim 0  (0.0s, q = 2147483629)
+  [PASS] A n=2, d=1: rational (k,k) classes at all 3 members, k = 1..3: [0, 2, 0] (upper bounds mod q)
+         0.8s
+  [PASS] A n=2, d=1: alpha_+ ^ kappa^n = alpha_- ^ kappa^n = 0; with beta in wedge^2 V_- added, alpha_+ ^ (kappa+beta)^n != 0
+  [PASS] A n=2, d=1: with beta in wedge^2 V_- added, alpha_- ^ (kappa+beta)^n is STILL ZERO (the paper's text says both products become nonzero)
+         alpha_+ ^ (kappa+beta)^n nonzero: True; alpha_- ^ (kappa+beta)^n nonzero: False
+  [PASS] A n=2, d=3: omega_1, omega_2 of type (n,n) at 3 members
+  [PASS] A n=2, d=3: eta of type (1,1) at the balanced member and at none of the members used
+      k=1: dim 0  (0.1s, q = 2147483647)
+      k=2: dim 2  (0.1s, q = 2147483647)
+      k=3: dim 0  (0.0s, q = 2147483647)
+  [PASS] A n=2, d=3: rational (k,k) classes at all 3 members, k = 1..3: [0, 2, 0] (upper bounds mod q)
+         0.7s
+  [PASS] A n=2, d=3: alpha_+ ^ kappa^n = alpha_- ^ kappa^n = 0; with beta in wedge^2 V_- added, alpha_+ ^ (kappa+beta)^n != 0
+  [PASS] A n=2, d=3: with beta in wedge^2 V_- added, alpha_- ^ (kappa+beta)^n is STILL ZERO (the paper's text says both products become nonzero)
+         alpha_+ ^ (kappa+beta)^n nonzero: True; alpha_- ^ (kappa+beta)^n nonzero: False
+  [PASS] A n=2, d=2: omega_1, omega_2 of type (n,n) at 3 members
+  [PASS] A n=2, d=2: eta of type (1,1) at the balanced member and at none of the members used
+      k=1: dim 0  (0.0s, q = 2147483587)
+      k=2: dim 2  (0.1s, q = 2147483587)
+      k=3: dim 0  (0.0s, q = 2147483587)
+  [PASS] A n=2, d=2: rational (k,k) classes at all 3 members, k = 1..3: [0, 2, 0] (upper bounds mod q)
+         0.9s
+  [PASS] A n=2, d=2: alpha_+ ^ kappa^n = alpha_- ^ kappa^n = 0; with beta in wedge^2 V_- added, alpha_+ ^ (kappa+beta)^n != 0
+  [PASS] A n=2, d=2: with beta in wedge^2 V_- added, alpha_- ^ (kappa+beta)^n is STILL ZERO (the paper's text says both products become nonzero)
+         alpha_+ ^ (kappa+beta)^n nonzero: True; alpha_- ^ (kappa+beta)^n nonzero: False
+  [PASS] A n=2, d=7: omega_1, omega_2 of type (n,n) at 3 members
+  [PASS] A n=2, d=7: eta of type (1,1) at the balanced member and at none of the members used
+      k=1: dim 0  (0.1s, q = 2147483647)
+      k=2: dim 2  (0.1s, q = 2147483647)
+      k=3: dim 0  (0.0s, q = 2147483647)
+  [PASS] A n=2, d=7: rational (k,k) classes at all 3 members, k = 1..3: [0, 2, 0] (upper bounds mod q)
+         0.8s
+  [PASS] A n=2, d=7: alpha_+ ^ kappa^n = alpha_- ^ kappa^n = 0; with beta in wedge^2 V_- added, alpha_+ ^ (kappa+beta)^n != 0
+  [PASS] A n=2, d=7: with beta in wedge^2 V_- added, alpha_- ^ (kappa+beta)^n is STILL ZERO (the paper's text says both products become nonzero)
+         alpha_+ ^ (kappa+beta)^n nonzero: True; alpha_- ^ (kappa+beta)^n nonzero: False
+  [PASS] A n=3, d=2: omega_1, omega_2 of type (n,n) at 5 members
+  [PASS] A n=3, d=2: eta of type (1,1) at the balanced member and at none of the members used
+      k=1: dim 0  (2.4s, q = 2147483587)
+      k=2: dim 0  (129.3s, q = 2147483587)
+      k=3: dim 2  (281.1s, q = 2147483587)
+      k=4: dim 0  (19.8s, q = 2147483587)
+      k=5: dim 0  (0.3s, q = 2147483587)
+  [PASS] A n=3, d=2: rational (k,k) classes at all 5 members, k = 1..5: [0, 0, 2, 0, 0] (upper bounds mod q)
+         476.8s
+  [PASS] A n=3, d=2: alpha_+ ^ kappa^n = alpha_- ^ kappa^n = 0; with beta in wedge^2 V_- added, alpha_+ ^ (kappa+beta)^n != 0
+  [PASS] A n=3, d=2: with beta in wedge^2 V_- added, alpha_- ^ (kappa+beta)^n is STILL ZERO (the paper's text says both products become nonzero)
+         alpha_+ ^ (kappa+beta)^n nonzero: True; alpha_- ^ (kappa+beta)^n nonzero: False
+  [PASS] A n=3, d=1: omega_1, omega_2 of type (n,n) at 5 members
+  [PASS] A n=3, d=1: eta of type (1,1) at the balanced member and at none of the members used
+      k=1: dim 0  (2.4s, q = 2147483629)
+      k=2: dim 0  (125.7s, q = 2147483629)
+      k=3: dim 2  (292.1s, q = 2147483629)
+      k=4: dim 0  (9.4s, q = 2147483629)
+      k=5: dim 0  (0.1s, q = 2147483629)
+  [PASS] A n=3, d=1: rational (k,k) classes at all 5 members, k = 1..5: [0, 0, 2, 0, 0] (upper bounds mod q)
+         471.8s
+  [PASS] A n=3, d=1: alpha_+ ^ kappa^n = alpha_- ^ kappa^n = 0; with beta in wedge^2 V_- added, alpha_+ ^ (kappa+beta)^n != 0
+  [PASS] A n=3, d=1: with beta in wedge^2 V_- added, alpha_- ^ (kappa+beta)^n is STILL ZERO (the paper's text says both products become nonzero)
+         alpha_+ ^ (kappa+beta)^n nonzero: True; alpha_- ^ (kappa+beta)^n nonzero: False
+  [PASS] A n=3, d=3: omega_1, omega_2 of type (n,n) at 5 members
+  [PASS] A n=3, d=3: eta of type (1,1) at the balanced member and at none of the members used
+      k=1: dim 0  (1.3s, q = 2147483647)
+      k=2: dim 0  (69.7s, q = 2147483647)
+      k=3: dim 2  (198.6s, q = 2147483647)
+      k=4: dim 0  (12.0s, q = 2147483647)
+      k=5: dim 0  (0.2s, q = 2147483647)
+  [PASS] A n=3, d=3: rational (k,k) classes at all 5 members, k = 1..5: [0, 0, 2, 0, 0] (upper bounds mod q)
+         303.2s
+  [PASS] A n=3, d=3: alpha_+ ^ kappa^n = alpha_- ^ kappa^n = 0; with beta in wedge^2 V_- added, alpha_+ ^ (kappa+beta)^n != 0
+  [PASS] A n=3, d=3: with beta in wedge^2 V_- added, alpha_- ^ (kappa+beta)^n is STILL ZERO (the paper's text says both products become nonzero)
+         alpha_+ ^ (kappa+beta)^n nonzero: True; alpha_- ^ (kappa+beta)^n nonzero: False
+  [PASS] A n=3, d=7: omega_1, omega_2 of type (n,n) at 5 members
+  [PASS] A n=3, d=7: eta of type (1,1) at the balanced member and at none of the members used
+      k=1: dim 0  (1.4s, q = 2147483647)
+      k=2: dim 0  (76.5s, q = 2147483647)
+      k=3: dim 2  (145.1s, q = 2147483647)
+      k=4: dim 0  (8.7s, q = 2147483647)
+      k=5: dim 0  (0.1s, q = 2147483647)
+  [PASS] A n=3, d=7: rational (k,k) classes at all 5 members, k = 1..5: [0, 0, 2, 0, 0] (upper bounds mod q)
+         257.7s
+  [PASS] A n=3, d=7: alpha_+ ^ kappa^n = alpha_- ^ kappa^n = 0; with beta in wedge^2 V_- added, alpha_+ ^ (kappa+beta)^n != 0
+  [PASS] A n=3, d=7: with beta in wedge^2 V_- added, alpha_- ^ (kappa+beta)^n is STILL ZERO (the paper's text says both products become nonzero)
+         alpha_+ ^ (kappa+beta)^n nonzero: True; alpha_- ^ (kappa+beta)^n nonzero: False
+  [PASS] A n=4, d=1: eta of type (1,1) at the balanced member and at none of 3 random members
+         34.8s
+  [PASS] A n=4, d=1: weil_tori.hodge_dimension, degree 2 (k = 1), 3 random members: 0
+         23.0s, q = 2147483629
+
+  42 checks passed, 0 failed  (1579.1s)
+
+real	26m19.847s
+user	6m36.710s
+sys	1m43.249s

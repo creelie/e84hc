@@ -1,0 +1,8 @@
+  [PASS] B n=4, d=1, k=4: diagonal members [(0, 1, 2, 3), (1, 4, 5, 6)] give 2050 monomial columns; with 2 random members the kernel mod q is 2 (lower bound 2)
+         19856 condition rows compressed to 2090; q = 2147483629; 121.7s
+
+  1 checks passed, 0 failed  (121.7s)
+
+real	2m2.191s
+user	0m55.911s
+sys	0m8.009s

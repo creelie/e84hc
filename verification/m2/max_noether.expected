@@ -1,0 +1,5 @@
+N plane,d=4,g=3,dim_I2 0
+N plane,d=5,g=6,dim_I2 6
+N plane,d=6,g=10,dim_I2 28
+N plane,d=7,g=15,dim_I2 78
+N plane,d=8,g=21,dim_I2 171

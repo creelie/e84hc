@@ -1,0 +1,10 @@
+========================================================================
+D: alpha_pm ^ kappa^n, engine, n = 4, 5
+  [PASS] D n=4: alpha_+ ^ kappa^n = alpha_- ^ kappa^n = 0 for random kappa in V_+ (x) V_-; with beta in wedge^2 V_- added: alpha_+ product nonzero True, alpha_- product nonzero False
+  [PASS] D n=5: alpha_+ ^ kappa^n = alpha_- ^ kappa^n = 0 for random kappa in V_+ (x) V_-; with beta in wedge^2 V_- added: alpha_+ product nonzero True, alpha_- product nonzero False
+
+  2 checks passed, 0 failed  (157.2s)
+
+real	2m37.624s
+user	1m32.653s
+sys	0m0.228s

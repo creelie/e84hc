@@ -1,0 +1,12 @@
+d=1 v1=(0, 1) v2=(0, 1): ch(E) has 459 terms, rank 8 (0.0s)
+   ch.e^{ell/2} flat: True  weil: (Fraction(-1, 48), Fraction(0, 1)) (0.1s)
+   mu = ['8', '0', '-2', '0', '1/2', '0', '-1/8', '0', '1/32']
+   r(ch E) = 88  (6n^2-2n = 88 )  (1.7s)
+d=1 v1=(1, 0) v2=(0, 1): ch(E) has 484 terms, rank 0 (0.0s)
+   ch.e^{ell/2} flat: True  weil: (Fraction(0, 1), Fraction(1, 48)) (0.1s)
+   mu = ['0', '-4', '0', '1', '0', '-1/4', '0', '1/16', '0']
+   r(ch E) = 88  (6n^2-2n = 88 )  (2.0s)
+d=2 v1=(1, 1) v2=(1, 0): ch(E) has 1024 terms, rank 32 (0.0s)
+   ch.e^{ell/2} flat: True  weil: (Fraction(1, 48), Fraction(1, 48)) (0.2s)
+   mu = ['32', '8', '-4', '-1', '1/2', '1/8', '-1/16', '-1/64', '1/128']
+   r(ch E) = 88  (6n^2-2n = 88 )  (7.9s)

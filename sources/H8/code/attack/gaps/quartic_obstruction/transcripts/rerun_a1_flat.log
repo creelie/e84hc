@@ -1,0 +1,77 @@
+A1 flatness of Orlov products for quartic F; F0 = Q(sqrt5)
+  [PASS] q=(2, 1): dim g_F = 30
+  [PASS] q=(2, 1): two elements generate g_F (closure dim mod p = 30)
+  [PASS] q=(2, 1): degree-2 G_F-invariants have dimension 2
+  [PASS] q=(2, 1): eta = beta_q + betahat is invariant
+  [PASS] q=(2, 1): Lefschetz part I2.I2 has dimension 3
+     setup 1.5s
+  [PASS] q=(2, 1) F1=w F2=w: kappa = ch(E) e^{ell/2} is g_F-invariant (flat)  [rank ch E = 4, 906 terms]
+  [PASS] q=(2, 1) F1=w F2=w: ch(E) itself is not g_F-invariant
+  [PASS] q=(2, 1) F1=w F2=w: kappa_2 lies in the 2-dim space of degree-2 invariants
+  [PASS] q=(2, 1) F1=w F2=w: kappa_4 not in Lefschetz part I2.I2 (nonzero W_F component)
+     (0.9s)
+  [PASS] q=(2, 1) F1=v_1 F2=v_1: kappa = ch(E) e^{ell/2} is g_F-invariant (flat)  [rank ch E = 20, 700 terms]
+  [PASS] q=(2, 1) F1=v_1 F2=v_1: ch(E) itself is not g_F-invariant
+  [PASS] q=(2, 1) F1=v_1 F2=v_1: kappa_2 lies in the 2-dim space of degree-2 invariants
+  [PASS] q=(2, 1) F1=v_1 F2=v_1: kappa_4 not in Lefschetz part I2.I2 (nonzero W_F component)
+     (0.8s)
+  [PASS] q=(2, 1) F1=u F2=u: kappa = ch(E) e^{ell/2} is g_F-invariant (flat)  [rank ch E = 20, 798 terms]
+  [PASS] q=(2, 1) F1=u F2=u: ch(E) itself is not g_F-invariant
+  [PASS] q=(2, 1) F1=u F2=u: kappa_2 lies in the 2-dim space of degree-2 invariants
+  [PASS] q=(2, 1) F1=u F2=u: kappa_4 not in Lefschetz part I2.I2 (nonzero W_F component)
+     (0.8s)
+  [PASS] q=(2, 1) F1=gen F2=gen: kappa = ch(E) e^{ell/2} is g_F-invariant (flat)  [rank ch E = 76, 2396 terms]
+  [PASS] q=(2, 1) F1=gen F2=gen: ch(E) itself is not g_F-invariant
+  [PASS] q=(2, 1) F1=gen F2=gen: kappa_2 lies in the 2-dim space of degree-2 invariants
+  [PASS] q=(2, 1) F1=gen F2=gen: kappa_4 not in Lefschetz part I2.I2 (nonzero W_F component)
+     (2.9s)
+  [PASS] q=(2, 1) F1=w F2=v_1: kappa = ch(E) e^{ell/2} is g_F-invariant (flat)  [rank ch E = 0, 1904 terms]
+  [PASS] q=(2, 1) F1=w F2=v_1: ch(E) itself is not g_F-invariant
+  [PASS] q=(2, 1) F1=w F2=v_1: kappa_2 lies in the 2-dim space of degree-2 invariants
+  [PASS] q=(2, 1) F1=w F2=v_1: kappa_4 not in Lefschetz part I2.I2 (nonzero W_F component)
+     (1.4s)
+  [PASS] q=(3, -1): dim g_F = 30
+  [PASS] q=(3, -1): two elements generate g_F (closure dim mod p = 30)
+  [PASS] q=(3, -1): degree-2 G_F-invariants have dimension 2
+  [PASS] q=(3, -1): eta = beta_q + betahat is invariant
+  [PASS] q=(3, -1): Lefschetz part I2.I2 has dimension 3
+     setup 9.8s
+  [PASS] q=(3, -1) F1=w F2=w: kappa = ch(E) e^{ell/2} is g_F-invariant (flat)  [rank ch E = 4, 906 terms]
+  [PASS] q=(3, -1) F1=w F2=w: ch(E) itself is not g_F-invariant
+  [PASS] q=(3, -1) F1=w F2=w: kappa_2 lies in the 2-dim space of degree-2 invariants
+  [PASS] q=(3, -1) F1=w F2=w: kappa_4 not in Lefschetz part I2.I2 (nonzero W_F component)
+     (0.9s)
+  [PASS] q=(3, -1) F1=v_1 F2=v_1: kappa = ch(E) e^{ell/2} is g_F-invariant (flat)  [rank ch E = 20, 700 terms]
+  [PASS] q=(3, -1) F1=v_1 F2=v_1: ch(E) itself is not g_F-invariant
+  [PASS] q=(3, -1) F1=v_1 F2=v_1: kappa_2 lies in the 2-dim space of degree-2 invariants
+  [PASS] q=(3, -1) F1=v_1 F2=v_1: kappa_4 not in Lefschetz part I2.I2 (nonzero W_F component)
+     (1.0s)
+  [PASS] q=(3, -1) F1=u F2=u: kappa = ch(E) e^{ell/2} is g_F-invariant (flat)  [rank ch E = 20, 798 terms]
+  [PASS] q=(3, -1) F1=u F2=u: ch(E) itself is not g_F-invariant
+  [PASS] q=(3, -1) F1=u F2=u: kappa_2 lies in the 2-dim space of degree-2 invariants
+  [PASS] q=(3, -1) F1=u F2=u: kappa_4 not in Lefschetz part I2.I2 (nonzero W_F component)
+     (0.9s)
+  [PASS] q=(3, -1) F1=gen F2=gen: kappa = ch(E) e^{ell/2} is g_F-invariant (flat)  [rank ch E = 136, 2396 terms]
+  [PASS] q=(3, -1) F1=gen F2=gen: ch(E) itself is not g_F-invariant
+  [PASS] q=(3, -1) F1=gen F2=gen: kappa_2 lies in the 2-dim space of degree-2 invariants
+  [PASS] q=(3, -1) F1=gen F2=gen: kappa_4 not in Lefschetz part I2.I2 (nonzero W_F component)
+     (3.0s)
+  [PASS] q=(3, -1) F1=w F2=v_1: kappa = ch(E) e^{ell/2} is g_F-invariant (flat)  [rank ch E = 0, 1904 terms]
+  [PASS] q=(3, -1) F1=w F2=v_1: ch(E) itself is not g_F-invariant
+  [PASS] q=(3, -1) F1=w F2=v_1: kappa_2 lies in the 2-dim space of degree-2 invariants
+  [PASS] q=(3, -1) F1=w F2=v_1: kappa_4 not in Lefschetz part I2.I2 (nonzero W_F component)
+     (1.4s)
+  [PASS] q=1: two elements generate g_F
+  [PASS] q=1 (F=Q(sqrt5,i)) K-secant v_theta: kappa = ch(E) e^{ell/2} is g_F-invariant (flat)  [rank ch E = 8, 232 terms]
+  [PASS] q=1 (F=Q(sqrt5,i)) K-secant v_theta: ch(E) itself is not g_F-invariant
+  [PASS] q=1 (F=Q(sqrt5,i)) K-secant v_theta: kappa_2 lies in the 2-dim space of degree-2 invariants
+  [PASS] q=1 (F=Q(sqrt5,i)) K-secant v_theta: kappa_4 in Lefschetz part (no W_F component), as expected for a K-secant class
+     (0.3s)
+  [PASS] q=1 (F=Q(sqrt5,i)) w = theta1 theta2: kappa = ch(E) e^{ell/2} is g_F-invariant (flat)  [rank ch E = 4, 906 terms]
+  [PASS] q=1 (F=Q(sqrt5,i)) w = theta1 theta2: ch(E) itself is not g_F-invariant
+  [PASS] q=1 (F=Q(sqrt5,i)) w = theta1 theta2: kappa_2 lies in the 2-dim space of degree-2 invariants
+  [PASS] q=1 (F=Q(sqrt5,i)) w = theta1 theta2: kappa_4 not in Lefschetz part I2.I2 (nonzero W_F component)
+     (0.9s)
+total 19.6s
+
+59 checks passed, 0 failed

@@ -1,0 +1,92 @@
+
+=== Q(zeta_5)  [cyclic, no imag. quadratic subfield] ; H = diag(1,1,-1,-1) ===
+  [PASS] E alternating and nondegenerate
+  [PASS] dim_Q su(V,H) = 30
+         found 30
+  [PASS] su(V,H) preserves E
+  [PASS] dim_Q W_F = 4
+  [PASS] W_F killed by su(V,H) (Hodge on every member)
+  [PASS] P_1, P_s invariant and independent
+  [PASS] invariants in wedge^2: upper bound mod p = 2
+         nullity mod p = 2
+  [PASS] explicit invariants in wedge^4: 3 products + 4 Weil, rank 7
+  [PASS] invariants in wedge^4: upper bound mod p = 7
+         nullity mod p = 7
+  [PASS] W_F meets Lefschetz products in 0 (exceptional)
+
+=== Q(zeta_8)=Q(i,sqrt2)  [biquadratic] ; H = diag(1,1,-1,-1) ===
+  [PASS] E alternating and nondegenerate
+  [PASS] dim_Q su(V,H) = 30
+         found 30
+  [PASS] su(V,H) preserves E
+  [PASS] dim_Q W_F = 4
+  [PASS] W_F killed by su(V,H) (Hodge on every member)
+  [PASS] P_1, P_s invariant and independent
+  [PASS] invariants in wedge^2: upper bound mod p = 2
+         nullity mod p = 2
+  [PASS] explicit invariants in wedge^4: 3 products + 4 Weil, rank 7
+  [PASS] invariants in wedge^4: upper bound mod p = 7
+         nullity mod p = 7
+  [PASS] W_F meets Lefschetz products in 0 (exceptional)
+
+=== Q(zeta_12)=Q(i,sqrt3)  [biquadratic] ; H = diag(1,1,-1,-1) ===
+  [PASS] E alternating and nondegenerate
+  [PASS] dim_Q su(V,H) = 30
+         found 30
+  [PASS] su(V,H) preserves E
+  [PASS] dim_Q W_F = 4
+  [PASS] W_F killed by su(V,H) (Hodge on every member)
+  [PASS] P_1, P_s invariant and independent
+  [PASS] invariants in wedge^2: upper bound mod p = 2
+         nullity mod p = 2
+  [PASS] explicit invariants in wedge^4: 3 products + 4 Weil, rank 7
+  [PASS] invariants in wedge^4: upper bound mod p = 7
+         nullity mod p = 7
+  [PASS] W_F meets Lefschetz products in 0 (exceptional)
+
+=== Q(sqrt(-(3+sqrt2)))  [non-Galois, D4 closure] ; H = diag(1,1,-1,-1) ===
+  [PASS] E alternating and nondegenerate
+  [PASS] dim_Q su(V,H) = 30
+         found 30
+  [PASS] su(V,H) preserves E
+  [PASS] dim_Q W_F = 4
+  [PASS] W_F killed by su(V,H) (Hodge on every member)
+  [PASS] P_1, P_s invariant and independent
+  [PASS] invariants in wedge^2: upper bound mod p = 2
+         nullity mod p = 2
+  [PASS] explicit invariants in wedge^4: 3 products + 4 Weil, rank 7
+  [PASS] invariants in wedge^4: upper bound mod p = 7
+         nullity mod p = 7
+  [PASS] W_F meets Lefschetz products in 0 (exceptional)
+
+=== Q(zeta_5) ; H = diag(1,1,-1,-3) ===
+  [PASS] E alternating and nondegenerate
+  [PASS] dim_Q su(V,H) = 30
+         found 30
+  [PASS] su(V,H) preserves E
+  [PASS] dim_Q W_F = 4
+  [PASS] W_F killed by su(V,H) (Hodge on every member)
+  [PASS] P_1, P_s invariant and independent
+  [PASS] invariants in wedge^2: upper bound mod p = 2
+         nullity mod p = 2
+  [PASS] explicit invariants in wedge^4: 3 products + 4 Weil, rank 7
+  [PASS] invariants in wedge^4: upper bound mod p = 7
+         nullity mod p = 7
+  [PASS] W_F meets Lefschetz products in 0 (exceptional)
+
+=== Q(sqrt(-(3+sqrt2))) ; H = diag(1,2+s,-1,-(3+s)) ===
+  [PASS] E alternating and nondegenerate
+  [PASS] dim_Q su(V,H) = 30
+         found 30
+  [PASS] su(V,H) preserves E
+  [PASS] dim_Q W_F = 4
+  [PASS] W_F killed by su(V,H) (Hodge on every member)
+  [PASS] P_1, P_s invariant and independent
+  [PASS] invariants in wedge^2: upper bound mod p = 2
+         nullity mod p = 2
+  [PASS] explicit invariants in wedge^4: 3 products + 4 Weil, rank 7
+  [PASS] invariants in wedge^4: upper bound mod p = 7
+         nullity mod p = 7
+  [PASS] W_F meets Lefschetz products in 0 (exceptional)
+
+60 checks passed, 0 failed

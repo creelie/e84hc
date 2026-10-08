@@ -1,0 +1,134 @@
+\section{Reduction to the middle degree}\label{sec:reduction}
+
+The two preceding sections dealt with restriction to hypersurfaces and with
+the one classical correspondence that avoids it. Here we combine the first of
+them with the Lefschetz decomposition to locate the difficulty of the Hodge
+conjecture in general. The result, \Cref{thm:equivalence}, is an equivalence
+in which neither side is easier than the other. Its use is to isolate the
+primitive classes of middle degree as the one place where a new method is
+needed, and by \Cref{thm:hyperplane} restriction to hyperplane sections sees
+nothing there.
+
+\subsection{Reduction to primitive classes}
+
+\begin{proposition}[Lefschetz decomposition of Hodge classes]%
+\label{prop:lefschetzdecomp}
+Let $X$ be smooth projective of dimension $d$ with ample class $L$. Every
+$\alpha\in\Hdg^{p}(X)$ can be written
+\[
+  \alpha=\sum_{r\ge\max(0,\,2p-d)}L^{r}\beta_{r},
+  \qquad
+  \beta_{r}\in\Hdg^{p-r}(X)\cap H^{2p-2r}_{\mathrm{prim}}(X,\QQ),
+\]
+and the $\beta_{r}$ are uniquely determined. Consequently the Hodge conjecture
+holds for $X$ if and only if every primitive rational Hodge class on $X$ is
+algebraic.
+\end{proposition}
+
+\begin{proof}
+The Lefschetz decomposition
+$H^{k}(X,\QQ)=\bigoplus_{r}L^{r}H^{k-2r}_{\mathrm{prim}}(X,\QQ)$ is a
+decomposition of rational Hodge structures, because $L$ is a rational class
+of type $(1,1)$ and the primitive parts are kernels of morphisms of Hodge
+structures. The rationality of $L$ is essential here: for a K\"ahler class
+that is not a real multiple of a rational one the primitive subspaces are in
+general not rational, and a rational Hodge class need not decompose into
+rational primitive pieces. A Hodge class $\alpha$ therefore has Hodge classes
+$L^{r}\beta_{r}$ as its components. By hard Lefschetz, $L^{r}$ is injective
+on $H^{2p-2r}_{\mathrm{prim}}(X,\QQ)$ for $r\ge\max(0,2p-d)$, and it is a
+morphism of Hodge structures of bidegree $(r,r)$, so each $\beta_{r}$ is
+uniquely determined and is itself a Hodge class. For the last statement, if
+each primitive $\beta_{r}$ is algebraic then so is $L^{r}\beta_{r}$, since $L$
+is algebraic and algebraic classes form a subring, and hence so is $\alpha$;
+the converse holds because primitive Hodge classes are Hodge classes.
+\end{proof}
+
+\subsection{The equivalence}
+
+\begin{theorem}\label{thm:equivalence}
+The following are equivalent.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item The Hodge conjecture holds for every smooth complex projective variety.
+\item The Lefschetz standard conjecture $B(X)$ holds for every smooth complex
+  projective variety $X$, and every primitive rational Hodge class of middle
+  degree on every smooth complex projective variety of even dimension is
+  algebraic.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) implies (ii). The second half of (ii) is a special case of (i). For
+$B(X)$, note that $\Lambda$ is a morphism of Hodge structures of bidegree
+$(-1,-1)$, hence is given by a Hodge class on $X\times X$ through the
+standard correspondence between morphisms of Hodge structures and Hodge
+classes on the product, and (i) applied to $X\times X$ makes that class
+algebraic. This is Kleiman's argument \cite[\S2]{Kle68}.
+
+(ii) implies (i). We argue by induction on $d=\dim X$. For $d\le1$ the Hodge
+conjecture is classical. Let $d\ge2$ and assume the conjecture for all smooth
+projective varieties of dimension less than $d$. By Bertini there is a smooth
+hypersurface $j\colon Y\hookrightarrow X$ in $|mH|$ for an ample $H$ and
+$m\gg0$; put $L=c_{1}(\cO_{X}(Y))$, and take primitivity and the operator
+$\Lambda$ with respect to this $L$, which is harmless because $B(X)$ does not
+depend on the choice of ample class \cite{Kle68,Kle94}. By
+\Cref{prop:lefschetzdecomp} it suffices to prove that a primitive Hodge class
+$\alpha\in H^{2p}(X,\QQ)$ is algebraic and, by hard Lefschetz, primitive
+classes occur only in degrees at most $d$, so $2p\le d$.
+
+If $2p=d$, then $\alpha$ is a primitive Hodge class of middle degree on a
+variety of even dimension, so it is algebraic by the second half of (ii).
+
+If $2p<d$, the class $j^{*}\alpha$ is a rational Hodge class on $Y$ because
+$j^{*}$ is a morphism of Hodge structures. As $\dim Y=d-1<d$, the inductive
+hypothesis makes $j^{*}\alpha$ algebraic, say $j^{*}\alpha=\cl(W)$ with
+$W\in\CH^{p}(Y)_{\QQ}$. Then
+$\cl(j_{*}W)=j_{*}j^{*}\alpha=L\alpha$ by \Cref{lem:gysinrestrict}, so
+$L\alpha$ is algebraic. By $B(X)$ the operator $\Lambda$ carries algebraic
+classes to algebraic classes, and by \Cref{lem:LambdaL},
+$\alpha=(d-2p)^{-1}\Lambda(L\alpha)$, which is therefore algebraic; the scalar
+is defined because $d-2p\ge1$.
+\end{proof}
+
+\begin{remark}[The content of the equivalence]\label{rem:notsimpler}
+$B(X)$ is itself a consequence of (i), so
+\Cref{thm:equivalence} does not reduce the problem to a smaller one; it
+locates the difficulty. The induction in the proof that (ii) implies (i) runs
+through every degree except the middle one, where it rests entirely on the
+hypothesis. By \Cref{thm:hyperplane}, the step it uses below the middle
+degree, restriction to a hypersurface, returns zero on primitive classes of
+middle degree, so no refinement of that step extends the induction to that
+degree.
+\end{remark}
+
+\begin{corollary}[Primitive classes of middle degree]\label{cor:whereidea}
+Any proof of the Hodge conjecture must, at some point, produce an algebraic
+cycle representing a primitive Hodge class of middle degree on a variety of
+even dimension, by a method that does not factor through restriction to
+hyperplane sections of that variety.
+\end{corollary}
+
+\begin{proof}
+By \Cref{thm:equivalence}, the Hodge conjecture includes the algebraicity of
+the primitive Hodge classes of middle degree on varieties of even dimension,
+and by \Cref{cor:blind} every such class restricts to zero on every smooth
+ample hypersurface.
+\end{proof}
+
+\begin{remark}[Methods that do not factor through hyperplane sections]%
+\label{rem:othermethods}
+\Cref{cor:whereidea} does not say that the conjecture is out of reach, and
+the settled cases come from known methods outside its scope. The
+Kuga--Satake construction (\Cref{sec:ks}) replaces a weight-two Hodge
+structure of K3 type by the $H^{1}$ of an abelian variety; the class it
+produces is of type $(1,1)$ on a product, hence algebraic by Lefschetz, and it
+is not a restriction to a subvariety. Degenerations and limits of Hodge
+structures move the variety instead of cutting it. Correspondences from other
+varieties, of which the Kuga--Satake construction is one instance and
+Markman's construction \cite{Mar25a,Mar25b} another, are also outside the
+scope. Arguments through the coniveau filtration, which show that a class
+supported on a proper closed subvariety is controlled by that subvariety, are
+compatible with everything here: they lower the dimension legitimately,
+because the class is supported on the smaller variety, whereas a primitive
+class of coniveau zero is supported on no proper closed subvariety.
+\end{remark}
+

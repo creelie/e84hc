@@ -1,0 +1,28 @@
+divisor_sheaves.py: the arithmetic of prop:divisortemplate
+  (A) the profile of part (i)
+  [PASS] chi(F,F) by term-by-term integration equals the closed form of prop:secantprofile   4320 cases, n = 5..24
+  [PASS] the profile of part (i) meets every condition, raising e_{n/2} by c + 2(-1)^{n/2} for even n   4320 cases
+  [PASS] the Betti numbers beta_k of T^n # T^n have Euler characteristic 0 (n odd) and -2 (n even)   n = 2..59
+  [PASS] at n = 5 no index lies in [3, n-3], so the profile is forced to (1, 10, 20, 20, 10, 1)
+  [PASS] for even n >= 6 and integers (a, b) != 0, c = |chi| is a positive multiple of 2^{n-1}, so c > 2
+  (B) the character of part (ii)
+  [PASS] S(x) T_b(x) (1 - e^{-bx}) = b x S(x), so ch(G) = r i^*(S T_b) gives ch(i_*G) = rb v_theta   to order x^11, b, d symbols
+  [PASS] S T_b = 1 + (b/2) x + (b^2/12 - d/6) x^2 + O(x^3)
+  [PASS] rank one: c_1^2/2 - ch_2 = b^2/24 + d/6, positive for d >= 1
+  [PASS] degree six: e^{bx/2}(1 - e^{-bx}) has x^3 coefficient b^3/24, against -bd/6 in b v_theta (so b^2 = -4d)
+  (C) rank two on a theta divisor
+  [PASS] c_2 = c_1^2/2 - ch_2 = (d+1)/3 theta^2 for r = 2, b = 1
+  [PASS] theta^2/2 has every coefficient +-1 in a symplectic basis (n = 5), so it is integral and primitive   10 monomials
+  [PASS] 2(d+1)/3 is an integer exactly for d = 2 mod 3   d = 1..1000
+  (D) the Ext groups of part (iii)
+  [PASS] h^k(O_Theta) + h^{k-1}(O_Theta(Theta)) = beta_k for every k   n = 2..39
+  [PASS] both Euler characteristics and chi(i_*O, i_*O) agree with Riemann-Roch   n = 2..39
+  [PASS] for b >= 2, h^0(O_D(D)) = b^n + n - 1 > 2n
+  (E) part (iv) at n = 5
+  [PASS] chi(Theta, End G) = r^2 (32 d^2 - 20 d - 1)/6 by both routes
+  [PASS] chi(O_Theta) = int_X (1 - e^{-theta}) = 1 at n = 5
+  [PASS] 32 d^2 - 20 d - 1 - 11 = 4 (d - 1)(8 d + 3), so 6 chi(End_0 G) = r^2 (32 d^2 - 20 d - 1) - 6 >= 5   factorisation with d a symbol; scan r < 200, d < 400
+  (F) the certificate at n = 3
+  [PASS] Riemann-Roch on C^(2) gives ch(i_*L) = Theta - k(k+1)[pt] for c_1 = (2k+1)x - k theta   k = 1..29
+
+  19 checks passed, 0 failed

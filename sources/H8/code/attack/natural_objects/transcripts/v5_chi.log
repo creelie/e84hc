@@ -1,0 +1,2 @@
+d=1: |int B_i B_j| = |det|^8: True ; int B eta^4 = 4!(dp^2+q^2)^4: True ; int eta^8 = 8! d^4: True
+d=2: |int B_i B_j| = |det|^8: True ; int B eta^4 = 4!(dp^2+q^2)^4: True ; int eta^8 = 8! d^4: True

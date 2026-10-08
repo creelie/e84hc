@@ -1,0 +1,12 @@
+  [PASS] B n=4, d=1, k=3: diagonal members [(0, 1, 2, 3)] give 3136 monomial columns; with 2 random members the kernel mod q is 0 (lower bound 0)
+         14112 condition rows compressed to 3176; q = 2147483629; 857.5s
+  [PASS] B n=4, d=1, k=5: diagonal members [(0, 1, 2, 3)] give 3136 monomial columns; with 2 random members the kernel mod q is 0 (lower bound 0)
+         14112 condition rows compressed to 3176; q = 2147483629; 344.2s
+  [PASS] B n=4, d=1, k=4: diagonal members [(0, 1, 2, 3)] give 4900 monomial columns; with 2 random members the kernel mod q is 2 (lower bound 2)
+         22340 condition rows compressed to 4940; q = 2147483629; 1095.2s
+
+  3 checks passed, 0 failed  (2297.0s)
+
+real	38m17.910s
+user	17m49.390s
+sys	7m49.396s

@@ -1,0 +1,13 @@
+n=2 d=1: flat & recurrence for all 4 basis pairs: True;  Weil(a u + b v_t, same) = (1/4 a^2 + 0 ab + -1/4 b^2) w1 + (0 a^2 + 1/2 ab + 0 b^2) w2   (0.0s)
+n=2 d=2: flat & recurrence for all 4 basis pairs: True;  Weil(a u + b v_t, same) = (1/4 a^2 + 0 ab + -1/8 b^2) w1 + (0 a^2 + 1/2 ab + 0 b^2) w2   (0.0s)
+n=2 d=3: flat & recurrence for all 4 basis pairs: True;  Weil(a u + b v_t, same) = (1/4 a^2 + 0 ab + -1/12 b^2) w1 + (0 a^2 + 1/2 ab + 0 b^2) w2   (0.0s)
+n=2 d=5: flat & recurrence for all 4 basis pairs: True;  Weil(a u + b v_t, same) = (1/4 a^2 + 0 ab + -1/20 b^2) w1 + (0 a^2 + 1/2 ab + 0 b^2) w2   (0.0s)
+n=3 d=1: flat & recurrence for all 4 basis pairs: True;  Weil(a u + b v_t, same) = (1/12 a^2 + 0 ab + -1/12 b^2) w1 + (0 a^2 + 1/6 ab + 0 b^2) w2   (0.0s)
+n=3 d=2: flat & recurrence for all 4 basis pairs: True;  Weil(a u + b v_t, same) = (1/12 a^2 + 0 ab + -1/24 b^2) w1 + (0 a^2 + 1/6 ab + 0 b^2) w2   (0.0s)
+n=3 d=6: flat & recurrence for all 4 basis pairs: True;  Weil(a u + b v_t, same) = (1/12 a^2 + 0 ab + -1/72 b^2) w1 + (0 a^2 + 1/6 ab + 0 b^2) w2   (0.0s)
+n=3 d=30: flat & recurrence for all 4 basis pairs: True;  Weil(a u + b v_t, same) = (1/12 a^2 + 0 ab + -1/360 b^2) w1 + (0 a^2 + 1/6 ab + 0 b^2) w2   (0.0s)
+n=3 d=42: flat & recurrence for all 4 basis pairs: True;  Weil(a u + b v_t, same) = (1/12 a^2 + 0 ab + -1/504 b^2) w1 + (0 a^2 + 1/6 ab + 0 b^2) w2   (0.0s)
+n=4 d=1: flat & recurrence for all 4 basis pairs: True;  Weil(a u + b v_t, same) = (1/48 a^2 + 0 ab + -1/48 b^2) w1 + (0 a^2 + 1/24 ab + 0 b^2) w2   (0.3s)
+n=4 d=2: flat & recurrence for all 4 basis pairs: True;  Weil(a u + b v_t, same) = (1/48 a^2 + 0 ab + -1/96 b^2) w1 + (0 a^2 + 1/24 ab + 0 b^2) w2   (0.3s)
+n=4 d=3: flat & recurrence for all 4 basis pairs: True;  Weil(a u + b v_t, same) = (1/48 a^2 + 0 ab + -1/144 b^2) w1 + (0 a^2 + 1/24 ab + 0 b^2) w2   (0.3s)
+ALL: True
