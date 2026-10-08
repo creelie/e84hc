@@ -28,4 +28,6 @@ All 61 references were checked online. No proof in the paper depends on a comput
 
 ### Citation and DOI
 
-Zenodo assigns a DOI to this release when the repository is switched on in the author's Zenodo GitHub settings. The metadata is in `.zenodo.json` and `CITATION.cff`.
+Concept DOI, covering all versions: [10.5281/zenodo.23234362](https://doi.org/10.5281/zenodo.23234362). Zenodo gives each release its own version DOI under it; v1.0.0 is [10.5281/zenodo.23234363](https://doi.org/10.5281/zenodo.23234363).
+
+In this version the paper cites its archive by the concept DOI, on the first page and in Appendix A. The paper itself is otherwise unchanged from v1.0.0.

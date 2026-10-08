@@ -36,6 +36,14 @@ keywords:
   - semiregularity
   - Lean 4
   - Macaulay2
-version: "1.0.0"
+version: "1.0.1"
 date-released: "2026-10-08"
+doi: "10.5281/zenodo.23234362"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23234362"
+    description: "Concept DOI of all versions"
+  - type: doi
+    value: "10.5281/zenodo.23234363"
+    description: "Version DOI of release v1.0.0"
 repository-code: "https://github.com/creelie/e84hc"
