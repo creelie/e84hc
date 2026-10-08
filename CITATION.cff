@@ -36,7 +36,7 @@ keywords:
   - semiregularity
   - Lean 4
   - Macaulay2
-version: "1.0.1"
+version: "1.0.2"
 date-released: "2026-10-08"
 doi: "10.5281/zenodo.23234362"
 identifiers:
