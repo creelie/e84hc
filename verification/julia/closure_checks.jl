@@ -216,6 +216,26 @@ function check_weil()
     for m in 4:59
         @assert all(3 * (m + k) + 3k < (m + k)^2 for k in 0:199)
     end
+    # Proposition 5.15: cyclic triple covers of a genus-q curve branched at r
+    # points with Prym of dimension 2n; their families have dimension q+2n-1.
+    for n in 2:12
+        best = (-1, -1, -1)
+        for q in 0:(n + 1)
+            r = 2n + 2 - 2q
+            @assert r >= 0 && r != 1
+            @assert 2 * (3q - 2 + r) - 2 == 3 * (2q - 2) + 2r
+            @assert (3q - 2 + r) - q == 2n
+            d = q == 0 ? r - 3 : (q == 1 ? r : 3q - 3 + r)
+            @assert d == q + 2n - 1
+            if d > best[1]
+                best = (d, q, r)
+            elseif d == best[1]
+                best = (d, -1, -1)
+            end
+        end
+        @assert best == (3n, n + 1, 0)
+        emit("W", "n=$n,cyclic_max", "$(best[1]),$(best[2]),$(best[3])")
+    end
 end
 
 # ------------------------------------------------- L: the logical skeleton

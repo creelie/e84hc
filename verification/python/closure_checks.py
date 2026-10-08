@@ -16,7 +16,8 @@ Items
   S  The switch lemma (Lemma 4.1): exhaustive for small sizes.
   G  The signs (-1)^(p(p-1)/2) of the permutations that regroup a product of
      2p classes of degree one between interleaved and blocked order.
-  W  Weil families: Prym locus 3n against n^2, and the count of Remark 5.13.
+  W  Weil families: Prym locus 3n against n^2, the count of Remark 5.13 and
+     the branched covers of Proposition 5.15.
   L  The logical skeleton of Theorem B: a valuation in which every rule
      and (CM) hold and the Hodge conjecture fails, the four closed sets of
      the proof, the minimal sets of statements that give the conjecture,
@@ -253,6 +254,23 @@ def check_weil():
     assert [k for k in range(13) if 3 * (3 + k) + 3 * k >= (3 + k) ** 2] == [0]
     for m in range(4, 60):
         assert all(3 * (m + k) + 3 * k < (m + k) ** 2 for k in range(0, 200))
+    # Proposition 5.15: cyclic triple covers of a genus-q curve branched at r
+    # points with Prym of dimension 2n; their families have dimension q+2n-1.
+    for n in range(2, 13):
+        best = None
+        for q in range(0, n + 2):
+            r = 2 * n + 2 - 2 * q
+            assert r >= 0 and r != 1
+            assert 2 * (3 * q - 2 + r) - 2 == 3 * (2 * q - 2) + 2 * r
+            assert (3 * q - 2 + r) - q == 2 * n
+            d = r - 3 if q == 0 else (r if q == 1 else 3 * q - 3 + r)
+            assert d == q + 2 * n - 1
+            if best is None or d > best[0]:
+                best = (d, q, r)
+            elif d == best[0]:
+                best = (d, -1, -1)
+        assert best == (3 * n, n + 1, 0)
+        emit("W", f"n={n},cyclic_max", f"{best[0]},{best[1]},{best[2]}")
 
 
 # ---------------------------------------------------------------------------
