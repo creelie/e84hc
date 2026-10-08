@@ -1,5 +1,7 @@
 # When is every rational Hodge class algebraic?
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23234362.svg)](https://doi.org/10.5281/zenodo.23234362)
+
 **Deep Bhattacharjee**
 Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India
 d.bhattacharjee@erl-forschung.de · itsdeep@live.com · ORCID [0000-0003-0466-750X](https://orcid.org/0000-0003-0466-750X)
@@ -78,7 +80,14 @@ This needs python3, julia, a C99 compiler, lake (Lean 4) and Macaulay2. It runs 
 
 ## Citing
 
-See `CITATION.cff`. Each GitHub release is archived on Zenodo, which assigns it a DOI once the repository is switched on in the author's Zenodo GitHub settings.
+Zenodo archives every GitHub release under its own version DOI, and gathers all of them under one concept DOI.
+
+| | DOI |
+| --- | --- |
+| all versions (concept DOI) | [10.5281/zenodo.23234362](https://doi.org/10.5281/zenodo.23234362) |
+| release v1.0.0 (version DOI) | [10.5281/zenodo.23234363](https://doi.org/10.5281/zenodo.23234363) |
+
+Cite the version DOI of the release you used, or the concept DOI for the work as a whole. `CITATION.cff` holds the same data.
 
 ## Note on preparation
 
