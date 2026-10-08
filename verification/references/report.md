@@ -26,6 +26,7 @@ Run on 2026-10-08 by `verification/references/check_references.py`.
 | Gri69 | verified | Crossref: "On the Periods of Certain Rational Integrals: I" (1969, vol. 90, p. 460); title match 1.00 |
 | Gro69 | verified | nLab references: Algebraic Geometry (Bombay, 1968), Oxford Univ. Press, pp. 193-199 (record online: HTTP 200) |
 | Hod52 | verified | scan of the ICM 1950 Proceedings, vol. 1 (AMS, 1952): the address starts on p. 182, and the next one (Hopf) on p. 193 (record online: HTTP 200) |
+| Hor74 | verified | Crossref: "On deformations of holomorphic maps II" (1974, vol. 26); title match 1.00 |
 | IM13 | verified | Crossref: "Semiregularity and obstructions of complete intersections" (2013, vol. 235, p. 92-125); title match 1.00 |
 | Jum26 | verified | arXiv 2608.18134: "The Hodge conjecture for Fermat fourfolds of odd degree at most 199" by Rifat Jumagulov; title match 1.00 |
 | Kle68 | verified | nLab references and Open Library: Dix exposes sur la cohomologie des schemas, North-Holland, 1968, pp. 359-386, MR0292838 (record online: HTTP 200) |
@@ -66,4 +67,4 @@ Run on 2026-10-08 by `verification/references/check_references.py`.
 | OAI26c | verified | listed in CONTENTS.md of github.com/openai/math as preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/paper.pdf (record online: HTTP 200) |
 | MZ99 | verified | Crossref: "Hodge classes on abelian varieties of low dimension" (1999, vol. 315, p. 711-733); title match 1.00 |
 
-61 entries, 0 need attention.
+62 entries, 0 need attention.

@@ -702,6 +702,141 @@ countable union of subvarieties of dimension at most $3n$, which for
 $n\ge4$ is less than $n^{2}$.
 \end{proof}
 
+The analogy with the Abel--Jacobi curve can be tested on $B$ itself, in
+dimension one. Following Lange and Ortega \cite{LO11}, call
+\[
+  \psi\colon C\to B,\qquad \psi(c)=(1-\sigma)(c-c_{0}),
+\]
+the \emph{Abel--Prym map}. As $P=(1-\sigma)(1-\sigma^{2})$, the restriction
+of $\Psi$ to one factor is $(1-\sigma^{2})\circ\psi$, and $1-\sigma^{2}$ is
+an isogeny of $B$. Put $V_{j}=H^{0}(X,K_{X}\otimes L^{j})$, so that
+$H^{0}(C,K_{C})=V_{0}\oplus V_{1}\oplus V_{2}$ as in the proof of
+\Cref{lem:prym}(a), and let
+\[
+  \mu_{L}\colon V_{1}\otimes V_{2}\longrightarrow H^{0}(X,K_{X}^{\otimes2})
+\]
+be multiplication of sections, through an isomorphism $L^{3}\cong\cO_{X}$.
+A first-order deformation of $X$ with Kodaira--Spencer class $u\in
+H^{1}(X,T_{X})$ carries the \'etale cover along with it, uniquely, and with
+it $J(C)$, $\sigma$ and $B$. Write $d\mathcal{P}(u)\in H^{1}(B,T_{B})$ for the
+Kodaira--Spencer class of the resulting deformation of $B$. Lange and Ortega
+identify the dual of $d\mathcal{P}$ with a multiplication map
+\cite{LO11}, and we derive the form of this that we need in the proof
+below.
+
+\begin{proposition}\label{prop:abelprym}
+Let $v\in H^{1}(B,T_{B})$ be the Kodaira--Spencer class of a first-order
+deformation $\mathcal{B}$ of $B$ to which $\sigma$ extends. Then $\psi$
+extends to a morphism into $\mathcal{B}$ from some first-order deformation of
+$C$ if and only if $v$ lies in the image of $d\mathcal{P}$, and this image has
+dimension $\operatorname{rk}\mu_{L}\le3n$. Suppose moreover that $n\ge4$,
+that $B$ has maximal Hodge group, and that $S$ is a split Weil family
+containing $B$ (\Cref{lem:prym}(b)). Then the tangent vectors to $S$ at $B$ along which
+$\psi$ extends form a subspace of codimension at least $n^{2}-3n$, although
+$\psi_{*}[C]$ is a rational multiple of $\eta^{2n-1}$, whose flat continuation
+is algebraic on every member of $S$.
+\end{proposition}
+
+\begin{proof}
+All deformations are over $\operatorname{Spec}\CC[t]/(t^{2})$. Suppose that
+$\psi$ extends to $\psi_{t}\colon\mathcal{C}\to\mathcal{B}$, where
+$\mathcal{C}$ is a deformation of $C$ with class $w\in H^{1}(C,T_{C})$. Cover
+$C$ and $B$ by affine open sets $U_{i}$ and $W_{i}$ with $\psi(U_{i})\subseteq
+W_{i}$ over which $\mathcal{C}$ and $\mathcal{B}$ are trivial, with
+transition automorphisms $1+t\theta_{ij}$ and $1+t\xi_{ij}$, where
+$(\theta_{ij})$ and $(\xi_{ij})$ are cocycles of vector fields representing
+$w$ and $v$. On $U_{i}$ the map $\psi_{t}$ is $\psi+ts_{i}$ for a section
+$s_{i}$ of $\psi^{*}T_{B}$, and compatibility on $U_{i}\cap U_{j}$ reads
+$s_{j}-s_{i}=\psi^{*}\xi_{ij}-d\psi(\theta_{ij})$ \cite{Hor74}. Hence
+\begin{equation}\label{eq:horikawa}
+  \psi^{*}v=H^{1}(d\psi)(w)\quad\text{in }H^{1}(C,\psi^{*}T_{B}),
+\end{equation}
+where $d\psi\colon T_{C}\to\psi^{*}T_{B}$ is the differential.
+
+We compute both sides by Serre duality. The bundle $T_{B}$ is trivial with
+fibre $T_{0}B$, and $\psi^{*}$ identifies $H^{0}(B,\Omega^{1}_{B})$ with
+$V_{-}=V_{1}\oplus V_{2}$. Indeed, since $(1-\sigma)N=0$, the pull-back by
+$1-\sigma\colon J\to B$ maps $H^{1,0}(B)$ injectively into the sum of the
+nontrivial eigenspaces of $\sigma^{*}$ on $H^{1,0}(J)$, which has dimension
+$2n=\dim B$, and the Abel--Jacobi map identifies this sum with $V_{-}$. So $H^{1}(C,\psi^{*}T_{B})=H^{1}(C,\cO_{C})\otimes T_{0}B$ is
+dual to $H^{0}(C,K_{C})\otimes V_{-}$, and $H^{1}(C,T_{C})$ is dual to
+$H^{0}(C,K_{C}^{\otimes2})$. The dual of $d\psi$ is evaluation
+$\cO_{C}\otimes V_{-}\to K_{C}$, so the dual of $H^{1}(d\psi)$ is
+multiplication
+\[
+  m\colon H^{0}(C,K_{C})\otimes V_{-}\longrightarrow
+  H^{0}(C,K_{C}^{\otimes2})
+\]
+\cite{LO11}. Thus \eqref{eq:horikawa} says that $\psi^{*}v$, as a
+linear form on $H^{0}(C,K_{C})\otimes V_{-}$, is $w\circ m$.
+
+Now use $\sigma$. We have $\psi\sigma=t_{a}\sigma\psi$, where $t_{a}$ is the
+translation by $a=(1-\sigma)(\sigma c_{0}-c_{0})$. Translations act trivially
+on $H^{1}(B,\cO_{B})$ and on $T_{0}B$, so $\psi^{*}$ commutes with the actions
+of $\sigma$, and $m$ is equivariant. As $\sigma$ extends to $\mathcal{B}$, the
+class $v$ is invariant, and so is the form $\psi^{*}v$; an invariant form
+vanishes on every eigenspace of $\sigma$ with an eigenvalue other than $1$.
+The automorphism $\sigma^{*}$ acts on $V_{j}$ by $\kappa^{j}$ for a primitive
+cube root of unity $\kappa$, so the invariant part of
+$H^{0}(C,K_{C})\otimes V_{-}$ is $E=(V_{1}\otimes V_{2})\oplus(V_{2}\otimes
+V_{1})$. Since $\pi_{*}K_{C}^{\otimes2}=K_{X}^{\otimes2}\otimes\pi_{*}\cO_{C}$,
+the map $m$ sends $E$ to $H^{0}(C,K_{C}^{\otimes2})^{\sigma}=\pi^{*}H^{0}(X,
+K_{X}^{\otimes2})$, by $(x,y)\mapsto\pi^{*}M(x,y)$ with
+$M(x,y)=\mu_{L}(x+\tau y)$, where $\tau\colon V_{2}\otimes V_{1}\to
+V_{1}\otimes V_{2}$ is the transposition. So $\psi^{*}v$ is determined by its
+restriction to $E$, which by \eqref{eq:horikawa} is $f\circ M$, where $f$ is
+the linear form $q\mapsto\langle w,\pi^{*}q\rangle$ on
+$H^{0}(X,K_{X}^{\otimes2})$, that is, an element of $H^{1}(X,T_{X})$.
+
+Apply this to the deformation of $B$ induced by $u\in H^{1}(X,T_{X})$. The
+deformation of $C$ has class $\pi^{*}u$, and $\psi$ extends after $c_{0}$ is
+extended to a section. Since $\pi$ has degree $3$, $\langle\pi^{*}u,
+\pi^{*}q\rangle=3\langle u,q\rangle$, so the restriction of
+$\psi^{*}d\mathcal{P}(u)$ to $E$ is $3\,u\circ M$. Returning to $v$, the
+invariant forms $\psi^{*}v$ and $\psi^{*}d\mathcal{P}(f/3)$ agree on $E$,
+hence everywhere. The map $\psi^{*}$ on $H^{1}(B,T_{B})=H^{1}(B,\cO_{B})
+\otimes T_{0}B$ is injective, since on $H^{1}(B,\cO_{B})$ it is the complex
+conjugate of the injective map on $H^{0}(B,\Omega^{1}_{B})$. So
+$v=d\mathcal{P}(f/3)$. Conversely, if $v=d\mathcal{P}(u)$, then $\mathcal{B}$
+is isomorphic to the deformation induced by $u$, since first-order
+deformations are determined by their Kodaira--Spencer classes, and $\psi$
+extends. Finally $d\mathcal{P}(u)=0$ exactly when $u\circ M=0$, that is, when
+$u$ vanishes on the image of $\mu_{L}$; so $d\mathcal{P}$ has rank
+$\operatorname{rk}\mu_{L}\le h^{0}(X,K_{X}^{\otimes2})=3g-3=3n$.
+
+For the last assertion, the element $\zeta\in\cO_{K}$ acts on the abelian
+scheme over $S$ as $\sigma$ on $B$, so the Kodaira--Spencer map
+$T_{S,B}\to H^{1}(B,T_{B})$ has invariant image. It is injective, because $S$
+is locally isomorphic to the symmetric domain $\cD$, the period map of the
+family lifts to the inclusion of $\cD$ in the period domain, and the
+differential of the period map is the Kodaira--Spencer map followed by the
+isomorphism $H^{1}(B,T_{B})\cong\operatorname{Hom}(H^{1,0}(B),
+H^{0,1}(B))$ \cite[Chapter~10]{Voi02b}. So the tangent vectors along which
+$\psi$ extends form a subspace of dimension at most $3n$ in the
+$n^{2}$-dimensional space $T_{S,B}$. By \Cref{prop:hodgering},
+$\psi_{*}[C]\in\Hdg^{2n-1}(B)=\QQ\,\eta^{2n-1}$.
+\end{proof}
+
+So the curve $\psi(C)$, whose class stays algebraic on the whole family,
+moves with $B$ only along the Prym locus. When $X$ has Clifford index at
+least $2$, as a very general curve of genus at least $5$ does
+\cite[Chapter~V]{ACGH85}, the map $\psi$ is a closed embedding
+\cite{LO11}, and then, for $n\ge4$ and $B$ with maximal Hodge group, the
+curve $\psi(C)$ is not semiregular. Otherwise \Cref{thm:bf} would extend
+$\cO_{\psi(C)}$ along every tangent vector of $S$; a first-order deformation of $\cO_{\psi(C)}$ is locally
+generated by one section, so it is a line bundle on the subscheme defined by
+its annihilator, which is a first-order deformation of $\psi(C)$ and so
+carries an extension of $\psi$, against \Cref{prop:abelprym}.
+
+This makes the analogy precise on $B$, but it does not decide
+\Cref{q:schoen}. The subvariety $Y$ is the image of the $n$-dimensional
+variety $\Lambda_{k}$, and the same computation for $\Psi$ on $\Lambda_{k}$
+would need the cohomology of a resolution of $\Lambda_{k}$, which we have not
+determined. Nor does the rigidity of a curve predict that of the image of a
+higher symmetric product: the theta divisor of a Jacobian is the image of the
+$(g-1)$-st symmetric product of the curve under the Abel--Jacobi map, and it
+deforms with every principally polarized abelian variety.
+
 A weaker hypothesis would do if the semiregularity theorem were sharper.
 Markman asks whether \Cref{thm:bf} holds when $\sigma_{\mathcal{E}}$ is
 injective only on the image of the evaluation map from the second Hochschild

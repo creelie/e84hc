@@ -11,7 +11,7 @@ all and compares their outputs.
 \subsection*{Exact computations in three languages}
 The program \texttt{closure\_checks} exists in Python, Julia and C, all in
 exact integer or rational arithmetic, and the three versions print the same
-$207$ lines; the shell script compares them line by line and against a
+$218$ lines; the shell script compares them line by line and against a
 stored copy. The lines fall into six groups.
 \begin{itemize}[leftmargin=2.3em]
 \item[F] Fermat varieties $X^{n}_{m}$ for $n=2$, $m\le12$ and for $n=4$,
@@ -37,7 +37,11 @@ $3(m+k)+3k\ge(m+k)^{2}$, which are $k\le2$ for $m=2$, $k=0$ for $m=3$, and
 none for $4\le m<60$, $k<200$; and the count of \Cref{prop:branched}: for
 $2\le n\le12$ and every genus $q$, the Riemann--Hurwitz relation, the
 dimension $q+2n-1$ of the family, and its unique maximum $3n$ at $q=n+1$,
-$r=0$.
+$r=0$; and for \Cref{prop:abelprym}, the pairs $(a,b)$ with $0\le a\le2$,
+$1\le b\le2$ and $a+b\equiv0\pmod3$, which are $(1,2)$ and $(2,1)$, the
+dimensions $g$, $g-1$, $g-1$ of $V_{0}$, $V_{1}$, $V_{2}$ adding up to the
+genus $3g-2$ of $C$, and the dimensions $2n^{2}$ of $E$ and $3n$ of
+$H^{0}(X,K_{X}^{\otimes2})$.
 \item[L] The rules of \Cref{tab:rules}: the closed sets of
 \Cref{lem:closedsets}; the valuation in which \st{CM} holds and \HC{}
 fails; the five minimal sets of \Cref{thm:B}, found by enumerating all sets
@@ -56,7 +60,8 @@ of statements; \Cref{cor:bypass}(i); and the derivations of \HC{} from each of
 the five minimal sets. It also proves, for all sizes at once, the counting
 identity behind the switch lemma, the equivalence $3n<n^{2}\iff n\ge4$,
 the inequality of \Cref{rem:count} for every $m\ge4$ and $k\ge0$, and the
-count of \Cref{prop:branched} for all $n$, $q$ and $r$; and it
+count of \Cref{prop:branched} for all $n$, $q$ and $r$, and the eigenspace
+bookkeeping of \Cref{prop:abelprym}; and it
 computes the Picard numbers $20$, $37$ and $86$ of the Fermat quartic,
 quintic and sextic surfaces from the characters, by evaluation in the
 kernel.
