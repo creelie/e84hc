@@ -1,8 +1,11 @@
 name: release
 
 # Pushing a tag v* creates the release, titled after the paper (the title in
-# .zenodo.json), and attaches the PDF, the tex.zip and the arXiv tarball.
-# A release published by hand gets the same files.
+# .zenodo.json), with the notes in .github/RELEASE_NOTES.md, and attaches the
+# PDF, the tex.zip and the arXiv tarball. A release published by hand gets the
+# same files. A manual run with a tag name does the same for that tag: it
+# creates the tag on the commit of the run if the tag does not exist yet, and
+# it resets the release notes to the file at the tag.
 
 on:
   push:
@@ -30,7 +33,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.release.tag_name || inputs.tag || github.ref_name }}
+          ref: ${{ github.event_name == 'workflow_dispatch' && github.sha || github.event.release.tag_name || github.ref_name }}
+          fetch-depth: 0
+      - name: On a manual run, use the tag's commit if the tag exists
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          if git rev-parse -q --verify "refs/tags/$TAG" > /dev/null; then
+            git checkout -q "$TAG"
+          fi
       - name: Install TeX Live
         run: |
           sudo apt-get update
@@ -43,8 +53,12 @@ jobs:
         run: |
           if ! gh release view "$TAG" --repo "$GITHUB_REPOSITORY" > /dev/null 2>&1; then
             title="$(python3 -c 'import json; print(json.load(open(".zenodo.json"))["title"])')"
-            gh release create "$TAG" --repo "$GITHUB_REPOSITORY" --verify-tag \
+            gh release create "$TAG" --repo "$GITHUB_REPOSITORY" \
+              --target "$(git rev-parse HEAD)" \
               --title "$title" --notes-file .github/RELEASE_NOTES.md
           fi
+      - name: On a manual run, reset the release notes to the file
+        if: github.event_name == 'workflow_dispatch'
+        run: gh release edit "$TAG" --repo "$GITHUB_REPOSITORY" --notes-file .github/RELEASE_NOTES.md
       - name: Attach the files
         run: gh release upload "$TAG" dist/* --clobber --repo "$GITHUB_REPOSITORY"

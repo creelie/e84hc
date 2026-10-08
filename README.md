@@ -85,6 +85,7 @@ Zenodo archives every GitHub release under its own version DOI, and gathers all 
 | | DOI |
 | --- | --- |
 | all versions (concept DOI) | [10.5281/zenodo.23234362](https://doi.org/10.5281/zenodo.23234362) |
+| release v1.0.1 (version DOI) | [10.5281/zenodo.23234501](https://doi.org/10.5281/zenodo.23234501) |
 | release v1.0.0 (version DOI) | [10.5281/zenodo.23234363](https://doi.org/10.5281/zenodo.23234363) |
 
 Cite the version DOI of the release you used, or the concept DOI for the work as a whole. `CITATION.cff` holds the same data.
