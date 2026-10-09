@@ -68,7 +68,7 @@ kernel.
 
 \subsection*{Lean with Mathlib}
 The directory \texttt{lean-mathlib} holds a formalization of
-\Cref{thm:sextuples} in Lean~4 with Mathlib, about $3100$ lines in $14$ files.
+\Cref{thm:sextuples} in Lean~4 with Mathlib, about $3600$ lines in $15$ files.
 It follows the proof of \Cref{ssec:fermatfour} step by step: the counting
 function, Dirichlet characters and their conductors, Fourier inversion on
 $(\ZZ/e)^{\times}$, the subgroups $K_{p}$ and their orders, split functions
@@ -79,12 +79,27 @@ and \Cref{lem:grid,lem:oddbig,lem:twoD}, \Cref{prop:core},
 \texttt{hodge\_fermat\_fourfold} derives the conclusion of \Cref{thm:F} for
 an abstract predicate ``the line $V(\alpha)$ is algebraic'' from the two
 geometric inputs, algebraicity for characters that contain a pair and for
-$5$-standard characters. These inputs, the description of the Hodge classes
-by characters, and the nonvanishing of $B_{1,\chi}$ for odd primitive $\chi$
-enter the formal statements as hypotheses: Mathlib has no Hodge theory, and it
-contains $L(1,\chi)\ne0$ but not yet the value $L(0,\chi)=-B_{1,\chi}$. With
-these hypotheses the five main theorems depend only on the standard axioms,
-and no file uses \texttt{sorry}.
+$5$-standard characters.
+
+The nonvanishing of $B_{1,\chi}$ for odd primitive $\chi$ is proved there as
+well, from the nonvanishing of $L(1,\bar\chi)$ in Mathlib, along the classical
+route of Step~2. Expanding $\bar\chi(n)$ by the Gauss sum $\tau(\chi)$ gives
+\[
+  \tau(\chi)\sum_{n\ge1}\frac{\bar\chi(n)}{n}
+  =-\sum_{s=1}^{e-1}\chi(s)\log\bigl(1-e^{2\pi is/e}\bigr)
+  =-\frac{\pi i}{e}\sum_{s=1}^{e-1}\chi(s)\,s,
+\]
+where the logarithmic series converges on the unit circle away from $1$ by
+Dirichlet's test and Abel's limit theorem, the real parts cancel because
+$\chi$ is odd, and $\arg(1-e^{i\theta})=\theta/2-\pi/2$ for
+$0<\theta<2\pi$. A summation by parts, uniform in $\sigma\in[1,2]$, shows that
+the value at $s=1$ of the analytic continuation of $L(s,\bar\chi)$ is the sum
+of the conditionally convergent series on the left. The geometric inputs and
+the description of the Hodge classes by characters remain hypotheses of the
+formal statements, since Mathlib has no Hodge theory. With them, the main
+theorems, among them the classification and the conclusion of \Cref{thm:F}
+with $B_{1,\chi}\ne0$ discharged, depend only on the standard axioms, and no
+file uses \texttt{sorry}.
 
 \subsection*{Fermat fourfolds by exhaustive search}
 The program \texttt{fermat\_fourfolds} exists in Python, Julia and C. For

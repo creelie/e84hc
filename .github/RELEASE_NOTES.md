@@ -24,7 +24,7 @@ The workflow attaches these files to the release once the paper has been built o
 
 - `closure_checks` in Python, Julia and C, in exact arithmetic, with identical 218-line outputs;
 - a Lean 4 file that uses the core library only, with no `sorry` and no `native_decide`;
-- a Lean 4 project with Mathlib (`verification/lean-mathlib`) that proves the classification of Hodge characters behind Theorem F; its five main theorems use only the standard axioms;
+- a Lean 4 project with Mathlib (`verification/lean-mathlib`) that proves the classification of Hodge characters behind Theorem F, including B₁,χ ≠ 0; its main theorems use only the standard axioms;
 - exhaustive searches of the Hodge characters of Fermat surfaces and fourfolds of degree prime to 6, in C, Python and Julia;
 - Macaulay2 scripts for the Jacobian-ring Hodge numbers and Max Noether's theorem.
 
@@ -38,7 +38,7 @@ Concept DOI, covering all versions: [10.5281/zenodo.23234362](https://doi.org/10
 
 - Theorem F: the Hodge conjecture holds for the Fermat fourfold of every degree m prime to 6. The proof shows that every Hodge character contains two entries a and −a, or is (x, x+m/5, x+2m/5, x+3m/5, x+4m/5, −5x) up to order (Theorem 3.9). Classes of the first kind come from linear subspaces through Shioda and Ran's inductive structure, and those of the second kind from Aoki's cycles, pulled back along a covering of Fermat fourfolds. The only analytic input is B₁,χ ≠ 0 for odd primitive characters χ.
 - The theorem is new when 5 divides m, m > 199 and m is not a power of 5 (first cases 205, 215, 235). Smaller degrees were settled by computer searches, and other degrees prime to 6 by Aoki. Remark 3.21 shows that a step in Kang's proof of the general statement fails.
-- The classification is proved in Lean 4 with Mathlib, with B₁,χ ≠ 0 and the geometric input as hypotheses, and re-checked by exhaustive search up to degree 125.
+- The classification is proved in Lean 4 with Mathlib, and so is B₁,χ ≠ 0, derived from Mathlib's L(1, χ) ≠ 0 through the Gauss sum and the logarithmic series. Only the geometric input stays a hypothesis there. The classification is also re-checked by exhaustive search up to degree 125.
 - Section 7 now describes the first open case of (F3′) precisely: the square of a very general K3 surface with real multiplication, whose maximal families have Picard number 2 and dimension 8.
 
 Sections 2 and 4 to 6 are unchanged from v1.0.2.

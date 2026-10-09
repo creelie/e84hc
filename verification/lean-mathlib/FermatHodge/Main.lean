@@ -10,8 +10,8 @@ of six such elements contains a pair or is a `5`-standard sextuple
 `{x, x + m/5, x + 2m/5, x + 3m/5, x + 4m/5, -5x}`.
 
 The one analytic input is `BernoulliNV`: the sums `∑ χ(s) s` of odd primitive Dirichlet
-characters do not vanish (equivalently `B_{1,χ} ≠ 0`, a consequence of `L(1, χ̄) ≠ 0`).  Mathlib
-has `L(1, χ) ≠ 0` but not yet the value of `L(0, χ)`, so it is kept as a hypothesis.
+characters do not vanish (equivalently `B_{1,χ} ≠ 0`, a consequence of `L(1, χ̄) ≠ 0`).  It is a
+hypothesis in this file; `FermatHodge.Bernoulli` proves it from Mathlib's `L(1, χ) ≠ 0`.
 -/
 
 open Finset

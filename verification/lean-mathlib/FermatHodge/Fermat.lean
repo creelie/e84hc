@@ -14,7 +14,8 @@ This file proves the combinatorial step: for `m` prime to `6`, every Hodge chara
 decomposable or `5`-standard.  The geometric facts above are not formalized (Mathlib has no
 Hodge theory); they enter `hodge_fermat_fourfold` as hypotheses about an abstract predicate
 `Alg` ("the eigenclass of `α` is algebraic").  The analytic input `BernoulliNV`
-(`B_{1,χ} ≠ 0` for odd primitive `χ`) is also a hypothesis.
+(`B_{1,χ} ≠ 0` for odd primitive `χ`) is a hypothesis here; `FermatHodge.Bernoulli` proves it and
+restates these theorems without it.
 -/
 
 open Finset

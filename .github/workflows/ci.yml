@@ -42,7 +42,7 @@ jobs:
           lake exe cache get
           lake build
           lake env lean Axioms.lean | tee axioms.txt
-          test "$(grep -c 'depends on axioms: \[propext, Classical.choice, Quot.sound\]' axioms.txt)" = 5
+          test "$(grep -c 'depends on axioms: \[propext, Classical.choice, Quot.sound\]' axioms.txt)" = 11
           if grep -rnE '\bsorry\b|native_decide' FermatHodge FermatHodge.lean; then exit 1; fi
 
   paper:

@@ -90,7 +90,7 @@ if [ "${MATHLIB:-0}" = 1 ]; then
         if grep -rqE "\bsorry\b|native_decide" "$V/lean-mathlib/FermatHodge"; then
             echo "FAIL  FermatHodge uses sorry or native_decide"; status=1; fi
         n=$(grep -c "depends on axioms: \[propext, Classical.choice, Quot.sound\]" "$OUT/mlax.txt" || true)
-        if [ "$n" = 5 ]; then echo "ok    Lean+Mathlib: FermatHodge builds, 5 main theorems use the standard axioms only"
+        if [ "$n" = 11 ]; then echo "ok    Lean+Mathlib: FermatHodge builds, 11 main theorems use the standard axioms only"
         else echo "FAIL  Lean+Mathlib axiom check"; cat "$OUT/mlax.txt"; status=1; fi
     else missing lake; fi
 else echo "skip  MATHLIB is not set"; fi

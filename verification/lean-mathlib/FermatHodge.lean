@@ -12,3 +12,4 @@ import FermatHodge.Main
 import FermatHodge.Fiber
 import FermatHodge.Sextuple
 import FermatHodge.Fermat
+import FermatHodge.Bernoulli
