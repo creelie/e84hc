@@ -1,6 +1,6 @@
 # Online check of paper/references.bib
 
-Run on 2026-10-08 by `verification/references/check_references.py`.
+Run on 2026-10-09 by `verification/references/check_references.py`.
 
 | key | status | online record |
 |---|---|---|
@@ -37,7 +37,7 @@ Run on 2026-10-08 by `verification/references/check_references.py`.
 | Kol92 | verified | Crossref: "Trento examples" (1992, p. 134-139); title match 1.00 |
 | Kol96 | verified | Crossref: "Rational Curves on Algebraic Varieties" (1996); title match 1.00 |
 | KuS67 | verified | Crossref: "Abelian varieties attached to polarizedK 3-surfaces" (1967, vol. 169, p. 239-242); title match 0.99 |
-| LO11 | verified | Crossref: "Prym varieties of cyclic coverings" (2010, vol. 150, p. 391-403); title match 1.00 |
+| LO11 | verified | Crossref: "Prym varieties of cyclic coverings" (2011, vol. 150, p. 391-403); title match 1.00 |
 | Lef24 | verified | Internet Archive and Open Library: S. Lefschetz, L'analysis situs et la geometrie algebrique, Gauthier-Villars, 1924 (record online: HTTP 200) |
 | Lie68 | verified | Crossref: "Numerical and Homological Equivalence of Algebraic Cycles on Hodge Manifolds" (1968, vol. 90, p. 366); title match 1.00 |
 | Loo97 | verified | Crossref: "Prym Representations of Mapping Class Groups" (1997, vol. 64, p. 69-83); title match 1.00 |
@@ -66,5 +66,17 @@ Run on 2026-10-08 by `verification/references/check_references.py`.
 | OAI26b | verified | listed in CONTENTS.md of github.com/openai/math as preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/paper.pdf (record online: HTTP 200) |
 | OAI26c | verified | listed in CONTENTS.md of github.com/openai/math as preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/paper.pdf (record online: HTTP 200) |
 | MZ99 | verified | Crossref: "Hodge classes on abelian varieties of low dimension" (1999, vol. 315, p. 711-733); title match 1.00 |
+| Aok83 | verified | Crossref: "On some arithmetic problems related to the hodge cycles on the fermat varieties" (1983, vol. 266, p. 23-54); title match 1.00 |
+| Aok87 | verified | Crossref: "Some new algebraic cycles on Fermat varieties" (1987, vol. 39); title match 1.00 |
+| Kan15 | verified | Crossref: "Refined Motivic Dimension" (2015, vol. 58, p. 519-529); title match 1.00 |
+| Kan16 | verified | Crossref: "REFINED MOTIVIC DIMENSION OF SOME FERMAT VARIETIES" (2016, vol. 93, p. 223-230); title match 1.00 |
+| MMRV26 | verified | arXiv 2609.27301: "Lengths of Hodge characters in Fermat varieties" by Maximiliano Miranda, Hossein Movasati, Lucas Rufino, Roberto Villaflor; title match 1.00 |
+| Was97 | verified | Crossref: "Introduction to Cyclotomic Fields" (1997); title match 1.00 |
+| vG08 | verified | Crossref: "Real multiplication on K3 surfaces and Kuga Satake varieties" (2008, vol. 56); title match 1.00 |
+| Sch10 | verified | Crossref: "The Hodge conjecture for self-products of certain K3 surfaces" (2010, vol. 324, p. 507-529); title match 1.00 |
+| vGS25 | verified | Crossref: "On families of K3 surfaces with real multiplication" (2025, vol. 13, p. e2); title match 1.00 |
+| BvGS24 | verified | arXiv 2401.04072: "K3 surfaces with real or complex multiplication" by Eva Bayer-Fluckiger, Bert van Geemen, Matthias Schütt; title match 1.00 |
+| Bus19 | verified | Crossref: "Every rational Hodge isometry between two K⁢3K3 surfaces is algebraic" (2019, vol. 755, p. 127-150); title match 0.98 |
+| Huy19 | verified | Crossref: "Motives of isogenous K3 surfaces" (2019, vol. 94, p. 445-458); title match 1.00 |
 
-62 entries, 0 need attention.
+74 entries, 0 need attention.

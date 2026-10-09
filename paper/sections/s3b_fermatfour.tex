@@ -1,0 +1,520 @@
+\subsection{Fermat fourfolds of degree prime to six}\label{ssec:fermatfour}
+
+In this subsection $m$ is prime to $6$, and we prove \Cref{thm:F}. For
+$a\in\ZZ/m$ we write $\bar a\in\{0,\dots,m-1\}$ for its representative,
+extending the notation of \Cref{ssec:fermathodge}.
+
+\begin{definition}\label{def:balanced}
+Let $A$ be a multiset of nonzero elements of $\ZZ/m$ whose sum is $0$. It is
+\emph{balanced} if the integer $\sum_{a\in A}\overline{ta}$ is the same for
+every $t\in(\ZZ/m)^{\times}$; we call this integer $h(A)$. It \emph{contains a
+pair} if $a\in A$ and $-a\in A$ for some $a$; since $m$ is odd, $a\ne-a$, so
+these are two different members of $A$. When $5\mid m$, the \emph{fiber} of
+$x\in\ZZ/m$ is the set
+\[
+  \Phi(x)=\{x+jm/5:\ 0\le j\le4\}
+\]
+of the five solutions $y$ of $5y=5x$, and $A$ is \emph{$5$-standard} if
+$A=\Phi(x)+\{-5x\}$ for some $x$, as multisets.
+\end{definition}
+
+For a balanced multiset of $n$ elements, comparing $t$ with $-t$ gives
+$h(A)=nm-h(A)$, so $h(A)=nm/2$. By \Cref{prop:fermatchars}(ii), a character
+$\alpha\in\mathfrak{A}^{4}_{m}$ spans a line of Hodge classes exactly when
+the multiset of its entries is balanced, and the same holds for the
+characters $\beta\in\mathfrak{A}^{2}_{m}$ of the Fermat surface. Aoki
+writes $\sigma_{5,x}=(x,x+d,x+2d,x+3d,x+4d,-5x)$, $d=m/5$, for the
+$5$-standard characters \cite{Aok87}.
+
+\begin{theorem}\label{thm:sextuples}
+Let $m$ be prime to $6$.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item Every balanced multiset of four nonzero elements of $\ZZ/m$ contains a
+pair.
+\item Every balanced multiset of six nonzero elements of $\ZZ/m$ contains a
+pair or is $5$-standard.
+\end{enumerate}
+\end{theorem}
+
+Part (i) is Aoki's theorem that the Hodge classes of a Fermat
+surface of degree prime to $6$ are spanned by lines \cite[Theorem~A]{Aok83};
+we prove it again because the proof of (ii) uses it and runs on the same
+lines. When $5\nmid m$, part (ii) says that every Hodge character of
+$X^{4}_{m}$ splits into three pairs, which is also contained in
+\cite[Theorem~A]{Aok83}, since then every prime factor of $m$ exceeds $6$.
+The case $5\mid m$ is new. The theorem has been checked in Lean
+(\Cref{app:checks}).
+
+\begin{proof}[Proof of \Cref{thm:F}, given \Cref{thm:sextuples}]
+Write $G=G_{4}$ for the group acting on $X=X^{4}_{m}$. By
+\Cref{prop:fermatchars}(ii), and since $H^{4}(X,\QQ)$ is the sum of the
+primitive part and the line spanned by the square of the hyperplane class,
+it is enough to show that every line $V(\alpha)$ with $\alpha$ balanced lies
+in $\Alg^{2}(X)\otimes\CC$. Then the Hodge classes and the
+algebraic classes span the same complex subspace, and since
+$\Alg^{2}(X)\subseteq\Hdg^{2}(X)$ are rational subspaces they are equal. A
+subvariety $Z\subseteq X$ \emph{represents} $\alpha$ \cite{Aok87} if the
+$\alpha$-component
+\[
+  \frac{1}{|G|}\sum_{g\in G}\alpha(g)^{-1}g^{*}[Z]=\frac{1}{|G|}\sum_{g\in
+  G}\alpha(g)^{-1}[g^{-1}Z]
+\]
+of $[Z]$ is not zero; it lies in $V(\alpha)$ and in
+$\Alg^{2}(X)\otimes\CC$, so then $V(\alpha)\subseteq\Alg^{2}(X)\otimes\CC$.
+Permuting the coordinates is an automorphism of $X$ that permutes the lines
+$V(\alpha)$ accordingly, so the order of the entries of $\alpha$ does not
+matter. By \Cref{thm:sextuples}(ii) there are two cases.
+
+\emph{$\alpha$ contains a pair.} Order the entries as
+$\alpha=(\beta_{0},\beta_{1},\beta_{2},\beta_{3},a,-a)$. Since
+$\overline{ta}+\overline{-ta}=m$ for every unit $t$, the multiset of entries of
+$\beta=(\beta_{0},\dots,\beta_{3})$ is balanced, so $\beta$ is a
+Hodge character of the Fermat surface $X^{2}_{m}$, and $V(\beta)$ consists of
+algebraic classes by \Cref{thm:lef11}. The character $(a,-a)$ of the set
+$X^{0}_{m}$ of $m$ points spans a line of $H^{0}(X^{0}_{m},\CC)$, which is
+spanned by classes of points. By the inductive structure, in the form of
+Shioda and Ran stated in \cite[Theorem~1-4(i)]{Aok87}, $V(\alpha)$ is then
+spanned by algebraic classes.
+
+\emph{$\alpha$ is $5$-standard.} Then $5\mid m$; write $d=m/5$ and
+$\alpha=(x,x+d,\dots,x+4d,-5x)$. Aoki constructs a subvariety of
+codimension two representing $\alpha$ when $\gcd(\bar x,d)=1$
+\cite[Theorem~2-1]{Aok87}. In general let $g=\gcd(\bar x,d)$, $m'=m/g$ and
+$d'=d/g=m'/5$. Every entry of $\alpha$ is a multiple of $g$, so
+$\alpha=g\alpha'$ with
+\[
+  \alpha'=(x',x'+d',\dots,x'+4d',-5x')\in(\ZZ/m')^{6},\qquad
+  x'=\bar x/g,\quad\gcd(x',d')=1,
+\]
+where $g\alpha'$ means the image of $\alpha'$ under the injective
+homomorphism $\ZZ/m'\to\ZZ/m$, $y\mapsto gy$. The entries of $\alpha'$ are
+nonzero, because those of $\alpha$ are. Every unit $t'$ modulo $m'$ lifts to a
+unit $t$ modulo $m$, and then $\overline{t'\alpha'_{i}}/m'=\overline{t\alpha
+_{i}}/m$ for each $i$; so $\alpha'$ is balanced, and it is a
+Hodge character of $X'=X^{4}_{m'}$. In particular $d'\ge3$, since for $d'=1$
+one of $x',x'+1,\dots,x'+4$ would vanish modulo $5$. By
+\cite[Theorem~2-1]{Aok87} there is a subvariety $Y'\subseteq X'$ of
+codimension two that represents $\alpha'$. Let
+\[
+  \pi\colon X\to X',\qquad[x_{0}:\dots:x_{5}]\mapsto[x_{0}^{g}:\dots:x_{5}^{g}].
+\]
+It is a finite surjective morphism, and it is equivariant for the homomorphism
+$G\to G'$, $\zeta\mapsto\zeta^{g}$, to the group $G'$ acting on $X'$. For
+$\xi\in V(\alpha')$ and $\zeta\in G$ we get $\zeta^{*}\pi^{*}\xi=\pi^{*}
+(\zeta^{g})^{*}\xi=\alpha'(\zeta^{g})\pi^{*}\xi=\alpha(\zeta)\pi^{*}\xi$, so
+$\pi^{*}$ maps $V(\beta')$ into $V(g\beta')$ for every character $\beta'$ of
+$G'$, and distinct $\beta'$ go to distinct $g\beta'$. As $\pi_{*}\pi^{*}$ is
+multiplication by $\deg\pi$, the map $\pi^{*}$ is injective on cohomology.
+Hence the $\alpha$-component of $\pi^{*}[Y']$, the class of the cycle
+$\pi^{*}Y'$, is the image under $\pi^{*}$ of the $\alpha'$-component of
+$[Y']$, which is not zero; so the cycle $\pi^{*}Y'$ represents $\alpha$, and
+again $V(\alpha)\subseteq\Alg^{2}(X)\otimes\CC$.
+\end{proof}
+
+The rest of this subsection proves \Cref{thm:sextuples}. We fix a balanced
+multiset $A$ of $n\in\{4,6\}$ nonzero elements of $\ZZ/m$ that contains no
+pair, and show that $n=6$ and $A$ is $5$-standard.
+
+\subsubsection*{Step 1: the counting function}
+Let $e$ be the largest additive order of an element of $A$. It divides $m$,
+so it is prime to $6$, and $e>1$. The map $\kappa\colon\ZZ/e\to\ZZ/m$,
+$y\mapsto(m/e)y$, is an injective homomorphism, and the elements of $\ZZ/m$ of
+order exactly $e$ are the $\kappa(z)$ with $z\in U=(\ZZ/e)^{\times}$. For
+$z\in U$ put
+\[
+  F(z)=\operatorname{mult}_{A}(\kappa z)-\operatorname{mult}_{A}(-\kappa z),
+\]
+the difference of the multiplicities in $A$. Then $F(-z)=-F(z)$. If
+$a_{0}=\kappa(z_{0})\in A$ has order $e$, then $-a_{0}\notin A$, so
+$F(z_{0})\ge1$. We call $\|F\|=\sum_{z\in U}|F(z)|$ the \emph{mass} of $F$.
+
+\begin{lemma}\label{lem:countF}
+$\|F\|\le2n$. If $\|F\|=2n$, then every element of $A$ has order $e$ and
+$\sum_{z\in U}F(z)\,z=0$ in $\ZZ/e$.
+\end{lemma}
+
+\begin{proof}
+$\|F\|\le\sum_{z}(\operatorname{mult}_{A}(\kappa z)+\operatorname{mult}_{A}
+(-\kappa z))=2N$, where $N\le n$ is the number of elements of $A$ of order
+$e$. If $\|F\|=2n$, then $N=n$, and writing $a=\kappa(z_{a})$ for $a\in A$,
+\[
+  \sum_{z}F(z)z=\sum_{a\in A}z_{a}-\sum_{a\in A}(-z_{a})=2\sum_{a\in
+  A}z_{a},
+\]
+while $\kappa(\sum_{a}z_{a})=\sum_{a}a=0$; as $\kappa$ is injective,
+$\sum_{a}z_{a}=0$.
+\end{proof}
+
+\subsubsection*{Step 2: the characters}
+For a Dirichlet character $\chi$ modulo $e$ let $B_{1,\chi}=e^{-1}\sum_{s=1}
+^{e}\chi(s)s$. If $\chi$ is odd and primitive, then $B_{1,\chi}\ne0$. This is
+classical: by the relative class number formula \cite[Theorem~4.17]{Was97}
+the product of the numbers $-B_{1,\chi}/2$, over the odd characters of the
+Galois group of $\QQ(\mu_{e})$, is a nonzero rational multiple of the relative
+class number, a positive integer; equivalently, $B_{1,\chi}$ is a nonzero
+multiple of $L(1,\bar\chi)$ \cite[Theorem~4.9]{Was97}. This is the only
+analytic input of the proof.
+
+\begin{lemma}\label{lem:charstep}
+$\sum_{z\in U}F(z)\chi(z)^{-1}=0$ for every primitive Dirichlet character
+$\chi$ modulo $e$.
+\end{lemma}
+
+\begin{proof}
+If $\chi$ is even, the sum vanishes because $F$ is odd. Let $\chi$ be odd,
+and regard it as a character of $(\ZZ/m)^{\times}$ through reduction modulo
+$e$; it is not trivial. Since $A$ is balanced,
+\[
+  \sum_{a\in A}\ \sum_{t\in(\ZZ/m)^{\times}}\chi(t)\,\overline{ta}
+  =h(A)\sum_{t}\chi(t)=0.
+\]
+Let $a\in A$ have order $f$. If $f\ne e$, then $e\nmid f$, since $f\le e$. For
+a divisor $f$ of $m$ let $W_{f}\subseteq(\ZZ/m)^{\times}$ be the units
+congruent to $1$ modulo $f$. If $\chi$ were trivial on $W_{f}$, it would be
+trivial on $W_{f}W_{e}=W_{\gcd(f,e)}$ (by the Chinese remainder theorem), so it
+would be induced from a character modulo the proper divisor $\gcd(f,e)$ of
+$e$, against primitivity. So $\chi$ is not trivial on $W_{f}$; as
+$\overline{ta}$ depends only on $t$ modulo $f$, the inner sum vanishes. If
+$f=e$, write $a=\kappa(z)$. For a unit $t$ with image $s\in U$ we have
+$ta=\kappa(sz)$ and $\overline{ta}=(m/e)\,\overline{sz}$, where now
+$\overline{sz}\in\{0,\dots,e-1\}$. Reduction $(\ZZ/m)^{\times}\to U$ is onto,
+with fibres of size $\varphi(m)/\varphi(e)$, so
+\[
+  \sum_{t}\chi(t)\,\overline{ta}=\frac{m\,\varphi(m)}{e\,\varphi(e)}
+  \sum_{s\in U}\chi(s)\,\overline{sz}=\frac{m\,\varphi(m)}{\varphi(e)}\,
+  \chi(z)^{-1}B_{1,\chi},
+\]
+after the substitution $s\mapsto sz^{-1}$. Adding over $A$ and dividing by
+$m\varphi(m)B_{1,\chi}/\varphi(e)\ne0$ gives $\sum_{z}\operatorname{mult}_{A}
+(\kappa z)\chi(z)^{-1}=0$. The substitution $z\mapsto-z$ turns
+$\sum_{z}\operatorname{mult}_{A}(-\kappa z)\chi(z)^{-1}$ into
+$\chi(-1)^{-1}$ times the same sum, so it vanishes too, and so does their
+difference.
+\end{proof}
+
+\subsubsection*{Step 3: splitting along the subgroups \texorpdfstring{$K_{p}$}{K\_p}}
+For a prime $p\mid e$ let $K_{p}\subseteq U$ be the subgroup of units
+congruent to $1$ modulo $e/p$, the kernel of $U\to(\ZZ/(e/p))^{\times}$.
+
+\begin{lemma}\label{lem:Kp}
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item $|K_{p}|=p$ if $p^{2}\mid e$, and $|K_{p}|=p-1$ if $p\parallel e$. So
+$|K_{p}|\ge4$, with equality only for $p=5\parallel e$.
+\item Let $p^{v}\parallel e$. The product of the $K_{q}$ with $q\ne p$
+consists of units congruent to $1$ modulo $p^{v}$. Hence $K_{p}$ meets it
+trivially, the product $H$ of all the $K_{q}$ is direct, and $-1$ does not
+lie in the product of the $K_{q}$ with $q\ne p$.
+\item A Dirichlet character modulo $e$ that is not primitive is trivial on
+some $K_{p}$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) $|K_{p}|=\varphi(e)/\varphi(e/p)$. (b) For $q\ne p$, $p^{v}$ divides $e/q$.
+An element of $K_{p}$ congruent to $1$ modulo $p^{v}$ is congruent to $1$
+modulo $\operatorname{lcm}(e/p,p^{v})=e$, and $-1\not\equiv1\pmod p$ as $p$
+is odd. (c) A character induced from a proper divisor $f$ of $e$ is trivial on
+the units congruent to $1$ modulo $f$, and $f$ divides $e/p$ for some
+$p\mid e$.
+\end{proof}
+
+\begin{definition}\label{def:split}
+Let $K_{1},\dots,K_{r}$ be subgroups of a finite abelian group, $H$ their
+product and $C$ a coset of $H$. A function $f\colon C\to\ZZ$ is \emph{split
+along} $(K_{1},\dots,K_{r})$ if $f=f_{1}+\dots+f_{r}$ with functions
+$f_{i}\colon C\to\CC$ such that $f_{i}(zk)=f_{i}(z)$ for $z\in C$ and $k\in
+K_{i}$; for $r=0$ this means $f=0$. A \emph{line} along $K_{i}$ is a coset
+$wK_{i}$.
+\end{definition}
+
+\begin{lemma}\label{lem:splitF}
+On every coset of $H$ in $U$, the function $F$ is split along the family
+$(K_{p})_{p\mid e}$.
+\end{lemma}
+
+\begin{proof}
+By Fourier inversion on $U$, $F=\varphi(e)^{-1}\sum_{\chi}\hat F(\chi)\chi$
+with $\hat F(\chi)=\sum_{z}F(z)\chi(z)^{-1}$. By \Cref{lem:charstep} only
+characters that are not primitive contribute, and by \Cref{lem:Kp}(c) each of
+them is trivial on some $K_{p}$. Collect the terms according to such a $p$.
+\end{proof}
+
+We use four simple properties of split functions, for $f$ split along
+$(K_{1},\dots,K_{r})$ on $C$ and $H'=K_{2}\cdots K_{r}$.
+\begin{enumerate}[label=\textup{(S\arabic*)}]
+\item For $k\in K_{1}$ and every coset $S\subseteq C$ of $H'$, the function
+$z\mapsto f(z)-f(zk)$ on $S$ is split along $(K_{2},\dots,K_{r})$: the terms
+$f_{1}$ cancel.
+\item If $f$ vanishes on one coset $S_{0}\subseteq C$ of $H'$, then $f$ is
+split along $(K_{2},\dots,K_{r})$ on every coset $S\subseteq C$ of $H'$:
+choose $k\in K_{1}$ with $Sk=S_{0}$ and apply (S1).
+\item For $r=2$ and $C=xK_{1}K_{2}$: $f(xij)=f(xi)+f(xj)-f(x)$ for $i\in
+K_{1}$ and $j\in K_{2}$.
+\item For $r=1$, $f$ is invariant under $K_{1}$.
+\end{enumerate}
+
+\subsubsection*{Step 4: three lemmas on split functions}
+In the next three lemmas, $K_{1},\dots,K_{r}$ (or $K,K_{2},\dots,K_{r}$) are
+subgroups of a finite abelian group whose product $H$ is direct, and $C$ is a
+coset of $H$. Fix $x\in C$ and put $H'=K_{2}\cdots K_{r}$. For $c$ in the
+first subgroup, the \emph{slices} of $C$ are the cosets $S_{c}=xcH'$; they are
+pairwise distinct, and for a function $f$ on $C$ we write
+$\mu(c)=\sum_{z\in S_{c}}|f(z)|$.
+
+\begin{lemma}[grid]\label{lem:grid}
+Suppose $|K_{i}|\ge4$ for every $i$, with equality for at most one $i$. Let
+$f\colon C\to\ZZ$ be split along $(K_{1},\dots,K_{r})$, not identically zero,
+with $\sum_{C}|f|\le6$. Then for some $i$ with $|K_{i}|\le6$ there are a line
+$L=wK_{i}\subseteq C$ and $\sigma\in\{\pm1\}$ such that $f=\sigma$ on $L$ and
+$f=0$ on $C\setminus L$.
+\end{lemma}
+
+\begin{proof}
+Induction on $r$. For $r=0$ the function vanishes, which is excluded. Let
+$r\ge1$ and $K=K_{1}$. First an observation.
+
+(P) \emph{Let $c,c'\in K$ with $\mu(c)+\mu(c')\le6$, and suppose
+$g(z)=f(z)-f(zc^{-1}c')$ is not identically zero on $S_{c}$. Then
+$\mu(c)+\mu(c')\ge|K_{i}|$ for some $i\ge2$.} Indeed, $g$ is split along
+$(K_{2},\dots,K_{r})$ on $S_{c}$ by (S1), and $\sum_{S_{c}}|g|\le\mu(c)+
+\mu(c')$ because $z\mapsto zc^{-1}c'$ maps $S_{c}$ onto $S_{c'}$. By
+induction $|g|$ is $1$ on a line along some $K_{i}$, $i\ge2$, and $0$
+elsewhere, so $\sum_{S_{c}}|g|=|K_{i}|$.
+
+\emph{Case A: $f(zk)=f(z)$ for all $z\in C$, $k\in K$.} Let $f(z_{0})\ne0$.
+Then $f$ equals $f(z_{0})$ on the $|K|\ge4$ points of $z_{0}K$, so
+$|f(z_{0})|=1$ and $|K|\le6$, and a nonzero value off $z_{0}K$ would add at
+least $|K|\ge4$ more. So $f=f(z_{0})$ on $z_{0}K$ and $0$ elsewhere.
+
+\emph{Case B1: $\mu(c_{0})=0$ for some $c_{0}$.} By (S2), $f$ is split along
+$(K_{2},\dots,K_{r})$ on every slice. On a slice where it does not vanish, by
+induction it is $\pm1$ on a line along some $K_{i}$ with $i\ge2$ and
+$|K_{i}|\le6$ and $0$ elsewhere, which uses mass $|K_{i}|\ge4$; a second such
+slice would bring the mass to $8$. This is the claim.
+
+\emph{Case B2: $f$ is not $K$-invariant, and $\mu\ge1$ on every slice.} As
+$\sum\mu\le6<2|K|$, some $c_{s}$ has $\mu(c_{s})=1$. Choose $c,k\in K$ such
+that $f(z)\ne f(zk)$ for some $z\in S_{c}$. By (P), applied to $c$ and $ck$,
+or because $\mu(c)+\mu(ck)>6$, one of them, $c_{1}$, has $\mu(c_{1})\ge2$.
+Then $f(z)-f(zc_{1}^{-1}c_{s})$ does not vanish identically on $S_{c_{1}}$,
+since translation carries $S_{c_{1}}$ onto $S_{c_{s}}$ and $\mu(c_{1})\ne
+\mu(c_{s})$. By (P), $\mu(c_{1})+1\ge|K_{i}|\ge4$ for some $i\ge2$, so
+\[
+  6\ge\sum_{c\in K}\mu(c)\ge\mu(c_{1})+(|K|-1)\ge3+3.
+\]
+All these are equalities: $|K|=4$ and $|K_{i}|=\mu(c_{1})+1=4$, two
+subgroups of order four, which is excluded.
+\end{proof}
+
+\begin{lemma}[a large subgroup carrying the sign]\label{lem:oddbig}
+Let $|K|\ge10$ and $|K_{i}|\ge4$ for $i\ge2$, with equality for at most one
+$i$. Let $f\colon C\to\ZZ$ be split along $(K,K_{2},\dots,K_{r})$, and suppose
+that for some $\varepsilon\in K\setminus\{1\}$ and $\varepsilon'\in H'$ we
+have $f(z\varepsilon\varepsilon')=-f(z)$ for all $z\in C$. If $\sum_{C}|f|\le
+12$ and $f(x)\ge1$, then $f=1$ on a line along some $K_{i}$, $i\ge2$, with
+$|K_{i}|\le6$.
+\end{lemma}
+
+\begin{proof}
+Multiplication by $\varepsilon\varepsilon'$ carries $S_{c}$ onto
+$S_{c\varepsilon}$ and preserves $|f|$, so $\mu(c\varepsilon)=\mu(c)$. If
+some slice has $\mu=0$, then $f$ is split along $(K_{2},\dots,K_{r})$ on
+$S_{1}\ni x$ by (S2), and $2\mu(1)=\mu(1)+\mu(\varepsilon)\le12$; by
+\Cref{lem:grid} $f$ is $\sigma$ on a line along some $K_{i}$ in $S_{1}$ and $0$
+elsewhere on $S_{1}$, and $\sigma=1$ because the line passes through $x$.
+Otherwise $\mu\ge1$ everywhere, and as $\sum\mu\le12<2|K|$, some $c$ has
+$\mu(c)=1$, hence $\mu(c\varepsilon)=1$. The function $f(z)-f(z\varepsilon)$
+on $S_{c}$ is split along $(K_{2},\dots,K_{r})$ by (S1) and has mass at most
+$2$, so it vanishes by \Cref{lem:grid}. Let $z_{0}$ be the point of $S_{c}$
+with $f(z_{0})=\pm1$. The points $z_{0}\varepsilon$ and
+$z_{0}\varepsilon\varepsilon'$ of $S_{c\varepsilon}$ carry the values
+$f(z_{0})$ and $-f(z_{0})$, both nonzero, so they coincide because
+$\mu(c\varepsilon)=1$; then $f(z_{0})=-f(z_{0})$, a contradiction.
+\end{proof}
+
+\begin{lemma}[two subgroups]\label{lem:twoD}
+Let $K\cap L=1$, $|K|=4$, $|L|=6$, and let $\varepsilon\in K$ and
+$\varepsilon'\in L$ be different from $1$, with $\varepsilon^{2}=1$. Let
+$f\colon xKL\to\ZZ$ be split along $(K,L)$, with $f(z\varepsilon
+\varepsilon')=-f(z)$, $\sum|f|\le12$ and $f(x)\ge1$. Then
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item $f(xi)=1$ for all $i\in K$; or
+\item $f(xj)=1$ for all $j\in L$; or
+\item $\sum|f|=12$, and there are $u\colon K\to\{\pm1\}$ and $v\colon
+L\to\{\pm1\}$ with $u(i\varepsilon)=-u(i)$, $v(j\varepsilon')=-v(j)$ and
+$2f(xij)=u(i)+v(j)$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+By (S3), $f(xij)=f(xi)+f(xj)-f(x)$. Put $\delta=f(x)-f(x\varepsilon')$,
+$u(i)=2f(xi)-\delta$ and $v(j)=2f(xj)-2f(x)+\delta$, so that $2f(xij)=u(i)+
+v(j)$. Comparing $f(xi\varepsilon\cdot\varepsilon')=-f(xi)$ with (S3) gives
+$f(xi\varepsilon)+f(xi)=\delta$, that is $u(i\varepsilon)=-u(i)$; for $i=1$
+it gives $f(x\varepsilon)=-f(x\varepsilon')$, and then the same comparison
+for $x\varepsilon\cdot j\varepsilon'$ gives $v(j\varepsilon')=-v(j)$. Since
+$j\mapsto j\varepsilon'$ permutes $L$ and changes the sign of $v$,
+\[
+  2\sum_{j}|u(i)+v(j)|=\sum_{j}\bigl(|u(i)+v(j)|+|u(i)-v(j)|\bigr)
+  =2\sum_{j}\max(|u(i)|,|v(j)|),
+\]
+so $T=\sum_{i,j}\max(|u(i)|,|v(j)|)=2\sum|f|\le24$. All $u(i)$ and $v(j)$
+have the same parity, because $u(i)+v(j)=2f(xij)$. Write
+$K=\{1,\varepsilon,a,a\varepsilon\}$, $V=\sum_{j}|v(j)|$ and
+$M(s)=\sum_{j}\max(s,|v(j)|)$; then $T=2M(|u(1)|)+2M(|u(a)|)$,
+$M(s)\ge\max(6s,V)$, and $V\ge2|v(1)|$ because $|v(\varepsilon')|=|v(1)|$.
+
+If the parity is odd, all $24$ terms of $T$ are at least $1$, so all equal
+$1$, and we are in case (c). If it is even and $u(1)\ge1$, then $u(1)\ge2$
+and $24\ge T\ge24+2V$, so $u(1)=2$, $v=0$, and $f(xj)=(u(1)+v(j))/2=1$: case
+(b). If it is even and $u(1)\le0$, then $v(1)=2f(x)-u(1)\ge2$. If $u(1)\ne0$,
+then $T\ge2\cdot12+2V>24$; so $u(1)=0$, and in the same way $u(a)=0$. Then
+$u=0$ on $K$, $T=4V\le24$, so $2v(1)\le V\le6$ and $v(1)=2$, and
+$f(xi)=(u(i)+v(1))/2=1$: case (a).
+\end{proof}
+
+\subsubsection*{Step 5: the core dichotomy}
+
+\begin{proposition}\label{prop:core}
+Let $e>1$ be prime to $6$, $U=(\ZZ/e)^{\times}$, and let $F\colon U\to\ZZ$
+satisfy $F(-z)=-F(z)$, $\|F\|\le12$ and $F(x)\ge1$ for some $x$, and be split
+along $(K_{p})_{p\mid e}$ on every coset of their product $H$. Then
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item $F\ge1$ on a line $wK_{p}$ for $p=5$ or $p=7$; or
+\item the primes dividing $e$ are $5$ and $7$, $|K_{5}|=4$, $|K_{7}|=6$, and
+there are $y\in U$, $\varepsilon\in K_{5}$ and $\varepsilon'\in K_{7}$ with
+$\varepsilon\varepsilon'=-1$, and functions $u\colon K_{5}\to\{\pm1\}$ and
+$v\colon K_{7}\to\{\pm1\}$ with $u(i\varepsilon)=-u(i)$,
+$v(j\varepsilon')=-v(j)$ and $2F(yij)=u(i)+v(j)$ for $i\in K_{5}$, $j\in
+K_{7}$; the mass of $F$ on $yK_{5}K_{7}$ is $12$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+By \Cref{lem:Kp}(a) every $|K_{p}|$ is at least $4$, only $K_{5}$ can have
+order $4$, and $|K_{p}|\le9$ forces $p\in\{5,7\}$.
+
+\emph{Case (a): $-1\notin H$.} The cosets $xH$ and $-xH$ are distinct and
+carry the same mass, so $\sum_{xH}|F|\le6$. By \Cref{lem:grid}, $F=\sigma$ on
+a line along some $K_{p}$ with $|K_{p}|\le6$, so $p\in\{5,7\}$, and $\sigma=1$
+because the line passes through $x$.
+
+\emph{Case (b): $-1\in H$ and $|K_{p}|\ge10$ for some $p$.} Write
+$-1=\varepsilon\varepsilon'$ with $\varepsilon\in K_{p}$ and $\varepsilon'$
+in the product of the other $K_{q}$; $\varepsilon\ne1$ by \Cref{lem:Kp}(b).
+\Cref{lem:oddbig} gives (1).
+
+\emph{Case (c): $-1\in H$ and $|K_{p}|\le9$ for all $p$.} Then every prime
+factor of $e$ is $5$ or $7$. If only one prime $p$ divides $e$, then $-1\in
+K_{p}$ and $F$ is $K_{p}$-invariant on $xK_{p}$ by (S4), so
+$F(x)=F(-x)=-F(x)$, which is impossible. So $H=K_{5}K_{7}$, and
+$-1=\varepsilon\varepsilon'$ with $\varepsilon\in K_{5}$, $\varepsilon'\in
+K_{7}$, both different from $1$ by \Cref{lem:Kp}(b). From
+$\varepsilon^{2}\varepsilon'^{2}=1$ and $K_{5}\cap K_{7}=1$ we get
+$\varepsilon^{2}=\varepsilon'^{2}=1$, so $|K_{5}|$ and $|K_{7}|$ are even:
+$|K_{5}|=4$ and $|K_{7}|=6$. \Cref{lem:twoD} on $xK_{5}K_{7}$ gives (1) or
+(2).
+\end{proof}
+
+\subsubsection*{Step 6: the sum of the entries}
+
+\begin{lemma}\label{lem:killline}
+Let $p\mid e$ with $|K_{p}|\in\{4,6\}$, and let $F\colon U\to\ZZ$ be odd with
+$F\ge1$ on a line $wK_{p}$ and $\|F\|\le2|K_{p}|$. Then $\|F\|=2|K_{p}|$ and
+$\sum_{z}F(z)z\ne0$ in $\ZZ/e$.
+\end{lemma}
+
+\begin{proof}
+If $e=p$ then $K_{p}=U\ni-1$, and $F(w)\ge1$, $F(-w)\ge1$ contradict
+oddness. So $e/p\ge5$, $-1\notin K_{p}$, and the lines $wK_{p}$ and
+$-wK_{p}$ are disjoint. As $F\ge1$ on the first and $F\le-1$ on the second,
+$\|F\|=2|K_{p}|$, $F=1$ on $wK_{p}$, $F=-1$ on $-wK_{p}$, and $F=0$
+elsewhere. Then $\sum_{z}F(z)z=2w\sum_{k\in K_{p}}k\equiv2|K_{p}|\,w\pmod
+{e/p}$. If it vanished, $e/p$ would divide $2|K_{p}|\in\{8,12\}$, which is
+impossible for $e/p>1$ prime to $6$.
+\end{proof}
+
+\begin{lemma}\label{lem:killhalf}
+In case \textup{(2)} of \Cref{prop:core}, if $\|F\|=12$, then
+$\sum_{z}F(z)z\ne0$ in $\ZZ/e$.
+\end{lemma}
+
+\begin{proof}
+The coset $yK_{5}K_{7}$ carries the whole mass, so $F=0$ off it. Let
+$\psi\colon\ZZ/e\to\ZZ/5$ be reduction. Since $5\mid e/7$, every $j\in
+K_{7}$ has $\psi(j)=1$. Since $|K_{5}|=4$, $5\parallel e$, and $\psi$ is
+injective on $K_{5}$: an element of $K_{5}$ congruent to $1$ modulo $5$ is
+congruent to $1$ modulo $\operatorname{lcm}(5,e/5)=e$. From $\varepsilon\varepsilon'=-1$,
+$\psi(\varepsilon)=-1$. Write $K_{5}=\{1,\varepsilon,a,a\varepsilon\}$; then
+$\psi(a)\ne\pm1$. As $v(j\varepsilon')=-v(j)$, $\sum_{j}v(j)=0$. Hence
+\begin{align*}
+  \psi\Bigl(2\sum_{z}F(z)z\Bigr)&=\sum_{i\in K_{5}}\sum_{j\in K_{7}}
+  (u(i)+v(j))\,\psi(y)\psi(i)\\
+  &=6\,\psi(y)\sum_{i}u(i)\psi(i)=12\,\psi(y)\bigl(u(1)+u(a)\psi(a)\bigr),
+\end{align*}
+using $u(\varepsilon)=-u(1)$ and $u(a\varepsilon)=-u(a)$. Here $12$ and $\psi(y)$ are
+units of $\ZZ/5$. If $\sum_{z}F(z)z$ vanished, then $u(1)+u(a)\psi(a)=0$, and
+$\psi(a)=\pm1$, a contradiction.
+\end{proof}
+
+\subsubsection*{Step 7: end of the proof}
+By \Cref{lem:countF}, \Cref{lem:splitF} and the remarks in Step 1, $F$
+satisfies the hypotheses of \Cref{prop:core} with $\|F\|\le2n\le12$. In case
+(2) the mass is $12$, so $n=6$ and $\|F\|=12=2n$, and \Cref{lem:countF}
+contradicts \Cref{lem:killhalf}. So $F\ge1$ on a line $wK_{p}$ with
+$p\in\{5,7\}$. Since $F$ is odd, $-1\notin K_{p}$, so $wK_{p}$ and
+$-wK_{p}$ are disjoint and $\|F\|\ge2|K_{p}|$.
+
+If $p=7$, then $|K_{7}|=7$ is impossible as $14>12$, and $|K_{7}|=6$ forces
+$n=6$ and $\|F\|=12=2n$, which \Cref{lem:countF} and \Cref{lem:killline}
+exclude. So $p=5$. If $n=4$, then $|K_{5}|=5$ is impossible as $10>8$, and
+$|K_{5}|=4$ forces $\|F\|=8=2n$, excluded in the same way. This proves (i).
+
+Let $n=6$ and $p=5$, and put $x=\kappa(w)$. For $k\in K_{5}$ we have
+$5k=5$ in $\ZZ/e$, so $5\kappa(wk)=\kappa(5w)=5x$; and $F(wk)\ge1$ means
+$\kappa(wk)\in A$. So $A$ contains the $|K_{5}|$ distinct elements of
+$L=\kappa(wK_{5})\subseteq\Phi(x)$. Recall that $\sum_{y\in\Phi(x)}y=5x$ and,
+writing $\bar x=qm/5+r$ with $0\le r<m/5$,
+\[
+  \sum_{y\in\Phi(x)}\bar y=\sum_{j=0}^{4}\Bigl(\bigl((q+j)\bmod5\bigr)
+  \frac{m}{5}+r\Bigr)=2m+5r=2m+\overline{5x}.
+\]
+Since $t\Phi(x)=\Phi(tx)$, also $\sum_{y\in\Phi(x)}\overline{ty}=2m+
+\overline{5tx}$ for every unit $t$.
+
+If $|K_{5}|=5$, then $L=\Phi(x)$, and the sixth element $b$ of $A$ satisfies
+$5x+b=0$; so $A=\Phi(x)+\{-5x\}$ is $5$-standard.
+
+If $|K_{5}|=4$, then $L=\Phi(x)\setminus\{y_{0}\}$ for one $y_{0}$, and
+$A=L+\{b,c\}$. Here $e\ne5$, since otherwise $K_{5}=U$ would contain $-1$;
+so $5x=\kappa(5w)\ne0$. Hence $y_{0}\ne0$ (as $5y_{0}=5x$), and $y_{0}\ne5x$
+(otherwise $20x=0$, so $5x=0$, as $m$ is odd). The sum of $A$ gives
+$5x-y_{0}+b+c=0$, and for every unit $t$,
+\[
+  h(A)=2m+\overline{5tx}-\overline{ty_{0}}+\overline{tb}+\overline{tc}.
+\]
+So the multiset $Q=\{5x,b,c,-y_{0}\}$ of nonzero elements has sum $0$, and
+$\sum_{q\in Q}\overline{tq}=\overline{5tx}+\overline{tb}+\overline{tc}+m-
+\overline{ty_{0}}=h(A)-m$ for every $t$: it is balanced. By (i) it contains a
+pair, formed by two of its four members. The pair $\{5x,-y_{0}\}$ is
+excluded by $y_{0}\ne5x$, and $\{b,c\}$ is excluded because $A$ contains no
+pair. Each of the remaining four, $b=-5x$, $c=-5x$, $b=y_{0}$ or $c=y_{0}$,
+together with $5x-y_{0}+b+c=0$, gives $\{b,c\}=\{y_{0},-5x\}$, so
+$A=\Phi(x)+\{-5x\}$ is $5$-standard. This proves (ii).
+\qed
+
+\begin{remark}\label{rem:kang}
+Kang states the Hodge conjecture for every Fermat fourfold
+\cite[Corollary~3.2]{Kan16}, and \cite{MMRV26} rely on that statement. The
+proof bounds a refined motivic dimension of $X^{1}_{m}\times X^{n-1}_{m}$ by
+\cite[Proposition~2.2(iv)]{Kan15}, whose proof writes the level filtration of
+a product as $F^{m}(H\otimes H')=\bigoplus_{t+s=m}F^{t}H\otimes F^{s}H'$,
+where $F^{p}$ is the largest rational sub-Hodge structure contained in the
+$p$-th step of the Hodge filtration. This decomposition fails already for
+$H=H'=H^{1}(E,\QQ)$, $E$ an elliptic curve, and $m=1$: the K\"unneth
+component of the diagonal of $E\times E$ in $H^{1}(E)\otimes H^{1}(E)$ is a
+nonzero rational class of type $(1,1)$, so it lies in $F^{1}(H\otimes H')$,
+while $F^{1}H^{1}(E)=0$ and the right-hand side vanishes. We do not know
+whether the inequality of \cite[Proposition~2.2(iv)]{Kan15}, or
+\cite[Corollary~3.2]{Kan16}, holds; \Cref{thm:F} does not use them.
+\end{remark}

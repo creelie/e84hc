@@ -6,6 +6,7 @@
 #   STRICT=1 verification/shell/run_all.sh   fail if a tool is missing
 #
 # Tools: python3, julia, a C99 compiler, lake (Lean 4), M2 (Macaulay2).
+# MATHLIB=1 also builds verification/lean-mathlib (Lean 4 with Mathlib).
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
@@ -48,6 +49,28 @@ if have "$CC"; then
     "$OUT/cc" > "$OUT/c.txt"; same C "$OUT/c.txt"
 else missing "$CC"; fi
 
+echo "== Fermat fourfolds of degree prime to 6"
+python3 "$V/python/fermat_fourfolds.py" 55 > "$OUT/ffpy.txt"
+echo "ok    Python: $(tail -1 "$OUT/ffpy.txt")"
+ffsame() {  # ffsame <name> <file>: compare with the Python output for m <= 55
+    if diff -q "$OUT/ffpy.txt" "$2" >/dev/null; then
+        echo "ok    $1 output is identical to Python (m <= 55)"
+    else
+        echo "FAIL  $1 output differs from Python"; diff "$OUT/ffpy.txt" "$2" | head; status=1
+    fi
+}
+if have julia; then
+    julia "$V/julia/fermat_fourfolds.jl" 55 > "$OUT/ffjl.txt"; ffsame Julia "$OUT/ffjl.txt"
+else missing julia; fi
+if have "$CC"; then
+    "$CC" -std=c99 -O2 -Wall -Wextra -Werror -o "$OUT/ff" "$V/c/fermat_fourfolds.c"
+    "$OUT/ff" 55 > "$OUT/ffc.txt"; ffsame C "$OUT/ffc.txt"
+    "$OUT/ff" 125 > "$OUT/ffc125.txt"
+    if diff -q "$OUT/ffc125.txt" "$V/c/fermat_fourfolds_125.expected" >/dev/null; then
+        echo "ok    C: classification holds for every m <= 125 prime to 6, output as stored"
+    else echo "FAIL  C output for m <= 125 differs from the stored copy"; status=1; fi
+else missing "$CC"; fi
+
 echo "== Lean"
 if have lake; then
     (cd "$V/lean" && lake build > "$OUT/lean.txt" 2>&1) || { cat "$OUT/lean.txt"; status=1; }
@@ -55,8 +78,22 @@ if have lake; then
     if grep -q "ofReduceBool" "$OUT/lean.txt" || grep -qE "by[[:space:]]+native_decide" "$V/lean/Closure.lean"; then
         echo "FAIL  Lean uses native_decide"; status=1; fi
     n=$(grep -c "depends on axioms\|does not depend on any axioms" "$OUT/lean.txt" || true)
-    echo "ok    Lean: Closure builds, $n theorems report standard axioms only"
+    if [ "$n" = 14 ]; then echo "ok    Lean: Closure builds, 14 theorems report standard axioms only"
+    else echo "FAIL  Lean: expected 14 axiom reports, found $n"; status=1; fi
 else missing lake; fi
+
+echo "== Lean with Mathlib (set MATHLIB=1; downloads Mathlib on first use)"
+if [ "${MATHLIB:-0}" = 1 ]; then
+    if have lake; then
+        (cd "$V/lean-mathlib" && lake exe cache get > "$OUT/mlc.txt" 2>&1 && lake build > "$OUT/ml.txt" 2>&1 \
+            && lake env lean Axioms.lean > "$OUT/mlax.txt" 2>&1) || { tail -20 "$OUT/ml.txt"; status=1; }
+        if grep -rqE "\bsorry\b|native_decide" "$V/lean-mathlib/FermatHodge"; then
+            echo "FAIL  FermatHodge uses sorry or native_decide"; status=1; fi
+        n=$(grep -c "depends on axioms: \[propext, Classical.choice, Quot.sound\]" "$OUT/mlax.txt" || true)
+        if [ "$n" = 11 ]; then echo "ok    Lean+Mathlib: FermatHodge builds, 11 main theorems use the standard axioms only"
+        else echo "FAIL  Lean+Mathlib axiom check"; cat "$OUT/mlax.txt"; status=1; fi
+    else missing lake; fi
+else echo "skip  MATHLIB is not set"; fi
 
 echo "== Macaulay2"
 if have M2; then

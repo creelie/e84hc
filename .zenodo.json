@@ -1,6 +1,6 @@
 {
   "title": "When is every rational Hodge class algebraic?",
-  "description": "<p>LaTeX source (amsart, figures as PNG), compiled PDF and verification code for the paper <em>When is every rational Hodge class algebraic?</em> by Deep Bhattacharjee.</p><p>The paper determines which combinations of the standard statements around the rational Hodge conjecture imply it. Every such combination contains the conjecture modulo abelian varieties, unless it contains both the Lefschetz standard conjecture and Andr&eacute;'s conjecture that every Hodge class is motivated, a pair equivalent to the Hodge conjecture itself. Granting the recently claimed Hodge conjecture for CM abelian varieties, it proves the conjecture for every Fermat variety and reduces the abelian case to propagation from CM points. For Weil classes it proves a criterion by bounded degree at CM points, and it extracts from Schoen's cycles one subvariety whose semiregularity would settle the split Weil families over Q(&radic;&minus;3) in every dimension. <strong>The Hodge conjecture itself is not proved.</strong></p><p><code>paper/</code> holds the source and <code>paper/main.pdf</code>; <code>scripts/build_paper.sh</code> builds the PDF, a tex.zip and an arXiv tarball that compiles with pdflatex alone. <code>verification/</code> re-checks the finite steps: <code>closure_checks</code> in Python, Julia and C (exact arithmetic, identical 218-line outputs), a Lean 4 file checked with the core library only (no sorry, no native_decide), Macaulay2 scripts for Jacobian-ring Hodge numbers and Max Noether's theorem, and an online check of every reference. No proof in the paper depends on a computer.</p><p>Author contact: d.bhattacharjee@erl-forschung.de, itsdeep@live.com. Affiliation: Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India.</p>",
+  "description": "<p>LaTeX source (amsart, figures as PNG), compiled PDF and verification code for the paper <em>When is every rational Hodge class algebraic?</em> by Deep Bhattacharjee.</p><p>The paper determines which combinations of the standard statements around the rational Hodge conjecture imply it. Every such combination contains the conjecture modulo abelian varieties, unless it contains both the Lefschetz standard conjecture and Andr&eacute;'s conjecture that every Hodge class is motivated, a pair equivalent to the Hodge conjecture itself. Granting the recently claimed Hodge conjecture for CM abelian varieties, it proves the conjecture for every Fermat variety and reduces the abelian case to propagation from CM points. For Weil classes it proves a criterion by bounded degree at CM points, and it extracts from Schoen's cycles one subvariety whose semiregularity would settle the split Weil families over Q(&radic;&minus;3) in every dimension. Without any hypothesis, it proves the Hodge conjecture for Fermat fourfolds of every degree prime to six, through a classification of their Hodge characters that is also proved in Lean 4 with Mathlib. <strong>The Hodge conjecture itself is not proved.</strong></p><p><code>paper/</code> holds the source and <code>paper/main.pdf</code>; <code>scripts/build_paper.sh</code> builds the PDF, a tex.zip and an arXiv tarball that compiles with pdflatex alone. <code>verification/</code> re-checks the finite steps: <code>closure_checks</code> in Python, Julia and C (exact arithmetic, identical 218-line outputs), a Lean 4 file checked with the core library only (no sorry, no native_decide), a Lean 4 project with Mathlib that proves the classification of Hodge characters behind the Fermat fourfold theorem, including the nonvanishing of B<sub>1,&chi;</sub> (standard axioms only), exhaustive searches of those characters in C, Python and Julia, Macaulay2 scripts for Jacobian-ring Hodge numbers and Max Noether's theorem, and an online check of every reference. No proof in the paper depends on a computer.</p><p>Author contact: d.bhattacharjee@erl-forschung.de, itsdeep@live.com. Affiliation: Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India.</p>",
   "upload_type": "publication",
   "publication_type": "preprint",
   "license": "mit",
@@ -21,6 +21,8 @@
     "Weil classes",
     "semiregularity",
     "Lean 4",
+    "Mathlib",
+    "Fermat fourfolds",
     "Macaulay2"
   ],
   "notes": "Contact: d.bhattacharjee@erl-forschung.de; itsdeep@live.com. MSC2020: 14C30, 14C25, 14K22, 14J70. The Hodge conjecture is not proved in this work; Section 7 of the paper lists what is proved, what is proved under a stated hypothesis, and what is not proved.",
@@ -37,5 +39,5 @@
     }
   ],
   "language": "eng",
-  "version": "1.0.2"
+  "version": "1.1.0"
 }

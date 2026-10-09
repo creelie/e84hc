@@ -119,7 +119,8 @@ of these varieties.
 
 Fermat varieties are the first varieties on which the conjecture was
 studied in every dimension \cite{Ran80,Shi79}, and unconditional proofs are
-known only for special degrees (\Cref{rem:fermatknown}). The proof of
+known only for special degrees (\Cref{rem:fermatknown}); \Cref{thm:F} below
+adds the fourfolds of degree prime to $6$. The proof of
 \Cref{thm:C} uses the inductive structure of Shioda and Katsura \cite{SK79}
 to dominate every Fermat variety by a product of Fermat curves, blown up
 along smooth centres, and the fact that Fermat curves have Jacobians of CM
@@ -182,6 +183,30 @@ in \Cref{ssec:whereitstops}, including a precise analogy
 with the Abel--Jacobi curve, which is not semiregular, and with a question
 of Markman about a weak form of the semiregularity theorem.
 
+The last result is unconditional.
+
+\begin{maintheorem}\label{thm:F}
+Let $m$ be prime to $6$. Then the Hodge conjecture holds for the Fermat
+fourfold $X^{4}_{m}$.
+\end{maintheorem}
+
+By \Cref{prop:fermatchars} the Hodge classes of $X^{4}_{m}$ are spanned by
+lines indexed by sextuples of nonzero residues modulo $m$. We show that each
+such sextuple contains two entries $a$ and $-a$, or is, up to order,
+$(x,x+m/5,x+2m/5,x+3m/5,x+4m/5,-5x)$ (\Cref{thm:sextuples}). The classes of
+the first kind are algebraic by the inductive structure of Shioda and Ran,
+and those of the second kind by the cycles of Aoki \cite{Aok87}, pulled back
+along a covering of Fermat fourfolds. The proof of the classification uses
+the Dirichlet characters modulo the largest order of an entry, and its only
+analytic input is the classical fact that $B_{1,\chi}\ne0$ for odd primitive
+$\chi$. When $5\nmid m$, \Cref{thm:F} follows from Aoki's theorem that every
+Hodge character then splits into pairs \cite{Aok83}, and when $m$ is a power
+of $5$ it is also due to Aoki \cite{Aok87}. In the remaining degrees it is new
+for $m>199$, apart from a statement of Kang whose proof has a gap
+(\Cref{rem:kang}); smaller degrees were covered by computer searches
+(\Cref{rem:fermatknown}). The classification, together with the fact that
+$B_{1,\chi}\ne0$, has been checked in Lean~4 with Mathlib (\Cref{app:checks}).
+
 \subsection*{What is not proved}
 None of the statements \st{F2}, \st{F3$'$}, \st{L}, \st{M}, \st{V},
 \st{IP} is proved here, and \st{CM} is used only as a hypothesis. The
@@ -191,11 +216,15 @@ statements from which it follows also implies \st{F2} and \st{F3$'$}.
 open cases: for \st{F2}, the Weil classes of nonsplit abelian sixfolds and
 of abelian eightfolds, and the exceptional classes on the square of a
 Mumford fourfold; for \st{F3$'$}, the square of a K3 surface with real
-multiplication.
+multiplication. \Cref{thm:F} does not reach Fermat fourfolds of degree
+divisible by $2$ or $3$: there the method breaks down, because the subgroups
+$K_{2}$ and $K_{3}$ of \Cref{ssec:fermatfour} are too small, and Hodge
+characters of further kinds occur \cite{Aok83}.
 
 \subsection*{Organization}
 \Cref{sec:reductions} proves the reductions that hold for every variety and
-defines the statements. \Cref{sec:fermat} proves \Cref{thm:C}.
+defines the statements. \Cref{sec:fermat} proves \Cref{thm:C} and
+\Cref{thm:F}.
 \Cref{sec:abelian} treats \st{CM} and \st{IP}, proves \Cref{thm:A}, and
 proves \Cref{thm:D}. \Cref{sec:weil} proves \Cref{thm:E} and the transfer
 theorem for Weil classes. \Cref{sec:routes} proves \Cref{thm:B}.

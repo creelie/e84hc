@@ -101,7 +101,14 @@ def check_doi(doi, f):
             title += " " + m["subtitle"][0]
         parts = (m.get("issued") or {}).get("date-parts") or [[None]]
         year = str(parts[0][0] or "")
+        # journals that publish online first (Crelle) are dated by the print issue
+        pp = ((m.get("published-print") or {}).get("date-parts") or [[None]])[0][0]
+        if pp and f.get("year") == str(pp):
+            year = str(pp)
         vol = m.get("volume", "") or ""
+        # Crelle files the year as the volume and the volume number as the issue
+        if f.get("volume") and m.get("issue") == f["volume"] and vol == f.get("year"):
+            vol = f["volume"]
         page = m.get("page", "") or m.get("article-number", "") or ""
     s = similar(f.get("title", ""), title)
     notes = []
