@@ -26,6 +26,25 @@ jobs:
       - name: Run every check
         run: STRICT=1 bash verification/shell/run_all.sh
 
+  lean-mathlib:
+    name: Lean 4 with Mathlib (Fermat fourfolds)
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Lean (elan)
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
+            | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build and print the axioms of the main theorems
+        working-directory: verification/lean-mathlib
+        run: |
+          lake exe cache get
+          lake build
+          lake env lean Axioms.lean | tee axioms.txt
+          test "$(grep -c 'depends on axioms: \[propext, Classical.choice, Quot.sound\]' axioms.txt)" = 5
+          if grep -rnE '\bsorry\b|native_decide' FermatHodge FermatHodge.lean; then exit 1; fi
+
   paper:
     name: Paper, tex.zip and arXiv tarball
     runs-on: ubuntu-24.04
