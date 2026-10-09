@@ -66,6 +66,37 @@ computes the Picard numbers $20$, $37$ and $86$ of the Fermat quartic,
 quintic and sextic surfaces from the characters, by evaluation in the
 kernel.
 
+\subsection*{Lean with Mathlib}
+The directory \texttt{lean-mathlib} holds a formalization of
+\Cref{thm:sextuples} in Lean~4 with Mathlib, about $3100$ lines in $14$ files.
+It follows the proof of \Cref{ssec:fermatfour} step by step: the counting
+function, Dirichlet characters and their conductors, Fourier inversion on
+$(\ZZ/e)^{\times}$, the subgroups $K_{p}$ and their orders, split functions
+and \Cref{lem:grid,lem:oddbig,lem:twoD}, \Cref{prop:core},
+\Cref{lem:killline,lem:killhalf}, and Step~7. The theorems
+\texttt{hodge\_quadruple} and \texttt{hodge\_sextuple} state
+\Cref{thm:sextuples} for every $m$ prime to $6$, and
+\texttt{hodge\_fermat\_fourfold} derives the conclusion of \Cref{thm:F} for
+an abstract predicate ``the line $V(\alpha)$ is algebraic'' from the two
+geometric inputs, algebraicity for characters that contain a pair and for
+$5$-standard characters. These inputs, the description of the Hodge classes
+by characters, and the nonvanishing of $B_{1,\chi}$ for odd primitive $\chi$
+enter the formal statements as hypotheses: Mathlib has no Hodge theory, and it
+contains $L(1,\chi)\ne0$ but not yet the value $L(0,\chi)=-B_{1,\chi}$. With
+these hypotheses the five main theorems depend only on the standard axioms,
+and no file uses \texttt{sorry}.
+
+\subsection*{Fermat fourfolds by exhaustive search}
+The program \texttt{fermat\_fourfolds} exists in Python, Julia and C. For
+every $m$ prime to $6$ up to a bound it lists the balanced multisets of four
+and of six nonzero residues modulo $m$ and checks \Cref{thm:sextuples}: every
+quadruple contains a pair, and every sextuple without a pair is $5$-standard.
+The three versions print the same lines for $m\le55$, and the C version is run
+up to $m=125$ and compared with a stored copy of its output; for $m=125$, for
+instance, it finds $41688$ balanced sextuples, of which $24$ contain no pair,
+all of them $5$-standard. These searches check the theorem only for the
+degrees listed; the proof covers every $m$.
+
 \subsection*{Macaulay2}
 Two scripts use Macaulay2. The first computes the primitive Hodge numbers of
 the Fermat surfaces and fourfolds from the Jacobian ring,
