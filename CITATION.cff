@@ -41,7 +41,7 @@ keywords:
   - Mathlib
   - Fermat fourfolds
   - Macaulay2
-version: "1.1.0"
+version: "1.1.1"
 date-released: "2026-10-09"
 doi: "10.5281/zenodo.23234362"
 identifiers:
