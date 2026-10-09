@@ -32,7 +32,7 @@ All 73 references were checked online. No proof in the paper depends on a comput
 
 ### Citation and DOI
 
-Concept DOI, covering all versions: [10.5281/zenodo.23234362](https://doi.org/10.5281/zenodo.23234362). Zenodo gives each release its own version DOI under it: v1.0.0 is [10.5281/zenodo.23234363](https://doi.org/10.5281/zenodo.23234363), v1.0.1 is [10.5281/zenodo.23234501](https://doi.org/10.5281/zenodo.23234501) and v1.0.2 is [10.5281/zenodo.23236587](https://doi.org/10.5281/zenodo.23236587).
+Concept DOI, covering all versions: [10.5281/zenodo.23234362](https://doi.org/10.5281/zenodo.23234362). Zenodo gives each release its own version DOI under it: v1.0.0 is [10.5281/zenodo.23234363](https://doi.org/10.5281/zenodo.23234363), v1.0.1 is [10.5281/zenodo.23234501](https://doi.org/10.5281/zenodo.23234501), v1.0.2 is [10.5281/zenodo.23236587](https://doi.org/10.5281/zenodo.23236587) and v1.1.0 is [10.5281/zenodo.23271115](https://doi.org/10.5281/zenodo.23271115).
 
 ### What is new in this version
 
