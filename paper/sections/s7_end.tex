@@ -3,20 +3,39 @@
 \subsection*{Proved}
 The following hold without any unproved hypothesis.
 \begin{enumerate}[label=\textup{(\arabic*)}]
-\item The equivalences of \Cref{thm:A}, and the description in \Cref{thm:B}
+\item The Hodge conjecture for the Fermat variety $X^{n}_{m}$ of every
+dimension and every degree $m=2^{a}3^{b}19^{c}$ with $a\le1$, for every
+product of Fermat varieties of such a degree, and for every abelian variety
+of Fermat type of such a degree (\Cref{thm:fermat114}). Besides the results
+of this paper, the proof uses Aoki's reduction \cite{Aok83,Aok00}, Shioda's
+inductive structure \cite{Shi79}, Aoki's cycles \cite{Aok87} and the
+Lefschetz theorem on $(1,1)$-classes, and it rests on one certified
+computation in interval arithmetic (\Cref{prop:family2} and \Cref{app:cert114}). It is
+new when $57\mid m$ and $m\ne57$; for $m=57$ the earlier proof \cite{MMRV26}
+depends on the statement discussed in \Cref{rem:kang}.
+\item The Hodge conjecture for the Fermat fourfold $X^{4}_{m}$ of every odd
+degree $m$ (\Cref{thm:oddfour}); for $m$ prime to $6$, the classification of the
+Hodge characters behind it: each contains a pair or is $5$-standard
+(\Cref{thm:sextuples}); and for $3\mid m$, the reduction of every Hodge
+character without a pair, by moves, to three exceptional orbits
+(\Cref{thm:moves} and \Cref{lem:exceptional}). Besides the results of this paper, the proof uses
+the inductive structure of Shioda and Ran, Aoki's cycles \cite{Aok87}, and
+the classical nonvanishing of $B_{1,\chi}$ for odd primitive Dirichlet
+characters \cite{Was97}.
+\item The equivalences of \Cref{thm:equiv}, and the description in \Cref{thm:routes}
 and \Cref{cor:bypass} of every set of the statements of \Cref{tab:rules}
 from which the conjecture follows by those implications.
 \item The statement \st{F3$'$} for every Fermat variety, every product of
 Fermat varieties and every variety onto which such a product maps
-surjectively (\Cref{thm:C}), together with the description of the Hodge classes of Fermat varieties by
+surjectively (\Cref{thm:fermatcm}), together with the description of the Hodge classes of Fermat varieties by
 characters (\Cref{prop:fermatchars}).
 \item The closedness of the bounded-degree loci $\Sigma_{d}$ in a split Weil
-family, and the criterion of \Cref{thm:D} for $\Sigma=S$.
+family, and the criterion of \Cref{thm:weilloci} for $\Sigma=S$.
 \item For every \'etale cyclic triple cover of a curve of genus $n+1\ge3$:
 its Prym variety is of split Weil type (\Cref{lem:prym}); Schoen's
 construction gives an irreducible $n$-dimensional subvariety $Y$ whose class
 pairs nontrivially with the Weil plane; at a member with maximal Hodge group
-$\cl(Y)=c\,\eta^{n}+w$ with $c>0$ and $w\ne0$ (\Cref{thm:E}); and the Prym
+$\cl(Y)=c\,\eta^{n}+w$ with $c>0$ and $w\ne0$ (\Cref{thm:schoenY}); and the Prym
 variety is Weil-algebraic (\Cref{cor:schoen}, first proved by Schoen).
 \item The transfer of \Cref{thm:transfer}: an abelian variety of Weil type for
 $\QQ(\sqrt{-3})$ is, up to isogeny, a factor $A\times A'$ of a Prym variety,
@@ -33,23 +52,14 @@ not semiregular.
 it is a component of the locus of line bundles with a nonzero section in
 the fibre of the norm map over $[K_{X}]$. It is smooth of dimension $n$ at
 its general point, with an explicit tangent space.
-\item The Hodge conjecture for the Fermat fourfold $X^{4}_{m}$ of every odd
-degree $m$ (\Cref{thm:F}); for $m$ prime to $6$, the classification of the
-Hodge characters behind it: each contains a pair or is $5$-standard
-(\Cref{thm:sextuples}); and for $3\mid m$, the reduction of every Hodge
-character without a pair, by moves, to three exceptional orbits
-(\Cref{thm:moves,lem:exceptional}). Besides the results of this paper, the proof uses
-the inductive structure of Shioda and Ran, Aoki's cycles \cite{Aok87}, and
-the classical nonvanishing of $B_{1,\chi}$ for odd primitive Dirichlet
-characters \cite{Was97}.
 \end{enumerate}
 
 \subsection*{Proved under a stated hypothesis}
 \begin{enumerate}[label=\textup{(\arabic*)},resume]
 \item Under \st{CM}: the Hodge conjecture for every Fermat variety, every
 product of Fermat varieties and every variety such a product dominates
-(\Cref{thm:C}), and the algebraicity of the Weil classes at every CM point
-of a split Weil family (\Cref{thm:D}).
+(\Cref{thm:fermatcm}), and the algebraicity of the Weil classes at every CM point
+of a split Weil family (\Cref{thm:weilloci}).
 \item Under the semiregularity of one subvariety $Y$ of genus $n+1$ with
 maximal Hodge group: the Weil classes of every abelian variety of split Weil
 type for $\QQ(\sqrt{-3})$ of dimension $2n$ (\Cref{cor:schoensemireg}).
@@ -58,11 +68,14 @@ type for $\QQ(\sqrt{-3})$ of dimension $2n$ (\Cref{cor:schoensemireg}).
 \subsection*{Not proved}
 The Hodge conjecture; each of \st{F2}, \st{F3$'$}, \st{L}, \st{M}, \st{V},
 \st{IP}; the semiregularity of $Y$ for any $n\ge4$
-(\Cref{q:schoen}); and \st{CM}, which is claimed in the unrefereed preprint
-\cite{OAI26} and used here only as a hypothesis.
+(\Cref{q:schoen}); \st{CM}, which is claimed in the unrefereed preprint
+\cite{OAI26} and used here only as a hypothesis; and the Hodge conjecture for
+the Fermat fourfolds of degrees $110$ and $220$, the only degrees up to $250$
+left open by \Cref{thm:fermat114,thm:oddfour}, \cite{Pet26} and the census
+\cite{Jum26b}.
 
 \subsection*{The first open cases}
-By \Cref{thm:B} every route passes through \st{F2} and \st{F3$'$}, and each
+By \Cref{thm:routes} every route passes through \st{F2} and \st{F3$'$}, and each
 has a first case that no known method reaches.
 
 \emph{Weil classes in dimensions six and eight.} \st{F2} holds in dimension
@@ -117,6 +130,18 @@ constructed subvariety of a Prym variety and the question whether it is
 semiregular.
 
 \subsection*{A note on preparation}
-Parts of this paper and of the code that checks its finite steps were
-drafted with the help of an AI assistant, working under the author's
-direction. Responsibility for the content rests with the author.
+This paper was prepared with substantial help from an AI assistant, working
+under the author's direction; the author checked the arguments and is
+responsible for the content. The assistant took part in every section, and
+we list the main ideas it proposed. In \Cref{sec:fermat114}: the extension
+of Peterson's method to block families (\Cref{ssec:families}), the
+characters $\alpha_{1},\alpha_{2}$ and the join argument
+(\Cref{ssec:twochars,ssec:join}), and the two families with the certificate
+of \Cref{app:cert114}, found by computer searches that the assistant
+designed. In \Cref{sec:fermat}: the classification of Hodge sextuples
+(\Cref{thm:sextuples}) and the moves of \Cref{thm:moves}. In
+\Cref{sec:weil}: the twisted-cohomology computation behind
+\Cref{thm:schoenY} and the description of $Y$ in \Cref{prop:prymbn}. In
+\Cref{sec:routes}: the enumeration of routes in \Cref{thm:routes}. The
+assistant also drafted much of the text and wrote the programs that check
+the finite steps.

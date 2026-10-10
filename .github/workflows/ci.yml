@@ -14,6 +14,11 @@ jobs:
       - uses: julia-actions/setup-julia@v2
         with:
           version: "1.10"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install python-flint and sympy (degree-114 checks)
+        run: python3 -m pip install "python-flint==0.9.0" "sympy==1.14.0"
       - name: Install Macaulay2
         run: |
           sudo apt-get update
@@ -27,7 +32,7 @@ jobs:
         run: STRICT=1 bash verification/shell/run_all.sh
 
   lean-mathlib:
-    name: Lean 4 with Mathlib (Fermat fourfolds)
+    name: Lean 4 with Mathlib (Fermat fourfolds and degree 114)
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
@@ -42,7 +47,9 @@ jobs:
           lake exe cache get
           lake build
           lake env lean Axioms.lean | tee axioms.txt
-          test "$(grep -c 'depends on axioms: \[propext, Classical.choice, Quot.sound\]' axioms.txt)" = 11
+          test "$(grep -c 'depends on axioms: \[propext, Classical.choice, Quot.sound\]' axioms.txt)" = 13
+          test "$(grep -cE 'depends on axioms: \[(propext|Classical.choice|Quot.sound|, )*\]|does not depend on any axioms' axioms.txt)" = 18
+          if grep -q sorryAx axioms.txt; then exit 1; fi
           if grep -rnE '\bsorry\b|native_decide' FermatHodge FermatHodge.lean; then exit 1; fi
 
   paper:

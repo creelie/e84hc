@@ -206,6 +206,11 @@ MANUAL = {
     "Gro69": ("https://ncatlab.org/nlab/show/Standard+Conjectures+on+Algebraic+Cycles",
               "nLab references: Algebraic Geometry (Bombay, 1968), Oxford Univ. Press, "
               "pp. 193-199"),
+    "CG80": ("https://www.numdam.org/item/CM_1983__50_2-3_109_0/",
+             "cited as [4] in Carlson, Green, Griffiths and Harris, Compositio Math. 50 "
+             "(1983): Journees de geometrie algebrique d'Angers, Sijthoff and Noordhoff "
+             "(1980) 51-76",
+             "global Torelli problem"),
     "BhHCF": ("https://github.com/creelie/Hodge-Conjecture-Full",
               "public GitHub repository holding paper/full_attempt.tex, checked with "
               "a web fetch on 2026-10-08"),

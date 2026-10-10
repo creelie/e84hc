@@ -3,7 +3,7 @@
 We now treat the statements as propositional letters and the results of
 the paper as rules between them. Besides the seven statements of
 \Cref{def:statements} and \HC{} there are three more: \st{SR}, that the
-subvariety $Y$ of \Cref{thm:E} is semiregular for some $(X,L)$ of each genus
+subvariety $Y$ of \Cref{thm:schoenY} is semiregular for some $(X,L)$ of each genus
 $n+1\ge5$ with maximal Hodge group; \st{W3}, that the Weil classes are
 algebraic on every abelian variety of split Weil type for $\QQ(\sqrt{-3})$;
 and \st{Fer}, the Hodge conjecture for every Fermat variety. The rules are
@@ -16,7 +16,7 @@ listed in \Cref{tab:rules}.
 \toprule
 Implication & Source\\
 \midrule
-$\st{F2}\wedge\st{F3$'$}\Rightarrow\HC$ & \Cref{ssec:proofA}: if
+$\st{F2}\wedge\st{F3$'$}\Rightarrow\HC$ & \Cref{ssec:proofequiv}: if
 \st{F2} holds then $\Ab^{p}(X)=\Alg^{p}(X)$\\
 $\HC\Rightarrow\st{F2},\st{F3$'$},\st{L},\st{M},\st{V}$ &
 \Cref{lem:hcimplies}\\
@@ -28,7 +28,7 @@ $\st{V}\Rightarrow\st{IP}$ & \st{IP} is a case of \st{V}\\
 $\st{F3$'$}\Rightarrow\st{M}$ & \Cref{prop:f3m}\\
 $\st{CM}\wedge\st{IP}\Rightarrow\st{F2}$ & \Cref{prop:cmip}\\
 $\st{F2}\Rightarrow\st{CM},\st{IP}$ & \Cref{prop:cmip}\\
-$\st{CM}\Rightarrow\st{Fer}$, $\HC\Rightarrow\st{Fer}$ & \Cref{thm:C}\\
+$\st{CM}\Rightarrow\st{Fer}$, $\HC\Rightarrow\st{Fer}$ & \Cref{thm:fermatcm}\\
 $\st{SR}\Rightarrow\st{W3}$ & \Cref{cor:schoensemireg} for $2n\ge8$;
 \Cref{thm:lef11} and \cite{Sch88,Sch98} for $2n\le6$\\
 $\st{F2}\Rightarrow\st{W3}$ & \st{W3} is a case of \st{F2}\\
@@ -74,7 +74,7 @@ the same with \st{CM} in place of \st{IP}. In $\{\st{CM},\st{Fer}\}$ the
 only rule with all premises present is $\st{CM}\Rightarrow\st{Fer}$.
 \end{proof}
 
-\begin{proof}[Proof of \Cref{thm:B}]
+\begin{proof}[Proof of \Cref{thm:routes}]
 Let $S$ be a set of statements, not containing \HC, that implies \HC. Then
 $S$ is contained in none of $T_{1},\dots,T_{4}$, so it meets each of
 \[
@@ -97,7 +97,7 @@ concludes \st{W3}, and \st{W3} is a premise of no rule.
 \begin{corollary}\label{cor:bypass}
 \begin{enumerate}[label=\textup{(\roman*)}]
 \item A set of statements that implies \HC{} and contains neither \st{F2}
-nor \st{F3$'$} contains \st{L} and \st{M}; by \Cref{thm:A} this pair is
+nor \st{F3$'$} contains \st{L} and \st{M}; by \Cref{thm:equiv} this pair is
 equivalent to \HC.
 \item Every set that implies \HC{} also implies \st{F2} and \st{F3$'$}.
 \item A set that implies \HC{} still implies it when \st{SR} is removed.
@@ -107,9 +107,9 @@ $\{\st{CM},\st{F3$'$}\}$ nor $\{\st{CM},\st{SR}\}$ implies \HC.
 \end{corollary}
 
 \begin{proof}
-(i) is \Cref{thm:B}(b), since (a) requires \st{F3$'$}. (ii) holds because
+(i) is \Cref{thm:routes}(b), since (a) requires \st{F3$'$}. (ii) holds because
 \HC{} implies \st{F2} and \st{F3$'$}. (iii) is the last sentence of the proof
-of \Cref{thm:B}. For (iv), $\{\st{CM},\st{Fer}\}$ is closed by
+of \Cref{thm:routes}. For (iv), $\{\st{CM},\st{Fer}\}$ is closed by
 \Cref{lem:closedsets}, and $\{\st{CM},\st{F3$'$}\}$ and $\{\st{CM},\st{SR}\}$
 lie in the closed set $T_{3}$, which does not contain \HC.
 \end{proof}

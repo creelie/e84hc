@@ -15,3 +15,10 @@ Fermat fourfold theorem with `BernoulliNV` discharged by `bernoulliNV`. -/
 #print axioms FermatHodge.hodge_quadruple'
 #print axioms FermatHodge.hodge_sextuple'
 #print axioms FermatHodge.hodge_fermat_fourfold'
+#print axioms FermatHodge.Degree114.beta_hodge
+#print axioms FermatHodge.Degree114.alpha_sum
+#print axioms FermatHodge.Degree114.nu19_beta
+#print axioms FermatHodge.Degree114.nu19_standard
+#print axioms FermatHodge.Degree114.family1_sum
+#print axioms FermatHodge.Degree114.family1_residue
+#print axioms FermatHodge.Degree114.family2_weights

@@ -1,19 +1,17 @@
 \section{Machine checks}\label{app:checks}
 
-No proof in this paper depends on a computer. The finite steps have been
-repeated by machine, in several independent implementations, and the files
-are in the author's repository \url{https://github.com/creelie/e84hc} under
-\texttt{verification/}; each release of the repository is archived on Zenodo
-under the concept DOI
+Apart from \Cref{prop:family2}, whose proof is the computation of
+\Cref{app:cert114}, no proof in this paper depends on a computer. The finite
+steps have been repeated by machine, in several independent
+implementations. The programs are in the author's repository
+\url{https://github.com/creelie/e84hc}, each release of which is archived on
+Zenodo under the concept DOI
 \href{https://doi.org/10.5281/zenodo.23234362}{10.5281/zenodo.23234362}, and
-releases v1.2.0 and v1.3.0 under
-\href{https://doi.org/10.5281/zenodo.23272739}{10.5281/zenodo.23272739} and
-\href{https://doi.org/10.5281/zenodo.23272887}{10.5281/zenodo.23272887}. One script, \texttt{shell/run\_all.sh}, runs them
-all and compares their outputs.
+one script runs them all and compares their outputs.
 
 \subsection*{Exact computations in three languages}
-The program \texttt{closure\_checks} exists in Python, Julia and C, all in
-exact integer or rational arithmetic, and the three versions print the same
+The first program exists in Python, Julia and C, all in exact integer or
+rational arithmetic, and the three versions print the same
 $218$ lines; the shell script compares them line by line and against a
 stored copy. The lines fall into six groups.
 \begin{itemize}[leftmargin=2.3em]
@@ -47,18 +45,18 @@ genus $3g-2$ of $C$, and the dimensions $2n^{2}$ of $E$ and $3n$ of
 $H^{0}(X,K_{X}^{\otimes2})$.
 \item[L] The rules of \Cref{tab:rules}: the closed sets of
 \Cref{lem:closedsets}; the valuation in which \st{CM} holds and \HC{}
-fails; the five minimal sets of \Cref{thm:B}, found by enumerating all sets
+fails; the five minimal sets of \Cref{thm:routes}, found by enumerating all sets
 of statements; and the fact that \st{L} and \st{M} form the only minimal
 set avoiding \st{F2}, \st{F3$'$}, \st{IP}, \st{CM} and \st{SR}.
 \end{itemize}
 
 \subsection*{Lean}
-The file \texttt{lean/Closure.lean} is checked by the kernel of Lean~4 with
-the core library only, without \texttt{sorry} and without
+A first Lean file is checked by the kernel of Lean~4 with the core library
+only, without \texttt{sorry} and without
 \texttt{native\_decide}; every theorem in it depends only on the standard
 axioms. It states the rules of \Cref{tab:rules} as an inductive derivability
 relation and proves: that the four sets of \Cref{lem:closedsets} and the set
-$\{\st{CM},\st{Fer}\}$ are closed; \Cref{thm:B} itself, for an arbitrary set
+$\{\st{CM},\st{Fer}\}$ are closed; \Cref{thm:routes} itself, for an arbitrary set
 of statements; \Cref{cor:bypass}(i); and the derivations of \HC{} from each of
 the five minimal sets. It also proves, for all sizes at once, the counting
 identity behind the switch lemma, the equivalence $3n<n^{2}\iff n\ge4$,
@@ -73,16 +71,14 @@ three identities in the proof of \Cref{lem:exceptional} hold with every part
 balanced.
 
 \subsection*{Lean with Mathlib}
-The directory \texttt{lean-mathlib} holds a formalization of
-\Cref{thm:sextuples} in Lean~4 with Mathlib, about $3600$ lines in $15$ files.
+A second Lean project, which uses Mathlib, holds a formalization of
+\Cref{thm:sextuples}, about $3600$ lines in $15$ files.
 It follows the proof of \Cref{ssec:fermatfour} step by step: the counting
 function, Dirichlet characters and their conductors, Fourier inversion on
 $(\ZZ/e)^{\times}$, the subgroups $K_{p}$ and their orders, split functions
 and \Cref{lem:grid,lem:oddbig,lem:twoD}, \Cref{prop:core},
-\Cref{lem:killline,lem:killhalf}, and Step~7. The theorems
-\texttt{hodge\_quadruple} and \texttt{hodge\_sextuple} state
-\Cref{thm:sextuples} for every $m$ prime to $6$, and
-\texttt{hodge\_fermat\_fourfold} derives the conclusion of \Cref{thm:F} for
+\Cref{lem:killline,lem:killhalf}, and Step~7. Two of its theorems
+state \Cref{thm:sextuples} for every $m$ prime to $6$, and a third derives the conclusion of \Cref{thm:oddfour} for
 an abstract predicate ``the line $V(\alpha)$ is algebraic'' from the two
 geometric inputs, algebraicity for characters that contain a pair and for
 $5$-standard characters. \Cref{thm:moves}, for $m$ divisible by $3$, is not
@@ -104,12 +100,12 @@ the value at $s=1$ of the analytic continuation of $L(s,\bar\chi)$ is the sum
 of the conditionally convergent series on the left. The geometric inputs and
 the description of the Hodge classes by characters remain hypotheses of the
 formal statements, since Mathlib has no Hodge theory. With them, the main
-theorems, among them the classification and the conclusion of \Cref{thm:F}
+theorems, among them the classification and the conclusion of \Cref{thm:oddfour}
 with $B_{1,\chi}\ne0$ discharged, depend only on the standard axioms, and no
 file uses \texttt{sorry}.
 
 \subsection*{Fermat fourfolds by exhaustive search}
-The program \texttt{fermat\_fourfolds} exists in Python, Julia and C. For
+A second program exists in Python, Julia and C. For
 every $m$ prime to $6$ up to a bound it lists the balanced multisets of four
 and of six nonzero residues modulo $m$ and checks \Cref{thm:sextuples}: every
 quadruple contains a pair, and every sextuple without a pair is $5$-standard.
@@ -118,7 +114,7 @@ up to $m=125$ and compared with a stored copy of its output; for $m=125$, for
 instance, it finds $41688$ balanced sextuples, of which $24$ contain no pair,
 all of them $5$-standard.
 
-The program \texttt{fermat\_odd}, also in Python, Julia and C, treats the odd
+A third program, in the same three languages, treats the odd
 $m$ divisible by $3$. It lists the balanced sextuples, and for each one that
 contains no pair and generates $\ZZ/m$ it finds a direct or a lowering move
 (\Cref{def:move}), or checks that $tA$ is one of $O_{21}$, $O_{33}$, $O_{39}$
@@ -143,11 +139,30 @@ $\operatorname{Sym}^{2}H^{0}(K)\to H^{0}(2K)$ has rank $3g-3$, so
 $\dim I_{2}=(g-2)(g-3)/2$. A smooth curve of full rank modulo $p$ is smooth
 and of full rank over $\QQ$, so these are checks over $\QQ$.
 
+\subsection*{Degree \texorpdfstring{$114$}{114}}
+A program in Python, Julia and C checks the finite statements of
+\Cref{sec:fermat114}: \Cref{lem:twochars}, by listing $\langle t\alpha_{1}
+\rangle$ and $\langle t\alpha_{2}\rangle$ for the $36$ units $t$; that
+$\nu_{19}$ is $1$ on $\beta$ and vanishes on every pair and on the $98$
+standard multisets of level $114$; and the weights and degrees of the two
+families. The Python and Julia versions also check \Cref{prop:family1} in
+exact rational arithmetic at three values of $\lambda$, and a computer
+algebra system confirms the closed formula for $I_{20}$. The lattice
+computation described in \Cref{app:cert114} is done with exact integer
+matrices. In the Lean project with Mathlib, a further file proves
+\Cref{lem:twochars}(a),(b), the vanishing of $\nu_{19}$ on the pairs and on
+the standard multisets, the identities in the proof of \Cref{prop:family1}
+(that $\sum_{k}u_{k}=0$, the two residues, the closed formula and its value
+at $\lambda=2$) and the weight and degree conditions of both families; its
+theorems depend only on the standard axioms. The certificate of
+\Cref{app:cert114} is run at $1000$ and at $600$ bits.
+
 \subsection*{References}
-The script \texttt{references/check\_references.py} looks up every entry of
+A script looks up every entry of
 the bibliography online, through its DOI where it has one and through
 Crossref, DataCite, arXiv or the publisher's page otherwise, and compares
 title, year, volume and pages; its report is stored next to it.
 
-None of these checks touches the geometry the paper relies on, and none of
-them bears on \Cref{q:schoen}.
+Except for the certificate of \Cref{app:cert114}, none of these checks
+touches the geometry the paper relies on, and none of them bears on
+\Cref{q:schoen}.

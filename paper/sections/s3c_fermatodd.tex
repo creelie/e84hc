@@ -1,7 +1,7 @@
 \subsection{Fermat fourfolds of odd degree divisible by three}\label{ssec:fermatodd}
 
 In this subsection $m$ is odd and divisible by $3$, and we prove
-\Cref{thm:F} for such $m$. Here \Cref{thm:sextuples} fails: the set
+\Cref{thm:oddfour} for such $m$. Here \Cref{thm:sextuples} fails: the set
 $\{1,4,9,15,16,18\}$ of residues modulo $21$ is balanced, contains no pair
 and is not $5$-standard. So we replace the classification by an induction.
 A balanced sextuple either has a \emph{move}, which reduces it to a smaller
@@ -69,7 +69,7 @@ modulo $M$ with image $t'$ we have $\overline{tgy}=g\,\overline{t'y}$ for
 $y\in\ZZ/M'$, the bars denoting representatives modulo $M$ and $M'$; this
 gives the first assertion. Let $\pi\colon X^{n-2}_{M}\to X^{n-2}_{M'}$ be the
 morphism $[x_{i}]\mapsto[x_{i}^{g}]$ and $\alpha'$ an ordering of $A'$. In
-the proof of \Cref{thm:F} for $m$ prime to $6$ we saw that $\pi^{*}$ is
+the proof of \Cref{thm:oddfour} for $m$ prime to $6$ we saw that $\pi^{*}$ is
 injective and maps $V(\alpha')$ into $V(g\alpha')$; both are lines, so
 $\pi^{*}V(\alpha')=V(g\alpha')$. If $A'$ is algebraic, then so is $gA'$,
 because $\pi^{*}$ preserves algebraic classes. Conversely
@@ -86,7 +86,7 @@ $\overline{tx}=qM/\ell+r$ with $0\le r<M/\ell$,
 \]
 adding $\overline{-\ell tx}=M-\overline{\ell tx}$ gives $(\ell+1)M/2$. So
 $\sigma_{\ell,x}$ is balanced. For $\ell=3$ it is algebraic by (a). For
-$\ell\ge5$ the argument in the proof of \Cref{thm:F} for $m$ prime to $6$,
+$\ell\ge5$ the argument in the proof of \Cref{thm:oddfour} for $m$ prime to $6$,
 case $\alpha$ $5$-standard, applies with $5$ replaced by $\ell$: with
 $g=\gcd(\bar x,M/\ell)$ we have $\sigma_{\ell,x}=g\,\sigma_{\ell,x'}$, where
 $\sigma_{\ell,x'}$ lives at the odd level $M'=M/g$ and $\gcd(x',M'/\ell)=1$;
@@ -227,7 +227,7 @@ no pair and generates $\ZZ/m$. Then $A$ has a direct or a lowering move, or
 $m\in\{21,33,39\}$ and $tA=O_{m}$ for some $t\in(\ZZ/m)^{\times}$.
 \end{theorem}
 
-\begin{proof}[Proof of \Cref{thm:F} for odd $m$ divisible by $3$, given
+\begin{proof}[Proof of \Cref{thm:oddfour} for odd $m$ divisible by $3$, given
 \Cref{thm:moves}]
 As in the proof for $m$ prime to $6$, it suffices to show that every
 sextuple $A$ is algebraic. We argue by induction on $m$ and, for fixed $m$,
@@ -709,4 +709,4 @@ $(\ZZ/7)^{\times}$, $E=E(1)\lambda_{7}$ and $B=-E$: $W$ is the set of nonzero
 squares or of nonsquares, and $Z=-W$. A unit $t\equiv\sigma\pmod3$, $t\equiv\pm1\pmod7$, with $tW$ the set of
 squares, gives $tA=O_{21}$.
 
-This proves \Cref{thm:moves}, and with it \Cref{thm:F}. \qed
+This proves \Cref{thm:moves}, and with it \Cref{thm:oddfour}. \qed

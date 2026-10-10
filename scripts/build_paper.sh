@@ -12,7 +12,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 P="$ROOT/paper"
 DIST="$ROOT/dist"
-NAME="when-is-every-rational-hodge-class-algebraic"
+NAME="on-the-hodge-conjecture-for-fermat-varieties"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
@@ -61,7 +61,7 @@ cp sections/*.tex "$Z/sections/"
 cp figures/*.png "$Z/figures/"
 cp figures/src/*.tex "$Z/figures/src/"
 cat > "$Z/README.txt" <<'TXT'
-When is every rational Hodge class algebraic?  (Deep Bhattacharjee)
+On the Hodge conjecture for Fermat varieties  (Deep Bhattacharjee)
 
 Build:  pdflatex main && bibtex main && pdflatex main && pdflatex main
 The figures are PNG files in figures/.  Their TikZ sources are in

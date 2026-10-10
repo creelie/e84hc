@@ -12,20 +12,130 @@ Hodge class in $H^{2p}(X,\QQ)$ is algebraic.
 \end{conjecture}
 
 We write \HC{} for this statement. It holds for $p\le1$ and $p\ge\dim X-1$, so
-for every variety of dimension at most three, and it is open in general. The
-question in the title has a precise form: \emph{from which of the statements
-that the literature has isolated does \HC{} follow?} This paper answers that
-question, proves the conditional theorems that the answer allows, and stops
-at the first statement on each route that we cannot prove. We do not prove
-the Hodge conjecture, and no statement below should be read as a claim that
-it holds.\footnote{Here and below a statement is called \emph{proved} when
+for every variety of dimension at most three, and it is open in general. We
+do not prove it, and no statement below should be read as a claim that it
+holds.\footnote{Here and below a statement is called \emph{proved} when
 it is proved in this paper or in refereed work. Results that are available
 only as preprints are marked as such where they are used. The one preprint
 on which a theorem of this paper depends, \cite{OAI26}, enters only as an
 explicit hypothesis.}
 
-\subsection*{The statements}
-The following statements are made precise in \Cref{def:statements}.
+\subsection*{Fermat varieties}
+Let $X^{n}_{m}\subseteq\PP^{n+1}$ be the Fermat variety
+$x_{0}^{m}+\dots+x_{n+1}^{m}=0$. Fermat varieties are the varieties on which
+the conjecture has been tested most closely in every dimension
+\cite{Ran80,Shi79}. Their Hodge classes are explicit: the group
+$\mu_{m}^{n+2}$ acts on $X^{n}_{m}$, the primitive cohomology splits into
+lines indexed by characters of this group, and the Hodge classes are spanned
+by the lines whose characters satisfy a balancing condition
+(\Cref{prop:fermatchars}). The algebraic cycles that one can write down are
+fewer: linear subspaces, the cycles that the inductive structure of Shioda
+and Katsura \cite{SK79} builds from them, and the cycles of Aoki
+\cite{Aok87}. The conjecture for $X^{n}_{m}$ was proved by Ran and Shioda
+when $m$ is prime or $m=4$ \cite{Ran80,Shi79}, by Shioda when $m\le20$
+\cite{Shi79}, and by Aoki when $m$ is a power of a prime \cite{Aok87}. Aoki then reduced the conjecture for all Fermat varieties
+of a given degree $m$ to finitely many classes, one for each divisor of $m$
+that is a product of an even number of distinct elements of
+$\{4,3,5,7,11,\dots\}$, and showed that the classes he could reach suffice
+for the degrees $2^{a}3^{b}5^{c}7^{d}$ with $c=0$ or $d=0$ and for the degrees
+$p^{e}$ and $2p^{e}$, $p$ prime \cite{Aok83,Aok00}. Peterson has recently
+treated the divisor $35$ \cite{Pet26}. Our main theorem treats the divisor
+$57$.
+
+\begin{maintheorem}\label{thm:fermat114}
+Let $m=2^{a}3^{b}19^{c}$ with $a\in\{0,1\}$ and $b,c\ge0$. Then the Hodge
+conjecture holds for the Fermat variety $X^{n}_{m}$ of every dimension $n$,
+for every product of Fermat varieties of degree $m$, and for every abelian
+variety of Fermat type of degree $m$.
+\end{maintheorem}
+
+An abelian variety is of Fermat type of degree $m$ if it is isogenous to a
+product of Jacobians of curves dominated by the Fermat curve of degree $m$
+\cite{Aok00}. In particular the Hodge conjecture holds for the Fermat
+varieties of degree $114$ in every dimension. When $57\nmid m$,
+\Cref{thm:fermat114} is due to Aoki. For $m=57$ it is stated in the preprint
+\cite{MMRV26}, whose proof depends on a statement of Kang \cite{Kan16} with a
+gap in its proof (\Cref{rem:kang}); our proof does not use it. For the other
+degrees in the theorem that are divisible by $57$, the first of which are
+$114$, $171$, $342$ and $513$, the theorem is new, already for fourfolds. A
+computer census of the Fermat fourfolds of even degree at most $250$
+\cite{Jum26b}, combined with \cite{Pet26}, leaves the degrees $110$, $114$,
+$220$ and $228$; \Cref{thm:fermat114} settles $114$ and $228$
+(\Cref{rem:new114}).
+
+\subsection*{The idea of the proof}
+For $m=114$ Aoki's reduction leaves a single class, and it suffices to show
+that one balanced multiset $\beta$ of ten residues modulo $114$ is
+represented by an algebraic cycle on the Fermat eightfold
+(\Cref{cor:B114}). It is invisible to linear subspaces and to Aoki's cycles,
+which never produce an odd number of residues of order $19$, while $\beta$
+contains one (\Cref{lem:nu}). We write $\beta$ as the join of two characters
+$\alpha_{1},\alpha_{2}$ of the Fermat threefold $X^{3}_{114}$ whose rational
+Hodge structures $M_{\alpha_{1}},M_{\alpha_{2}}\subseteq H^{3}$ have level
+one and complementary types (\Cref{lem:twochars}). If each of them is
+carried, by an algebraic correspondence, by the first cohomology of a curve,
+then the Hodge classes in $M_{\alpha_{1}}\otimes M_{\alpha_{2}}$ come from a
+product of two curves, where they are algebraic by the Lefschetz theorem on
+$(1,1)$-classes, and the inductive structure takes them to the eightfold
+(\Cref{prop:join}).
+
+So the main step is a coniveau statement for two pieces of $H^{3}$ of a
+threefold. We prove it by deforming curves. A family of binary forms
+$u_{0},\dots,u_{4}$ with $\sum_{k}u_{k}=0$ and a suitable factorization
+gives, through $x_{k}^{m}=u_{k}$, a family of curves on $X^{3}_{m}$; the
+derivative of its Abel--Jacobi map, paired with the $(2,1)$-form of
+$\alpha$, is a sum of residues of an explicit rational $1$-form on
+$\PP^{1}$, and if it does not vanish, $M_{\alpha}$ is carried by curves.
+Peterson found this argument for one family on the Fermat threefold of
+degree $35$ \cite[\S3]{Pet26}. We set it up for every family of this shape,
+which we call block families (\Cref{def:blockfamily}, \Cref{prop:residuegen} and \Cref{thm:coniveau}),
+and write down two of them in degree $114$. For $13\alpha_{2}$ there is a
+family of cubics whose residue is a rational function of the parameter,
+computed by hand (\Cref{prop:family1}). For $\alpha_{1}$ the smallest family
+we know consists of curves of degree $24$, and the nonvanishing of its
+residue at one point is proved by a certified computation in interval
+arithmetic (\Cref{prop:family2}, \Cref{app:cert114}). This is the only step
+of the paper that uses a computer.
+
+\subsection*{Fermat fourfolds of odd degree}
+The second unconditional result concerns fourfolds.
+
+\begin{maintheorem}\label{thm:oddfour}
+Let $m$ be odd. Then the Hodge conjecture holds for the Fermat fourfold
+$X^{4}_{m}$.
+\end{maintheorem}
+
+By \Cref{prop:fermatchars} the Hodge classes of $X^{4}_{m}$ are spanned by
+lines indexed by sextuples of nonzero residues modulo $m$. When $m$ is prime
+to $3$, we show that each such sextuple contains two entries $a$ and $-a$,
+or is, up to order, $(x,x+m/5,x+2m/5,x+3m/5,x+4m/5,-5x)$
+(\Cref{thm:sextuples}). The classes of
+the first kind are algebraic by the inductive structure of Shioda and Ran,
+and those of the second kind by the cycles of Aoki \cite{Aok87}, pulled back
+along a covering of Fermat fourfolds. The proof of the classification uses
+the Dirichlet characters modulo the largest order of an entry, and its only
+analytic input is the classical fact that $B_{1,\chi}\ne0$ for odd primitive
+$\chi$. When $3\mid m$ the classification fails, and we argue by induction
+instead (\Cref{ssec:fermatodd}): a sextuple without such a pair either has a
+\emph{move}, which trades it, by means of one cycle of Aoki, for a quadruple
+or for a sextuple of smaller orders, or it lies in one of three explicit
+orbits, in degrees $21$, $33$ and $39$, whose classes we obtain on the
+Fermat fourfolds of degrees $21$, $66$ and $78$. When $m$ is prime to $15$,
+\Cref{thm:oddfour} follows from Aoki's theorem that every Hodge character then
+splits into pairs \cite{Aok83}; it is also known when $m$ is a power of a
+prime \cite{Aok87} and when $m=3^{a}5^{b}7^{c}$ \cite{Aok00,Pet26}. In the
+remaining degrees it is new for $m>199$, apart from the statement of Kang
+mentioned above; smaller degrees were covered by computer searches
+(\Cref{rem:fermatknown}). The classification for $m$ prime to $6$, together
+with the fact that $B_{1,\chi}\ne0$, has been checked in Lean~4 with Mathlib
+(\Cref{app:checks}).
+
+\subsection*{The routes to the conjecture}
+The rest of the paper asks a different question: \emph{from which of the
+statements that the literature has isolated does \HC{} follow?} We answer
+it, prove the conditional theorems that the answer allows, and stop at the
+first statement on each route that we cannot prove. The statements are the
+following; they are made precise in \Cref{def:statements}.
 \begin{itemize}[leftmargin=2.6em]
 \item[\st{F2}] The Hodge conjecture for abelian varieties.
 \item[\st{F3$'$}] The Hodge conjecture modulo abelian varieties: every Hodge
@@ -47,7 +157,7 @@ The statement \st{CM} is the main theorem claimed in the preprint
 \cite{OAI26}, which has not been refereed. We have not verified its proof,
 and \Cref{ssec:cmclaim} says which parts of it we have checked.
 
-\begin{maintheorem}\label{thm:A}
+\begin{maintheorem}\label{thm:equiv}
 The following are equivalent:
 \begin{enumerate}[label=\textup{(\roman*)}]
 \item \HC;
@@ -63,13 +173,13 @@ The implications from (ii)--(vi) to (i) combine known theorems of Andr\'e,
 Deligne, Abdulali and Milne with two observations of this paper:
 \st{F3$'$} implies \st{M} (\Cref{prop:f3m}), and \st{CM} together with
 \st{IP} implies \st{F2} (\Cref{prop:cmip}). The theorem is proved in
-\Cref{ssec:proofA}. The next theorem says that these are all the ways in
+\Cref{ssec:proofequiv}. The next theorem says that these are all the ways in
 which the conjecture follows from the statements above, together with the
 other statements the paper meets: the semiregularity of Schoen's subvariety
 (\Cref{q:schoen}), and the Hodge conjecture for Fermat varieties and for the
 Weil classes of the split Weil families over $\QQ(\sqrt{-3})$.
 
-\begin{maintheorem}[The routes]\label{thm:B}
+\begin{maintheorem}[The routes]\label{thm:routes}
 Let $S$ be a set of the statements of \Cref{tab:rules} that does not contain
 \HC, and suppose that \HC{} follows from $S$ by the implications of
 \Cref{tab:rules}. Then
@@ -85,7 +195,7 @@ subvariety.
 
 So there are two ways in. One passes through abelian varieties and needs
 \st{F3$'$} together with a statement that implies \st{F2}; the other avoids
-abelian varieties and assumes \st{L} and \st{M}, which by \Cref{thm:A} is the
+abelian varieties and assumes \st{L} and \st{M}, which by \Cref{thm:equiv} is the
 Hodge conjecture in another form. In particular \st{F2} and \st{F3$'$} can be
 avoided as hypotheses, but never as consequences, and Schoen's subvariety
 lies on no route at all (\Cref{cor:bypass}). The routes are drawn in
@@ -94,7 +204,7 @@ lies on no route at all (\Cref{cor:bypass}). The routes are drawn in
 \begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/fig_routes}
-\caption{The routes of \Cref{thm:B}. Hypotheses lie on the bottom layer,
+\caption{The routes of \Cref{thm:routes}. Hypotheses lie on the bottom layer,
 the two halves \st{F2} and \st{F3$'$} in the middle, and \HC{} on top.
 Arrows are implications of \Cref{tab:rules}. At each dot two lines combine
 into a conjunction: $\st{CM}\wedge\st{IP}\Rightarrow\st{F2}$,
@@ -105,11 +215,10 @@ not drawn. The dashed arrows on the right lead to the special cases
 \label{fig:routes}
 \end{figure}
 
-The remaining results are conditional on one statement, or prove one case.
-Let $X^{n}_{m}\subseteq\PP^{n+1}$ be the Fermat variety
-$x_{0}^{m}+\dots+x_{n+1}^{m}=0$.
+The remaining results are conditional on one statement, or concern one
+family. The first returns to Fermat varieties.
 
-\begin{maintheorem}\label{thm:C}
+\begin{maintheorem}\label{thm:fermatcm}
 Assume \st{CM}. Then the Hodge conjecture holds for every Fermat variety
 $X^{n}_{m}$, for every product of Fermat varieties of any degrees and
 dimensions, and for every smooth projective variety onto which such a
@@ -117,11 +226,9 @@ product maps surjectively. Without any hypothesis, \st{F3$'$} holds for all
 of these varieties.
 \end{maintheorem}
 
-Fermat varieties are the first varieties on which the conjecture was
-studied in every dimension \cite{Ran80,Shi79}, and unconditional proofs are
-known only for special degrees (\Cref{rem:fermatknown}); \Cref{thm:F} below
-adds the fourfolds of odd degree. The proof of
-\Cref{thm:C} uses the inductive structure of Shioda and Katsura \cite{SK79}
+Unconditional proofs are known only for special degrees
+(\Cref{rem:fermatknown}), among them those of
+\Cref{thm:fermat114,thm:oddfour}. The proof of \Cref{thm:fermatcm} uses the inductive structure of Shioda and Katsura \cite{SK79}
 to dominate every Fermat variety by a product of Fermat curves, blown up
 along smooth centres, and the fact that Fermat curves have Jacobians of CM
 type.
@@ -133,7 +240,7 @@ on which the Weil classes are algebraic, and $\Sigma_{d}\subseteq\Sigma$ for
 the set where they have algebraic representatives of degree at most $d$
 (\Cref{def:sigmad}).
 
-\begin{maintheorem}\label{thm:D}
+\begin{maintheorem}\label{thm:weilloci}
 Each $\Sigma_{d}$ is Zariski closed in $S$, and $\Sigma=\bigcup_{d}\Sigma_{d}$.
 The following are equivalent:
 \begin{enumerate}[label=\textup{(\roman*)}]
@@ -159,7 +266,7 @@ the \'etale cyclic triple cover given by a line bundle of order three, and
 let $B$ be its Prym variety, an abelian variety of dimension $2n$ of Weil
 type for $\QQ(\sqrt{-3})$ with polarization class $\eta$.
 
-\begin{maintheorem}\label{thm:E}
+\begin{maintheorem}\label{thm:schoenY}
 There is an irreducible subvariety $Y\subseteq B$ of dimension $n$, built
 from one of the three components into which Schoen's cover splits over the
 canonical system of $X$, whose class pairs nontrivially with the Weil
@@ -175,7 +282,7 @@ every member of the split Weil family of $\QQ(\sqrt{-3})$ in dimension $2n$.
 For $n\le3$ this family is already covered by Schoen's work \cite{Sch88,Sch98}.
 For $n\ge4$ it is not: the Prym locus has
 dimension $3n$ and the family has dimension $n^{2}$, so $Y$ would have to
-deform in $n^{2}-3n$ further directions. The proof of the pairing in \Cref{thm:E} is a short computation with
+deform in $n^{2}-3n$ further directions. The proof of the pairing in \Cref{thm:schoenY} is a short computation with
 twisted coefficients on the symmetric product of $X$, and it also gives a
 proof of Schoen's theorem that $B$ carries algebraic Weil classes
 (\Cref{cor:schoen}). We give the evidence on both sides of \Cref{q:schoen}
@@ -186,38 +293,6 @@ general point, whose analogue for double covers is Mumford's Prym theta
 divisor, and a question of Markman about a weak form of the semiregularity
 theorem.
 
-The last result is unconditional.
-
-\begin{maintheorem}\label{thm:F}
-Let $m$ be odd. Then the Hodge conjecture holds for the Fermat fourfold
-$X^{4}_{m}$.
-\end{maintheorem}
-
-By \Cref{prop:fermatchars} the Hodge classes of $X^{4}_{m}$ are spanned by
-lines indexed by sextuples of nonzero residues modulo $m$. When $m$ is prime
-to $3$, we show that each such sextuple contains two entries $a$ and $-a$,
-or is, up to order, $(x,x+m/5,x+2m/5,x+3m/5,x+4m/5,-5x)$
-(\Cref{thm:sextuples}). The classes of
-the first kind are algebraic by the inductive structure of Shioda and Ran,
-and those of the second kind by the cycles of Aoki \cite{Aok87}, pulled back
-along a covering of Fermat fourfolds. The proof of the classification uses
-the Dirichlet characters modulo the largest order of an entry, and its only
-analytic input is the classical fact that $B_{1,\chi}\ne0$ for odd primitive
-$\chi$. When $3\mid m$ the classification fails, and we argue by induction
-instead (\Cref{ssec:fermatodd}): a sextuple without such a pair either has a
-\emph{move}, which trades it, by means of one cycle of Aoki, for a quadruple
-or for a sextuple of smaller orders, or it lies in one of three explicit
-orbits, in degrees $21$, $33$ and $39$, whose classes we obtain on the
-Fermat fourfolds of degrees $21$, $66$ and $78$. When $m$ is prime to $15$,
-\Cref{thm:F} follows from Aoki's theorem that every Hodge character then
-splits into pairs \cite{Aok83}; it is also known when $m$ is a power of a
-prime \cite{Aok87} and when $m=3^{a}5^{b}7^{c}$ \cite{Aok00,Pet26}. In the
-remaining degrees it is new for $m>199$, apart from a statement of Kang whose
-proof has a gap (\Cref{rem:kang}); smaller degrees were covered by computer
-searches (\Cref{rem:fermatknown}). The classification for $m$ prime to $6$,
-together with the fact that $B_{1,\chi}\ne0$, has been checked in Lean~4
-with Mathlib (\Cref{app:checks}).
-
 \subsection*{What is not proved}
 None of the statements \st{F2}, \st{F3$'$}, \st{L}, \st{M}, \st{V},
 \st{IP} is proved here, and \st{CM} is used only as a hypothesis. The
@@ -227,21 +302,31 @@ statements from which it follows also implies \st{F2} and \st{F3$'$}.
 open cases: for \st{F2}, the Weil classes of nonsplit abelian sixfolds and
 of abelian eightfolds, and the exceptional classes on the square of a
 Mumford fourfold; for \st{F3$'$}, the square of a K3 surface with real
-multiplication. \Cref{thm:F} does not reach Fermat fourfolds of even
-degree: there the method breaks down, because $m/2$ is its own negative and
-the subgroups $K_{2}$ of \Cref{ssec:fermatfour} are too small, and Hodge
-characters of further kinds occur \cite{Aok83}.
+multiplication.
+
+For Fermat varieties, the method of \Cref{thm:oddfour} does not reach
+fourfolds of even degree: $m/2$ is its own negative, the subgroups $K_{2}$
+of \Cref{ssec:fermatfour} are too small, and Hodge characters of further
+kinds occur \cite{Aok83}. \Cref{thm:fermat114} reaches the even degrees
+$2\cdot3^{b}19^{c}$, but not, for instance, the fourfolds of degree $110$,
+where the class that remains belongs to the divisor $55$ of Aoki's
+reduction and we have found no family of curves of the kind used here
+(\Cref{rem:new114}). For degrees divisible by $4$ further divisors occur,
+such as $4\cdot19$, for which we have no cycles.
 
 \subsection*{Organization}
 \Cref{sec:reductions} proves the reductions that hold for every variety and
-defines the statements. \Cref{sec:fermat} proves \Cref{thm:C} and
-\Cref{thm:F}.
-\Cref{sec:abelian} treats \st{CM} and \st{IP}, proves \Cref{thm:A}, and
-proves \Cref{thm:D}. \Cref{sec:weil} proves \Cref{thm:E} and the transfer
-theorem for Weil classes. \Cref{sec:routes} proves \Cref{thm:B}.
-\Cref{sec:end} collects what is proved and what is not, and
-\Cref{app:checks} describes the machine checks of the finite steps. No proof
-in this paper depends on a computer.
+defines the statements. \Cref{sec:fermat} describes the Hodge classes of
+Fermat varieties and proves \Cref{thm:oddfour} and \Cref{thm:fermatcm}, and
+\Cref{sec:fermat114} proves \Cref{thm:fermat114}.
+\Cref{sec:abelian} treats \st{CM} and \st{IP}, proves \Cref{thm:equiv}, and
+proves \Cref{thm:weilloci}. \Cref{sec:weil} proves \Cref{thm:schoenY} and the transfer
+theorem for Weil classes. \Cref{sec:routes} proves \Cref{thm:routes}.
+\Cref{sec:end} collects what is proved and what is not.
+\Cref{app:checks} describes the machine checks of the finite steps, and
+\Cref{app:cert114} gives the certified computation behind
+\Cref{prop:family2}. Apart from that proposition, no proof in this paper
+depends on a computer.
 
 \subsection*{Conventions}
 Varieties are complex, smooth, projective and, unless said otherwise,
