@@ -6,7 +6,7 @@
 Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India
 d.bhattacharjee@erl-forschung.de · itsdeep@live.com · ORCID [0000-0003-0466-750X](https://orcid.org/0000-0003-0466-750X)
 
-This repository holds a 49-page paper in `amsart`, its LaTeX source with the figures as PNG, and the code that re-checks its finite steps in Python, Julia, C, Lean 4 (with and without Mathlib) and Macaulay2.
+This repository holds a 51-page paper in `amsart`, its LaTeX source with the figures as PNG, and the code that re-checks its finite steps in Python, Julia, C, Lean 4 (with and without Mathlib) and Macaulay2.
 
 ## The question
 
@@ -32,6 +32,7 @@ A rational Hodge class on a smooth complex projective variety is *algebraic* if 
 - *Theorem F.* The Hodge conjecture holds for the Fermat fourfold of every odd degree m. For m prime to 6 the proof classifies the Hodge characters: each one contains two entries a and −a, or is (x, x+m/5, x+2m/5, x+3m/5, x+4m/5, −5x) up to order (Theorem 3.9). Classes of the first kind come from linear subspaces through the inductive structure of Shioda and Ran, and those of the second kind from Aoki's cycles, pulled back along a covering of Fermat fourfolds. The only analytic input is B₁,χ ≠ 0 for odd primitive characters χ. A published statement of Kang covering all Fermat fourfolds rests on a step that fails (Remark 3.21). The classification is proved in Lean 4 with Mathlib, including B₁,χ ≠ 0, which the Lean proof derives from Mathlib's L(1, χ) ≠ 0; only the geometric inputs remain hypotheses there. For odd m divisible by 3, Section 3.7 proves by hand that every Hodge character that generates Z/m and contains no pair a, −a can be traded, through Aoki's cycles, for algebraic classes and a character of smaller order profile, unless it is one of three exceptional characters, in degrees 21, 33 and 39 (Theorem 3.27). Identities at levels 21, 66 and 78 close those three (Lemma 3.26). After the earlier results of Aoki, Peterson and Jumagulov (Remark 3.7), the theorem is new for the odd m > 199 that are divisible by 3 or 5 and have a prime factor above 7 (first cases 201, 205, 207, 213, 215); smaller odd degrees were settled by computer searches. The induction for 3 | m is checked by exhaustive search up to degree 105 and the three identities in Lean, but the induction itself is not formalized.
 - *Proposition 5.15.* Prym varieties of cyclic triple covers, étale or branched, form families of dimension at most 3n. For n ≥ 4 they therefore miss the very general member of the split Weil family, which has dimension n².
 - *Proposition 5.16.* The Abel–Prym curve of an étale cyclic triple cover deforms with its Prym variety B only along the Prym locus, although its class stays algebraic on the whole split Weil family. When the curve is embedded and B has maximal Hodge group, it is therefore not semiregular for n ≥ 4.
+- *Proposition 5.17.* Up to an étale map, Schoen's subvariety Y is a component of the Prym–Brill–Noether locus: the line bundles M on the triple cover C with Nm M ≅ K_X and a nonzero section. It is smooth of dimension n at its general point, and its tangent space there is the annihilator of π\*H⁰(K_X) + s·H⁰(K_C − E). For étale double covers the same locus gives Mumford's Prym theta divisor, which deforms with every principally polarized abelian variety. So the analogues of Question 5.14 point both ways.
 
 **Proved under a stated hypothesis**
 
@@ -56,7 +57,7 @@ For the split Weil eightfolds over Q(√−3), three constructions were tested:
 
 - *Prym varieties.* Proposition 5.15 shows they reach a family of dimension 12 inside one of dimension 16.
 - *Products of Weil fourfolds.* Spreading them with Theorem D needs a uniform degree bound, and the natural cycles have unbounded degree (H8, Section 16, in `sources/H8`).
-- *Schoen's subvariety Y.* It would have to deform in 4 directions beyond the Prym locus, which is Question 5.14. Proposition 5.16 tests this on the Abel–Prym curve, which is built from the same map as Y: the curve does not deform in those directions. That does not decide the question for Y, since the theta divisor of a Jacobian, built from the same Abel–Jacobi map as the rigid Abel–Jacobi curve, deforms with every principally polarized abelian variety.
+- *Schoen's subvariety Y.* It would have to deform in 4 directions beyond the Prym locus, which is Question 5.14. Proposition 5.17 identifies Y with a Prym–Brill–Noether locus, smooth at its general point; deciding the question needs its normal sheaf everywhere, including where h⁰ ≥ 2. Proposition 5.16 tests this on the Abel–Prym curve, which is built from the same map as Y: the curve does not deform in those directions. That does not decide the question for Y, since the theta divisor of a Jacobian, built from the same Abel–Jacobi map as the rigid Abel–Jacobi curve, deforms with every principally polarized abelian variety.
 
 Closing any of these cases needs new algebraic cycles, and Section 7 of the paper says exactly what each would have to do.
 

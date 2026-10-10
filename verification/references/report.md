@@ -45,6 +45,7 @@ Run on 2026-10-10 by `verification/references/check_references.py`.
 | Mar25b | verified | arXiv 2509.23403: "Secant sheaves and Weil classes on abelian varieties" by Eyal Markman; title match 1.00 |
 | Mat59 | verified | Crossref: "On a characterization of a Jacobian variety" (1959, vol. 32); title match 1.00 |
 | Mil20 | verified | arXiv 2010.08857: "Hodge classes on abelian varieties" by James S. Milne; title match 1.00 |
+| Mum74 | verified | Crossref: "Prym Varieties I" (1974, p. 325-350); title match 1.00 |
 | Mum69 | verified | Crossref: "A note of Shimura's paper ?discontinuous groups and abelian varieties?" (1969, vol. 181, p. 345-351); title match 1.00 |
 | OAI26 | verified | listed in CONTENTS.md of github.com/openai/math as preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/paper.pdf (record online: HTTP 200) |
 | PST21 | verified | arXiv 2109.08788: "Canonical Heights on Shimura Varieties and the André-Oort Conjecture" by Jonathan Pila, Ananth N. Shankar, Jacob Tsimerman, Hélène Esnault, Michael Groechenig; title match 0.99 |
@@ -82,4 +83,4 @@ Run on 2026-10-10 by `verification/references/check_references.py`.
 | Bus19 | verified | Crossref: "Every rational Hodge isometry between two K⁢3K3 surfaces is algebraic" (2019, vol. 755, p. 127-150); title match 0.98 |
 | Huy19 | verified | Crossref: "Motives of isogenous K3 surfaces" (2019, vol. 94, p. 445-458); title match 1.00 |
 
-77 entries, 0 need attention.
+78 entries, 0 need attention.
