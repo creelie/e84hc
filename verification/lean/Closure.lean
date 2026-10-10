@@ -10,6 +10,10 @@
   Part 3. The dimension counts for Weil families and Prym loci (Section 5).
   Part 4. Picard numbers of the Fermat quartic, quintic and sextic surfaces
           from the character formula (Section 3).
+  Part 5. The three exceptional orbits of Fermat fourfolds of odd degree
+          divisible by 3 (Section 3.7): they are balanced, contain no pair,
+          generate, and have no direct or lowering move; and the identities
+          that make them algebraic hold, with every part balanced.
 -/
 
 namespace Closure
@@ -329,6 +333,94 @@ theorem picard_quartic : picard 4 = 20 := by decide
 theorem picard_quintic : picard 5 = 37 := by decide
 theorem picard_sextic : picard 6 = 86 := by decide
 
+/-! ## Part 5: the exceptional orbits for odd degrees divisible by 3
+
+A multiset of residues mod m is a list of numbers in [0, m).  It is balanced
+when its sum is divisible by m and the residues of t*a add up to (length)*m/2
+for every unit t.  A move (l, x) for a sextuple a, with l an odd prime
+dividing m and l*x nonzero, replaces the elements of the fiber
+{x + j m/l} that lie in a by the negatives of the other elements of the
+fiber, together with l*x; it is direct if at most four elements remain, and
+lowering if six remain and the orders, sorted downwards, decrease
+lexicographically. -/
+
+def sumL (a : List Nat) : Nat := a.foldl (· + ·) 0
+
+def balancedB (m : Nat) (a : List Nat) : Bool :=
+  sumL a % m == 0 &&
+  (List.range m).all fun t =>
+    Nat.gcd t m != 1 || 2 * sumL (a.map (resid m t)) == a.length * m
+
+def hasPairB (m : Nat) : List Nat → Bool
+  | [] => false
+  | x :: xs => xs.any (fun y => (x + y) % m == 0) || hasPairB m xs
+
+def generatesB (m : Nat) (a : List Nat) : Bool := a.foldl Nat.gcd m == 1
+
+def insertDesc (x : Nat) : List Nat → List Nat
+  | [] => [x]
+  | y :: ys => if y ≤ x then x :: y :: ys else y :: insertDesc x ys
+
+def sortDesc : List Nat → List Nat
+  | [] => []
+  | x :: xs => insertDesc x (sortDesc xs)
+
+def lexLt : List Nat → List Nat → Bool
+  | x :: xs, y :: ys => x < y || (x == y && lexLt xs ys)
+  | _, _ => false
+
+def profileL (m : Nat) (a : List Nat) : List Nat := sortDesc (a.map fun x => m / Nat.gcd x m)
+
+def isPrimeB (p : Nat) : Bool := 2 ≤ p && (List.range p).all fun q => q < 2 || p % q != 0
+
+/-- Does the sextuple `a` have a lowering move (`low = true`) or a direct move? -/
+def moveB (m : Nat) (a : List Nat) (low : Bool) : Bool :=
+  (List.range (m + 1)).any fun l =>
+    l % 2 == 1 && 3 ≤ l && m % l == 0 && isPrimeB l &&
+    (List.range (m / l)).any fun x =>
+      let fib := (List.range l).map fun j => (x + j * (m / l)) % m
+      let s := fib.filter fun y => a.contains y
+      let rest := fib.filter fun y => !a.contains y
+      let b := s.foldl (fun b y => b.erase y) a ++ rest.map (fun y => (m - y) % m) ++ [l * x % m]
+      l * x % m != 0 &&
+      (if low then 7 + l - 2 * s.length == 6 && lexLt (profileL m b) (profileL m a)
+       else 7 + l - 2 * s.length ≤ 4)
+
+def O21 : List Nat := [1, 4, 9, 15, 16, 18]
+def O33 : List Nat := [1, 4, 16, 22, 25, 31]
+def O39 : List Nat := [1, 7, 16, 22, 34, 37]
+
+def exceptionalOK (m : Nat) (o : List Nat) : Bool :=
+  balancedB m o && !hasPairB m o && generatesB m o && !moveB m o false && !moveB m o true
+
+theorem o21_exceptional : exceptionalOK 21 O21 = true := by decide
+theorem o33_exceptional : exceptionalOK 33 O33 = true := by decide
+theorem o39_exceptional : exceptionalOK 39 O39 = true := by decide
+
+/-- Aoki's 2-standard quadruple at the even level M = 2m'. -/
+def T2 (M x : Nat) : List Nat := [x, (x + M / 2) % M, (M - 2 * x % M) % M, M / 2]
+
+def sameMultiset (a b : List Nat) : Bool := sortDesc a == sortDesc b
+
+/-- O21 + {2, 19} = sigma(3,2) + Q at level 21, with sigma(3,2) and Q balanced. -/
+theorem o21_identity :
+    (sameMultiset (O21 ++ [2, 19]) ([2, 9, 16, 15] ++ [1, 4, 18, 19]) &&
+      balancedB 21 [2, 9, 16, 15] && balancedB 21 [1, 4, 18, 19]) = true := by decide
+
+/-- 2 O33 + {1,65} + {25,41} + {33,33} = Q + T(32) + T(8) at level 66, all parts balanced. -/
+theorem o33_identity :
+    (sameMultiset (O33.map (2 * ·) ++ [1, 65, 25, 41, 33, 33])
+        ([1, 25, 44, 62] ++ T2 66 32 ++ T2 66 8) &&
+      balancedB 66 (O33.map (2 * ·)) && balancedB 66 [1, 25, 44, 62] &&
+      balancedB 66 (T2 66 32) && balancedB 66 (T2 66 8)) = true := by decide
+
+/-- 2 O39 + {5,73} + {7,71} + {39,39} = Q + T(32) + T(5) at level 78, all parts balanced. -/
+theorem o39_identity :
+    (sameMultiset (O39.map (2 * ·) ++ [5, 73, 7, 71, 39, 39])
+        ([2, 7, 73, 74] ++ T2 78 32 ++ T2 78 5) &&
+      balancedB 78 (O39.map (2 * ·)) && balancedB 78 [2, 7, 73, 74] &&
+      balancedB 78 (T2 78 32) && balancedB 78 (T2 78 5)) = true := by decide
+
 #print axioms routes
 #print axioms bypass
 #print axioms countermodel
@@ -343,5 +435,11 @@ theorem picard_sextic : picard 6 = 86 := by decide
 #print axioms abelprym_pairs
 #print axioms abelprym_dims
 #print axioms picard_sextic
+#print axioms o21_exceptional
+#print axioms o33_exceptional
+#print axioms o39_exceptional
+#print axioms o21_identity
+#print axioms o33_identity
+#print axioms o39_identity
 
 end Closure

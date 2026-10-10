@@ -1,9 +1,10 @@
 """Check every entry of paper/references.bib against an online record.
 
-For an entry with a DOI the record is Crossref (or DataCite for Zenodo); for
-an arXiv eprint it is the arXiv API; for a numdam or GitHub URL it is the
-page itself; for an older book or proceedings volume without a DOI it is a
-Crossref bibliographic search or the Open Library catalogue.  The script
+For an entry with a DOI the record is Crossref (DataCite for Zenodo, the Japan
+Link Center for Japanese repositories); for an arXiv eprint it is the arXiv
+API; for a numdam or GitHub URL it is the page itself; for an older book or
+proceedings volume without a DOI it is a Crossref bibliographic search or the
+Open Library catalogue.  The script
 compares titles (after normalising accents, case and punctuation), years,
 volumes and first pages, and writes verification/references/report.md.
 
@@ -79,12 +80,23 @@ def check_doi(doi, f):
     if st != 200:
         st, body = get("https://api.datacite.org/dois/" + urllib.parse.quote(doi))
         src = "DataCite"
-        if st != 200:
-            return False, f"DOI {doi} not found in Crossref or DataCite"
-        a = json.loads(body)["data"]["attributes"]
-        title = a["titles"][0]["title"]
-        year = str(a.get("publicationYear", ""))
-        vol = page = ""
+        if st == 200:
+            a = json.loads(body)["data"]["attributes"]
+            title = a["titles"][0]["title"]
+            year = str(a.get("publicationYear", ""))
+            vol = page = ""
+        else:
+            # Japan Link Center, for DOIs of Japanese repositories; the API
+            # expects the slash encoded twice
+            st, body = get("https://api.japanlinkcenter.org/dois/" +
+                           urllib.parse.quote(urllib.parse.quote(doi, safe=""), safe=""))
+            src = "JaLC"
+            if st != 200:
+                return False, f"DOI {doi} not found in Crossref, DataCite or JaLC"
+            a = json.loads(body)["data"]
+            title = a["title_list"][0]["title"]
+            year = str(a.get("publication_date", {}).get("publication_year", ""))
+            vol, page = a.get("volume", ""), a.get("first_page", "")
     else:
         m = json.loads(body)["message"]
         title = (m.get("title") or [""])[0]

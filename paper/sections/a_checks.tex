@@ -61,10 +61,13 @@ the five minimal sets. It also proves, for all sizes at once, the counting
 identity behind the switch lemma, the equivalence $3n<n^{2}\iff n\ge4$,
 the inequality of \Cref{rem:count} for every $m\ge4$ and $k\ge0$, and the
 count of \Cref{prop:branched} for all $n$, $q$ and $r$, and the eigenspace
-bookkeeping of \Cref{prop:abelprym}; and it
+bookkeeping of \Cref{prop:abelprym}. By evaluation in the kernel, it
 computes the Picard numbers $20$, $37$ and $86$ of the Fermat quartic,
-quintic and sextic surfaces from the characters, by evaluation in the
-kernel.
+quintic and sextic surfaces from the characters, and it checks that the sets
+$O_{21}$, $O_{33}$ and $O_{39}$ of \Cref{ssec:fermatodd} are balanced,
+contain no pair, generate, and have no direct or lowering move, and that the
+three identities in the proof of \Cref{lem:exceptional} hold with every part
+balanced.
 
 \subsection*{Lean with Mathlib}
 The directory \texttt{lean-mathlib} holds a formalization of
@@ -79,7 +82,8 @@ and \Cref{lem:grid,lem:oddbig,lem:twoD}, \Cref{prop:core},
 \texttt{hodge\_fermat\_fourfold} derives the conclusion of \Cref{thm:F} for
 an abstract predicate ``the line $V(\alpha)$ is algebraic'' from the two
 geometric inputs, algebraicity for characters that contain a pair and for
-$5$-standard characters.
+$5$-standard characters. \Cref{thm:moves}, for $m$ divisible by $3$, is not
+formalized there; it is checked by the searches below for $m\le105$.
 
 The nonvanishing of $B_{1,\chi}$ for odd primitive $\chi$ is proved there as
 well, from the nonvanishing of $L(1,\bar\chi)$ in Mathlib, along the classical
@@ -109,8 +113,19 @@ quadruple contains a pair, and every sextuple without a pair is $5$-standard.
 The three versions print the same lines for $m\le55$, and the C version is run
 up to $m=125$ and compared with a stored copy of its output; for $m=125$, for
 instance, it finds $41688$ balanced sextuples, of which $24$ contain no pair,
-all of them $5$-standard. These searches check the theorem only for the
-degrees listed; the proof covers every $m$.
+all of them $5$-standard.
+
+The program \texttt{fermat\_odd}, also in Python, Julia and C, treats the odd
+$m$ divisible by $3$. It lists the balanced sextuples, and for each one that
+contains no pair and generates $\ZZ/m$ it finds a direct or a lowering move
+(\Cref{def:move}), or checks that $tA$ is one of $O_{21}$, $O_{33}$, $O_{39}$
+for a unit $t$, as \Cref{thm:moves} asserts. It also checks the identities of
+\Cref{lem:exceptional} and that the three exceptional sets have no move. The
+three versions print the same lines for $m\le63$, and the C version is run up
+to $m=105$ and compared with a stored copy of its output; for $m=105$ it
+finds $27690$ balanced sextuples, of which $78$ contain no pair and $54$ of
+these generate $\ZZ/105$, each with a direct move. These searches check the
+theorems only for the degrees listed; the proofs cover every $m$.
 
 \subsection*{Macaulay2}
 Two scripts use Macaulay2. The first computes the primitive Hodge numbers of
