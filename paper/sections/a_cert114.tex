@@ -1,10 +1,12 @@
-\section{The certificate for the second family}\label{app:cert114}
+\section{The certificates}\label{app:cert114}
 
-This appendix proves \Cref{prop:family2}. The proof is a finite
-computation in interval arithmetic: every number below is an exact rational
-ball, and every operation returns a ball that contains the exact result. We
-used Arb \cite{Joh17} at a working precision of $1000$ bits. The program and
-the data are archived with the repository of this paper.
+This appendix proves \Cref{prop:family2,prop:family44}. Each proof is a
+finite computation in interval arithmetic: every number below is an exact
+rational ball, and every operation returns a ball that contains the exact
+result. We used Arb \cite{Joh17} at a working precision of $1000$ bits. The
+programs and the data are archived with the repository of this paper. We
+describe the computation for \Cref{prop:family2} in detail; the one for
+\Cref{prop:family44} has the same structure and is summarized at the end.
 
 \subsection*{The Krawczyk test}
 Write $x\in\CC^{24}$ for the coordinates $(f,h,g,a,b,c)$ of
@@ -71,3 +73,36 @@ $\sum_{y}c_{y}\overline{ty}=57\sum_{y}c_{y}$ for every unit $t$ has rank
 $114-1-18=95$; since $(57)$ has odd length and $2\,(57)$ lies in $D_{114}$,
 this gives $B_{114}=S_{114}+\ZZ[\beta]$. The same computation at level $57$
 gives $[B_{57}:S_{57}]=2$.
+
+\subsection*{The family of degree \texorpdfstring{$44$}{44}}
+For \Cref{prop:family44} the unknowns are $x=(p,q,r_{1},c_{0},c_{1},c_{3})\in
+\CC^{12}$ and the equations are $E_{0},\dots,E_{11}$ of
+\Cref{ssec:degree44}. We fix $\kappa_{0}=(4-3i)/10$, a point $\tilde x$ with
+$120$ significant digits, and the box $X$ of radius $10^{-95}$ around it.
+The Krawczyk image $K(X)$ lies in the interior of $X$, with coordinates of
+radius below $10^{-185}$; this gives the zero $x^{*}$, the point
+$p^{\dagger}=(x^{*},\kappa_{0})$ and part (i). On $X$ the balls enclosing
+$c_{0}$, $c_{1}$, $c_{3}$, $p_{0}$, $q_{0}$ and the resultants of $(P,Q)$,
+$(P,S)$ and $(Q,S)$ do not contain $0$; their absolute values exceed
+$0.52$, $0.80$, $0.30$, $1.57$, $0.89$, $1.05$, $4.42$ and $2.66$, and
+$|\kappa_{0}|=1/2$. This is part (ii).
+
+For part (iii) we enclose $\dot x=-J'^{-1}\partial E/\partial\kappa$ on $X$,
+form the polynomial $\mathcal N_{v^{\dagger}}$ of \Cref{ssec:degree44} and
+the denominator $c_{0}c_{1}c_{3}s^{3}P^{2}Q^{3}S$, and expand their quotient
+at $s=\infty$ by division of power series in $s^{-1}$, whose leading
+coefficient $c_{0}c_{1}c_{3}$ does not vanish. The coefficient of $s^{-1}$ is
+enclosed in a disc of radius $3\cdot10^{-71}$ around
+\[
+  I_{02}(p^{\dagger},v^{\dagger})\approx-0.177444420578390+0.065416149270899\,i,
+\]
+whose absolute value exceeds $0.189$. By the discussion after
+\Cref{cor:family44} this proves (iii). As a check on the regularity used
+there, every coefficient of the remainder of $\mathcal N_{v^{\dagger}}$
+modulo $P^{2}S$ is enclosed in a ball of numbers of absolute value below
+$10^{-70}$. The same
+computation at $600$ bits gives the same conclusions, and the lattice
+computation described above, at level $44$ with the $43$ pairs, the $24$
+standard multisets, the element $(22)$ and $[\beta]$, gives rank $33$, the
+rank of the lattice of balanced classes, and a saturated matrix; so
+$B_{44}=S_{44}+\ZZ[\beta]$ and $[B_{44}:S_{44}]=2$ without \Cref{thm:aoki}.

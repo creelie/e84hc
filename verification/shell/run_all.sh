@@ -128,6 +128,40 @@ if python3 -c "import sympy" 2>/dev/null; then
         || { echo "FAIL  family I symbolic check"; status=1; }
 else missing sympy; fi
 
+echo "== Fermat varieties of degree 44"
+python3 "$V/python/fermat44.py" > "$OUT/f44py.txt"
+echo "ok    Python: $(tail -1 "$OUT/f44py.txt")"
+if have julia; then
+    julia "$V/julia/fermat44.jl" > "$OUT/f44jl.txt"
+    if diff -q "$OUT/f44py.txt" "$OUT/f44jl.txt" >/dev/null; then
+        echo "ok    Julia output is identical to Python (characters, nu_11, small multisets, family)"
+    else echo "FAIL  Julia output differs from Python"; status=1; fi
+else missing julia; fi
+if have "$CC"; then
+    "$CC" -std=c99 -O2 -Wall -Wextra -Werror -o "$OUT/f44" "$V/c/fermat44.c"
+    "$OUT/f44" > "$OUT/f44c.txt"
+    if diff -q "$OUT/f44py.txt" "$OUT/f44c.txt" >/dev/null; then
+        echo "ok    C output is identical to Python (characters, nu_11, small multisets, family)"
+    else echo "FAIL  C output differs from Python"; status=1; fi
+else missing "$CC"; fi
+if python3 -c "import flint" 2>/dev/null; then
+    python3 "$V/python/fermat44.py" --lattice | grep -q "B = S + Z u(beta)" \
+        && echo "ok    lattices: [B_44 : S_44] = 2 and B_44 = S_44 + Z u(beta)" \
+        || { echo "FAIL  lattice check at level 44"; status=1; }
+    python3 "$V/python/family44_certificate.py" > "$OUT/cert44.txt" 2>&1 && grep -q "ALL CHECKS PASSED" "$OUT/cert44.txt" \
+        && echo "ok    family of degree 44: interval certificate passed ($(grep '(3) I' "$OUT/cert44.txt" | sed 's/^ *//'))" \
+        || { echo "FAIL  degree-44 certificate"; cat "$OUT/cert44.txt"; status=1; }
+    FAMILY44_PREC=600 python3 "$V/python/family44_certificate.py" > "$OUT/cert44b.txt" 2>&1 \
+        && grep -q "ALL CHECKS PASSED" "$OUT/cert44b.txt" \
+        && echo "ok    family of degree 44: the certificate also passes at 600 bits" \
+        || { echo "FAIL  degree-44 certificate at 600 bits"; cat "$OUT/cert44b.txt"; status=1; }
+else missing python-flint; fi
+if python3 -c "import mpmath" 2>/dev/null; then
+    python3 "$V/python/family44_contour.py" | grep -q "= (-0.17744442057839 + 0.0654161492708992j)" \
+        && echo "ok    family of degree 44: the contour integral agrees with the certificate to 15 digits" \
+        || { echo "FAIL  degree-44 contour check"; status=1; }
+else missing mpmath; fi
+
 echo "== Lean"
 if have lake; then
     (cd "$V/lean" && lake build > "$OUT/lean.txt" 2>&1) || { cat "$OUT/lean.txt"; status=1; }
@@ -148,7 +182,7 @@ if [ "${MATHLIB:-0}" = 1 ]; then
             echo "FAIL  FermatHodge uses sorry or native_decide"; status=1; fi
         if grep -q "sorryAx" "$OUT/mlax.txt"; then echo "FAIL  FermatHodge depends on sorryAx"; status=1; fi
         n=$(grep -cE "depends on axioms: \[(propext|Classical.choice|Quot.sound|, )*\]|does not depend on any axioms" "$OUT/mlax.txt" || true)
-        if [ "$n" = 18 ]; then echo "ok    Lean+Mathlib: FermatHodge builds, 18 main theorems use the standard axioms only"
+        if [ "$n" = 24 ]; then echo "ok    Lean+Mathlib: FermatHodge builds, 24 main theorems use the standard axioms only"
         else echo "FAIL  Lean+Mathlib axiom check"; cat "$OUT/mlax.txt"; status=1; fi
     else missing lake; fi
 else echo "skip  MATHLIB is not set"; fi

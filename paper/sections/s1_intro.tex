@@ -39,21 +39,23 @@ that is a product of an even number of distinct elements of
 $\{4,3,5,7,11,\dots\}$, and showed that the classes he could reach suffice
 for the degrees $2^{a}3^{b}5^{c}7^{d}$ with $c=0$ or $d=0$ and for the degrees
 $p^{e}$ and $2p^{e}$, $p$ prime \cite{Aok83,Aok00}. Peterson has recently
-treated the divisor $35$ \cite{Pet26}. Our main theorem treats the divisor
-$57$.
+treated the divisor $35$ \cite{Pet26}. Our main theorem treats the divisors
+$57$ and $44$.
 
 \begin{maintheorem}\label{thm:fermat114}
-Let $m=2^{a}3^{b}19^{c}$ with $a\in\{0,1\}$ and $b,c\ge0$. Then the Hodge
-conjecture holds for the Fermat variety $X^{n}_{m}$ of every dimension $n$,
-for every product of Fermat varieties of degree $m$, and for every abelian
-variety of Fermat type of degree $m$.
+Let $m=2^{a}3^{b}19^{c}$ with $a\in\{0,1\}$ and $b,c\ge0$, or
+$m=2^{a}11^{b}$ with $a,b\ge0$. Then the Hodge conjecture holds for the
+Fermat variety $X^{n}_{m}$ of every dimension $n$, for every product of
+Fermat varieties of degree $m$, and for every abelian variety of Fermat type
+of degree $m$.
 \end{maintheorem}
 
 An abelian variety is of Fermat type of degree $m$ if it is isogenous to a
 product of Jacobians of curves dominated by the Fermat curve of degree $m$
 \cite{Aok00}. In particular the Hodge conjecture holds for the Fermat
-varieties of degree $114$ in every dimension. When $57\nmid m$,
-\Cref{thm:fermat114} is due to Aoki. When $57\mid m$, the only earlier
+varieties of degrees $44$ and $114$ in every dimension. When neither $57$
+nor $44$ divides $m$, \Cref{thm:fermat114} is due to Aoki. When $57\mid m$,
+the only earlier
 argument is that of the preprint \cite{MMRV26}. It states the theorem for
 $m=57$, and through Aoki's reduction it would give the other degrees as well,
 but it reduces the remaining class to a Hodge class on the Fermat fourfold of
@@ -64,7 +66,11 @@ $342$, $513,\dots$ the theorem has not been stated before. For fourfolds, a
 computer census of the Fermat fourfolds of even degree at most $250$
 \cite{Jum26b}, combined with \cite{Pet26}, leaves the degrees $110$, $114$,
 $220$ and $228$; \Cref{thm:fermat114} settles $114$ and $228$
-(\Cref{rem:new114}). The unrefereed preprint \cite{OAI26} claims the Hodge
+(\Cref{rem:new114}). When $44\mid m$ there is no earlier proof:
+\cite{MMRV26} treats every degree below $65$ except $44$, $51$ and $52$, and
+the degrees $44$, $88$, $176$, $352$, $484,\dots$ appear in
+\Cref{thm:fermat114} for the first time (\Cref{rem:new44}). The unrefereed
+preprint \cite{OAI26} claims the Hodge
 conjecture for abelian varieties of CM type, which would give it for every
 Fermat variety (\Cref{thm:fermatcm}); \Cref{thm:fermat114} does not depend
 on that claim.
@@ -100,8 +106,19 @@ family of cubics whose residue is a rational function of the parameter,
 computed by hand (\Cref{prop:family1}). For $\alpha_{1}$ the smallest family
 we know consists of curves of degree $24$, and the nonvanishing of its
 residue at one point is proved by a certified computation in interval
-arithmetic (\Cref{prop:family2}, \Cref{app:cert114}). This is the only step
-of the paper that uses a computer.
+arithmetic (\Cref{prop:family2}, \Cref{app:cert114}).
+
+For $m=44$ the remaining class is a multiset of eight residues with a
+single element of order $11$, and the smallest balanced multisets of this
+kind have eight elements. We write it as the join of a character $\alpha$
+of the threefold $X^{3}_{44}$ and a character $b$ of the Fermat curve with
+complementary types (\Cref{lem:char44}). Only $M_{\alpha}$ has to be carried
+by curves, since $H^{1}$ of the Fermat curve already is, and the Hodge
+classes in $M_{\alpha}\otimes H^{1}$ then come from a product of two curves
+(\Cref{prop:joincurve}). For $\alpha$ there is a family of curves of degree
+$11$, and the nonvanishing of its residue is again certified in interval
+arithmetic (\Cref{prop:family44}). These two certificates are the only steps
+of the paper that use a computer.
 
 \subsection*{Fermat fourfolds of odd degree}
 The second unconditional result concerns fourfolds.
@@ -314,11 +331,11 @@ For Fermat varieties, the method of \Cref{thm:oddfour} does not reach
 fourfolds of even degree: $m/2$ is its own negative, the subgroups $K_{2}$
 of \Cref{ssec:fermatfour} are too small, and Hodge characters of further
 kinds occur \cite{Aok83}. \Cref{thm:fermat114} reaches the even degrees
-$2\cdot3^{b}19^{c}$, but not, for instance, the fourfolds of degree $110$,
-where the class that remains belongs to the divisor $55$ of Aoki's
-reduction and we have found no family of curves of the kind used here
-(\Cref{rem:new114}). For degrees divisible by $4$ further divisors occur,
-such as $4\cdot19$, for which we have no cycles.
+$2\cdot3^{b}19^{c}$ and $2^{a}11^{b}$, but not, for instance, the fourfolds
+of degree $110$, where the class that remains belongs to the divisor $55$ of
+Aoki's reduction and we have found no family of curves of the kind used here
+(\Cref{rem:new114}). Of the divisors divisible by $4$ we treat only
+$4\cdot11$; for others, such as $4\cdot19$, we have no cycles.
 
 \subsection*{Organization}
 \Cref{sec:reductions} proves the reductions that hold for every variety and
@@ -330,9 +347,9 @@ proves \Cref{thm:weilloci}. \Cref{sec:weil} proves \Cref{thm:schoenY} and the tr
 theorem for Weil classes. \Cref{sec:routes} proves \Cref{thm:routes}.
 \Cref{sec:end} collects what is proved and what is not.
 \Cref{app:checks} describes the machine checks of the finite steps, and
-\Cref{app:cert114} gives the certified computation behind
-\Cref{prop:family2}. Apart from that proposition, no proof in this paper
-depends on a computer.
+\Cref{app:cert114} gives the certified computations behind
+\Cref{prop:family2,prop:family44}. Apart from these two propositions, no
+proof in this paper depends on a computer.
 
 \subsection*{Conventions}
 Varieties are complex, smooth, projective and, unless said otherwise,
