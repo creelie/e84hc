@@ -12,7 +12,7 @@ Without any hypothesis, it proves the Hodge conjecture for Fermat fourfolds of e
 
 ### Files
 
-- `when-is-every-rational-hodge-class-algebraic.pdf`: the paper, 49 pages, `amsart`.
+- `when-is-every-rational-hodge-class-algebraic.pdf`: the paper, 51 pages, `amsart`.
 - `when-is-every-rational-hodge-class-algebraic-tex.zip`: the full LaTeX source, with the figures as PNG and their TikZ sources.
 - `when-is-every-rational-hodge-class-algebraic-arxiv.tar.gz`: the arXiv submission, containing `main.tex`, `sections/`, `main.bbl` and the PNG figures. It compiles with pdflatex alone.
 
@@ -28,13 +28,19 @@ The workflow attaches these files to the release once the paper has been built o
 - exhaustive searches of the Hodge characters of Fermat surfaces and fourfolds of degree prime to 6, and of Fermat fourfolds of odd degree divisible by 3, in C, Python and Julia;
 - Macaulay2 scripts for the Jacobian-ring Hodge numbers and Max Noether's theorem.
 
-All 77 references were checked online. No proof in the paper depends on a computer.
+All 78 references were checked online. No proof in the paper depends on a computer.
 
 ### Citation and DOI
 
 Concept DOI, covering all versions: [10.5281/zenodo.23234362](https://doi.org/10.5281/zenodo.23234362). Zenodo gives each release its own version DOI under it: v1.0.0 is [10.5281/zenodo.23234363](https://doi.org/10.5281/zenodo.23234363), v1.0.1 is [10.5281/zenodo.23234501](https://doi.org/10.5281/zenodo.23234501), v1.0.2 is [10.5281/zenodo.23236587](https://doi.org/10.5281/zenodo.23236587), v1.1.0 is [10.5281/zenodo.23271115](https://doi.org/10.5281/zenodo.23271115) and v1.2.0 is [10.5281/zenodo.23272739](https://doi.org/10.5281/zenodo.23272739).
 
 ### What is new in this version
+
+- Proposition 5.17 describes Schoen's subvariety Y, the one whose semiregularity is Question 5.14, without the symmetric product. Up to an étale map, a translate of multiplication by 3, Y is a component of the locus of line bundles M on the triple cover with Nm M ≅ K_X and a nonzero section. Y has dimension n and is smooth at its general point. The tangent space there is the annihilator of π\*H⁰(K_X) + s·H⁰(K_C − E), where s is the section and E its divisor.
+- For étale double covers the same locus gives Mumford's Prym theta divisor, which deforms with every principally polarized abelian variety. The Abel–Prym curve does not deform beyond the Prym locus, so the analogues of Question 5.14 point both ways, and the paper says so. Question 5.14 stays open. Deciding it needs the normal sheaf of Y everywhere, including where h⁰ ≥ 2.
+- The paper also records the version DOI of v1.2.0. One reference was added, Mumford's "Prym varieties I", and all 78 references verify.
+
+### What v1.2.0 added
 
 - Theorem F now covers every odd degree m. A new subsection, Section 3.7, treats odd m divisible by 3. Every Hodge sextuple that generates Z/m and contains no pair a, −a has a move: one of Aoki's cycles trades it for a quadruple, whose classes are known, or for a sextuple of smaller orders. The only exceptions are three characters, in degrees 21, 33 and 39 (Theorem 3.27). Identities on the Fermat fourfolds of degrees 21, 66 and 78 close them (Lemma 3.26). The proof is by hand.
 - The theorem is new for the odd degrees m > 199 that are divisible by 3 or 5 and have a prime factor larger than 7. The first are 201, 205, 207, 213 and 215. Remark 3.7 now also cites Aoki's 2000 theorem on abelian varieties of Fermat type and Peterson's 2026 preprint on degrees 2^a 3^b 5^c 7^d.
@@ -44,7 +50,6 @@ Concept DOI, covering all versions: [10.5281/zenodo.23234362](https://doi.org/10
   - The induction itself is not formalized in Lean.
 - Section 7 cites Varesco's theorem (Math. Z. 2023) for the general member of the first four-dimensional families of K3 surfaces with real multiplication, next to the families of van Geemen and Schütt.
 - The reference checker also asks the Japan Link Center, and all 77 references verify.
-- v1.1.1 recorded the version DOI of v1.1.0 and left the paper unchanged.
 
 ### What v1.1.0 added
 

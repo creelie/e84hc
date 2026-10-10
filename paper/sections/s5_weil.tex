@@ -639,7 +639,9 @@ A positive answer forces $Y$ to deform with $B$ to first order along all
 $n^{2}$ directions of the Weil family, and not only along the $3n$
 directions of the Prym locus; so it asks for $n^{2}-3n$ unexpected first
 order deformations. We have not been able to decide the question, and the
-closest analogue points the other way.
+analogues point both ways: the Abel--Jacobi curve, discussed next, and the
+Abel--Prym curve of \Cref{prop:abelprym} are rigid, while the theta
+divisors discussed after \Cref{prop:prymbn} deform.
 
 The Abel--Jacobi curve $C\subseteq J(C)$ of a curve of genus $g\ge4$ is
 built from the same map as $Y$. Its class $\theta^{g-1}/(g-1)!$ is a Hodge
@@ -829,13 +831,119 @@ its annihilator, which is a first-order deformation of $\psi(C)$ and so
 carries an extension of $\psi$, against \Cref{prop:abelprym}.
 
 This makes the analogy precise on $B$, but it does not decide
-\Cref{q:schoen}. The subvariety $Y$ is the image of the $n$-dimensional
-variety $\Lambda_{k}$, and the same computation for $\Psi$ on $\Lambda_{k}$
-would need the cohomology of a resolution of $\Lambda_{k}$, which we have not
-determined. Nor does the rigidity of a curve predict that of the image of a
-higher symmetric product: the theta divisor of a Jacobian is the image of the
-$(g-1)$-st symmetric product of the curve under the Abel--Jacobi map, and it
-deforms with every principally polarized abelian variety.
+\Cref{q:schoen}. For $Y$ itself we have the following description, which
+does not mention $\Lambda_{k}$: up to an \'etale map, $Y$ is a
+Brill--Noether locus of the Prym variety. Let
+$\operatorname{Nm}\colon\Pic^{2n}(C)\to\Pic^{2n}(X)$ be the norm map, let
+$N_{K}=\operatorname{Nm}^{-1}([K_{X}])$, and let $V\subseteq N_{K}$ be the
+closed subset of the line bundles $M$ with $h^{0}(C,M)>0$. On $J$ the
+endomorphism $N$ is $\pi^{*}\circ\operatorname{Nm}$. Put
+\[
+  \phi\colon N_{K}\to B,\qquad \phi(M)=P\bigl(M\otimes\cO_{C}(-2nc_{0})\bigr).
+\]
+
+\begin{proposition}\label{prop:prymbn}
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item On each connected component of $N_{K}$ the map $\phi$ is a translate
+of multiplication by $3$, an \'etale map onto $B$ of degree $3^{4n}$, and
+$Y=\phi(V_{k})$ for an irreducible component $V_{k}$ of $V$ of dimension
+$n$.
+\item Let $M$ be a general point of $V_{k}$. Then $h^{0}(C,M)=1$, and the
+divisor $E$ of a nonzero section $s$ of $M$ contains no two points of one
+fibre of $\pi$. The varieties $V_{k}$ and $Y$ are smooth of dimension $n$ at
+$M$ and at $\phi(M)$, and $T_{M}V_{k}\subseteq H^{1}(C,\cO_{C})$ is the
+annihilator of the subspace
+\[
+  \pi^{*}H^{0}(X,K_{X})+s\cdot H^{0}\bigl(C,K_{C}(-E)\bigr)
+\]
+of $H^{0}(C,K_{C})$, which has dimension $2n+1$: the two summands have
+dimension $n+1$ and meet in the line spanned by $\pi^{*}\omega$, where
+$\operatorname{div}\omega=\pi_{*}E$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(a) Since $\pi^{*}\circ\operatorname{Nm}=N$ on $J$ and $NP=0$, the norm maps
+$B$ into the kernel of $\pi^{*}$ on $J(X)$, which is finite; as $B$ is
+connected, $B\subseteq\ker\operatorname{Nm}$. This kernel has dimension
+$(3n+1)-(n+1)=2n=\dim B$, so $B$ is its identity component, and every
+connected component of $N_{K}$ is a coset $M_{1}+B$. For $b\in B$ we have
+$\phi(M_{1}+b)=\phi(M_{1})+Pb=\phi(M_{1})+3b$, and $\phi(M_{1})\in P(J)=B$.
+For $(c_{1},\dots,c_{h})\in\Lambda_{0}$ put $E=\sum_{i}c_{i}$; then
+$\pi_{*}E=\mu(c_{1},\dots,c_{h})$ lies in $F=|K_{X}|$, so
+$\cO_{C}(E)\in V$, and $\Psi(c_{1},\dots,c_{h})=\phi(\cO_{C}(E))$. Let $V_{k}$
+be the image of $\Lambda_{k}$ under $(c_{i})\mapsto\cO_{C}(\sum_{i}c_{i})$.
+It is irreducible and closed, and $Y=\phi(V_{k})$. Its dimension is at most
+$\dim\Lambda_{k}=n$ and at least $\dim Y=n$. On the other hand, if $M\in V$ and
+$E$ is the divisor of a nonzero section, then $\cO_{X}(\pi_{*}E)\cong
+\operatorname{Nm}(M)\cong K_{X}$; so $V$ is the image of
+$Z=\{E\in C^{(2n)}:\pi_{*}E\in F\}$, the preimage of $F$ under the finite map
+$C^{(2n)}\to X^{(2n)}$, of dimension at most $n$. Hence $V_{k}$ is an
+irreducible component of $V$.
+
+(b) Let $Z_{k}\subseteq Z$ be the image of $\Lambda_{k}$; it has dimension
+$n$, so it is an irreducible component of $Z$, and it maps onto $V_{k}$. The
+map $\Lambda_{k}\to Q_{0}\cong F$ is finite between irreducible varieties of
+the same dimension, hence surjective, so for $E$ general in $Z_{k}$ the
+divisor $\pi_{*}E$ is a general member of $|K_{X}|$. It is reduced, because
+$|K_{X}|$ has no base points, so the $2n$ points of $E$ lie over distinct
+points of $X$. If $h^{0}(\cO_{C}(E))\ge2$ for general $E\in Z_{k}$, the
+linear system $|E|$ lies in $Z$, since $\cO_{X}(\pi_{*}E')\cong
+\operatorname{Nm}\cO_{C}(E)$ for $E'\in|E|$; being irreducible, it lies in
+$Z_{k}$, the only component through a general point. Then the fibres of
+$Z_{k}\to V_{k}$ have positive dimension and $\dim V_{k}<n$, which is false.
+So $h^{0}(M)=1$ for general $M=\cO_{C}(E)$ in $V_{k}$.
+
+Let $W\subseteq\Pic^{2n}(C)$ be the image of $C^{(2n)}$. Since $h^{0}(M)=1$,
+$W$ is smooth at $M$ and $T_{M}W$ is the annihilator of $s\cdot
+H^{0}(C,K_{C}(-E))$ \cite[Chapter~IV]{ACGH85}. The differential of the norm
+is the trace $H^{1}(C,\cO_{C})\to H^{1}(X,\cO_{X})$, which is Serre dual to
+$\pi^{*}\colon H^{0}(X,K_{X})\to H^{0}(C,K_{C})$; so $N_{K}$, a coset of
+$\ker\operatorname{Nm}$, is smooth with $T_{M}N_{K}$ the annihilator of
+$\pi^{*}H^{0}(X,K_{X})$. As $V_{k}\subseteq W\cap N_{K}$, the tangent space of
+$V_{k}$ at $M$ lies in the annihilator of the sum. By Riemann--Roch
+$h^{0}(C,K_{C}(-E))=h^{0}(C,\cO_{C}(E))-\deg E+g(C)-1=n+1$, and
+$h^{0}(X,K_{X})=n+1$. A form $\pi^{*}\omega$ in both summands vanishes on
+$E$; since the points of $E$ lie over distinct points of $X$, $\omega$
+vanishes on $\pi_{*}E$, which has degree $2n=\deg K_{X}$, so
+$\operatorname{div}\omega=\pi_{*}E$. Conversely this $\omega$ lies in both,
+since $\operatorname{div}\pi^{*}\omega=E+\sigma E+\sigma^{2}E$. So the sum has
+dimension $2n+1$ and its annihilator in the space $H^{1}(C,\cO_{C})$ of
+dimension $3n+1$ has dimension $n=\dim V_{k}$. Hence $V_{k}$ is smooth at $M$
+with this tangent space. Finally $\phi^{-1}(Y)$ meets the component of
+$N_{K}$ containing $V_{k}$ in the union of the translates $V_{k}+t$, $t\in
+B[3]$. Those different from $V_{k}$ meet it in a proper closed subset, which
+the general point $M$ avoids, so the \'etale map $\phi$ carries a
+neighbourhood of $M$ in $V_{k}$ isomorphically onto a neighbourhood of
+$\phi(M)$ in $Y$.
+\end{proof}
+
+So $Y$ is the analogue, for cyclic triple covers, of a Prym--Brill--Noether
+locus, and the comparison with \'etale double covers points the other way
+from the Abel--Prym curve. For an \'etale double cover of a curve of genus
+$g$, Mumford shows that $\operatorname{Nm}^{-1}([K_{X}])$ has two
+components, on which $h^{0}$ is even and odd, and that the locus $h^{0}\ge2$
+in the even one is a theta divisor $\Xi$ of the principally polarized Prym
+variety \cite{Mum74}. So there $V$ is the union of the odd component and
+$\Xi$, and $\Xi$ deforms
+with every principally polarized abelian variety of dimension $g-1$,
+although for $g\ge7$ the Prym varieties of double covers, with $3g-3$
+moduli, form a proper subvariety of that moduli space. The analogy is loose
+in one respect: $\Xi$ is a divisor whose class is a principal polarization,
+while $Y$ has codimension $n$. Likewise, the theta divisor of a Jacobian is
+the image of the $(g-1)$-st symmetric product of the curve under the
+Abel--Jacobi map, and it deforms with every principally polarized abelian
+variety, while the Abel--Jacobi curve does not.
+
+\Cref{prop:prymbn} also shows what a direct computation would need. On the
+open subset of $V_{k}$ where (b) holds, the normal space of $V_{k}$ at $M$ is
+dual to $H^{0}(C,K_{C}(-E))/\CC t$, where $t$ is the section with divisor
+$\sigma E+\sigma^{2}E$; so there the normal bundle comes from the bundle
+with fibres $H^{0}(C,K_{C}\otimes M^{-1})$. The obstruction to extending
+$\cO_{Y}$ along a tangent vector of $S$ is a class in a global cohomology
+group, and computing it needs the normal sheaf on all of $V_{k}$, including
+the locus where $h^{0}\ge2$ and the divisors $E$ that meet a fibre of $\pi$
+twice. We have not determined it.
 
 A weaker hypothesis would do if the semiregularity theorem were sharper.
 Markman asks whether \Cref{thm:bf} holds when $\sigma_{\mathcal{E}}$ is
