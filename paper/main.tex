@@ -58,8 +58,8 @@
 
 \begin{document}
 
-\title[When is every rational Hodge class algebraic?]{When is every rational
-Hodge class algebraic?}
+\title[On the Hodge conjecture for Fermat varieties]{On the Hodge conjecture
+for Fermat varieties}
 
 \author{Deep Bhattacharjee}
 \address{Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL),
@@ -69,33 +69,24 @@ Bhubaneswar, Odisha 751030, India}
 \urladdr{https://orcid.org/0000-0003-0466-750X}
 \thanks{Source, figures and verification code:
 \url{https://github.com/creelie/e84hc}, archived on Zenodo under the concept
-DOI \href{https://doi.org/10.5281/zenodo.23234362}{10.5281/zenodo.23234362};
-release v1.2.0, the first with Theorem~F for every odd degree, has the
-version DOI
-\href{https://doi.org/10.5281/zenodo.23272739}{10.5281/zenodo.23272739}, and
-release v1.3.0 has
-\href{https://doi.org/10.5281/zenodo.23272887}{10.5281/zenodo.23272887}.}
+DOI \href{https://doi.org/10.5281/zenodo.23234362}{10.5281/zenodo.23234362}.
+Release v1.4.0 is the first with \Cref{thm:fermat114}}
 
-\subjclass[2020]{14C30, 14C25, 14K22, 14J70}
-\keywords{Hodge conjecture, motivated cycles, Lefschetz standard conjecture,
-Fermat varieties, CM abelian varieties, Weil classes, semiregularity}
+\subjclass[2020]{Primary 14C30; Secondary 14C25, 14J70, 14K22, 65G40}
+\keywords{Hodge conjecture, Fermat varieties, Abel--Jacobi map, coniveau,
+CM abelian varieties, Weil classes, motivated cycles}
 \date{October 10, 2026}
 
 \begin{abstract}
-We determine which combinations of the standard statements around the
-rational Hodge conjecture imply it. Every such combination contains the
-conjecture modulo abelian varieties, unless it contains both the Lefschetz
-standard conjecture and Andr\'e's conjecture that every Hodge class is
-motivated, a pair equivalent to the Hodge conjecture itself. Granting the
-recently claimed Hodge conjecture for CM abelian varieties, we prove it for
-every Fermat variety and reduce the abelian case to propagation from CM
-points. For Weil classes we prove a criterion by bounded degree at CM
-points, and we extract from Schoen's cycles one subvariety whose
-semiregularity would settle the split Weil families over
-$\QQ(\sqrt{-3})$ in every dimension. Without any hypothesis, we prove the Hodge
-conjecture for Fermat fourfolds of every odd degree; for degrees prime to six
-this rests on a classification of their Hodge characters that is also
-checked in Lean. The Hodge conjecture itself is not proved.
+We prove the Hodge conjecture for the Fermat varieties of degree $114$ in
+every dimension, and more generally of every degree $2^{a}3^{b}19^{c}$ with
+$a\le1$, together with their products and the abelian varieties of Fermat
+type of these degrees. The new cycles come from families of curves on the
+Fermat threefold of degree $114$, through a residue formula for the
+derivative of their Abel--Jacobi maps; one of the two residues is certified
+by interval arithmetic. We also prove the Hodge conjecture for Fermat
+fourfolds of every odd degree, and determine which combinations of the
+standard conjectures around the Hodge conjecture imply it.
 \end{abstract}
 
 \maketitle
@@ -105,12 +96,14 @@ checked in Lean. The Hodge conjecture itself is not proved.
 \input{sections/s3_fermat}
 \input{sections/s3b_fermatfour}
 \input{sections/s3c_fermatodd}
+\input{sections/s3d_fermat114}
 \input{sections/s4_abelian}
 \input{sections/s5_weil}
 \input{sections/s6_routes}
 \input{sections/s7_end}
 \appendix
 \input{sections/a_checks}
+\input{sections/a_cert114}
 
 \bibliographystyle{amsalpha}
 \bibliography{references}

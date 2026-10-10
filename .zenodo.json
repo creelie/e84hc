@@ -1,6 +1,6 @@
 {
-  "title": "When is every rational Hodge class algebraic?",
-  "description": "<p>LaTeX source (amsart, figures as PNG), compiled PDF and verification code for the paper <em>When is every rational Hodge class algebraic?</em> by Deep Bhattacharjee.</p><p>The paper determines which combinations of the standard statements around the rational Hodge conjecture imply it. Every such combination contains the conjecture modulo abelian varieties, unless it contains both the Lefschetz standard conjecture and Andr&eacute;'s conjecture that every Hodge class is motivated, a pair equivalent to the Hodge conjecture itself. Granting the recently claimed Hodge conjecture for CM abelian varieties, it proves the conjecture for every Fermat variety and reduces the abelian case to propagation from CM points. For Weil classes it proves a criterion by bounded degree at CM points, and it extracts from Schoen's cycles one subvariety whose semiregularity would settle the split Weil families over Q(&radic;&minus;3) in every dimension, and identifies it, up to an &eacute;tale map, with a Brill&ndash;Noether locus of the Prym variety. Without any hypothesis, it proves the Hodge conjecture for Fermat fourfolds of every odd degree; for degrees prime to six this rests on a classification of their Hodge characters that is also proved in Lean 4 with Mathlib, and for odd degrees divisible by three on an induction that ends in three exceptional characters, in degrees 21, 33 and 39. <strong>The Hodge conjecture itself is not proved.</strong></p><p><code>paper/</code> holds the source and <code>paper/main.pdf</code>; <code>scripts/build_paper.sh</code> builds the PDF, a tex.zip and an arXiv tarball that compiles with pdflatex alone. <code>verification/</code> re-checks the finite steps: <code>closure_checks</code> in Python, Julia and C (exact arithmetic, identical 218-line outputs), a Lean 4 file checked with the core library only (no sorry, no native_decide), a Lean 4 project with Mathlib that proves the classification of Hodge characters behind the Fermat fourfold theorem, including the nonvanishing of B<sub>1,&chi;</sub> (standard axioms only), exhaustive searches of those characters, and of the characters in odd degrees divisible by three, in C, Python and Julia, Macaulay2 scripts for Jacobian-ring Hodge numbers and Max Noether's theorem, and an online check of every reference. No proof in the paper depends on a computer.</p><p>Author contact: d.bhattacharjee@erl-forschung.de, itsdeep@live.com. Affiliation: Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India.</p>",
+  "title": "On the Hodge conjecture for Fermat varieties",
+  "description": "<p>LaTeX source (amsart, figures as PNG), compiled PDF and verification code for the paper <em>On the Hodge conjecture for Fermat varieties</em> by Deep Bhattacharjee.</p><p>The paper proves the Hodge conjecture for the Fermat varieties of degree 114 in every dimension, and more generally of every degree 2<sup>a</sup>3<sup>b</sup>19<sup>c</sup> with a &le; 1, together with their products and the abelian varieties of Fermat type of these degrees. For degrees divisible by 57 it is the first proof that does not rest on a statement of Kang whose proof has a gap; for 114, 171, 342, 513 and the other multiples of 57 other than 57 itself, the theorem had not been stated before. Aoki's reduction leaves one class in degree 114, which is the join of two characters of the Fermat threefold of degree 114. Each of the two corresponding pieces of H<sup>3</sup> is shown to be carried by curves, through families of curves on the threefold and a residue formula for the derivative of their Abel&ndash;Jacobi maps, extending Peterson's method for degree 35. One residue is computed by hand; the other is certified to be nonzero by interval arithmetic (Arb), the only computer-assisted step of the paper.</p><p>The paper also proves the Hodge conjecture for Fermat fourfolds of every odd degree, determines which combinations of the standard statements around the Hodge conjecture imply it, proves the conjecture for every Fermat variety under the recently claimed Hodge conjecture for CM abelian varieties, and extracts from Schoen's cycles one subvariety whose semiregularity would settle the split Weil families over Q(&radic;&minus;3) in every dimension. <strong>The Hodge conjecture itself is not proved.</strong></p><p><code>paper/</code> holds the source and <code>paper/main.pdf</code>; <code>scripts/build_paper.sh</code> builds the PDF, a tex.zip and an arXiv tarball that compiles with pdflatex alone. <code>verification/</code> re-checks the finite steps in Python, Julia, C, Lean 4 (core and Mathlib) and Macaulay2, holds the interval certificate for the degree-114 family (python-flint), and checks every reference online.</p><p>Author contact: d.bhattacharjee@erl-forschung.de, itsdeep@live.com. Affiliation: Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India.</p>",
   "upload_type": "publication",
   "publication_type": "preprint",
   "license": "mit",
@@ -23,9 +23,12 @@
     "Lean 4",
     "Mathlib",
     "Fermat fourfolds",
-    "Macaulay2"
+    "Macaulay2",
+    "Abel-Jacobi map",
+    "interval arithmetic",
+    "coniveau"
   ],
-  "notes": "Contact: d.bhattacharjee@erl-forschung.de; itsdeep@live.com. MSC2020: 14C30, 14C25, 14K22, 14J70. The Hodge conjecture is not proved in this work; Section 7 of the paper lists what is proved, what is proved under a stated hypothesis, and what is not proved.",
+  "notes": "Contact: d.bhattacharjee@erl-forschung.de; itsdeep@live.com. MSC2020: 14C30 (primary), 14C25, 14J70, 14K22, 65G40. The Hodge conjecture is not proved in this work; Section 8 of the paper lists what is proved, what is proved under a stated hypothesis, and what is not proved.",
   "related_identifiers": [
     {
       "identifier": "https://github.com/creelie/e84hc",
@@ -39,5 +42,5 @@
     }
   ],
   "language": "eng",
-  "version": "1.3.0"
+  "version": "1.4.0"
 }

@@ -82,5 +82,13 @@ Run on 2026-10-10 by `verification/references/check_references.py`.
 | BvGS24 | verified | arXiv 2401.04072: "K3 surfaces with real or complex multiplication" by Eva Bayer-Fluckiger, Bert van Geemen, Matthias Schütt; title match 1.00 |
 | Bus19 | verified | Crossref: "Every rational Hodge isometry between two K⁢3K3 surfaces is algebraic" (2019, vol. 755, p. 127-150); title match 0.98 |
 | Huy19 | verified | Crossref: "Motives of isogenous K3 surfaces" (2019, vol. 94, p. 445-458); title match 1.00 |
+| Kra69 | verified | Crossref: "Newton-Algorithmen zur Bestimmung von Nullstellen mit Fehlerschranken" (1969, vol. 4, p. 187-201); title match 1.00 |
+| Moo77 | verified | Crossref: "A Test for Existence of Solutions to Nonlinear Systems" (1977, vol. 14, p. 611-615); title match 1.00 |
+| Joh17 | verified | Crossref: "Arb: Efficient Arbitrary-Precision Midpoint-Radius Interval Arithmetic" (2017, vol. 66, p. 1281-1292); title match 1.00 |
+| Neu90 | verified | Crossref: "Interval Methods for Systems of Equations" (1991); title match 1.00 |
+| EGA43 | verified | Crossref: "Éléments de géométrie algébrique : IV. Étude locale des schémas et des morphismes de schémas, Troisième partie" (1966, vol. 28, p. 5-255); title match 0.91 |
+| Har77 | verified | Crossref: "Algebraic Geometry" (1977); title match 1.00 |
+| CG80 | verified | cited as [4] in Carlson, Green, Griffiths and Harris, Compositio Math. 50 (1983): Journees de geometrie algebrique d'Angers, Sijthoff and Noordhoff (1980) 51-76 (record online: HTTP 200) |
+| Jum26b | verified | DataCite: "The Hodge conjecture for Fermat fourfolds: odd degrees up to 199 and the even-degree census to 250 — papers, exact certificates and verifiers" (2026); title match 1.00 |
 
-78 entries, 0 need attention.
+86 entries, 0 need attention.

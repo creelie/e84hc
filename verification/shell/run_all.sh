@@ -93,6 +93,41 @@ if have "$CC"; then
     else echo "FAIL  C output for m <= 105 differs from the stored copy"; status=1; fi
 else missing "$CC"; fi
 
+echo "== Fermat varieties of degree 114"
+python3 "$V/python/fermat114.py" > "$OUT/f114py.txt"
+echo "ok    Python: $(tail -1 "$OUT/f114py.txt")"
+python3 "$V/python/fermat114.py" --common > "$OUT/f114pyc.txt"
+if have julia; then
+    julia "$V/julia/fermat114.jl" > "$OUT/f114jl.txt"
+    if diff -q "$OUT/f114py.txt" "$OUT/f114jl.txt" >/dev/null; then
+        echo "ok    Julia output is identical to Python (exact family I residues included)"
+    else echo "FAIL  Julia output differs from Python"; status=1; fi
+else missing julia; fi
+if have "$CC"; then
+    "$CC" -std=c99 -O2 -Wall -Wextra -Werror -o "$OUT/f114" "$V/c/fermat114.c"
+    "$OUT/f114" > "$OUT/f114c.txt"
+    if diff -q "$OUT/f114pyc.txt" "$OUT/f114c.txt" >/dev/null; then
+        echo "ok    C output is identical to Python (characters, nu_19, exponent conditions)"
+    else echo "FAIL  C output differs from Python"; status=1; fi
+else missing "$CC"; fi
+if python3 -c "import flint" 2>/dev/null; then
+    python3 "$V/python/fermat114.py" --lattice | grep -q "B = S + Z u(beta)" \
+        && echo "ok    lattices: [B_57 : S_57] = 2 and B_114 = S_114 + Z u(beta)" \
+        || { echo "FAIL  lattice check"; status=1; }
+    python3 "$V/python/family2_certificate.py" > "$OUT/cert.txt" 2>&1 && grep -q "ALL CHECKS PASSED" "$OUT/cert.txt" \
+        && echo "ok    family II: interval certificate passed ($(grep '(3) I' "$OUT/cert.txt" | sed 's/^ *//'))" \
+        || { echo "FAIL  family II certificate"; cat "$OUT/cert.txt"; status=1; }
+    FAMILY2_PREC=600 python3 "$V/python/family2_certificate.py" > "$OUT/cert600.txt" 2>&1 \
+        && grep -q "ALL CHECKS PASSED" "$OUT/cert600.txt" \
+        && echo "ok    family II: the certificate also passes at 600 bits" \
+        || { echo "FAIL  family II certificate at 600 bits"; cat "$OUT/cert600.txt"; status=1; }
+else missing python-flint; fi
+if python3 -c "import sympy" 2>/dev/null; then
+    python3 "$V/python/family1_symbolic.py" | grep -q "closed formula confirmed" \
+        && echo "ok    family I: closed formula for I(lambda) confirmed symbolically" \
+        || { echo "FAIL  family I symbolic check"; status=1; }
+else missing sympy; fi
+
 echo "== Lean"
 if have lake; then
     (cd "$V/lean" && lake build > "$OUT/lean.txt" 2>&1) || { cat "$OUT/lean.txt"; status=1; }
@@ -111,8 +146,9 @@ if [ "${MATHLIB:-0}" = 1 ]; then
             && lake env lean Axioms.lean > "$OUT/mlax.txt" 2>&1) || { tail -20 "$OUT/ml.txt"; status=1; }
         if grep -rqE "\bsorry\b|native_decide" "$V/lean-mathlib/FermatHodge"; then
             echo "FAIL  FermatHodge uses sorry or native_decide"; status=1; fi
-        n=$(grep -c "depends on axioms: \[propext, Classical.choice, Quot.sound\]" "$OUT/mlax.txt" || true)
-        if [ "$n" = 11 ]; then echo "ok    Lean+Mathlib: FermatHodge builds, 11 main theorems use the standard axioms only"
+        if grep -q "sorryAx" "$OUT/mlax.txt"; then echo "FAIL  FermatHodge depends on sorryAx"; status=1; fi
+        n=$(grep -cE "depends on axioms: \[(propext|Classical.choice|Quot.sound|, )*\]|does not depend on any axioms" "$OUT/mlax.txt" || true)
+        if [ "$n" = 18 ]; then echo "ok    Lean+Mathlib: FermatHodge builds, 18 main theorems use the standard axioms only"
         else echo "FAIL  Lean+Mathlib axiom check"; cat "$OUT/mlax.txt"; status=1; fi
     else missing lake; fi
 else echo "skip  MATHLIB is not set"; fi

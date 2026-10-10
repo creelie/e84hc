@@ -1,0 +1,73 @@
+\section{The certificate for the second family}\label{app:cert114}
+
+This appendix proves \Cref{prop:family2}. The proof is a finite
+computation in interval arithmetic: every number below is an exact rational
+ball, and every operation returns a ball that contains the exact result. We
+used Arb \cite{Joh17} at a working precision of $1000$ bits. The program and
+the data are archived with the repository of this paper.
+
+\subsection*{The Krawczyk test}
+Write $x\in\CC^{24}$ for the coordinates $(f,h,g,a,b,c)$ of
+\Cref{ssec:twofamilies}, in this order, and $E(x,\kappa)\in\CC^{24}$ for
+the vector of coefficients $E_{0},\dots,E_{23}$. Fix
+$\kappa_{0}=(-17+3i)/10$ and a point $\tilde x\in\CC^{24}$ whose real and
+imaginary parts are decimal numbers with $120$ significant digits, and let
+$X\subseteq\CC^{24}$ be the box of points whose real and imaginary parts
+differ from those of $\tilde x$ by at most $10^{-95}$. Let $Y$ be a complex
+matrix close to $J(\tilde x,\kappa_{0})^{-1}$ (with exact rational entries),
+and let
+\[
+  K(X)=\tilde x-Y\,E(\tilde x,\kappa_{0})+\bigl(I-Y\,J(X,\kappa_{0})\bigr)
+  (X-\tilde x),
+\]
+evaluated in interval arithmetic, where $J(X,\kappa_{0})$ is an interval
+matrix containing the Jacobian at every point of $X$. Regarding $\CC^{24}$
+as $\RR^{48}$, the holomorphic map $E(\cdot,\kappa_{0})$ becomes a smooth
+map of $\RR^{48}$, the complex interval computations enclose the
+corresponding real ones, and Krawczyk's theorem applies: if $K(X)$ lies in
+the interior of $X$, then $E(\cdot,\kappa_{0})$ has exactly one zero $x^{*}$
+in $X$, and every matrix in $J(X,\kappa_{0})$, in particular
+$J(x^{*},\kappa_{0})$, is invertible \cite{Kra69,Moo77}, \cite[\S5.1]{Neu90}.
+
+The computation gives $K(X)$ inside the interior of $X$, with every
+coordinate of $K(X)$ of radius below $10^{-180}$. Let $p^{*}=(x^{*},
+\kappa_{0})$. This proves \Cref{prop:family2}(i).
+
+\subsection*{Nondegeneracy}
+On the box $X$, the balls enclosing $a$, $b$, $c$ and $1+a+b$, and the
+resultants of the six pairs among $F,H,G,K$, computed as determinants of
+Sylvester matrices, do not contain $0$. Their absolute values exceed
+$0.46$, $0.50$, $0.070$, $1.69$, and, for the resultants of $(F,G)$, $(F,H)$,
+$(F,K)$, $(K,G)$, $(H,G)$ and $(H,K)$, $9.7\cdot10^{-6}$, $0.47$, $0.88$,
+$0.14$, $0.19$ and $1.0$. This proves \Cref{prop:family2}(ii).
+
+\subsection*{The residue}
+The tangent vector $v^{*}$ has $\kappa$-component $1$, and its other
+components are $\dot x=-J^{-1}\,\partial E/\partial\kappa$, which we enclose
+by solving the linear system over the balls of $X$. With the derivatives of
+$F,H,G$ and of $a,b,c$ given by $\dot x$, and $\dot K=-s(s-1)$, we enclose
+the coefficients of the polynomials $\mathcal D_{v^{*}}$ and $\mathcal M$ of
+\Cref{ssec:twofamilies}, reduce both modulo $F^{5}$, and solve the
+$35\times35$ linear system for the coefficients of $R_{v^{*}}$; Arb's
+solver certifies that the system is invertible. The coefficient of $s^{34}$
+is enclosed in
+\[
+  r_{34}\in[75.2385455180\pm1.1\cdot10^{-11}]+[-19.2657017116\pm
+  3.1\cdot10^{-11}]\,i,
+\]
+which does not contain $0$; its absolute value exceeds $77.66$. By the
+discussion after \Cref{cor:family2}, $I_{03}(p^{*},v^{*})=r_{34}\ne0$,
+which proves \Cref{prop:family2}(iii).
+
+\subsection*{Independent checks}
+The point $\tilde x$ was found by Newton's method from a homotopy, and the
+same computation repeated at $600$ bits gives the same conclusions. The
+equality $B_{114}=S_{114}+\ZZ[\beta]$ of \Cref{cor:B114} is also checked
+without \Cref{thm:aoki}: the integer matrix whose rows are the classes of
+the $113$ pairs, the $98$ standard multisets of level $114$, the element
+$(57)$ and $[\beta]$ has rank $95$ and is saturated, as its Smith normal form
+shows, while the lattice of $x=\sum_{y}c_{y}(y)\in R_{114}$ with
+$\sum_{y}c_{y}\overline{ty}=57\sum_{y}c_{y}$ for every unit $t$ has rank
+$114-1-18=95$; since $(57)$ has odd length and $2\,(57)$ lies in $D_{114}$,
+this gives $B_{114}=S_{114}+\ZZ[\beta]$. The same computation at level $57$
+gives $[B_{57}:S_{57}]=2$.
