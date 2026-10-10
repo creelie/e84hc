@@ -2,7 +2,7 @@
 Deep Bhattacharjee. Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India.
 d.bhattacharjee@erl-forschung.de · itsdeep@live.com · ORCID [0000-0003-0466-750X](https://orcid.org/0000-0003-0466-750X)
 
-The paper proves the Hodge conjecture for the Fermat varieties of degree 114 in every dimension, and more generally of every degree 2^a 3^b 19^c with a ≤ 1, together with their products and the abelian varieties of Fermat type of these degrees (Theorem A). For the degrees divisible by 57 other than 57 itself this is new; for 57 the proof avoids a statement of Kang whose proof has a gap. One step, the nonvanishing of one residue (Proposition 4.19), is a certified computation in interval arithmetic; everything else is proved by hand.
+The paper proves the Hodge conjecture for the Fermat varieties of degree 114 in every dimension, and more generally of every degree 2^a 3^b 19^c with a ≤ 1, together with their products and the abelian varieties of Fermat type of these degrees (Theorem A). For the degrees divisible by 57 it is the first proof that does not rest on a statement of Kang whose proof has a gap; the only earlier argument, for degree 57, does. For 114, 171, 342, 513, … the theorem had not been stated before. One step, the nonvanishing of one residue (Proposition 4.19), is a certified computation in interval arithmetic; everything else is proved by hand.
 
 It also proves the Hodge conjecture for Fermat fourfolds of every odd degree (Theorem B), determines which combinations of the standard statements around the Hodge conjecture imply it (Theorems C and D), and proves the conditional and partial results of earlier versions (Theorems E, F and G).
 

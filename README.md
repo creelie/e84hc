@@ -12,7 +12,7 @@ This repository holds a 65-page paper in `amsart`, its LaTeX source with the fig
 
 **Theorem A.** Let m = 2^a·3^b·19^c with a ≤ 1. Then the Hodge conjecture holds for the Fermat variety x₀^m + … + x_{n+1}^m = 0 of every dimension n, for every product of Fermat varieties of degree m, and for every abelian variety of Fermat type of degree m.
 
-In particular the Hodge conjecture holds for the Fermat varieties of degree 114 in every dimension. For 57 ∤ m the theorem is Aoki's. For m = 57 an earlier proof (Miranda–Movasati–Rufino–Villaflor, 2026) uses a statement of Kang whose proof has a gap (Remark 3.21); the proof here does not. For the other degrees divisible by 57 (114, 171, 342, 513, …) the theorem is new, already for fourfolds.
+In particular the Hodge conjecture holds for the Fermat varieties of degree 114 in every dimension. For 57 ∤ m the theorem is Aoki's. For 57 | m the only earlier argument is a 2026 preprint of Miranda, Movasati, Rufino and Villaflor: it states the case m = 57, which by Aoki's reduction gives the others, but it ends with a statement of Kang about the Fermat fourfold of degree 114 whose proof has a gap (Remark 3.21). The proof here does not use Kang's statement, so for 57 | m it is the first complete proof, and for 114, 171, 342, 513, … the theorem had not been stated before. It does not use OpenAI's unrefereed claim of the Hodge conjecture for CM abelian varieties either, which would give every Fermat variety (Theorem E).
 
 How it works (Section 4):
 
