@@ -50,7 +50,7 @@ A rational Hodge class on a smooth complex projective variety is *algebraic* if 
 By Theorem A, HC comes down to (F2) and (F3′) together. Each has a first case that no known construction reaches:
 
 - for (F2), the Weil classes of nonsplit abelian sixfolds and of abelian eightfolds, and the exceptional classes on the square of a Mumford fourfold;
-- for (F3′), the square of a K3 surface with real multiplication.
+- for (F3′), the square of a very general K3 surface with real multiplication by a real quadratic field, in a family of dimension 8 (some smaller families are settled by van Geemen–Schütt and by Varesco).
 
 For the split Weil eightfolds over Q(√−3), three constructions were tested:
 

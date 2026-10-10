@@ -77,8 +77,9 @@ Run on 2026-10-10 by `verification/references/check_references.py`.
 | vG08 | verified | Crossref: "Real multiplication on K3 surfaces and Kuga Satake varieties" (2008, vol. 56, p. 375-399); title match 1.00 |
 | Sch10 | verified | Crossref: "The Hodge conjecture for self-products of certain K3 surfaces" (2010, vol. 324, p. 507-529); title match 1.00 |
 | vGS25 | verified | Crossref: "On families of K3 surfaces with real multiplication" (2025, vol. 13, p. e2); title match 1.00 |
+| Var23 | verified | Crossref: "Hodge similarities, algebraic classes, and Kuga–Satake varieties" (2023, vol. 305, p. 69); title match 1.00 |
 | BvGS24 | verified | arXiv 2401.04072: "K3 surfaces with real or complex multiplication" by Eva Bayer-Fluckiger, Bert van Geemen, Matthias Schütt; title match 1.00 |
 | Bus19 | verified | Crossref: "Every rational Hodge isometry between two K⁢3K3 surfaces is algebraic" (2019, vol. 755, p. 127-150); title match 0.98 |
 | Huy19 | verified | Crossref: "Motives of isogenous K3 surfaces" (2019, vol. 94, p. 445-458); title match 1.00 |
 
-76 entries, 0 need attention.
+77 entries, 0 need attention.

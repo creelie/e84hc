@@ -28,7 +28,7 @@ The workflow attaches these files to the release once the paper has been built o
 - exhaustive searches of the Hodge characters of Fermat surfaces and fourfolds of degree prime to 6, and of Fermat fourfolds of odd degree divisible by 3, in C, Python and Julia;
 - Macaulay2 scripts for the Jacobian-ring Hodge numbers and Max Noether's theorem.
 
-All 76 references were checked online. No proof in the paper depends on a computer.
+All 77 references were checked online. No proof in the paper depends on a computer.
 
 ### Citation and DOI
 
@@ -42,7 +42,8 @@ Concept DOI, covering all versions: [10.5281/zenodo.23234362](https://doi.org/10
   - `fermat_odd` in Python, Julia and C lists every Hodge sextuple in odd degrees divisible by 3 and finds a move for each. The three programs agree up to degree 63, and the C program reaches degree 105.
   - `Closure.lean` checks the three exceptional characters and their identities by `decide`.
   - The induction itself is not formalized in Lean.
-- The reference checker also asks the Japan Link Center, and all 76 references verify.
+- Section 7 cites Varesco's theorem (Math. Z. 2023) for the general member of the first four-dimensional families of K3 surfaces with real multiplication, next to the families of van Geemen and Schütt.
+- The reference checker also asks the Japan Link Center, and all 77 references verify.
 - v1.1.1 recorded the version DOI of v1.1.0 and left the paper unchanged.
 
 ### What v1.1.0 added
