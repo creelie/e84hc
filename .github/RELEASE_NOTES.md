@@ -31,7 +31,7 @@ All 86 references were checked online: 85 against an online record, and one publ
 
 ### Citation and DOI
 
-Concept DOI, covering all versions: [10.5281/zenodo.23234362](https://doi.org/10.5281/zenodo.23234362). Zenodo gives each release its own version DOI under it: v1.0.0 is [10.5281/zenodo.23234363](https://doi.org/10.5281/zenodo.23234363), v1.0.1 is [10.5281/zenodo.23234501](https://doi.org/10.5281/zenodo.23234501), v1.0.2 is [10.5281/zenodo.23236587](https://doi.org/10.5281/zenodo.23236587), v1.1.0 is [10.5281/zenodo.23271115](https://doi.org/10.5281/zenodo.23271115), v1.2.0 is [10.5281/zenodo.23272739](https://doi.org/10.5281/zenodo.23272739) and v1.3.0 is [10.5281/zenodo.23272887](https://doi.org/10.5281/zenodo.23272887).
+Concept DOI, covering all versions: [10.5281/zenodo.23234362](https://doi.org/10.5281/zenodo.23234362). Zenodo gives each release its own version DOI under it: v1.0.0 is [10.5281/zenodo.23234363](https://doi.org/10.5281/zenodo.23234363), v1.0.1 is [10.5281/zenodo.23234501](https://doi.org/10.5281/zenodo.23234501), v1.0.2 is [10.5281/zenodo.23236587](https://doi.org/10.5281/zenodo.23236587), v1.1.0 is [10.5281/zenodo.23271115](https://doi.org/10.5281/zenodo.23271115), v1.2.0 is [10.5281/zenodo.23272739](https://doi.org/10.5281/zenodo.23272739), v1.3.0 is [10.5281/zenodo.23272887](https://doi.org/10.5281/zenodo.23272887) and v1.4.0 is [10.5281/zenodo.23288228](https://doi.org/10.5281/zenodo.23288228).
 
 ### What is new in this version
 
