@@ -2,7 +2,7 @@
 Deep Bhattacharjee. Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India.
 d.bhattacharjee@erl-forschung.de · itsdeep@live.com · ORCID [0000-0003-0466-750X](https://orcid.org/0000-0003-0466-750X)
 
-The paper proves the Hodge conjecture for the Fermat varieties of degree 114 in every dimension, and more generally of every degree 2^a 3^b 19^c with a ≤ 1, together with their products and the abelian varieties of Fermat type of these degrees (Theorem A). For the degrees divisible by 57 it is the first proof that does not rest on a statement of Kang whose proof has a gap; the only earlier argument, for degree 57, does. For 114, 171, 342, 513, … the theorem had not been stated before. One step, the nonvanishing of one residue (Proposition 4.19), is a certified computation in interval arithmetic; everything else is proved by hand.
+The paper proves the Hodge conjecture for the Fermat varieties of degrees 44 and 114 in every dimension, and more generally of every degree 2^a 11^b and every degree 2^a 3^b 19^c with a ≤ 1, together with their products and the abelian varieties of Fermat type of these degrees (Theorem A). For the degrees divisible by 44 (44, 88, 176, 352, 484, …) the theorem had not been proved before; the 2026 preprint of Miranda, Movasati, Rufino and Villaflor treats every degree below 65 except 44, 51 and 52. For the degrees divisible by 57 it is the first proof that does not rest on a statement of Kang whose proof has a gap; the only earlier argument, for degree 57, does. For 114, 171, 342, 513, … the theorem had not been stated before. Two steps, the nonvanishing of two residues (Propositions 4.20 and 4.23), are certified computations in interval arithmetic; everything else is proved by hand.
 
 It also proves the Hodge conjecture for Fermat fourfolds of every odd degree (Theorem B), determines which combinations of the standard statements around the Hodge conjecture imply it (Theorems C and D), and proves the conditional and partial results of earlier versions (Theorems E, F and G).
 
@@ -10,7 +10,7 @@ It also proves the Hodge conjecture for Fermat fourfolds of every odd degree (Th
 
 ### Files
 
-- `on-the-hodge-conjecture-for-fermat-varieties.pdf`: the paper, 65 pages, `amsart`.
+- `on-the-hodge-conjecture-for-fermat-varieties.pdf`: the paper, 69 pages, `amsart`.
 - `on-the-hodge-conjecture-for-fermat-varieties-tex.zip`: the full LaTeX source, with the figures as PNG and their TikZ sources.
 - `on-the-hodge-conjecture-for-fermat-varieties-arxiv.tar.gz`: the arXiv submission, containing `main.tex`, `sections/`, `main.bbl` and the PNG figures. It compiles with pdflatex alone.
 
@@ -22,18 +22,26 @@ The workflow attaches these files to the release once the paper has been built o
 
 - `closure_checks` in Python, Julia and C, in exact arithmetic, with identical 218-line outputs;
 - a Lean 4 file that uses the core library only, with no `sorry` and no `native_decide`;
-- a Lean 4 project with Mathlib (`verification/lean-mathlib`) that proves the classification of Hodge characters behind Theorem B, including B₁,χ ≠ 0, and the finite and algebraic steps for degree 114; its main theorems use only the standard axioms;
+- a Lean 4 project with Mathlib (`verification/lean-mathlib`) that proves the classification of Hodge characters behind Theorem B, including B₁,χ ≠ 0, and the finite and algebraic steps for degrees 114 and 44; its 24 main theorems use only the standard axioms;
 - exhaustive searches of the Hodge characters of Fermat surfaces and fourfolds, in C, Python and Julia;
 - `fermat114` in Python, Julia and C, the lattice computation of [B₁₁₄ : S₁₁₄], family I in sympy, and the Arb certificate for family II at 1000 and 600 bits;
+- `fermat44` in Python, Julia and C, with identical 14-line outputs, the lattice computation B₄₄ = S₄₄ + Z[β], the Arb certificate for the family of degree 11 at 1000 and 600 bits, and a contour integral that reproduces its residue to 15 digits;
 - Macaulay2 scripts for the Jacobian-ring Hodge numbers and Max Noether's theorem.
 
 All 86 references were checked online: 85 against an online record, and one public repository by hand.
 
 ### Citation and DOI
 
-Concept DOI, covering all versions: [10.5281/zenodo.23234362](https://doi.org/10.5281/zenodo.23234362). Zenodo gives each release its own version DOI under it: v1.0.0 is [10.5281/zenodo.23234363](https://doi.org/10.5281/zenodo.23234363), v1.0.1 is [10.5281/zenodo.23234501](https://doi.org/10.5281/zenodo.23234501), v1.0.2 is [10.5281/zenodo.23236587](https://doi.org/10.5281/zenodo.23236587), v1.1.0 is [10.5281/zenodo.23271115](https://doi.org/10.5281/zenodo.23271115), v1.2.0 is [10.5281/zenodo.23272739](https://doi.org/10.5281/zenodo.23272739), v1.3.0 is [10.5281/zenodo.23272887](https://doi.org/10.5281/zenodo.23272887) and v1.4.0 is [10.5281/zenodo.23288228](https://doi.org/10.5281/zenodo.23288228).
+Concept DOI, covering all versions: [10.5281/zenodo.23234362](https://doi.org/10.5281/zenodo.23234362). Zenodo gives each release its own version DOI under it: v1.0.0 is [10.5281/zenodo.23234363](https://doi.org/10.5281/zenodo.23234363), v1.0.1 is [10.5281/zenodo.23234501](https://doi.org/10.5281/zenodo.23234501), v1.0.2 is [10.5281/zenodo.23236587](https://doi.org/10.5281/zenodo.23236587), v1.1.0 is [10.5281/zenodo.23271115](https://doi.org/10.5281/zenodo.23271115), v1.2.0 is [10.5281/zenodo.23272739](https://doi.org/10.5281/zenodo.23272739), v1.3.0 is [10.5281/zenodo.23272887](https://doi.org/10.5281/zenodo.23272887) v1.4.0 is [10.5281/zenodo.23288228](https://doi.org/10.5281/zenodo.23288228), and v1.5.0 receives its own when this release is archived.
 
 ### What is new in this version
+
+- Theorem A now also covers every degree 2^a 11^b. In degree 44 Aoki's reduction leaves one class, a balanced multiset β of eight residues with exactly one residue of order 11 (Corollary 4.5, which now treats 44 and 114 together). An enumeration shows that no balanced multiset of four or six residues modulo 44 has this property, so β is the first class in degree 44 that linear subspaces and Aoki's cycles miss.
+- β is the join of the threefold character α = (1, 5, 8, 33, 41) and the curve character b = (9, 37, 42), whose types are complementary for every unit (Lemma 4.22). Proposition 4.18 joins a threefold character that is carried by curves with any curve character of complementary type, through the Lefschetz (1,1) theorem on a product of two curves and Shioda's inductive structure with r = 4, s = 2.
+- A block family of degree 11 for α (Proposition 4.23, Corollary 4.24) has a nonzero residue, certified in Arb (Appendix B). Remark 4.26 records what was known: Aoki covers the degrees 2^a 11^b not divisible by 44, and the preprint of Miranda, Movasati, Rufino and Villaflor excludes 44.
+- New checks: `fermat44` in Python, Julia and C, `Degree44.lean`, `family44_certificate.py` and `family44_contour.py`.
+
+### What v1.4.0 added (numbering as in v1.4.0)
 
 - A new Section 4 proves Theorem A. Aoki's reduction leaves one class in degree 114, a balanced multiset of ten residues with one residue of order 19 (Corollary 4.5). It is the join of two characters of the Fermat threefold of degree 114 with complementary level-one Hodge structures (Lemma 4.6). Each is shown to be carried by curves through a residue formula for the derivative of the Abel–Jacobi map of a family of curves, which extends Peterson's method to "block families" (Theorem 4.16). The family for the first character, of cubic forms, is computed by hand (Proposition 4.18); the family for the second has degree 24 and is certified in Arb (Proposition 4.19, Appendix B).
 - The paper is reframed around this theorem: new title, abstract and introduction, with the main theorems relettered A to G. Section 8 now says which ideas came from the AI assistant and where, as the Annals of Mathematics policy asks.

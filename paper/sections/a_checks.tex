@@ -1,7 +1,8 @@
 \section{Machine checks}\label{app:checks}
 
-Apart from \Cref{prop:family2}, whose proof is the computation of
-\Cref{app:cert114}, no proof in this paper depends on a computer. The finite
+Apart from \Cref{prop:family2,prop:family44}, whose proofs are the
+computations of \Cref{app:cert114}, no proof in this paper depends on a
+computer. The finite
 steps have been repeated by machine, in several independent
 implementations. The programs are in the author's repository
 \url{https://github.com/creelie/e84hc}, each release of which is archived on
@@ -157,12 +158,29 @@ at $\lambda=2$) and the weight and degree conditions of both families; its
 theorems depend only on the standard axioms. The certificate of
 \Cref{app:cert114} is run at $1000$ and at $600$ bits.
 
+\subsection*{Degree \texorpdfstring{$44$}{44}}
+A second program in Python, Julia and C checks \Cref{lem:char44}, by listing
+$\langle t\alpha\rangle$ and $\langle tb\rangle$ for the $20$ units $t$; that
+$\nu_{11}$ is $1$ on $\beta$ and vanishes on every pair and on the $24$
+standard multisets of level $44$; and the weights and degrees of the family
+of \Cref{prop:family44}; the three versions print the same $14$ lines. They also
+enumerate the balanced multisets of four and six nonzero elements of
+$\ZZ/44$, $293$ and $3164$ of them, and find $\nu_{11}=0$ on each. The Python version repeats,
+with exact integer matrices, the lattice computation of \Cref{app:cert114}
+at level $44$. In the Lean project with Mathlib, a further file proves
+\Cref{lem:char44}, the vanishing of $\nu_{11}$ on the pairs and on the
+standard multisets, and the weight and degree conditions of the family, with
+the standard axioms only. The certificate for \Cref{prop:family44} is run at
+$1000$ and at $600$ bits, and a contour integral of $\eta_{v^{\dagger}}$
+over a circle enclosing all zeros of the blocks, computed with $40$ digits
+by the trapezoidal rule, agrees with the enclosed value to $15$ digits.
+
 \subsection*{References}
 A script looks up every entry of
 the bibliography online, through its DOI where it has one and through
 Crossref, DataCite, arXiv or the publisher's page otherwise, and compares
 title, year, volume and pages; its report is stored next to it.
 
-Except for the certificate of \Cref{app:cert114}, none of these checks
+Except for the certificates of \Cref{app:cert114}, none of these checks
 touches the geometry the paper relies on, and none of them bears on
 \Cref{q:schoen}.

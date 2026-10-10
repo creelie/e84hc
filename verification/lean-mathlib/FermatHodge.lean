@@ -14,3 +14,4 @@ import FermatHodge.Sextuple
 import FermatHodge.Fermat
 import FermatHodge.Bernoulli
 import FermatHodge.Degree114
+import FermatHodge.Degree44
