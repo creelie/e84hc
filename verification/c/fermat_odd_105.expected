@@ -1,0 +1,26 @@
+H 3 sextuples 1 without_pair 0 generating 0 direct 0 lowering 0 exceptional 0
+H 9 sextuples 28 without_pair 0 generating 0 direct 0 lowering 0 exceptional 0
+H 15 sextuples 174 without_pair 6 generating 6 direct 6 lowering 0 exceptional 0
+H 21 sextuples 412 without_pair 12 generating 12 direct 8 lowering 0 exceptional 4
+H 27 sextuples 565 without_pair 6 generating 6 direct 6 lowering 0 exceptional 0
+H 33 sextuples 990 without_pair 14 generating 14 direct 10 lowering 0 exceptional 4
+H 39 sextuples 1582 without_pair 24 generating 24 direct 12 lowering 4 exceptional 8
+H 45 sextuples 2558 without_pair 50 generating 44 direct 44 lowering 0 exceptional 0
+H 51 sextuples 3341 without_pair 16 generating 16 direct 16 lowering 0 exceptional 0
+H 57 sextuples 4582 without_pair 18 generating 18 direct 18 lowering 0 exceptional 0
+H 63 sextuples 6508 without_pair 60 generating 48 direct 48 lowering 0 exceptional 0
+H 69 sextuples 7910 without_pair 22 generating 22 direct 22 lowering 0 exceptional 0
+H 75 sextuples 10361 without_pair 38 generating 28 direct 28 lowering 0 exceptional 0
+H 81 sextuples 12544 without_pair 24 generating 18 direct 18 lowering 0 exceptional 0
+H 87 sextuples 15422 without_pair 28 generating 28 direct 28 lowering 0 exceptional 0
+H 93 sextuples 18706 without_pair 30 generating 30 direct 30 lowering 0 exceptional 0
+H 99 sextuples 22427 without_pair 34 generating 20 direct 20 lowering 0 exceptional 0
+H 105 sextuples 27690 without_pair 78 generating 54 direct 54 lowering 0 exceptional 0
+O21 balanced, without pair, generating, no move: yes
+O33 balanced, without pair, generating, no move: yes
+O39 balanced, without pair, generating, no move: yes
+O21 + {2,19} = sigma(3,2) + Q, all parts balanced: yes
+2*O33 + pairs + {33,33} = Q + T(32) + T(8) at level 66, all parts balanced: yes
+2*O39 + pairs + {39,39} = Q + T(32) + T(5) at level 78, all parts balanced: yes
+T(x) = {x, x+M/2, -2x, M/2} balanced for all even M <= 200: yes
+every generating Hodge sextuple without a pair has a move or is exceptional

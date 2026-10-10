@@ -6,13 +6,13 @@ The paper determines which combinations of the standard statements around the ra
 
 Granting the recently claimed Hodge conjecture for CM abelian varieties, it proves the conjecture for every Fermat variety and reduces the abelian case to propagation from CM points. For Weil classes it proves a criterion by bounded degree at CM points. It also extracts from Schoen's cycles one subvariety whose semiregularity would settle the split Weil families over Q(√−3) in every dimension.
 
-Without any hypothesis, it proves the Hodge conjecture for Fermat fourfolds of every degree prime to six (Theorem F).
+Without any hypothesis, it proves the Hodge conjecture for Fermat fourfolds of every odd degree (Theorem F).
 
 **The Hodge conjecture itself is not proved.** Section 7 of the paper lists what is proved, what is proved under a stated hypothesis, and what remains open.
 
 ### Files
 
-- `when-is-every-rational-hodge-class-algebraic.pdf`: the paper, 40 pages, `amsart`.
+- `when-is-every-rational-hodge-class-algebraic.pdf`: the paper, 49 pages, `amsart`.
 - `when-is-every-rational-hodge-class-algebraic-tex.zip`: the full LaTeX source, with the figures as PNG and their TikZ sources.
 - `when-is-every-rational-hodge-class-algebraic-arxiv.tar.gz`: the arXiv submission, containing `main.tex`, `sections/`, `main.bbl` and the PNG figures. It compiles with pdflatex alone.
 
@@ -25,10 +25,10 @@ The workflow attaches these files to the release once the paper has been built o
 - `closure_checks` in Python, Julia and C, in exact arithmetic, with identical 218-line outputs;
 - a Lean 4 file that uses the core library only, with no `sorry` and no `native_decide`;
 - a Lean 4 project with Mathlib (`verification/lean-mathlib`) that proves the classification of Hodge characters behind Theorem F, including B₁,χ ≠ 0; its main theorems use only the standard axioms;
-- exhaustive searches of the Hodge characters of Fermat surfaces and fourfolds of degree prime to 6, in C, Python and Julia;
+- exhaustive searches of the Hodge characters of Fermat surfaces and fourfolds of degree prime to 6, and of Fermat fourfolds of odd degree divisible by 3, in C, Python and Julia;
 - Macaulay2 scripts for the Jacobian-ring Hodge numbers and Max Noether's theorem.
 
-All 73 references were checked online. No proof in the paper depends on a computer.
+All 77 references were checked online. No proof in the paper depends on a computer.
 
 ### Citation and DOI
 
@@ -36,7 +36,15 @@ Concept DOI, covering all versions: [10.5281/zenodo.23234362](https://doi.org/10
 
 ### What is new in this version
 
-This version records the version DOI of v1.1.0 in the README, in `CITATION.cff` and in these notes. The paper, its source and the checks are unchanged from v1.1.0.
+- Theorem F now covers every odd degree m. A new subsection, Section 3.7, treats odd m divisible by 3. Every Hodge sextuple that generates Z/m and contains no pair a, −a has a move: one of Aoki's cycles trades it for a quadruple, whose classes are known, or for a sextuple of smaller orders. The only exceptions are three characters, in degrees 21, 33 and 39 (Theorem 3.27). Identities on the Fermat fourfolds of degrees 21, 66 and 78 close them (Lemma 3.26). The proof is by hand.
+- The theorem is new for the odd degrees m > 199 that are divisible by 3 or 5 and have a prime factor larger than 7. The first are 201, 205, 207, 213 and 215. Remark 3.7 now also cites Aoki's 2000 theorem on abelian varieties of Fermat type and Peterson's 2026 preprint on degrees 2^a 3^b 5^c 7^d.
+- New checks:
+  - `fermat_odd` in Python, Julia and C lists every Hodge sextuple in odd degrees divisible by 3 and finds a move for each. The three programs agree up to degree 63, and the C program reaches degree 105.
+  - `Closure.lean` checks the three exceptional characters and their identities by `decide`.
+  - The induction itself is not formalized in Lean.
+- Section 7 cites Varesco's theorem (Math. Z. 2023) for the general member of the first four-dimensional families of K3 surfaces with real multiplication, next to the families of van Geemen and Schütt.
+- The reference checker also asks the Japan Link Center, and all 77 references verify.
+- v1.1.1 recorded the version DOI of v1.1.0 and left the paper unchanged.
 
 ### What v1.1.0 added
 

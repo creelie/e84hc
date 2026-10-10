@@ -71,6 +71,28 @@ if have "$CC"; then
     else echo "FAIL  C output for m <= 125 differs from the stored copy"; status=1; fi
 else missing "$CC"; fi
 
+echo "== Fermat fourfolds of odd degree divisible by 3"
+python3 "$V/python/fermat_odd.py" 63 > "$OUT/fopy.txt"
+echo "ok    Python: $(tail -1 "$OUT/fopy.txt")"
+fosame() {  # fosame <name> <file>: compare with the Python output for m <= 63
+    if diff -q "$OUT/fopy.txt" "$2" >/dev/null; then
+        echo "ok    $1 output is identical to Python (m <= 63)"
+    else
+        echo "FAIL  $1 output differs from Python"; diff "$OUT/fopy.txt" "$2" | head; status=1
+    fi
+}
+if have julia; then
+    julia "$V/julia/fermat_odd.jl" 63 > "$OUT/fojl.txt"; fosame Julia "$OUT/fojl.txt"
+else missing julia; fi
+if have "$CC"; then
+    "$CC" -std=c99 -O2 -Wall -Wextra -Werror -o "$OUT/fo" "$V/c/fermat_odd.c"
+    "$OUT/fo" 63 > "$OUT/foc.txt"; fosame C "$OUT/foc.txt"
+    "$OUT/fo" 105 > "$OUT/foc105.txt"
+    if diff -q "$OUT/foc105.txt" "$V/c/fermat_odd_105.expected" >/dev/null; then
+        echo "ok    C: every generating Hodge sextuple without a pair has a move or is exceptional, m <= 105"
+    else echo "FAIL  C output for m <= 105 differs from the stored copy"; status=1; fi
+else missing "$CC"; fi
+
 echo "== Lean"
 if have lake; then
     (cd "$V/lean" && lake build > "$OUT/lean.txt" 2>&1) || { cat "$OUT/lean.txt"; status=1; }
@@ -78,8 +100,8 @@ if have lake; then
     if grep -q "ofReduceBool" "$OUT/lean.txt" || grep -qE "by[[:space:]]+native_decide" "$V/lean/Closure.lean"; then
         echo "FAIL  Lean uses native_decide"; status=1; fi
     n=$(grep -c "depends on axioms\|does not depend on any axioms" "$OUT/lean.txt" || true)
-    if [ "$n" = 14 ]; then echo "ok    Lean: Closure builds, 14 theorems report standard axioms only"
-    else echo "FAIL  Lean: expected 14 axiom reports, found $n"; status=1; fi
+    if [ "$n" = 20 ]; then echo "ok    Lean: Closure builds, 20 theorems report standard axioms only"
+    else echo "FAIL  Lean: expected 20 axiom reports, found $n"; status=1; fi
 else missing lake; fi
 
 echo "== Lean with Mathlib (set MATHLIB=1; downloads Mathlib on first use)"

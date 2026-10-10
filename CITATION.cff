@@ -13,9 +13,9 @@ abstract: >-
   points, and we extract from Schoen's cycles one subvariety whose
   semiregularity would settle the split Weil families over Q(sqrt(-3)) in
   every dimension. Without any hypothesis, we prove the Hodge conjecture for
-  Fermat fourfolds of every degree prime to six, through a classification of
-  their Hodge characters that is also checked in Lean. The Hodge conjecture
-  itself is not proved.
+  Fermat fourfolds of every odd degree; for degrees prime to six this rests on
+  a classification of their Hodge characters that is also checked in Lean.
+  The Hodge conjecture itself is not proved.
 type: software
 license: MIT
 authors:
@@ -41,8 +41,8 @@ keywords:
   - Mathlib
   - Fermat fourfolds
   - Macaulay2
-version: "1.1.1"
-date-released: "2026-10-09"
+version: "1.2.0"
+date-released: "2026-10-10"
 doi: "10.5281/zenodo.23234362"
 identifiers:
   - type: doi

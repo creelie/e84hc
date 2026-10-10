@@ -1,0 +1,712 @@
+\subsection{Fermat fourfolds of odd degree divisible by three}\label{ssec:fermatodd}
+
+In this subsection $m$ is odd and divisible by $3$, and we prove
+\Cref{thm:F} for such $m$. Here \Cref{thm:sextuples} fails: the set
+$\{1,4,9,15,16,18\}$ of residues modulo $21$ is balanced, contains no pair
+and is not $5$-standard. So we replace the classification by an induction.
+A balanced sextuple either has a \emph{move}, which reduces it to a smaller
+one by means of one cycle of Aoki, or lies in one of three explicit orbits
+(\Cref{thm:moves}), whose classes we write down directly
+(\Cref{lem:exceptional}). We keep the notation of \Cref{ssec:fermatfour}.
+
+\subsubsection*{Algebraic multisets}
+In this paragraph $M\ge2$ is any integer; the even levels $M=66$ and $M=78$
+occur in \Cref{lem:exceptional}. We use \Cref{def:balanced} at level $M$;
+when $M$ is even, a \emph{pair} is a submultiset $\{a,-a\}$, and
+$\{M/2,M/2\}$ is one. Let $A$ be a balanced multiset of an even number
+$n\ge2$ of nonzero elements of $\ZZ/M$. Ordering its elements gives a
+character $\alpha\in\mathfrak{A}^{n-2}_{M}$, and by
+\Cref{prop:fermatchars}(ii) the line $V(\alpha)$ consists of Hodge classes;
+for $n=2$, $X^{0}_{M}$ is a set of $M$ points. Permuting the coordinates of
+$X^{n-2}_{M}$ permutes these lines, so the following notion does not depend
+on the ordering: $A$ is \emph{algebraic} if $V(\alpha)\subseteq
+\Alg^{(n-2)/2}(X^{n-2}_{M})\otimes\CC$. For an odd prime $\ell\mid M$ and
+$x\in\ZZ/M$ we put
+\[
+  \Phi_{\ell}(x)=\{x+jM/\ell:\ 0\le j<\ell\},\qquad
+  \sigma_{\ell,x}=\Phi_{\ell}(x)+\{-\ell x\},
+\]
+so that $\Phi_{5}(x)$ is the fiber $\Phi(x)$ of \Cref{def:balanced}.
+
+\begin{lemma}\label{lem:algtools}
+Let $A$ and $B$ be balanced multisets of an even number of nonzero elements
+of $\ZZ/M$.
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item If $|A|\le4$, then $A$ is algebraic.
+\item If $A$ and $B$ are algebraic, so is $A+B$. If $P$ is a union of pairs
+and $A+P$ is algebraic, then $A$ is algebraic.
+\item Let $t\in(\ZZ/M)^{\times}$. Then $tA$ is balanced, and it is algebraic
+if and only if $A$ is.
+\item Let $g\mid M$, $M'=M/g$, let $A'$ be a multiset of nonzero elements of
+$\ZZ/M'$ with sum $0$, and let $gA'\subseteq\ZZ/M$ be its image under
+$y\mapsto gy$. Then $gA'$ is balanced if and only if $A'$ is, and in that
+case $gA'$ is algebraic if and only if $A'$ is.
+\item Let $M$ be odd, $\ell$ an odd prime dividing $M$, and $x\in\ZZ/M$ with
+$\ell x\ne0$. Then $\sigma_{\ell,x}$ is a balanced multiset of $\ell+1$
+nonzero elements, and it is algebraic.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) For $|A|=2$, $A=\{a,-a\}$, and $H^{0}(X^{0}_{M})$ is spanned by the
+classes of points. For $|A|=4$, $V(\alpha)$ consists of Hodge classes on the
+surface $X^{2}_{M}$, which are algebraic by \Cref{thm:lef11}.
+
+(b) This is the inductive structure of Shioda and Ran,
+\cite[Theorem~1-4]{Aok87}: a union of pairs is a character of the kind
+denoted there by $\delta$, whose line is spanned by the class of a linear
+subspace \cite[Theorem~1-1]{Aok87}.
+
+(c) The first assertion is clear. As in the proof of
+\Cref{prop:fermatchars}(ii), the automorphism $\zeta\mapsto\zeta^{t}$ of
+$\QQ(\mu_{M})$, acting on $H^{n-2}(X^{n-2}_{M},\QQ)\otimes\QQ(\mu_{M})$
+through the second factor, carries the line $V(\alpha)$, which is defined
+over $\QQ(\mu_{M})$, onto $V(t\alpha)$, and it preserves
+$\Alg^{(n-2)/2}\otimes\QQ(\mu_{M})$.
+
+(d) Every unit modulo $M'$ lifts to a unit modulo $M$, and for a unit $t$
+modulo $M$ with image $t'$ we have $\overline{tgy}=g\,\overline{t'y}$ for
+$y\in\ZZ/M'$, the bars denoting representatives modulo $M$ and $M'$; this
+gives the first assertion. Let $\pi\colon X^{n-2}_{M}\to X^{n-2}_{M'}$ be the
+morphism $[x_{i}]\mapsto[x_{i}^{g}]$ and $\alpha'$ an ordering of $A'$. In
+the proof of \Cref{thm:F} for $m$ prime to $6$ we saw that $\pi^{*}$ is
+injective and maps $V(\alpha')$ into $V(g\alpha')$; both are lines, so
+$\pi^{*}V(\alpha')=V(g\alpha')$. If $A'$ is algebraic, then so is $gA'$,
+because $\pi^{*}$ preserves algebraic classes. Conversely
+$V(\alpha')=(\deg\pi)^{-1}\pi_{*}\pi^{*}V(\alpha')=\pi_{*}V(g\alpha')$, and
+$\pi_{*}$ preserves algebraic classes.
+
+(e) Since $\ell x\ne0$, $0\notin\Phi_{\ell}(x)$. The sum of
+$\sigma_{\ell,x}$ is $\ell x+\binom{\ell}{2}M/\ell-\ell x=0$, as $\ell$ is
+odd. For a unit $t$ we have $t\Phi_{\ell}(x)=\Phi_{\ell}(tx)$, and writing
+$\overline{tx}=qM/\ell+r$ with $0\le r<M/\ell$,
+\[
+  \sum_{y\in\Phi_{\ell}(tx)}\bar y=\sum_{j=0}^{\ell-1}\Bigl(\bigl((q+j)\bmod
+  \ell\bigr)\frac{M}{\ell}+r\Bigr)=\frac{(\ell-1)M}{2}+\overline{\ell tx};
+\]
+adding $\overline{-\ell tx}=M-\overline{\ell tx}$ gives $(\ell+1)M/2$. So
+$\sigma_{\ell,x}$ is balanced. For $\ell=3$ it is algebraic by (a). For
+$\ell\ge5$ the argument in the proof of \Cref{thm:F} for $m$ prime to $6$,
+case $\alpha$ $5$-standard, applies with $5$ replaced by $\ell$: with
+$g=\gcd(\bar x,M/\ell)$ we have $\sigma_{\ell,x}=g\,\sigma_{\ell,x'}$, where
+$\sigma_{\ell,x'}$ lives at the odd level $M'=M/g$ and $\gcd(x',M'/\ell)=1$;
+moreover $M'/\ell\ge3$, since for $M'=\ell$ the set $\Phi_{\ell}(x')$ would
+contain $0$. Aoki constructs a subvariety of $X^{\ell-1}_{M'}$ of
+codimension $(\ell-1)/2$ that represents $\sigma_{\ell,x'}$
+\cite[Theorem~2-1]{Aok87}, so $\sigma_{\ell,x'}$ is algebraic, and so is
+$\sigma_{\ell,x}$ by (d).
+\end{proof}
+
+\subsubsection*{Moves}
+From now on $m$ is odd and divisible by $3$. A \emph{sextuple} is a balanced
+multiset of six nonzero elements of $\ZZ/m$. The \emph{profile} $o(A)$ of a
+sextuple $A$ is the sequence of the additive orders of its elements in
+nonincreasing order, and profiles are compared lexicographically.
+
+\begin{definition}\label{def:move}
+Let $A$ be a sextuple, $\ell$ an odd prime dividing $m$, and $x\in\ZZ/m$
+with $\ell x\ne0$. Let $S\subseteq A$ consist of one copy of each element of
+$\Phi_{\ell}(x)$ that lies in $A$, let $k=|S|$, and put
+\[
+  A''=(A-S)+\bigl(-(\Phi_{\ell}(x)\setminus S)\bigr)+\{\ell x\},
+\]
+a multiset of $7+\ell-2k$ elements. The pair $(\ell,x)$ is a \emph{direct
+move} for $A$ if $|A''|\le4$, and a \emph{lowering move} if $|A''|=6$ and
+$o(A'')<o(A)$.
+\end{definition}
+
+\begin{lemma}\label{lem:move}
+In \Cref{def:move}, $A''$ is a balanced multiset of nonzero elements, and
+$A''+\sigma_{\ell,x}=A+P$ for a union of pairs $P$. If $A''$ is algebraic,
+then so is $A$. In particular $A$ is algebraic if it has a direct move.
+\end{lemma}
+
+\begin{proof}
+The elements of $A''$ are nonzero, because $0\notin\Phi_{\ell}(x)$ and $\ell
+x\ne0$. The identity holds with $P=(\Phi_{\ell}(x)\setminus S)+
+\bigl(-(\Phi_{\ell}(x)\setminus S)\bigr)+\{\ell x,-\ell x\}$. The sum and the
+function $t\mapsto\sum_{a}\overline{ta}$ are additive in the multiset, and
+$A$, $P$ and $\sigma_{\ell,x}$ are balanced (\Cref{lem:algtools}(e)); so
+$A''$ is balanced. If $A''$ is algebraic, then $A''+\sigma_{\ell,x}=A+P$ is
+algebraic by \Cref{lem:algtools}(e),(b), and so is $A$, by
+\Cref{lem:algtools}(b). After a direct move, $A''$ has at most four
+elements, so it is algebraic by \Cref{lem:algtools}(a).
+\end{proof}
+
+\begin{lemma}\label{lem:movecrit}
+Let $A$ be a sextuple, $x\in\ZZ/m$ an element of order $e$, and $\ell\ne e$
+an odd prime dividing $e$. If $A$ contains at least $(\ell+1)/2$ distinct
+elements of $\Phi_{\ell}(x)$ of order $e$, then $(\ell,x)$ is a direct or a
+lowering move for $A$.
+\end{lemma}
+
+\begin{proof}
+Here $\ell x\ne0$, as $e\nmid\ell$. Since $\ell\mid e$, the element
+$m/\ell=(m/e)(e/\ell)$ lies in the subgroup of order $e$, and hence so does
+$\Phi_{\ell}(x)$; and $\ell x$ has order $e/\ell$. If $k\ge(\ell+3)/2$, then
+$|A''|\le4$. Otherwise $k=(\ell+1)/2$, $|A''|=6$, and $S$ consists of
+elements of order $e$. Passing from $A$ to $A''$ removes these $k$ elements
+and adds $\ell+1-k=k$ elements of order at most $e$, one of which, $\ell x$,
+has order $e/\ell$. So $A$ and $A''$ have the same elements of order larger
+than $e$, and $A''$ has fewer elements of order $e$; hence
+$o(A'')<o(A)$.
+\end{proof}
+
+\subsubsection*{Three exceptional orbits}
+Let
+\[
+  O_{21}=\{1,4,9,15,16,18\},\qquad O_{33}=\{1,4,16,22,25,31\},\qquad
+  O_{39}=\{1,7,16,22,34,37\},
+\]
+subsets of $\ZZ/21$, $\ZZ/33$ and $\ZZ/39$. In terms of residues: $O_{21}$
+consists of the three elements congruent to $1$ modulo $3$ whose residue
+modulo $7$ is a nonzero square, and the three elements $3v$ with $v$ a
+nonsquare modulo $7$; $O_{33}$ consists of the five elements congruent to
+$1$ modulo $3$ whose residue modulo $11$ is a nonzero square, and $22$; and
+$O_{39}$ consists of the six elements congruent to $1$ modulo $3$ whose
+residue modulo $13$ lies in $\{1,3,9\}\cup\{7,8,11\}$, the union of two
+cosets of the subgroup generated by $3$ in $(\ZZ/13)^{\times}$.
+
+\begin{lemma}\label{lem:exceptional}
+The sets $O_{21}$, $O_{33}$ and $O_{39}$ are balanced and algebraic.
+\end{lemma}
+
+\begin{proof}
+That they are balanced, that is, $\sum_{a}\overline{ta}=3m$ for every unit
+$t$, is a direct check of $6$, $10$ and $12$ sums, as $t$ and $-t$ give
+$3m$ together. For an even level $M=2M'$ and
+$x\in\ZZ/M$ with $2x\ne0$, the multiset $T(x)=\{x,x+M',-2x,M'\}$ of nonzero
+elements has sum $0$, and it is balanced: for a unit $t$, which is odd, put
+$y=\overline{tx}\ne M'$; then $tM'=M'$, and the representatives of the
+entries of $tT(x)$ are $y,y+M',M-2y,M'$ if $y<M'$, and $y,y-M',2M-2y,M'$ if
+$y>M'$, adding up to $2M$ in both cases. These are Aoki's $2$-standard
+elements \cite[\S1]{Aok87}.
+
+\emph{$O_{21}$.} With $\sigma_{3,2}=\{2,9,16\}+\{15\}$ and $Q=\{1,4,18,19\}$
+we have
+\[
+  O_{21}+\{2,19\}=\sigma_{3,2}+Q.
+\]
+As $O_{21}$, the pair and $\sigma_{3,2}$ are balanced, so is $Q$. By
+\Cref{lem:algtools}(a) $\sigma_{3,2}$ and $Q$ are algebraic, so
+$O_{21}+\{2,19\}$ is algebraic by \Cref{lem:algtools}(b), and so is
+$O_{21}$.
+
+\emph{$O_{33}$.} By \Cref{lem:algtools}(d) it suffices to show that
+$a=2O_{33}=\{2,8,32,44,50,62\}\subseteq\ZZ/66$ is algebraic; it is balanced
+because $O_{33}$ is. In $\ZZ/66$,
+\[
+  a+\{1,65\}+\{25,41\}+\{33,33\}=Q+T(32)+T(8),
+\]
+with $Q=\{1,25,44,62\}$, $T(32)=\{2,32,33,65\}$ and $T(8)=\{8,33,41,50\}$.
+As before $Q$ is balanced, all three quadruples on the right are algebraic,
+so is their sum, and $a$ is algebraic by \Cref{lem:algtools}(b).
+
+\emph{$O_{39}$.} In the same way, $a=2O_{39}=\{2,14,32,44,68,74\}\subseteq
+\ZZ/78$ satisfies
+\[
+  a+\{5,73\}+\{7,71\}+\{39,39\}=Q+T(32)+T(5),
+\]
+with $Q=\{2,7,73,74\}$, $T(32)=\{14,32,39,71\}$ and $T(5)=\{5,39,44,68\}$,
+and we conclude as for $O_{33}$.
+\end{proof}
+
+None of the three sets has a direct or a lowering move; this is a finite
+check, which the programs of \Cref{app:checks} also carry out. For $m=21$
+\Cref{lem:exceptional} is contained in \cite{daS21}, and for $m=33$ and
+$m=39$ in \cite{Jum26}: the identity used for $O_{33}$ is
+\cite[Theorem~1.4]{Jum26}, while \cite{Jum26} treats $O_{39}$ through the
+correspondence of Shioda and Katsura \cite[Theorem~1.2]{Jum26}. We have not
+found the identity at level $78$ in the literature.
+
+\subsubsection*{The reduction}
+
+\begin{theorem}\label{thm:moves}
+Let $m$ be odd and divisible by $3$, and let $A$ be a sextuple that contains
+no pair and generates $\ZZ/m$. Then $A$ has a direct or a lowering move, or
+$m\in\{21,33,39\}$ and $tA=O_{m}$ for some $t\in(\ZZ/m)^{\times}$.
+\end{theorem}
+
+\begin{proof}[Proof of \Cref{thm:F} for odd $m$ divisible by $3$, given
+\Cref{thm:moves}]
+As in the proof for $m$ prime to $6$, it suffices to show that every
+sextuple $A$ is algebraic. We argue by induction on $m$ and, for fixed $m$,
+on $o(A)$; at the odd levels prime to $6$ every sextuple is algebraic by the
+proof in \Cref{ssec:fermatfour}. If $A$ contains a pair $\{a,-a\}$, then
+$A-\{a,-a\}$ is balanced, so $A$ is algebraic by \Cref{lem:algtools}(a),(b).
+If $A$ lies in the subgroup $g\ZZ/m$ for some $g>1$ dividing $m$, then
+$A=gA'$ for a sextuple $A'$ at the odd level $m/g<m$, which is algebraic,
+and so is $A$, by \Cref{lem:algtools}(d). Otherwise \Cref{thm:moves}
+applies. If $A$ has a direct move, it is algebraic by \Cref{lem:move}. If it
+has a lowering move, then $A''$ is a sextuple with $o(A'')<o(A)$, hence
+algebraic, and $A$ is algebraic by \Cref{lem:move}. In the remaining case
+$tA$ is algebraic by \Cref{lem:exceptional}, and so is $A$, by
+\Cref{lem:algtools}(c).
+\end{proof}
+
+The rest of this subsection proves \Cref{thm:moves}. We fix $A$ as there and
+assume that $A$ has no direct and no lowering move.
+
+\subsubsection*{Step 1: maximal orders and the character relation}
+An order $e$ of an element of $A$ is \emph{maximal} if no element of $A$ has
+an order that is a proper multiple of $e$. As $A$ generates $\ZZ/m$, $m$ is
+the least common multiple of the maximal orders. For a maximal order $e$ we
+use the objects of Step~1 of \Cref{ssec:fermatfour}: the embedding
+$\kappa\colon\ZZ/e\to\ZZ/m$, $U=(\ZZ/e)^{\times}$, and the odd function $F$
+on $U$; we let $N_{e}$ be the number of elements of $A$ of order $e$. As $A$
+contains no pair, $|F(z)|=\operatorname{mult}_{A}(\kappa z)+
+\operatorname{mult}_{A}(-\kappa z)$, so $\|F\|=2N_{e}\le12$. \Cref{lem:countF} holds with the same proof. For a prime
+$p\mid e$ the subgroup $K_{p}\subseteq U$ and the product $H$ are defined as
+in Step~3 there; \Cref{lem:Kp}(b),(c) hold with the same proofs, and by
+\Cref{lem:Kp}(a), $|K_{p}|\ge4$ for $p\ge5$, with equality only for
+$p=5\parallel e$, while $|K_{3}|=3$ if $9\mid e$ and $|K_{3}|=2$ if
+$3\parallel e$.
+
+\begin{lemma}\label{lem:charrel}
+Let $B$ be a balanced multiset of nonzero elements of $\ZZ/m$. For $a\in B$
+let $f_{a}$ be its order, and write $a=(m/f_{a})z_{a}$ with $z_{a}\in
+(\ZZ/f_{a})^{\times}$. Let $\chi$ be an odd primitive Dirichlet character of
+conductor $c\mid m$. Then
+\begin{equation}\label{eq:charrel}
+  \sum_{a\in B,\ c\mid f_{a}}\frac{\bar\chi(z_{a})}{\varphi(f_{a})}
+  \prod_{\ell\mid f_{a},\ \ell\nmid c}\bigl(1-\chi(\ell)\bigr)=0,
+\end{equation}
+where $\ell$ runs over primes and $\bar\chi(z_{a})$ is the value at the
+residue of $z_{a}$ modulo $c$.
+\end{lemma}
+
+\begin{proof}
+First, for a multiple $f$ of $c$,
+\begin{equation}\label{eq:mobius}
+  \sum_{\substack{1\le s\le f\\ (s,f)=1}}\chi(s)\,s=f\,B_{1,\chi}
+  \prod_{\ell\mid f,\ \ell\nmid c}\bigl(1-\chi(\ell)\bigr).
+\end{equation}
+Indeed, for $N$ divisible by $c$, $\sum_{s=1}^{N}\chi(s)s=\sum_{r=1}^{c}
+\chi(r)\sum_{j=0}^{N/c-1}(r+jc)=NB_{1,\chi}$, since $\sum_{r}\chi(r)=0$. Let
+$f_{0}$ be the product of the primes dividing $f$ but not $c$. As $\chi(s)=0$
+unless $(s,c)=1$, and then $(s,f)=1$ if and only if $(s,f_{0})=1$, Möbius
+inversion gives
+\[
+  \sum_{(s,f)=1}\chi(s)s=\sum_{d\mid f_{0}}\mu(d)\chi(d)\,d\sum_{s'=1}^{f/d}
+  \chi(s')s'=fB_{1,\chi}\sum_{d\mid f_{0}}\mu(d)\chi(d),
+\]
+which is \eqref{eq:mobius}. Now regard $\chi$ as a character of
+$(\ZZ/m)^{\times}$ through reduction modulo $c$. Since $B$ is balanced,
+$\sum_{a\in B}\sum_{t}\chi(t)\,\overline{ta}=h(B)\sum_{t}\chi(t)=0$. If
+$c\nmid f_{a}$, the inner sum vanishes, as in the proof of
+\Cref{lem:charstep}: $\chi$ is not trivial on the units congruent to $1$
+modulo $f_{a}$, since otherwise it would be induced from a character modulo
+the proper divisor $\gcd(f_{a},c)$ of $c$. If $c\mid f_{a}$, then
+$\overline{ta}=(m/f_{a})\,\overline{tz_{a}}$, with $\overline{tz_{a}}\in
+\{0,\dots,f_{a}-1\}$, and $\chi(t)$ depends only on $t$ modulo $f_{a}$; so,
+substituting $s\mapsto sz_{a}^{-1}$ and using \eqref{eq:mobius},
+\[
+  \sum_{t}\chi(t)\,\overline{ta}=\frac{m\,\varphi(m)}{f_{a}\varphi(f_{a})}
+  \,\bar\chi(z_{a})\sum_{s\in(\ZZ/f_{a})^{\times}}\chi(s)\,\bar s
+  =\frac{m\,\varphi(m)B_{1,\chi}}{\varphi(f_{a})}\,\bar\chi(z_{a})
+  \prod_{\ell\mid f_{a},\ \ell\nmid c}\bigl(1-\chi(\ell)\bigr).
+\]
+Adding over $a$ and dividing by $m\varphi(m)B_{1,\chi}\ne0$ gives
+\eqref{eq:charrel}.
+\end{proof}
+
+For a maximal order $e$ and $c=e$, the only elements in \eqref{eq:charrel}
+are those of order $e$, and \eqref{eq:charrel} becomes the relation
+$\sum_{z}\operatorname{mult}_{A}(\kappa z)\chi(z)^{-1}=0$ of the proof of
+\Cref{lem:charstep}. So \Cref{lem:charstep} holds for every maximal order
+$e$, and with it \Cref{lem:splitF}: $F$ is split along $(K_{p})_{p\mid e}$ on
+every coset of $H$.
+
+\begin{lemma}\label{lem:fiberline}
+Let $e$ be a maximal order, $p$ a prime dividing $e$ and $w\in U$. Then
+$\kappa(wK_{p})\subseteq\Phi_{p}(\kappa w)$, with equality if $p^{2}\mid e$.
+If $e\ne p$, $|K_{p}|\ge(p+1)/2$ and $F\ge1$ on $wK_{p}$, then $A$ has a
+direct or a lowering move.
+\end{lemma}
+
+\begin{proof}
+An element $k\in K_{p}$ is congruent to $1$ modulo $e/p$, so
+$\kappa(wk)-\kappa(w)=(m/e)\,w(k-1)$ lies in $(m/e)(e/p)\ZZ=(m/p)\ZZ$. If
+$p^{2}\mid e$, both sides have $p$ elements. If $F\ge1$ on $wK_{p}$, then the
+$|K_{p}|$ elements $\kappa(wk)$ of order $e$ lie in $A$, and
+\Cref{lem:movecrit} applies.
+\end{proof}
+
+\subsubsection*{Step 2: every maximal order is divisible by \texorpdfstring{$3$}{3}}
+Let $e$ be a maximal order prime to $3$; then $e$ is prime to $6$. The
+function $F$ is odd, $\|F\|\le12$, $F(z_{0})\ge1$ when $\kappa(z_{0})\in A$
+has order $e$, and $F$ is split, so \Cref{prop:core} applies. In its case
+(2), $\|F\|=12$, so all six elements of $A$ have order $e$, and
+\Cref{lem:countF} gives $\sum_{z}F(z)z=0$, against \Cref{lem:killhalf}. In
+case (1), $F\ge1$ on a line $wK_{p}$ with $p\in\{5,7\}$. As $F$ is odd,
+$-1\notin K_{p}$, so $e\ne p$, and $|K_{p}|\ge4\ge(p+1)/2$; by
+\Cref{lem:fiberline} $A$ has a move, which we excluded.
+
+\subsubsection*{Step 3: no maximal order is divisible by \texorpdfstring{$9$}{9}}
+Let $e$ be a maximal order with $9\mid e$. Each $K_{p}$ consists of units
+congruent to $1$ modulo $e/p$, and $3\mid e/p$; so $H$ consists of units
+congruent to $1$ modulo $3$, and $-1\notin H$. Let $F(x)\ge1$ and $C=xH$. The
+cosets $C$ and $-C$ are distinct and carry the same mass, so
+$\sum_{C}|F|\le6$. Write $K_{3}=\{1,k,k^{2}\}$ and $H'=\prod_{p\ne3}K_{p}$,
+and let $S_{c}=xcH'$, for $c\in K_{3}$, be the slices of $C$, with
+$\mu(c)=\sum_{S_{c}}|F|$, as in Step~4 of \Cref{ssec:fermatfour}.
+
+(i) \emph{No line $zK_{3}$ contains two points $z_{1}\ne z_{2}$ with
+$F(z_{1})F(z_{2})>0$.} Otherwise, replacing $z_{1},z_{2}$ by $-z_{1},-z_{2}$
+if necessary, $F(z_{1}),F(z_{2})\ge1$, and $\kappa(z_{1}),\kappa(z_{2})$ are
+two elements of $A$ of order $e$ in $\Phi_{3}(\kappa z_{1})$
+(\Cref{lem:fiberline}); as $e\ne3$, \Cref{lem:movecrit} gives a move.
+
+(ii) \emph{$\mu(c)\ge1$ for every $c$.} Otherwise, by (S2), $F$ is split
+along $(K_{p})_{p\ne3}$ on $S_{1}\ni x$, where its mass is at most $6$. These
+subgroups have orders at least $4$, with equality for at most one of them, so
+by \Cref{lem:grid} $F=1$ on a line $xK_{p}$ with $p\in\{5,7\}$ and
+$|K_{p}|\le6$, and \Cref{lem:fiberline} gives a move.
+
+(iii) For $c\ne c'$ in $K_{3}$ the function $G(z)=F(z)-F(zc^{-1}c')$ on
+$S_{c}$ is split along $(K_{p})_{p\ne3}$ by (S1), and $\sum_{S_{c}}|G|\le
+\mu(c)+\mu(c')\le5$ by (ii). It is not zero: by (ii) some $z\in S_{c}$ has
+$F(z)\ne0$, and $F(zc^{-1}c')=F(z)$ would contradict (i), as $z$ and
+$zc^{-1}c'$ lie on the line $zK_{3}$. By \Cref{lem:grid}, $|G|=1$ on a line
+along some $K_{p}$ with $|K_{p}|\le5$ and $G=0$ elsewhere, so $p=5$ and
+$\mu(c)+\mu(c')\ge|K_{5}|\ge4$. Adding over the three pairs $\{c,c'\}$ gives
+$2\sum_{c}\mu(c)\ge12$. As $\sum_{c}\mu(c)\le6$, we get $|K_{5}|=4$ and
+$\mu(c)=2$ for every $c$.
+
+Now take $c=1$ and $c'=k$: $G=\sigma$ on a line $L\subseteq S_{1}$ along
+$K_{5}$ and $G=0$ elsewhere, for a sign $\sigma$. By (i), $F(z)F(zk)\le0$
+for all $z$. Off $L$, $F(z)=F(zk)$, so both vanish; on $L$,
+$F(z)-F(zk)=\sigma$, so $(F(z),F(zk))$ is $(\sigma,0)$ or $(0,-\sigma)$.
+Since $\mu(1)=2$, $F=\sigma$ at two points of $L$, and $F=0$ at the other two
+points $z$ of $L$, where $F(zk)=-\sigma$. The same argument with $c'=k^{2}$
+gives a line $L'\subseteq S_{1}$ and a sign $\sigma'$ such that $F$ takes
+values in $\{0,\sigma'\}$ on $S_{1}$, with support in $L'$; so $L'=L$ and
+$\sigma'=\sigma$, and $F(zk^{2})=-\sigma$ at the two points $z\in L$ with
+$F(z)=0$. For such a $z$ we get $F(zk)=F(zk^{2})=-\sigma$, against (i).
+
+\subsubsection*{Step 4: the case \texorpdfstring{$3\parallel e$}{3 || e}}
+By Steps~2 and~3, every maximal order $e$ satisfies $3\parallel e$; write
+$e=3e^{*}$. Then $e^{*}>1$: for $e=3$, $U=K_{3}=\{\pm1\}$, and $F$ would be
+$K_{3}$-invariant by (S4), so $F(1)=F(-1)=-F(1)$, while $F\ne0$. Fix a
+maximal order $e$. By the Chinese remainder theorem
+$U=(\ZZ/3)^{\times}\times U^{*}$ with $U^{*}=(\ZZ/e^{*})^{\times}$, and we
+write $z=(s,u)$ and $\kappa(s,u)$. Then $K_{3}=(\ZZ/3)^{\times}\times\{1\}$,
+and for $p\mid e^{*}$, $K_{p}=\{1\}\times K^{*}_{p}$, where $K^{*}_{p}\subseteq
+U^{*}$ consists of the units congruent to $1$ modulo $e^{*}/p$; so
+$H=K_{3}\times H^{*}$ with $H^{*}=\prod_{p\mid e^{*}}K^{*}_{p}$.
+
+For $u\in U^{*}$ the points $(1,u)$ and $(-1,u)$ form a line along $K_{3}$.
+If $F(1,u)F(-1,u)>0$, then $A$ has a move, as in (i) of Step~3. So
+$F(1,u)F(-1,u)\le0$ for all $u$, and we define $D\colon U^{*}\to\ZZ$ by
+$D(u)=F(1,u)-F(-1,u)$. The elements of $A$ of order $e$ are its \emph{tops}
+at $e$.
+
+\begin{lemma}\label{lem:tops}
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item $D$ is even, $\|D\|=2N_{e}$, and $D$ is split along
+$(K^{*}_{p})_{p\mid e^{*}}$ on every coset of $H^{*}$.
+\item For $u\in U^{*}$, the tops of the form $\kappa(s,\pm u)$ are
+$|D(u)|$ in number, and each of them has $s=\operatorname{sign}D(u)$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) Since $F$ is odd, $D(-u)=F(1,-u)-F(-1,-u)=-F(-1,u)+F(1,u)=D(u)$. As
+$F(1,u)F(-1,u)\le0$,
+$|D(u)|=|F(1,u)|+|F(-1,u)|$, and these add up to $\|F\|=2N_{e}$. Applying (S1)
+with the element $(-1,1)$ of $K_{3}$ to the cosets $(1,u)(\{1\}\times H^{*})$
+shows that $D$ is split. (b) If $D(u)>0$, then $F(1,u)\ge0\ge F(-1,u)$; as $A$
+contains no pair, it contains $\kappa(1,u)$ with multiplicity $F(1,u)$,
+$\kappa(1,-u)=-\kappa(-1,u)$ with multiplicity $-F(-1,u)$, and neither
+$\kappa(-1,u)$ nor $\kappa(-1,-u)$. The case $D(u)<0$ is symmetric, and if
+$D(u)=0$ there are no such tops.
+\end{proof}
+
+\subsubsection*{Step 5: even split functions}
+
+\begin{lemma}\label{lem:even}
+Let $e^{*}>1$ be prime to $6$, and let $D\colon U^{*}\to\ZZ$ be even, not
+zero, with $\|D\|\le12$, and split along $(K^{*}_{p})_{p\mid e^{*}}$ on every
+coset of $H^{*}$. Then one of the following holds.
+\begin{enumerate}[label=\textup{(E\arabic*)}]
+\item $D=\sigma(\mathbf 1_{L}+\mathbf 1_{-L})$ for a sign $\sigma$ and a
+line $L$ along $K^{*}_{5}$ or $K^{*}_{7}$ with $L\cap(-L)=\emptyset$.
+\item $e^{*}$ is a prime $q\le13$ and $D$ is constant.
+\item $e^{*}=35$, and $D(u)=g(u\bmod5)+h(u\bmod7)$ with even functions $g$ on
+$(\ZZ/5)^{\times}$ and $h$ on $(\ZZ/7)^{\times}$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+By \Cref{lem:Kp}(a), $|K^{*}_{p}|\ge4$, with equality only for
+$p=5\parallel e^{*}$, and $|K^{*}_{p}|\le6$ only for $p\in\{5,7\}$.
+
+\emph{$e^{*}$ is not squarefree}, say $p^{2}\mid e^{*}$. Every $K^{*}_{q}$
+consists of units congruent to $1$ modulo $e^{*}/q$, hence modulo $p$; so
+$-1\notin H^{*}$. For a coset $C$ of $H^{*}$, the cosets $C$ and $-C$ are
+distinct and carry the same mass, so $\sum_{C}|D|\le6$. By \Cref{lem:grid},
+on each coset $C$ where $D\ne0$, $D=\sigma_{C}$ on a line $L_{C}$ along
+$K^{*}_{5}$ or $K^{*}_{7}$ and $D=0$ elsewhere on $C$; as $D$ is even, $D$ is
+then $\sigma_{C}$ on $-L_{C}\subseteq-C$. Each such pair of cosets carries
+mass at least $8$, so there is only one, and (E1) holds.
+
+\emph{$e^{*}=q$ is prime.} Then $U^{*}=K^{*}_{q}$, so $D$ is constant by
+(S4), and $\|D\|=|D(1)|(q-1)\le12$ gives $q\le13$: (E2).
+
+\emph{$e^{*}$ is squarefree with at least two prime factors, one of them
+$p\ge11$.} Now $H^{*}=U^{*}$, by the Chinese remainder theorem. Put
+$H'^{*}=\prod_{q\ne p}K^{*}_{q}$, and consider the slices $S_{c}=cH'^{*}$,
+$c\in K^{*}_{p}$, with masses $\mu(c)$. Let $\varepsilon_{p}\in K^{*}_{p}$
+be congruent to $-1$ modulo $p$; then $-1=\varepsilon_{p}\varepsilon'$ with
+$1\ne\varepsilon'\in H'^{*}$, so $-1\notin K^{*}_{p}$, and $-S_{c}=
+S_{c\varepsilon_{p}}$, so $\mu(c\varepsilon_{p})=\mu(c)$, with
+$c\varepsilon_{p}\ne c$. Suppose that every slice carries mass. As
+$|K^{*}_{p}|\ge10$ and $\sum\mu\le12$, at most one slice has $\mu\ge3$, hence
+none, by the pairing; and some $c_{0}$ has $\mu(c_{0})=1$. For every $c$, the
+function $D(z)-D(zc_{0}^{-1}c)$ on $S_{c_{0}}$ is split along
+$(K^{*}_{q})_{q\ne p}$ by (S1) and has mass at most $3$, so it vanishes by
+\Cref{lem:grid}. Hence $D$ is constant on $z_{0}K^{*}_{p}$, where $z_{0}$ is
+the point of $S_{c_{0}}$ with $D(z_{0})\ne0$, and vanishes elsewhere. As
+$D(-z_{0})=D(z_{0})\ne0$, this gives $-1\in K^{*}_{p}$, a contradiction. So
+some slice has $\mu=0$, and by (S2) $D$ is split along $(K^{*}_{q})_{q\ne p}$
+on every slice. As $\mu(c)=\mu(c\varepsilon_{p})$, every slice has mass at
+most $6$, and we conclude by \Cref{lem:grid} as in the first case, with
+slices in place of cosets: (E1).
+
+\emph{Otherwise} $e^{*}$ is squarefree and its prime factors are $5$ and
+$7$, so $e^{*}=35$ and $U^{*}=K^{*}_{5}K^{*}_{7}$. By (S3),
+$D(ij)=D(i)+D(j)-D(1)$ for $i\in K^{*}_{5}$, $j\in K^{*}_{7}$; this gives
+$D(u)=g(u\bmod5)+h(u\bmod7)$, with $g(i)=D(i)-D(1)$ and $h(j)=D(j)$, as $i$
+and $j$ are determined by $u\bmod5$ and $u\bmod7$. Since $D$ is even,
+$g(-i)-g(i)=h(j)-h(-j)$ for all $i,j$; both sides are a constant $\gamma$,
+and replacing $i$ by $-i$ shows $\gamma=-\gamma$. So $g$ and $h$ are even:
+(E3).
+\end{proof}
+
+\subsubsection*{Step 6: two lemmas}
+
+\begin{lemma}\label{lem:chars}
+Let $M'>1$ be prime to $6$. There are primitive Dirichlet characters modulo
+$M'$ of both parities. Among those of a given parity, the values at $3$ are
+not all equal, unless $M'=5$ and the parity is even.
+\end{lemma}
+
+\begin{proof}
+A character modulo $M'$ is a product of characters $\psi_{p}$ modulo the
+prime powers $p^{a}\parallel M'$, and it is primitive if and only if every
+$\psi_{p}$ is. The characters modulo $p^{a}$ are the powers $\theta^{j}$ of a
+generator $\theta$, which is faithful; so $\theta(-1)=-1$, and
+$\theta(9)\ne1$ because $9\not\equiv1\pmod p$. The character $\theta^{j}$ has
+parity $(-1)^{j}$, and it is primitive if and only if $(p-1)\nmid j$ when
+$a=1$, and $p\nmid j$ when $a\ge2$. Both conditions hold for $j=1,2$, so
+both parities occur. Replacing $\psi_{p}=\theta^{j}$ by $\theta^{j\pm2}$ keeps
+the parity and multiplies the value at $3$ by $\theta(9)^{\pm1}\ne1$. One of
+$\theta^{j+2}$ and $\theta^{j-2}$ is primitive, since $p$ cannot divide both
+$j+2$ and $j-2$, and $p-1$ divides both only if $p=5$ and $j\equiv2\pmod4$.
+So the values at $3$ in a parity class are constant only if every
+$\psi_{p}$ is the quadratic character modulo $p^{a}=5$, that is, only if
+$M'=5$ and the parity is even.
+\end{proof}
+
+\begin{lemma}\label{lem:multiple}
+Let $e=3e^{*}$ be a maximal order and $b\in A$ an element whose order $f\ne
+e$ is a multiple of $e^{*}$. Then $f=e^{*}$.
+\end{lemma}
+
+\begin{proof}
+The order $f$ divides some maximal order $e'$, and $3\mid e'$ by Step~2; so
+$e=3e^{*}$ divides $e'$, and $e'=e$ by the maximality of $e$. Hence
+$e^{*}\mid f\mid e$ and $f\ne e$, so $f=e^{*}$.
+\end{proof}
+
+\subsubsection*{Step 7: the cases (E1) and (E3) do not occur}
+Let $e=3e^{*}$ be a maximal order. By \Cref{lem:tops}(a), \Cref{lem:even}
+applies to $D$.
+
+\emph{Case (E1).} Let $L=wK^{*}_{p}$ with $p\in\{5,7\}$. By
+\Cref{lem:tops}(b), $N_{e}=|L|$, and the tops are the elements
+$\kappa(\sigma,\varepsilon_{u}u)$, $u\in L$, one for each $u$, with signs
+$\varepsilon_{u}$. For a sign $\varepsilon$, the tops with
+$\varepsilon_{u}=\varepsilon$ lie in $\kappa\bigl((\sigma,\varepsilon
+w)K_{p}\bigr)\subseteq\Phi_{p}(\kappa(\sigma,\varepsilon w))$ by
+\Cref{lem:fiberline}, and $e\ne p$; so by \Cref{lem:movecrit} fewer than
+$(p+1)/2$ of them have $\varepsilon_{u}=\varepsilon$. If $|L|=5$, this is
+impossible. Since $2|L|\le12$, the remaining cases are $|L|=4$, $p=5$, with
+two tops of each sign, and $|L|=6$, $p=7$, with three of each sign.
+
+Let $p=5$ and $|L|=4$, so $5\parallel e^{*}$. Here $e^{*}\ne5$, since
+$K^{*}_{5}=U^{*}$ would contain $-1$; so $e^{*}=5e'$ with $e'>1$ prime to
+$30$, and reduction modulo $5$ identifies $K^{*}_{5}$ with
+$(\ZZ/5)^{\times}$. Put $\varepsilon'(k)=\varepsilon_{wk}$, a function on
+$(\ZZ/5)^{\times}$ with two values $1$ and two values $-1$. Let $\chi=\chi_{5}
+\chi'$ be an odd primitive character modulo $e^{*}$, with $\chi_{5}$ modulo
+$5$ and $\chi'$ modulo $e'$. By \Cref{lem:multiple}, the elements $a\in A$
+with $e^{*}\mid f_{a}$ are the tops and the elements of order $e^{*}$, and
+\eqref{eq:charrel} with $c=e^{*}$, multiplied by $\varphi(e)=2\varphi(e^{*})$,
+reads
+\[
+  \bigl(1-\chi(3)\bigr)\sum_{u\in L}\bar\chi(\varepsilon_{u}u)
+  +2\sum_{f_{b}=e^{*}}\bar\chi(z_{b})=0.
+\]
+As $\chi$ is odd and $\chi(k)=\chi_{5}(k)$ for $k\in K^{*}_{5}$, the first
+sum is $\bar\chi(w)E(\chi_{5})$ with $E(\chi_{5})=\sum_{k}\varepsilon'(k)
+\bar\chi_{5}(k)$. Since $\sum_{k}\varepsilon'(k)=0$, $E$ vanishes at the
+trivial character, and, with $\lambda_{5}$ the quadratic character,
+$E(\lambda_{5})=2(\varepsilon'(1)+\varepsilon'(4))$. So either
+$\varepsilon'=\pm\lambda_{5}$, and then $E$ vanishes at the two characters of
+order $4$; or $E(\lambda_{5})=0$, and then $E$ does not vanish at some
+character of order $4$, as $\varepsilon'\ne0$. If no element of $A$ has order
+$e^{*}$, choose $\chi_{5}$ with $E(\chi_{5})\ne0$, and by \Cref{lem:chars}
+(note $e'\ne5$) a primitive $\chi'$ with $\chi'(-1)=-\chi_{5}(-1)$ and
+$\chi'(3)\ne\chi_{5}(3)^{-1}$; the relation then fails. If exactly one
+element $b$ has order $e^{*}$, choose $\chi_{5}\ne1$ with $E(\chi_{5})=0$ and
+a primitive $\chi'$ with $\chi'(-1)=-\chi_{5}(-1)$; the relation becomes
+$2\bar\chi(z_{b})=0$, which is absurd. If two elements have order $e^{*}$,
+then all six elements of $A$ lie in $\kappa(\ZZ/e)$; writing them as
+$\kappa(y)$, we get $\sum y=0$ in $\ZZ/e$, while the residues of the $y$
+modulo $3$ are $\sigma$ for the four tops and $0$ for the other two, so
+$4\sigma\equiv0\pmod3$, which is false.
+
+Let $p=7$ and $|L|=6$. Then $N_{e}=6$, so $A$ consists of tops, $m=e$, and
+$\sum_{u\in L}\varepsilon_{u}u=0$ in $\ZZ/e^{*}$, because $\sum_{a\in A}a=0$.
+Here $7\parallel e^{*}$ and, as before, $e^{*}=7e'$ with $e'>1$ prime to $42$.
+Put $\varepsilon'(k)=\varepsilon_{wk}$ for $k\in K^{*}_{7}$, identified with
+$(\ZZ/7)^{\times}$, and let $P$ be the set where $\varepsilon'=1$. Reducing
+modulo $7$ gives $w\sum_{k}\varepsilon'(k)k\equiv0$, and
+$\sum_{k}\varepsilon'(k)k=2\sum_{P}k-21$, so $\sum_{P}k\equiv0\pmod7$. The
+only three-element subsets of $\{1,\dots,6\}$ with this property are
+$\{1,2,4\}$ and $\{3,5,6\}$; so $\varepsilon'=\pm\lambda_{7}$, the Legendre
+symbol modulo $7$, and $\varepsilon_{u}=\tau\lambda_{7}(u)$ for a sign
+$\tau$. If $e'\ne5$, let $\psi$ be an even primitive character modulo $e'$
+with $\psi(3)\ne-1$ (\Cref{lem:chars}) and $\chi=\lambda_{7}\psi$, which is
+odd and primitive modulo $e^{*}$. Then $\chi(3)=-\psi(3)\ne1$, and
+$\bar\chi(\varepsilon_{u}u)=\varepsilon_{u}\lambda_{7}(u)\bar\psi(u)=
+\tau\bar\psi(w)$ for $u\in L$, so the left side of \eqref{eq:charrel} with
+$c=e^{*}$ is a nonzero multiple of $6\tau\bar\psi(w)\ne0$. If $e'=5$, then
+$m=105$; take $\chi=\lambda_{7}$, of conductor $7$. As $3$ and $5$ are
+nonsquares modulo $7$, \eqref{eq:charrel}, multiplied by $\varphi(105)$,
+reads $(1-\lambda_{7}(3))(1-\lambda_{7}(5))\sum_{u}\lambda_{7}
+(\varepsilon_{u}u)=4\cdot6\tau=0$, which is false.
+
+\emph{Case (E3), not (E1).} Here $e^{*}=35$. The function $D$ is constant on
+the six classes $\{(\pm i,\pm j)\}$ of four elements each, $i\in
+(\ZZ/5)^{\times}$, $j\in(\ZZ/7)^{\times}$; write its values as a matrix
+$(M_{\alpha\beta})$ with $\alpha\in\{1,2\}$ and $\beta\in\{1,2,3\}$, so that
+$M_{\alpha\beta}=g_{\alpha}+h_{\beta}$ and $4\sum|M_{\alpha\beta}|=\|D\|\le
+12$. The difference $\delta=M_{1\beta}-M_{2\beta}$ does not depend on
+$\beta$. If $\delta=0$, the two rows agree, and $\sum|M_{\alpha\beta}|\le3$
+leaves one column with both entries $\sigma$ and zeros elsewhere: this is
+(E1), with a line along $K^{*}_{5}$. If $|\delta|\ge2$, every column
+contributes at least $2$, which is too much. If $|\delta|=1$, every column is
+$(\delta,0)$ or $(0,-\delta)$. If all three columns agree we are in (E1),
+with a line along $K^{*}_{7}$. Otherwise $\|D\|=12$, so $A$ consists of
+tops, and $D$ takes one sign on eight elements of $U^{*}$ and the other on
+four. By \Cref{lem:tops}(b) four tops have residue $\pm1$ modulo $3$ and two
+have the opposite residue, so the residues of the $z_{a}$ modulo $3$ add up
+to $\pm2$. But $\sum_{a}z_{a}=0$ in $\ZZ/e$, because $\sum_{a}a=0$ and
+$\kappa$ is injective.
+
+\subsubsection*{Step 8: the case (E2), and the end of the proof}
+By Step~7, every maximal order $e$ is in case (E2): $e=3q$ with a prime
+$q\in\{5,7,11,13\}$, and $D=c_{0}$ is constant. By \Cref{lem:tops}(b) all
+tops at $e$ have the same residue $\sigma=\operatorname{sign}c_{0}$ modulo
+$3$, there are $|c_{0}|$ of them over each pair $\pm u$ of residues modulo
+$q$, and $N_{e}=|c_{0}|(q-1)/2$. For an odd character $\psi$ modulo $q$,
+$\psi(3)=1$ only if $\psi$ is trivial on the subgroup generated by $3$.
+
+\emph{$q=13$.} Then $|c_{0}|=1$ and $N_{e}=6$, so $A$ consists of tops and
+$m=39$. Let $P\subseteq(\ZZ/13)^{\times}$ be the set of residues modulo $13$
+of the elements of $A$, one from each pair $\pm u$, and
+$\pi=\mathbf 1_{P}-\mathbf 1_{-P}$. For odd $\psi$ modulo $13$,
+\eqref{eq:charrel} with $c=13$ gives $(1-\psi(3))\sum_{P}\bar\psi=0$, and
+$\sum_{v}\pi(v)\bar\psi(v)=2\sum_{P}\bar\psi$; for even $\psi$ that sum
+vanishes because $\pi$ is odd. So the Fourier transform of $\pi$ is supported
+on the characters trivial on $\langle3\rangle=\{1,3,9\}$, and $\pi$ is
+invariant under $\langle3\rangle$. The cosets of $\langle3\rangle$ are
+$C_{j}=2^{j}\langle3\rangle$, $j\in\ZZ/4$, with $-C_{j}=C_{j+2}$; hence
+$P=C_{j}\cup C_{j+1}$ for some $j$. A unit $t$ with $t\equiv\sigma\pmod3$ and
+$t\equiv2^{3-j}\pmod{13}$ gives $tA=O_{39}$, since $C_{3}\cup C_{0}=
+\{7,8,11\}\cup\{1,3,9\}$.
+
+\emph{$q=11$.} Then $|c_{0}|=1$ and $N_{e}=5$. The sixth element $b=-\sum$
+(tops) lies in $\kappa(\ZZ/33)$, so $m=33$; its residue modulo $3$ is
+$-5\sigma=\sigma\ne0$, so $3\mid f_{b}$, and $f_{b}=3$ as $f_{b}\ne33$; so
+$b\equiv0\pmod{11}$. With $P$ and $\pi$ as before, \eqref{eq:charrel} with
+$c=11$ involves only the tops, and shows that the Fourier transform of $\pi$
+is supported on the odd characters trivial on $\langle3\rangle$, the
+subgroup of squares. The only such character is the Legendre symbol
+$\lambda_{11}$, which is odd; so $\pi=\pm\lambda_{11}$, and $P$ is the set of
+nonzero squares or of nonsquares. A unit $t\equiv\sigma\pmod3$, $t\equiv\pm1
+\pmod{11}$ gives $tA=O_{33}$.
+
+So we may assume that every maximal order is $15$ or $21$.
+
+\emph{$q=7$.} If $|c_{0}|=2$, then $N_{e}=6$, $A$ consists of tops, and
+$m=21$. Let $n(v)$ be the number of tops with residue $v$ modulo $7$.
+Since $3$ generates $(\ZZ/7)^{\times}$, $\psi(3)\ne1$ for odd $\psi$, and
+\eqref{eq:charrel} gives $\sum_{v}n(v)\bar\psi(v)=0$; so the odd function
+$n(v)-n(-v)$ vanishes, and $n(v)=1$ for every $v$. Then $A$ contains all six
+elements $\kappa(\sigma,v)$, which lie in $\Phi_{7}(\kappa(\sigma,1))$
+(\Cref{lem:fiberline}), and \Cref{lem:movecrit} gives a move. So $|c_{0}|=1$
+and $N_{21}=3$.
+
+\emph{$q=5$.} If $|c_{0}|=3$, then $A$ consists of tops and $m=15$; as
+$\psi(3)=\pm i\ne1$ for the odd characters $\psi$ modulo $5$,
+\eqref{eq:charrel} gives $n(v)=n(-v)$ as before, which is impossible since
+$n(v)+n(-v)=3$. So $N_{15}\in\{2,4\}$.
+
+\emph{Both $15$ and $21$ are maximal.} Then $m=105$. As $N_{21}=3$ and
+$N_{15}+N_{21}\le6$, $N_{15}=2$, and there is one further element $b$. Let
+$\rho_{3}$ and $\rho_{5}$ be the reductions of $\ZZ/105$ modulo $3$ and $5$.
+The three tops at $21$ have equal $\rho_{3}$, which therefore add up to $0$,
+and $\rho_{5}=0$. The two tops at $15$ have $\rho_{3}$ equal to the same
+nonzero value, and their $\rho_{5}$ are $2v_{1}$ and $2v_{2}$ with $v_{1}\in\{\pm1\}$ and
+$v_{2}\in\{\pm2\}$ (one top over each pair), whose sum $2(v_{1}+v_{2})$ is
+not $0$ modulo $5$. From $\rho_{3}(\sum_{a}a)=0$ we get $\rho_{3}(b)\ne0$,
+so $3\mid f_{b}$; as $f_{b}$ divides $15$ or $21$ and is neither, $f_{b}=3$
+and $\rho_{5}(b)=0$. Then $\rho_{5}(\sum_{a}a)\ne0$, a contradiction.
+
+\emph{Only $15$ is maximal}, so $m=15$, and the elements of $A$ other than
+the $N=N_{15}$ tops have order $3$ or $5$. For $a$ of order $3$ write
+$a=5z_{a}$; as $A$ contains no pair, its $r$ elements of order $3$ are
+equal. The character $\chi_{3}$ modulo $3$ in \eqref{eq:charrel} gives
+$(1-\chi_{3}(5))N\sigma/8+r\chi_{3}(z)/2=0$, that is $N\sigma=-2r\chi_{3}(z)$.
+If $N=4$, then $r=2$: the other two elements have order $3$, and
+\eqref{eq:charrel} for the odd characters modulo $5$ involves only the tops,
+so $n(v)=n(-v)$ as before and $n(v)=1$ for each $v\in(\ZZ/5)^{\times}$. The
+four tops then lie in $\Phi_{5}(\kappa(\sigma,1))$, and \Cref{lem:movecrit}
+gives a move. If $N=2$, then $r=1$, and the other three elements $a=3z_{a}$
+have order $5$, with no two of the $z_{a}$ opposite. Let $\psi$ be the odd
+character modulo $5$ with $\psi(2)=i$, and $z_{1}\in\{\pm1\}$, $z_{2}\in
+\{\pm2\}$ the residues modulo $5$ of the two tops. Then \eqref{eq:charrel},
+multiplied by $8$, reads
+\[
+  \bigl(1-\psi(3)\bigr)\bigl(\bar\psi(z_{1})+\bar\psi(z_{2})\bigr)
+  +2\sum_{f_{a}=5}\bar\psi(z_{a})=0.
+\]
+The first term has absolute value $|1+i|\cdot|{\pm1}\pm i|=2$. In the sum, the
+$n_{1}$ elements with $z_{a}\in\{\pm1\}$ contribute $\pm n_{1}$ and the
+$n_{2}$ with $z_{a}\in\{\pm2\}$ contribute $\pm in_{2}$, with
+$n_{1}+n_{2}=3$; so its absolute value is $(n_{1}^{2}+n_{2}^{2})^{1/2}\ge
+\sqrt5>1$, a contradiction.
+
+\emph{Only $21$ is maximal}, so $m=21$, and the elements of $A$ other than the
+three tops have order $3$ or $7$. Let $W\subseteq(\ZZ/7)^{\times}$ be the set
+of residues modulo $7$ of the tops, one from each pair $\pm u$. For the
+character $\chi_{3}$ the product in \eqref{eq:charrel} vanishes for the tops,
+as $\chi_{3}(7)=1$, so the elements of order $3$, which are equal, have
+$\sum\chi_{3}(z_{a})=0$: there are none. So the other three elements are
+$a=3z_{a}$ of order $7$, and the multiset $Z$ of the $z_{a}$ contains no two
+opposite residues. Let $E=\mathbf 1_{W}-\mathbf 1_{-W}$ and
+$B(v)=\operatorname{mult}_{Z}(v)-\operatorname{mult}_{Z}(-v)$; both are odd,
+$|E|=1$, and $\sum_{v}|B(v)|=6$. For odd $\psi$ modulo $7$,
+\eqref{eq:charrel}, multiplied by $24$, reads
+$(1-\psi(3))\hat E(\psi)+2\hat B(\psi)=0$, where $\hat E(\psi)=\sum_{v}E(v)
+\bar\psi(v)$; as $\psi(3)\hat E(\psi)$ is the transform of $v\mapsto E(3v)$,
+and all three functions are odd, $2B(v)=E(3v)-E(v)$ for every $v$. So
+$|B|\le1$, hence $|B|=1$ everywhere, and $E(3v)=-E(v)$. As $3$ generates
+$(\ZZ/7)^{\times}$, $E=E(1)\lambda_{7}$ and $B=-E$: $W$ is the set of nonzero
+squares or of nonsquares, and $Z=-W$. A unit $t\equiv\sigma\pmod3$, $t\equiv\pm1\pmod7$, with $tW$ the set of
+squares, gives $tA=O_{21}$.
+
+This proves \Cref{thm:moves}, and with it \Cref{thm:F}. \qed
