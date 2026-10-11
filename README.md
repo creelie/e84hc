@@ -143,6 +143,7 @@ Zenodo archives every GitHub release under its own version DOI, and gathers all 
 | | DOI |
 | --- | --- |
 | all versions (concept DOI) | [10.5281/zenodo.23234362](https://doi.org/10.5281/zenodo.23234362) |
+| release v1.7.0 (version DOI) | [10.5281/zenodo.23292094](https://doi.org/10.5281/zenodo.23292094) |
 | release v1.6.0 (version DOI) | [10.5281/zenodo.23289930](https://doi.org/10.5281/zenodo.23289930) |
 | release v1.5.0 (version DOI) | [10.5281/zenodo.23289125](https://doi.org/10.5281/zenodo.23289125) |
 | release v1.4.0 (version DOI) | [10.5281/zenodo.23288228](https://doi.org/10.5281/zenodo.23288228) |
