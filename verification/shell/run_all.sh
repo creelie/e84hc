@@ -200,6 +200,44 @@ if python3 -c "import mpmath" 2>/dev/null; then
         || { echo "FAIL  degree-52 contour check"; cat "$OUT/cont52.txt"; status=1; }
 else missing mpmath; fi
 
+echo "== Fermat varieties of degree 51 (level 102)"
+python3 "$V/python/fermat51.py" > "$OUT/f51py.txt"
+echo "ok    Python: $(tail -1 "$OUT/f51py.txt")"
+if have julia; then
+    julia "$V/julia/fermat51.jl" > "$OUT/f51jl.txt"
+    if diff -q "$OUT/f51py.txt" "$OUT/f51jl.txt" >/dev/null; then
+        echo "ok    Julia output is identical to Python (characters, nu_17, small multisets, families)"
+    else echo "FAIL  Julia output differs from Python"; status=1; fi
+else missing julia; fi
+if have "$CC"; then
+    "$CC" -std=c99 -O2 -Wall -Wextra -Werror -o "$OUT/f51" "$V/c/fermat51.c"
+    "$OUT/f51" > "$OUT/f51c.txt"
+    if diff -q "$OUT/f51py.txt" "$OUT/f51c.txt" >/dev/null; then
+        echo "ok    C output is identical to Python (characters, nu_17, small multisets, families)"
+    else echo "FAIL  C output differs from Python"; status=1; fi
+else missing "$CC"; fi
+if python3 -c "import flint" 2>/dev/null; then
+    python3 "$V/python/fermat51.py" --lattice | grep -q "B = S + Z u(beta)" \
+        && echo "ok    lattices: [B_102 : S_102] = 2 and B_102 = S_102 + Z u(beta)" \
+        || { echo "FAIL  lattice check at level 102"; status=1; }
+    python3 "$V/python/family51_certificate.py" > "$OUT/cert51.txt" 2>&1 \
+        && [ "$(grep -c "ALL CHECKS PASSED" "$OUT/cert51.txt")" = 2 ] \
+        && echo "ok    families of degree 51: both interval certificates passed" \
+        && grep '(3) I' "$OUT/cert51.txt" | sed 's/^/      /' \
+        || { echo "FAIL  degree-51 certificates"; cat "$OUT/cert51.txt"; status=1; }
+    FAMILY51_PREC=600 python3 "$V/python/family51_certificate.py" > "$OUT/cert51b.txt" 2>&1 \
+        && [ "$(grep -c "ALL CHECKS PASSED" "$OUT/cert51b.txt")" = 2 ] \
+        && echo "ok    families of degree 51: both certificates also pass at 600 bits" \
+        || { echo "FAIL  degree-51 certificates at 600 bits"; cat "$OUT/cert51b.txt"; status=1; }
+else missing python-flint; fi
+if python3 -c "import mpmath" 2>/dev/null; then
+    python3 "$V/python/family51_contour.py" > "$OUT/cont51.txt" \
+        && grep -q "(1.13299117817861 + 1.06868517120741j)" "$OUT/cont51.txt" \
+        && grep -q "(-2.46442837913866 - 3.88281035492264j)" "$OUT/cont51.txt" \
+        && echo "ok    families of degree 51: contour integrals agree with the certificates to 15 digits" \
+        || { echo "FAIL  degree-51 contour check"; cat "$OUT/cont51.txt"; status=1; }
+else missing mpmath; fi
+
 echo "== Lean"
 if have lake; then
     (cd "$V/lean" && lake build > "$OUT/lean.txt" 2>&1) || { cat "$OUT/lean.txt"; status=1; }
@@ -220,7 +258,7 @@ if [ "${MATHLIB:-0}" = 1 ]; then
             echo "FAIL  FermatHodge uses sorry or native_decide"; status=1; fi
         if grep -q "sorryAx" "$OUT/mlax.txt"; then echo "FAIL  FermatHodge depends on sorryAx"; status=1; fi
         n=$(grep -cE "depends on axioms: \[(propext|Classical.choice|Quot.sound|, )*\]|does not depend on any axioms" "$OUT/mlax.txt" || true)
-        if [ "$n" = 31 ]; then echo "ok    Lean+Mathlib: FermatHodge builds, 31 main theorems use the standard axioms only"
+        if [ "$n" = 38 ]; then echo "ok    Lean+Mathlib: FermatHodge builds, 38 main theorems use the standard axioms only"
         else echo "FAIL  Lean+Mathlib axiom check"; cat "$OUT/mlax.txt"; status=1; fi
     else missing lake; fi
 else echo "skip  MATHLIB is not set"; fi
