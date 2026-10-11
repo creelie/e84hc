@@ -40,11 +40,11 @@ $\{4,3,5,7,11,\dots\}$, and showed that the classes he could reach suffice
 for the degrees $2^{a}3^{b}5^{c}7^{d}$ with $c=0$ or $d=0$ and for the degrees
 $p^{e}$ and $2p^{e}$, $p$ prime \cite{Aok83,Aok00}. Peterson has recently
 treated the divisor $35$ \cite{Pet26}. Our main theorem treats the divisors
-$57$, $44$ and $52$.
+$57$, $44$, $52$ and $51$.
 
 \begin{maintheorem}\label{thm:fermat114}
-Let $m=2^{a}3^{b}19^{c}$ with $a\in\{0,1\}$ and $b,c\ge0$, or
-$m=2^{a}11^{b}$ or $m=2^{a}13^{b}$ with $a,b\ge0$. Then the Hodge conjecture holds for the
+Let $m=2^{a}3^{b}19^{c}$ or $m=2^{a}3^{b}17^{c}$ with $a\in\{0,1\}$ and
+$b,c\ge0$, or $m=2^{a}11^{b}$ or $m=2^{a}13^{b}$ with $a,b\ge0$. Then the Hodge conjecture holds for the
 Fermat variety $X^{n}_{m}$ of every dimension $n$, for every product of
 Fermat varieties of degree $m$, and for every abelian variety of Fermat type
 of degree $m$.
@@ -53,8 +53,9 @@ of degree $m$.
 An abelian variety is of Fermat type of degree $m$ if it is isogenous to a
 product of Jacobians of curves dominated by the Fermat curve of degree $m$
 \cite{Aok00}. In particular the Hodge conjecture holds for the Fermat
-varieties of degrees $44$, $52$ and $114$ in every dimension. When none of
-$57$, $44$ and $52$ divides $m$, \Cref{thm:fermat114} is due to Aoki. When $57\mid m$,
+varieties of degrees $44$, $51$, $52$ and $114$ in every dimension. When
+none of $57$, $44$, $52$ and $51$ divides $m$, \Cref{thm:fermat114} is due to
+Aoki. When $57\mid m$,
 the only earlier
 argument is that of the preprint \cite{MMRV26}. It states the theorem for
 $m=57$, and through Aoki's reduction it would give the other degrees as well,
@@ -66,11 +67,11 @@ $342$, $513,\dots$ the theorem has not been stated before. For fourfolds, a
 computer census of the Fermat fourfolds of even degree at most $250$
 \cite{Jum26b}, combined with \cite{Pet26}, leaves the degrees $110$, $114$,
 $220$ and $228$; \Cref{thm:fermat114} settles $114$ and $228$
-(\Cref{rem:new114}). When $44\mid m$ or $52\mid m$ there is no earlier
-proof: \cite{MMRV26} treats every degree below $65$ except $44$, $51$ and
-$52$, and the degrees $44$, $88$, $176$, $352,\dots$ and $52$, $104$, $208$,
-$416,\dots$ appear in \Cref{thm:fermat114} for the first time
-(\Cref{rem:new44,rem:new52}). The unrefereed
+(\Cref{rem:new114}). When $44\mid m$, $52\mid m$ or $51\mid m$ there is no
+earlier proof: \cite{MMRV26} treats every degree below $65$ except $44$,
+$51$ and $52$, and the degrees $44$, $88$, $176$, $352,\dots$, $52$, $104$,
+$208$, $416,\dots$ and $51$, $102$, $153$, $306,\dots$ appear in
+\Cref{thm:fermat114} for the first time (\Cref{rem:new44,rem:new52,rem:new51}). The unrefereed
 preprint \cite{OAI26} claims the Hodge
 conjecture for abelian varieties of CM type, which would give it for every
 Fermat variety (\Cref{thm:fermatcm}); \Cref{thm:fermat114} does not depend
@@ -125,7 +126,14 @@ single element of order $13$, and we write it as the join of two characters
 of the threefold $X^{3}_{52}$ with complementary types (\Cref{lem:char52}).
 Both pieces of $H^{3}$ need families of curves; we use families of degrees
 $14$ and $5$, whose residues are certified in interval arithmetic
-(\Cref{prop:family52a,prop:family52b}). These four certificates are the only
+(\Cref{prop:family52a,prop:family52b}).
+
+For $m=51$ we work at the level $102$, where the remaining class is again a
+multiset of ten residues, now with a single element of order $17$, and the
+join of two characters of $X^{3}_{102}$ with complementary types
+(\Cref{lem:char51}). The families have degrees $6$ and $18$, and their
+residues are certified in the same way
+(\Cref{prop:family51a,prop:family51b}). These six certificates are the only
 steps of the paper that use a computer.
 
 \subsection*{Fermat fourfolds of odd degree}
@@ -357,8 +365,9 @@ theorem for Weil classes. \Cref{sec:routes} proves \Cref{thm:routes}.
 \Cref{sec:end} collects what is proved and what is not.
 \Cref{app:checks} describes the machine checks of the finite steps, and
 \Cref{app:cert114} gives the certified computations behind
-\Cref{prop:family2,prop:family44,prop:family52a,prop:family52b}. Apart from
-these four propositions, no proof in this paper depends on a computer.
+\Cref{prop:family2,prop:family44,prop:family52a,prop:family52b,prop:family51a,prop:family51b}.
+Apart from these six propositions, no proof in this paper depends on a
+computer.
 
 \subsection*{Conventions}
 Varieties are complex, smooth, projective and, unless said otherwise,

@@ -1,6 +1,7 @@
 \section{The certificates}\label{app:cert114}
 
-This appendix proves \Cref{prop:family2,prop:family44,prop:family52a,prop:family52b}.
+This appendix proves
+\Cref{prop:family2,prop:family44,prop:family52a,prop:family52b,prop:family51a,prop:family51b}.
 Each proof is a finite computation in interval arithmetic: every number below is an exact
 rational ball, and every operation returns a ball that contains the exact
 result. We used Arb \cite{Joh17} at a working precision of $1000$ bits. The
@@ -150,4 +151,46 @@ conclusions at $600$ bits. The lattice computation, at level $52$ with the
 $51$ pairs, the $28$ standard multisets, the element $(26)$ and $[\beta]$,
 gives rank $39$, the rank of the lattice of balanced classes, and a saturated
 matrix; so $B_{52}=S_{52}+\ZZ[\beta]$ and $[B_{52}:S_{52}]=2$ without
+\Cref{thm:aoki}.
+
+\subsection*{The families of degree \texorpdfstring{$102$}{102}}
+For \Cref{prop:family51a} the unknowns are the coordinates other than
+$\kappa$, $x=(q_{0},q_{1},f_{1},c_{1},c_{2},c_{3},c_{4})\in\CC^{7}$, and the
+equations are $E_{0},\dots,E_{6}$ of \Cref{ssec:degree51}. We fix $\kappa_{0}=-(637+53i)/500$, a point $\tilde x$
+with $320$ significant digits, and the box $X$ of radius $10^{-95}$ around
+it. The Krawczyk image $K(X)$ lies in the interior of $X$, with coordinates
+of radius below $10^{-187}$; this gives the zero $x^{*}$, the point
+$p_{6}=(x^{*},\kappa_{0})$ and part (i). On $X$ the balls enclosing $c_{1}$,
+$c_{2}$, $c_{3}$, $c_{4}$, $q_{0}$ and the resultant of $(Q,F)$ do not
+contain $0$; their absolute values exceed $1.02$, $1.04$, $1.73$, $1.35$,
+$0.344$ and $1.32$. This is part (ii). For part (iii) we enclose $\dot x=
+-J_{6}^{-1}\partial E/\partial\kappa$ on $X$, form $\mathcal N_{v_{6}}$ and
+the denominator $c_{1}c_{2}c_{3}c_{4}s^{2}Q^{2}F^{3}$ of
+\Cref{ssec:degree51}, and expand their quotient at $s=\infty$. The
+coefficient of $s^{-1}$ is enclosed in a disc of radius $5\cdot10^{-90}$
+around
+\[
+  I_{04}(p_{6},v_{6})\approx1.13299117817861+1.06868517120741\,i,
+\]
+whose absolute value exceeds $1.55$.
+
+For \Cref{prop:family51b} the unknowns are $x=(q_{1},f,g,c_{1},c_{2},c_{3},
+c_{4})\in\CC^{19}$, and we fix $\kappa_{0}=-(147+117i)/500$. The Krawczyk
+image of the box of radius $10^{-95}$ around a point with $320$ significant
+digits lies in its interior, with coordinates of radius below $10^{-183}$.
+On the box, $c_{1}$, $c_{2}$, $c_{3}$, $c_{4}$, and the resultants of
+$(Q,F)$, $(Q,s)$, $(Q,G)$, $(F,s)$ and $(F,G)$, the second and fourth of
+which are $\kappa_{0}$ and $f_{0}$ up to sign, have absolute values above
+$1.61$, $2.13$, $0.914$, $1.62$, $0.548$, $0.375$, $0.716$, $0.685$ and
+$0.078$; the resultant of $(s,G)$ is $1$. The coefficient of $s^{-1}$ in the
+expansion of $\mathcal N_{v_{18}}/(c_{1}c_{2}c_{3}c_{4}s^{4}Q^{5}FG^{5})$ is
+enclosed in a disc of radius $9\cdot10^{-77}$ around
+\[
+  I_{23}(p_{18},v_{18})\approx-2.46442837913866-3.88281035492264\,i,
+\]
+whose absolute value exceeds $4.59$. Both computations give the same
+conclusions at $600$ bits. The lattice computation, at level $102$ with the
+$101$ pairs, the $88$ standard multisets, the element $(51)$ and $[\beta]$,
+gives rank $85$, the rank of the lattice of balanced classes, and a saturated
+matrix; so $B_{102}=S_{102}+\ZZ[\beta]$ and $[B_{102}:S_{102}]=2$ without
 \Cref{thm:aoki}.

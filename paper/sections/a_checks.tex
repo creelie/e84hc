@@ -195,6 +195,24 @@ $u_{i}$ alone, computed with $40$ digits by the trapezoidal rule, agree with
 each other and with the enclosed value to $15$ digits; this also checks that
 $\eta_{v}$ has no other poles in $\CC$.
 
+\subsection*{Degree \texorpdfstring{$51$}{51}}
+A fourth program in Python, Julia and C checks \Cref{lem:char51}, by listing
+$\langle t\alpha\rangle$ and $\langle t\alpha'\rangle$ for the $32$ units
+$t$ modulo $102$; that $\nu_{17}$ is $1$ on $\beta$ and vanishes on every
+pair and on the $88$ standard multisets of level $102$; that $\nu_{17}$
+vanishes on the $1456$ and $32490$ balanced multisets of four and six
+nonzero elements of $\ZZ/102$, which it enumerates by matching halves; and
+the weights and degrees of the families of
+\Cref{prop:family51a,prop:family51b}. The three versions print the same $19$
+lines. The Python version repeats the lattice computation of
+\Cref{app:cert114} at level $102$. In the Lean project with Mathlib, a
+further file proves \Cref{lem:char51}, the vanishing of $\nu_{17}$ on the
+pairs and on the standard multisets, and the weight, degree and chart
+conditions of both families, with the standard axioms only. The
+certificates run at
+$1000$ and at $600$ bits, and the contour integrals described for degree
+$52$ agree with the enclosed values to $15$ digits.
+
 \subsection*{References}
 A script looks up every entry of
 the bibliography online, through its DOI where it has one and through
