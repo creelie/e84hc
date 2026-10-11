@@ -15,3 +15,4 @@ import FermatHodge.Fermat
 import FermatHodge.Bernoulli
 import FermatHodge.Degree114
 import FermatHodge.Degree44
+import FermatHodge.Degree52

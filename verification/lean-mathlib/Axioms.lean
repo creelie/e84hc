@@ -28,3 +28,10 @@ Fermat fourfold theorem with `BernoulliNV` discharged by `bernoulliNV`. -/
 #print axioms FermatHodge.Degree44.nu11_standard
 #print axioms FermatHodge.Degree44.family_weights
 #print axioms FermatHodge.Degree44.family_chart
+#print axioms FermatHodge.Degree52.beta_hodge
+#print axioms FermatHodge.Degree52.alpha_sum
+#print axioms FermatHodge.Degree52.nu13_beta
+#print axioms FermatHodge.Degree52.nu13_standard
+#print axioms FermatHodge.Degree52.familyA_weights
+#print axioms FermatHodge.Degree52.familyB_weights
+#print axioms FermatHodge.Degree52.familyB_chart

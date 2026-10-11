@@ -6,23 +6,24 @@
 Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India
 d.bhattacharjee@erl-forschung.de · itsdeep@live.com · ORCID [0000-0003-0466-750X](https://orcid.org/0000-0003-0466-750X)
 
-This repository holds a 69-page paper in `amsart`, its LaTeX source with the figures as PNG, and the code that re-checks its finite steps in Python, Julia, C, Lean 4 (with and without Mathlib) and Macaulay2.
+This repository holds a 72-page paper in `amsart`, its LaTeX source with the figures as PNG, and the code that re-checks its finite steps in Python, Julia, C, Lean 4 (with and without Mathlib) and Macaulay2.
 
 ## Main result
 
-**Theorem A.** Let m = 2^a·3^b·19^c with a ≤ 1, or m = 2^a·11^b. Then the Hodge conjecture holds for the Fermat variety x₀^m + … + x_{n+1}^m = 0 of every dimension n, for every product of Fermat varieties of degree m, and for every abelian variety of Fermat type of degree m.
+**Theorem A.** Let m = 2^a·3^b·19^c with a ≤ 1, or m = 2^a·11^b, or m = 2^a·13^b. Then the Hodge conjecture holds for the Fermat variety x₀^m + … + x_{n+1}^m = 0 of every dimension n, for every product of Fermat varieties of degree m, and for every abelian variety of Fermat type of degree m.
 
-In particular the Hodge conjecture holds for the Fermat varieties of degrees 44 and 114 in every dimension. When neither 57 nor 44 divides m the theorem is Aoki's. For 44 | m it had not been proved before: the 2026 preprint of Miranda, Movasati, Rufino and Villaflor treats every degree below 65 except 44, 51 and 52, and the degrees 44, 88, 176, 352, 484, … appear here for the first time (Remark 4.26). For 57 | m the only earlier argument is in that preprint: it states the case m = 57, which by Aoki's reduction gives the others, but it ends with a statement of Kang about the Fermat fourfold of degree 114 whose proof has a gap (Remark 3.21). The proof here does not use Kang's statement, so for 57 | m it is the first complete proof, and for 114, 171, 342, 513, … the theorem had not been stated before. It does not use OpenAI's unrefereed claim of the Hodge conjecture for CM abelian varieties either, which would give every Fermat variety (Theorem E).
+In particular the Hodge conjecture holds for the Fermat varieties of degrees 44, 52 and 114 in every dimension. When none of 57, 44 and 52 divides m the theorem is Aoki's. For 44 | m and for 52 | m it had not been proved before: the 2026 preprint of Miranda, Movasati, Rufino and Villaflor treats every degree below 65 except 44, 51 and 52, and the degrees 44, 88, 176, 352, 484, … and 52, 104, 208, 416, 676, … appear here for the first time (Remarks 4.31 and 4.32). For 57 | m the only earlier argument is in that preprint: it states the case m = 57, which by Aoki's reduction gives the others, but it ends with a statement of Kang about the Fermat fourfold of degree 114 whose proof has a gap (Remark 3.21). The proof here does not use Kang's statement, so for 57 | m it is the first complete proof, and for 114, 171, 342, 513, … the theorem had not been stated before. It does not use OpenAI's unrefereed claim of the Hodge conjecture for CM abelian varieties either, which would give every Fermat variety (Theorem E).
 
 How it works (Section 4):
 
-- Aoki's reduction leaves one class in degree 114: a balanced multiset β of ten residues with exactly one residue of order 19, which linear subspaces and Aoki's cycles cannot reach (Lemma 4.3, Corollary 4.5). In degree 44 it leaves one class as well, a multiset of eight residues with exactly one residue of order 11.
+- Aoki's reduction leaves one class in degree 114: a balanced multiset β of ten residues with exactly one residue of order 19, which linear subspaces and Aoki's cycles cannot reach (Lemma 4.3, Corollary 4.5). In degree 44 it leaves one class as well, a multiset of eight residues with exactly one residue of order 11, and in degree 52 a multiset of ten residues with exactly one residue of order 13.
 - β is the join of two characters α₁, α₂ of the Fermat threefold of degree 114 whose Hodge structures in H³ have level one and complementary types (Lemma 4.6).
 - Each of these pieces of H³ is carried by curves. This comes from a family of curves on the threefold and a residue formula for the derivative of its Abel–Jacobi map, which extends Peterson's argument for degree 35 to a general class of "block families" (Theorem 4.16).
 - One family, of cubic forms, has a residue computed by hand (Proposition 4.19). The other has degree 24, and its residue is shown to be nonzero by a certified interval computation in Arb (Proposition 4.20, Appendix B).
 - The two pieces are joined on the product of two curves by the Lefschetz (1,1) theorem and carried to the eightfold by Shioda's inductive structure (Proposition 4.17).
 - In degree 44 the class is the join of a character α = (1, 5, 8, 33, 41) of the Fermat threefold and a character b = (9, 37, 42) of the Fermat curve with complementary types (Lemma 4.22). Only the piece of H³ needs a family of curves; it has degree 11, and its residue is certified in Arb (Proposition 4.23). The class is then joined with H¹ of the curve on a product of two curves and carried to the sixfold (Proposition 4.18). No balanced multiset of four or six residues modulo 44 has an odd number of residues of order 11, so this class is the first one in degree 44 that linear subspaces and Aoki's cycles miss.
-- **The two interval certificates are the only computer-assisted steps in the paper.**
+- In degree 52 the class is the join of two characters α = (1, 5, 16, 37, 45) and α′ = (29, 18, 42, 50, 17) of the Fermat threefold with complementary types (Lemma 4.25). Both pieces of H³ need families of curves: one of degree 14 for α and one of degree 5 for 9α′ = (1, 6, 14, 34, 49), and both residues are certified in Arb (Propositions 4.26 and 4.28). No balanced multiset of four or six residues modulo 52 has an odd number of residues of order 13.
+- **The four interval certificates are the only computer-assisted steps in the paper.**
 
 ## Other results
 
@@ -56,7 +57,7 @@ How it works (Section 4):
 - HC itself.
 - Each of (F2), (F3′), (L), (M), (V) and (IP).
 - The semiregularity of Y in genus at least 5 (Question 6.14).
-- HC for the Fermat fourfolds of degrees 110 and 220, the only degrees up to 250 that Theorems A and B, Peterson's theorem and Jumagulov's census leave open, and for Fermat varieties of most degrees divisible by 4 other than 2^a·11^b.
+- HC for the Fermat fourfolds of degrees 110 and 220, the only degrees up to 250 that Theorems A and B, Peterson's theorem and Jumagulov's census leave open, and for Fermat varieties of most degrees divisible by 4 other than 2^a·11^b and 2^a·13^b.
 
 ## Where the conjecture stands after this paper
 
@@ -88,8 +89,10 @@ Closing any of these cases needs new algebraic cycles, and Section 8 of the pape
 | `verification/python/family2_certificate.py`, `family2_point.json` | The interval certificate of Appendix B for the family of degree 24 (python-flint, Arb), run at 1000 and 600 bits. |
 | `verification/{c,python,julia}/fermat44.*` | Exact checks for degree 44: the characters α and b, the order parity ν₁₁ on β and on the generators of S₄₄, the enumeration of the balanced multisets of four and six residues, and the weights of the family. `python/fermat44.py --lattice` checks B₄₄ = S₄₄ + Z[β] without Aoki's theorem. |
 | `verification/python/family44_certificate.py`, `family44_point.json`, `family44_contour.py` | The interval certificate of Appendix B for the family of degree 11, run at 1000 and 600 bits, and an independent contour-integral check of its residue. |
-| `verification/lean-mathlib/FermatHodge/Degree114.lean`, `Degree44.lean` | Lean proofs of the finite and algebraic steps for degrees 114 and 44. |
-| `verification/lean-mathlib/` | Lean 4 proof, with Mathlib, of the classification behind Theorem B (15 files, about 3600 lines), including B₁,χ ≠ 0, and of the finite steps for degrees 114 and 44. |
+| `verification/{c,python,julia}/fermat52.*` | Exact checks for degree 52: the characters α and α′, the order parity ν₁₃ on β and on the generators of S₅₂, the enumeration of the balanced multisets of four and six residues, and the weights of both families. `python/fermat52.py --lattice` checks B₅₂ = S₅₂ + Z[β] without Aoki's theorem. |
+| `verification/python/family52_certificate.py`, `family52a_point.json`, `family52b_point.json`, `family52_contour.py` | The interval certificates of Appendix B for the families of degrees 14 and 5, run at 1000 and 600 bits, and an independent contour-integral check of both residues. |
+| `verification/lean-mathlib/FermatHodge/Degree114.lean`, `Degree44.lean`, `Degree52.lean` | Lean proofs of the finite and algebraic steps for degrees 114, 44 and 52. |
+| `verification/lean-mathlib/` | Lean 4 proof, with Mathlib, of the classification behind Theorem B, including B₁,χ ≠ 0, and of the finite steps for degrees 114, 44 and 52 (20 files, about 4000 lines). |
 | `verification/{c,python,julia}/fermat_fourfolds.*` | Exhaustive search of the Hodge characters of Fermat surfaces and fourfolds of degree prime to 6. |
 | `verification/{c,python,julia}/fermat_odd.*` | Exhaustive search of the Hodge characters of Fermat fourfolds of odd degree divisible by 3, with the moves of Section 3.7 and the identities of Lemma 3.26. |
 | `sources/` | Earlier material imported from the author's working folder: the H8 project and the "Hodge Conjecture Full" drafts. It is kept for reference, and the paper does not depend on it. |
@@ -121,12 +124,13 @@ This needs python3, julia, a C99 compiler, lake (Lean 4) and Macaulay2. It runs 
 - The Macaulay2 scripts: Hodge numbers from the Jacobian ring, and Max Noether's theorem.
 - `fermat_fourfolds` in Python, Julia and C up to degree 55, which must agree, and the C program up to degree 125 against `verification/c/fermat_fourfolds_125.expected`. Every Hodge quadruple contains a pair, and every Hodge sextuple contains a pair or is 5-standard.
 - `fermat_odd` in Python, Julia and C up to degree 63, which must agree, and the C program up to degree 105 against `verification/c/fermat_odd_105.expected`. Every generating Hodge sextuple without a pair has a direct or a lowering move, or is one of the three exceptional characters.
-- With `MATHLIB=1`, the Lean project in `verification/lean-mathlib` (Lean 4.34.1, Mathlib v4.34.1). It must build with no `sorry` and no `native_decide`, and `Axioms.lean` must show that its twenty-four main theorems use only `propext`, `Classical.choice` and `Quot.sound`: eleven for the fourfold classification, among them `bernoulliNV` and the classification with it discharged, seven for degree 114 and six for degree 44.
+- With `MATHLIB=1`, the Lean project in `verification/lean-mathlib` (Lean 4.34.1, Mathlib v4.34.1). It must build with no `sorry` and no `native_decide`, and `Axioms.lean` must show that its thirty-one main theorems use only `propext`, `Classical.choice` and `Quot.sound`: eleven for the fourfold classification, among them `bernoulliNV` and the classification with it discharged, seven for degree 114, six for degree 44 and seven for degree 52.
 
 - The degree-114 checks: `fermat114` in Python, Julia and C, which must agree; the lattice computation; family I in sympy; and the interval certificate for family II at 1000 and 600 bits (needs python-flint and sympy).
 - The degree-44 checks: `fermat44` in Python, Julia and C, which must agree; the lattice computation; the interval certificate at 1000 and 600 bits; and the contour integral (needs python-flint and mpmath).
+- The degree-52 checks: `fermat52` in Python, Julia and C, which must agree; the lattice computation; both interval certificates at 1000 and 600 bits; and the contour integrals (needs python-flint and mpmath).
 
-`python3 verification/references/check_references.py` re-checks the bibliography online. Apart from Propositions 4.20 and 4.23, whose proofs are the interval certificates, no proof in the paper depends on a computer.
+`python3 verification/references/check_references.py` re-checks the bibliography online. Apart from Propositions 4.20, 4.23, 4.26 and 4.28, whose proofs are the interval certificates, no proof in the paper depends on a computer.
 
 ## Citing
 
