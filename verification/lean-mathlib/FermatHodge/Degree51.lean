@@ -78,9 +78,22 @@ def std (p i : ℕ) : List ℕ :=
 theorem nu17_standard :
     ∀ p ∈ [2, 3, 17], ∀ i < 102 / p, 0 < i → n17 (std p i) % 2 = 0 := by decide
 
-theorem std_balanced :
-    ∀ p ∈ [2, 3, 17], ∀ i < 102 / p, 0 < i → ∀ t < 102, Nat.gcd t 102 = 1 →
-      2 * wsum (std p i) t = (std p i).length * 102 := by
+/-! The standard characters are balanced; one statement per prime, as deciding all three at
+once needs a deeper recursion than Lean's default. -/
+
+set_option maxRecDepth 100000 in
+theorem std_balanced_two :
+    ∀ i < 51, 0 < i → ∀ t < 102, Nat.gcd t 102 = 1 → 2 * wsum (std 2 i) t = 4 * 102 := by
+  decide
+
+set_option maxRecDepth 100000 in
+theorem std_balanced_three :
+    ∀ i < 34, 0 < i → ∀ t < 102, Nat.gcd t 102 = 1 → 2 * wsum (std 3 i) t = 4 * 102 := by
+  decide
+
+set_option maxRecDepth 100000 in
+theorem std_balanced_seventeen :
+    ∀ i < 6, 0 < i → ∀ t < 102, Nat.gcd t 102 = 1 → 2 * wsum (std 17 i) t = 18 * 102 := by
   decide
 
 /-! Exponent conditions.  A block is a list of five exponents and a degree; its weight is
