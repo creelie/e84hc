@@ -1,12 +1,12 @@
 \section{The certificates}\label{app:cert114}
 
-This appendix proves \Cref{prop:family2,prop:family44}. Each proof is a
-finite computation in interval arithmetic: every number below is an exact
+This appendix proves \Cref{prop:family2,prop:family44,prop:family52a,prop:family52b}.
+Each proof is a finite computation in interval arithmetic: every number below is an exact
 rational ball, and every operation returns a ball that contains the exact
 result. We used Arb \cite{Joh17} at a working precision of $1000$ bits. The
 programs and the data are archived with the repository of this paper. We
-describe the computation for \Cref{prop:family2} in detail; the one for
-\Cref{prop:family44} has the same structure and is summarized at the end.
+describe the computation for \Cref{prop:family2} in detail; the others
+have the same structure and are summarized at the end.
 
 \subsection*{The Krawczyk test}
 Write $x\in\CC^{24}$ for the coordinates $(f,h,g,a,b,c)$ of
@@ -106,3 +106,48 @@ computation described above, at level $44$ with the $43$ pairs, the $24$
 standard multisets, the element $(22)$ and $[\beta]$, gives rank $33$, the
 rank of the lattice of balanced classes, and a saturated matrix; so
 $B_{44}=S_{44}+\ZZ[\beta]$ and $[B_{44}:S_{44}]=2$ without \Cref{thm:aoki}.
+
+\subsection*{The families of degree \texorpdfstring{$52$}{52}}
+For \Cref{prop:family52a} the unknowns are $x=(g,f,c_{0},c_{1},c_{3},c_{4})
+\in\CC^{15}$ and the equations are $E_{0},\dots,E_{14}$ of
+\Cref{ssec:degree52}. We fix $\kappa_{0}=-(3+2i)/10$, a point $\tilde x$
+with $120$ significant digits, and the box $X$ of radius $10^{-95}$ around
+it. The Krawczyk image $K(X)$ lies in the interior of $X$, with coordinates
+of radius below $10^{-184}$; this gives the zero $x^{*}$, the point
+$p^{A}=(x^{*},\kappa_{0})$ and part (i). On $X$ the balls enclosing $c_{0}$,
+$c_{1}$, $c_{3}$, $c_{4}$, $g_{0}$, $f_{0}$ and the resultants of $(G,F)$,
+$(G,H)$ and $(F,H)$ do not contain $0$; their absolute values exceed $3.16$,
+$3.04$, $0.139$, $1.24$, $0.69$, $0.121$, $56.4$, $5.05$ and $0.644$. This
+is part (ii).
+
+For part (iii) we enclose $\dot x=-J_{A}^{-1}\partial E/\partial\kappa$ on
+$X$, form the polynomial $\mathcal N_{v^{A}}$ and the denominator
+$c_{0}c_{1}c_{3}c_{4}s^{2}F^{3}GH^{3}$ of \Cref{ssec:degree52}, and expand
+their quotient at $s=\infty$ by division of power series in $s^{-1}$, whose
+leading coefficient $c_{0}c_{1}c_{3}c_{4}$ does not vanish. The coefficient
+of $s^{-1}$ is enclosed in a disc of radius $5\cdot10^{-68}$ around
+\[
+  I_{02}(p^{A},v^{A})\approx-5.38867785237614+19.2154179849628\,i,
+\]
+whose absolute value exceeds $19.95$.
+
+For \Cref{prop:family52b} the unknowns are $x=(q_{0},q_{1},c_{0},c_{1},c_{3},
+c_{4})\in\CC^{6}$, and we fix $\kappa_{0}=(3+6i)/10$. The Krawczyk image of
+the box of radius $10^{-95}$ around a point with $120$ significant digits
+lies in its interior, with coordinates of radius below $10^{-187}$. On the
+box, $c_{0}$, $c_{1}$, $c_{3}$, $c_{4}$, and the resultants of $(s,L)$,
+$(s,Q)$, $(s-t,L)$, $(s-t,Q)$ and $(L,Q)$, which are $\kappa_{0}$, $q_{0}$,
+$1+\kappa_{0}$, $1+q_{1}+q_{0}$ and $\kappa_{0}^{2}-q_{1}\kappa_{0}+q_{0}$,
+have absolute values above $0.58$, $0.29$, $1.31$, $0.61$, $0.67$, $1.81$,
+$1.43$, $1.35$ and $1.50$. The coefficient of $s^{-1}$ in the expansion of
+$\mathcal N_{v^{B}}/(c_{0}c_{1}c_{3}c_{4}s^{3}(s-1)^{3}L^{3}Q)$ is enclosed in
+a disc of radius $4\cdot10^{-87}$ around
+\[
+  I_{12}(p^{B},v^{B})\approx-5.53944549467493-5.38246966308485\,i,
+\]
+whose absolute value exceeds $7.72$. Both computations give the same
+conclusions at $600$ bits. The lattice computation, at level $52$ with the
+$51$ pairs, the $28$ standard multisets, the element $(26)$ and $[\beta]$,
+gives rank $39$, the rank of the lattice of balanced classes, and a saturated
+matrix; so $B_{52}=S_{52}+\ZZ[\beta]$ and $[B_{52}:S_{52}]=2$ without
+\Cref{thm:aoki}.
