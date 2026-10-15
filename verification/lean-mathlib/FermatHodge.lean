@@ -17,3 +17,4 @@ import FermatHodge.Degree114
 import FermatHodge.Degree44
 import FermatHodge.Degree52
 import FermatHodge.Degree51
+import FermatHodge.Patterns
