@@ -238,6 +238,23 @@ if python3 -c "import mpmath" 2>/dev/null; then
         || { echo "FAIL  degree-51 contour check"; cat "$OUT/cont51.txt"; status=1; }
 else missing mpmath; fi
 
+echo "== Block patterns (degrees 114, 44, 52, 51) and nu_R (degrees 33, 39)"
+python3 "$V/python/patterns.py" > "$OUT/patpy.txt"
+echo "ok    Python: $(tail -1 "$OUT/patpy.txt")"
+if have julia; then
+    julia "$V/julia/patterns.jl" > "$OUT/patjl.txt"
+    if diff -q "$OUT/patpy.txt" "$OUT/patjl.txt" >/dev/null; then
+        echo "ok    Julia output is identical to Python (block patterns, nu_R)"
+    else echo "FAIL  Julia output differs from Python"; status=1; fi
+else missing julia; fi
+if have "$CC"; then
+    "$CC" -std=c99 -O2 -Wall -Wextra -Werror -o "$OUT/pat" "$V/c/patterns.c"
+    "$OUT/pat" > "$OUT/patc.txt"
+    if diff -q "$OUT/patpy.txt" "$OUT/patc.txt" >/dev/null; then
+        echo "ok    C output is identical to Python (block patterns, nu_R)"
+    else echo "FAIL  C output differs from Python"; status=1; fi
+else missing "$CC"; fi
+
 echo "== Lean"
 if have lake; then
     (cd "$V/lean" && lake build > "$OUT/lean.txt" 2>&1) || { cat "$OUT/lean.txt"; status=1; }
@@ -258,7 +275,7 @@ if [ "${MATHLIB:-0}" = 1 ]; then
             echo "FAIL  FermatHodge uses sorry or native_decide"; status=1; fi
         if grep -q "sorryAx" "$OUT/mlax.txt"; then echo "FAIL  FermatHodge depends on sorryAx"; status=1; fi
         n=$(grep -cE "depends on axioms: \[(propext|Classical.choice|Quot.sound|, )*\]|does not depend on any axioms" "$OUT/mlax.txt" || true)
-        if [ "$n" = 38 ]; then echo "ok    Lean+Mathlib: FermatHodge builds, 38 main theorems use the standard axioms only"
+        if [ "$n" = 45 ]; then echo "ok    Lean+Mathlib: FermatHodge builds, 45 main theorems use the standard axioms only"
         else echo "FAIL  Lean+Mathlib axiom check"; cat "$OUT/mlax.txt"; status=1; fi
     else missing lake; fi
 else echo "skip  MATHLIB is not set"; fi

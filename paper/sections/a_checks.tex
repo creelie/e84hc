@@ -1,8 +1,10 @@
 \section{Machine checks}\label{app:checks}
 
-Apart from \Cref{prop:family2,prop:family44,prop:family52a,prop:family52b},
-whose proofs are the computations of \Cref{app:cert114}, no proof in this paper depends on a
-computer. The finite
+Apart from
+\Cref{prop:family2,prop:family44,prop:family52a,prop:family52b,prop:family51a,prop:family51b},
+whose proofs are the computations of \Cref{app:cert114}, no proof in this
+paper depends on a computer, and the proof of \Cref{thm:fermat114} uses none
+of these six propositions. The finite
 steps have been repeated by machine, in several independent
 implementations. The programs are in the author's repository
 \url{https://github.com/creelie/e84hc}, each release of which is archived on
@@ -212,6 +214,19 @@ conditions of both families, with the standard axioms only. The
 certificates run at
 $1000$ and at $600$ bits, and the contour integrals described for degree
 $52$ agree with the enclosed values to $15$ digits.
+
+\subsection*{Block patterns and the degrees \texorpdfstring{$33$}{33} and \texorpdfstring{$39$}{39}}
+A fifth program in Python, Julia and C checks, for the seven rows of the
+table of \Cref{cor:patterns}, that $\bar\alpha$ has entries in $[1,m)$
+adding up to $2m$, and conditions (P1) to (P3) of \Cref{def:blockpattern}.
+For $M=33$ and $M=39$ it lists the elements of square $1$ in $\ZZ/M$, and
+checks that $O_{M}$ is balanced, that $\nu_{R}([O_{M}])=1$, and that
+$\nu_{R}$ vanishes on every pair and on the $12$ and $14$ standard
+multisets of these levels, as \Cref{lem:nusqrt} asserts. The three versions
+print the same $10$ lines. In the Lean project with Mathlib a further file
+proves the same statements, and that the rows are the characters
+$13\alpha_{2}$, $\alpha_{1}$, $\alpha$, $\alpha$, $9\alpha'$, $37\alpha'$
+and $5\alpha$ of the earlier subsections, with the standard axioms only.
 
 \subsection*{References}
 A script looks up every entry of
