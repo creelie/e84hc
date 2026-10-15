@@ -1,6 +1,6 @@
 # Online check of paper/references.bib
 
-Run on 2026-10-10 by `verification/references/check_references.py`.
+Run on 2026-10-15 by `verification/references/check_references.py`.
 
 | key | status | online record |
 |---|---|---|
@@ -11,7 +11,7 @@ Run on 2026-10-10 by `verification/references/check_references.py`.
 | AS83 | verified | Crossref: "Generators of the Néron-Severi Group of a Fermat Surface" (1983, p. 1-12); title match 0.99 |
 | AH62 | verified | Crossref: "Analytic cycles on complex manifolds" (1962, vol. 1, p. 25-45); title match 1.00 |
 | BhH8 | verified | DataCite: "LaTeX source and verification code for the paper Algebraic Loci of Weil Classes on Abelian Varieties" (2026); title match 1.00 |
-| BhHCF | by hand | public GitHub repository holding paper/full_attempt.tex, checked with a web fetch on 2026-10-08; not reachable from this network (HTTP 0) |
+| BhHCF | verified | public GitHub repository holding paper/full_attempt.tex, checked with a web fetch on 2026-10-08 (record online: HTTP 200) |
 | Blo72 | verified | Crossref: "Semi-regularity and de Rham cohomology" (1972, vol. 17, p. 51-66); title match 1.00 |
 | BF03 | verified | Crossref: "A Semiregularity Map for Modules and Applications to Deformations" (2003, vol. 137, p. 135-210); title match 1.00 |
 | CDK95 | verified | Crossref: "On the locus of Hodge classes" (1995, vol. 8, p. 483-506); title match 1.00 |
@@ -70,7 +70,7 @@ Run on 2026-10-10 by `verification/references/check_references.py`.
 | Aok83 | verified | Crossref: "On some arithmetic problems related to the hodge cycles on the fermat varieties" (1983, vol. 266, p. 23-54); title match 1.00 |
 | Aok00 | verified | JaLC: "Some Remarks on the Hodge Conjecture for Abelian Varieties of Fermat Type" (2000, vol. 49, p. 177); title match 1.00 |
 | Pet26 | verified | DataCite: "The Hodge conjecture for Fermat varieties of degree 35" (2026); title match 1.00 |
-| Aok87 | verified | Crossref: "Some new algebraic cycles on Fermat varieties" (1987, vol. 39); title match 1.00 |
+| Aok87 | verified | Crossref: "Some new algebraic cycles on Fermat varieties" (1987, vol. 39, p. 385-396); title match 1.00 |
 | Kan15 | verified | Crossref: "Refined Motivic Dimension" (2015, vol. 58, p. 519-529); title match 1.00 |
 | Kan16 | verified | Crossref: "REFINED MOTIVIC DIMENSION OF SOME FERMAT VARIETIES" (2016, vol. 93, p. 223-230); title match 1.00 |
 | MMRV26 | verified | arXiv 2609.27301: "Lengths of Hodge characters in Fermat varieties" by Maximiliano Miranda, Hossein Movasati, Lucas Rufino, Roberto Villaflor; title match 1.00 |
@@ -90,5 +90,11 @@ Run on 2026-10-10 by `verification/references/check_references.py`.
 | Har77 | verified | Crossref: "Algebraic Geometry" (1977); title match 1.00 |
 | CG80 | verified | cited as [4] in Carlson, Green, Griffiths and Harris, Compositio Math. 50 (1983): Journees de geometrie algebrique d'Angers, Sijthoff and Noordhoff (1980) 51-76 (record online: HTTP 200) |
 | Jum26b | verified | DataCite: "The Hodge conjecture for Fermat fourfolds: odd degrees up to 199 and the even-degree census to 250 — papers, exact certificates and verifiers" (2026); title match 1.00 |
+| Del74 | verified | Crossref: "Théorie de Hodge : III" (1974, vol. 44, p. 5-77); title match 0.98 |
+| Bat23 | verified | Crossref: "Canonical models of toric hypersurfaces" (2023, p. 394-431); title match 1.00 |
+| Bat24 | verified | Crossref: "Projecting Lattice Polytopes According to the Minimal Model Program" (2024, p. 1-21); title match 1.00 |
+| MM86 | verified | Crossref: "A Numerical Criterion for Uniruledness" (1986, vol. 124, p. 65); title match 1.00 |
+| Miy88 | verified | Crossref: "On the Kodaira dimension of minimal threefolds" (1988, vol. 281, p. 325-332); title match 1.00 |
+| Mor88 | verified | Crossref: "Flip theorem and the existence of minimal models for 3-folds" (1988, vol. 1, p. 117-253); title match 1.00 |
 
-86 entries, 0 need attention.
+92 entries, 0 need attention.
