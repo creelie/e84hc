@@ -42,7 +42,7 @@ keywords:
   - interval arithmetic
 version: "1.9.0"
 date-released: "2026-11-08"
-doi: "10.5281/zenodo.23234362"
+doi: "10.5281/zenodo.24055725"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.23234362"

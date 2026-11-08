@@ -14,4 +14,4 @@ Text origin: a mix of human-written and AI-generated. Human understanding: selec
 
 Use fermattex.zip and review fermat.pdf. The source ZIP has main.tex at its root and no Lean project. No new Hexagon or Preprints.org identifier has been invented; use the author's existing record if uploading a revision.
 
-Version DOI: awaiting confirmation of this new release archive.
+Version DOI: https://doi.org/10.5281/zenodo.24055725

@@ -2,7 +2,7 @@
 
 **Deep Bhattacharjee**
 
-Current research revision: [v1.9.0](https://github.com/creelie/e84hc/releases/tag/v1.9.0). Version DOI: awaiting confirmation of this new release archive.
+Current research revision: [v1.9.0](https://github.com/creelie/e84hc/releases/tag/v1.9.0). Version DOI: https://doi.org/10.5281/zenodo.24055725
 
 Permanent work DOI, printed in the manuscript: https://doi.org/10.5281/zenodo.23234362
 

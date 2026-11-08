@@ -1,0 +1,21 @@
+{
+  "repository": "https://github.com/creelie/e84hc",
+  "release": "https://github.com/creelie/e84hc/releases/tag/v1.9.0",
+  "version": "1.9.0",
+  "version_doi": "10.5281/zenodo.24055725",
+  "permanent_work_doi": "10.5281/zenodo.23234362",
+  "record_url": "https://zenodo.org/records/24055725",
+  "record_id": 24055725,
+  "archive_filename": "creelie/e84hc-v1.9.0.zip",
+  "archive_checksum": "md5:9193106594a2111ae0132baf35d293bd",
+  "pages": 86,
+  "archive_contains_exact_pdf_and_texzip": true,
+  "sha256": {
+    "papers/fermat.pdf": "4fc3900e312da306b04b69fb3c3cdbb02ced765a42ef5e68f07f86bf8bb9c720",
+    "papers/fermattex.zip": "bb813c71cd3df58a09f6c598ec542d4ae7375b9648fe9a637b074db037ba9af5",
+    "paper/main.tex": "0941783e2a3871ef90af7cc403b0d277715519b93ed23f68db14743495193c84",
+    "paper/sections/a_li_comparison.tex": "9bf42e4cc851fa09c867cf826df8b08988bb1127ab28029fa7b2b0b5deb8c149",
+    "paper/references.bib": "a29b64a4a7b0a8f3c0387ec346204759c5fad9f619f0a72d72a511327a32d02b"
+  },
+  "scope": "Research revision. Related-work and finite comparison additions; the universal Hodge conjecture remains unproved."
+}

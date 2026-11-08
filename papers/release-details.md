@@ -2,7 +2,7 @@
 
 https://github.com/creelie/e84hc/releases/tag/v1.9.0
 
-Version DOI: awaiting confirmation of this new release archive.
+Version DOI: https://doi.org/10.5281/zenodo.24055725
 
 Permanent work DOI in the paper: https://doi.org/10.5281/zenodo.23234362
 

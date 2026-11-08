@@ -6,7 +6,7 @@ Sole author: Deep Bhattacharjee
 
 Research release: https://github.com/creelie/e84hc/releases/tag/v1.9.0
 
-Version DOI: awaiting confirmation of this new release archive.
+Version DOI: https://doi.org/10.5281/zenodo.24055725
 
 The paper prints the permanent work DOI https://doi.org/10.5281/zenodo.23234362.
 

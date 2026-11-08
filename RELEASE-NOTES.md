@@ -4,6 +4,6 @@ Adds two verified references to Hongmin Li, acknowledges his September precedent
 
 The manuscript grows from 83 to 86 pages. All original theorem labels are retained. No full Hodge-conjecture closure or new complete formalization is claimed.
 
-Version DOI: awaiting confirmation of this new release archive.
+Version DOI: https://doi.org/10.5281/zenodo.24055725
 
 Permanent work DOI: https://doi.org/10.5281/zenodo.23234362
