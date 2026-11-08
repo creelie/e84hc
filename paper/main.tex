@@ -8,6 +8,8 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
 \usepackage[hidelinks]{hyperref}
 \usepackage[nameinlink]{cleveref}
 
@@ -70,14 +72,15 @@ Bhubaneswar, Odisha 751030, India}
 \thanks{Source, figures and verification code:
 \url{https://github.com/creelie/e84hc}, archived on Zenodo under the concept
 DOI \href{https://doi.org/10.5281/zenodo.23234362}{10.5281/zenodo.23234362}.
-This version is release v1.8.0, with the version DOI
-\href{https://doi.org/10.5281/zenodo.23401546}{10.5281/zenodo.23401546}}
+This version is research release
+\href{https://github.com/creelie/e84hc/releases/tag/v1.9.0}{v1.9.0}.
+The permanent work DOI identifies the archival version series.}
 
 \subjclass[2020]{Primary 14C30; Secondary 14C25, 14J70, 14K22, 14M25, 14E30, 65G40}
 \keywords{Hodge conjecture, Fermat varieties, uniruled varieties, Fine
 interior, Abel--Jacobi map, coniveau,
 CM abelian varieties, Weil classes, motivated cycles}
-\date{October 15, 2026}
+\date{November 8, 2026}
 
 \begin{abstract}
 We prove the Hodge conjecture for the Fermat varieties of degrees $44$, $51$,
@@ -88,7 +91,7 @@ products and the abelian varieties of Fermat type of these degrees. The key
 step is that the quotient of a Fermat threefold by the kernel of a suitable
 character is uniruled, by Batyrev's criterion for toric hypersurfaces; a
 second proof uses families of curves and a residue formula for their
-Abel--Jacobi maps. We also prove the Hodge
+Abel--Jacobi maps. We also give a profile-descent proof of the Hodge
 conjecture for Fermat fourfolds of every odd degree, and determine which
 combinations of the standard conjectures around the Hodge conjecture imply
 it.
@@ -109,6 +112,7 @@ it.
 \appendix
 \input{sections/a_checks}
 \input{sections/a_cert114}
+\input{sections/a_li_comparison}
 
 \bibliographystyle{amsalpha}
 \bibliography{references}

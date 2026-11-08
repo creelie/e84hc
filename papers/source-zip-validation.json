@@ -1,0 +1,9 @@
+{
+  "pages": 86,
+  "clean_source_zip_compilation": true,
+  "all_pages_text_match": true,
+  "no_overfull_or_unresolved_references": true,
+  "empty_pages": [],
+  "minimum_page_text_characters": 940,
+  "two_new_dois_printed_in_bibliography": true
+}

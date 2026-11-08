@@ -43,7 +43,9 @@ we prove it again because the proof of (ii) uses it and runs on the same
 lines. When $5\nmid m$, part (ii) says that every Hodge character of
 $X^{4}_{m}$ splits into three pairs, which is also contained in
 \cite[Theorem~A]{Aok83}, since then every prime factor of $m$ exceeds $6$.
-The case $5\mid m$ is new. The theorem has been checked in Lean
+For the case $5\mid m$, compare the positive classification in
+\cite[Theorem~7.6]{Li26b}; the earlier \cite{Li26a} already states the
+all-odd-degree algebraicity conclusion. The theorem has been checked in Lean
 (\Cref{app:checks}).
 
 \begin{proof}[Proof of \Cref{thm:oddfour} for $m$ prime to $6$, given \Cref{thm:sextuples}]
@@ -515,7 +517,12 @@ $p$-th step of the Hodge filtration. This decomposition fails already for
 $H=H'=H^{1}(E,\QQ)$, $E$ an elliptic curve, and $m=1$: the K\"unneth
 component of the diagonal of $E\times E$ in $H^{1}(E)\otimes H^{1}(E)$ is a
 nonzero rational class of type $(1,1)$, so it lies in $F^{1}(H\otimes H')$,
-while $F^{1}H^{1}(E)=0$ and the right-hand side vanishes. We do not know
+while $F^{1}H^{1}(E)=0$ and the right-hand side vanishes.
+The same diagonal-class counterexample was recorded earlier in
+\cite[\S1.1]{Li26a}; see also \cite[\S6]{Li26b} for its realization
+on the relevant Fermat product. We do not claim this counterexample as
+new, and its failure does not by itself disprove Kang's final inequality.
+We do not know
 whether the inequality of \cite[Proposition~2.2(iv)]{Kan15}, or
 \cite[Corollary~3.2]{Kan16}, holds; \Cref{thm:oddfour} does not use them.
 \end{remark}

@@ -1,0 +1,155 @@
+\section{Residual characters and profile-descent endpoints}
+\label{app:li-comparison}
+
+This appendix compares two predicates on balanced sextuples; it does not
+assume an unrestricted classification from another preprint. Li's
+September manuscript \cite[Theorem~1.1]{Li26a} already states the conclusion
+of \Cref{thm:oddfour}. His November manuscript \cite[Theorem~A]{Li26b}
+states the more specific positive classification described below.
+
+\subsection{The predicates and their behaviour under inflation}
+For an odd $m$, write $\mathrm{Dec}_m$ for the following sextuples:
+those containing an inverse pair, and those admitting a partition into
+triples $B,C$ with $\sum B=k\ne0$, $\sum C=-k$, such that
+$B+\{-k\}$ and $\{k\}+C$ are balanced quadruples. This is the
+surface-contraction criterion. Write $\mathrm{Std}_{5,m}$ for one
+exact multiset $\sigma_{5,x}$ with $5x\ne0$, rather than an integral
+combination of standard multisets. These are the predicates of
+\cite[\S2.3]{Li26b}.
+
+\begin{lemma}\label{lem:li-inflation}
+Let $m=gd$ be odd and let $A$ be a sextuple of nonzero residues modulo
+$d$ with sum zero. Multiplication by $g$ preserves and reflects
+balance, membership in $\mathrm{Dec}$, and membership in
+$\mathrm{Std}_5$. The primitive conductor of $gA$ is the primitive
+conductor of $A$.
+\end{lemma}
+\begin{proof}
+Every unit modulo $d$ lifts to a unit modulo $m$. Indeed, for each
+prime dividing $m$ but not $d$, choose a nonzero residue in that prime
+component and apply the Chinese remainder theorem, while preserving
+the chosen unit modulo $d$. Also
+$\overline{tga}_{m}=g\overline{ta}_{d}$. These statements prove the
+balance assertion. Inverse pairs are preserved and reflected.
+For a surface contraction of $gA$, the distinguished entry is the sum
+of three entries of $gA$, hence is divisible by $g$; divide the two
+balanced quadruples by $g$ and use the balance assertion. The converse
+is obtained by multiplying a contraction by $g$.
+
+If $gA$ is exactly $5$-standard, all five entries of its progression
+are divisible by $g$. Their successive difference $m/5$ is therefore
+divisible by $g$, so $5\mid d$. Its initial entry is $gx$ for a residue
+$x$ modulo $d$; dividing the entire standard multiset by $g$ gives
+$\sigma_{5,x}$ at level $d$. The condition $5gx\not\equiv0\pmod m$
+is equivalent to $5x\not\equiv0\pmod d$. Inflation gives the converse.
+Finally, the additive order of $ga$ modulo $gd$ is the order of $a$
+modulo $d$. Taking the least common multiple proves the last assertion.
+\end{proof}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[>=Stealth,font=\small,
+ b/.style={draw,rounded corners,align=center,text width=57mm,minimum height=12mm}]
+\node[b] (a) at (0,0) {One balanced sextuple\\at its primitive conductor};
+\node[b] (l) at (-3.35,-1.8) {Positive predicates\\$\mathrm{Dec}\cup\mathrm{Std}_5$};
+\node[b] (r) at (3.35,-1.8) {Direct and lowering moves\\of \Cref{def:move}};
+\node[b] (ll) at (-3.35,-3.5) {Li's residual list\\six orbits at $33,39,45,105$};
+\node[b] (rr) at (3.35,-3.5) {Our terminal list\\$O_{21},O_{33},O_{39}$};
+\draw[->] (a) -- (l);\draw[->] (a) -- (r);
+\draw[->] (l) -- node[right,font=\scriptsize]{if neither applies} (ll);
+\draw[->] (r) -- node[left,font=\scriptsize]{if no move applies} (rr);
+\end{tikzpicture}
+\caption{Different tests give different exceptional lists. The left list
+is the classification stated in \cite{Li26b}; the right is the
+profile-descent assertion of \Cref{thm:moves}. The finite comparisons
+below verify their compatibility on the listed examples, rather than
+establishing either infinite classification by computation.}
+\label{fig:li-comparison}
+\end{figure}
+
+\subsection{Explicit comparisons at the seed levels}
+The six residual representatives in \cite[(3.1)]{Li26b} and our
+degree-$21$ terminal representative are displayed below. The degree-$33$
+and degree-$39$ constructions, and the two-pair presentations at $45$
+and $105$, are already in Jumagulov \cite[Theorems~1.2--1.4]{Jum26};
+they are not new constructions of this appendix.
+
+\begin{center}\small
+\begin{tabular}{rll}
+\toprule
+$m$ & Sextuple & Behaviour under our moves\\
+\midrule
+21 & $(1,4,9,15,16,18)$ & terminal; lies in $\mathrm{Dec}$\\
+33 & $(1,4,16,22,25,31)$ & terminal $O_{33}$\\
+39 & $(1,7,16,22,34,37)$ & terminal $O_{39}$\\
+39 & $(1,14,16,22,29,35)$ & lowering move $(3,1)$\\
+45 & $(1,19,20,28,30,37)$ & direct move $(5,1)$\\
+105 & $(1,22,43,64,90,95)$ & direct move $(5,1)$\\
+105 & $(3,24,50,66,85,87)$ & direct move $(5,3)$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+At level $21$, partition $O_{21}$ into $(1,4,18)$ and $(9,15,16)$.
+Their sums are $2$ and $-2$ modulo $21$, and the completed quadruples
+are $(1,4,18,19)$ and $(2,9,15,16)$. The latter is
+$\sigma_{3,2}$, and the former is balanced by the identity in
+\Cref{lem:exceptional}. This gives a surface contraction, although
+$O_{21}$ has no direct or lowering move. Thus a terminal orbit of our
+descent need not be residual for Li's positive predicates.
+
+For the second level-$39$ representative $A$, the move $(3,1)$ gives
+\[
+ A'=(3,12,16,22,29,35),\qquad
+ A'+\sigma_{3,1}=A+\{27,12,3,36\}.
+\]
+The padding is a union of two inverse pairs. Its order profile drops
+from $(39,39,39,39,39,39)$ to $(39,39,39,39,13,13)$.
+There is also a direct curve-product description:
+$A=(1,16,22)+(14,29,35)$, with both triple sums zero modulo $39$.
+As in the curve-product criterion, the simultaneous unit orbit in the
+tensor of the two curve $H^1$'s is of type $(1,1)$; Lefschetz $(1,1)$
+and the algebraic join give its algebraicity. The first degree-$39$
+representative has the analogous split $(1,16,22)+(7,34,37)$.
+This is the split construction credited to \cite{Jum26}, also used in
+\cite[\S3.2]{Li26b}.
+
+For the remaining three rows, the direct moves give the identities
+\begin{align*}
+ &(1,19,20,28,30,37)+\{5,40,10,35\}\\
+ &\hspace{12mm}=\sigma_{5,1}^{(45)}+(5,20,30,35),\\
+ &(1,22,43,64,90,95)+\{85,20,100,5\}\\
+ &\hspace{12mm}=\sigma_{5,1}^{(105)}+(5,20,90,95),\\
+ &(3,24,50,66,85,87)+\{15,90,45,60\}\\
+ &\hspace{12mm}=\sigma_{5,3}^{(105)}+(15,50,60,85).
+\end{align*}
+Here the superscript records the level. Each right-hand quadruple is
+balanced, and each padding consists of inverse pairs. Aoki's standard
+cycles, Lefschetz $(1,1)$, the join and pair cancellation therefore make
+the three sextuples algebraic, by \Cref{lem:algtools,lem:move}.
+These are precisely the already attributed presentations of
+\cite{Jum26} and \cite[(3.4)--(3.5)]{Li26b}.
+
+The degree-$33$ row is the same $O_{33}$ treated in
+\Cref{lem:exceptional}. Its level-$66$ construction is also
+\cite[Theorem~1.4]{Jum26}. Hence four of Li's six residual rows have
+moves for our descent and two are its terminal orbits; conversely our
+third terminal orbit, at $21$, satisfies a positive surface contraction.
+There is no discrepancy between the cardinalities three and six.
+
+\subsection{The scope of the finite verification}
+The independent standard-library program
+\texttt{anc/check-li-comparison.py} checks these seven tuples against
+every unit at their displayed levels. It tests all ten partitions into
+two triples, every admissible exact standard tuple, and every move for
+each of these particular inputs; it verifies the displayed multiset
+identities and profiles and checks inflation at the next two odd
+multiples $3m$ and $5m$. Its output is
+\texttt{anc/li-comparison-checks.json}.
+It is a verification of the named tuples, not an exhaustive census of
+all balanced sextuples at these degrees or a proof for unbounded degree.
+The infinite classification in \cite{Li26b} rests on its conductor
+arguments, not on these checks. The proof of \Cref{thm:oddfour} here
+continues to use \Cref{thm:sextuples,thm:moves,lem:exceptional}; it does
+not replace any of those arguments by a finite computation or by a
+citation to Li.

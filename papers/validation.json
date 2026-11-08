@@ -1,0 +1,38 @@
+{
+  "pages": 86,
+  "baseline_pages": 83,
+  "issues": [],
+  "labels": {
+    "thm:oddfour": {
+      "number": "B",
+      "page": "4"
+    },
+    "rem:kang": {
+      "number": "3.21",
+      "page": "21"
+    },
+    "rem:new114": {
+      "number": "4.45",
+      "page": "53"
+    },
+    "rem:new3339": {
+      "number": "4.49",
+      "page": "54"
+    },
+    "app:li-comparison": {
+      "number": "C",
+      "page": "81"
+    },
+    "lem:li-inflation": {
+      "number": "C.1",
+      "page": "81"
+    },
+    "fig:li-comparison": {
+      "number": "6",
+      "page": "82"
+    }
+  },
+  "elapsed_seconds": 8.44,
+  "format": "amsart, 11pt, single column",
+  "sole_author": "Deep Bhattacharjee"
+}

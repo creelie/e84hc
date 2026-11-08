@@ -56,16 +56,18 @@ An abelian variety is of Fermat type of degree $m$ if it is isogenous to a
 product of Jacobians of curves dominated by the Fermat curve of degree $m$
 \cite{Aok00}. In particular the Hodge conjecture holds for the Fermat
 varieties of degrees $44$, $51$, $52$ and $114$ in every dimension. When
-none of $57$, $44$, $52$ and $51$ divides $m$, \Cref{thm:fermat114} is due to
-Aoki. When $57\mid m$,
-the only earlier
-argument is that of the preprint \cite{MMRV26}. It states the theorem for
+none of $33$, $39$, $57$, $44$, $52$ and $51$ divides $m$, \Cref{thm:fermat114} is due to
+Aoki. For the all-dimensional assertion when $57\mid m$,
+the earlier argument discussed here is that of the preprint \cite{MMRV26}. It states the theorem for
 $m=57$, and through Aoki's reduction it would give the other degrees as well,
 but it reduces the remaining class to a Hodge class on the Fermat fourfold of
 degree $114$ and concludes with a statement of Kang \cite{Kan16} whose proof
-has a gap (\Cref{rem:kang}). Our proof does not use that statement, so for
-$57\mid m$ it is the first complete proof; for the degrees $114$, $171$,
-$342$, $513,\dots$ the theorem has not been stated before. For fourfolds, a
+has a gap (\Cref{rem:kang}). Our proof does not use that statement: it constructs the required
+coniveau-one pieces on the degree-$114$ threefold through uniruled
+character quotients. The all-dimensional conclusion must be distinguished
+from the odd-degree fourfold statement discussed below. In particular,
+knowing the conjecture for $X^4_{57}$ alone does not supply the
+eightfold class at level $114$ used in this proof. For fourfolds, a
 computer census of the Fermat fourfolds of even degree at most $250$
 \cite{Jum26b}, combined with \cite{Pet26}, leaves the degrees $110$, $114$,
 $220$ and $228$; \Cref{thm:fermat114} settles $114$ and $228$
@@ -75,9 +77,11 @@ $51$ and $52$, and the degrees $44$, $88$, $176$, $352,\dots$, $52$, $104$,
 $208$, $416,\dots$ and $51$, $102$, $153$, $306,\dots$ appear in
 \Cref{thm:fermat114} for the first time (\Cref{rem:new44,rem:new52,rem:new51}).
 When $33\mid m$ or $39\mid m$, \cite{MMRV26} states the theorem for $m=33$
-and $m=39$, again through Kang's statement, and the degrees $66$, $78$,
-$99$, $117$, $132$, $156,\dots$ appear here for the first time
-(\Cref{rem:new3339}). The unrefereed
+and $m=39$, again through Kang's statement. The fourfold classes used
+for these degrees are already covered by Jumagulov \cite{Jum26}; their
+transport through Aoki's reduction is explained in \Cref{rem:new3339}.
+The degrees $132$ and $156$ also use the classes at $44$ and $52$,
+respectively. The unrefereed
 preprint \cite{OAI26} claims the Hodge
 conjecture for abelian varieties of CM type, which would give it for every
 Fermat variety (\Cref{thm:fermatcm}); \Cref{thm:fermat114} does not depend
@@ -170,7 +174,18 @@ theorem for the degree $12$ \cite{Aok00}, this gives the degrees
 $2^{a}3^{b}11^{c}$ and $2^{a}3^{b}13^{c}$.
 
 \subsection*{Fermat fourfolds of odd degree}
-The second unconditional result concerns fourfolds.
+The second result concerns fourfolds. Li's preprint
+\cite[Theorem~1.1]{Li26a}, registered on 8 September 2026,
+already states the same all-odd-degree conclusion as
+\Cref{thm:oddfour}, by conductor descent and explicit terminal cycles.
+We therefore make no priority claim for that conclusion. The proof below
+uses descent on additive-order profiles. Li's later preprint
+\cite[Theorem~A and Theorem~7.20]{Li26b} states an exact classification
+relative to two specified positive constructions; its distinction from
+our terminal-orbit list is explained in \Cref{app:li-comparison}.
+Both works use constructions of Jumagulov \cite{Jum26}, to whom those
+constructions should be credited. These are preprint comparisons:
+neither result of Li is an input to our proof.
 
 \begin{maintheorem}\label{thm:oddfour}
 Let $m$ be odd. Then the Hodge conjecture holds for the Fermat fourfold
@@ -196,9 +211,10 @@ Fermat fourfolds of degrees $21$, $66$ and $78$. When $m$ is prime to $15$,
 \Cref{thm:oddfour} follows from Aoki's theorem that every Hodge character then
 splits into pairs \cite{Aok83}; it is also known when $m$ is a power of a
 prime \cite{Aok87} and when $m=3^{a}5^{b}7^{c}$ \cite{Aok00,Pet26}. In the
-remaining degrees it is new for $m>199$, apart from the statement of Kang
-mentioned above; smaller degrees were covered by computer searches
-(\Cref{rem:fermatknown}). The classification for $m$ prime to $6$, together
+remaining degrees the present argument provides a profile-descent
+proof of the conclusion already stated in \cite{Li26a}; the degrees
+up to $199$ were covered earlier by Jumagulov's computer-assisted
+work (\Cref{rem:fermatknown}). The classification for $m$ prime to $6$, together
 with the fact that $B_{1,\chi}\ne0$, has been checked in Lean~4 with Mathlib
 (\Cref{app:checks}).
 

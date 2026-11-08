@@ -1,0 +1,36 @@
+{
+  "https://doi.org/10.13140/RG.2.2.26853.77288": {
+    "status": 302,
+    "location": "https://www.researchgate.net/doi/10.13140/RG.2.2.26853.77288",
+    "message": "<html><head><title>Handle Redirect</title></head>\n<body><a href=\"https://www.researchgate.net/doi/10.13140/RG.2.2.26853.77288\">https://www.researchgate.net/doi/10.13140/RG.2.2.26853.77288</a></body></html>"
+  },
+  "https://api.datacite.org/dois/10.13140/RG.2.2.26853.77288": {
+    "status": 200,
+    "location": null
+  },
+  "https://zenodo.org/api/records/23234363": {
+    "status": 200,
+    "location": null,
+    "doi": "10.5281/zenodo.23234363",
+    "date": "2026-10-08",
+    "created": "2026-10-08T08:51:34.833310+00:00",
+    "conceptdoi": "10.5281/zenodo.23234362",
+    "title": "When is every rational Hodge class algebraic?"
+  },
+  "https://zenodo.org/api/records/23401546": {
+    "status": 200,
+    "location": null,
+    "doi": "10.5281/zenodo.23401546",
+    "date": "2026-10-15",
+    "created": "2026-10-15T17:08:45.907400+00:00",
+    "conceptdoi": "10.5281/zenodo.23234362",
+    "title": "On the Hodge conjecture for Fermat varieties"
+  },
+  "zenodo_hook_active": true,
+  "first_theorem_b_release": {
+    "tag_name": "v1.2.0",
+    "published_at": "2026-10-10T01:49:22Z",
+    "target_commitish": "196fb968d864de3b56de2e88ae3b7ce508663582",
+    "html_url": "https://github.com/creelie/e84hc/releases/tag/v1.2.0"
+  }
+}

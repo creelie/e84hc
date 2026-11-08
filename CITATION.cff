@@ -40,8 +40,8 @@ keywords:
   - Macaulay2
   - Abel-Jacobi map
   - interval arithmetic
-version: "1.8.0"
-date-released: "2026-10-15"
+version: "1.9.0"
+date-released: "2026-11-08"
 doi: "10.5281/zenodo.23234362"
 identifiers:
   - type: doi

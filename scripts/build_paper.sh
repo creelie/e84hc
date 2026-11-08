@@ -55,11 +55,12 @@ echo "ok    arXiv tarball compiles with pdflatex alone"
 
 echo "== tex.zip"
 Z="$TMP/tex"
-mkdir -p "$Z/sections" "$Z/figures/src"
+mkdir -p "$Z/sections" "$Z/figures/src" "$Z/anc"
 cp main.tex main.bbl references.bib "$Z/"
 cp sections/*.tex "$Z/sections/"
 cp figures/*.png "$Z/figures/"
 cp figures/src/*.tex "$Z/figures/src/"
+cp anc/*.py anc/*.json "$Z/anc/"
 cat > "$Z/README.txt" <<'TXT'
 On the Hodge conjecture for Fermat varieties  (Deep Bhattacharjee)
 
